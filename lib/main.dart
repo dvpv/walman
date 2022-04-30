@@ -26,7 +26,9 @@ Future<void> main() async {
     ],
   );
 
-  runApp(App(store: store,));
+  runApp(App(
+    store: store,
+  ));
 }
 
 class App extends StatelessWidget {

@@ -3,7 +3,6 @@ import 'package:walman/src/data/auth/auth_api.dart';
 import 'package:walman/src/models/index.dart';
 
 class FirebaseAuthApi implements AuthApi {
-
   FirebaseAuthApi(this._auth);
 
   final firebase.FirebaseAuth _auth;

@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -61,10 +62,9 @@ class _LoginPageState extends State<LoginPage> {
                           hintText: 'email',
                         ),
                         validator: (String? value) {
-                          final RegExp regex = RegExp('[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+');
                           if (value == null || value.isEmpty) {
                             return 'Please enter your email';
-                          } else if (!regex.hasMatch(value)) {
+                          } else if (!EmailValidator.validate(value)) {
                             return 'Please enter a valid email';
                           }
                           return null;

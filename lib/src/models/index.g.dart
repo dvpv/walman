@@ -7,17 +7,11 @@ part of 'index.dart';
 // **************************************************************************
 
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
-      pending: (json['pending'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toSet() ??
-          const <String>{},
-      user: json['user'] == null
-          ? null
-          : AppUser.fromJson(json['user'] as Map<String, dynamic>),
+      pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
+      user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
       'user': instance.user,
     };
@@ -28,8 +22,7 @@ _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       username: json['username'] as String,
     );
 
-Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'username': instance.username,

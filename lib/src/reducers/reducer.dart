@@ -3,9 +3,8 @@ import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/models/index.dart';
 
-AppState reducer(AppState state, dynamic action)
-{
-  if (action is! AppAction){
+AppState reducer(AppState state, dynamic action) {
+  if (action is! AppAction) {
     throw ArgumentError('action needs to implement AppAction');
   }
   final AppState newState = _reducer(state, action);
