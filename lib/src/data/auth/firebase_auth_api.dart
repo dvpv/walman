@@ -8,8 +8,14 @@ class FirebaseAuthApi implements AuthApi {
   final firebase.FirebaseAuth _auth;
 
   @override
-  Future<AppUser> create({required String email, required String password, required String username}) async {
-    throw UnimplementedError();
+  Future<AppUser> signup({required String email, required String password, required String username}) async {
+    await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    await _auth.currentUser!.updateDisplayName(username);
+    return AppUser(
+      uid: _auth.currentUser!.uid,
+      username: username,
+      email: email,
+    );
   }
 
   @override

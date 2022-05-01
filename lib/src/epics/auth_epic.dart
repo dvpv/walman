@@ -13,6 +13,7 @@ class AuthEpic {
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, LoginStart>(_loginStart),
+      TypedEpic<AppState, SignUpStart>(_signup),
     ]);
   }
 
@@ -22,6 +23,16 @@ class AuthEpic {
           .asyncMap((_) => _auth.login(email: action.email, password: action.password))
           .map<AppAction>((AppUser user) => LoginSuccessful(user, action.pendingId))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginError(error, stackTrace, action.pendingId))
+          .doOnData(action.onResult);
+    });
+  }
+
+  Stream<AppAction> _signup(Stream<SignUpStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((SignUpStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _auth.signup(email: action.email, password: action.password, username: action.username))
+          .map<AppAction>((AppUser user) => SignUpSuccessful(user, action.pendingId))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => SignUpError(error, stackTrace, action.pendingId))
           .doOnData(action.onResult);
     });
   }

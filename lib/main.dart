@@ -8,6 +8,8 @@ import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/login/login_page.dart';
+import 'package:walman/src/presentation/signup/signup_page.dart';
+import 'package:walman/src/presentation/start_page.dart';
 import 'package:walman/src/reducers/reducer.dart';
 
 Future<void> main() async {
@@ -26,9 +28,11 @@ Future<void> main() async {
     ],
   );
 
-  runApp(App(
-    store: store,
-  ));
+  runApp(
+    App(
+      store: store,
+    ),
+  );
 }
 
 class App extends StatelessWidget {
@@ -40,9 +44,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
       store: store,
-      child: const MaterialApp(
+      child: MaterialApp(
         title: 'walman',
-        home: LoginPage(),
+        routes: <String, WidgetBuilder>{
+          '/': (BuildContext context) => const StartPage(),
+          '/signup': (BuildContext context) => const SignupPage(),
+          '/login': (BuildContext context) => const LoginPage(),
+        },
       ),
     );
   }

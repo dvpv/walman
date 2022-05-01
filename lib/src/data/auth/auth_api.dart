@@ -5,7 +5,7 @@ abstract class AuthApi {
 
   Future<void> logout();
 
-  Future<AppUser> create({required String email, required String password, required String username});
+  Future<AppUser> signup({required String email, required String password, required String username});
 
   Future<AppUser?> getCurrentUser();
 }
