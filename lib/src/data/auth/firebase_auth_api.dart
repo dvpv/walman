@@ -41,6 +41,6 @@ class FirebaseAuthApi implements AuthApi {
 
   @override
   Future<void> logout() async {
-    throw UnimplementedError();
+    await _auth.signOut();
   }
 }

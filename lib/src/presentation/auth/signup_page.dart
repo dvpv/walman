@@ -149,6 +149,7 @@ class _SignupPageState extends State<SignupPage> {
                           }
                           return null;
                         },
+                        onFieldSubmitted: (_) => _onSignup(context),
                       ),
                       const SizedBox(
                         height: 24,

@@ -91,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                           }
                           return null;
                         },
+                        onFieldSubmitted: (_) => _onLogin(context),
                       ),
                       const SizedBox(
                         height: 24,

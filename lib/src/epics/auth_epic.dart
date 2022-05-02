@@ -12,13 +12,14 @@ class AuthEpic {
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, LoginStart>(_loginStart),
+      TypedEpic<AppState, LoginStart>(_login),
       TypedEpic<AppState, SignUpStart>(_signup),
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUser),
+      TypedEpic<AppState, LogoutStart>(_logout),
     ]);
   }
 
-  Stream<AppAction> _loginStart(Stream<LoginStart> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _login(Stream<LoginStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((LoginStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.login(email: action.email, password: action.password))
@@ -28,22 +29,31 @@ class AuthEpic {
     });
   }
 
-  Stream<AppAction> _signup(Stream<SignUpStart> actions, EpicStore<AppState> store) {
+  Stream<SignUp> _signup(Stream<SignUpStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((SignUpStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.signup(email: action.email, password: action.password, username: action.username))
-          .map<AppAction>((AppUser user) => SignUpSuccessful(user, action.pendingId))
+          .map<SignUp>((AppUser user) => SignUpSuccessful(user, action.pendingId))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignUpError(error, stackTrace, action.pendingId))
           .doOnData(action.onResult);
     });
   }
 
-  Stream<AppAction> _getCurrentUser(Stream<GetCurrentUserStart> actions, EpicStore<AppState> store) {
+  Stream<GetCurrentUser> _getCurrentUser(Stream<GetCurrentUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetCurrentUserStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.getCurrentUser())
-          .map<AppAction>(GetCurrentUserSuccessful.new)
+          .map<GetCurrentUser>(GetCurrentUserSuccessful.new)
           .onErrorReturnWith(GetCurrentUserError.new);
+    });
+  }
+
+  Stream<Logout> _logout(Stream<LogoutStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((LogoutStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _auth.logout())
+          .mapTo<Logout>(LogoutSuccessful(action.pendingId))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => LogoutError(error, stackTrace, action.pendingId));
     });
   }
 }

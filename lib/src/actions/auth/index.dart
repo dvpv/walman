@@ -6,4 +6,5 @@ part 'index.freezed.dart';
 
 part 'login.dart';
 part 'signup.dart';
+part 'logout.dart';
 part 'get_current_user.dart';
