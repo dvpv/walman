@@ -1,11 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart' as firebase;
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:walman/src/data/auth/auth_api.dart';
 import 'package:walman/src/models/index.dart';
 
 class FirebaseAuthApi implements AuthApi {
   FirebaseAuthApi(this._auth);
 
-  final firebase.FirebaseAuth _auth;
+  final FirebaseAuth _auth;
 
   @override
   Future<AppUser> signup({required String email, required String password, required String username}) async {
@@ -20,13 +20,18 @@ class FirebaseAuthApi implements AuthApi {
 
   @override
   Future<AppUser?> getCurrentUser() async {
-    throw UnimplementedError();
+    final User? user = _auth.currentUser;
+    if (user != null) {
+      return AppUser(uid: user.uid, email: user.email!, username: user.displayName!);
+    } else {
+      return null;
+    }
   }
 
   @override
   Future<AppUser> login({required String email, required String password}) async {
-    final firebase.UserCredential credential = await _auth.signInWithEmailAndPassword(email: email, password: password);
-    final firebase.User user = credential.user!;
+    final UserCredential credential = await _auth.signInWithEmailAndPassword(email: email, password: password);
+    final User user = credential.user!;
     return AppUser(
       uid: user.uid,
       email: user.email!,

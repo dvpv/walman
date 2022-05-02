@@ -14,6 +14,7 @@ class AuthEpic {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, LoginStart>(_loginStart),
       TypedEpic<AppState, SignUpStart>(_signup),
+      TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUser),
     ]);
   }
 
@@ -34,6 +35,15 @@ class AuthEpic {
           .map<AppAction>((AppUser user) => SignUpSuccessful(user, action.pendingId))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SignUpError(error, stackTrace, action.pendingId))
           .doOnData(action.onResult);
+    });
+  }
+
+  Stream<AppAction> _getCurrentUser(Stream<GetCurrentUserStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GetCurrentUserStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _auth.getCurrentUser())
+          .map<AppAction>(GetCurrentUserSuccessful.new)
+          .onErrorReturnWith(GetCurrentUserError.new);
     });
   }
 }

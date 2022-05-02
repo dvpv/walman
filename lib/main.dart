@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
+import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
@@ -26,13 +27,9 @@ Future<void> main() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epic.epics),
     ],
-  );
+  )..dispatch(const GetCurrentUser());
 
-  runApp(
-    App(
-      store: store,
-    ),
-  );
+  runApp(App(store: store));
 }
 
 class App extends StatelessWidget {
