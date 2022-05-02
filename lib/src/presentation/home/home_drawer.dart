@@ -39,7 +39,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   builder: (BuildContext context, AppUser? user) {
                     return UserAccountsDrawerHeader(
                       accountEmail: Text(user!.email),
-                      accountName: Text(user.username),
+                      accountName: Text(
+                        user.username,
+                        style: const TextStyle(fontSize: 24),
+                      ),
                       onDetailsPressed: () =>
                           StoreProvider.of<AppState>(context).dispatch(const ToggleAccountManagementList()),
                     );

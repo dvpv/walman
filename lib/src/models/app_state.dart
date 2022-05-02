@@ -7,6 +7,7 @@ class AppState with _$AppState {
     AppUser? user,
     @Default(DrawerPage.home) DrawerPage selectedDrawerPage,
     @Default(false) bool showAccountManagementOptions,
+    @Default(Bundle()) Bundle bundle,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

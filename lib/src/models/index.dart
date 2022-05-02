@@ -5,6 +5,8 @@ part 'index.g.dart';
 
 part 'app_state.dart';
 part 'app_user.dart';
+part 'password.dart';
+part 'bundle.dart';
 
 enum DrawerPage {
   home,
