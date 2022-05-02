@@ -12,6 +12,14 @@ class HomeDrawer extends StatefulWidget {
 }
 
 class _HomeDrawerState extends State<HomeDrawer> {
+  @override
+  void initState() {
+    if (StoreProvider.of<AppState>(context, listen: false).state.showAccountManagementOptions) {
+      StoreProvider.of<AppState>(context, listen: false).dispatch(const ToggleAccountManagementList());
+    }
+    super.initState();
+  }
+
   void _selectDestination(DrawerPage newPage) =>
       StoreProvider.of<AppState>(context).dispatch(ChangeDrawerPage(newPage));
 
@@ -20,7 +28,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
     final AppState state = StoreProvider.of<AppState>(context).state;
     return Drawer(
       child: ListView(
-        // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
           Padding(
@@ -38,7 +45,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
           ),
           if (state.showAccountManagementOptions)
             const ListTile(
-              leading: Icon(Icons.favorite),
+              leading: Icon(Icons.logout),
               title: Text('Logout'),
             ),
           const Divider(
