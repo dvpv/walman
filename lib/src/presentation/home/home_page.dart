@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walman/src/presentation/home/home_drawer.dart';
 import 'package:walman/src/presentation/home/search_delegate.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,10 +10,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search),
@@ -22,6 +19,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: const HomeDrawer(),
       body: const Center(
         child: Text('homepage'),
       ),

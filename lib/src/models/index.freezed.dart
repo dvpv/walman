@@ -22,6 +22,8 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   Set<String> get pending => throw _privateConstructorUsedError;
   AppUser? get user => throw _privateConstructorUsedError;
+  DrawerPage get selectedDrawerPage => throw _privateConstructorUsedError;
+  bool get showAccountManagementOptions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -31,7 +33,7 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
-  $Res call({Set<String> pending, AppUser? user});
+  $Res call({Set<String> pending, AppUser? user, DrawerPage selectedDrawerPage, bool showAccountManagementOptions});
 
   $AppUserCopyWith<$Res>? get user;
 }
@@ -48,6 +50,8 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   $Res call({
     Object? pending = freezed,
     Object? user = freezed,
+    Object? selectedDrawerPage = freezed,
+    Object? showAccountManagementOptions = freezed,
   }) {
     return _then(_value.copyWith(
       pending: pending == freezed
@@ -58,6 +62,14 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      selectedDrawerPage: selectedDrawerPage == freezed
+          ? _value.selectedDrawerPage
+          : selectedDrawerPage // ignore: cast_nullable_to_non_nullable
+              as DrawerPage,
+      showAccountManagementOptions: showAccountManagementOptions == freezed
+          ? _value.showAccountManagementOptions
+          : showAccountManagementOptions // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -77,7 +89,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
   @override
-  $Res call({Set<String> pending, AppUser? user});
+  $Res call({Set<String> pending, AppUser? user, DrawerPage selectedDrawerPage, bool showAccountManagementOptions});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -95,6 +107,8 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
   $Res call({
     Object? pending = freezed,
     Object? user = freezed,
+    Object? selectedDrawerPage = freezed,
+    Object? showAccountManagementOptions = freezed,
   }) {
     return _then(AppState$(
       pending: pending == freezed
@@ -105,6 +119,14 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      selectedDrawerPage: selectedDrawerPage == freezed
+          ? _value.selectedDrawerPage
+          : selectedDrawerPage // ignore: cast_nullable_to_non_nullable
+              as DrawerPage,
+      showAccountManagementOptions: showAccountManagementOptions == freezed
+          ? _value.showAccountManagementOptions
+          : showAccountManagementOptions // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -112,7 +134,12 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
 /// @nodoc
 @JsonSerializable()
 class _$AppState$ implements AppState$ {
-  const _$AppState$({final Set<String> pending = const <String>{}, this.user}) : _pending = pending;
+  const _$AppState$(
+      {final Set<String> pending = const <String>{},
+      this.user,
+      this.selectedDrawerPage = DrawerPage.home,
+      this.showAccountManagementOptions = false})
+      : _pending = pending;
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
@@ -126,10 +153,16 @@ class _$AppState$ implements AppState$ {
 
   @override
   final AppUser? user;
+  @override
+  @JsonKey()
+  final DrawerPage selectedDrawerPage;
+  @override
+  @JsonKey()
+  final bool showAccountManagementOptions;
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, user: $user)';
+    return 'AppState(pending: $pending, user: $user, selectedDrawerPage: $selectedDrawerPage, showAccountManagementOptions: $showAccountManagementOptions)';
   }
 
   @override
@@ -138,13 +171,19 @@ class _$AppState$ implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is AppState$ &&
             const DeepCollectionEquality().equals(other.pending, pending) &&
-            const DeepCollectionEquality().equals(other.user, user));
+            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality().equals(other.selectedDrawerPage, selectedDrawerPage) &&
+            const DeepCollectionEquality().equals(other.showAccountManagementOptions, showAccountManagementOptions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pending), const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(pending),
+      const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(selectedDrawerPage),
+      const DeepCollectionEquality().hash(showAccountManagementOptions));
 
   @JsonKey(ignore: true)
   @override
@@ -157,7 +196,11 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({final Set<String> pending, final AppUser? user}) = _$AppState$;
+  const factory AppState$(
+      {final Set<String> pending,
+      final AppUser? user,
+      final DrawerPage selectedDrawerPage,
+      final bool showAccountManagementOptions}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -165,6 +208,10 @@ abstract class AppState$ implements AppState {
   Set<String> get pending => throw _privateConstructorUsedError;
   @override
   AppUser? get user => throw _privateConstructorUsedError;
+  @override
+  DrawerPage get selectedDrawerPage => throw _privateConstructorUsedError;
+  @override
+  bool get showAccountManagementOptions => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;

@@ -8,8 +8,8 @@ import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/login/login_page.dart';
-import 'package:walman/src/presentation/signup/signup_page.dart';
+import 'package:walman/src/presentation/auth/login_page.dart';
+import 'package:walman/src/presentation/auth/signup_page.dart';
 import 'package:walman/src/presentation/start_page.dart';
 import 'package:walman/src/reducers/reducer.dart';
 
