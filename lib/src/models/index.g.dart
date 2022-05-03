@@ -9,16 +9,23 @@ part of 'index.dart';
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
       user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
-      selectedPage: json['selectedPage'] as int? ?? 1,
+      selectedPage: $enumDecodeNullable(_$AppPageEnumMap, json['selectedPage']) ?? AppPage.home,
       bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
       'user': instance.user,
-      'selectedPage': instance.selectedPage,
+      'selectedPage': _$AppPageEnumMap[instance.selectedPage],
       'bundle': instance.bundle,
     };
+
+const _$AppPageEnumMap = {
+  AppPage.home: 'home',
+  AppPage.passwords: 'passwords',
+  AppPage.places: 'places',
+  AppPage.codes: 'codes',
+};
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,

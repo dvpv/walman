@@ -22,7 +22,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 mixin _$AppState {
   Set<String> get pending => throw _privateConstructorUsedError;
   AppUser? get user => throw _privateConstructorUsedError;
-  int get selectedPage => throw _privateConstructorUsedError;
+  AppPage get selectedPage => throw _privateConstructorUsedError;
   Bundle get bundle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,7 +33,7 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
-  $Res call({Set<String> pending, AppUser? user, int selectedPage, Bundle bundle});
+  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle});
 
   $AppUserCopyWith<$Res>? get user;
   $BundleCopyWith<$Res> get bundle;
@@ -66,7 +66,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as AppPage,
       bundle: bundle == freezed
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
@@ -97,7 +97,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
   @override
-  $Res call({Set<String> pending, AppUser? user, int selectedPage, Bundle bundle});
+  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -132,7 +132,7 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as AppPage,
       bundle: bundle == freezed
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
@@ -145,7 +145,10 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
 @JsonSerializable()
 class _$AppState$ implements AppState$ {
   const _$AppState$(
-      {final Set<String> pending = const <String>{}, this.user, this.selectedPage = 1, this.bundle = const Bundle()})
+      {final Set<String> pending = const <String>{},
+      this.user,
+      this.selectedPage = AppPage.home,
+      this.bundle = const Bundle()})
       : _pending = pending;
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
@@ -162,7 +165,7 @@ class _$AppState$ implements AppState$ {
   final AppUser? user;
   @override
   @JsonKey()
-  final int selectedPage;
+  final AppPage selectedPage;
   @override
   @JsonKey()
   final Bundle bundle;
@@ -204,7 +207,7 @@ class _$AppState$ implements AppState$ {
 
 abstract class AppState$ implements AppState {
   const factory AppState$(
-      {final Set<String> pending, final AppUser? user, final int selectedPage, final Bundle bundle}) = _$AppState$;
+      {final Set<String> pending, final AppUser? user, final AppPage selectedPage, final Bundle bundle}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -213,7 +216,7 @@ abstract class AppState$ implements AppState {
   @override
   AppUser? get user => throw _privateConstructorUsedError;
   @override
-  int get selectedPage => throw _privateConstructorUsedError;
+  AppPage get selectedPage => throw _privateConstructorUsedError;
   @override
   Bundle get bundle => throw _privateConstructorUsedError;
   @override

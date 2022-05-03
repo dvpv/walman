@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ChangeAppPage {
-  int get page => throw _privateConstructorUsedError;
+  AppPage get page => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChangeAppPageCopyWith<ChangeAppPage> get copyWith => throw _privateConstructorUsedError;
@@ -26,7 +26,7 @@ mixin _$ChangeAppPage {
 abstract class $ChangeAppPageCopyWith<$Res> {
   factory $ChangeAppPageCopyWith(ChangeAppPage value, $Res Function(ChangeAppPage) then) =
       _$ChangeAppPageCopyWithImpl<$Res>;
-  $Res call({int page});
+  $Res call({AppPage page});
 }
 
 /// @nodoc
@@ -45,7 +45,7 @@ class _$ChangeAppPageCopyWithImpl<$Res> implements $ChangeAppPageCopyWith<$Res> 
       page: page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
+              as AppPage,
     ));
   }
 }
@@ -55,7 +55,7 @@ abstract class $ChangeAppPage$CopyWith<$Res> implements $ChangeAppPageCopyWith<$
   factory $ChangeAppPage$CopyWith(ChangeAppPage$ value, $Res Function(ChangeAppPage$) then) =
       _$ChangeAppPage$CopyWithImpl<$Res>;
   @override
-  $Res call({int page});
+  $Res call({AppPage page});
 }
 
 /// @nodoc
@@ -75,7 +75,7 @@ class _$ChangeAppPage$CopyWithImpl<$Res> extends _$ChangeAppPageCopyWithImpl<$Re
       page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
+              as AppPage,
     ));
   }
 }
@@ -86,7 +86,7 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
   const _$ChangeAppPage$(this.page);
 
   @override
-  final int page;
+  final AppPage page;
 
   @override
   String toString() {
@@ -111,10 +111,10 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
 }
 
 abstract class ChangeAppPage$ implements ChangeAppPage {
-  const factory ChangeAppPage$(final int page) = _$ChangeAppPage$;
+  const factory ChangeAppPage$(final AppPage page) = _$ChangeAppPage$;
 
   @override
-  int get page => throw _privateConstructorUsedError;
+  AppPage get page => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith => throw _privateConstructorUsedError;

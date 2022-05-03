@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:walman/src/containers/state_container.dart';
+import 'package:walman/src/containers/navigation_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/components/app_bottom_navigation_bar.dart';
-import 'package:walman/src/presentation/components/search_delegate.dart';
+import 'package:walman/src/presentation/components/app_bar_element.dart';
+import 'package:walman/src/presentation/components/app_bars.dart';
 import 'package:walman/src/presentation/pages/codes_page.dart';
 import 'package:walman/src/presentation/pages/home_page.dart';
 import 'package:walman/src/presentation/pages/passwords_page.dart';
@@ -13,58 +13,62 @@ class IndexPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StateContainer(
-      builder: (BuildContext context, AppState state) {
+    return NavigationContainer(
+      builder: (BuildContext context, AppPage selectedPage) {
         late final Widget body;
-        switch (state.selectedPage) {
-          case 0:
+        late final PreferredSizeWidget appBar;
+        switch (selectedPage) {
+          case AppPage.home:
             body = const HomePage();
+            appBar = mainAppBar(context);
             break;
-          case 1:
+          case AppPage.passwords:
             body = const PasswordsPage();
+            appBar = passwordsAppBar(context);
             break;
-          case 2:
+          case AppPage.places:
             body = const PlacesPage();
+            appBar = passwordsAppBar(context);
             break;
-          case 3:
+          case AppPage.codes:
             body = const CodesPage();
-            break;
-          default:
-            body = const HomePage();
+            appBar = passwordsAppBar(context);
             break;
         }
         return Scaffold(
-          appBar: AppBar(
-            bottomOpacity: 0,
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            leading: IconButton(
+          appBar: appBar,
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: Container(
+            decoration: const BoxDecoration(
+              color: Colors.indigo,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              color: Colors.black,
               icon: const Icon(
-                Icons.sync,
-                color: Colors.black,
+                Icons.add,
+                color: Colors.white,
               ),
               onPressed: () {},
             ),
-            actions: <Widget>[
-              IconButton(
-                icon: const Icon(
-                  Icons.search,
-                  color: Colors.black,
-                ),
-                onPressed: () {
-                  showSearch(context: context, delegate: HomePageSearchDelegate());
-                },
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.settings,
-                  color: Colors.black,
-                ),
-                onPressed: () {},
-              ),
-            ],
           ),
-          bottomNavigationBar: const AppBottomNavigationBar(),
+          bottomNavigationBar: BottomAppBar(
+            color: Colors.indigo,
+            shape: const CircularNotchedRectangle(),
+            notchMargin: 8,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const <Widget>[
+                SizedBox(width: 4),
+                AppBarElement(icon: Icons.home, page: AppPage.home, label: 'Home'),
+                AppBarElement(icon: Icons.lock, page: AppPage.passwords, label: 'Passwords'),
+                SizedBox(width: 40),
+                AppBarElement(icon: Icons.location_on, page: AppPage.places, label: 'Places'),
+                AppBarElement(icon: Icons.qr_code, page: AppPage.codes, label: 'Codes'),
+                SizedBox(width: 4),
+              ],
+            ),
+          ),
           body: body,
         );
       },
