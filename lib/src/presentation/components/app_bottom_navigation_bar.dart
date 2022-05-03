@@ -4,14 +4,14 @@ import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/navigation_container.dart';
 import 'package:walman/src/models/index.dart';
 
-class HomeBottomNavigationBar extends StatefulWidget {
-  const HomeBottomNavigationBar({Key? key}) : super(key: key);
+class AppBottomNavigationBar extends StatefulWidget {
+  const AppBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
-  State<HomeBottomNavigationBar> createState() => _HomeBottomNavigationBarState();
+  State<AppBottomNavigationBar> createState() => _AppBottomNavigationBarState();
 }
 
-class _HomeBottomNavigationBarState extends State<HomeBottomNavigationBar> {
+class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return NavigationContainer(

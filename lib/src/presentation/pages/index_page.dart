@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:walman/src/containers/state_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/home/codes_page.dart';
-import 'package:walman/src/presentation/home/home_bottom_navigation_bar.dart';
-import 'package:walman/src/presentation/home/home_page.dart';
-import 'package:walman/src/presentation/home/passwords_page.dart';
-import 'package:walman/src/presentation/home/places_page.dart';
-import 'package:walman/src/presentation/home/search_delegate.dart';
+import 'package:walman/src/presentation/components/app_bottom_navigation_bar.dart';
+import 'package:walman/src/presentation/components/search_delegate.dart';
+import 'package:walman/src/presentation/pages/codes_page.dart';
+import 'package:walman/src/presentation/pages/home_page.dart';
+import 'package:walman/src/presentation/pages/passwords_page.dart';
+import 'package:walman/src/presentation/pages/places_page.dart';
 
 class IndexPage extends StatelessWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -64,7 +64,7 @@ class IndexPage extends StatelessWidget {
               ),
             ],
           ),
-          bottomNavigationBar: const HomeBottomNavigationBar(),
+          bottomNavigationBar: const AppBottomNavigationBar(),
           body: body,
         );
       },
