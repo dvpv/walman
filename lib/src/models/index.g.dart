@@ -9,24 +9,16 @@ part of 'index.dart';
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
       user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
-      selectedDrawerPage: $enumDecodeNullable(_$DrawerPageEnumMap, json['selectedDrawerPage']) ?? DrawerPage.home,
-      showAccountManagementOptions: json['showAccountManagementOptions'] as bool? ?? false,
+      selectedPage: json['selectedPage'] as int? ?? 1,
       bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
       'user': instance.user,
-      'selectedDrawerPage': _$DrawerPageEnumMap[instance.selectedDrawerPage],
-      'showAccountManagementOptions': instance.showAccountManagementOptions,
+      'selectedPage': instance.selectedPage,
       'bundle': instance.bundle,
     };
-
-const _$DrawerPageEnumMap = {
-  DrawerPage.home: 'home',
-  DrawerPage.passwords: 'passwords',
-  DrawerPage.addresses: 'addresses',
-};
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,

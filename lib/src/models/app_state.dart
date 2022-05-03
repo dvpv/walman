@@ -5,8 +5,7 @@ class AppState with _$AppState {
   const factory AppState({
     @Default(<String>{}) Set<String> pending,
     AppUser? user,
-    @Default(DrawerPage.home) DrawerPage selectedDrawerPage,
-    @Default(false) bool showAccountManagementOptions,
+    @Default(1) int selectedPage,
     @Default(Bundle()) Bundle bundle,
   }) = AppState$;
 

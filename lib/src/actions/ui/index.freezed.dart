@@ -15,167 +15,107 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ToggleAccountManagementList {}
-
-/// @nodoc
-abstract class $ToggleAccountManagementListCopyWith<$Res> {
-  factory $ToggleAccountManagementListCopyWith(
-          ToggleAccountManagementList value, $Res Function(ToggleAccountManagementList) then) =
-      _$ToggleAccountManagementListCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ToggleAccountManagementListCopyWithImpl<$Res> implements $ToggleAccountManagementListCopyWith<$Res> {
-  _$ToggleAccountManagementListCopyWithImpl(this._value, this._then);
-
-  final ToggleAccountManagementList _value;
-  // ignore: unused_field
-  final $Res Function(ToggleAccountManagementList) _then;
-}
-
-/// @nodoc
-abstract class $ToggleAccountManagementList$CopyWith<$Res> {
-  factory $ToggleAccountManagementList$CopyWith(
-          ToggleAccountManagementList$ value, $Res Function(ToggleAccountManagementList$) then) =
-      _$ToggleAccountManagementList$CopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ToggleAccountManagementList$CopyWithImpl<$Res> extends _$ToggleAccountManagementListCopyWithImpl<$Res>
-    implements $ToggleAccountManagementList$CopyWith<$Res> {
-  _$ToggleAccountManagementList$CopyWithImpl(
-      ToggleAccountManagementList$ _value, $Res Function(ToggleAccountManagementList$) _then)
-      : super(_value, (v) => _then(v as ToggleAccountManagementList$));
-
-  @override
-  ToggleAccountManagementList$ get _value => super._value as ToggleAccountManagementList$;
-}
-
-/// @nodoc
-
-class _$ToggleAccountManagementList$ implements ToggleAccountManagementList$ {
-  const _$ToggleAccountManagementList$();
-
-  @override
-  String toString() {
-    return 'ToggleAccountManagementList()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is ToggleAccountManagementList$);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-}
-
-abstract class ToggleAccountManagementList$ implements ToggleAccountManagementList {
-  const factory ToggleAccountManagementList$() = _$ToggleAccountManagementList$;
-}
-
-/// @nodoc
-mixin _$ChangeDrawerPage {
-  DrawerPage get newPage => throw _privateConstructorUsedError;
+mixin _$ChangeAppPage {
+  int get page => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ChangeDrawerPageCopyWith<ChangeDrawerPage> get copyWith => throw _privateConstructorUsedError;
+  $ChangeAppPageCopyWith<ChangeAppPage> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ChangeDrawerPageCopyWith<$Res> {
-  factory $ChangeDrawerPageCopyWith(ChangeDrawerPage value, $Res Function(ChangeDrawerPage) then) =
-      _$ChangeDrawerPageCopyWithImpl<$Res>;
-  $Res call({DrawerPage newPage});
+abstract class $ChangeAppPageCopyWith<$Res> {
+  factory $ChangeAppPageCopyWith(ChangeAppPage value, $Res Function(ChangeAppPage) then) =
+      _$ChangeAppPageCopyWithImpl<$Res>;
+  $Res call({int page});
 }
 
 /// @nodoc
-class _$ChangeDrawerPageCopyWithImpl<$Res> implements $ChangeDrawerPageCopyWith<$Res> {
-  _$ChangeDrawerPageCopyWithImpl(this._value, this._then);
+class _$ChangeAppPageCopyWithImpl<$Res> implements $ChangeAppPageCopyWith<$Res> {
+  _$ChangeAppPageCopyWithImpl(this._value, this._then);
 
-  final ChangeDrawerPage _value;
+  final ChangeAppPage _value;
   // ignore: unused_field
-  final $Res Function(ChangeDrawerPage) _then;
+  final $Res Function(ChangeAppPage) _then;
 
   @override
   $Res call({
-    Object? newPage = freezed,
+    Object? page = freezed,
   }) {
     return _then(_value.copyWith(
-      newPage: newPage == freezed
-          ? _value.newPage
-          : newPage // ignore: cast_nullable_to_non_nullable
-              as DrawerPage,
+      page: page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-abstract class $ChangeDrawerPage$CopyWith<$Res> implements $ChangeDrawerPageCopyWith<$Res> {
-  factory $ChangeDrawerPage$CopyWith(ChangeDrawerPage$ value, $Res Function(ChangeDrawerPage$) then) =
-      _$ChangeDrawerPage$CopyWithImpl<$Res>;
+abstract class $ChangeAppPage$CopyWith<$Res> implements $ChangeAppPageCopyWith<$Res> {
+  factory $ChangeAppPage$CopyWith(ChangeAppPage$ value, $Res Function(ChangeAppPage$) then) =
+      _$ChangeAppPage$CopyWithImpl<$Res>;
   @override
-  $Res call({DrawerPage newPage});
+  $Res call({int page});
 }
 
 /// @nodoc
-class _$ChangeDrawerPage$CopyWithImpl<$Res> extends _$ChangeDrawerPageCopyWithImpl<$Res>
-    implements $ChangeDrawerPage$CopyWith<$Res> {
-  _$ChangeDrawerPage$CopyWithImpl(ChangeDrawerPage$ _value, $Res Function(ChangeDrawerPage$) _then)
-      : super(_value, (v) => _then(v as ChangeDrawerPage$));
+class _$ChangeAppPage$CopyWithImpl<$Res> extends _$ChangeAppPageCopyWithImpl<$Res>
+    implements $ChangeAppPage$CopyWith<$Res> {
+  _$ChangeAppPage$CopyWithImpl(ChangeAppPage$ _value, $Res Function(ChangeAppPage$) _then)
+      : super(_value, (v) => _then(v as ChangeAppPage$));
 
   @override
-  ChangeDrawerPage$ get _value => super._value as ChangeDrawerPage$;
+  ChangeAppPage$ get _value => super._value as ChangeAppPage$;
 
   @override
   $Res call({
-    Object? newPage = freezed,
+    Object? page = freezed,
   }) {
-    return _then(ChangeDrawerPage$(
-      newPage == freezed
-          ? _value.newPage
-          : newPage // ignore: cast_nullable_to_non_nullable
-              as DrawerPage,
+    return _then(ChangeAppPage$(
+      page == freezed
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ChangeDrawerPage$ implements ChangeDrawerPage$ {
-  const _$ChangeDrawerPage$(this.newPage);
+class _$ChangeAppPage$ implements ChangeAppPage$ {
+  const _$ChangeAppPage$(this.page);
 
   @override
-  final DrawerPage newPage;
+  final int page;
 
   @override
   String toString() {
-    return 'ChangeDrawerPage(newPage: $newPage)';
+    return 'ChangeAppPage(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ChangeDrawerPage$ &&
-            const DeepCollectionEquality().equals(other.newPage, newPage));
+            other is ChangeAppPage$ &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(newPage));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
 
   @JsonKey(ignore: true)
   @override
-  $ChangeDrawerPage$CopyWith<ChangeDrawerPage$> get copyWith =>
-      _$ChangeDrawerPage$CopyWithImpl<ChangeDrawerPage$>(this, _$identity);
+  $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith =>
+      _$ChangeAppPage$CopyWithImpl<ChangeAppPage$>(this, _$identity);
 }
 
-abstract class ChangeDrawerPage$ implements ChangeDrawerPage {
-  const factory ChangeDrawerPage$(final DrawerPage newPage) = _$ChangeDrawerPage$;
+abstract class ChangeAppPage$ implements ChangeAppPage {
+  const factory ChangeAppPage$(final int page) = _$ChangeAppPage$;
 
   @override
-  DrawerPage get newPage => throw _privateConstructorUsedError;
+  int get page => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $ChangeDrawerPage$CopyWith<ChangeDrawerPage$> get copyWith => throw _privateConstructorUsedError;
+  $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith => throw _privateConstructorUsedError;
 }

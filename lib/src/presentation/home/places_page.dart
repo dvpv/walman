@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AddressesBody extends StatelessWidget {
-  const AddressesBody({Key? key}) : super(key: key);
+class PlacesPage extends StatelessWidget {
+  const PlacesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
