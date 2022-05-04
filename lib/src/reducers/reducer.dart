@@ -2,6 +2,8 @@ import 'package:redux/redux.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/reducers/auth_reducer.dart';
+import 'package:walman/src/reducers/local_reducer.dart';
+import 'package:walman/src/reducers/storage_reducer.dart';
 import 'package:walman/src/reducers/ui_reducer.dart';
 
 AppState reducer(AppState state, dynamic action) {
@@ -17,6 +19,8 @@ Reducer<AppState> _reducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, ActionDone>(_actionDone),
   authReducer,
   uiReducer,
+  storageReducer,
+  localReducer,
 ]);
 
 AppState _actionStart(AppState state, ActionStart action) {

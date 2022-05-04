@@ -15,14 +15,14 @@ class AppBarElement extends StatelessWidget {
   Widget build(BuildContext context) {
     return NavigationContainer(
       builder: (BuildContext context, AppPage currentPage) {
-        return GestureDetector(
-          onTap: () {
+        return MaterialButton(
+          onPressed: () {
             if (currentPage != page) {
               StoreProvider.of<AppState>(context).dispatch(ChangeAppPage(page));
             }
           },
           child: Padding(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[

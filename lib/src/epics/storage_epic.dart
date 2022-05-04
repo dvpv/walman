@@ -4,8 +4,8 @@ import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/models/index.dart';
 
-class AuthEpic {
-  AuthEpic(this._api);
+class StorageEpic {
+  StorageEpic(this._api);
 
   final SecureStorageApi _api;
 
@@ -30,8 +30,8 @@ class AuthEpic {
   Stream<StoreData> _storeDataStart(Stream<StoreDataStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreDataStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => _api.getData())
-          .map<StoreData>((Bundle? data) => StoreDataSuccessful(action.pendingId))
+          .asyncMap((_) => _api.storeData(store.state.bundle))
+          .mapTo<StoreData>(StoreDataSuccessful(action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => StoreDataError(error, stackTrace, action.pendingId),
           );

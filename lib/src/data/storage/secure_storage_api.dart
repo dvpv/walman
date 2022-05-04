@@ -23,7 +23,7 @@ class SecureStorageApi {
   }
 
   Future<void> storeData(Bundle bundle) async {
-    await _storage.write(key: _kBundleStorageKey, value: _encrypt(bundle.toString()));
+    await _storage.write(key: _kBundleStorageKey, value: _encrypt(jsonEncode(bundle)));
   }
 
   // TODO(dvpv): implement proper decryption and encryption

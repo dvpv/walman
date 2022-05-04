@@ -10,19 +10,12 @@ class PasswordsPage extends StatefulWidget {
 }
 
 class _PasswordsPageState extends State<PasswordsPage> {
-  final List<Password> passwords = <Password>[
-    Password(username: 'username', password: '12345', title: 'Site 1', note: '123', createdAt: DateTime.now()),
-    Password(username: 'usrnam3', password: 'somepassword', title: 'Site 2', note: '321', createdAt: DateTime.now()),
-    Password(username: 'username', password: '12345', title: 'Site 3', note: 'abc', createdAt: DateTime.now()),
-    Password(username: 'username', password: '12345', title: 'Site 4', note: 'efg', createdAt: DateTime.now()),
-    Password(username: 'username', password: '12345', title: 'Site 5', note: 'hij', createdAt: DateTime.now()),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Center(
       child: BundleContainer(
         builder: (BuildContext context, Bundle bundle) {
+          final List<Password> passwords = bundle.passwords;
           return ListView.builder(
             itemCount: passwords.length,
             itemBuilder: (BuildContext context, int index) {
