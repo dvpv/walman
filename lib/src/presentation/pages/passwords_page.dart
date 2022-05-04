@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/models/index.dart';
 
@@ -25,7 +26,15 @@ class _PasswordsPageState extends State<PasswordsPage> {
                 subtitle: Text(password.username),
                 trailing: IconButton(
                   icon: const Icon(Icons.copy),
-                  onPressed: () {},
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(text: password.password));
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Password for ${password.title} copied to your clipboard'),
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  },
                 ),
                 onTap: () {},
               );
