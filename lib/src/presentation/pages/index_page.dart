@@ -3,10 +3,10 @@ import 'package:walman/src/containers/navigation_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/app_bar_element.dart';
 import 'package:walman/src/presentation/components/search_delegate.dart';
-import 'package:walman/src/presentation/pages/codes_page.dart';
+import 'package:walman/src/presentation/pages/code/codes_page.dart';
 import 'package:walman/src/presentation/pages/home_page.dart';
-import 'package:walman/src/presentation/pages/passwords_page.dart';
-import 'package:walman/src/presentation/pages/places_page.dart';
+import 'package:walman/src/presentation/pages/password/passwords_page.dart';
+import 'package:walman/src/presentation/pages/place/places_page.dart';
 
 class IndexPage extends StatelessWidget {
   const IndexPage({Key? key}) : super(key: key);
