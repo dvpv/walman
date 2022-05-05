@@ -12,7 +12,21 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$ChangeAppPageTearOff {
+  const _$ChangeAppPageTearOff();
+
+  ChangeAppPage$ call(AppPage page) {
+    return ChangeAppPage$(
+      page,
+    );
+  }
+}
+
+/// @nodoc
+const $ChangeAppPage = _$ChangeAppPageTearOff();
 
 /// @nodoc
 mixin _$ChangeAppPage {
@@ -111,10 +125,10 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
 }
 
 abstract class ChangeAppPage$ implements ChangeAppPage {
-  const factory ChangeAppPage$(final AppPage page) = _$ChangeAppPage$;
+  const factory ChangeAppPage$(AppPage page) = _$ChangeAppPage$;
 
   @override
-  AppPage get page => throw _privateConstructorUsedError;
+  AppPage get page;
   @override
   @JsonKey(ignore: true)
   $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith => throw _privateConstructorUsedError;

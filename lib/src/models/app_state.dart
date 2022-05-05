@@ -11,10 +11,3 @@ class AppState with _$AppState {
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
 }
-
-enum AppPage {
-  home,
-  passwords,
-  places,
-  codes,
-}

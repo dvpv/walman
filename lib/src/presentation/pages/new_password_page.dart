@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:uuid/uuid.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/models/index.dart';
 
@@ -29,10 +30,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
       StoreProvider.of<AppState>(context).dispatch(
         CreateNewPassword(
           Password(
+            id: const Uuid().v4(),
             title: _title.text,
             username: _username.text,
             password: _password.text,
             note: _note.text,
+            lastAccess: DateTime.now(),
             createdAt: DateTime.now(),
           ),
         ),

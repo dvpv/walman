@@ -6,6 +6,10 @@ part of 'index.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$Address$ _$$Address$FromJson(Map<String, dynamic> json) => _$Address$();
+
+Map<String, dynamic> _$$Address$ToJson(_$Address$ instance) => <String, dynamic>{};
+
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
       user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -39,22 +43,6 @@ Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>
       'username': instance.username,
     };
 
-_$Password$ _$$Password$FromJson(Map<String, dynamic> json) => _$Password$(
-      title: json['title'] as String,
-      username: json['username'] as String,
-      password: json['password'] as String,
-      note: json['note'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-    );
-
-Map<String, dynamic> _$$Password$ToJson(_$Password$ instance) => <String, dynamic>{
-      'title': instance.title,
-      'username': instance.username,
-      'password': instance.password,
-      'note': instance.note,
-      'createdAt': instance.createdAt.toIso8601String(),
-    };
-
 _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(
       passwords:
           (json['passwords'] as List<dynamic>?)?.map((e) => Password.fromJson(e as Map<String, dynamic>)).toList() ??
@@ -63,4 +51,26 @@ _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(
 
 Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
       'passwords': instance.passwords,
+    };
+
+_$Password$ _$$Password$FromJson(Map<String, dynamic> json) => _$Password$(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      username: json['username'] as String,
+      password: json['password'] as String,
+      note: json['note'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      lastAccess: DateTime.parse(json['lastAccess'] as String),
+      timesAccessed: json['timesAccessed'] as int? ?? 0,
+    );
+
+Map<String, dynamic> _$$Password$ToJson(_$Password$ instance) => <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'username': instance.username,
+      'password': instance.password,
+      'note': instance.note,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'lastAccess': instance.lastAccess.toIso8601String(),
+      'timesAccessed': instance.timesAccessed,
     };

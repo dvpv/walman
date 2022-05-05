@@ -12,11 +12,41 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$GetDataTearOff {
+  const _$GetDataTearOff();
+
+  GetDataStart start({String pendingId = _kGetDataPendingId}) {
+    return GetDataStart(
+      pendingId: pendingId,
+    );
+  }
+
+  GetDataSuccessful successful(Bundle? bundle, [String pendingId = _kGetDataPendingId]) {
+    return GetDataSuccessful(
+      bundle,
+      pendingId,
+    );
+  }
+
+  GetDataError error(Object error, StackTrace stackTrace, [String pendingId = _kGetDataPendingId]) {
+    return GetDataError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $GetData = _$GetDataTearOff();
 
 /// @nodoc
 mixin _$GetData {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
@@ -124,11 +154,12 @@ class _$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imple
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$GetDataStart implements GetDataStart {
   const _$GetDataStart({this.pendingId = _kGetDataPendingId});
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -221,10 +252,10 @@ class _$GetDataStart implements GetDataStart {
 }
 
 abstract class GetDataStart implements GetData, ActionStart {
-  const factory GetDataStart({final String pendingId}) = _$GetDataStart;
+  const factory GetDataStart({String pendingId}) = _$GetDataStart;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $GetDataStartCopyWith<GetDataStart> get copyWith => throw _privateConstructorUsedError;
@@ -280,13 +311,14 @@ class _$GetDataSuccessfulCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$GetDataSuccessful implements GetDataSuccessful {
   const _$GetDataSuccessful(this.bundle, [this.pendingId = _kGetDataPendingId]);
 
   @override
   final Bundle? bundle;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -382,11 +414,11 @@ class _$GetDataSuccessful implements GetDataSuccessful {
 }
 
 abstract class GetDataSuccessful implements GetData, ActionDone {
-  const factory GetDataSuccessful(final Bundle? bundle, [final String pendingId]) = _$GetDataSuccessful;
+  const factory GetDataSuccessful(Bundle? bundle, [String pendingId]) = _$GetDataSuccessful;
 
-  Bundle? get bundle => throw _privateConstructorUsedError;
+  Bundle? get bundle;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $GetDataSuccessfulCopyWith<GetDataSuccessful> get copyWith => throw _privateConstructorUsedError;
@@ -433,6 +465,8 @@ class _$GetDataErrorCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imple
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$GetDataError implements GetDataError {
   const _$GetDataError(this.error, this.stackTrace, [this.pendingId = _kGetDataPendingId]);
 
@@ -440,8 +474,8 @@ class _$GetDataError implements GetDataError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -537,21 +571,49 @@ class _$GetDataError implements GetDataError {
 }
 
 abstract class GetDataError implements GetData, ActionDone, ErrorAction {
-  const factory GetDataError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
-      _$GetDataError;
+  const factory GetDataError(Object error, StackTrace stackTrace, [String pendingId]) = _$GetDataError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $GetDataErrorCopyWith<GetDataError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+class _$StoreDataTearOff {
+  const _$StoreDataTearOff();
+
+  StoreDataStart start({String pendingId = _kStoreDataPendingId}) {
+    return StoreDataStart(
+      pendingId: pendingId,
+    );
+  }
+
+  StoreDataSuccessful successful([String pendingId = _kStoreDataPendingId]) {
+    return StoreDataSuccessful(
+      pendingId,
+    );
+  }
+
+  StoreDataError error(Object error, StackTrace stackTrace, [String pendingId = _kStoreDataPendingId]) {
+    return StoreDataError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $StoreData = _$StoreDataTearOff();
+
+/// @nodoc
 mixin _$StoreData {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
@@ -660,11 +722,12 @@ class _$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$StoreDataStart implements StoreDataStart {
   const _$StoreDataStart({this.pendingId = _kStoreDataPendingId});
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -758,10 +821,10 @@ class _$StoreDataStart implements StoreDataStart {
 }
 
 abstract class StoreDataStart implements StoreData, ActionStart {
-  const factory StoreDataStart({final String pendingId}) = _$StoreDataStart;
+  const factory StoreDataStart({String pendingId}) = _$StoreDataStart;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $StoreDataStartCopyWith<StoreDataStart> get copyWith => throw _privateConstructorUsedError;
@@ -799,11 +862,12 @@ class _$StoreDataSuccessfulCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$R
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$StoreDataSuccessful implements StoreDataSuccessful {
   const _$StoreDataSuccessful([this.pendingId = _kStoreDataPendingId]);
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -897,10 +961,10 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
 }
 
 abstract class StoreDataSuccessful implements StoreData, ActionDone {
-  const factory StoreDataSuccessful([final String pendingId]) = _$StoreDataSuccessful;
+  const factory StoreDataSuccessful([String pendingId]) = _$StoreDataSuccessful;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $StoreDataSuccessfulCopyWith<StoreDataSuccessful> get copyWith => throw _privateConstructorUsedError;
@@ -948,6 +1012,8 @@ class _$StoreDataErrorCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$StoreDataError implements StoreDataError {
   const _$StoreDataError(this.error, this.stackTrace, [this.pendingId = _kStoreDataPendingId]);
 
@@ -955,8 +1021,8 @@ class _$StoreDataError implements StoreDataError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -1053,13 +1119,12 @@ class _$StoreDataError implements StoreDataError {
 }
 
 abstract class StoreDataError implements StoreData, ActionDone, ErrorAction {
-  const factory StoreDataError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
-      _$StoreDataError;
+  const factory StoreDataError(Object error, StackTrace stackTrace, [String pendingId]) = _$StoreDataError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $StoreDataErrorCopyWith<StoreDataError> get copyWith => throw _privateConstructorUsedError;

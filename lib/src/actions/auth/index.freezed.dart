@@ -12,11 +12,48 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$LoginTearOff {
+  const _$LoginTearOff();
+
+  LoginStart start(
+      {required String email,
+      required String password,
+      required ActionResult onResult,
+      String pendingId = _kLoginPendingId}) {
+    return LoginStart(
+      email: email,
+      password: password,
+      onResult: onResult,
+      pendingId: pendingId,
+    );
+  }
+
+  LoginSuccessful successful(AppUser user, [String pendingId = _kLoginPendingId]) {
+    return LoginSuccessful(
+      user,
+      pendingId,
+    );
+  }
+
+  LoginError error(Object error, StackTrace stackTrace, [String pendingId = _kLoginPendingId]) {
+    return LoginError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $Login = _$LoginTearOff();
 
 /// @nodoc
 mixin _$Login {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password, ActionResult onResult, String pendingId) start,
@@ -138,6 +175,7 @@ class _$LoginStartCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implement
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$LoginStart implements LoginStart {
   const _$LoginStart(
       {required this.email, required this.password, required this.onResult, this.pendingId = _kLoginPendingId});
@@ -148,8 +186,8 @@ class _$LoginStart implements LoginStart {
   final String password;
   @override
   final ActionResult onResult;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -247,16 +285,16 @@ class _$LoginStart implements LoginStart {
 
 abstract class LoginStart implements Login, ActionStart {
   const factory LoginStart(
-      {required final String email,
-      required final String password,
-      required final ActionResult onResult,
-      final String pendingId}) = _$LoginStart;
+      {required String email,
+      required String password,
+      required ActionResult onResult,
+      String pendingId}) = _$LoginStart;
 
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
-  ActionResult get onResult => throw _privateConstructorUsedError;
+  String get email;
+  String get password;
+  ActionResult get onResult;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $LoginStartCopyWith<LoginStart> get copyWith => throw _privateConstructorUsedError;
@@ -307,13 +345,14 @@ class _$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> impl
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$LoginSuccessful implements LoginSuccessful {
   const _$LoginSuccessful(this.user, [this.pendingId = _kLoginPendingId]);
 
   @override
   final AppUser user;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -409,11 +448,11 @@ class _$LoginSuccessful implements LoginSuccessful {
 }
 
 abstract class LoginSuccessful implements Login, ActionDone {
-  const factory LoginSuccessful(final AppUser user, [final String pendingId]) = _$LoginSuccessful;
+  const factory LoginSuccessful(AppUser user, [String pendingId]) = _$LoginSuccessful;
 
-  AppUser get user => throw _privateConstructorUsedError;
+  AppUser get user;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $LoginSuccessfulCopyWith<LoginSuccessful> get copyWith => throw _privateConstructorUsedError;
@@ -459,6 +498,8 @@ class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implement
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$LoginError implements LoginError {
   const _$LoginError(this.error, this.stackTrace, [this.pendingId = _kLoginPendingId]);
 
@@ -466,8 +507,8 @@ class _$LoginError implements LoginError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -563,20 +604,59 @@ class _$LoginError implements LoginError {
 }
 
 abstract class LoginError implements Login, ActionDone, ErrorAction {
-  const factory LoginError(final Object error, final StackTrace stackTrace, [final String pendingId]) = _$LoginError;
+  const factory LoginError(Object error, StackTrace stackTrace, [String pendingId]) = _$LoginError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $LoginErrorCopyWith<LoginError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+class _$SignUpTearOff {
+  const _$SignUpTearOff();
+
+  SignUpStart start(
+      {required String email,
+      required String password,
+      required String username,
+      required ActionResult onResult,
+      String pendingId = _kSignUpPendingId}) {
+    return SignUpStart(
+      email: email,
+      password: password,
+      username: username,
+      onResult: onResult,
+      pendingId: pendingId,
+    );
+  }
+
+  SignUpSuccessful successful(AppUser user, [String pendingId = _kSignUpPendingId]) {
+    return SignUpSuccessful(
+      user,
+      pendingId,
+    );
+  }
+
+  SignUpError error(Object error, StackTrace stackTrace, [String pendingId = _kSignUpPendingId]) {
+    return SignUpError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $SignUp = _$SignUpTearOff();
+
+/// @nodoc
 mixin _$SignUp {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password, String username, ActionResult onResult, String pendingId)
@@ -704,6 +784,7 @@ class _$SignUpStartCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$SignUpStart implements SignUpStart {
   const _$SignUpStart(
       {required this.email,
@@ -720,8 +801,8 @@ class _$SignUpStart implements SignUpStart {
   final String username;
   @override
   final ActionResult onResult;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -826,18 +907,18 @@ class _$SignUpStart implements SignUpStart {
 
 abstract class SignUpStart implements SignUp, ActionStart {
   const factory SignUpStart(
-      {required final String email,
-      required final String password,
-      required final String username,
-      required final ActionResult onResult,
-      final String pendingId}) = _$SignUpStart;
+      {required String email,
+      required String password,
+      required String username,
+      required ActionResult onResult,
+      String pendingId}) = _$SignUpStart;
 
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
-  ActionResult get onResult => throw _privateConstructorUsedError;
+  String get email;
+  String get password;
+  String get username;
+  ActionResult get onResult;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $SignUpStartCopyWith<SignUpStart> get copyWith => throw _privateConstructorUsedError;
@@ -889,13 +970,14 @@ class _$SignUpSuccessfulCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$SignUpSuccessful implements SignUpSuccessful {
   const _$SignUpSuccessful(this.user, [this.pendingId = _kSignUpPendingId]);
 
   @override
   final AppUser user;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -992,11 +1074,11 @@ class _$SignUpSuccessful implements SignUpSuccessful {
 }
 
 abstract class SignUpSuccessful implements SignUp, ActionDone {
-  const factory SignUpSuccessful(final AppUser user, [final String pendingId]) = _$SignUpSuccessful;
+  const factory SignUpSuccessful(AppUser user, [String pendingId]) = _$SignUpSuccessful;
 
-  AppUser get user => throw _privateConstructorUsedError;
+  AppUser get user;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $SignUpSuccessfulCopyWith<SignUpSuccessful> get copyWith => throw _privateConstructorUsedError;
@@ -1042,6 +1124,8 @@ class _$SignUpErrorCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$SignUpError implements SignUpError {
   const _$SignUpError(this.error, this.stackTrace, [this.pendingId = _kSignUpPendingId]);
 
@@ -1049,8 +1133,8 @@ class _$SignUpError implements SignUpError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -1147,20 +1231,49 @@ class _$SignUpError implements SignUpError {
 }
 
 abstract class SignUpError implements SignUp, ActionDone, ErrorAction {
-  const factory SignUpError(final Object error, final StackTrace stackTrace, [final String pendingId]) = _$SignUpError;
+  const factory SignUpError(Object error, StackTrace stackTrace, [String pendingId]) = _$SignUpError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $SignUpErrorCopyWith<SignUpError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
+class _$LogoutTearOff {
+  const _$LogoutTearOff();
+
+  LogoutStart start({String pendingId = _kLogoutPendingId}) {
+    return LogoutStart(
+      pendingId: pendingId,
+    );
+  }
+
+  LogoutSuccessful successful([String pendingId = _kLogoutPendingId]) {
+    return LogoutSuccessful(
+      pendingId,
+    );
+  }
+
+  LogoutError error(Object error, StackTrace stackTrace, [String pendingId = _kLogoutPendingId]) {
+    return LogoutError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $Logout = _$LogoutTearOff();
+
+/// @nodoc
 mixin _$Logout {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
@@ -1267,11 +1380,12 @@ class _$LogoutStartCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$LogoutStart implements LogoutStart {
   const _$LogoutStart({this.pendingId = _kLogoutPendingId});
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -1364,10 +1478,10 @@ class _$LogoutStart implements LogoutStart {
 }
 
 abstract class LogoutStart implements Logout, ActionStart {
-  const factory LogoutStart({final String pendingId}) = _$LogoutStart;
+  const factory LogoutStart({String pendingId}) = _$LogoutStart;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $LogoutStartCopyWith<LogoutStart> get copyWith => throw _privateConstructorUsedError;
@@ -1405,11 +1519,12 @@ class _$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$LogoutSuccessful implements LogoutSuccessful {
   const _$LogoutSuccessful([this.pendingId = _kLogoutPendingId]);
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -1503,10 +1618,10 @@ class _$LogoutSuccessful implements LogoutSuccessful {
 }
 
 abstract class LogoutSuccessful implements Logout, ActionDone {
-  const factory LogoutSuccessful([final String pendingId]) = _$LogoutSuccessful;
+  const factory LogoutSuccessful([String pendingId]) = _$LogoutSuccessful;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $LogoutSuccessfulCopyWith<LogoutSuccessful> get copyWith => throw _privateConstructorUsedError;
@@ -1552,6 +1667,8 @@ class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$LogoutError implements LogoutError {
   const _$LogoutError(this.error, this.stackTrace, [this.pendingId = _kLogoutPendingId]);
 
@@ -1559,8 +1676,8 @@ class _$LogoutError implements LogoutError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -1656,16 +1773,41 @@ class _$LogoutError implements LogoutError {
 }
 
 abstract class LogoutError implements Logout, ActionDone, ErrorAction {
-  const factory LogoutError(final Object error, final StackTrace stackTrace, [final String pendingId]) = _$LogoutError;
+  const factory LogoutError(Object error, StackTrace stackTrace, [String pendingId]) = _$LogoutError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
   $LogoutErrorCopyWith<LogoutError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$GetCurrentUserTearOff {
+  const _$GetCurrentUserTearOff();
+
+  GetCurrentUserStart call() {
+    return const GetCurrentUserStart();
+  }
+
+  GetCurrentUserSuccessful successful(AppUser? user) {
+    return GetCurrentUserSuccessful(
+      user,
+    );
+  }
+
+  GetCurrentUserError error(Object error, StackTrace stackTrace) {
+    return GetCurrentUserError(
+      error,
+      stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $GetCurrentUser = _$GetCurrentUserTearOff();
 
 /// @nodoc
 mixin _$GetCurrentUser {
@@ -1979,9 +2121,9 @@ class _$GetCurrentUserSuccessful implements GetCurrentUserSuccessful {
 }
 
 abstract class GetCurrentUserSuccessful implements GetCurrentUser {
-  const factory GetCurrentUserSuccessful(final AppUser? user) = _$GetCurrentUserSuccessful;
+  const factory GetCurrentUserSuccessful(AppUser? user) = _$GetCurrentUserSuccessful;
 
-  AppUser? get user => throw _privateConstructorUsedError;
+  AppUser? get user;
   @JsonKey(ignore: true)
   $GetCurrentUserSuccessfulCopyWith<GetCurrentUserSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
@@ -2022,6 +2164,7 @@ class _$GetCurrentUserErrorCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithIm
 
 /// @nodoc
 
+@Implements<ErrorAction>()
 class _$GetCurrentUserError implements GetCurrentUserError {
   const _$GetCurrentUserError(this.error, this.stackTrace);
 
@@ -2123,10 +2266,10 @@ class _$GetCurrentUserError implements GetCurrentUserError {
 }
 
 abstract class GetCurrentUserError implements GetCurrentUser, ErrorAction {
-  const factory GetCurrentUserError(final Object error, final StackTrace stackTrace) = _$GetCurrentUserError;
+  const factory GetCurrentUserError(Object error, StackTrace stackTrace) = _$GetCurrentUserError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @JsonKey(ignore: true)
   $GetCurrentUserErrorCopyWith<GetCurrentUserError> get copyWith => throw _privateConstructorUsedError;
 }
