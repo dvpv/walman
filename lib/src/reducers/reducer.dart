@@ -16,6 +16,9 @@ AppState reducer(AppState state, dynamic action) {
       print(action.error);
     }
   }
+  if (kDebugMode) {
+    print(action);
+  }
   final AppState newState = _reducer(state, action);
   return newState;
 }

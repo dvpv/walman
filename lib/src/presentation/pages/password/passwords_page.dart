@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/password/password_details_page.dart';
 
 class PasswordsPage extends StatefulWidget {
   const PasswordsPage({Key? key}) : super(key: key);
@@ -11,6 +12,12 @@ class PasswordsPage extends StatefulWidget {
 }
 
 class _PasswordsPageState extends State<PasswordsPage> {
+  @override
+  void initState() {
+    FocusManager.instance.primaryFocus?.unfocus();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -36,7 +43,7 @@ class _PasswordsPageState extends State<PasswordsPage> {
                     );
                   },
                 ),
-                onTap: () {},
+                onTap: () => Navigator.pushNamed(context, PasswordDetailsPage.route, arguments: password),
               );
             },
           );

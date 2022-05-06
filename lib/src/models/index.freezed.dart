@@ -110,12 +110,14 @@ class _$AppStateTearOff {
       {Set<String> pending = const <String>{},
       AppUser? user,
       AppPage selectedPage = AppPage.home,
-      Bundle bundle = const Bundle()}) {
+      Bundle bundle = const Bundle(),
+      bool editing = false}) {
     return AppState$(
       pending: pending,
       user: user,
       selectedPage: selectedPage,
       bundle: bundle,
+      editing: editing,
     );
   }
 
@@ -133,6 +135,7 @@ mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
   AppPage get selectedPage => throw _privateConstructorUsedError;
   Bundle get bundle => throw _privateConstructorUsedError;
+  bool get editing => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -142,7 +145,7 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
-  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle});
+  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, bool editing});
 
   $AppUserCopyWith<$Res>? get user;
   $BundleCopyWith<$Res> get bundle;
@@ -162,6 +165,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? user = freezed,
     Object? selectedPage = freezed,
     Object? bundle = freezed,
+    Object? editing = freezed,
   }) {
     return _then(_value.copyWith(
       pending: pending == freezed
@@ -180,6 +184,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
               as Bundle,
+      editing: editing == freezed
+          ? _value.editing
+          : editing // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -206,7 +214,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
   @override
-  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle});
+  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, bool editing});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -228,6 +236,7 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
     Object? user = freezed,
     Object? selectedPage = freezed,
     Object? bundle = freezed,
+    Object? editing = freezed,
   }) {
     return _then(AppState$(
       pending: pending == freezed
@@ -246,6 +255,10 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
               as Bundle,
+      editing: editing == freezed
+          ? _value.editing
+          : editing // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -254,7 +267,11 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
 @JsonSerializable()
 class _$AppState$ implements AppState$ {
   const _$AppState$(
-      {this.pending = const <String>{}, this.user, this.selectedPage = AppPage.home, this.bundle = const Bundle()});
+      {this.pending = const <String>{},
+      this.user,
+      this.selectedPage = AppPage.home,
+      this.bundle = const Bundle(),
+      this.editing = false});
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
@@ -269,10 +286,13 @@ class _$AppState$ implements AppState$ {
   @JsonKey()
   @override
   final Bundle bundle;
+  @JsonKey()
+  @override
+  final bool editing;
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle)';
+    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle, editing: $editing)';
   }
 
   @override
@@ -283,7 +303,8 @@ class _$AppState$ implements AppState$ {
             const DeepCollectionEquality().equals(other.pending, pending) &&
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
-            const DeepCollectionEquality().equals(other.bundle, bundle));
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.editing, editing));
   }
 
   @override
@@ -292,7 +313,8 @@ class _$AppState$ implements AppState$ {
       const DeepCollectionEquality().hash(pending),
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(selectedPage),
-      const DeepCollectionEquality().hash(bundle));
+      const DeepCollectionEquality().hash(bundle),
+      const DeepCollectionEquality().hash(editing));
 
   @JsonKey(ignore: true)
   @override
@@ -305,7 +327,8 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle}) = _$AppState$;
+  const factory AppState$({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, bool editing}) =
+      _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -317,6 +340,8 @@ abstract class AppState$ implements AppState {
   AppPage get selectedPage;
   @override
   Bundle get bundle;
+  @override
+  bool get editing;
   @override
   @JsonKey(ignore: true)
   $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;

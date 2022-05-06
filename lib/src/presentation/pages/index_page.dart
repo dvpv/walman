@@ -68,12 +68,14 @@ class IndexPage extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: IconButton(
-              color: Colors.black,
+              splashRadius: 24,
+              iconSize: 24,
               icon: const Icon(
                 Icons.add,
                 color: Colors.white,
               ),
               onPressed: () {
+                FocusManager.instance.primaryFocus?.unfocus();
                 showModalBottomSheet<void>(
                   context: context,
                   builder: (BuildContext context) {
@@ -114,6 +116,7 @@ class IndexPage extends StatelessWidget {
               },
             ),
           ),
+          resizeToAvoidBottomInset: false,
           bottomNavigationBar: BottomAppBar(
             color: Colors.indigo,
             shape: const CircularNotchedRectangle(),
@@ -123,6 +126,7 @@ class IndexPage extends StatelessWidget {
               children: const <Widget>[
                 AppBarElement(icon: Icons.home, page: AppPage.home, label: 'Home'),
                 AppBarElement(icon: Icons.lock, page: AppPage.passwords, label: 'Passwords'),
+                SizedBox(width: 24),
                 AppBarElement(icon: Icons.location_on, page: AppPage.places, label: 'Places'),
                 AppBarElement(icon: Icons.qr_code, page: AppPage.codes, label: 'Codes'),
               ],

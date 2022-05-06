@@ -5,3 +5,4 @@ import 'package:walman/src/models/index.dart';
 part 'index.freezed.dart';
 
 part 'app_page.dart';
+part 'edit.dart';

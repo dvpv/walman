@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/navigation_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class AppBarElement extends StatelessWidget {
   const AppBarElement({Key? key, required this.icon, required this.page, required this.label}) : super(key: key);
@@ -15,29 +16,27 @@ class AppBarElement extends StatelessWidget {
   Widget build(BuildContext context) {
     return NavigationContainer(
       builder: (BuildContext context, AppPage currentPage) {
-        return MaterialButton(
+        return TextButton(
+          style: appBarButtonStyle(borderRadius: 100),
           onPressed: () {
             if (currentPage != page) {
               StoreProvider.of<AppState>(context).dispatch(ChangeAppPage(page));
             }
           },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Icon(
-                  icon,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Icon(
+                icon,
+                color: currentPage == page ? Colors.white : Colors.white70,
+              ),
+              Text(
+                label,
+                style: TextStyle(
                   color: currentPage == page ? Colors.white : Colors.white70,
                 ),
-                Text(
-                  label,
-                  style: TextStyle(
-                    color: currentPage == page ? Colors.white : Colors.white70,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       },

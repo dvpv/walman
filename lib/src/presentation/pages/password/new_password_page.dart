@@ -78,7 +78,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
       body: Form(
         key: _formKey,
         child: ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(24),
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -88,9 +88,9 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
                 maxLength: 20,
+                enableSuggestions: false,
                 decoration: const InputDecoration(
                   labelText: 'Title',
-                  border: OutlineInputBorder(),
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
@@ -110,9 +110,9 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 focusNode: _usernameNode,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
+                enableSuggestions: false,
                 decoration: const InputDecoration(
                   labelText: 'Username / Email Address',
-                  border: OutlineInputBorder(),
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
@@ -133,9 +133,9 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
                 textInputAction: TextInputAction.next,
+                enableSuggestions: false,
                 decoration: const InputDecoration(
                   labelText: 'Password',
-                  border: OutlineInputBorder(),
                 ),
                 validator: (String? value) {
                   if (value == null || value.isEmpty) {
@@ -154,15 +154,13 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                 controller: _note,
                 focusNode: _noteNode,
                 keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.done,
                 maxLength: 120,
+                enableSuggestions: false,
                 decoration: const InputDecoration(
                   labelText: 'Note',
-                  border: OutlineInputBorder(),
                 ),
-                onFieldSubmitted: (_) {
-                  FocusScope.of(context).requestFocus(_noteNode);
-                },
+                onFieldSubmitted: (_) => _onSubmit(context),
               ),
             ),
           ],
