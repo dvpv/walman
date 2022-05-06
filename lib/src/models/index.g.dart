@@ -15,7 +15,9 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
       selectedPage: $enumDecodeNullable(_$AppPageEnumMap, json['selectedPage']) ?? AppPage.home,
       bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
-      editing: json['editing'] as bool? ?? false,
+      detailsState: json['detailsState'] == null
+          ? const DetailsState()
+          : DetailsState.fromJson(json['detailsState'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
@@ -23,7 +25,7 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynami
       'user': instance.user,
       'selectedPage': _$AppPageEnumMap[instance.selectedPage],
       'bundle': instance.bundle,
-      'editing': instance.editing,
+      'detailsState': instance.detailsState,
     };
 
 const _$AppPageEnumMap = {
@@ -32,6 +34,16 @@ const _$AppPageEnumMap = {
   AppPage.places: 'places',
   AppPage.codes: 'codes',
 };
+
+_$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) => _$DetailsState$(
+      editing: json['editing'] as bool? ?? false,
+      password: json['password'] == null ? null : Password.fromJson(json['password'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$DetailsState$ToJson(_$DetailsState$ instance) => <String, dynamic>{
+      'editing': instance.editing,
+      'password': instance.password,
+    };
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/password/password_details_page.dart';
@@ -43,7 +45,14 @@ class _PasswordsPageState extends State<PasswordsPage> {
                     );
                   },
                 ),
-                onTap: () => Navigator.pushNamed(context, PasswordDetailsPage.route, arguments: password),
+                onTap: () {
+                  StoreProvider.of<AppState>(context).dispatch(
+                    SetDetailsPasswordTargetStart(
+                      password,
+                      (_) => Navigator.pushNamed(context, PasswordDetailsPage.route),
+                    ),
+                  );
+                },
               );
             },
           );

@@ -3,15 +3,15 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:walman/src/models/index.dart';
 
-class EditingContainer extends StatelessWidget {
-  const EditingContainer({Key? key, required this.builder}) : super(key: key);
+class DetailsContainer extends StatelessWidget {
+  const DetailsContainer({Key? key, required this.builder}) : super(key: key);
 
-  final ViewModelBuilder<bool> builder;
+  final ViewModelBuilder<DetailsState> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, bool>(
-      converter: (Store<AppState> store) => store.state.editing,
+    return StoreConnector<AppState, DetailsState>(
+      converter: (Store<AppState> store) => store.state.detailsState,
       builder: builder,
     );
   }

@@ -111,13 +111,13 @@ class _$AppStateTearOff {
       AppUser? user,
       AppPage selectedPage = AppPage.home,
       Bundle bundle = const Bundle(),
-      bool editing = false}) {
+      DetailsState detailsState = const DetailsState()}) {
     return AppState$(
       pending: pending,
       user: user,
       selectedPage: selectedPage,
       bundle: bundle,
-      editing: editing,
+      detailsState: detailsState,
     );
   }
 
@@ -135,7 +135,7 @@ mixin _$AppState {
   AppUser? get user => throw _privateConstructorUsedError;
   AppPage get selectedPage => throw _privateConstructorUsedError;
   Bundle get bundle => throw _privateConstructorUsedError;
-  bool get editing => throw _privateConstructorUsedError;
+  DetailsState get detailsState => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -145,10 +145,11 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
-  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, bool editing});
+  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, DetailsState detailsState});
 
   $AppUserCopyWith<$Res>? get user;
   $BundleCopyWith<$Res> get bundle;
+  $DetailsStateCopyWith<$Res> get detailsState;
 }
 
 /// @nodoc
@@ -165,7 +166,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? user = freezed,
     Object? selectedPage = freezed,
     Object? bundle = freezed,
-    Object? editing = freezed,
+    Object? detailsState = freezed,
   }) {
     return _then(_value.copyWith(
       pending: pending == freezed
@@ -184,10 +185,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
               as Bundle,
-      editing: editing == freezed
-          ? _value.editing
-          : editing // ignore: cast_nullable_to_non_nullable
-              as bool,
+      detailsState: detailsState == freezed
+          ? _value.detailsState
+          : detailsState // ignore: cast_nullable_to_non_nullable
+              as DetailsState,
     ));
   }
 
@@ -208,18 +209,27 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       return _then(_value.copyWith(bundle: value));
     });
   }
+
+  @override
+  $DetailsStateCopyWith<$Res> get detailsState {
+    return $DetailsStateCopyWith<$Res>(_value.detailsState, (value) {
+      return _then(_value.copyWith(detailsState: value));
+    });
+  }
 }
 
 /// @nodoc
 abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
   @override
-  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, bool editing});
+  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, DetailsState detailsState});
 
   @override
   $AppUserCopyWith<$Res>? get user;
   @override
   $BundleCopyWith<$Res> get bundle;
+  @override
+  $DetailsStateCopyWith<$Res> get detailsState;
 }
 
 /// @nodoc
@@ -236,7 +246,7 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
     Object? user = freezed,
     Object? selectedPage = freezed,
     Object? bundle = freezed,
-    Object? editing = freezed,
+    Object? detailsState = freezed,
   }) {
     return _then(AppState$(
       pending: pending == freezed
@@ -255,10 +265,10 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
               as Bundle,
-      editing: editing == freezed
-          ? _value.editing
-          : editing // ignore: cast_nullable_to_non_nullable
-              as bool,
+      detailsState: detailsState == freezed
+          ? _value.detailsState
+          : detailsState // ignore: cast_nullable_to_non_nullable
+              as DetailsState,
     ));
   }
 }
@@ -271,7 +281,7 @@ class _$AppState$ implements AppState$ {
       this.user,
       this.selectedPage = AppPage.home,
       this.bundle = const Bundle(),
-      this.editing = false});
+      this.detailsState = const DetailsState()});
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
@@ -288,11 +298,11 @@ class _$AppState$ implements AppState$ {
   final Bundle bundle;
   @JsonKey()
   @override
-  final bool editing;
+  final DetailsState detailsState;
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle, editing: $editing)';
+    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle, detailsState: $detailsState)';
   }
 
   @override
@@ -304,7 +314,7 @@ class _$AppState$ implements AppState$ {
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            const DeepCollectionEquality().equals(other.editing, editing));
+            const DeepCollectionEquality().equals(other.detailsState, detailsState));
   }
 
   @override
@@ -314,7 +324,7 @@ class _$AppState$ implements AppState$ {
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(selectedPage),
       const DeepCollectionEquality().hash(bundle),
-      const DeepCollectionEquality().hash(editing));
+      const DeepCollectionEquality().hash(detailsState));
 
   @JsonKey(ignore: true)
   @override
@@ -327,8 +337,12 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, bool editing}) =
-      _$AppState$;
+  const factory AppState$(
+      {Set<String> pending,
+      AppUser? user,
+      AppPage selectedPage,
+      Bundle bundle,
+      DetailsState detailsState}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -341,10 +355,182 @@ abstract class AppState$ implements AppState {
   @override
   Bundle get bundle;
   @override
-  bool get editing;
+  DetailsState get detailsState;
   @override
   @JsonKey(ignore: true)
   $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;
+}
+
+DetailsState _$DetailsStateFromJson(Map<String, dynamic> json) {
+  return DetailsState$.fromJson(json);
+}
+
+/// @nodoc
+class _$DetailsStateTearOff {
+  const _$DetailsStateTearOff();
+
+  DetailsState$ call({bool editing = false, Password? password}) {
+    return DetailsState$(
+      editing: editing,
+      password: password,
+    );
+  }
+
+  DetailsState fromJson(Map<String, Object?> json) {
+    return DetailsState.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $DetailsState = _$DetailsStateTearOff();
+
+/// @nodoc
+mixin _$DetailsState {
+  bool get editing => throw _privateConstructorUsedError;
+  Password? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DetailsStateCopyWith<DetailsState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DetailsStateCopyWith<$Res> {
+  factory $DetailsStateCopyWith(DetailsState value, $Res Function(DetailsState) then) =
+      _$DetailsStateCopyWithImpl<$Res>;
+  $Res call({bool editing, Password? password});
+
+  $PasswordCopyWith<$Res>? get password;
+}
+
+/// @nodoc
+class _$DetailsStateCopyWithImpl<$Res> implements $DetailsStateCopyWith<$Res> {
+  _$DetailsStateCopyWithImpl(this._value, this._then);
+
+  final DetailsState _value;
+  // ignore: unused_field
+  final $Res Function(DetailsState) _then;
+
+  @override
+  $Res call({
+    Object? editing = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      editing: editing == freezed
+          ? _value.editing
+          : editing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password?,
+    ));
+  }
+
+  @override
+  $PasswordCopyWith<$Res>? get password {
+    if (_value.password == null) {
+      return null;
+    }
+
+    return $PasswordCopyWith<$Res>(_value.password!, (value) {
+      return _then(_value.copyWith(password: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $DetailsState$CopyWith<$Res> implements $DetailsStateCopyWith<$Res> {
+  factory $DetailsState$CopyWith(DetailsState$ value, $Res Function(DetailsState$) then) =
+      _$DetailsState$CopyWithImpl<$Res>;
+  @override
+  $Res call({bool editing, Password? password});
+
+  @override
+  $PasswordCopyWith<$Res>? get password;
+}
+
+/// @nodoc
+class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
+    implements $DetailsState$CopyWith<$Res> {
+  _$DetailsState$CopyWithImpl(DetailsState$ _value, $Res Function(DetailsState$) _then)
+      : super(_value, (v) => _then(v as DetailsState$));
+
+  @override
+  DetailsState$ get _value => super._value as DetailsState$;
+
+  @override
+  $Res call({
+    Object? editing = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(DetailsState$(
+      editing: editing == freezed
+          ? _value.editing
+          : editing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as Password?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DetailsState$ implements DetailsState$ {
+  const _$DetailsState$({this.editing = false, this.password});
+
+  factory _$DetailsState$.fromJson(Map<String, dynamic> json) => _$$DetailsState$FromJson(json);
+
+  @JsonKey()
+  @override
+  final bool editing;
+  @override
+  final Password? password;
+
+  @override
+  String toString() {
+    return 'DetailsState(editing: $editing, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DetailsState$ &&
+            const DeepCollectionEquality().equals(other.editing, editing) &&
+            const DeepCollectionEquality().equals(other.password, password));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(editing), const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  $DetailsState$CopyWith<DetailsState$> get copyWith => _$DetailsState$CopyWithImpl<DetailsState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DetailsState$ToJson(this);
+  }
+}
+
+abstract class DetailsState$ implements DetailsState {
+  const factory DetailsState$({bool editing, Password? password}) = _$DetailsState$;
+
+  factory DetailsState$.fromJson(Map<String, dynamic> json) = _$DetailsState$.fromJson;
+
+  @override
+  bool get editing;
+  @override
+  Password? get password;
+  @override
+  @JsonKey(ignore: true)
+  $DetailsState$CopyWith<DetailsState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 AppUser _$AppUserFromJson(Map<String, dynamic> json) {

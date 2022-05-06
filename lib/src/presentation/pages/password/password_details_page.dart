@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/editing_container.dart';
 import 'package:walman/src/containers/pending_container.dart';
@@ -18,16 +19,44 @@ class PasswordDetailsPage extends StatefulWidget {
 }
 
 class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
+  late final Password _password;
+  late final TextEditingController _titleController;
+  late final TextEditingController _usernameController;
+  late final TextEditingController _passwordController;
+  late final TextEditingController _noteController;
+
+  final FocusNode _usernameNode = FocusNode();
+  final FocusNode _passwordNode = FocusNode();
+  final FocusNode _noteNode = FocusNode();
+
   @override
   void initState() {
+    _password = StoreProvider.of<AppState>(context, listen: false).state.detailsState.password!;
+    _titleController = TextEditingController(text: _password.title);
+    _usernameController = TextEditingController(text: _password.username);
+    _passwordController = TextEditingController(text: _password.password);
+    _noteController = TextEditingController(text: _password.note);
     StoreProvider.of<AppState>(context, listen: false).dispatch(const SetEditingStart(editing: false));
     super.initState();
   }
 
-  void _onSubmit(BuildContext context) {
+  void _onSubmit(BuildContext context, Password password) {
     if (kDebugMode) {
       print('Edit submitted');
     }
+    StoreProvider.of<AppState>(context).dispatch(
+      EditPasswordStart(
+        Password(
+          id: password.id,
+          title: _titleController.text,
+          username: _usernameController.text,
+          password: _passwordController.text,
+          note: _noteController.text,
+          lastAccess: DateTime.now(),
+          createdAt: password.createdAt,
+        ),
+      ),
+    );
   }
 
   void _copyToClipboard({required BuildContext context, required String text, required String message}) {
@@ -42,19 +71,11 @@ class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final Password _password = ModalRoute.of(context)!.settings.arguments! as Password;
-    final TextEditingController _titleController = TextEditingController(text: _password.title);
-    final TextEditingController _usernameController = TextEditingController(text: _password.username);
-    final TextEditingController _passwordController = TextEditingController(text: _password.password);
-    final TextEditingController _noteController = TextEditingController(text: _password.note);
-
-    final FocusNode _usernameNode = FocusNode();
-    final FocusNode _passwordNode = FocusNode();
-    final FocusNode _noteNode = FocusNode();
     return PendingContainer(
       builder: (BuildContext context, Set<String> pending) {
-        return EditingContainer(
-          builder: (BuildContext context, bool editing) {
+        return DetailsContainer(
+          builder: (BuildContext context, DetailsState state) {
+            final bool editing = state.editing;
             return Scaffold(
               appBar: AppBar(
                 bottomOpacity: 0,
@@ -124,7 +145,7 @@ class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
                         style: TextStyle(color: Colors.indigo),
                       ),
                       onPressed: () {
-                        _onSubmit(context);
+                        _onSubmit(context, _password);
                         Navigator.pop(context);
                       },
                     ),
@@ -288,7 +309,7 @@ class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
                                       : null,
                                 ),
                                 onFieldSubmitted: (_) {
-                                  _onSubmit(context);
+                                  _onSubmit(context, _password);
                                 },
                               ),
                             ),

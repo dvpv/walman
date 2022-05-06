@@ -12,5 +12,5 @@ AppState _changeAppPage(AppState state, ChangeAppPage action) {
 }
 
 AppState _setEditingStart(AppState state, SetEditingStart action) {
-  return state.copyWith(editing: action.editing);
+  return state.copyWith(detailsState: state.detailsState.copyWith(editing: action.editing));
 }
