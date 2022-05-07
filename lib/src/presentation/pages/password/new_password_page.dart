@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:uuid/uuid.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class NewPasswordPage extends StatefulWidget {
   const NewPasswordPage({Key? key}) : super(key: key);
@@ -51,10 +52,13 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
         bottomOpacity: 0,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
+        leading: TextButton(
+          style: appBarButtonStyle(),
+          child: const Text(
+            'Back',
+            style: TextStyle(
+              color: Colors.black,
+            ),
           ),
           onPressed: () => Navigator.pop(context),
         ),
@@ -65,11 +69,14 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
             color: Colors.black,
           ),
         ),
-        actions: <IconButton>[
-          IconButton(
-            icon: const Icon(
-              Icons.add,
-              color: Colors.black,
+        actions: <Widget>[
+          TextButton(
+            style: appBarButtonStyle(),
+            child: const Text(
+              'Create',
+              style: TextStyle(
+                color: Colors.indigo,
+              ),
             ),
             onPressed: () => _onSubmit(context),
           ),
