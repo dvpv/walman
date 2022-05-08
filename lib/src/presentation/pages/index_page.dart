@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:walman/src/containers/navigation_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/app_bar_element.dart';
+import 'package:walman/src/presentation/components/app_bar_settings_button.dart';
 import 'package:walman/src/presentation/components/search_delegate.dart';
 import 'package:walman/src/presentation/pages/code/codes_page.dart';
 import 'package:walman/src/presentation/pages/home_page.dart';
@@ -52,13 +53,7 @@ class IndexPage extends StatelessWidget {
                   showSearch(context: context, delegate: HomePageSearchDelegate());
                 },
               ),
-              IconButton(
-                icon: const Icon(
-                  Icons.settings,
-                  color: Colors.black,
-                ),
-                onPressed: () {},
-              ),
+              const AppBarMenuButton(),
             ],
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
