@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:redux/redux.dart';
@@ -10,7 +11,9 @@ import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/code/code_details.dart';
 import 'package:walman/src/presentation/pages/code/new_code_page.dart';
+import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
 import 'package:walman/src/presentation/pages/login_page.dart';
 import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/password_details_page.dart';
@@ -36,7 +39,9 @@ Future<void> main() async {
       EpicMiddleware<AppState>(epic.epics),
     ],
   )..dispatch(const GetCurrentUser());
-
+  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(App(store: store));
 }
 
@@ -55,10 +60,12 @@ class App extends StatelessWidget {
           '/': (BuildContext context) => const StartPage(),
           '/signup': (BuildContext context) => const SignupPage(),
           '/login': (BuildContext context) => const LoginPage(),
-          '/new-password': (BuildContext context) => const NewPasswordPage(),
-          '/new-place': (BuildContext context) => const NewPlacePage(),
-          '/new-code': (BuildContext context) => const NewCodePage(),
+          NewPasswordPage.route: (BuildContext context) => const NewPasswordPage(),
+          NewPlacePage.route: (BuildContext context) => const NewPlacePage(),
+          ScanNewCodePage.route: (BuildContext context) => const ScanNewCodePage(),
           PasswordDetailsPage.route: (BuildContext context) => const PasswordDetailsPage(),
+          NewCodePage.route: (BuildContext context) => const NewCodePage(),
+          CodeDetails.route: (BuildContext context) => const CodeDetails(),
         },
       ),
     );

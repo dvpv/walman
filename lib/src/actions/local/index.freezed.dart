@@ -165,6 +165,156 @@ abstract class CreateNewPassword$ implements CreateNewPassword {
 }
 
 /// @nodoc
+class _$CreateNewCodeTearOff {
+  const _$CreateNewCodeTearOff();
+
+  CreateNewCode$ call(Code code, String masterKey) {
+    return CreateNewCode$(
+      code,
+      masterKey,
+    );
+  }
+}
+
+/// @nodoc
+const $CreateNewCode = _$CreateNewCodeTearOff();
+
+/// @nodoc
+mixin _$CreateNewCode {
+  Code get code => throw _privateConstructorUsedError;
+  String get masterKey => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CreateNewCodeCopyWith<CreateNewCode> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateNewCodeCopyWith<$Res> {
+  factory $CreateNewCodeCopyWith(CreateNewCode value, $Res Function(CreateNewCode) then) =
+      _$CreateNewCodeCopyWithImpl<$Res>;
+  $Res call({Code code, String masterKey});
+
+  $CodeCopyWith<$Res> get code;
+}
+
+/// @nodoc
+class _$CreateNewCodeCopyWithImpl<$Res> implements $CreateNewCodeCopyWith<$Res> {
+  _$CreateNewCodeCopyWithImpl(this._value, this._then);
+
+  final CreateNewCode _value;
+  // ignore: unused_field
+  final $Res Function(CreateNewCode) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? masterKey = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as Code,
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $CodeCopyWith<$Res> get code {
+    return $CodeCopyWith<$Res>(_value.code, (value) {
+      return _then(_value.copyWith(code: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $CreateNewCode$CopyWith<$Res> implements $CreateNewCodeCopyWith<$Res> {
+  factory $CreateNewCode$CopyWith(CreateNewCode$ value, $Res Function(CreateNewCode$) then) =
+      _$CreateNewCode$CopyWithImpl<$Res>;
+  @override
+  $Res call({Code code, String masterKey});
+
+  @override
+  $CodeCopyWith<$Res> get code;
+}
+
+/// @nodoc
+class _$CreateNewCode$CopyWithImpl<$Res> extends _$CreateNewCodeCopyWithImpl<$Res>
+    implements $CreateNewCode$CopyWith<$Res> {
+  _$CreateNewCode$CopyWithImpl(CreateNewCode$ _value, $Res Function(CreateNewCode$) _then)
+      : super(_value, (v) => _then(v as CreateNewCode$));
+
+  @override
+  CreateNewCode$ get _value => super._value as CreateNewCode$;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? masterKey = freezed,
+  }) {
+    return _then(CreateNewCode$(
+      code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as Code,
+      masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateNewCode$ implements CreateNewCode$ {
+  const _$CreateNewCode$(this.code, this.masterKey);
+
+  @override
+  final Code code;
+  @override
+  final String masterKey;
+
+  @override
+  String toString() {
+    return 'CreateNewCode(code: $code, masterKey: $masterKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateNewCode$ &&
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(code), const DeepCollectionEquality().hash(masterKey));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateNewCode$CopyWith<CreateNewCode$> get copyWith =>
+      _$CreateNewCode$CopyWithImpl<CreateNewCode$>(this, _$identity);
+}
+
+abstract class CreateNewCode$ implements CreateNewCode {
+  const factory CreateNewCode$(Code code, String masterKey) = _$CreateNewCode$;
+
+  @override
+  Code get code;
+  @override
+  String get masterKey;
+  @override
+  @JsonKey(ignore: true)
+  $CreateNewCode$CopyWith<CreateNewCode$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$EditPasswordTearOff {
   const _$EditPasswordTearOff();
 
@@ -1236,4 +1386,136 @@ abstract class SetDetailsPasswordTargetError implements SetDetailsPasswordTarget
   @JsonKey(ignore: true)
   $SetDetailsPasswordTargetErrorCopyWith<SetDetailsPasswordTargetError> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SetScannedCodeTearOff {
+  const _$SetScannedCodeTearOff();
+
+  SetScannedCode$ call(Code code) {
+    return SetScannedCode$(
+      code,
+    );
+  }
+}
+
+/// @nodoc
+const $SetScannedCode = _$SetScannedCodeTearOff();
+
+/// @nodoc
+mixin _$SetScannedCode {
+  Code get code => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetScannedCodeCopyWith<SetScannedCode> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetScannedCodeCopyWith<$Res> {
+  factory $SetScannedCodeCopyWith(SetScannedCode value, $Res Function(SetScannedCode) then) =
+      _$SetScannedCodeCopyWithImpl<$Res>;
+  $Res call({Code code});
+
+  $CodeCopyWith<$Res> get code;
+}
+
+/// @nodoc
+class _$SetScannedCodeCopyWithImpl<$Res> implements $SetScannedCodeCopyWith<$Res> {
+  _$SetScannedCodeCopyWithImpl(this._value, this._then);
+
+  final SetScannedCode _value;
+  // ignore: unused_field
+  final $Res Function(SetScannedCode) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as Code,
+    ));
+  }
+
+  @override
+  $CodeCopyWith<$Res> get code {
+    return $CodeCopyWith<$Res>(_value.code, (value) {
+      return _then(_value.copyWith(code: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $SetScannedCode$CopyWith<$Res> implements $SetScannedCodeCopyWith<$Res> {
+  factory $SetScannedCode$CopyWith(SetScannedCode$ value, $Res Function(SetScannedCode$) then) =
+      _$SetScannedCode$CopyWithImpl<$Res>;
+  @override
+  $Res call({Code code});
+
+  @override
+  $CodeCopyWith<$Res> get code;
+}
+
+/// @nodoc
+class _$SetScannedCode$CopyWithImpl<$Res> extends _$SetScannedCodeCopyWithImpl<$Res>
+    implements $SetScannedCode$CopyWith<$Res> {
+  _$SetScannedCode$CopyWithImpl(SetScannedCode$ _value, $Res Function(SetScannedCode$) _then)
+      : super(_value, (v) => _then(v as SetScannedCode$));
+
+  @override
+  SetScannedCode$ get _value => super._value as SetScannedCode$;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+  }) {
+    return _then(SetScannedCode$(
+      code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as Code,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetScannedCode$ implements SetScannedCode$ {
+  const _$SetScannedCode$(this.code);
+
+  @override
+  final Code code;
+
+  @override
+  String toString() {
+    return 'SetScannedCode(code: $code)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SetScannedCode$ &&
+            const DeepCollectionEquality().equals(other.code, code));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(code));
+
+  @JsonKey(ignore: true)
+  @override
+  $SetScannedCode$CopyWith<SetScannedCode$> get copyWith =>
+      _$SetScannedCode$CopyWithImpl<SetScannedCode$>(this, _$identity);
+}
+
+abstract class SetScannedCode$ implements SetScannedCode {
+  const factory SetScannedCode$(Code code) = _$SetScannedCode$;
+
+  @override
+  Code get code;
+  @override
+  @JsonKey(ignore: true)
+  $SetScannedCode$CopyWith<SetScannedCode$> get copyWith => throw _privateConstructorUsedError;
 }

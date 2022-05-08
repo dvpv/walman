@@ -18,6 +18,9 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       detailsState: json['detailsState'] == null
           ? const DetailsState()
           : DetailsState.fromJson(json['detailsState'] as Map<String, dynamic>),
+      createCodeState: json['createCodeState'] == null
+          ? const CreateCodeState()
+          : CreateCodeState.fromJson(json['createCodeState'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
@@ -26,6 +29,7 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynami
       'selectedPage': _$AppPageEnumMap[instance.selectedPage],
       'bundle': instance.bundle,
       'detailsState': instance.detailsState,
+      'createCodeState': instance.createCodeState,
     };
 
 const _$AppPageEnumMap = {
@@ -36,13 +40,23 @@ const _$AppPageEnumMap = {
 };
 
 _$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) => _$DetailsState$(
+      selectedId: json['selectedId'] as String? ?? '',
       editing: json['editing'] as bool? ?? false,
       password: json['password'] == null ? null : Password.fromJson(json['password'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$DetailsState$ToJson(_$DetailsState$ instance) => <String, dynamic>{
+      'selectedId': instance.selectedId,
       'editing': instance.editing,
       'password': instance.password,
+    };
+
+_$CreateCodeState$ _$$CreateCodeState$FromJson(Map<String, dynamic> json) => _$CreateCodeState$(
+      code: json['code'] == null ? null : Code.fromJson(json['code'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$CreateCodeState$ToJson(_$CreateCodeState$ instance) => <String, dynamic>{
+      'code': instance.code,
     };
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
@@ -63,10 +77,13 @@ _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(
       passwords:
           (json['passwords'] as List<dynamic>?)?.map((e) => Password.fromJson(e as Map<String, dynamic>)).toList() ??
               const <Password>[],
+      codes: (json['codes'] as List<dynamic>?)?.map((e) => Code.fromJson(e as Map<String, dynamic>)).toList() ??
+          const <Code>[],
     );
 
 Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
       'passwords': instance.passwords,
+      'codes': instance.codes,
     };
 
 _$Password$ _$$Password$FromJson(Map<String, dynamic> json) => _$Password$(
@@ -90,3 +107,43 @@ Map<String, dynamic> _$$Password$ToJson(_$Password$ instance) => <String, dynami
       'lastAccess': instance.lastAccess.toIso8601String(),
       'timesAccessed': instance.timesAccessed,
     };
+
+_$Code$ _$$Code$FromJson(Map<String, dynamic> json) => _$Code$(
+      id: json['id'] as String,
+      title: json['title'] as String? ?? '',
+      data: json['data'] as String,
+      format: $enumDecode(_$BarcodeFormatEnumMap, json['format']),
+      note: json['note'] as String? ?? '',
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      lastAccess: DateTime.parse(json['lastAccess'] as String),
+      timesAccessed: json['timesAccessed'] as int? ?? 0,
+    );
+
+Map<String, dynamic> _$$Code$ToJson(_$Code$ instance) => <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'data': instance.data,
+      'format': _$BarcodeFormatEnumMap[instance.format],
+      'note': instance.note,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'lastAccess': instance.lastAccess.toIso8601String(),
+      'timesAccessed': instance.timesAccessed,
+    };
+
+const _$BarcodeFormatEnumMap = {
+  BarcodeFormat.unknown: 'unknown',
+  BarcodeFormat.all: 'all',
+  BarcodeFormat.code128: 'code128',
+  BarcodeFormat.code39: 'code39',
+  BarcodeFormat.code93: 'code93',
+  BarcodeFormat.codebar: 'codebar',
+  BarcodeFormat.dataMatrix: 'dataMatrix',
+  BarcodeFormat.ean13: 'ean13',
+  BarcodeFormat.ean8: 'ean8',
+  BarcodeFormat.itf: 'itf',
+  BarcodeFormat.qrCode: 'qrCode',
+  BarcodeFormat.upcA: 'upcA',
+  BarcodeFormat.upcE: 'upcE',
+  BarcodeFormat.pdf417: 'pdf417',
+  BarcodeFormat.aztec: 'aztec',
+};

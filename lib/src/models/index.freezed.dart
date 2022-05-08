@@ -111,13 +111,15 @@ class _$AppStateTearOff {
       AppUser? user,
       AppPage selectedPage = AppPage.home,
       Bundle bundle = const Bundle(),
-      DetailsState detailsState = const DetailsState()}) {
+      DetailsState detailsState = const DetailsState(),
+      CreateCodeState createCodeState = const CreateCodeState()}) {
     return AppState$(
       pending: pending,
       user: user,
       selectedPage: selectedPage,
       bundle: bundle,
       detailsState: detailsState,
+      createCodeState: createCodeState,
     );
   }
 
@@ -136,6 +138,7 @@ mixin _$AppState {
   AppPage get selectedPage => throw _privateConstructorUsedError;
   Bundle get bundle => throw _privateConstructorUsedError;
   DetailsState get detailsState => throw _privateConstructorUsedError;
+  CreateCodeState get createCodeState => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -145,11 +148,18 @@ mixin _$AppState {
 /// @nodoc
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
-  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, DetailsState detailsState});
+  $Res call(
+      {Set<String> pending,
+      AppUser? user,
+      AppPage selectedPage,
+      Bundle bundle,
+      DetailsState detailsState,
+      CreateCodeState createCodeState});
 
   $AppUserCopyWith<$Res>? get user;
   $BundleCopyWith<$Res> get bundle;
   $DetailsStateCopyWith<$Res> get detailsState;
+  $CreateCodeStateCopyWith<$Res> get createCodeState;
 }
 
 /// @nodoc
@@ -167,6 +177,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? selectedPage = freezed,
     Object? bundle = freezed,
     Object? detailsState = freezed,
+    Object? createCodeState = freezed,
   }) {
     return _then(_value.copyWith(
       pending: pending == freezed
@@ -189,6 +200,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.detailsState
           : detailsState // ignore: cast_nullable_to_non_nullable
               as DetailsState,
+      createCodeState: createCodeState == freezed
+          ? _value.createCodeState
+          : createCodeState // ignore: cast_nullable_to_non_nullable
+              as CreateCodeState,
     ));
   }
 
@@ -216,13 +231,26 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       return _then(_value.copyWith(detailsState: value));
     });
   }
+
+  @override
+  $CreateCodeStateCopyWith<$Res> get createCodeState {
+    return $CreateCodeStateCopyWith<$Res>(_value.createCodeState, (value) {
+      return _then(_value.copyWith(createCodeState: value));
+    });
+  }
 }
 
 /// @nodoc
 abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
   @override
-  $Res call({Set<String> pending, AppUser? user, AppPage selectedPage, Bundle bundle, DetailsState detailsState});
+  $Res call(
+      {Set<String> pending,
+      AppUser? user,
+      AppPage selectedPage,
+      Bundle bundle,
+      DetailsState detailsState,
+      CreateCodeState createCodeState});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -230,6 +258,8 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $BundleCopyWith<$Res> get bundle;
   @override
   $DetailsStateCopyWith<$Res> get detailsState;
+  @override
+  $CreateCodeStateCopyWith<$Res> get createCodeState;
 }
 
 /// @nodoc
@@ -247,6 +277,7 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
     Object? selectedPage = freezed,
     Object? bundle = freezed,
     Object? detailsState = freezed,
+    Object? createCodeState = freezed,
   }) {
     return _then(AppState$(
       pending: pending == freezed
@@ -269,6 +300,10 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.detailsState
           : detailsState // ignore: cast_nullable_to_non_nullable
               as DetailsState,
+      createCodeState: createCodeState == freezed
+          ? _value.createCodeState
+          : createCodeState // ignore: cast_nullable_to_non_nullable
+              as CreateCodeState,
     ));
   }
 }
@@ -281,7 +316,8 @@ class _$AppState$ implements AppState$ {
       this.user,
       this.selectedPage = AppPage.home,
       this.bundle = const Bundle(),
-      this.detailsState = const DetailsState()});
+      this.detailsState = const DetailsState(),
+      this.createCodeState = const CreateCodeState()});
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
@@ -299,10 +335,13 @@ class _$AppState$ implements AppState$ {
   @JsonKey()
   @override
   final DetailsState detailsState;
+  @JsonKey()
+  @override
+  final CreateCodeState createCodeState;
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle, detailsState: $detailsState)';
+    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle, detailsState: $detailsState, createCodeState: $createCodeState)';
   }
 
   @override
@@ -314,7 +353,8 @@ class _$AppState$ implements AppState$ {
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            const DeepCollectionEquality().equals(other.detailsState, detailsState));
+            const DeepCollectionEquality().equals(other.detailsState, detailsState) &&
+            const DeepCollectionEquality().equals(other.createCodeState, createCodeState));
   }
 
   @override
@@ -324,7 +364,8 @@ class _$AppState$ implements AppState$ {
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(selectedPage),
       const DeepCollectionEquality().hash(bundle),
-      const DeepCollectionEquality().hash(detailsState));
+      const DeepCollectionEquality().hash(detailsState),
+      const DeepCollectionEquality().hash(createCodeState));
 
   @JsonKey(ignore: true)
   @override
@@ -342,7 +383,8 @@ abstract class AppState$ implements AppState {
       AppUser? user,
       AppPage selectedPage,
       Bundle bundle,
-      DetailsState detailsState}) = _$AppState$;
+      DetailsState detailsState,
+      CreateCodeState createCodeState}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -357,6 +399,8 @@ abstract class AppState$ implements AppState {
   @override
   DetailsState get detailsState;
   @override
+  CreateCodeState get createCodeState;
+  @override
   @JsonKey(ignore: true)
   $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;
 }
@@ -369,8 +413,9 @@ DetailsState _$DetailsStateFromJson(Map<String, dynamic> json) {
 class _$DetailsStateTearOff {
   const _$DetailsStateTearOff();
 
-  DetailsState$ call({bool editing = false, Password? password}) {
+  DetailsState$ call({String selectedId = '', bool editing = false, Password? password}) {
     return DetailsState$(
+      selectedId: selectedId,
       editing: editing,
       password: password,
     );
@@ -386,6 +431,7 @@ const $DetailsState = _$DetailsStateTearOff();
 
 /// @nodoc
 mixin _$DetailsState {
+  String get selectedId => throw _privateConstructorUsedError;
   bool get editing => throw _privateConstructorUsedError;
   Password? get password => throw _privateConstructorUsedError;
 
@@ -398,7 +444,7 @@ mixin _$DetailsState {
 abstract class $DetailsStateCopyWith<$Res> {
   factory $DetailsStateCopyWith(DetailsState value, $Res Function(DetailsState) then) =
       _$DetailsStateCopyWithImpl<$Res>;
-  $Res call({bool editing, Password? password});
+  $Res call({String selectedId, bool editing, Password? password});
 
   $PasswordCopyWith<$Res>? get password;
 }
@@ -413,10 +459,15 @@ class _$DetailsStateCopyWithImpl<$Res> implements $DetailsStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? selectedId = freezed,
     Object? editing = freezed,
     Object? password = freezed,
   }) {
     return _then(_value.copyWith(
+      selectedId: selectedId == freezed
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as String,
       editing: editing == freezed
           ? _value.editing
           : editing // ignore: cast_nullable_to_non_nullable
@@ -445,7 +496,7 @@ abstract class $DetailsState$CopyWith<$Res> implements $DetailsStateCopyWith<$Re
   factory $DetailsState$CopyWith(DetailsState$ value, $Res Function(DetailsState$) then) =
       _$DetailsState$CopyWithImpl<$Res>;
   @override
-  $Res call({bool editing, Password? password});
+  $Res call({String selectedId, bool editing, Password? password});
 
   @override
   $PasswordCopyWith<$Res>? get password;
@@ -462,10 +513,15 @@ class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? selectedId = freezed,
     Object? editing = freezed,
     Object? password = freezed,
   }) {
     return _then(DetailsState$(
+      selectedId: selectedId == freezed
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as String,
       editing: editing == freezed
           ? _value.editing
           : editing // ignore: cast_nullable_to_non_nullable
@@ -481,10 +537,13 @@ class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DetailsState$ implements DetailsState$ {
-  const _$DetailsState$({this.editing = false, this.password});
+  const _$DetailsState$({this.selectedId = '', this.editing = false, this.password});
 
   factory _$DetailsState$.fromJson(Map<String, dynamic> json) => _$$DetailsState$FromJson(json);
 
+  @JsonKey()
+  @override
+  final String selectedId;
   @JsonKey()
   @override
   final bool editing;
@@ -493,7 +552,7 @@ class _$DetailsState$ implements DetailsState$ {
 
   @override
   String toString() {
-    return 'DetailsState(editing: $editing, password: $password)';
+    return 'DetailsState(selectedId: $selectedId, editing: $editing, password: $password)';
   }
 
   @override
@@ -501,13 +560,14 @@ class _$DetailsState$ implements DetailsState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DetailsState$ &&
+            const DeepCollectionEquality().equals(other.selectedId, selectedId) &&
             const DeepCollectionEquality().equals(other.editing, editing) &&
             const DeepCollectionEquality().equals(other.password, password));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(editing), const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(selectedId),
+      const DeepCollectionEquality().hash(editing), const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
@@ -520,10 +580,12 @@ class _$DetailsState$ implements DetailsState$ {
 }
 
 abstract class DetailsState$ implements DetailsState {
-  const factory DetailsState$({bool editing, Password? password}) = _$DetailsState$;
+  const factory DetailsState$({String selectedId, bool editing, Password? password}) = _$DetailsState$;
 
   factory DetailsState$.fromJson(Map<String, dynamic> json) = _$DetailsState$.fromJson;
 
+  @override
+  String get selectedId;
   @override
   bool get editing;
   @override
@@ -531,6 +593,160 @@ abstract class DetailsState$ implements DetailsState {
   @override
   @JsonKey(ignore: true)
   $DetailsState$CopyWith<DetailsState$> get copyWith => throw _privateConstructorUsedError;
+}
+
+CreateCodeState _$CreateCodeStateFromJson(Map<String, dynamic> json) {
+  return CreateCodeState$.fromJson(json);
+}
+
+/// @nodoc
+class _$CreateCodeStateTearOff {
+  const _$CreateCodeStateTearOff();
+
+  CreateCodeState$ call({Code? code}) {
+    return CreateCodeState$(
+      code: code,
+    );
+  }
+
+  CreateCodeState fromJson(Map<String, Object?> json) {
+    return CreateCodeState.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $CreateCodeState = _$CreateCodeStateTearOff();
+
+/// @nodoc
+mixin _$CreateCodeState {
+  Code? get code => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CreateCodeStateCopyWith<CreateCodeState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateCodeStateCopyWith<$Res> {
+  factory $CreateCodeStateCopyWith(CreateCodeState value, $Res Function(CreateCodeState) then) =
+      _$CreateCodeStateCopyWithImpl<$Res>;
+  $Res call({Code? code});
+
+  $CodeCopyWith<$Res>? get code;
+}
+
+/// @nodoc
+class _$CreateCodeStateCopyWithImpl<$Res> implements $CreateCodeStateCopyWith<$Res> {
+  _$CreateCodeStateCopyWithImpl(this._value, this._then);
+
+  final CreateCodeState _value;
+  // ignore: unused_field
+  final $Res Function(CreateCodeState) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as Code?,
+    ));
+  }
+
+  @override
+  $CodeCopyWith<$Res>? get code {
+    if (_value.code == null) {
+      return null;
+    }
+
+    return $CodeCopyWith<$Res>(_value.code!, (value) {
+      return _then(_value.copyWith(code: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $CreateCodeState$CopyWith<$Res> implements $CreateCodeStateCopyWith<$Res> {
+  factory $CreateCodeState$CopyWith(CreateCodeState$ value, $Res Function(CreateCodeState$) then) =
+      _$CreateCodeState$CopyWithImpl<$Res>;
+  @override
+  $Res call({Code? code});
+
+  @override
+  $CodeCopyWith<$Res>? get code;
+}
+
+/// @nodoc
+class _$CreateCodeState$CopyWithImpl<$Res> extends _$CreateCodeStateCopyWithImpl<$Res>
+    implements $CreateCodeState$CopyWith<$Res> {
+  _$CreateCodeState$CopyWithImpl(CreateCodeState$ _value, $Res Function(CreateCodeState$) _then)
+      : super(_value, (v) => _then(v as CreateCodeState$));
+
+  @override
+  CreateCodeState$ get _value => super._value as CreateCodeState$;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+  }) {
+    return _then(CreateCodeState$(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as Code?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CreateCodeState$ implements CreateCodeState$ {
+  const _$CreateCodeState$({this.code});
+
+  factory _$CreateCodeState$.fromJson(Map<String, dynamic> json) => _$$CreateCodeState$FromJson(json);
+
+  @override
+  final Code? code;
+
+  @override
+  String toString() {
+    return 'CreateCodeState(code: $code)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateCodeState$ &&
+            const DeepCollectionEquality().equals(other.code, code));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(code));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateCodeState$CopyWith<CreateCodeState$> get copyWith =>
+      _$CreateCodeState$CopyWithImpl<CreateCodeState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CreateCodeState$ToJson(this);
+  }
+}
+
+abstract class CreateCodeState$ implements CreateCodeState {
+  const factory CreateCodeState$({Code? code}) = _$CreateCodeState$;
+
+  factory CreateCodeState$.fromJson(Map<String, dynamic> json) = _$CreateCodeState$.fromJson;
+
+  @override
+  Code? get code;
+  @override
+  @JsonKey(ignore: true)
+  $CreateCodeState$CopyWith<CreateCodeState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 AppUser _$AppUserFromJson(Map<String, dynamic> json) {
@@ -731,9 +947,10 @@ Bundle _$BundleFromJson(Map<String, dynamic> json) {
 class _$BundleTearOff {
   const _$BundleTearOff();
 
-  Bundle$ call({List<Password> passwords = const <Password>[]}) {
+  Bundle$ call({List<Password> passwords = const <Password>[], List<Code> codes = const <Code>[]}) {
     return Bundle$(
       passwords: passwords,
+      codes: codes,
     );
   }
 
@@ -748,6 +965,7 @@ const $Bundle = _$BundleTearOff();
 /// @nodoc
 mixin _$Bundle {
   List<Password> get passwords => throw _privateConstructorUsedError;
+  List<Code> get codes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -757,7 +975,7 @@ mixin _$Bundle {
 /// @nodoc
 abstract class $BundleCopyWith<$Res> {
   factory $BundleCopyWith(Bundle value, $Res Function(Bundle) then) = _$BundleCopyWithImpl<$Res>;
-  $Res call({List<Password> passwords});
+  $Res call({List<Password> passwords, List<Code> codes});
 }
 
 /// @nodoc
@@ -771,12 +989,17 @@ class _$BundleCopyWithImpl<$Res> implements $BundleCopyWith<$Res> {
   @override
   $Res call({
     Object? passwords = freezed,
+    Object? codes = freezed,
   }) {
     return _then(_value.copyWith(
       passwords: passwords == freezed
           ? _value.passwords
           : passwords // ignore: cast_nullable_to_non_nullable
               as List<Password>,
+      codes: codes == freezed
+          ? _value.codes
+          : codes // ignore: cast_nullable_to_non_nullable
+              as List<Code>,
     ));
   }
 }
@@ -785,7 +1008,7 @@ class _$BundleCopyWithImpl<$Res> implements $BundleCopyWith<$Res> {
 abstract class $Bundle$CopyWith<$Res> implements $BundleCopyWith<$Res> {
   factory $Bundle$CopyWith(Bundle$ value, $Res Function(Bundle$) then) = _$Bundle$CopyWithImpl<$Res>;
   @override
-  $Res call({List<Password> passwords});
+  $Res call({List<Password> passwords, List<Code> codes});
 }
 
 /// @nodoc
@@ -798,12 +1021,17 @@ class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements 
   @override
   $Res call({
     Object? passwords = freezed,
+    Object? codes = freezed,
   }) {
     return _then(Bundle$(
       passwords: passwords == freezed
           ? _value.passwords
           : passwords // ignore: cast_nullable_to_non_nullable
               as List<Password>,
+      codes: codes == freezed
+          ? _value.codes
+          : codes // ignore: cast_nullable_to_non_nullable
+              as List<Code>,
     ));
   }
 }
@@ -811,17 +1039,20 @@ class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements 
 /// @nodoc
 @JsonSerializable()
 class _$Bundle$ implements Bundle$ {
-  const _$Bundle$({this.passwords = const <Password>[]});
+  const _$Bundle$({this.passwords = const <Password>[], this.codes = const <Code>[]});
 
   factory _$Bundle$.fromJson(Map<String, dynamic> json) => _$$Bundle$FromJson(json);
 
   @JsonKey()
   @override
   final List<Password> passwords;
+  @JsonKey()
+  @override
+  final List<Code> codes;
 
   @override
   String toString() {
-    return 'Bundle(passwords: $passwords)';
+    return 'Bundle(passwords: $passwords, codes: $codes)';
   }
 
   @override
@@ -829,11 +1060,13 @@ class _$Bundle$ implements Bundle$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is Bundle$ &&
-            const DeepCollectionEquality().equals(other.passwords, passwords));
+            const DeepCollectionEquality().equals(other.passwords, passwords) &&
+            const DeepCollectionEquality().equals(other.codes, codes));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(passwords));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(passwords), const DeepCollectionEquality().hash(codes));
 
   @JsonKey(ignore: true)
   @override
@@ -846,12 +1079,14 @@ class _$Bundle$ implements Bundle$ {
 }
 
 abstract class Bundle$ implements Bundle {
-  const factory Bundle$({List<Password> passwords}) = _$Bundle$;
+  const factory Bundle$({List<Password> passwords, List<Code> codes}) = _$Bundle$;
 
   factory Bundle$.fromJson(Map<String, dynamic> json) = _$Bundle$.fromJson;
 
   @override
   List<Password> get passwords;
+  @override
+  List<Code> get codes;
   @override
   @JsonKey(ignore: true)
   $Bundle$CopyWith<Bundle$> get copyWith => throw _privateConstructorUsedError;
@@ -1158,4 +1393,308 @@ abstract class Password$ implements Password {
   @override
   @JsonKey(ignore: true)
   $Password$CopyWith<Password$> get copyWith => throw _privateConstructorUsedError;
+}
+
+Code _$CodeFromJson(Map<String, dynamic> json) {
+  return Code$.fromJson(json);
+}
+
+/// @nodoc
+class _$CodeTearOff {
+  const _$CodeTearOff();
+
+  Code$ call(
+      {required String id,
+      String title = '',
+      required String data,
+      required BarcodeFormat format,
+      String note = '',
+      required DateTime createdAt,
+      required DateTime lastAccess,
+      int timesAccessed = 0}) {
+    return Code$(
+      id: id,
+      title: title,
+      data: data,
+      format: format,
+      note: note,
+      createdAt: createdAt,
+      lastAccess: lastAccess,
+      timesAccessed: timesAccessed,
+    );
+  }
+
+  Code fromJson(Map<String, Object?> json) {
+    return Code.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Code = _$CodeTearOff();
+
+/// @nodoc
+mixin _$Code {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get data => throw _privateConstructorUsedError;
+  BarcodeFormat get format => throw _privateConstructorUsedError;
+  String get note => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get lastAccess => throw _privateConstructorUsedError;
+  int get timesAccessed => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CodeCopyWith<Code> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CodeCopyWith<$Res> {
+  factory $CodeCopyWith(Code value, $Res Function(Code) then) = _$CodeCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+      String title,
+      String data,
+      BarcodeFormat format,
+      String note,
+      DateTime createdAt,
+      DateTime lastAccess,
+      int timesAccessed});
+}
+
+/// @nodoc
+class _$CodeCopyWithImpl<$Res> implements $CodeCopyWith<$Res> {
+  _$CodeCopyWithImpl(this._value, this._then);
+
+  final Code _value;
+  // ignore: unused_field
+  final $Res Function(Code) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? data = freezed,
+    Object? format = freezed,
+    Object? note = freezed,
+    Object? createdAt = freezed,
+    Object? lastAccess = freezed,
+    Object? timesAccessed = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+      format: format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as BarcodeFormat,
+      note: note == freezed
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lastAccess: lastAccess == freezed
+          ? _value.lastAccess
+          : lastAccess // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      timesAccessed: timesAccessed == freezed
+          ? _value.timesAccessed
+          : timesAccessed // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $Code$CopyWith<$Res> implements $CodeCopyWith<$Res> {
+  factory $Code$CopyWith(Code$ value, $Res Function(Code$) then) = _$Code$CopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String id,
+      String title,
+      String data,
+      BarcodeFormat format,
+      String note,
+      DateTime createdAt,
+      DateTime lastAccess,
+      int timesAccessed});
+}
+
+/// @nodoc
+class _$Code$CopyWithImpl<$Res> extends _$CodeCopyWithImpl<$Res> implements $Code$CopyWith<$Res> {
+  _$Code$CopyWithImpl(Code$ _value, $Res Function(Code$) _then) : super(_value, (v) => _then(v as Code$));
+
+  @override
+  Code$ get _value => super._value as Code$;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? data = freezed,
+    Object? format = freezed,
+    Object? note = freezed,
+    Object? createdAt = freezed,
+    Object? lastAccess = freezed,
+    Object? timesAccessed = freezed,
+  }) {
+    return _then(Code$(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+      format: format == freezed
+          ? _value.format
+          : format // ignore: cast_nullable_to_non_nullable
+              as BarcodeFormat,
+      note: note == freezed
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lastAccess: lastAccess == freezed
+          ? _value.lastAccess
+          : lastAccess // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      timesAccessed: timesAccessed == freezed
+          ? _value.timesAccessed
+          : timesAccessed // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Code$ implements Code$ {
+  const _$Code$(
+      {required this.id,
+      this.title = '',
+      required this.data,
+      required this.format,
+      this.note = '',
+      required this.createdAt,
+      required this.lastAccess,
+      this.timesAccessed = 0});
+
+  factory _$Code$.fromJson(Map<String, dynamic> json) => _$$Code$FromJson(json);
+
+  @override
+  final String id;
+  @JsonKey()
+  @override
+  final String title;
+  @override
+  final String data;
+  @override
+  final BarcodeFormat format;
+  @JsonKey()
+  @override
+  final String note;
+  @override
+  final DateTime createdAt;
+  @override
+  final DateTime lastAccess;
+  @JsonKey()
+  @override
+  final int timesAccessed;
+
+  @override
+  String toString() {
+    return 'Code(id: $id, title: $title, data: $data, format: $format, note: $note, createdAt: $createdAt, lastAccess: $lastAccess, timesAccessed: $timesAccessed)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Code$ &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.format, format) &&
+            const DeepCollectionEquality().equals(other.note, note) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.lastAccess, lastAccess) &&
+            const DeepCollectionEquality().equals(other.timesAccessed, timesAccessed));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(format),
+      const DeepCollectionEquality().hash(note),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(lastAccess),
+      const DeepCollectionEquality().hash(timesAccessed));
+
+  @JsonKey(ignore: true)
+  @override
+  $Code$CopyWith<Code$> get copyWith => _$Code$CopyWithImpl<Code$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Code$ToJson(this);
+  }
+}
+
+abstract class Code$ implements Code {
+  const factory Code$(
+      {required String id,
+      String title,
+      required String data,
+      required BarcodeFormat format,
+      String note,
+      required DateTime createdAt,
+      required DateTime lastAccess,
+      int timesAccessed}) = _$Code$;
+
+  factory Code$.fromJson(Map<String, dynamic> json) = _$Code$.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get title;
+  @override
+  String get data;
+  @override
+  BarcodeFormat get format;
+  @override
+  String get note;
+  @override
+  DateTime get createdAt;
+  @override
+  DateTime get lastAccess;
+  @override
+  int get timesAccessed;
+  @override
+  @JsonKey(ignore: true)
+  $Code$CopyWith<Code$> get copyWith => throw _privateConstructorUsedError;
 }

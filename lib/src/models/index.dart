@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
 part 'index.freezed.dart';
 
@@ -13,6 +14,8 @@ part 'app_user.dart';
 part 'bundle.dart';
 
 part 'password.dart';
+
+part 'code.dart';
 
 enum AppPage {
   home,

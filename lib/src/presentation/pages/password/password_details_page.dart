@@ -154,6 +154,7 @@ class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
               body: pending.contains(SetEditing.pendingKey)
                   ? const Center(child: CircularProgressIndicator())
                   : ListView(
+                      physics: const BouncingScrollPhysics(),
                       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                       padding: const EdgeInsets.all(24),
                       children: <Widget>[
@@ -288,8 +289,10 @@ class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
                               child: TextFormField(
                                 controller: _noteController,
                                 focusNode: _noteNode,
-                                keyboardType: TextInputType.text,
                                 textInputAction: TextInputAction.done,
+                                keyboardType: TextInputType.multiline,
+                                minLines: 1,
+                                maxLines: 5,
                                 maxLength: editing ? 120 : null,
                                 readOnly: !editing,
                                 enableInteractiveSelection: editing,

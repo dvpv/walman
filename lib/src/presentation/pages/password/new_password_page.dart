@@ -8,6 +8,8 @@ import 'package:walman/src/presentation/styles/button_styles.dart';
 class NewPasswordPage extends StatefulWidget {
   const NewPasswordPage({Key? key}) : super(key: key);
 
+  static const String route = '/new-password';
+
   @override
   State<NewPasswordPage> createState() => _NewPasswordPageState();
 }
@@ -86,6 +88,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
       body: Form(
         key: _formKey,
         child: ListView(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(24),
           children: <Widget>[
             Padding(
@@ -161,8 +164,10 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
               child: TextFormField(
                 controller: _note,
                 focusNode: _noteNode,
-                keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
+                keyboardType: TextInputType.multiline,
+                minLines: 1,
+                maxLines: 5,
                 maxLength: 120,
                 enableSuggestions: false,
                 decoration: const InputDecoration(

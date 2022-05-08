@@ -9,6 +9,7 @@ class LocalEpic {
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, CreateNewPassword>(_createNewPassword),
+      TypedEpic<AppState, CreateNewCode>(_createNewCode),
       TypedEpic<AppState, EditPasswordStart>(_editPasswordStart),
       TypedEpic<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart)
     ]);
@@ -43,5 +44,9 @@ class LocalEpic {
           .onErrorReturnWith(SetDetailsPasswordTargetError.new)
           .doOnData(action.onResult);
     });
+  }
+
+  Stream<AppAction> _createNewCode(Stream<CreateNewCode> actions, EpicStore<AppState> store) {
+    return actions.map<AppAction>((CreateNewCode action) => StoreDataStart(masterKey: action.masterKey));
   }
 }

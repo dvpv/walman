@@ -692,3 +692,123 @@ abstract class SetEditingError implements SetEditing, ActionDone, ErrorAction {
   @JsonKey(ignore: true)
   $SetEditingErrorCopyWith<SetEditingError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SelectItemDetailsTearOff {
+  const _$SelectItemDetailsTearOff();
+
+  SelectItemDetails$ call(String selectedId) {
+    return SelectItemDetails$(
+      selectedId,
+    );
+  }
+}
+
+/// @nodoc
+const $SelectItemDetails = _$SelectItemDetailsTearOff();
+
+/// @nodoc
+mixin _$SelectItemDetails {
+  String get selectedId => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SelectItemDetailsCopyWith<SelectItemDetails> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SelectItemDetailsCopyWith<$Res> {
+  factory $SelectItemDetailsCopyWith(SelectItemDetails value, $Res Function(SelectItemDetails) then) =
+      _$SelectItemDetailsCopyWithImpl<$Res>;
+  $Res call({String selectedId});
+}
+
+/// @nodoc
+class _$SelectItemDetailsCopyWithImpl<$Res> implements $SelectItemDetailsCopyWith<$Res> {
+  _$SelectItemDetailsCopyWithImpl(this._value, this._then);
+
+  final SelectItemDetails _value;
+  // ignore: unused_field
+  final $Res Function(SelectItemDetails) _then;
+
+  @override
+  $Res call({
+    Object? selectedId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      selectedId: selectedId == freezed
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SelectItemDetails$CopyWith<$Res> implements $SelectItemDetailsCopyWith<$Res> {
+  factory $SelectItemDetails$CopyWith(SelectItemDetails$ value, $Res Function(SelectItemDetails$) then) =
+      _$SelectItemDetails$CopyWithImpl<$Res>;
+  @override
+  $Res call({String selectedId});
+}
+
+/// @nodoc
+class _$SelectItemDetails$CopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetails$CopyWith<$Res> {
+  _$SelectItemDetails$CopyWithImpl(SelectItemDetails$ _value, $Res Function(SelectItemDetails$) _then)
+      : super(_value, (v) => _then(v as SelectItemDetails$));
+
+  @override
+  SelectItemDetails$ get _value => super._value as SelectItemDetails$;
+
+  @override
+  $Res call({
+    Object? selectedId = freezed,
+  }) {
+    return _then(SelectItemDetails$(
+      selectedId == freezed
+          ? _value.selectedId
+          : selectedId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectItemDetails$ implements SelectItemDetails$ {
+  const _$SelectItemDetails$(this.selectedId);
+
+  @override
+  final String selectedId;
+
+  @override
+  String toString() {
+    return 'SelectItemDetails(selectedId: $selectedId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SelectItemDetails$ &&
+            const DeepCollectionEquality().equals(other.selectedId, selectedId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(selectedId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SelectItemDetails$CopyWith<SelectItemDetails$> get copyWith =>
+      _$SelectItemDetails$CopyWithImpl<SelectItemDetails$>(this, _$identity);
+}
+
+abstract class SelectItemDetails$ implements SelectItemDetails {
+  const factory SelectItemDetails$(String selectedId) = _$SelectItemDetails$;
+
+  @override
+  String get selectedId;
+  @override
+  @JsonKey(ignore: true)
+  $SelectItemDetails$CopyWith<SelectItemDetails$> get copyWith => throw _privateConstructorUsedError;
+}

@@ -5,8 +5,10 @@ import 'package:walman/src/presentation/components/app_bar_element.dart';
 import 'package:walman/src/presentation/components/app_bar_menu_button.dart';
 import 'package:walman/src/presentation/components/search_delegate.dart';
 import 'package:walman/src/presentation/pages/code/codes_page.dart';
+import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
 import 'package:walman/src/presentation/pages/home_page.dart';
 import 'package:walman/src/presentation/pages/password/passwords_page.dart';
+import 'package:walman/src/presentation/pages/place/new_place_page.dart';
 import 'package:walman/src/presentation/pages/place/places_page.dart';
 
 class IndexPage extends StatelessWidget {
@@ -90,17 +92,17 @@ class IndexPage extends StatelessWidget {
                             ListTile(
                               leading: const Icon(Icons.lock),
                               title: const Text('Create a new password'),
-                              onTap: () => Navigator.popAndPushNamed(context, '/new-password'),
+                              onTap: () => Navigator.popAndPushNamed(context, NewPlacePage.route),
                             ),
                             ListTile(
                               leading: const Icon(Icons.place),
                               title: const Text('Create a new place'),
-                              onTap: () => Navigator.popAndPushNamed(context, '/new-place'),
+                              onTap: () => Navigator.popAndPushNamed(context, NewPlacePage.route),
                             ),
                             ListTile(
                               leading: const Icon(Icons.qr_code),
                               title: const Text('Create a new code'),
-                              onTap: () => Navigator.popAndPushNamed(context, '/new-code'),
+                              onTap: () => Navigator.popAndPushNamed(context, ScanNewCodePage.route),
                             ),
                           ],
                         ),

@@ -36,6 +36,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.2"
+  barcode:
+    dependency: "direct main"
+    description:
+      name: barcode
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
+  barcode_widget:
+    dependency: "direct main"
+    description:
+      name: barcode_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -300,6 +314,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.2"
+  flutter_slidable:
+    dependency: "direct main"
+    description:
+      name: flutter_slidable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -429,6 +450,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  mobile_scanner:
+    dependency: "direct main"
+    description:
+      name: mobile_scanner
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   package_config:
     dependency: transitive
     description:
@@ -478,6 +506,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  qr:
+    dependency: transitive
+    description:
+      name: qr
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   redux:
     dependency: "direct main"
     description:

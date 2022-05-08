@@ -27,6 +27,7 @@ class _PasswordsPageState extends State<PasswordsPage> {
         builder: (BuildContext context, Bundle bundle) {
           final List<Password> passwords = bundle.passwords;
           return ListView.builder(
+            physics: const BouncingScrollPhysics(),
             itemCount: passwords.length,
             itemBuilder: (BuildContext context, int index) {
               final Password password = passwords[index];
