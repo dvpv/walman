@@ -7,6 +7,7 @@ Reducer<AppState> authReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, SignUpSuccessful>(_signupSuccessful),
   TypedReducer<AppState, GetCurrentUserSuccessful>(_getCurrentUserSuccessful),
   TypedReducer<AppState, LogoutSuccessful>(_logoutSuccessful),
+  TypedReducer<AppState, UnlockAppSuccessful>(_unlockAppSuccessful),
 ]);
 
 AppState _loginSuccessful(AppState state, LoginSuccessful action) {
@@ -23,4 +24,8 @@ AppState _getCurrentUserSuccessful(AppState state, GetCurrentUserSuccessful acti
 
 AppState _logoutSuccessful(AppState state, LogoutSuccessful action) {
   return const AppState();
+}
+
+AppState _unlockAppSuccessful(AppState state, UnlockAppSuccessful action) {
+  return state.copyWith(user: action.user);
 }

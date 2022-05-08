@@ -16,6 +16,7 @@ class AuthEpic {
       TypedEpic<AppState, SignUpStart>(_signup),
       TypedEpic<AppState, GetCurrentUserStart>(_getCurrentUser),
       TypedEpic<AppState, LogoutStart>(_logout),
+      TypedEpic<AppState, UnlockAppStart>(_unlockAppStart),
     ]);
   }
 
@@ -54,6 +55,17 @@ class AuthEpic {
           .asyncMap((_) => _auth.logout())
           .mapTo<Logout>(LogoutSuccessful(action.pendingId))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => LogoutError(error, stackTrace, action.pendingId));
+    });
+  }
+
+  Stream<AppAction> _unlockAppStart(Stream<UnlockAppStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((UnlockAppStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _auth.login(email: store.state.user!.email, password: action.password))
+          .asyncMap<AppAction>((AppUser user) => UnlockAppSuccessful(user, action.pendingId))
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => UnlockAppError(error, stackTrace, action.pendingId),
+          );
     });
   }
 }

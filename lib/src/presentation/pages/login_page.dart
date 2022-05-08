@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                         keyboardType: TextInputType.emailAddress,
                         textInputAction: TextInputAction.next,
                         decoration: const InputDecoration(
-                          hintText: 'email',
+                          labelText: 'Email',
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.done,
                         obscureText: true,
                         decoration: const InputDecoration(
-                          hintText: 'password',
+                          labelText: 'Password',
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {

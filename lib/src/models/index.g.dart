@@ -49,12 +49,14 @@ _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,
       email: json['email'] as String,
       username: json['username'] as String,
+      masterKey: json['masterKey'] as String?,
     );
 
 Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'username': instance.username,
+      'masterKey': instance.masterKey,
     };
 
 _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(

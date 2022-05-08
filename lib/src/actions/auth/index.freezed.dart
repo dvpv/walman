@@ -2273,3 +2273,586 @@ abstract class GetCurrentUserError implements GetCurrentUser, ErrorAction {
   @JsonKey(ignore: true)
   $GetCurrentUserErrorCopyWith<GetCurrentUserError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$UnlockAppTearOff {
+  const _$UnlockAppTearOff();
+
+  UnlockAppStart start({required String password, String pendingId = _kUnlockAppPendingId}) {
+    return UnlockAppStart(
+      password: password,
+      pendingId: pendingId,
+    );
+  }
+
+  UnlockAppSuccessful successful(AppUser? user, [String pendingId = _kUnlockAppPendingId]) {
+    return UnlockAppSuccessful(
+      user,
+      pendingId,
+    );
+  }
+
+  UnlockAppError error(Object error, StackTrace stackTrace, [String pendingId = _kUnlockAppPendingId]) {
+    return UnlockAppError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $UnlockApp = _$UnlockAppTearOff();
+
+/// @nodoc
+mixin _$UnlockApp {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password, String pendingId) start,
+    required TResult Function(AppUser? user, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnlockAppStart value) start,
+    required TResult Function(UnlockAppSuccessful value) successful,
+    required TResult Function(UnlockAppError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UnlockAppCopyWith<UnlockApp> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnlockAppCopyWith<$Res> {
+  factory $UnlockAppCopyWith(UnlockApp value, $Res Function(UnlockApp) then) = _$UnlockAppCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$UnlockAppCopyWithImpl<$Res> implements $UnlockAppCopyWith<$Res> {
+  _$UnlockAppCopyWithImpl(this._value, this._then);
+
+  final UnlockApp _value;
+  // ignore: unused_field
+  final $Res Function(UnlockApp) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $UnlockAppStartCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
+  factory $UnlockAppStartCopyWith(UnlockAppStart value, $Res Function(UnlockAppStart) then) =
+      _$UnlockAppStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String password, String pendingId});
+}
+
+/// @nodoc
+class _$UnlockAppStartCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
+    implements $UnlockAppStartCopyWith<$Res> {
+  _$UnlockAppStartCopyWithImpl(UnlockAppStart _value, $Res Function(UnlockAppStart) _then)
+      : super(_value, (v) => _then(v as UnlockAppStart));
+
+  @override
+  UnlockAppStart get _value => super._value as UnlockAppStart;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(UnlockAppStart(
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$UnlockAppStart implements UnlockAppStart {
+  const _$UnlockAppStart({required this.password, this.pendingId = _kUnlockAppPendingId});
+
+  @override
+  final String password;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UnlockApp.start(password: $password, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnlockAppStart &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(password), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $UnlockAppStartCopyWith<UnlockAppStart> get copyWith =>
+      _$UnlockAppStartCopyWithImpl<UnlockAppStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password, String pendingId) start,
+    required TResult Function(AppUser? user, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(password, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(password, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(password, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnlockAppStart value) start,
+    required TResult Function(UnlockAppSuccessful value) successful,
+    required TResult Function(UnlockAppError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlockAppStart implements UnlockApp, ActionStart {
+  const factory UnlockAppStart({required String password, String pendingId}) = _$UnlockAppStart;
+
+  String get password;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $UnlockAppStartCopyWith<UnlockAppStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnlockAppSuccessfulCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
+  factory $UnlockAppSuccessfulCopyWith(UnlockAppSuccessful value, $Res Function(UnlockAppSuccessful) then) =
+      _$UnlockAppSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({AppUser? user, String pendingId});
+
+  $AppUserCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class _$UnlockAppSuccessfulCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
+    implements $UnlockAppSuccessfulCopyWith<$Res> {
+  _$UnlockAppSuccessfulCopyWithImpl(UnlockAppSuccessful _value, $Res Function(UnlockAppSuccessful) _then)
+      : super(_value, (v) => _then(v as UnlockAppSuccessful));
+
+  @override
+  UnlockAppSuccessful get _value => super._value as UnlockAppSuccessful;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(UnlockAppSuccessful(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $AppUserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $AppUserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$UnlockAppSuccessful implements UnlockAppSuccessful {
+  const _$UnlockAppSuccessful(this.user, [this.pendingId = _kUnlockAppPendingId]);
+
+  @override
+  final AppUser? user;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UnlockApp.successful(user: $user, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnlockAppSuccessful &&
+            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(user), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $UnlockAppSuccessfulCopyWith<UnlockAppSuccessful> get copyWith =>
+      _$UnlockAppSuccessfulCopyWithImpl<UnlockAppSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password, String pendingId) start,
+    required TResult Function(AppUser? user, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnlockAppStart value) start,
+    required TResult Function(UnlockAppSuccessful value) successful,
+    required TResult Function(UnlockAppError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlockAppSuccessful implements UnlockApp, ActionDone {
+  const factory UnlockAppSuccessful(AppUser? user, [String pendingId]) = _$UnlockAppSuccessful;
+
+  AppUser? get user;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $UnlockAppSuccessfulCopyWith<UnlockAppSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnlockAppErrorCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
+  factory $UnlockAppErrorCopyWith(UnlockAppError value, $Res Function(UnlockAppError) then) =
+      _$UnlockAppErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$UnlockAppErrorCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
+    implements $UnlockAppErrorCopyWith<$Res> {
+  _$UnlockAppErrorCopyWithImpl(UnlockAppError _value, $Res Function(UnlockAppError) _then)
+      : super(_value, (v) => _then(v as UnlockAppError));
+
+  @override
+  UnlockAppError get _value => super._value as UnlockAppError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(UnlockAppError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$UnlockAppError implements UnlockAppError {
+  const _$UnlockAppError(this.error, this.stackTrace, [this.pendingId = _kUnlockAppPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UnlockApp.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UnlockAppError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $UnlockAppErrorCopyWith<UnlockAppError> get copyWith =>
+      _$UnlockAppErrorCopyWithImpl<UnlockAppError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password, String pendingId) start,
+    required TResult Function(AppUser? user, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password, String pendingId)? start,
+    TResult Function(AppUser? user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UnlockAppStart value) start,
+    required TResult Function(UnlockAppSuccessful value) successful,
+    required TResult Function(UnlockAppError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UnlockAppStart value)? start,
+    TResult Function(UnlockAppSuccessful value)? successful,
+    TResult Function(UnlockAppError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlockAppError implements UnlockApp, ActionDone, ErrorAction {
+  const factory UnlockAppError(Object error, StackTrace stackTrace, [String pendingId]) = _$UnlockAppError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $UnlockAppErrorCopyWith<UnlockAppError> get copyWith => throw _privateConstructorUsedError;
+}

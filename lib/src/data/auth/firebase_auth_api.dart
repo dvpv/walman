@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:walman/src/data/auth/auth_api.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/utils/hash.dart';
 
 class FirebaseAuthApi implements AuthApi {
   FirebaseAuthApi(this._auth);
@@ -15,6 +16,7 @@ class FirebaseAuthApi implements AuthApi {
       uid: _auth.currentUser!.uid,
       username: username,
       email: email,
+      masterKey: generateMasterKey(password),
     );
   }
 
@@ -36,6 +38,7 @@ class FirebaseAuthApi implements AuthApi {
       uid: user.uid,
       email: user.email!,
       username: user.displayName!,
+      masterKey: generateMasterKey(password),
     );
   }
 
