@@ -39,6 +39,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
             lastAccess: DateTime.now(),
             createdAt: DateTime.now(),
           ),
+          StoreProvider.of<AppState>(context).state.user!.masterKey!,
         ),
       );
       Navigator.pop(context);

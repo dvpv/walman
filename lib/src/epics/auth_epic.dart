@@ -2,6 +2,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/data/auth/auth_api.dart';
 import 'package:walman/src/models/index.dart';
 
@@ -24,7 +25,12 @@ class AuthEpic {
     return actions.flatMap((LoginStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.login(email: action.email, password: action.password))
-          .map<AppAction>((AppUser user) => LoginSuccessful(user, action.pendingId))
+          .expand<AppAction>(
+            (AppUser user) => <AppAction>[
+              LoginSuccessful(user, action.pendingId),
+              GetDataStart(masterKey: user.masterKey!),
+            ],
+          )
           .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginError(error, stackTrace, action.pendingId))
           .doOnData(action.onResult);
     });
@@ -62,7 +68,12 @@ class AuthEpic {
     return actions.flatMap((UnlockAppStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.login(email: store.state.user!.email, password: action.password))
-          .asyncMap<AppAction>((AppUser user) => UnlockAppSuccessful(user, action.pendingId))
+          .expand<AppAction>(
+            (AppUser user) => <AppAction>[
+              UnlockAppSuccessful(user, action.pendingId),
+              GetDataStart(masterKey: user.masterKey!),
+            ],
+          )
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => UnlockAppError(error, stackTrace, action.pendingId),
           );

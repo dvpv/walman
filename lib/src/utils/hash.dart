@@ -10,5 +10,5 @@ String generateMasterKey(String password) {
   for (int i = 0; i < _kHashRounds - 1; i++) {
     digest = sha512.convert(digest.bytes);
   }
-  return digest.toString().substring(0, 64);
+  return base64.encode(digest.bytes).substring(0, 32);
 }

@@ -19,7 +19,7 @@ class StorageEpic {
   Stream<GetData> _getDataStart(Stream<GetDataStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetDataStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => _api.getData())
+          .asyncMap((_) => _api.getData(action.masterKey))
           .map<GetData>((Bundle? data) => GetDataSuccessful(data, action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => GetDataError(error, stackTrace, action.pendingId),
@@ -30,7 +30,7 @@ class StorageEpic {
   Stream<StoreData> _storeDataStart(Stream<StoreDataStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreDataStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => _api.storeData(store.state.bundle))
+          .asyncMap((_) => _api.storeData(store.state.bundle, action.masterKey))
           .mapTo<StoreData>(StoreDataSuccessful(action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => StoreDataError(error, stackTrace, action.pendingId),

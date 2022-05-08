@@ -43,81 +43,87 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-        child: PendingContainer(
-          builder: (BuildContext context, Set<String> pending) {
-            return SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      TextFormField(
-                        controller: _email,
-                        autofocus: true,
-                        keyboardType: TextInputType.emailAddress,
-                        textInputAction: TextInputAction.next,
-                        decoration: const InputDecoration(
-                          labelText: 'Email',
-                        ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
-                          } else if (!EmailValidator.validate(value)) {
-                            return 'Please enter a valid email';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) {
-                          FocusScope.of(context).requestFocus(_passwordNode);
-                        },
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        controller: _password,
-                        focusNode: _passwordNode,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.done,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Password',
-                        ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) => _onLogin(context),
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      TextButton(
-                        onPressed: () => _onLogin(context),
-                        child: const Text('Login'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/signup');
-                        },
-                        child: const Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            color: Colors.black,
+      body: PendingContainer(
+        builder: (BuildContext context, Set<String> pending) {
+          return pending.contains(Login.pendingKey)
+              ? const Center(child: CircularProgressIndicator())
+              : Form(
+                  child: PendingContainer(
+                    builder: (BuildContext context, Set<String> pending) {
+                      return SafeArea(
+                        child: Padding(
+                          padding: const EdgeInsets.all(24),
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                TextFormField(
+                                  controller: _email,
+                                  autofocus: true,
+                                  keyboardType: TextInputType.emailAddress,
+                                  textInputAction: TextInputAction.next,
+                                  decoration: const InputDecoration(
+                                    labelText: 'Email',
+                                  ),
+                                  validator: (String? value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Please enter your email';
+                                    } else if (!EmailValidator.validate(value)) {
+                                      return 'Please enter a valid email';
+                                    }
+                                    return null;
+                                  },
+                                  onFieldSubmitted: (_) {
+                                    FocusScope.of(context).requestFocus(_passwordNode);
+                                  },
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                TextFormField(
+                                  controller: _password,
+                                  focusNode: _passwordNode,
+                                  keyboardType: TextInputType.visiblePassword,
+                                  textInputAction: TextInputAction.done,
+                                  obscureText: true,
+                                  decoration: const InputDecoration(
+                                    labelText: 'Password',
+                                  ),
+                                  validator: (String? value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Please enter your password';
+                                    }
+                                    return null;
+                                  },
+                                  onFieldSubmitted: (_) => _onLogin(context),
+                                ),
+                                const SizedBox(
+                                  height: 24,
+                                ),
+                                TextButton(
+                                  onPressed: () => _onLogin(context),
+                                  child: const Text('Login'),
+                                ),
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/signup');
+                                  },
+                                  child: const Text(
+                                    'Sign Up',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      );
+                    },
                   ),
-                ),
-              ),
-            );
-          },
-        ),
+                );
+        },
       ),
     );
   }

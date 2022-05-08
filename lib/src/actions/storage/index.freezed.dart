@@ -18,8 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$GetDataTearOff {
   const _$GetDataTearOff();
 
-  GetDataStart start({String pendingId = _kGetDataPendingId}) {
+  GetDataStart start({required String masterKey, String pendingId = _kGetDataPendingId}) {
     return GetDataStart(
+      masterKey: masterKey,
       pendingId: pendingId,
     );
   }
@@ -49,21 +50,21 @@ mixin _$GetData {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle? bundle, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -128,7 +129,7 @@ abstract class $GetDataStartCopyWith<$Res> implements $GetDataCopyWith<$Res> {
   factory $GetDataStartCopyWith(GetDataStart value, $Res Function(GetDataStart) then) =
       _$GetDataStartCopyWithImpl<$Res>;
   @override
-  $Res call({String pendingId});
+  $Res call({String masterKey, String pendingId});
 }
 
 /// @nodoc
@@ -141,9 +142,14 @@ class _$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imple
 
   @override
   $Res call({
+    Object? masterKey = freezed,
     Object? pendingId = freezed,
   }) {
     return _then(GetDataStart(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
       pendingId: pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -156,15 +162,17 @@ class _$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imple
 
 @Implements<ActionStart>()
 class _$GetDataStart implements GetDataStart {
-  const _$GetDataStart({this.pendingId = _kGetDataPendingId});
+  const _$GetDataStart({required this.masterKey, this.pendingId = _kGetDataPendingId});
 
+  @override
+  final String masterKey;
   @JsonKey()
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'GetData.start(pendingId: $pendingId)';
+    return 'GetData.start(masterKey: $masterKey, pendingId: $pendingId)';
   }
 
   @override
@@ -172,11 +180,13 @@ class _$GetDataStart implements GetDataStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GetDataStart &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -185,33 +195,33 @@ class _$GetDataStart implements GetDataStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle? bundle, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return start(pendingId);
+    return start(masterKey, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return start?.call(pendingId);
+    return start?.call(masterKey, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(pendingId);
+      return start(masterKey, pendingId);
     }
     return orElse();
   }
@@ -252,8 +262,9 @@ class _$GetDataStart implements GetDataStart {
 }
 
 abstract class GetDataStart implements GetData, ActionStart {
-  const factory GetDataStart({String pendingId}) = _$GetDataStart;
+  const factory GetDataStart({required String masterKey, String pendingId}) = _$GetDataStart;
 
+  String get masterKey;
   @override
   String get pendingId;
   @override
@@ -347,7 +358,7 @@ class _$GetDataSuccessful implements GetDataSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle? bundle, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -357,7 +368,7 @@ class _$GetDataSuccessful implements GetDataSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -367,7 +378,7 @@ class _$GetDataSuccessful implements GetDataSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -504,7 +515,7 @@ class _$GetDataError implements GetDataError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle? bundle, String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -514,7 +525,7 @@ class _$GetDataError implements GetDataError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -524,7 +535,7 @@ class _$GetDataError implements GetDataError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle? bundle, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -586,8 +597,9 @@ abstract class GetDataError implements GetData, ActionDone, ErrorAction {
 class _$StoreDataTearOff {
   const _$StoreDataTearOff();
 
-  StoreDataStart start({String pendingId = _kStoreDataPendingId}) {
+  StoreDataStart start({required String masterKey, String pendingId = _kStoreDataPendingId}) {
     return StoreDataStart(
+      masterKey: masterKey,
       pendingId: pendingId,
     );
   }
@@ -616,21 +628,21 @@ mixin _$StoreData {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -695,7 +707,7 @@ abstract class $StoreDataStartCopyWith<$Res> implements $StoreDataCopyWith<$Res>
   factory $StoreDataStartCopyWith(StoreDataStart value, $Res Function(StoreDataStart) then) =
       _$StoreDataStartCopyWithImpl<$Res>;
   @override
-  $Res call({String pendingId});
+  $Res call({String masterKey, String pendingId});
 }
 
 /// @nodoc
@@ -709,9 +721,14 @@ class _$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? masterKey = freezed,
     Object? pendingId = freezed,
   }) {
     return _then(StoreDataStart(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
       pendingId: pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -724,15 +741,17 @@ class _$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
 
 @Implements<ActionStart>()
 class _$StoreDataStart implements StoreDataStart {
-  const _$StoreDataStart({this.pendingId = _kStoreDataPendingId});
+  const _$StoreDataStart({required this.masterKey, this.pendingId = _kStoreDataPendingId});
 
+  @override
+  final String masterKey;
   @JsonKey()
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'StoreData.start(pendingId: $pendingId)';
+    return 'StoreData.start(masterKey: $masterKey, pendingId: $pendingId)';
   }
 
   @override
@@ -740,11 +759,13 @@ class _$StoreDataStart implements StoreDataStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StoreDataStart &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -754,33 +775,33 @@ class _$StoreDataStart implements StoreDataStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return start(pendingId);
+    return start(masterKey, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return start?.call(pendingId);
+    return start?.call(masterKey, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(pendingId);
+      return start(masterKey, pendingId);
     }
     return orElse();
   }
@@ -821,8 +842,9 @@ class _$StoreDataStart implements StoreDataStart {
 }
 
 abstract class StoreDataStart implements StoreData, ActionStart {
-  const factory StoreDataStart({String pendingId}) = _$StoreDataStart;
+  const factory StoreDataStart({required String masterKey, String pendingId}) = _$StoreDataStart;
 
+  String get masterKey;
   @override
   String get pendingId;
   @override
@@ -894,7 +916,7 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -904,7 +926,7 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -914,7 +936,7 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -1052,7 +1074,7 @@ class _$StoreDataError implements StoreDataError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -1062,7 +1084,7 @@ class _$StoreDataError implements StoreDataError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -1072,7 +1094,7 @@ class _$StoreDataError implements StoreDataError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),

@@ -15,7 +15,7 @@ class LocalEpic {
   }
 
   Stream<AppAction> _createNewPassword(Stream<CreateNewPassword> actions, EpicStore<AppState> store) {
-    return actions.mapTo(const StoreDataStart());
+    return actions.map<AppAction>((CreateNewPassword action) => StoreDataStart(masterKey: action.masterKey));
   }
 
   Stream<AppAction> _editPasswordStart(Stream<EditPasswordStart> actions, EpicStore<AppState> store) {
@@ -24,7 +24,7 @@ class LocalEpic {
           .expand<AppAction>(
             (_) => <AppAction>[
               EditPasswordSuccessful(action.pendingId),
-              const StoreDataStart(),
+              StoreDataStart(masterKey: store.state.user!.masterKey!),
             ],
           )
           .onErrorReturnWith(

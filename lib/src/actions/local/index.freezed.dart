@@ -18,9 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CreateNewPasswordTearOff {
   const _$CreateNewPasswordTearOff();
 
-  CreateNewPassword$ call(Password password) {
+  CreateNewPassword$ call(Password password, String masterKey) {
     return CreateNewPassword$(
       password,
+      masterKey,
     );
   }
 }
@@ -31,6 +32,7 @@ const $CreateNewPassword = _$CreateNewPasswordTearOff();
 /// @nodoc
 mixin _$CreateNewPassword {
   Password get password => throw _privateConstructorUsedError;
+  String get masterKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateNewPasswordCopyWith<CreateNewPassword> get copyWith => throw _privateConstructorUsedError;
@@ -40,7 +42,7 @@ mixin _$CreateNewPassword {
 abstract class $CreateNewPasswordCopyWith<$Res> {
   factory $CreateNewPasswordCopyWith(CreateNewPassword value, $Res Function(CreateNewPassword) then) =
       _$CreateNewPasswordCopyWithImpl<$Res>;
-  $Res call({Password password});
+  $Res call({Password password, String masterKey});
 
   $PasswordCopyWith<$Res> get password;
 }
@@ -56,12 +58,17 @@ class _$CreateNewPasswordCopyWithImpl<$Res> implements $CreateNewPasswordCopyWit
   @override
   $Res call({
     Object? password = freezed,
+    Object? masterKey = freezed,
   }) {
     return _then(_value.copyWith(
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -78,7 +85,7 @@ abstract class $CreateNewPassword$CopyWith<$Res> implements $CreateNewPasswordCo
   factory $CreateNewPassword$CopyWith(CreateNewPassword$ value, $Res Function(CreateNewPassword$) then) =
       _$CreateNewPassword$CopyWithImpl<$Res>;
   @override
-  $Res call({Password password});
+  $Res call({Password password, String masterKey});
 
   @override
   $PasswordCopyWith<$Res> get password;
@@ -96,12 +103,17 @@ class _$CreateNewPassword$CopyWithImpl<$Res> extends _$CreateNewPasswordCopyWith
   @override
   $Res call({
     Object? password = freezed,
+    Object? masterKey = freezed,
   }) {
     return _then(CreateNewPassword$(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as Password,
+      masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -109,14 +121,16 @@ class _$CreateNewPassword$CopyWithImpl<$Res> extends _$CreateNewPasswordCopyWith
 /// @nodoc
 
 class _$CreateNewPassword$ implements CreateNewPassword$ {
-  const _$CreateNewPassword$(this.password);
+  const _$CreateNewPassword$(this.password, this.masterKey);
 
   @override
   final Password password;
+  @override
+  final String masterKey;
 
   @override
   String toString() {
-    return 'CreateNewPassword(password: $password)';
+    return 'CreateNewPassword(password: $password, masterKey: $masterKey)';
   }
 
   @override
@@ -124,11 +138,13 @@ class _$CreateNewPassword$ implements CreateNewPassword$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CreateNewPassword$ &&
-            const DeepCollectionEquality().equals(other.password, password));
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(password), const DeepCollectionEquality().hash(masterKey));
 
   @JsonKey(ignore: true)
   @override
@@ -137,10 +153,12 @@ class _$CreateNewPassword$ implements CreateNewPassword$ {
 }
 
 abstract class CreateNewPassword$ implements CreateNewPassword {
-  const factory CreateNewPassword$(Password password) = _$CreateNewPassword$;
+  const factory CreateNewPassword$(Password password, String masterKey) = _$CreateNewPassword$;
 
   @override
   Password get password;
+  @override
+  String get masterKey;
   @override
   @JsonKey(ignore: true)
   $CreateNewPassword$CopyWith<CreateNewPassword$> get copyWith => throw _privateConstructorUsedError;

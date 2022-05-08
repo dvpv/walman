@@ -6,6 +6,7 @@ const String _kGetDataPendingId = 'GetData';
 class GetData with _$GetData implements AppAction {
   @Implements<ActionStart>()
   const factory GetData.start({
+    required String masterKey,
     @Default(_kGetDataPendingId) String pendingId,
   }) = GetDataStart;
 
