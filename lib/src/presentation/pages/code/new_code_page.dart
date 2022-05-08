@@ -75,6 +75,7 @@ class _NewCodePageState extends State<NewCodePage> {
                       TextButton(
                         child: const Text('SCAN AGAIN'),
                         onPressed: () {
+                          Navigator.pop(context);
                           Navigator.popAndPushNamed(context, ScanNewCodePage.route);
                         },
                       ),
