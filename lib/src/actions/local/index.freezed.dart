@@ -1519,3 +1519,239 @@ abstract class SetScannedCode$ implements SetScannedCode {
   @JsonKey(ignore: true)
   $SetScannedCode$CopyWith<SetScannedCode$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$DeletePasswordTearOff {
+  const _$DeletePasswordTearOff();
+
+  DeletePassword$ call(String id) {
+    return DeletePassword$(
+      id,
+    );
+  }
+}
+
+/// @nodoc
+const $DeletePassword = _$DeletePasswordTearOff();
+
+/// @nodoc
+mixin _$DeletePassword {
+  String get id => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeletePasswordCopyWith<DeletePassword> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeletePasswordCopyWith<$Res> {
+  factory $DeletePasswordCopyWith(DeletePassword value, $Res Function(DeletePassword) then) =
+      _$DeletePasswordCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$DeletePasswordCopyWithImpl<$Res> implements $DeletePasswordCopyWith<$Res> {
+  _$DeletePasswordCopyWithImpl(this._value, this._then);
+
+  final DeletePassword _value;
+  // ignore: unused_field
+  final $Res Function(DeletePassword) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $DeletePassword$CopyWith<$Res> implements $DeletePasswordCopyWith<$Res> {
+  factory $DeletePassword$CopyWith(DeletePassword$ value, $Res Function(DeletePassword$) then) =
+      _$DeletePassword$CopyWithImpl<$Res>;
+  @override
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$DeletePassword$CopyWithImpl<$Res> extends _$DeletePasswordCopyWithImpl<$Res>
+    implements $DeletePassword$CopyWith<$Res> {
+  _$DeletePassword$CopyWithImpl(DeletePassword$ _value, $Res Function(DeletePassword$) _then)
+      : super(_value, (v) => _then(v as DeletePassword$));
+
+  @override
+  DeletePassword$ get _value => super._value as DeletePassword$;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(DeletePassword$(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeletePassword$ implements DeletePassword$ {
+  const _$DeletePassword$(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'DeletePassword(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DeletePassword$ &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  $DeletePassword$CopyWith<DeletePassword$> get copyWith =>
+      _$DeletePassword$CopyWithImpl<DeletePassword$>(this, _$identity);
+}
+
+abstract class DeletePassword$ implements DeletePassword {
+  const factory DeletePassword$(String id) = _$DeletePassword$;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  $DeletePassword$CopyWith<DeletePassword$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$DeleteCodeTearOff {
+  const _$DeleteCodeTearOff();
+
+  DeleteCode$ call(String id) {
+    return DeleteCode$(
+      id,
+    );
+  }
+}
+
+/// @nodoc
+const $DeleteCode = _$DeleteCodeTearOff();
+
+/// @nodoc
+mixin _$DeleteCode {
+  String get id => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeleteCodeCopyWith<DeleteCode> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteCodeCopyWith<$Res> {
+  factory $DeleteCodeCopyWith(DeleteCode value, $Res Function(DeleteCode) then) = _$DeleteCodeCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$DeleteCodeCopyWithImpl<$Res> implements $DeleteCodeCopyWith<$Res> {
+  _$DeleteCodeCopyWithImpl(this._value, this._then);
+
+  final DeleteCode _value;
+  // ignore: unused_field
+  final $Res Function(DeleteCode) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $DeleteCode$CopyWith<$Res> implements $DeleteCodeCopyWith<$Res> {
+  factory $DeleteCode$CopyWith(DeleteCode$ value, $Res Function(DeleteCode$) then) = _$DeleteCode$CopyWithImpl<$Res>;
+  @override
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$DeleteCode$CopyWithImpl<$Res> extends _$DeleteCodeCopyWithImpl<$Res> implements $DeleteCode$CopyWith<$Res> {
+  _$DeleteCode$CopyWithImpl(DeleteCode$ _value, $Res Function(DeleteCode$) _then)
+      : super(_value, (v) => _then(v as DeleteCode$));
+
+  @override
+  DeleteCode$ get _value => super._value as DeleteCode$;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(DeleteCode$(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteCode$ implements DeleteCode$ {
+  const _$DeleteCode$(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'DeleteCode(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DeleteCode$ &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  $DeleteCode$CopyWith<DeleteCode$> get copyWith => _$DeleteCode$CopyWithImpl<DeleteCode$>(this, _$identity);
+}
+
+abstract class DeleteCode$ implements DeleteCode {
+  const factory DeleteCode$(String id) = _$DeleteCode$;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  $DeleteCode$CopyWith<DeleteCode$> get copyWith => throw _privateConstructorUsedError;
+}

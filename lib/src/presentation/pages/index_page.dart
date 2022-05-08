@@ -7,6 +7,7 @@ import 'package:walman/src/presentation/components/search_delegate.dart';
 import 'package:walman/src/presentation/pages/code/codes_page.dart';
 import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
 import 'package:walman/src/presentation/pages/home_page.dart';
+import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/passwords_page.dart';
 import 'package:walman/src/presentation/pages/place/new_place_page.dart';
 import 'package:walman/src/presentation/pages/place/places_page.dart';
@@ -92,7 +93,7 @@ class IndexPage extends StatelessWidget {
                             ListTile(
                               leading: const Icon(Icons.lock),
                               title: const Text('Create a new password'),
-                              onTap: () => Navigator.popAndPushNamed(context, NewPlacePage.route),
+                              onTap: () => Navigator.popAndPushNamed(context, NewPasswordPage.route),
                             ),
                             ListTile(
                               leading: const Icon(Icons.place),

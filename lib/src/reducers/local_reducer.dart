@@ -5,6 +5,8 @@ import 'package:walman/src/models/index.dart';
 Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, CreateNewPassword>(_createNewPassword),
   TypedReducer<AppState, EditPasswordStart>(_editPasswordStart),
+  TypedReducer<AppState, DeletePassword>(_deletePassword),
+  TypedReducer<AppState, DeleteCode>(_deleteCode),
   TypedReducer<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart),
   TypedReducer<AppState, SetScannedCode>(_setScannedCode),
   TypedReducer<AppState, CreateNewCode>(_createNewCode),
@@ -22,6 +24,22 @@ AppState _editPasswordStart(AppState state, EditPasswordStart action) {
       passwords:
           state.bundle.passwords.toList().where((Password password) => password.id != action.password.id).toList()
             ..add(action.password),
+    ),
+  );
+}
+
+AppState _deletePassword(AppState state, DeletePassword action) {
+  return state.copyWith(
+    bundle: state.bundle.copyWith(
+      passwords: <Password>[...state.bundle.passwords].where((Password password) => action.id != password.id).toList(),
+    ),
+  );
+}
+
+AppState _deleteCode(AppState state, DeleteCode action) {
+  return state.copyWith(
+    bundle: state.bundle.copyWith(
+      codes: <Code>[...state.bundle.codes].where((Code code) => action.id != code.id).toList(),
     ),
   );
 }

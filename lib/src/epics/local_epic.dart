@@ -10,7 +10,9 @@ class LocalEpic {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, CreateNewPassword>(_createNewPassword),
       TypedEpic<AppState, CreateNewCode>(_createNewCode),
+      TypedEpic<AppState, DeletePassword>(_deletePassword),
       TypedEpic<AppState, EditPasswordStart>(_editPasswordStart),
+      TypedEpic<AppState, DeleteCode>(_deleteCode),
       TypedEpic<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart)
     ]);
   }
@@ -34,6 +36,10 @@ class LocalEpic {
     });
   }
 
+  Stream<AppAction> _deletePassword(Stream<DeletePassword> actions, EpicStore<AppState> store) {
+    return actions.map<AppAction>((DeletePassword action) => StoreDataStart(masterKey: store.state.user!.masterKey!));
+  }
+
   Stream<AppAction> _setDetailsPasswordTargetStart(
     Stream<SetDetailsPasswordTargetStart> actions,
     EpicStore<AppState> store,
@@ -48,5 +54,9 @@ class LocalEpic {
 
   Stream<AppAction> _createNewCode(Stream<CreateNewCode> actions, EpicStore<AppState> store) {
     return actions.map<AppAction>((CreateNewCode action) => StoreDataStart(masterKey: action.masterKey));
+  }
+
+  Stream<AppAction> _deleteCode(Stream<DeleteCode> actions, EpicStore<AppState> store) {
+    return actions.map<AppAction>((DeleteCode action) => StoreDataStart(masterKey: store.state.user!.masterKey!));
   }
 }

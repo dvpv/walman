@@ -2,6 +2,7 @@ import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/models/index.dart';
@@ -24,21 +25,17 @@ class CodesPage extends StatelessWidget {
               final Code code = codes[index];
               return Slidable(
                 endActionPane: ActionPane(
+                  extentRatio: 0.2,
                   motion: const DrawerMotion(),
                   children: <Widget>[
                     SlidableAction(
-                      onPressed: (BuildContext context) {},
+                      onPressed: (BuildContext context) {
+                        StoreProvider.of<AppState>(context).dispatch(DeleteCode(code.id));
+                      },
                       backgroundColor: Colors.red,
                       foregroundColor: Colors.white,
                       icon: Icons.delete,
                       label: 'Delete',
-                    ),
-                    SlidableAction(
-                      onPressed: (BuildContext context) {},
-                      backgroundColor: Colors.blue,
-                      foregroundColor: Colors.white,
-                      icon: Icons.edit,
-                      label: 'Edit',
                     ),
                   ],
                 ),
