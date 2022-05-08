@@ -42,7 +42,8 @@ class CodesPage extends StatelessWidget {
                 child: ListTile(
                   title: Text(code.title),
                   trailing: BarcodeWidget(
-                    width: 40,
+                    drawText: false,
+                    width: 50,
                     data: code.data,
                     barcode: barcodeFromScannerBarcodeFormat(code.format),
                   ),
