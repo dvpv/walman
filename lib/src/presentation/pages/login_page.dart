@@ -6,9 +6,12 @@ import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  static const String route = '/login';
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -106,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/signup');
+                                    Navigator.pushNamed(context, SignupPage.route);
                                   },
                                   child: const Text(
                                     'Sign Up',

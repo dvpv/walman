@@ -8,6 +8,8 @@ import 'package:walman/src/presentation/pages/unlock_page.dart';
 class StartPage extends StatelessWidget {
   const StartPage({Key? key}) : super(key: key);
 
+  static const String route = '/';
+
   @override
   Widget build(BuildContext context) {
     return UserContainer(

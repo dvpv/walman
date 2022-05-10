@@ -6,9 +6,12 @@ import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/start_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
+
+  static const String route = '/signup';
 
   @override
   State<SignupPage> createState() => _SignupPageState();
@@ -33,7 +36,7 @@ class _SignupPageState extends State<SignupPage> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
       }
     } else if (action is SignUpSuccessful) {
-      Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+      Navigator.pushNamedAndRemoveUntil(context, StartPage.route, (_) => false);
     }
   }
 

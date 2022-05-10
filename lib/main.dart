@@ -57,9 +57,9 @@ class App extends StatelessWidget {
       child: MaterialApp(
         title: 'walman',
         routes: <String, WidgetBuilder>{
-          '/': (BuildContext context) => const StartPage(),
-          '/signup': (BuildContext context) => const SignupPage(),
-          '/login': (BuildContext context) => const LoginPage(),
+          StartPage.route: (BuildContext context) => const StartPage(),
+          SignupPage.route: (BuildContext context) => const SignupPage(),
+          LoginPage.route: (BuildContext context) => const LoginPage(),
           NewPasswordPage.route: (BuildContext context) => const NewPasswordPage(),
           NewPlacePage.route: (BuildContext context) => const NewPlacePage(),
           ScanNewCodePage.route: (BuildContext context) => const ScanNewCodePage(),
