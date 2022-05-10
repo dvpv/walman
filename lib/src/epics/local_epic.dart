@@ -14,7 +14,6 @@ class LocalEpic {
       TypedEpic<AppState, DeletePassword>(_deletePassword),
       TypedEpic<AppState, EditPasswordStart>(_editPasswordStart),
       TypedEpic<AppState, DeleteCode>(_deleteCode),
-      TypedEpic<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart),
       TypedEpic<AppState, SelectItemDetailsStart>(_selectItemDetailsSuccess),
     ]);
   }
@@ -40,18 +39,6 @@ class LocalEpic {
 
   Stream<AppAction> _deletePassword(Stream<DeletePassword> actions, EpicStore<AppState> store) {
     return actions.map<AppAction>((DeletePassword action) => StoreDataStart(masterKey: store.state.user!.masterKey!));
-  }
-
-  Stream<AppAction> _setDetailsPasswordTargetStart(
-    Stream<SetDetailsPasswordTargetStart> actions,
-    EpicStore<AppState> store,
-  ) {
-    return actions.flatMap((SetDetailsPasswordTargetStart action) {
-      return Stream<void>.value(null)
-          .mapTo<AppAction>(const SetDetailsPasswordTargetSuccessful())
-          .onErrorReturnWith(SetDetailsPasswordTargetError.new)
-          .doOnData(action.onResult);
-    });
   }
 
   Stream<AppAction> _createNewCode(Stream<CreateNewCode> actions, EpicStore<AppState> store) {

@@ -19,7 +19,6 @@ class DetailsState with _$DetailsState {
   const factory DetailsState({
     @Default('') String selectedId,
     @Default(false) bool editing,
-    Password? password,
   }) = DetailsState$;
 
   factory DetailsState.fromJson(Map<dynamic, dynamic> json) => _$DetailsStateFromJson(Map<String, dynamic>.from(json));

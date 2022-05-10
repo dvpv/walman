@@ -10,6 +10,4 @@ part 'delete.dart';
 
 part 'edit.dart';
 
-part 'details_password.dart';
-
 part 'set_scanned_code.dart';

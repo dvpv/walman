@@ -1,16 +1,13 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/password_list_tile.dart';
 import 'package:walman/src/presentation/pages/code/code_details.dart';
-import 'package:walman/src/presentation/pages/password/password_details_page.dart';
 import 'package:walman/src/utils/code.dart';
 
 class HomePage extends StatelessWidget {
@@ -55,50 +52,7 @@ class HomePage extends StatelessWidget {
                           itemCount: passwords.length,
                           itemBuilder: (BuildContext context, int index) {
                             final Password password = passwords[index];
-                            return Slidable(
-                              endActionPane: ActionPane(
-                                extentRatio: 0.4,
-                                motion: const DrawerMotion(),
-                                children: <Widget>[
-                                  SlidableAction(
-                                    onPressed: (BuildContext context) {
-                                      StoreProvider.of<AppState>(context).dispatch(DeletePassword(password.id));
-                                    },
-                                    backgroundColor: Colors.red,
-                                    foregroundColor: Colors.white,
-                                    icon: Icons.delete,
-                                    label: 'Delete',
-                                  ),
-                                  SlidableAction(
-                                    onPressed: (BuildContext context) {
-                                      StoreProvider.of<AppState>(context).dispatch(
-                                        SetDetailsPasswordTargetStart(
-                                          password,
-                                          (_) => Navigator.pushNamed(context, PasswordDetailsPage.route),
-                                        ),
-                                      );
-                                    },
-                                    backgroundColor: Colors.blue,
-                                    foregroundColor: Colors.white,
-                                    icon: Icons.remove_red_eye,
-                                    label: 'View',
-                                  ),
-                                ],
-                              ),
-                              child: ListTile(
-                                title: Text(password.title),
-                                subtitle: Text(password.username),
-                                onTap: () {
-                                  Clipboard.setData(ClipboardData(text: password.password));
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text('Password for ${password.title} copied to your clipboard'),
-                                      behavior: SnackBarBehavior.floating,
-                                    ),
-                                  );
-                                },
-                              ),
-                            );
+                            return PasswordListTile(password: password);
                           },
                         ),
                       ),

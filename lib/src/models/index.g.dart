@@ -42,13 +42,11 @@ const _$AppPageEnumMap = {
 _$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) => _$DetailsState$(
       selectedId: json['selectedId'] as String? ?? '',
       editing: json['editing'] as bool? ?? false,
-      password: json['password'] == null ? null : Password.fromJson(json['password'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$DetailsState$ToJson(_$DetailsState$ instance) => <String, dynamic>{
       'selectedId': instance.selectedId,
       'editing': instance.editing,
-      'password': instance.password,
     };
 
 _$CreateCodeState$ _$$CreateCodeState$FromJson(Map<String, dynamic> json) => _$CreateCodeState$(

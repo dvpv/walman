@@ -8,7 +8,6 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, EditPasswordStart>(_editPasswordStart),
   TypedReducer<AppState, DeletePassword>(_deletePassword),
   TypedReducer<AppState, DeleteCode>(_deleteCode),
-  TypedReducer<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart),
   TypedReducer<AppState, SetScannedCode>(_setScannedCode),
   TypedReducer<AppState, CreateNewCode>(_createNewCode),
   TypedReducer<AppState, SelectItemDetailsStart>(_selectItemDetails),
@@ -44,10 +43,6 @@ AppState _deleteCode(AppState state, DeleteCode action) {
       codes: <Code>[...state.bundle.codes].where((Code code) => action.id != code.id).toList(),
     ),
   );
-}
-
-AppState _setDetailsPasswordTargetStart(AppState state, SetDetailsPasswordTargetStart action) {
-  return state.copyWith(detailsState: state.detailsState.copyWith(password: action.password));
 }
 
 AppState _setScannedCode(AppState state, SetScannedCode action) {

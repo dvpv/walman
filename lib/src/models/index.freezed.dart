@@ -413,11 +413,10 @@ DetailsState _$DetailsStateFromJson(Map<String, dynamic> json) {
 class _$DetailsStateTearOff {
   const _$DetailsStateTearOff();
 
-  DetailsState$ call({String selectedId = '', bool editing = false, Password? password}) {
+  DetailsState$ call({String selectedId = '', bool editing = false}) {
     return DetailsState$(
       selectedId: selectedId,
       editing: editing,
-      password: password,
     );
   }
 
@@ -433,7 +432,6 @@ const $DetailsState = _$DetailsStateTearOff();
 mixin _$DetailsState {
   String get selectedId => throw _privateConstructorUsedError;
   bool get editing => throw _privateConstructorUsedError;
-  Password? get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -444,9 +442,7 @@ mixin _$DetailsState {
 abstract class $DetailsStateCopyWith<$Res> {
   factory $DetailsStateCopyWith(DetailsState value, $Res Function(DetailsState) then) =
       _$DetailsStateCopyWithImpl<$Res>;
-  $Res call({String selectedId, bool editing, Password? password});
-
-  $PasswordCopyWith<$Res>? get password;
+  $Res call({String selectedId, bool editing});
 }
 
 /// @nodoc
@@ -461,7 +457,6 @@ class _$DetailsStateCopyWithImpl<$Res> implements $DetailsStateCopyWith<$Res> {
   $Res call({
     Object? selectedId = freezed,
     Object? editing = freezed,
-    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       selectedId: selectedId == freezed
@@ -472,22 +467,7 @@ class _$DetailsStateCopyWithImpl<$Res> implements $DetailsStateCopyWith<$Res> {
           ? _value.editing
           : editing // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as Password?,
     ));
-  }
-
-  @override
-  $PasswordCopyWith<$Res>? get password {
-    if (_value.password == null) {
-      return null;
-    }
-
-    return $PasswordCopyWith<$Res>(_value.password!, (value) {
-      return _then(_value.copyWith(password: value));
-    });
   }
 }
 
@@ -496,10 +476,7 @@ abstract class $DetailsState$CopyWith<$Res> implements $DetailsStateCopyWith<$Re
   factory $DetailsState$CopyWith(DetailsState$ value, $Res Function(DetailsState$) then) =
       _$DetailsState$CopyWithImpl<$Res>;
   @override
-  $Res call({String selectedId, bool editing, Password? password});
-
-  @override
-  $PasswordCopyWith<$Res>? get password;
+  $Res call({String selectedId, bool editing});
 }
 
 /// @nodoc
@@ -515,7 +492,6 @@ class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
   $Res call({
     Object? selectedId = freezed,
     Object? editing = freezed,
-    Object? password = freezed,
   }) {
     return _then(DetailsState$(
       selectedId: selectedId == freezed
@@ -526,10 +502,6 @@ class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
           ? _value.editing
           : editing // ignore: cast_nullable_to_non_nullable
               as bool,
-      password: password == freezed
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as Password?,
     ));
   }
 }
@@ -537,7 +509,7 @@ class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DetailsState$ implements DetailsState$ {
-  const _$DetailsState$({this.selectedId = '', this.editing = false, this.password});
+  const _$DetailsState$({this.selectedId = '', this.editing = false});
 
   factory _$DetailsState$.fromJson(Map<String, dynamic> json) => _$$DetailsState$FromJson(json);
 
@@ -547,12 +519,10 @@ class _$DetailsState$ implements DetailsState$ {
   @JsonKey()
   @override
   final bool editing;
-  @override
-  final Password? password;
 
   @override
   String toString() {
-    return 'DetailsState(selectedId: $selectedId, editing: $editing, password: $password)';
+    return 'DetailsState(selectedId: $selectedId, editing: $editing)';
   }
 
   @override
@@ -561,13 +531,12 @@ class _$DetailsState$ implements DetailsState$ {
         (other.runtimeType == runtimeType &&
             other is DetailsState$ &&
             const DeepCollectionEquality().equals(other.selectedId, selectedId) &&
-            const DeepCollectionEquality().equals(other.editing, editing) &&
-            const DeepCollectionEquality().equals(other.password, password));
+            const DeepCollectionEquality().equals(other.editing, editing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(selectedId),
-      const DeepCollectionEquality().hash(editing), const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(selectedId), const DeepCollectionEquality().hash(editing));
 
   @JsonKey(ignore: true)
   @override
@@ -580,7 +549,7 @@ class _$DetailsState$ implements DetailsState$ {
 }
 
 abstract class DetailsState$ implements DetailsState {
-  const factory DetailsState$({String selectedId, bool editing, Password? password}) = _$DetailsState$;
+  const factory DetailsState$({String selectedId, bool editing}) = _$DetailsState$;
 
   factory DetailsState$.fromJson(Map<String, dynamic> json) = _$DetailsState$.fromJson;
 
@@ -588,8 +557,6 @@ abstract class DetailsState$ implements DetailsState {
   String get selectedId;
   @override
   bool get editing;
-  @override
-  Password? get password;
   @override
   @JsonKey(ignore: true)
   $DetailsState$CopyWith<DetailsState$> get copyWith => throw _privateConstructorUsedError;
