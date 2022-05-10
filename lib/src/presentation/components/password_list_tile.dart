@@ -38,76 +38,78 @@ class PasswordListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Slidable(
-      endActionPane: ActionPane(
-        extentRatio: 0.2,
-        motion: const DrawerMotion(),
-        children: <Widget>[
-          SlidableAction(
-            onPressed: (BuildContext context) => _onDelete(context, password),
-            backgroundColor: Colors.red,
-            foregroundColor: Colors.white,
-            icon: Icons.delete,
-            label: 'Delete',
-          ),
-        ],
-      ),
-      child: ListTile(
-        title: Text(password.title),
-        subtitle: Text(password.username),
-        trailing: IconButton(
-          icon: const Icon(Icons.copy),
-          onPressed: () => _onCopy(context, password),
+    return Card(
+      child: Slidable(
+        endActionPane: ActionPane(
+          extentRatio: 0.2,
+          motion: const DrawerMotion(),
+          children: <Widget>[
+            SlidableAction(
+              onPressed: (BuildContext context) => _onDelete(context, password),
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+              icon: Icons.delete,
+              label: 'Delete',
+            ),
+          ],
         ),
-        onTap: () => _onDetails(context, password),
-        onLongPress: () {
-          showModalBottomSheet<void>(
-            context: context,
-            builder: (BuildContext context) {
-              return Container(
-                color: Colors.black54,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
+        child: ListTile(
+          title: Text(password.title),
+          subtitle: Text(password.username),
+          trailing: IconButton(
+            icon: const Icon(Icons.copy),
+            onPressed: () => _onCopy(context, password),
+          ),
+          onTap: () => _onDetails(context, password),
+          onLongPress: () {
+            showModalBottomSheet<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return Container(
+                  color: Colors.black54,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(24),
+                        topRight: Radius.circular(24),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: const Icon(Icons.remove_red_eye),
+                          title: const Text('View'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _onDetails(context, password);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.copy),
+                          title: const Text('Copy'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _onCopy(context, password);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.delete),
+                          title: const Text('Delete'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _onDelete(context, password);
+                          },
+                        ),
+                      ],
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      ListTile(
-                        leading: const Icon(Icons.remove_red_eye),
-                        title: const Text('View'),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _onDetails(context, password);
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.copy),
-                        title: const Text('Copy'),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _onCopy(context, password);
-                        },
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.delete),
-                        title: const Text('Delete'),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _onDelete(context, password);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
-          );
-        },
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

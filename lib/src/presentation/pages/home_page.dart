@@ -56,6 +56,7 @@ class HomePage extends StatelessWidget {
                           },
                         ),
                       ),
+                      const Spacer(),
                       const Padding(
                         padding: EdgeInsets.all(24),
                         child: Align(
@@ -77,46 +78,51 @@ class HomePage extends StatelessWidget {
                           itemCount: codes.length,
                           itemBuilder: (BuildContext context, int index) {
                             final Code code = codes[index];
-                            return GestureDetector(
-                              onTap: () {
-                                StoreProvider.of<AppState>(context).dispatch(
-                                  SelectItemDetails(code.id, (_) => Navigator.pushNamed(context, CodeDetails.route)),
-                                );
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Column(
-                                    children: <Widget>[
-                                      Expanded(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(16),
-                                          child: BarcodeWidget(
-                                            drawText: false,
-                                            data: code.data,
-                                            barcode: barcodeFromScannerBarcodeFormat(code.format),
-                                          ),
-                                        ),
+                            return Padding(
+                              padding: const EdgeInsets.all(8),
+                              child: Card(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    StoreProvider.of<AppState>(context).dispatch(
+                                      SelectItemDetails(
+                                        code.id,
+                                        (_) => Navigator.pushNamed(context, CodeDetails.route),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8),
-                                        child: SizedBox(
-                                          height: 50,
-                                          child: Text(
-                                            code.title,
-                                            style: const TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 24,
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Column(
+                                      children: <Widget>[
+                                        Expanded(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(16),
+                                            child: BarcodeWidget(
+                                              drawText: false,
+                                              data: code.data,
+                                              barcode: barcodeFromScannerBarcodeFormat(code.format),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding: const EdgeInsets.all(8),
+                                          child: SizedBox(
+                                            height: 50,
+                                            child: Text(
+                                              code.title,
+                                              style: const TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 24,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
