@@ -6,12 +6,10 @@ part 'index.freezed.dart';
 
 part 'create.dart';
 
-part 'edit_password.dart';
+part 'delete.dart';
+
+part 'edit.dart';
 
 part 'details_password.dart';
 
 part 'set_scanned_code.dart';
-
-part 'delete_password.dart';
-
-part 'delete_code.dart';

@@ -1,5 +1,6 @@
 import 'package:redux/redux.dart';
 import 'package:walman/src/actions/local/index.dart';
+import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/models/index.dart';
 
 Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
@@ -10,6 +11,7 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart),
   TypedReducer<AppState, SetScannedCode>(_setScannedCode),
   TypedReducer<AppState, CreateNewCode>(_createNewCode),
+  TypedReducer<AppState, SelectItemDetailsStart>(_selectItemDetails),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -54,4 +56,8 @@ AppState _setScannedCode(AppState state, SetScannedCode action) {
 
 AppState _createNewCode(AppState state, CreateNewCode action) {
   return state.copyWith(bundle: state.bundle.copyWith(codes: <Code>[...state.bundle.codes, action.code]));
+}
+
+AppState _selectItemDetails(AppState state, SelectItemDetailsStart action) {
+  return state.copyWith(detailsState: state.detailsState.copyWith(selectedId: action.id));
 }

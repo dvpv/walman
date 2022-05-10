@@ -125,8 +125,9 @@ class HomePage extends StatelessWidget {
                             final Code code = codes[index];
                             return GestureDetector(
                               onTap: () {
-                                StoreProvider.of<AppState>(context).dispatch(SelectItemDetails(code.id));
-                                Navigator.pushNamed(context, CodeDetails.route);
+                                StoreProvider.of<AppState>(context).dispatch(
+                                  SelectItemDetails(code.id, (_) => Navigator.pushNamed(context, CodeDetails.route)),
+                                );
                               },
                               child: Padding(
                                 padding: const EdgeInsets.all(8),

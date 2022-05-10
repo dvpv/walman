@@ -3,6 +3,7 @@ import 'package:rxdart/transformers.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
+import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/models/index.dart';
 
 class LocalEpic {
@@ -13,7 +14,8 @@ class LocalEpic {
       TypedEpic<AppState, DeletePassword>(_deletePassword),
       TypedEpic<AppState, EditPasswordStart>(_editPasswordStart),
       TypedEpic<AppState, DeleteCode>(_deleteCode),
-      TypedEpic<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart)
+      TypedEpic<AppState, SetDetailsPasswordTargetStart>(_setDetailsPasswordTargetStart),
+      TypedEpic<AppState, SelectItemDetailsStart>(_selectItemDetailsSuccess),
     ]);
   }
 
@@ -58,5 +60,14 @@ class LocalEpic {
 
   Stream<AppAction> _deleteCode(Stream<DeleteCode> actions, EpicStore<AppState> store) {
     return actions.map<AppAction>((DeleteCode action) => StoreDataStart(masterKey: store.state.user!.masterKey!));
+  }
+
+  Stream<AppAction> _selectItemDetailsSuccess(Stream<SelectItemDetailsStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((SelectItemDetailsStart action) {
+      return Stream<void>.value(null)
+          .mapTo<AppAction>(const SelectItemDetailsSuccessful())
+          .onErrorReturnWith(SelectItemDetailsError.new)
+          .doOnData(action.onResult);
+    });
   }
 }

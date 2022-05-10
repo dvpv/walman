@@ -48,8 +48,9 @@ class CodesPage extends StatelessWidget {
                     barcode: barcodeFromScannerBarcodeFormat(code.format),
                   ),
                   onTap: () {
-                    StoreProvider.of<AppState>(context).dispatch(SelectItemDetails(code.id));
-                    Navigator.pushNamed(context, CodeDetails.route);
+                    StoreProvider.of<AppState>(context).dispatch(
+                      SelectItemDetails(code.id, (_) => Navigator.pushNamed(context, CodeDetails.route)),
+                    );
                   },
                 ),
               );

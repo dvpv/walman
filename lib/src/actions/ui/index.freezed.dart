@@ -697,9 +697,21 @@ abstract class SetEditingError implements SetEditing, ActionDone, ErrorAction {
 class _$SelectItemDetailsTearOff {
   const _$SelectItemDetailsTearOff();
 
-  SelectItemDetails$ call(String selectedId) {
-    return SelectItemDetails$(
-      selectedId,
+  SelectItemDetailsStart call(String id, ActionResult onResult) {
+    return SelectItemDetailsStart(
+      id,
+      onResult,
+    );
+  }
+
+  SelectItemDetailsSuccessful successful() {
+    return const SelectItemDetailsSuccessful();
+  }
+
+  SelectItemDetailsError error(Object error, StackTrace stackTrace) {
+    return SelectItemDetailsError(
+      error,
+      stackTrace,
     );
   }
 }
@@ -709,17 +721,56 @@ const $SelectItemDetails = _$SelectItemDetailsTearOff();
 
 /// @nodoc
 mixin _$SelectItemDetails {
-  String get selectedId => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SelectItemDetailsCopyWith<SelectItemDetails> get copyWith => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value) $default, {
+    required TResult Function(SelectItemDetailsSuccessful value) successful,
+    required TResult Function(SelectItemDetailsError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SelectItemDetailsCopyWith<$Res> {
   factory $SelectItemDetailsCopyWith(SelectItemDetails value, $Res Function(SelectItemDetails) then) =
       _$SelectItemDetailsCopyWithImpl<$Res>;
-  $Res call({String selectedId});
 }
 
 /// @nodoc
@@ -729,86 +780,403 @@ class _$SelectItemDetailsCopyWithImpl<$Res> implements $SelectItemDetailsCopyWit
   final SelectItemDetails _value;
   // ignore: unused_field
   final $Res Function(SelectItemDetails) _then;
-
-  @override
-  $Res call({
-    Object? selectedId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      selectedId: selectedId == freezed
-          ? _value.selectedId
-          : selectedId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $SelectItemDetails$CopyWith<$Res> implements $SelectItemDetailsCopyWith<$Res> {
-  factory $SelectItemDetails$CopyWith(SelectItemDetails$ value, $Res Function(SelectItemDetails$) then) =
-      _$SelectItemDetails$CopyWithImpl<$Res>;
-  @override
-  $Res call({String selectedId});
+abstract class $SelectItemDetailsStartCopyWith<$Res> {
+  factory $SelectItemDetailsStartCopyWith(SelectItemDetailsStart value, $Res Function(SelectItemDetailsStart) then) =
+      _$SelectItemDetailsStartCopyWithImpl<$Res>;
+  $Res call({String id, ActionResult onResult});
 }
 
 /// @nodoc
-class _$SelectItemDetails$CopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
-    implements $SelectItemDetails$CopyWith<$Res> {
-  _$SelectItemDetails$CopyWithImpl(SelectItemDetails$ _value, $Res Function(SelectItemDetails$) _then)
-      : super(_value, (v) => _then(v as SelectItemDetails$));
+class _$SelectItemDetailsStartCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetailsStartCopyWith<$Res> {
+  _$SelectItemDetailsStartCopyWithImpl(SelectItemDetailsStart _value, $Res Function(SelectItemDetailsStart) _then)
+      : super(_value, (v) => _then(v as SelectItemDetailsStart));
 
   @override
-  SelectItemDetails$ get _value => super._value as SelectItemDetails$;
+  SelectItemDetailsStart get _value => super._value as SelectItemDetailsStart;
 
   @override
   $Res call({
-    Object? selectedId = freezed,
+    Object? id = freezed,
+    Object? onResult = freezed,
   }) {
-    return _then(SelectItemDetails$(
-      selectedId == freezed
-          ? _value.selectedId
-          : selectedId // ignore: cast_nullable_to_non_nullable
+    return _then(SelectItemDetailsStart(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
+      onResult == freezed
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SelectItemDetails$ implements SelectItemDetails$ {
-  const _$SelectItemDetails$(this.selectedId);
+class _$SelectItemDetailsStart implements SelectItemDetailsStart {
+  const _$SelectItemDetailsStart(this.id, this.onResult);
 
   @override
-  final String selectedId;
+  final String id;
+  @override
+  final ActionResult onResult;
 
   @override
   String toString() {
-    return 'SelectItemDetails(selectedId: $selectedId)';
+    return 'SelectItemDetails(id: $id, onResult: $onResult)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SelectItemDetails$ &&
-            const DeepCollectionEquality().equals(other.selectedId, selectedId));
+            other is SelectItemDetailsStart &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            (identical(other.onResult, onResult) || other.onResult == onResult));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(selectedId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id), onResult);
 
   @JsonKey(ignore: true)
   @override
-  $SelectItemDetails$CopyWith<SelectItemDetails$> get copyWith =>
-      _$SelectItemDetails$CopyWithImpl<SelectItemDetails$>(this, _$identity);
+  $SelectItemDetailsStartCopyWith<SelectItemDetailsStart> get copyWith =>
+      _$SelectItemDetailsStartCopyWithImpl<SelectItemDetailsStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default(id, onResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return $default?.call(id, onResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(id, onResult);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value) $default, {
+    required TResult Function(SelectItemDetailsSuccessful value) successful,
+    required TResult Function(SelectItemDetailsError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class SelectItemDetails$ implements SelectItemDetails {
-  const factory SelectItemDetails$(String selectedId) = _$SelectItemDetails$;
+abstract class SelectItemDetailsStart implements SelectItemDetails {
+  const factory SelectItemDetailsStart(String id, ActionResult onResult) = _$SelectItemDetailsStart;
+
+  String get id;
+  ActionResult get onResult;
+  @JsonKey(ignore: true)
+  $SelectItemDetailsStartCopyWith<SelectItemDetailsStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SelectItemDetailsSuccessfulCopyWith<$Res> {
+  factory $SelectItemDetailsSuccessfulCopyWith(
+          SelectItemDetailsSuccessful value, $Res Function(SelectItemDetailsSuccessful) then) =
+      _$SelectItemDetailsSuccessfulCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SelectItemDetailsSuccessfulCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetailsSuccessfulCopyWith<$Res> {
+  _$SelectItemDetailsSuccessfulCopyWithImpl(
+      SelectItemDetailsSuccessful _value, $Res Function(SelectItemDetailsSuccessful) _then)
+      : super(_value, (v) => _then(v as SelectItemDetailsSuccessful));
 
   @override
-  String get selectedId;
+  SelectItemDetailsSuccessful get _value => super._value as SelectItemDetailsSuccessful;
+}
+
+/// @nodoc
+
+class _$SelectItemDetailsSuccessful implements SelectItemDetailsSuccessful {
+  const _$SelectItemDetailsSuccessful();
+
   @override
+  String toString() {
+    return 'SelectItemDetails.successful()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other.runtimeType == runtimeType && other is SelectItemDetailsSuccessful);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return successful?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value) $default, {
+    required TResult Function(SelectItemDetailsSuccessful value) successful,
+    required TResult Function(SelectItemDetailsError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectItemDetailsSuccessful implements SelectItemDetails {
+  const factory SelectItemDetailsSuccessful() = _$SelectItemDetailsSuccessful;
+}
+
+/// @nodoc
+abstract class $SelectItemDetailsErrorCopyWith<$Res> {
+  factory $SelectItemDetailsErrorCopyWith(SelectItemDetailsError value, $Res Function(SelectItemDetailsError) then) =
+      _$SelectItemDetailsErrorCopyWithImpl<$Res>;
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class _$SelectItemDetailsErrorCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetailsErrorCopyWith<$Res> {
+  _$SelectItemDetailsErrorCopyWithImpl(SelectItemDetailsError _value, $Res Function(SelectItemDetailsError) _then)
+      : super(_value, (v) => _then(v as SelectItemDetailsError));
+
+  @override
+  SelectItemDetailsError get _value => super._value as SelectItemDetailsError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+  }) {
+    return _then(SelectItemDetailsError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$SelectItemDetailsError implements SelectItemDetailsError {
+  const _$SelectItemDetailsError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'SelectItemDetails.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SelectItemDetailsError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), const DeepCollectionEquality().hash(stackTrace));
+
   @JsonKey(ignore: true)
-  $SelectItemDetails$CopyWith<SelectItemDetails$> get copyWith => throw _privateConstructorUsedError;
+  @override
+  $SelectItemDetailsErrorCopyWith<SelectItemDetailsError> get copyWith =>
+      _$SelectItemDetailsErrorCopyWithImpl<SelectItemDetailsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult) $default, {
+    required TResult Function() successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, ActionResult onResult)? $default, {
+    TResult Function()? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value) $default, {
+    required TResult Function(SelectItemDetailsSuccessful value) successful,
+    required TResult Function(SelectItemDetailsError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(SelectItemDetailsStart value)? $default, {
+    TResult Function(SelectItemDetailsSuccessful value)? successful,
+    TResult Function(SelectItemDetailsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectItemDetailsError implements SelectItemDetails, ErrorAction {
+  const factory SelectItemDetailsError(Object error, StackTrace stackTrace) = _$SelectItemDetailsError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @JsonKey(ignore: true)
+  $SelectItemDetailsErrorCopyWith<SelectItemDetailsError> get copyWith => throw _privateConstructorUsedError;
 }
