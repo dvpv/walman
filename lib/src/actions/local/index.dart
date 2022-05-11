@@ -11,3 +11,5 @@ part 'delete.dart';
 part 'edit.dart';
 
 part 'set_scanned_code.dart';
+
+part 'update_access_time.dart';

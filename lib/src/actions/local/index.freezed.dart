@@ -1250,3 +1250,123 @@ abstract class SetScannedCode$ implements SetScannedCode {
   @JsonKey(ignore: true)
   $SetScannedCode$CopyWith<SetScannedCode$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$UpdateAccessTimeTearOff {
+  const _$UpdateAccessTimeTearOff();
+
+  UpdateAccessTime$ call(String id) {
+    return UpdateAccessTime$(
+      id,
+    );
+  }
+}
+
+/// @nodoc
+const $UpdateAccessTime = _$UpdateAccessTimeTearOff();
+
+/// @nodoc
+mixin _$UpdateAccessTime {
+  String get id => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdateAccessTimeCopyWith<UpdateAccessTime> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateAccessTimeCopyWith<$Res> {
+  factory $UpdateAccessTimeCopyWith(UpdateAccessTime value, $Res Function(UpdateAccessTime) then) =
+      _$UpdateAccessTimeCopyWithImpl<$Res>;
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$UpdateAccessTimeCopyWithImpl<$Res> implements $UpdateAccessTimeCopyWith<$Res> {
+  _$UpdateAccessTimeCopyWithImpl(this._value, this._then);
+
+  final UpdateAccessTime _value;
+  // ignore: unused_field
+  final $Res Function(UpdateAccessTime) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $UpdateAccessTime$CopyWith<$Res> implements $UpdateAccessTimeCopyWith<$Res> {
+  factory $UpdateAccessTime$CopyWith(UpdateAccessTime$ value, $Res Function(UpdateAccessTime$) then) =
+      _$UpdateAccessTime$CopyWithImpl<$Res>;
+  @override
+  $Res call({String id});
+}
+
+/// @nodoc
+class _$UpdateAccessTime$CopyWithImpl<$Res> extends _$UpdateAccessTimeCopyWithImpl<$Res>
+    implements $UpdateAccessTime$CopyWith<$Res> {
+  _$UpdateAccessTime$CopyWithImpl(UpdateAccessTime$ _value, $Res Function(UpdateAccessTime$) _then)
+      : super(_value, (v) => _then(v as UpdateAccessTime$));
+
+  @override
+  UpdateAccessTime$ get _value => super._value as UpdateAccessTime$;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(UpdateAccessTime$(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateAccessTime$ implements UpdateAccessTime$ {
+  const _$UpdateAccessTime$(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'UpdateAccessTime(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateAccessTime$ &&
+            const DeepCollectionEquality().equals(other.id, id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateAccessTime$CopyWith<UpdateAccessTime$> get copyWith =>
+      _$UpdateAccessTime$CopyWithImpl<UpdateAccessTime$>(this, _$identity);
+}
+
+abstract class UpdateAccessTime$ implements UpdateAccessTime {
+  const factory UpdateAccessTime$(String id) = _$UpdateAccessTime$;
+
+  @override
+  String get id;
+  @override
+  @JsonKey(ignore: true)
+  $UpdateAccessTime$CopyWith<UpdateAccessTime$> get copyWith => throw _privateConstructorUsedError;
+}

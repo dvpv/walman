@@ -14,6 +14,7 @@ class CodeListTile extends StatelessWidget {
   final Code code;
 
   void _onDetails(BuildContext context, Code code) {
+    StoreProvider.of<AppState>(context).dispatch(UpdateAccessTime(code.id));
     StoreProvider.of<AppState>(context).dispatch(
       SelectItemDetailsStart(
         code.id,

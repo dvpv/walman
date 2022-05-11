@@ -13,6 +13,7 @@ class PasswordListTile extends StatelessWidget {
   final Password password;
 
   void _onDetails(BuildContext context, Password password) {
+    StoreProvider.of<AppState>(context).dispatch(UpdateAccessTime(password.id));
     StoreProvider.of<AppState>(context).dispatch(
       SelectItemDetailsStart(
         password.id,
@@ -22,6 +23,7 @@ class PasswordListTile extends StatelessWidget {
   }
 
   void _onCopy(BuildContext context, Password password) {
+    StoreProvider.of<AppState>(context).dispatch(UpdateAccessTime(password.id));
     Clipboard.setData(ClipboardData(text: password.password));
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

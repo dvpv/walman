@@ -11,6 +11,7 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, SetScannedCode>(_setScannedCode),
   TypedReducer<AppState, CreateNewCode>(_createNewCode),
   TypedReducer<AppState, SelectItemDetailsStart>(_selectItemDetails),
+  TypedReducer<AppState, UpdateAccessTime>(_updateAccessTime),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -55,4 +56,37 @@ AppState _createNewCode(AppState state, CreateNewCode action) {
 
 AppState _selectItemDetails(AppState state, SelectItemDetailsStart action) {
   return state.copyWith(detailsState: state.detailsState.copyWith(selectedId: action.id));
+}
+
+AppState _updateAccessTime(AppState state, UpdateAccessTime action) {
+  if (state.bundle.passwords.any((Password password) => password.id == action.id)) {
+    final Password oldPassword = state.bundle.passwords.firstWhere((Password password) => password.id == action.id);
+    final Password password = oldPassword.copyWith(
+      timesAccessed: oldPassword.timesAccessed + 1,
+      lastAccess: DateTime.now(),
+    );
+    return state.copyWith(
+      bundle: state.bundle.copyWith(
+        passwords: state.bundle.passwords.toList().where((Password password) => password.id != action.id).toList()
+          ..add(
+            password,
+          ),
+      ),
+    );
+  } else if (state.bundle.codes.any((Code code) => code.id == action.id)) {
+    final Code oldCode = state.bundle.codes.firstWhere((Code code) => code.id == action.id);
+    final Code code = oldCode.copyWith(
+      timesAccessed: oldCode.timesAccessed + 1,
+      lastAccess: DateTime.now(),
+    );
+    return state.copyWith(
+      bundle: state.bundle.copyWith(
+        codes: state.bundle.codes.toList().where((Code code) => code.id != action.id).toList()
+          ..add(
+            code,
+          ),
+      ),
+    );
+  }
+  return state;
 }
