@@ -9,16 +9,16 @@ import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/styles/button_styles.dart';
 
-class PasswordDetailsPage extends StatefulWidget {
-  const PasswordDetailsPage({Key? key}) : super(key: key);
+class PasswordDetails extends StatefulWidget {
+  const PasswordDetails({Key? key}) : super(key: key);
 
   static const String route = '/password-details';
 
   @override
-  State<PasswordDetailsPage> createState() => _PasswordDetailsPageState();
+  State<PasswordDetails> createState() => _PasswordDetailsState();
 }
 
-class _PasswordDetailsPageState extends State<PasswordDetailsPage> {
+class _PasswordDetailsState extends State<PasswordDetails> {
   late final Password _password;
   late final TextEditingController _titleController;
   late final TextEditingController _usernameController;

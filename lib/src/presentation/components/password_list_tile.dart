@@ -5,7 +5,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/pages/password/password_details_page.dart';
+import 'package:walman/src/presentation/pages/password/password_details.dart';
 
 class PasswordListTile extends StatelessWidget {
   const PasswordListTile({Key? key, required this.password}) : super(key: key);
@@ -16,7 +16,7 @@ class PasswordListTile extends StatelessWidget {
     StoreProvider.of<AppState>(context).dispatch(
       SelectItemDetailsStart(
         password.id,
-        (_) => Navigator.pushNamed(context, PasswordDetailsPage.route),
+        (_) => Navigator.pushNamed(context, PasswordDetails.route),
       ),
     );
   }

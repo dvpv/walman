@@ -1,7 +1,7 @@
 part of 'index.dart';
 
 @freezed
-class Password with _$Password {
+class Password with _$Password implements BundleItem {
   factory Password({
     required String id,
     required String title,

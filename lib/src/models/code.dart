@@ -1,7 +1,7 @@
 part of 'index.dart';
 
 @freezed
-class Code with _$Code {
+class Code with _$Code implements BundleItem {
   const factory Code({
     required String id,
     @Default('') String title,

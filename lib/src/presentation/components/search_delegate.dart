@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:walman/src/actions/ui/index.dart';
+import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/code/code_details.dart';
+import 'package:walman/src/presentation/pages/password/password_details.dart';
 
 class HomePageSearchDelegate extends SearchDelegate<void> {
-  final List<String> _searchResults = <String>[
-    'a',
-    'b',
-    'c',
-    'ab',
-  ];
+  HomePageSearchDelegate(this._bundle);
+
+  final Bundle _bundle;
 
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -37,18 +39,26 @@ class HomePageSearchDelegate extends SearchDelegate<void> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    final List<String> suggestions = _searchResults
-        .where((String searchResult) => searchResult.toLowerCase().contains(query.toLowerCase()))
-        .toList();
+    final List<BundleItem> items = <BundleItem>[..._bundle.passwords, ..._bundle.codes]
+        .where((BundleItem item) => item.title.toLowerCase().contains(query.toLowerCase()))
+        .toList()
+      ..sort((BundleItem a, BundleItem b) => a.timesAccessed - b.timesAccessed);
     return ListView.builder(
-      itemCount: suggestions.length,
+      itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
-        final String suggestion = suggestions[index];
+        final BundleItem item = items[index];
         return ListTile(
-          title: Text(suggestion),
+          leading: item is Password ? const Icon(Icons.lock) : const Icon(Icons.qr_code),
+          title: Text(item.title),
+          subtitle: item is Password ? Text(item.username) : null,
           onTap: () {
-            query = suggestion;
-            showResults(context);
+            close(context, null);
+            StoreProvider.of<AppState>(context).dispatch(
+              SelectItemDetails(
+                item.id,
+                (_) => Navigator.pushNamed(context, item is Password ? PasswordDetails.route : CodeDetails.route),
+              ),
+            );
           },
         );
       },
