@@ -13,6 +13,44 @@ class CodeListTile extends StatelessWidget {
 
   final Code code;
 
+  void _onDetails(BuildContext context, Code code) {
+    StoreProvider.of<AppState>(context).dispatch(
+      SelectItemDetailsStart(
+        code.id,
+        (_) => Navigator.pushNamed(context, CodeDetails.route),
+      ),
+    );
+  }
+
+  void _onDelete(BuildContext context, Code code) {
+    showDialog<void>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Delete this item?'),
+        content: Text('Are you sure you want to delete ${code.title}?'),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('CANCEL'),
+            onPressed: () => Navigator.pop(context),
+          ),
+          TextButton(
+            child: const Text('DELETE'),
+            onPressed: () {
+              StoreProvider.of<AppState>(context).dispatch(DeleteCode(code.id));
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Code deleted'),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+              Navigator.pop(context);
+            },
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,9 +60,7 @@ class CodeListTile extends StatelessWidget {
           motion: const DrawerMotion(),
           children: <Widget>[
             SlidableAction(
-              onPressed: (BuildContext context) {
-                StoreProvider.of<AppState>(context).dispatch(DeleteCode(code.id));
-              },
+              onPressed: (BuildContext context) => _onDelete(context, code),
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
               icon: Icons.delete,
@@ -43,9 +79,45 @@ class CodeListTile extends StatelessWidget {
               barcode: barcodeFromScannerBarcodeFormat(code.format),
             ),
           ),
-          onTap: () {
-            StoreProvider.of<AppState>(context).dispatch(
-              SelectItemDetails(code.id, (_) => Navigator.pushNamed(context, CodeDetails.route)),
+          onTap: () => _onDetails(context, code),
+          onLongPress: () {
+            showModalBottomSheet<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return Container(
+                  color: Colors.black54,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(24),
+                        topRight: Radius.circular(24),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: const Icon(Icons.remove_red_eye),
+                          title: const Text('View'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _onDetails(context, code);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.delete),
+                          title: const Text('Delete'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _onDelete(context, code);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             );
           },
         ),

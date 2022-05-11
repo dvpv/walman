@@ -32,8 +32,32 @@ class PasswordListTile extends StatelessWidget {
   }
 
   void _onDelete(BuildContext context, Password password) {
-    // TODO(dvpv): add dialog alert to confirm delete
-    StoreProvider.of<AppState>(context).dispatch(DeletePassword(password.id));
+    showDialog<void>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Delete this item?'),
+        content: Text('Are you sure you want to delete ${password.title}?'),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('CANCEL'),
+            onPressed: () => Navigator.pop(context),
+          ),
+          TextButton(
+            child: const Text('DELETE'),
+            onPressed: () {
+              StoreProvider.of<AppState>(context).dispatch(DeletePassword(password.id));
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Password deleted'),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+              Navigator.pop(context);
+            },
+          )
+        ],
+      ),
+    );
   }
 
   @override
