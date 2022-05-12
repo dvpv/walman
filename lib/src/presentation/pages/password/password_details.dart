@@ -7,6 +7,7 @@ import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/editing_container.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/password/password_menu_button.dart';
 import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class PasswordDetails extends StatefulWidget {
@@ -127,16 +128,8 @@ class _PasswordDetailsState extends State<PasswordDetails> {
                       ),
                 actions: <Widget>[
                   if (!editing)
-                    TextButton(
-                      style: appBarButtonStyle(),
-                      child: const Text(
-                        'Edit',
-                        style: TextStyle(
-                          color: Colors.indigo,
-                        ),
-                      ),
-                      onPressed: () =>
-                          StoreProvider.of<AppState>(context).dispatch(const SetEditingStart(editing: true)),
+                    PasswordMenuButton(
+                      password: _password,
                     ),
                   if (editing)
                     TextButton(
