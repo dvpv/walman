@@ -7,8 +7,9 @@ environment:
   sdk: ">=2.16.2 <3.0.0"
 
 dependencies:
-  barcode: ^2.2.0
+  barcode: ^2.2.1
   barcode_widget: ^2.0.2
+  cloud_firestore: ^3.1.14
   crypto: ^3.0.2
   cupertino_icons: ^1.0.4
   email_validator: ^2.0.1
@@ -22,7 +23,7 @@ dependencies:
   flutter_slidable: ^1.2.0
   freezed_annotation: ^1.1.0
   json_annotation: ^4.5.0
-  mobile_scanner: ^1.0.0
+  mobile_scanner: ^1.1.0
   redux: ^5.0.0
   redux_epics: ^0.15.1
   rxdart: ^0.27.3

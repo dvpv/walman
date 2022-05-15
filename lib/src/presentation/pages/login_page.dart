@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
+import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/pending_container.dart';
+import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/signup_page.dart';
 
@@ -22,6 +24,12 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _password = TextEditingController();
 
   final FocusNode _passwordNode = FocusNode();
+
+  @override
+  void initState() {
+    StoreProvider.of<AppState>(context, listen: false).dispatch(const ShowPassword(show: false));
+    super.initState();
+  }
 
   void _onLoginResult(AppAction action) {
     if (action is ErrorAction) {
@@ -46,86 +54,98 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PendingContainer(
-        builder: (BuildContext context, Set<String> pending) {
-          return pending.contains(Login.pendingKey)
-              ? const Center(child: CircularProgressIndicator())
-              : Form(
-                  child: PendingContainer(
-                    builder: (BuildContext context, Set<String> pending) {
-                      return SafeArea(
-                        child: Padding(
-                          padding: const EdgeInsets.all(24),
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                TextFormField(
-                                  controller: _email,
-                                  autofocus: true,
-                                  keyboardType: TextInputType.emailAddress,
-                                  textInputAction: TextInputAction.next,
-                                  decoration: const InputDecoration(
-                                    labelText: 'Email',
-                                  ),
-                                  validator: (String? value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Please enter your email';
-                                    } else if (!EmailValidator.validate(value)) {
-                                      return 'Please enter a valid email';
-                                    }
-                                    return null;
-                                  },
-                                  onFieldSubmitted: (_) {
-                                    FocusScope.of(context).requestFocus(_passwordNode);
-                                  },
-                                ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                TextFormField(
-                                  controller: _password,
-                                  focusNode: _passwordNode,
-                                  keyboardType: TextInputType.visiblePassword,
-                                  textInputAction: TextInputAction.done,
-                                  obscureText: true,
-                                  decoration: const InputDecoration(
-                                    labelText: 'Password',
-                                  ),
-                                  validator: (String? value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Please enter your password';
-                                    }
-                                    return null;
-                                  },
-                                  onFieldSubmitted: (_) => _onLogin(context),
-                                ),
-                                const SizedBox(
-                                  height: 24,
-                                ),
-                                TextButton(
-                                  onPressed: () => _onLogin(context),
-                                  child: const Text('Login'),
-                                ),
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, SignupPage.route);
-                                  },
-                                  child: const Text(
-                                    'Sign Up',
-                                    style: TextStyle(
-                                      color: Colors.black,
+      body: UIContainer(
+        builder: (BuildContext context, UIState uiState) {
+          return PendingContainer(
+            builder: (BuildContext context, Set<String> pending) {
+              return pending.contains(Login.pendingKey)
+                  ? const Center(child: CircularProgressIndicator())
+                  : Form(
+                      child: PendingContainer(
+                        builder: (BuildContext context, Set<String> pending) {
+                          return SafeArea(
+                            child: Padding(
+                              padding: const EdgeInsets.all(24),
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    TextFormField(
+                                      controller: _email,
+                                      autofocus: true,
+                                      keyboardType: TextInputType.emailAddress,
+                                      textInputAction: TextInputAction.next,
+                                      decoration: const InputDecoration(
+                                        labelText: 'Email',
+                                      ),
+                                      validator: (String? value) {
+                                        if (value == null || value.isEmpty) {
+                                          return 'Please enter your email';
+                                        } else if (!EmailValidator.validate(value)) {
+                                          return 'Please enter a valid email';
+                                        }
+                                        return null;
+                                      },
+                                      onFieldSubmitted: (_) {
+                                        FocusScope.of(context).requestFocus(_passwordNode);
+                                      },
                                     ),
-                                  ),
+                                    const SizedBox(
+                                      height: 8,
+                                    ),
+                                    TextFormField(
+                                      controller: _password,
+                                      focusNode: _passwordNode,
+                                      keyboardType: TextInputType.visiblePassword,
+                                      textInputAction: TextInputAction.done,
+                                      obscureText: !uiState.showPassword,
+                                      decoration: InputDecoration(
+                                        labelText: 'Password',
+                                        suffixIcon: IconButton(
+                                          icon: Icon(
+                                            uiState.showPassword ? Icons.remove_red_eye_outlined : Icons.remove_red_eye,
+                                          ),
+                                          onPressed: () => StoreProvider.of<AppState>(context).dispatch(
+                                            ShowPassword(show: !uiState.showPassword),
+                                          ),
+                                        ),
+                                      ),
+                                      validator: (String? value) {
+                                        if (value == null || value.isEmpty) {
+                                          return 'Please enter your password';
+                                        }
+                                        return null;
+                                      },
+                                      onFieldSubmitted: (_) => _onLogin(context),
+                                    ),
+                                    const SizedBox(
+                                      height: 24,
+                                    ),
+                                    TextButton(
+                                      onPressed: () => _onLogin(context),
+                                      child: const Text('Login'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, SignupPage.route);
+                                      },
+                                      child: const Text(
+                                        'Sign Up',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                );
+                          );
+                        },
+                      ),
+                    );
+            },
+          );
         },
       ),
     );

@@ -9,3 +9,5 @@ part 'app_page.dart';
 part 'edit.dart';
 
 part 'select_item_details.dart';
+
+part 'show_password.dart';

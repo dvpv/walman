@@ -21,6 +21,7 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       createCodeState: json['createCodeState'] == null
           ? const CreateCodeState()
           : CreateCodeState.fromJson(json['createCodeState'] as Map<String, dynamic>),
+      uiState: json['uiState'] == null ? const UIState() : UIState.fromJson(json['uiState'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
@@ -30,6 +31,7 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynami
       'bundle': instance.bundle,
       'detailsState': instance.detailsState,
       'createCodeState': instance.createCodeState,
+      'uiState': instance.uiState,
     };
 
 const _$AppPageEnumMap = {
@@ -55,6 +57,14 @@ _$CreateCodeState$ _$$CreateCodeState$FromJson(Map<String, dynamic> json) => _$C
 
 Map<String, dynamic> _$$CreateCodeState$ToJson(_$CreateCodeState$ instance) => <String, dynamic>{
       'code': instance.code,
+    };
+
+_$UIState$ _$$UIState$FromJson(Map<String, dynamic> json) => _$UIState$(
+      showPassword: json['showPassword'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$UIState$ToJson(_$UIState$ instance) => <String, dynamic>{
+      'showPassword': instance.showPassword,
     };
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(

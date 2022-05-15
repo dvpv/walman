@@ -1180,3 +1180,122 @@ abstract class SelectItemDetailsError implements SelectItemDetails, ErrorAction 
   @JsonKey(ignore: true)
   $SelectItemDetailsErrorCopyWith<SelectItemDetailsError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$ShowPasswordTearOff {
+  const _$ShowPasswordTearOff();
+
+  ShowPassword$ call({required bool show}) {
+    return ShowPassword$(
+      show: show,
+    );
+  }
+}
+
+/// @nodoc
+const $ShowPassword = _$ShowPasswordTearOff();
+
+/// @nodoc
+mixin _$ShowPassword {
+  bool get show => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ShowPasswordCopyWith<ShowPassword> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ShowPasswordCopyWith<$Res> {
+  factory $ShowPasswordCopyWith(ShowPassword value, $Res Function(ShowPassword) then) =
+      _$ShowPasswordCopyWithImpl<$Res>;
+  $Res call({bool show});
+}
+
+/// @nodoc
+class _$ShowPasswordCopyWithImpl<$Res> implements $ShowPasswordCopyWith<$Res> {
+  _$ShowPasswordCopyWithImpl(this._value, this._then);
+
+  final ShowPassword _value;
+  // ignore: unused_field
+  final $Res Function(ShowPassword) _then;
+
+  @override
+  $Res call({
+    Object? show = freezed,
+  }) {
+    return _then(_value.copyWith(
+      show: show == freezed
+          ? _value.show
+          : show // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $ShowPassword$CopyWith<$Res> implements $ShowPasswordCopyWith<$Res> {
+  factory $ShowPassword$CopyWith(ShowPassword$ value, $Res Function(ShowPassword$) then) =
+      _$ShowPassword$CopyWithImpl<$Res>;
+  @override
+  $Res call({bool show});
+}
+
+/// @nodoc
+class _$ShowPassword$CopyWithImpl<$Res> extends _$ShowPasswordCopyWithImpl<$Res>
+    implements $ShowPassword$CopyWith<$Res> {
+  _$ShowPassword$CopyWithImpl(ShowPassword$ _value, $Res Function(ShowPassword$) _then)
+      : super(_value, (v) => _then(v as ShowPassword$));
+
+  @override
+  ShowPassword$ get _value => super._value as ShowPassword$;
+
+  @override
+  $Res call({
+    Object? show = freezed,
+  }) {
+    return _then(ShowPassword$(
+      show: show == freezed
+          ? _value.show
+          : show // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShowPassword$ implements ShowPassword$ {
+  const _$ShowPassword$({required this.show});
+
+  @override
+  final bool show;
+
+  @override
+  String toString() {
+    return 'ShowPassword(show: $show)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ShowPassword$ &&
+            const DeepCollectionEquality().equals(other.show, show));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(show));
+
+  @JsonKey(ignore: true)
+  @override
+  $ShowPassword$CopyWith<ShowPassword$> get copyWith => _$ShowPassword$CopyWithImpl<ShowPassword$>(this, _$identity);
+}
+
+abstract class ShowPassword$ implements ShowPassword {
+  const factory ShowPassword$({required bool show}) = _$ShowPassword$;
+
+  @override
+  bool get show;
+  @override
+  @JsonKey(ignore: true)
+  $ShowPassword$CopyWith<ShowPassword$> get copyWith => throw _privateConstructorUsedError;
+}

@@ -9,6 +9,7 @@ class AppState with _$AppState {
     @Default(Bundle()) Bundle bundle,
     @Default(DetailsState()) DetailsState detailsState,
     @Default(CreateCodeState()) CreateCodeState createCodeState,
+    @Default(UIState()) UIState uiState,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
@@ -32,4 +33,13 @@ class CreateCodeState with _$CreateCodeState {
 
   factory CreateCodeState.fromJson(Map<dynamic, dynamic> json) =>
       _$CreateCodeStateFromJson(Map<String, dynamic>.from(json));
+}
+
+@freezed
+class UIState with _$UIState {
+  const factory UIState({
+    @Default(false) bool showPassword,
+  }) = UIState$;
+
+  factory UIState.fromJson(Map<dynamic, dynamic> json) => _$UIStateFromJson(Map<String, dynamic>.from(json));
 }

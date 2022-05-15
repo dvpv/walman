@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
+import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/pending_container.dart';
+import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/start_page.dart';
 
@@ -26,6 +28,12 @@ class _SignupPageState extends State<SignupPage> {
   final FocusNode _emailNode = FocusNode();
   final FocusNode _passwordNode = FocusNode();
   final FocusNode _confirmNode = FocusNode();
+
+  @override
+  void initState() {
+    StoreProvider.of<AppState>(context, listen: false).dispatch(const ShowPassword(show: false));
+    super.initState();
+  }
 
   void _onLoginResult(AppAction action) {
     if (action is ErrorAction) {
@@ -59,121 +67,133 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        child: PendingContainer(
-          builder: (BuildContext context, Set<String> pending) {
-            return SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      TextFormField(
-                        controller: _username,
-                        autofocus: true,
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.next,
-                        decoration: const InputDecoration(
-                          hintText: 'username',
-                        ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your username';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) {
-                          FocusScope.of(context).requestFocus(_emailNode);
-                        },
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        controller: _email,
-                        focusNode: _emailNode,
-                        autofocus: true,
-                        keyboardType: TextInputType.emailAddress,
-                        textInputAction: TextInputAction.next,
-                        decoration: const InputDecoration(
-                          hintText: 'email',
-                        ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
-                          } else if (!EmailValidator.validate(value)) {
-                            return 'Please enter a valid email';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) {
-                          FocusScope.of(context).requestFocus(_passwordNode);
-                        },
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        controller: _password,
-                        focusNode: _passwordNode,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.next,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          hintText: 'password',
-                        ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) {
-                          FocusScope.of(context).requestFocus(_confirmNode);
-                        },
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        controller: _confirm,
-                        focusNode: _confirmNode,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.done,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          hintText: 'confirm password',
-                        ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please confirm your password';
-                          } else if (value != _password.text) {
-                            return 'Passwords do not match';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) => _onSignup(context),
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      TextButton(
-                        onPressed: () => _onSignup(context),
-                        child: const Text('Sign Up'),
-                      ),
-                      TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(
-                            color: Colors.black,
+        child: UIContainer(
+          builder: (BuildContext context, UIState uiState) {
+            return PendingContainer(
+              builder: (BuildContext context, Set<String> pending) {
+                return SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          TextFormField(
+                            controller: _username,
+                            autofocus: true,
+                            keyboardType: TextInputType.text,
+                            textInputAction: TextInputAction.next,
+                            decoration: const InputDecoration(
+                              hintText: 'username',
+                            ),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your username';
+                              }
+                              return null;
+                            },
+                            onFieldSubmitted: (_) {
+                              FocusScope.of(context).requestFocus(_emailNode);
+                            },
                           ),
-                        ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          TextFormField(
+                            controller: _email,
+                            focusNode: _emailNode,
+                            autofocus: true,
+                            keyboardType: TextInputType.emailAddress,
+                            textInputAction: TextInputAction.next,
+                            decoration: const InputDecoration(
+                              hintText: 'email',
+                            ),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your email';
+                              } else if (!EmailValidator.validate(value)) {
+                                return 'Please enter a valid email';
+                              }
+                              return null;
+                            },
+                            onFieldSubmitted: (_) {
+                              FocusScope.of(context).requestFocus(_passwordNode);
+                            },
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          TextFormField(
+                            controller: _password,
+                            focusNode: _passwordNode,
+                            keyboardType: TextInputType.visiblePassword,
+                            textInputAction: TextInputAction.next,
+                            obscureText: !uiState.showPassword,
+                            decoration: InputDecoration(
+                              hintText: 'password',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  uiState.showPassword ? Icons.remove_red_eye_outlined : Icons.remove_red_eye,
+                                ),
+                                onPressed: () => StoreProvider.of<AppState>(context).dispatch(
+                                  ShowPassword(show: !uiState.showPassword),
+                                ),
+                              ),
+                            ),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your password';
+                              }
+                              return null;
+                            },
+                            onFieldSubmitted: (_) {
+                              FocusScope.of(context).requestFocus(_confirmNode);
+                            },
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          TextFormField(
+                            controller: _confirm,
+                            focusNode: _confirmNode,
+                            keyboardType: TextInputType.visiblePassword,
+                            textInputAction: TextInputAction.done,
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              hintText: 'confirm password',
+                            ),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please confirm your password';
+                              } else if (value != _password.text) {
+                                return 'Passwords do not match';
+                              }
+                              return null;
+                            },
+                            onFieldSubmitted: (_) => _onSignup(context),
+                          ),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          TextButton(
+                            onPressed: () => _onSignup(context),
+                            child: const Text('Sign Up'),
+                          ),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text(
+                              'Login',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
             );
           },
         ),
