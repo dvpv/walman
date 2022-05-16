@@ -12,48 +12,11 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LoginTearOff {
-  const _$LoginTearOff();
-
-  LoginStart start(
-      {required String email,
-      required String password,
-      required ActionResult onResult,
-      String pendingId = _kLoginPendingId}) {
-    return LoginStart(
-      email: email,
-      password: password,
-      onResult: onResult,
-      pendingId: pendingId,
-    );
-  }
-
-  LoginSuccessful successful(AppUser user, [String pendingId = _kLoginPendingId]) {
-    return LoginSuccessful(
-      user,
-      pendingId,
-    );
-  }
-
-  LoginError error(Object error, StackTrace stackTrace, [String pendingId = _kLoginPendingId]) {
-    return LoginError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $Login = _$LoginTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Login {
   String get pendingId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password, ActionResult onResult, String pendingId) start,
@@ -131,19 +94,20 @@ class _$LoginCopyWithImpl<$Res> implements $LoginCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $LoginStartCopyWith<$Res> implements $LoginCopyWith<$Res> {
-  factory $LoginStartCopyWith(LoginStart value, $Res Function(LoginStart) then) = _$LoginStartCopyWithImpl<$Res>;
+abstract class _$$LoginStartCopyWith<$Res> implements $LoginCopyWith<$Res> {
+  factory _$$LoginStartCopyWith(_$LoginStart value, $Res Function(_$LoginStart) then) =
+      __$$LoginStartCopyWithImpl<$Res>;
   @override
   $Res call({String email, String password, ActionResult onResult, String pendingId});
 }
 
 /// @nodoc
-class _$LoginStartCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements $LoginStartCopyWith<$Res> {
-  _$LoginStartCopyWithImpl(LoginStart _value, $Res Function(LoginStart) _then)
-      : super(_value, (v) => _then(v as LoginStart));
+class __$$LoginStartCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements _$$LoginStartCopyWith<$Res> {
+  __$$LoginStartCopyWithImpl(_$LoginStart _value, $Res Function(_$LoginStart) _then)
+      : super(_value, (v) => _then(v as _$LoginStart));
 
   @override
-  LoginStart get _value => super._value as LoginStart;
+  _$LoginStart get _value => super._value as _$LoginStart;
 
   @override
   $Res call({
@@ -152,7 +116,7 @@ class _$LoginStartCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implement
     Object? onResult = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(LoginStart(
+    return _then(_$LoginStart(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -175,7 +139,6 @@ class _$LoginStartCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implement
 
 /// @nodoc
 
-@Implements<ActionStart>()
 class _$LoginStart implements LoginStart {
   const _$LoginStart(
       {required this.email, required this.password, required this.onResult, this.pendingId = _kLoginPendingId});
@@ -186,8 +149,8 @@ class _$LoginStart implements LoginStart {
   final String password;
   @override
   final ActionResult onResult;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -199,7 +162,7 @@ class _$LoginStart implements LoginStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoginStart &&
+            other is _$LoginStart &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             (identical(other.onResult, onResult) || other.onResult == onResult) &&
@@ -212,7 +175,7 @@ class _$LoginStart implements LoginStart {
 
   @JsonKey(ignore: true)
   @override
-  $LoginStartCopyWith<LoginStart> get copyWith => _$LoginStartCopyWithImpl<LoginStart>(this, _$identity);
+  _$$LoginStartCopyWith<_$LoginStart> get copyWith => __$$LoginStartCopyWithImpl<_$LoginStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -285,25 +248,25 @@ class _$LoginStart implements LoginStart {
 
 abstract class LoginStart implements Login, ActionStart {
   const factory LoginStart(
-      {required String email,
-      required String password,
-      required ActionResult onResult,
-      String pendingId}) = _$LoginStart;
+      {required final String email,
+      required final String password,
+      required final ActionResult onResult,
+      final String pendingId}) = _$LoginStart;
 
-  String get email;
-  String get password;
-  ActionResult get onResult;
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+  ActionResult get onResult => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LoginStartCopyWith<LoginStart> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginStartCopyWith<_$LoginStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginSuccessfulCopyWith<$Res> implements $LoginCopyWith<$Res> {
-  factory $LoginSuccessfulCopyWith(LoginSuccessful value, $Res Function(LoginSuccessful) then) =
-      _$LoginSuccessfulCopyWithImpl<$Res>;
+abstract class _$$LoginSuccessfulCopyWith<$Res> implements $LoginCopyWith<$Res> {
+  factory _$$LoginSuccessfulCopyWith(_$LoginSuccessful value, $Res Function(_$LoginSuccessful) then) =
+      __$$LoginSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({AppUser user, String pendingId});
 
@@ -311,19 +274,20 @@ abstract class $LoginSuccessfulCopyWith<$Res> implements $LoginCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements $LoginSuccessfulCopyWith<$Res> {
-  _$LoginSuccessfulCopyWithImpl(LoginSuccessful _value, $Res Function(LoginSuccessful) _then)
-      : super(_value, (v) => _then(v as LoginSuccessful));
+class __$$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
+    implements _$$LoginSuccessfulCopyWith<$Res> {
+  __$$LoginSuccessfulCopyWithImpl(_$LoginSuccessful _value, $Res Function(_$LoginSuccessful) _then)
+      : super(_value, (v) => _then(v as _$LoginSuccessful));
 
   @override
-  LoginSuccessful get _value => super._value as LoginSuccessful;
+  _$LoginSuccessful get _value => super._value as _$LoginSuccessful;
 
   @override
   $Res call({
     Object? user = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(LoginSuccessful(
+    return _then(_$LoginSuccessful(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -345,14 +309,13 @@ class _$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> impl
 
 /// @nodoc
 
-@Implements<ActionDone>()
 class _$LoginSuccessful implements LoginSuccessful {
   const _$LoginSuccessful(this.user, [this.pendingId = _kLoginPendingId]);
 
   @override
   final AppUser user;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -364,7 +327,7 @@ class _$LoginSuccessful implements LoginSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoginSuccessful &&
+            other is _$LoginSuccessful &&
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -375,8 +338,8 @@ class _$LoginSuccessful implements LoginSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $LoginSuccessfulCopyWith<LoginSuccessful> get copyWith =>
-      _$LoginSuccessfulCopyWithImpl<LoginSuccessful>(this, _$identity);
+  _$$LoginSuccessfulCopyWith<_$LoginSuccessful> get copyWith =>
+      __$$LoginSuccessfulCopyWithImpl<_$LoginSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -448,30 +411,31 @@ class _$LoginSuccessful implements LoginSuccessful {
 }
 
 abstract class LoginSuccessful implements Login, ActionDone {
-  const factory LoginSuccessful(AppUser user, [String pendingId]) = _$LoginSuccessful;
+  const factory LoginSuccessful(final AppUser user, [final String pendingId]) = _$LoginSuccessful;
 
-  AppUser get user;
+  AppUser get user => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LoginSuccessfulCopyWith<LoginSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginSuccessfulCopyWith<_$LoginSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginErrorCopyWith<$Res> implements $LoginCopyWith<$Res> {
-  factory $LoginErrorCopyWith(LoginError value, $Res Function(LoginError) then) = _$LoginErrorCopyWithImpl<$Res>;
+abstract class _$$LoginErrorCopyWith<$Res> implements $LoginCopyWith<$Res> {
+  factory _$$LoginErrorCopyWith(_$LoginError value, $Res Function(_$LoginError) then) =
+      __$$LoginErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements $LoginErrorCopyWith<$Res> {
-  _$LoginErrorCopyWithImpl(LoginError _value, $Res Function(LoginError) _then)
-      : super(_value, (v) => _then(v as LoginError));
+class __$$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements _$$LoginErrorCopyWith<$Res> {
+  __$$LoginErrorCopyWithImpl(_$LoginError _value, $Res Function(_$LoginError) _then)
+      : super(_value, (v) => _then(v as _$LoginError));
 
   @override
-  LoginError get _value => super._value as LoginError;
+  _$LoginError get _value => super._value as _$LoginError;
 
   @override
   $Res call({
@@ -479,7 +443,7 @@ class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implement
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(LoginError(
+    return _then(_$LoginError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -498,8 +462,6 @@ class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implement
 
 /// @nodoc
 
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
 class _$LoginError implements LoginError {
   const _$LoginError(this.error, this.stackTrace, [this.pendingId = _kLoginPendingId]);
 
@@ -507,8 +469,8 @@ class _$LoginError implements LoginError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -520,7 +482,7 @@ class _$LoginError implements LoginError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LoginError &&
+            other is _$LoginError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -532,7 +494,7 @@ class _$LoginError implements LoginError {
 
   @JsonKey(ignore: true)
   @override
-  $LoginErrorCopyWith<LoginError> get copyWith => _$LoginErrorCopyWithImpl<LoginError>(this, _$identity);
+  _$$LoginErrorCopyWith<_$LoginError> get copyWith => __$$LoginErrorCopyWithImpl<_$LoginError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -604,59 +566,20 @@ class _$LoginError implements LoginError {
 }
 
 abstract class LoginError implements Login, ActionDone, ErrorAction {
-  const factory LoginError(Object error, StackTrace stackTrace, [String pendingId]) = _$LoginError;
+  const factory LoginError(final Object error, final StackTrace stackTrace, [final String pendingId]) = _$LoginError;
 
-  Object get error;
-  StackTrace get stackTrace;
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LoginErrorCopyWith<LoginError> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginErrorCopyWith<_$LoginError> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignUpTearOff {
-  const _$SignUpTearOff();
-
-  SignUpStart start(
-      {required String email,
-      required String password,
-      required String username,
-      required ActionResult onResult,
-      String pendingId = _kSignUpPendingId}) {
-    return SignUpStart(
-      email: email,
-      password: password,
-      username: username,
-      onResult: onResult,
-      pendingId: pendingId,
-    );
-  }
-
-  SignUpSuccessful successful(AppUser user, [String pendingId = _kSignUpPendingId]) {
-    return SignUpSuccessful(
-      user,
-      pendingId,
-    );
-  }
-
-  SignUpError error(Object error, StackTrace stackTrace, [String pendingId = _kSignUpPendingId]) {
-    return SignUpError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $SignUp = _$SignUpTearOff();
 
 /// @nodoc
 mixin _$SignUp {
   String get pendingId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String email, String password, String username, ActionResult onResult, String pendingId)
@@ -735,19 +658,20 @@ class _$SignUpCopyWithImpl<$Res> implements $SignUpCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $SignUpStartCopyWith<$Res> implements $SignUpCopyWith<$Res> {
-  factory $SignUpStartCopyWith(SignUpStart value, $Res Function(SignUpStart) then) = _$SignUpStartCopyWithImpl<$Res>;
+abstract class _$$SignUpStartCopyWith<$Res> implements $SignUpCopyWith<$Res> {
+  factory _$$SignUpStartCopyWith(_$SignUpStart value, $Res Function(_$SignUpStart) then) =
+      __$$SignUpStartCopyWithImpl<$Res>;
   @override
   $Res call({String email, String password, String username, ActionResult onResult, String pendingId});
 }
 
 /// @nodoc
-class _$SignUpStartCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> implements $SignUpStartCopyWith<$Res> {
-  _$SignUpStartCopyWithImpl(SignUpStart _value, $Res Function(SignUpStart) _then)
-      : super(_value, (v) => _then(v as SignUpStart));
+class __$$SignUpStartCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> implements _$$SignUpStartCopyWith<$Res> {
+  __$$SignUpStartCopyWithImpl(_$SignUpStart _value, $Res Function(_$SignUpStart) _then)
+      : super(_value, (v) => _then(v as _$SignUpStart));
 
   @override
-  SignUpStart get _value => super._value as SignUpStart;
+  _$SignUpStart get _value => super._value as _$SignUpStart;
 
   @override
   $Res call({
@@ -757,7 +681,7 @@ class _$SignUpStartCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> impleme
     Object? onResult = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(SignUpStart(
+    return _then(_$SignUpStart(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -784,7 +708,6 @@ class _$SignUpStartCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
-@Implements<ActionStart>()
 class _$SignUpStart implements SignUpStart {
   const _$SignUpStart(
       {required this.email,
@@ -801,8 +724,8 @@ class _$SignUpStart implements SignUpStart {
   final String username;
   @override
   final ActionResult onResult;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -814,7 +737,7 @@ class _$SignUpStart implements SignUpStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SignUpStart &&
+            other is _$SignUpStart &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.username, username) &&
@@ -833,7 +756,7 @@ class _$SignUpStart implements SignUpStart {
 
   @JsonKey(ignore: true)
   @override
-  $SignUpStartCopyWith<SignUpStart> get copyWith => _$SignUpStartCopyWithImpl<SignUpStart>(this, _$identity);
+  _$$SignUpStartCopyWith<_$SignUpStart> get copyWith => __$$SignUpStartCopyWithImpl<_$SignUpStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -907,27 +830,27 @@ class _$SignUpStart implements SignUpStart {
 
 abstract class SignUpStart implements SignUp, ActionStart {
   const factory SignUpStart(
-      {required String email,
-      required String password,
-      required String username,
-      required ActionResult onResult,
-      String pendingId}) = _$SignUpStart;
+      {required final String email,
+      required final String password,
+      required final String username,
+      required final ActionResult onResult,
+      final String pendingId}) = _$SignUpStart;
 
-  String get email;
-  String get password;
-  String get username;
-  ActionResult get onResult;
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  ActionResult get onResult => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $SignUpStartCopyWith<SignUpStart> get copyWith => throw _privateConstructorUsedError;
+  _$$SignUpStartCopyWith<_$SignUpStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignUpSuccessfulCopyWith<$Res> implements $SignUpCopyWith<$Res> {
-  factory $SignUpSuccessfulCopyWith(SignUpSuccessful value, $Res Function(SignUpSuccessful) then) =
-      _$SignUpSuccessfulCopyWithImpl<$Res>;
+abstract class _$$SignUpSuccessfulCopyWith<$Res> implements $SignUpCopyWith<$Res> {
+  factory _$$SignUpSuccessfulCopyWith(_$SignUpSuccessful value, $Res Function(_$SignUpSuccessful) then) =
+      __$$SignUpSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({AppUser user, String pendingId});
 
@@ -935,20 +858,20 @@ abstract class $SignUpSuccessfulCopyWith<$Res> implements $SignUpCopyWith<$Res> 
 }
 
 /// @nodoc
-class _$SignUpSuccessfulCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
-    implements $SignUpSuccessfulCopyWith<$Res> {
-  _$SignUpSuccessfulCopyWithImpl(SignUpSuccessful _value, $Res Function(SignUpSuccessful) _then)
-      : super(_value, (v) => _then(v as SignUpSuccessful));
+class __$$SignUpSuccessfulCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
+    implements _$$SignUpSuccessfulCopyWith<$Res> {
+  __$$SignUpSuccessfulCopyWithImpl(_$SignUpSuccessful _value, $Res Function(_$SignUpSuccessful) _then)
+      : super(_value, (v) => _then(v as _$SignUpSuccessful));
 
   @override
-  SignUpSuccessful get _value => super._value as SignUpSuccessful;
+  _$SignUpSuccessful get _value => super._value as _$SignUpSuccessful;
 
   @override
   $Res call({
     Object? user = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(SignUpSuccessful(
+    return _then(_$SignUpSuccessful(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -970,14 +893,13 @@ class _$SignUpSuccessfulCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
 
 /// @nodoc
 
-@Implements<ActionDone>()
 class _$SignUpSuccessful implements SignUpSuccessful {
   const _$SignUpSuccessful(this.user, [this.pendingId = _kSignUpPendingId]);
 
   @override
   final AppUser user;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -989,7 +911,7 @@ class _$SignUpSuccessful implements SignUpSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SignUpSuccessful &&
+            other is _$SignUpSuccessful &&
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -1000,8 +922,8 @@ class _$SignUpSuccessful implements SignUpSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $SignUpSuccessfulCopyWith<SignUpSuccessful> get copyWith =>
-      _$SignUpSuccessfulCopyWithImpl<SignUpSuccessful>(this, _$identity);
+  _$$SignUpSuccessfulCopyWith<_$SignUpSuccessful> get copyWith =>
+      __$$SignUpSuccessfulCopyWithImpl<_$SignUpSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1074,30 +996,31 @@ class _$SignUpSuccessful implements SignUpSuccessful {
 }
 
 abstract class SignUpSuccessful implements SignUp, ActionDone {
-  const factory SignUpSuccessful(AppUser user, [String pendingId]) = _$SignUpSuccessful;
+  const factory SignUpSuccessful(final AppUser user, [final String pendingId]) = _$SignUpSuccessful;
 
-  AppUser get user;
+  AppUser get user => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $SignUpSuccessfulCopyWith<SignUpSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$SignUpSuccessfulCopyWith<_$SignUpSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignUpErrorCopyWith<$Res> implements $SignUpCopyWith<$Res> {
-  factory $SignUpErrorCopyWith(SignUpError value, $Res Function(SignUpError) then) = _$SignUpErrorCopyWithImpl<$Res>;
+abstract class _$$SignUpErrorCopyWith<$Res> implements $SignUpCopyWith<$Res> {
+  factory _$$SignUpErrorCopyWith(_$SignUpError value, $Res Function(_$SignUpError) then) =
+      __$$SignUpErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$SignUpErrorCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> implements $SignUpErrorCopyWith<$Res> {
-  _$SignUpErrorCopyWithImpl(SignUpError _value, $Res Function(SignUpError) _then)
-      : super(_value, (v) => _then(v as SignUpError));
+class __$$SignUpErrorCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> implements _$$SignUpErrorCopyWith<$Res> {
+  __$$SignUpErrorCopyWithImpl(_$SignUpError _value, $Res Function(_$SignUpError) _then)
+      : super(_value, (v) => _then(v as _$SignUpError));
 
   @override
-  SignUpError get _value => super._value as SignUpError;
+  _$SignUpError get _value => super._value as _$SignUpError;
 
   @override
   $Res call({
@@ -1105,7 +1028,7 @@ class _$SignUpErrorCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> impleme
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(SignUpError(
+    return _then(_$SignUpError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1124,8 +1047,6 @@ class _$SignUpErrorCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
 class _$SignUpError implements SignUpError {
   const _$SignUpError(this.error, this.stackTrace, [this.pendingId = _kSignUpPendingId]);
 
@@ -1133,8 +1054,8 @@ class _$SignUpError implements SignUpError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -1146,7 +1067,7 @@ class _$SignUpError implements SignUpError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SignUpError &&
+            other is _$SignUpError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -1158,7 +1079,7 @@ class _$SignUpError implements SignUpError {
 
   @JsonKey(ignore: true)
   @override
-  $SignUpErrorCopyWith<SignUpError> get copyWith => _$SignUpErrorCopyWithImpl<SignUpError>(this, _$identity);
+  _$$SignUpErrorCopyWith<_$SignUpError> get copyWith => __$$SignUpErrorCopyWithImpl<_$SignUpError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1231,49 +1152,20 @@ class _$SignUpError implements SignUpError {
 }
 
 abstract class SignUpError implements SignUp, ActionDone, ErrorAction {
-  const factory SignUpError(Object error, StackTrace stackTrace, [String pendingId]) = _$SignUpError;
+  const factory SignUpError(final Object error, final StackTrace stackTrace, [final String pendingId]) = _$SignUpError;
 
-  Object get error;
-  StackTrace get stackTrace;
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $SignUpErrorCopyWith<SignUpError> get copyWith => throw _privateConstructorUsedError;
+  _$$SignUpErrorCopyWith<_$SignUpError> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$LogoutTearOff {
-  const _$LogoutTearOff();
-
-  LogoutStart start({String pendingId = _kLogoutPendingId}) {
-    return LogoutStart(
-      pendingId: pendingId,
-    );
-  }
-
-  LogoutSuccessful successful([String pendingId = _kLogoutPendingId]) {
-    return LogoutSuccessful(
-      pendingId,
-    );
-  }
-
-  LogoutError error(Object error, StackTrace stackTrace, [String pendingId = _kLogoutPendingId]) {
-    return LogoutError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $Logout = _$LogoutTearOff();
 
 /// @nodoc
 mixin _$Logout {
   String get pendingId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
@@ -1351,25 +1243,26 @@ class _$LogoutCopyWithImpl<$Res> implements $LogoutCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $LogoutStartCopyWith<$Res> implements $LogoutCopyWith<$Res> {
-  factory $LogoutStartCopyWith(LogoutStart value, $Res Function(LogoutStart) then) = _$LogoutStartCopyWithImpl<$Res>;
+abstract class _$$LogoutStartCopyWith<$Res> implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutStartCopyWith(_$LogoutStart value, $Res Function(_$LogoutStart) then) =
+      __$$LogoutStartCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$LogoutStartCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> implements $LogoutStartCopyWith<$Res> {
-  _$LogoutStartCopyWithImpl(LogoutStart _value, $Res Function(LogoutStart) _then)
-      : super(_value, (v) => _then(v as LogoutStart));
+class __$$LogoutStartCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> implements _$$LogoutStartCopyWith<$Res> {
+  __$$LogoutStartCopyWithImpl(_$LogoutStart _value, $Res Function(_$LogoutStart) _then)
+      : super(_value, (v) => _then(v as _$LogoutStart));
 
   @override
-  LogoutStart get _value => super._value as LogoutStart;
+  _$LogoutStart get _value => super._value as _$LogoutStart;
 
   @override
   $Res call({
     Object? pendingId = freezed,
   }) {
-    return _then(LogoutStart(
+    return _then(_$LogoutStart(
       pendingId: pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -1380,12 +1273,11 @@ class _$LogoutStartCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
-@Implements<ActionStart>()
 class _$LogoutStart implements LogoutStart {
   const _$LogoutStart({this.pendingId = _kLogoutPendingId});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -1397,7 +1289,7 @@ class _$LogoutStart implements LogoutStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LogoutStart &&
+            other is _$LogoutStart &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
@@ -1406,7 +1298,7 @@ class _$LogoutStart implements LogoutStart {
 
   @JsonKey(ignore: true)
   @override
-  $LogoutStartCopyWith<LogoutStart> get copyWith => _$LogoutStartCopyWithImpl<LogoutStart>(this, _$identity);
+  _$$LogoutStartCopyWith<_$LogoutStart> get copyWith => __$$LogoutStartCopyWithImpl<_$LogoutStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1478,37 +1370,37 @@ class _$LogoutStart implements LogoutStart {
 }
 
 abstract class LogoutStart implements Logout, ActionStart {
-  const factory LogoutStart({String pendingId}) = _$LogoutStart;
+  const factory LogoutStart({final String pendingId}) = _$LogoutStart;
 
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LogoutStartCopyWith<LogoutStart> get copyWith => throw _privateConstructorUsedError;
+  _$$LogoutStartCopyWith<_$LogoutStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LogoutSuccessfulCopyWith<$Res> implements $LogoutCopyWith<$Res> {
-  factory $LogoutSuccessfulCopyWith(LogoutSuccessful value, $Res Function(LogoutSuccessful) then) =
-      _$LogoutSuccessfulCopyWithImpl<$Res>;
+abstract class _$$LogoutSuccessfulCopyWith<$Res> implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutSuccessfulCopyWith(_$LogoutSuccessful value, $Res Function(_$LogoutSuccessful) then) =
+      __$$LogoutSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
-    implements $LogoutSuccessfulCopyWith<$Res> {
-  _$LogoutSuccessfulCopyWithImpl(LogoutSuccessful _value, $Res Function(LogoutSuccessful) _then)
-      : super(_value, (v) => _then(v as LogoutSuccessful));
+class __$$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
+    implements _$$LogoutSuccessfulCopyWith<$Res> {
+  __$$LogoutSuccessfulCopyWithImpl(_$LogoutSuccessful _value, $Res Function(_$LogoutSuccessful) _then)
+      : super(_value, (v) => _then(v as _$LogoutSuccessful));
 
   @override
-  LogoutSuccessful get _value => super._value as LogoutSuccessful;
+  _$LogoutSuccessful get _value => super._value as _$LogoutSuccessful;
 
   @override
   $Res call({
     Object? pendingId = freezed,
   }) {
-    return _then(LogoutSuccessful(
+    return _then(_$LogoutSuccessful(
       pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -1519,12 +1411,11 @@ class _$LogoutSuccessfulCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res>
 
 /// @nodoc
 
-@Implements<ActionDone>()
 class _$LogoutSuccessful implements LogoutSuccessful {
   const _$LogoutSuccessful([this.pendingId = _kLogoutPendingId]);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -1536,7 +1427,7 @@ class _$LogoutSuccessful implements LogoutSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LogoutSuccessful &&
+            other is _$LogoutSuccessful &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
@@ -1545,8 +1436,8 @@ class _$LogoutSuccessful implements LogoutSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $LogoutSuccessfulCopyWith<LogoutSuccessful> get copyWith =>
-      _$LogoutSuccessfulCopyWithImpl<LogoutSuccessful>(this, _$identity);
+  _$$LogoutSuccessfulCopyWith<_$LogoutSuccessful> get copyWith =>
+      __$$LogoutSuccessfulCopyWithImpl<_$LogoutSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1618,29 +1509,30 @@ class _$LogoutSuccessful implements LogoutSuccessful {
 }
 
 abstract class LogoutSuccessful implements Logout, ActionDone {
-  const factory LogoutSuccessful([String pendingId]) = _$LogoutSuccessful;
+  const factory LogoutSuccessful([final String pendingId]) = _$LogoutSuccessful;
 
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LogoutSuccessfulCopyWith<LogoutSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$LogoutSuccessfulCopyWith<_$LogoutSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LogoutErrorCopyWith<$Res> implements $LogoutCopyWith<$Res> {
-  factory $LogoutErrorCopyWith(LogoutError value, $Res Function(LogoutError) then) = _$LogoutErrorCopyWithImpl<$Res>;
+abstract class _$$LogoutErrorCopyWith<$Res> implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutErrorCopyWith(_$LogoutError value, $Res Function(_$LogoutError) then) =
+      __$$LogoutErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> implements $LogoutErrorCopyWith<$Res> {
-  _$LogoutErrorCopyWithImpl(LogoutError _value, $Res Function(LogoutError) _then)
-      : super(_value, (v) => _then(v as LogoutError));
+class __$$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> implements _$$LogoutErrorCopyWith<$Res> {
+  __$$LogoutErrorCopyWithImpl(_$LogoutError _value, $Res Function(_$LogoutError) _then)
+      : super(_value, (v) => _then(v as _$LogoutError));
 
   @override
-  LogoutError get _value => super._value as LogoutError;
+  _$LogoutError get _value => super._value as _$LogoutError;
 
   @override
   $Res call({
@@ -1648,7 +1540,7 @@ class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> impleme
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(LogoutError(
+    return _then(_$LogoutError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1667,8 +1559,6 @@ class _$LogoutErrorCopyWithImpl<$Res> extends _$LogoutCopyWithImpl<$Res> impleme
 
 /// @nodoc
 
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
 class _$LogoutError implements LogoutError {
   const _$LogoutError(this.error, this.stackTrace, [this.pendingId = _kLogoutPendingId]);
 
@@ -1676,8 +1566,8 @@ class _$LogoutError implements LogoutError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -1689,7 +1579,7 @@ class _$LogoutError implements LogoutError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is LogoutError &&
+            other is _$LogoutError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -1701,7 +1591,7 @@ class _$LogoutError implements LogoutError {
 
   @JsonKey(ignore: true)
   @override
-  $LogoutErrorCopyWith<LogoutError> get copyWith => _$LogoutErrorCopyWithImpl<LogoutError>(this, _$identity);
+  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith => __$$LogoutErrorCopyWithImpl<_$LogoutError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1773,41 +1663,16 @@ class _$LogoutError implements LogoutError {
 }
 
 abstract class LogoutError implements Logout, ActionDone, ErrorAction {
-  const factory LogoutError(Object error, StackTrace stackTrace, [String pendingId]) = _$LogoutError;
+  const factory LogoutError(final Object error, final StackTrace stackTrace, [final String pendingId]) = _$LogoutError;
 
-  Object get error;
-  StackTrace get stackTrace;
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $LogoutErrorCopyWith<LogoutError> get copyWith => throw _privateConstructorUsedError;
+  _$$LogoutErrorCopyWith<_$LogoutError> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$GetCurrentUserTearOff {
-  const _$GetCurrentUserTearOff();
-
-  GetCurrentUserStart call() {
-    return const GetCurrentUserStart();
-  }
-
-  GetCurrentUserSuccessful successful(AppUser? user) {
-    return GetCurrentUserSuccessful(
-      user,
-    );
-  }
-
-  GetCurrentUserError error(Object error, StackTrace stackTrace) {
-    return GetCurrentUserError(
-      error,
-      stackTrace,
-    );
-  }
-}
-
-/// @nodoc
-const $GetCurrentUser = _$GetCurrentUserTearOff();
 
 /// @nodoc
 mixin _$GetCurrentUser {
@@ -1873,19 +1738,19 @@ class _$GetCurrentUserCopyWithImpl<$Res> implements $GetCurrentUserCopyWith<$Res
 }
 
 /// @nodoc
-abstract class $GetCurrentUserStartCopyWith<$Res> {
-  factory $GetCurrentUserStartCopyWith(GetCurrentUserStart value, $Res Function(GetCurrentUserStart) then) =
-      _$GetCurrentUserStartCopyWithImpl<$Res>;
+abstract class _$$GetCurrentUserStartCopyWith<$Res> {
+  factory _$$GetCurrentUserStartCopyWith(_$GetCurrentUserStart value, $Res Function(_$GetCurrentUserStart) then) =
+      __$$GetCurrentUserStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetCurrentUserStartCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithImpl<$Res>
-    implements $GetCurrentUserStartCopyWith<$Res> {
-  _$GetCurrentUserStartCopyWithImpl(GetCurrentUserStart _value, $Res Function(GetCurrentUserStart) _then)
-      : super(_value, (v) => _then(v as GetCurrentUserStart));
+class __$$GetCurrentUserStartCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithImpl<$Res>
+    implements _$$GetCurrentUserStartCopyWith<$Res> {
+  __$$GetCurrentUserStartCopyWithImpl(_$GetCurrentUserStart _value, $Res Function(_$GetCurrentUserStart) _then)
+      : super(_value, (v) => _then(v as _$GetCurrentUserStart));
 
   @override
-  GetCurrentUserStart get _value => super._value as GetCurrentUserStart;
+  _$GetCurrentUserStart get _value => super._value as _$GetCurrentUserStart;
 }
 
 /// @nodoc
@@ -1900,7 +1765,7 @@ class _$GetCurrentUserStart implements GetCurrentUserStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is GetCurrentUserStart);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetCurrentUserStart);
   }
 
   @override
@@ -1980,29 +1845,30 @@ abstract class GetCurrentUserStart implements GetCurrentUser {
 }
 
 /// @nodoc
-abstract class $GetCurrentUserSuccessfulCopyWith<$Res> {
-  factory $GetCurrentUserSuccessfulCopyWith(
-          GetCurrentUserSuccessful value, $Res Function(GetCurrentUserSuccessful) then) =
-      _$GetCurrentUserSuccessfulCopyWithImpl<$Res>;
+abstract class _$$GetCurrentUserSuccessfulCopyWith<$Res> {
+  factory _$$GetCurrentUserSuccessfulCopyWith(
+          _$GetCurrentUserSuccessful value, $Res Function(_$GetCurrentUserSuccessful) then) =
+      __$$GetCurrentUserSuccessfulCopyWithImpl<$Res>;
   $Res call({AppUser? user});
 
   $AppUserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
-class _$GetCurrentUserSuccessfulCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithImpl<$Res>
-    implements $GetCurrentUserSuccessfulCopyWith<$Res> {
-  _$GetCurrentUserSuccessfulCopyWithImpl(GetCurrentUserSuccessful _value, $Res Function(GetCurrentUserSuccessful) _then)
-      : super(_value, (v) => _then(v as GetCurrentUserSuccessful));
+class __$$GetCurrentUserSuccessfulCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithImpl<$Res>
+    implements _$$GetCurrentUserSuccessfulCopyWith<$Res> {
+  __$$GetCurrentUserSuccessfulCopyWithImpl(
+      _$GetCurrentUserSuccessful _value, $Res Function(_$GetCurrentUserSuccessful) _then)
+      : super(_value, (v) => _then(v as _$GetCurrentUserSuccessful));
 
   @override
-  GetCurrentUserSuccessful get _value => super._value as GetCurrentUserSuccessful;
+  _$GetCurrentUserSuccessful get _value => super._value as _$GetCurrentUserSuccessful;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(GetCurrentUserSuccessful(
+    return _then(_$GetCurrentUserSuccessful(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2039,7 +1905,7 @@ class _$GetCurrentUserSuccessful implements GetCurrentUserSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GetCurrentUserSuccessful &&
+            other is _$GetCurrentUserSuccessful &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -2048,8 +1914,8 @@ class _$GetCurrentUserSuccessful implements GetCurrentUserSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $GetCurrentUserSuccessfulCopyWith<GetCurrentUserSuccessful> get copyWith =>
-      _$GetCurrentUserSuccessfulCopyWithImpl<GetCurrentUserSuccessful>(this, _$identity);
+  _$$GetCurrentUserSuccessfulCopyWith<_$GetCurrentUserSuccessful> get copyWith =>
+      __$$GetCurrentUserSuccessfulCopyWithImpl<_$GetCurrentUserSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2121,35 +1987,35 @@ class _$GetCurrentUserSuccessful implements GetCurrentUserSuccessful {
 }
 
 abstract class GetCurrentUserSuccessful implements GetCurrentUser {
-  const factory GetCurrentUserSuccessful(AppUser? user) = _$GetCurrentUserSuccessful;
+  const factory GetCurrentUserSuccessful(final AppUser? user) = _$GetCurrentUserSuccessful;
 
-  AppUser? get user;
+  AppUser? get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetCurrentUserSuccessfulCopyWith<GetCurrentUserSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$GetCurrentUserSuccessfulCopyWith<_$GetCurrentUserSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetCurrentUserErrorCopyWith<$Res> {
-  factory $GetCurrentUserErrorCopyWith(GetCurrentUserError value, $Res Function(GetCurrentUserError) then) =
-      _$GetCurrentUserErrorCopyWithImpl<$Res>;
+abstract class _$$GetCurrentUserErrorCopyWith<$Res> {
+  factory _$$GetCurrentUserErrorCopyWith(_$GetCurrentUserError value, $Res Function(_$GetCurrentUserError) then) =
+      __$$GetCurrentUserErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class _$GetCurrentUserErrorCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithImpl<$Res>
-    implements $GetCurrentUserErrorCopyWith<$Res> {
-  _$GetCurrentUserErrorCopyWithImpl(GetCurrentUserError _value, $Res Function(GetCurrentUserError) _then)
-      : super(_value, (v) => _then(v as GetCurrentUserError));
+class __$$GetCurrentUserErrorCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithImpl<$Res>
+    implements _$$GetCurrentUserErrorCopyWith<$Res> {
+  __$$GetCurrentUserErrorCopyWithImpl(_$GetCurrentUserError _value, $Res Function(_$GetCurrentUserError) _then)
+      : super(_value, (v) => _then(v as _$GetCurrentUserError));
 
   @override
-  GetCurrentUserError get _value => super._value as GetCurrentUserError;
+  _$GetCurrentUserError get _value => super._value as _$GetCurrentUserError;
 
   @override
   $Res call({
     Object? error = freezed,
     Object? stackTrace = freezed,
   }) {
-    return _then(GetCurrentUserError(
+    return _then(_$GetCurrentUserError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -2164,7 +2030,6 @@ class _$GetCurrentUserErrorCopyWithImpl<$Res> extends _$GetCurrentUserCopyWithIm
 
 /// @nodoc
 
-@Implements<ErrorAction>()
 class _$GetCurrentUserError implements GetCurrentUserError {
   const _$GetCurrentUserError(this.error, this.stackTrace);
 
@@ -2182,7 +2047,7 @@ class _$GetCurrentUserError implements GetCurrentUserError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is GetCurrentUserError &&
+            other is _$GetCurrentUserError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace));
   }
@@ -2193,8 +2058,8 @@ class _$GetCurrentUserError implements GetCurrentUserError {
 
   @JsonKey(ignore: true)
   @override
-  $GetCurrentUserErrorCopyWith<GetCurrentUserError> get copyWith =>
-      _$GetCurrentUserErrorCopyWithImpl<GetCurrentUserError>(this, _$identity);
+  _$$GetCurrentUserErrorCopyWith<_$GetCurrentUserError> get copyWith =>
+      __$$GetCurrentUserErrorCopyWithImpl<_$GetCurrentUserError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2266,48 +2131,17 @@ class _$GetCurrentUserError implements GetCurrentUserError {
 }
 
 abstract class GetCurrentUserError implements GetCurrentUser, ErrorAction {
-  const factory GetCurrentUserError(Object error, StackTrace stackTrace) = _$GetCurrentUserError;
+  const factory GetCurrentUserError(final Object error, final StackTrace stackTrace) = _$GetCurrentUserError;
 
-  Object get error;
-  StackTrace get stackTrace;
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetCurrentUserErrorCopyWith<GetCurrentUserError> get copyWith => throw _privateConstructorUsedError;
+  _$$GetCurrentUserErrorCopyWith<_$GetCurrentUserError> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$UnlockAppTearOff {
-  const _$UnlockAppTearOff();
-
-  UnlockAppStart start({required String password, String pendingId = _kUnlockAppPendingId}) {
-    return UnlockAppStart(
-      password: password,
-      pendingId: pendingId,
-    );
-  }
-
-  UnlockAppSuccessful successful(AppUser? user, [String pendingId = _kUnlockAppPendingId]) {
-    return UnlockAppSuccessful(
-      user,
-      pendingId,
-    );
-  }
-
-  UnlockAppError error(Object error, StackTrace stackTrace, [String pendingId = _kUnlockAppPendingId]) {
-    return UnlockAppError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $UnlockApp = _$UnlockAppTearOff();
 
 /// @nodoc
 mixin _$UnlockApp {
   String get pendingId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String password, String pendingId) start,
@@ -2385,28 +2219,28 @@ class _$UnlockAppCopyWithImpl<$Res> implements $UnlockAppCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $UnlockAppStartCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
-  factory $UnlockAppStartCopyWith(UnlockAppStart value, $Res Function(UnlockAppStart) then) =
-      _$UnlockAppStartCopyWithImpl<$Res>;
+abstract class _$$UnlockAppStartCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
+  factory _$$UnlockAppStartCopyWith(_$UnlockAppStart value, $Res Function(_$UnlockAppStart) then) =
+      __$$UnlockAppStartCopyWithImpl<$Res>;
   @override
   $Res call({String password, String pendingId});
 }
 
 /// @nodoc
-class _$UnlockAppStartCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
-    implements $UnlockAppStartCopyWith<$Res> {
-  _$UnlockAppStartCopyWithImpl(UnlockAppStart _value, $Res Function(UnlockAppStart) _then)
-      : super(_value, (v) => _then(v as UnlockAppStart));
+class __$$UnlockAppStartCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
+    implements _$$UnlockAppStartCopyWith<$Res> {
+  __$$UnlockAppStartCopyWithImpl(_$UnlockAppStart _value, $Res Function(_$UnlockAppStart) _then)
+      : super(_value, (v) => _then(v as _$UnlockAppStart));
 
   @override
-  UnlockAppStart get _value => super._value as UnlockAppStart;
+  _$UnlockAppStart get _value => super._value as _$UnlockAppStart;
 
   @override
   $Res call({
     Object? password = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(UnlockAppStart(
+    return _then(_$UnlockAppStart(
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -2421,14 +2255,13 @@ class _$UnlockAppStartCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
 
 /// @nodoc
 
-@Implements<ActionStart>()
 class _$UnlockAppStart implements UnlockAppStart {
   const _$UnlockAppStart({required this.password, this.pendingId = _kUnlockAppPendingId});
 
   @override
   final String password;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -2440,7 +2273,7 @@ class _$UnlockAppStart implements UnlockAppStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UnlockAppStart &&
+            other is _$UnlockAppStart &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -2451,8 +2284,8 @@ class _$UnlockAppStart implements UnlockAppStart {
 
   @JsonKey(ignore: true)
   @override
-  $UnlockAppStartCopyWith<UnlockAppStart> get copyWith =>
-      _$UnlockAppStartCopyWithImpl<UnlockAppStart>(this, _$identity);
+  _$$UnlockAppStartCopyWith<_$UnlockAppStart> get copyWith =>
+      __$$UnlockAppStartCopyWithImpl<_$UnlockAppStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2524,20 +2357,20 @@ class _$UnlockAppStart implements UnlockAppStart {
 }
 
 abstract class UnlockAppStart implements UnlockApp, ActionStart {
-  const factory UnlockAppStart({required String password, String pendingId}) = _$UnlockAppStart;
+  const factory UnlockAppStart({required final String password, final String pendingId}) = _$UnlockAppStart;
 
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UnlockAppStartCopyWith<UnlockAppStart> get copyWith => throw _privateConstructorUsedError;
+  _$$UnlockAppStartCopyWith<_$UnlockAppStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UnlockAppSuccessfulCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
-  factory $UnlockAppSuccessfulCopyWith(UnlockAppSuccessful value, $Res Function(UnlockAppSuccessful) then) =
-      _$UnlockAppSuccessfulCopyWithImpl<$Res>;
+abstract class _$$UnlockAppSuccessfulCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
+  factory _$$UnlockAppSuccessfulCopyWith(_$UnlockAppSuccessful value, $Res Function(_$UnlockAppSuccessful) then) =
+      __$$UnlockAppSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({AppUser? user, String pendingId});
 
@@ -2545,20 +2378,20 @@ abstract class $UnlockAppSuccessfulCopyWith<$Res> implements $UnlockAppCopyWith<
 }
 
 /// @nodoc
-class _$UnlockAppSuccessfulCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
-    implements $UnlockAppSuccessfulCopyWith<$Res> {
-  _$UnlockAppSuccessfulCopyWithImpl(UnlockAppSuccessful _value, $Res Function(UnlockAppSuccessful) _then)
-      : super(_value, (v) => _then(v as UnlockAppSuccessful));
+class __$$UnlockAppSuccessfulCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
+    implements _$$UnlockAppSuccessfulCopyWith<$Res> {
+  __$$UnlockAppSuccessfulCopyWithImpl(_$UnlockAppSuccessful _value, $Res Function(_$UnlockAppSuccessful) _then)
+      : super(_value, (v) => _then(v as _$UnlockAppSuccessful));
 
   @override
-  UnlockAppSuccessful get _value => super._value as UnlockAppSuccessful;
+  _$UnlockAppSuccessful get _value => super._value as _$UnlockAppSuccessful;
 
   @override
   $Res call({
     Object? user = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(UnlockAppSuccessful(
+    return _then(_$UnlockAppSuccessful(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -2584,14 +2417,13 @@ class _$UnlockAppSuccessfulCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$R
 
 /// @nodoc
 
-@Implements<ActionDone>()
 class _$UnlockAppSuccessful implements UnlockAppSuccessful {
   const _$UnlockAppSuccessful(this.user, [this.pendingId = _kUnlockAppPendingId]);
 
   @override
   final AppUser? user;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -2603,7 +2435,7 @@ class _$UnlockAppSuccessful implements UnlockAppSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UnlockAppSuccessful &&
+            other is _$UnlockAppSuccessful &&
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -2614,8 +2446,8 @@ class _$UnlockAppSuccessful implements UnlockAppSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $UnlockAppSuccessfulCopyWith<UnlockAppSuccessful> get copyWith =>
-      _$UnlockAppSuccessfulCopyWithImpl<UnlockAppSuccessful>(this, _$identity);
+  _$$UnlockAppSuccessfulCopyWith<_$UnlockAppSuccessful> get copyWith =>
+      __$$UnlockAppSuccessfulCopyWithImpl<_$UnlockAppSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2687,32 +2519,32 @@ class _$UnlockAppSuccessful implements UnlockAppSuccessful {
 }
 
 abstract class UnlockAppSuccessful implements UnlockApp, ActionDone {
-  const factory UnlockAppSuccessful(AppUser? user, [String pendingId]) = _$UnlockAppSuccessful;
+  const factory UnlockAppSuccessful(final AppUser? user, [final String pendingId]) = _$UnlockAppSuccessful;
 
-  AppUser? get user;
+  AppUser? get user => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UnlockAppSuccessfulCopyWith<UnlockAppSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$UnlockAppSuccessfulCopyWith<_$UnlockAppSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UnlockAppErrorCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
-  factory $UnlockAppErrorCopyWith(UnlockAppError value, $Res Function(UnlockAppError) then) =
-      _$UnlockAppErrorCopyWithImpl<$Res>;
+abstract class _$$UnlockAppErrorCopyWith<$Res> implements $UnlockAppCopyWith<$Res> {
+  factory _$$UnlockAppErrorCopyWith(_$UnlockAppError value, $Res Function(_$UnlockAppError) then) =
+      __$$UnlockAppErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$UnlockAppErrorCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
-    implements $UnlockAppErrorCopyWith<$Res> {
-  _$UnlockAppErrorCopyWithImpl(UnlockAppError _value, $Res Function(UnlockAppError) _then)
-      : super(_value, (v) => _then(v as UnlockAppError));
+class __$$UnlockAppErrorCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
+    implements _$$UnlockAppErrorCopyWith<$Res> {
+  __$$UnlockAppErrorCopyWithImpl(_$UnlockAppError _value, $Res Function(_$UnlockAppError) _then)
+      : super(_value, (v) => _then(v as _$UnlockAppError));
 
   @override
-  UnlockAppError get _value => super._value as UnlockAppError;
+  _$UnlockAppError get _value => super._value as _$UnlockAppError;
 
   @override
   $Res call({
@@ -2720,7 +2552,7 @@ class _$UnlockAppErrorCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(UnlockAppError(
+    return _then(_$UnlockAppError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -2739,8 +2571,6 @@ class _$UnlockAppErrorCopyWithImpl<$Res> extends _$UnlockAppCopyWithImpl<$Res>
 
 /// @nodoc
 
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
 class _$UnlockAppError implements UnlockAppError {
   const _$UnlockAppError(this.error, this.stackTrace, [this.pendingId = _kUnlockAppPendingId]);
 
@@ -2748,8 +2578,8 @@ class _$UnlockAppError implements UnlockAppError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -2761,7 +2591,7 @@ class _$UnlockAppError implements UnlockAppError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UnlockAppError &&
+            other is _$UnlockAppError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -2773,8 +2603,8 @@ class _$UnlockAppError implements UnlockAppError {
 
   @JsonKey(ignore: true)
   @override
-  $UnlockAppErrorCopyWith<UnlockAppError> get copyWith =>
-      _$UnlockAppErrorCopyWithImpl<UnlockAppError>(this, _$identity);
+  _$$UnlockAppErrorCopyWith<_$UnlockAppError> get copyWith =>
+      __$$UnlockAppErrorCopyWithImpl<_$UnlockAppError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2846,13 +2676,14 @@ class _$UnlockAppError implements UnlockAppError {
 }
 
 abstract class UnlockAppError implements UnlockApp, ActionDone, ErrorAction {
-  const factory UnlockAppError(Object error, StackTrace stackTrace, [String pendingId]) = _$UnlockAppError;
+  const factory UnlockAppError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$UnlockAppError;
 
-  Object get error;
-  StackTrace get stackTrace;
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UnlockAppErrorCopyWith<UnlockAppError> get copyWith => throw _privateConstructorUsedError;
+  _$$UnlockAppErrorCopyWith<_$UnlockAppError> get copyWith => throw _privateConstructorUsedError;
 }

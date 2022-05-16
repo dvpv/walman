@@ -12,22 +12,7 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CreateNewPasswordTearOff {
-  const _$CreateNewPasswordTearOff();
-
-  CreateNewPassword$ call(Password password, String masterKey) {
-    return CreateNewPassword$(
-      password,
-      masterKey,
-    );
-  }
-}
-
-/// @nodoc
-const $CreateNewPassword = _$CreateNewPasswordTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CreateNewPassword {
@@ -81,9 +66,9 @@ class _$CreateNewPasswordCopyWithImpl<$Res> implements $CreateNewPasswordCopyWit
 }
 
 /// @nodoc
-abstract class $CreateNewPassword$CopyWith<$Res> implements $CreateNewPasswordCopyWith<$Res> {
-  factory $CreateNewPassword$CopyWith(CreateNewPassword$ value, $Res Function(CreateNewPassword$) then) =
-      _$CreateNewPassword$CopyWithImpl<$Res>;
+abstract class _$$CreateNewPassword$CopyWith<$Res> implements $CreateNewPasswordCopyWith<$Res> {
+  factory _$$CreateNewPassword$CopyWith(_$CreateNewPassword$ value, $Res Function(_$CreateNewPassword$) then) =
+      __$$CreateNewPassword$CopyWithImpl<$Res>;
   @override
   $Res call({Password password, String masterKey});
 
@@ -92,20 +77,20 @@ abstract class $CreateNewPassword$CopyWith<$Res> implements $CreateNewPasswordCo
 }
 
 /// @nodoc
-class _$CreateNewPassword$CopyWithImpl<$Res> extends _$CreateNewPasswordCopyWithImpl<$Res>
-    implements $CreateNewPassword$CopyWith<$Res> {
-  _$CreateNewPassword$CopyWithImpl(CreateNewPassword$ _value, $Res Function(CreateNewPassword$) _then)
-      : super(_value, (v) => _then(v as CreateNewPassword$));
+class __$$CreateNewPassword$CopyWithImpl<$Res> extends _$CreateNewPasswordCopyWithImpl<$Res>
+    implements _$$CreateNewPassword$CopyWith<$Res> {
+  __$$CreateNewPassword$CopyWithImpl(_$CreateNewPassword$ _value, $Res Function(_$CreateNewPassword$) _then)
+      : super(_value, (v) => _then(v as _$CreateNewPassword$));
 
   @override
-  CreateNewPassword$ get _value => super._value as CreateNewPassword$;
+  _$CreateNewPassword$ get _value => super._value as _$CreateNewPassword$;
 
   @override
   $Res call({
     Object? password = freezed,
     Object? masterKey = freezed,
   }) {
-    return _then(CreateNewPassword$(
+    return _then(_$CreateNewPassword$(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -137,7 +122,7 @@ class _$CreateNewPassword$ implements CreateNewPassword$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CreateNewPassword$ &&
+            other is _$CreateNewPassword$ &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey));
   }
@@ -148,36 +133,21 @@ class _$CreateNewPassword$ implements CreateNewPassword$ {
 
   @JsonKey(ignore: true)
   @override
-  $CreateNewPassword$CopyWith<CreateNewPassword$> get copyWith =>
-      _$CreateNewPassword$CopyWithImpl<CreateNewPassword$>(this, _$identity);
+  _$$CreateNewPassword$CopyWith<_$CreateNewPassword$> get copyWith =>
+      __$$CreateNewPassword$CopyWithImpl<_$CreateNewPassword$>(this, _$identity);
 }
 
 abstract class CreateNewPassword$ implements CreateNewPassword {
-  const factory CreateNewPassword$(Password password, String masterKey) = _$CreateNewPassword$;
+  const factory CreateNewPassword$(final Password password, final String masterKey) = _$CreateNewPassword$;
 
   @override
-  Password get password;
+  Password get password => throw _privateConstructorUsedError;
   @override
-  String get masterKey;
+  String get masterKey => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $CreateNewPassword$CopyWith<CreateNewPassword$> get copyWith => throw _privateConstructorUsedError;
+  _$$CreateNewPassword$CopyWith<_$CreateNewPassword$> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$CreateNewCodeTearOff {
-  const _$CreateNewCodeTearOff();
-
-  CreateNewCode$ call(Code code, String masterKey) {
-    return CreateNewCode$(
-      code,
-      masterKey,
-    );
-  }
-}
-
-/// @nodoc
-const $CreateNewCode = _$CreateNewCodeTearOff();
 
 /// @nodoc
 mixin _$CreateNewCode {
@@ -231,9 +201,9 @@ class _$CreateNewCodeCopyWithImpl<$Res> implements $CreateNewCodeCopyWith<$Res> 
 }
 
 /// @nodoc
-abstract class $CreateNewCode$CopyWith<$Res> implements $CreateNewCodeCopyWith<$Res> {
-  factory $CreateNewCode$CopyWith(CreateNewCode$ value, $Res Function(CreateNewCode$) then) =
-      _$CreateNewCode$CopyWithImpl<$Res>;
+abstract class _$$CreateNewCode$CopyWith<$Res> implements $CreateNewCodeCopyWith<$Res> {
+  factory _$$CreateNewCode$CopyWith(_$CreateNewCode$ value, $Res Function(_$CreateNewCode$) then) =
+      __$$CreateNewCode$CopyWithImpl<$Res>;
   @override
   $Res call({Code code, String masterKey});
 
@@ -242,20 +212,20 @@ abstract class $CreateNewCode$CopyWith<$Res> implements $CreateNewCodeCopyWith<$
 }
 
 /// @nodoc
-class _$CreateNewCode$CopyWithImpl<$Res> extends _$CreateNewCodeCopyWithImpl<$Res>
-    implements $CreateNewCode$CopyWith<$Res> {
-  _$CreateNewCode$CopyWithImpl(CreateNewCode$ _value, $Res Function(CreateNewCode$) _then)
-      : super(_value, (v) => _then(v as CreateNewCode$));
+class __$$CreateNewCode$CopyWithImpl<$Res> extends _$CreateNewCodeCopyWithImpl<$Res>
+    implements _$$CreateNewCode$CopyWith<$Res> {
+  __$$CreateNewCode$CopyWithImpl(_$CreateNewCode$ _value, $Res Function(_$CreateNewCode$) _then)
+      : super(_value, (v) => _then(v as _$CreateNewCode$));
 
   @override
-  CreateNewCode$ get _value => super._value as CreateNewCode$;
+  _$CreateNewCode$ get _value => super._value as _$CreateNewCode$;
 
   @override
   $Res call({
     Object? code = freezed,
     Object? masterKey = freezed,
   }) {
-    return _then(CreateNewCode$(
+    return _then(_$CreateNewCode$(
       code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -287,7 +257,7 @@ class _$CreateNewCode$ implements CreateNewCode$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CreateNewCode$ &&
+            other is _$CreateNewCode$ &&
             const DeepCollectionEquality().equals(other.code, code) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey));
   }
@@ -298,35 +268,21 @@ class _$CreateNewCode$ implements CreateNewCode$ {
 
   @JsonKey(ignore: true)
   @override
-  $CreateNewCode$CopyWith<CreateNewCode$> get copyWith =>
-      _$CreateNewCode$CopyWithImpl<CreateNewCode$>(this, _$identity);
+  _$$CreateNewCode$CopyWith<_$CreateNewCode$> get copyWith =>
+      __$$CreateNewCode$CopyWithImpl<_$CreateNewCode$>(this, _$identity);
 }
 
 abstract class CreateNewCode$ implements CreateNewCode {
-  const factory CreateNewCode$(Code code, String masterKey) = _$CreateNewCode$;
+  const factory CreateNewCode$(final Code code, final String masterKey) = _$CreateNewCode$;
 
   @override
-  Code get code;
+  Code get code => throw _privateConstructorUsedError;
   @override
-  String get masterKey;
+  String get masterKey => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $CreateNewCode$CopyWith<CreateNewCode$> get copyWith => throw _privateConstructorUsedError;
+  _$$CreateNewCode$CopyWith<_$CreateNewCode$> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$DeleteCodeTearOff {
-  const _$DeleteCodeTearOff();
-
-  DeleteCode$ call(String id) {
-    return DeleteCode$(
-      id,
-    );
-  }
-}
-
-/// @nodoc
-const $DeleteCode = _$DeleteCodeTearOff();
 
 /// @nodoc
 mixin _$DeleteCode {
@@ -364,25 +320,26 @@ class _$DeleteCodeCopyWithImpl<$Res> implements $DeleteCodeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $DeleteCode$CopyWith<$Res> implements $DeleteCodeCopyWith<$Res> {
-  factory $DeleteCode$CopyWith(DeleteCode$ value, $Res Function(DeleteCode$) then) = _$DeleteCode$CopyWithImpl<$Res>;
+abstract class _$$DeleteCode$CopyWith<$Res> implements $DeleteCodeCopyWith<$Res> {
+  factory _$$DeleteCode$CopyWith(_$DeleteCode$ value, $Res Function(_$DeleteCode$) then) =
+      __$$DeleteCode$CopyWithImpl<$Res>;
   @override
   $Res call({String id});
 }
 
 /// @nodoc
-class _$DeleteCode$CopyWithImpl<$Res> extends _$DeleteCodeCopyWithImpl<$Res> implements $DeleteCode$CopyWith<$Res> {
-  _$DeleteCode$CopyWithImpl(DeleteCode$ _value, $Res Function(DeleteCode$) _then)
-      : super(_value, (v) => _then(v as DeleteCode$));
+class __$$DeleteCode$CopyWithImpl<$Res> extends _$DeleteCodeCopyWithImpl<$Res> implements _$$DeleteCode$CopyWith<$Res> {
+  __$$DeleteCode$CopyWithImpl(_$DeleteCode$ _value, $Res Function(_$DeleteCode$) _then)
+      : super(_value, (v) => _then(v as _$DeleteCode$));
 
   @override
-  DeleteCode$ get _value => super._value as DeleteCode$;
+  _$DeleteCode$ get _value => super._value as _$DeleteCode$;
 
   @override
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(DeleteCode$(
+    return _then(_$DeleteCode$(
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -408,7 +365,7 @@ class _$DeleteCode$ implements DeleteCode$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DeleteCode$ &&
+            other is _$DeleteCode$ &&
             const DeepCollectionEquality().equals(other.id, id));
   }
 
@@ -417,32 +374,18 @@ class _$DeleteCode$ implements DeleteCode$ {
 
   @JsonKey(ignore: true)
   @override
-  $DeleteCode$CopyWith<DeleteCode$> get copyWith => _$DeleteCode$CopyWithImpl<DeleteCode$>(this, _$identity);
+  _$$DeleteCode$CopyWith<_$DeleteCode$> get copyWith => __$$DeleteCode$CopyWithImpl<_$DeleteCode$>(this, _$identity);
 }
 
 abstract class DeleteCode$ implements DeleteCode {
-  const factory DeleteCode$(String id) = _$DeleteCode$;
+  const factory DeleteCode$(final String id) = _$DeleteCode$;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DeleteCode$CopyWith<DeleteCode$> get copyWith => throw _privateConstructorUsedError;
+  _$$DeleteCode$CopyWith<_$DeleteCode$> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$DeletePasswordTearOff {
-  const _$DeletePasswordTearOff();
-
-  DeletePassword$ call(String id) {
-    return DeletePassword$(
-      id,
-    );
-  }
-}
-
-/// @nodoc
-const $DeletePassword = _$DeletePasswordTearOff();
 
 /// @nodoc
 mixin _$DeletePassword {
@@ -481,27 +424,27 @@ class _$DeletePasswordCopyWithImpl<$Res> implements $DeletePasswordCopyWith<$Res
 }
 
 /// @nodoc
-abstract class $DeletePassword$CopyWith<$Res> implements $DeletePasswordCopyWith<$Res> {
-  factory $DeletePassword$CopyWith(DeletePassword$ value, $Res Function(DeletePassword$) then) =
-      _$DeletePassword$CopyWithImpl<$Res>;
+abstract class _$$DeletePassword$CopyWith<$Res> implements $DeletePasswordCopyWith<$Res> {
+  factory _$$DeletePassword$CopyWith(_$DeletePassword$ value, $Res Function(_$DeletePassword$) then) =
+      __$$DeletePassword$CopyWithImpl<$Res>;
   @override
   $Res call({String id});
 }
 
 /// @nodoc
-class _$DeletePassword$CopyWithImpl<$Res> extends _$DeletePasswordCopyWithImpl<$Res>
-    implements $DeletePassword$CopyWith<$Res> {
-  _$DeletePassword$CopyWithImpl(DeletePassword$ _value, $Res Function(DeletePassword$) _then)
-      : super(_value, (v) => _then(v as DeletePassword$));
+class __$$DeletePassword$CopyWithImpl<$Res> extends _$DeletePasswordCopyWithImpl<$Res>
+    implements _$$DeletePassword$CopyWith<$Res> {
+  __$$DeletePassword$CopyWithImpl(_$DeletePassword$ _value, $Res Function(_$DeletePassword$) _then)
+      : super(_value, (v) => _then(v as _$DeletePassword$));
 
   @override
-  DeletePassword$ get _value => super._value as DeletePassword$;
+  _$DeletePassword$ get _value => super._value as _$DeletePassword$;
 
   @override
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(DeletePassword$(
+    return _then(_$DeletePassword$(
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -527,7 +470,7 @@ class _$DeletePassword$ implements DeletePassword$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DeletePassword$ &&
+            other is _$DeletePassword$ &&
             const DeepCollectionEquality().equals(other.id, id));
   }
 
@@ -536,53 +479,23 @@ class _$DeletePassword$ implements DeletePassword$ {
 
   @JsonKey(ignore: true)
   @override
-  $DeletePassword$CopyWith<DeletePassword$> get copyWith =>
-      _$DeletePassword$CopyWithImpl<DeletePassword$>(this, _$identity);
+  _$$DeletePassword$CopyWith<_$DeletePassword$> get copyWith =>
+      __$$DeletePassword$CopyWithImpl<_$DeletePassword$>(this, _$identity);
 }
 
 abstract class DeletePassword$ implements DeletePassword {
-  const factory DeletePassword$(String id) = _$DeletePassword$;
+  const factory DeletePassword$(final String id) = _$DeletePassword$;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DeletePassword$CopyWith<DeletePassword$> get copyWith => throw _privateConstructorUsedError;
+  _$$DeletePassword$CopyWith<_$DeletePassword$> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$EditPasswordTearOff {
-  const _$EditPasswordTearOff();
-
-  EditPasswordStart start(Password password, {String pendingId = _kEditPasswordPendingId}) {
-    return EditPasswordStart(
-      password,
-      pendingId: pendingId,
-    );
-  }
-
-  EditPasswordSuccessful successful([String pendingId = _kEditPasswordPendingId]) {
-    return EditPasswordSuccessful(
-      pendingId,
-    );
-  }
-
-  EditPasswordError error(Object error, StackTrace stackTrace, [String pendingId = _kEditPasswordPendingId]) {
-    return EditPasswordError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $EditPassword = _$EditPasswordTearOff();
 
 /// @nodoc
 mixin _$EditPassword {
   String get pendingId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Password password, String pendingId) start,
@@ -661,9 +574,9 @@ class _$EditPasswordCopyWithImpl<$Res> implements $EditPasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $EditPasswordStartCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordStartCopyWith(EditPasswordStart value, $Res Function(EditPasswordStart) then) =
-      _$EditPasswordStartCopyWithImpl<$Res>;
+abstract class _$$EditPasswordStartCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
+  factory _$$EditPasswordStartCopyWith(_$EditPasswordStart value, $Res Function(_$EditPasswordStart) then) =
+      __$$EditPasswordStartCopyWithImpl<$Res>;
   @override
   $Res call({Password password, String pendingId});
 
@@ -671,20 +584,20 @@ abstract class $EditPasswordStartCopyWith<$Res> implements $EditPasswordCopyWith
 }
 
 /// @nodoc
-class _$EditPasswordStartCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
-    implements $EditPasswordStartCopyWith<$Res> {
-  _$EditPasswordStartCopyWithImpl(EditPasswordStart _value, $Res Function(EditPasswordStart) _then)
-      : super(_value, (v) => _then(v as EditPasswordStart));
+class __$$EditPasswordStartCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
+    implements _$$EditPasswordStartCopyWith<$Res> {
+  __$$EditPasswordStartCopyWithImpl(_$EditPasswordStart _value, $Res Function(_$EditPasswordStart) _then)
+      : super(_value, (v) => _then(v as _$EditPasswordStart));
 
   @override
-  EditPasswordStart get _value => super._value as EditPasswordStart;
+  _$EditPasswordStart get _value => super._value as _$EditPasswordStart;
 
   @override
   $Res call({
     Object? password = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(EditPasswordStart(
+    return _then(_$EditPasswordStart(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -706,14 +619,13 @@ class _$EditPasswordStartCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$
 
 /// @nodoc
 
-@Implements<ActionStart>()
 class _$EditPasswordStart implements EditPasswordStart {
   const _$EditPasswordStart(this.password, {this.pendingId = _kEditPasswordPendingId});
 
   @override
   final Password password;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -725,7 +637,7 @@ class _$EditPasswordStart implements EditPasswordStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is EditPasswordStart &&
+            other is _$EditPasswordStart &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -736,8 +648,8 @@ class _$EditPasswordStart implements EditPasswordStart {
 
   @JsonKey(ignore: true)
   @override
-  $EditPasswordStartCopyWith<EditPasswordStart> get copyWith =>
-      _$EditPasswordStartCopyWithImpl<EditPasswordStart>(this, _$identity);
+  _$$EditPasswordStartCopyWith<_$EditPasswordStart> get copyWith =>
+      __$$EditPasswordStartCopyWithImpl<_$EditPasswordStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -809,38 +721,39 @@ class _$EditPasswordStart implements EditPasswordStart {
 }
 
 abstract class EditPasswordStart implements EditPassword, ActionStart {
-  const factory EditPasswordStart(Password password, {String pendingId}) = _$EditPasswordStart;
+  const factory EditPasswordStart(final Password password, {final String pendingId}) = _$EditPasswordStart;
 
-  Password get password;
+  Password get password => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $EditPasswordStartCopyWith<EditPasswordStart> get copyWith => throw _privateConstructorUsedError;
+  _$$EditPasswordStartCopyWith<_$EditPasswordStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EditPasswordSuccessfulCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordSuccessfulCopyWith(EditPasswordSuccessful value, $Res Function(EditPasswordSuccessful) then) =
-      _$EditPasswordSuccessfulCopyWithImpl<$Res>;
+abstract class _$$EditPasswordSuccessfulCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
+  factory _$$EditPasswordSuccessfulCopyWith(
+          _$EditPasswordSuccessful value, $Res Function(_$EditPasswordSuccessful) then) =
+      __$$EditPasswordSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$EditPasswordSuccessfulCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
-    implements $EditPasswordSuccessfulCopyWith<$Res> {
-  _$EditPasswordSuccessfulCopyWithImpl(EditPasswordSuccessful _value, $Res Function(EditPasswordSuccessful) _then)
-      : super(_value, (v) => _then(v as EditPasswordSuccessful));
+class __$$EditPasswordSuccessfulCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
+    implements _$$EditPasswordSuccessfulCopyWith<$Res> {
+  __$$EditPasswordSuccessfulCopyWithImpl(_$EditPasswordSuccessful _value, $Res Function(_$EditPasswordSuccessful) _then)
+      : super(_value, (v) => _then(v as _$EditPasswordSuccessful));
 
   @override
-  EditPasswordSuccessful get _value => super._value as EditPasswordSuccessful;
+  _$EditPasswordSuccessful get _value => super._value as _$EditPasswordSuccessful;
 
   @override
   $Res call({
     Object? pendingId = freezed,
   }) {
-    return _then(EditPasswordSuccessful(
+    return _then(_$EditPasswordSuccessful(
       pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -851,12 +764,11 @@ class _$EditPasswordSuccessfulCopyWithImpl<$Res> extends _$EditPasswordCopyWithI
 
 /// @nodoc
 
-@Implements<ActionDone>()
 class _$EditPasswordSuccessful implements EditPasswordSuccessful {
   const _$EditPasswordSuccessful([this.pendingId = _kEditPasswordPendingId]);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -868,7 +780,7 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is EditPasswordSuccessful &&
+            other is _$EditPasswordSuccessful &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
@@ -877,8 +789,8 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  $EditPasswordSuccessfulCopyWith<EditPasswordSuccessful> get copyWith =>
-      _$EditPasswordSuccessfulCopyWithImpl<EditPasswordSuccessful>(this, _$identity);
+  _$$EditPasswordSuccessfulCopyWith<_$EditPasswordSuccessful> get copyWith =>
+      __$$EditPasswordSuccessfulCopyWithImpl<_$EditPasswordSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -950,31 +862,31 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
 }
 
 abstract class EditPasswordSuccessful implements EditPassword, ActionDone {
-  const factory EditPasswordSuccessful([String pendingId]) = _$EditPasswordSuccessful;
+  const factory EditPasswordSuccessful([final String pendingId]) = _$EditPasswordSuccessful;
 
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $EditPasswordSuccessfulCopyWith<EditPasswordSuccessful> get copyWith => throw _privateConstructorUsedError;
+  _$$EditPasswordSuccessfulCopyWith<_$EditPasswordSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EditPasswordErrorCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordErrorCopyWith(EditPasswordError value, $Res Function(EditPasswordError) then) =
-      _$EditPasswordErrorCopyWithImpl<$Res>;
+abstract class _$$EditPasswordErrorCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
+  factory _$$EditPasswordErrorCopyWith(_$EditPasswordError value, $Res Function(_$EditPasswordError) then) =
+      __$$EditPasswordErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$EditPasswordErrorCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
-    implements $EditPasswordErrorCopyWith<$Res> {
-  _$EditPasswordErrorCopyWithImpl(EditPasswordError _value, $Res Function(EditPasswordError) _then)
-      : super(_value, (v) => _then(v as EditPasswordError));
+class __$$EditPasswordErrorCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
+    implements _$$EditPasswordErrorCopyWith<$Res> {
+  __$$EditPasswordErrorCopyWithImpl(_$EditPasswordError _value, $Res Function(_$EditPasswordError) _then)
+      : super(_value, (v) => _then(v as _$EditPasswordError));
 
   @override
-  EditPasswordError get _value => super._value as EditPasswordError;
+  _$EditPasswordError get _value => super._value as _$EditPasswordError;
 
   @override
   $Res call({
@@ -982,7 +894,7 @@ class _$EditPasswordErrorCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(EditPasswordError(
+    return _then(_$EditPasswordError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1001,8 +913,6 @@ class _$EditPasswordErrorCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$
 
 /// @nodoc
 
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
 class _$EditPasswordError implements EditPasswordError {
   const _$EditPasswordError(this.error, this.stackTrace, [this.pendingId = _kEditPasswordPendingId]);
 
@@ -1010,8 +920,8 @@ class _$EditPasswordError implements EditPasswordError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @JsonKey()
   @override
+  @JsonKey()
   final String pendingId;
 
   @override
@@ -1023,7 +933,7 @@ class _$EditPasswordError implements EditPasswordError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is EditPasswordError &&
+            other is _$EditPasswordError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -1035,8 +945,8 @@ class _$EditPasswordError implements EditPasswordError {
 
   @JsonKey(ignore: true)
   @override
-  $EditPasswordErrorCopyWith<EditPasswordError> get copyWith =>
-      _$EditPasswordErrorCopyWithImpl<EditPasswordError>(this, _$identity);
+  _$$EditPasswordErrorCopyWith<_$EditPasswordError> get copyWith =>
+      __$$EditPasswordErrorCopyWithImpl<_$EditPasswordError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1108,30 +1018,17 @@ class _$EditPasswordError implements EditPasswordError {
 }
 
 abstract class EditPasswordError implements EditPassword, ActionDone, ErrorAction {
-  const factory EditPasswordError(Object error, StackTrace stackTrace, [String pendingId]) = _$EditPasswordError;
+  const factory EditPasswordError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$EditPasswordError;
 
-  Object get error;
-  StackTrace get stackTrace;
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
   @override
-  String get pendingId;
+  String get pendingId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $EditPasswordErrorCopyWith<EditPasswordError> get copyWith => throw _privateConstructorUsedError;
+  _$$EditPasswordErrorCopyWith<_$EditPasswordError> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SetScannedCodeTearOff {
-  const _$SetScannedCodeTearOff();
-
-  SetScannedCode$ call(Code code) {
-    return SetScannedCode$(
-      code,
-    );
-  }
-}
-
-/// @nodoc
-const $SetScannedCode = _$SetScannedCodeTearOff();
 
 /// @nodoc
 mixin _$SetScannedCode {
@@ -1179,9 +1076,9 @@ class _$SetScannedCodeCopyWithImpl<$Res> implements $SetScannedCodeCopyWith<$Res
 }
 
 /// @nodoc
-abstract class $SetScannedCode$CopyWith<$Res> implements $SetScannedCodeCopyWith<$Res> {
-  factory $SetScannedCode$CopyWith(SetScannedCode$ value, $Res Function(SetScannedCode$) then) =
-      _$SetScannedCode$CopyWithImpl<$Res>;
+abstract class _$$SetScannedCode$CopyWith<$Res> implements $SetScannedCodeCopyWith<$Res> {
+  factory _$$SetScannedCode$CopyWith(_$SetScannedCode$ value, $Res Function(_$SetScannedCode$) then) =
+      __$$SetScannedCode$CopyWithImpl<$Res>;
   @override
   $Res call({Code code});
 
@@ -1190,19 +1087,19 @@ abstract class $SetScannedCode$CopyWith<$Res> implements $SetScannedCodeCopyWith
 }
 
 /// @nodoc
-class _$SetScannedCode$CopyWithImpl<$Res> extends _$SetScannedCodeCopyWithImpl<$Res>
-    implements $SetScannedCode$CopyWith<$Res> {
-  _$SetScannedCode$CopyWithImpl(SetScannedCode$ _value, $Res Function(SetScannedCode$) _then)
-      : super(_value, (v) => _then(v as SetScannedCode$));
+class __$$SetScannedCode$CopyWithImpl<$Res> extends _$SetScannedCodeCopyWithImpl<$Res>
+    implements _$$SetScannedCode$CopyWith<$Res> {
+  __$$SetScannedCode$CopyWithImpl(_$SetScannedCode$ _value, $Res Function(_$SetScannedCode$) _then)
+      : super(_value, (v) => _then(v as _$SetScannedCode$));
 
   @override
-  SetScannedCode$ get _value => super._value as SetScannedCode$;
+  _$SetScannedCode$ get _value => super._value as _$SetScannedCode$;
 
   @override
   $Res call({
     Object? code = freezed,
   }) {
-    return _then(SetScannedCode$(
+    return _then(_$SetScannedCode$(
       code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -1228,7 +1125,7 @@ class _$SetScannedCode$ implements SetScannedCode$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is SetScannedCode$ &&
+            other is _$SetScannedCode$ &&
             const DeepCollectionEquality().equals(other.code, code));
   }
 
@@ -1237,33 +1134,19 @@ class _$SetScannedCode$ implements SetScannedCode$ {
 
   @JsonKey(ignore: true)
   @override
-  $SetScannedCode$CopyWith<SetScannedCode$> get copyWith =>
-      _$SetScannedCode$CopyWithImpl<SetScannedCode$>(this, _$identity);
+  _$$SetScannedCode$CopyWith<_$SetScannedCode$> get copyWith =>
+      __$$SetScannedCode$CopyWithImpl<_$SetScannedCode$>(this, _$identity);
 }
 
 abstract class SetScannedCode$ implements SetScannedCode {
-  const factory SetScannedCode$(Code code) = _$SetScannedCode$;
+  const factory SetScannedCode$(final Code code) = _$SetScannedCode$;
 
   @override
-  Code get code;
+  Code get code => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $SetScannedCode$CopyWith<SetScannedCode$> get copyWith => throw _privateConstructorUsedError;
+  _$$SetScannedCode$CopyWith<_$SetScannedCode$> get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$UpdateAccessTimeTearOff {
-  const _$UpdateAccessTimeTearOff();
-
-  UpdateAccessTime$ call(String id) {
-    return UpdateAccessTime$(
-      id,
-    );
-  }
-}
-
-/// @nodoc
-const $UpdateAccessTime = _$UpdateAccessTimeTearOff();
 
 /// @nodoc
 mixin _$UpdateAccessTime {
@@ -1302,27 +1185,27 @@ class _$UpdateAccessTimeCopyWithImpl<$Res> implements $UpdateAccessTimeCopyWith<
 }
 
 /// @nodoc
-abstract class $UpdateAccessTime$CopyWith<$Res> implements $UpdateAccessTimeCopyWith<$Res> {
-  factory $UpdateAccessTime$CopyWith(UpdateAccessTime$ value, $Res Function(UpdateAccessTime$) then) =
-      _$UpdateAccessTime$CopyWithImpl<$Res>;
+abstract class _$$UpdateAccessTime$CopyWith<$Res> implements $UpdateAccessTimeCopyWith<$Res> {
+  factory _$$UpdateAccessTime$CopyWith(_$UpdateAccessTime$ value, $Res Function(_$UpdateAccessTime$) then) =
+      __$$UpdateAccessTime$CopyWithImpl<$Res>;
   @override
   $Res call({String id});
 }
 
 /// @nodoc
-class _$UpdateAccessTime$CopyWithImpl<$Res> extends _$UpdateAccessTimeCopyWithImpl<$Res>
-    implements $UpdateAccessTime$CopyWith<$Res> {
-  _$UpdateAccessTime$CopyWithImpl(UpdateAccessTime$ _value, $Res Function(UpdateAccessTime$) _then)
-      : super(_value, (v) => _then(v as UpdateAccessTime$));
+class __$$UpdateAccessTime$CopyWithImpl<$Res> extends _$UpdateAccessTimeCopyWithImpl<$Res>
+    implements _$$UpdateAccessTime$CopyWith<$Res> {
+  __$$UpdateAccessTime$CopyWithImpl(_$UpdateAccessTime$ _value, $Res Function(_$UpdateAccessTime$) _then)
+      : super(_value, (v) => _then(v as _$UpdateAccessTime$));
 
   @override
-  UpdateAccessTime$ get _value => super._value as UpdateAccessTime$;
+  _$UpdateAccessTime$ get _value => super._value as _$UpdateAccessTime$;
 
   @override
   $Res call({
     Object? id = freezed,
   }) {
-    return _then(UpdateAccessTime$(
+    return _then(_$UpdateAccessTime$(
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1348,7 +1231,7 @@ class _$UpdateAccessTime$ implements UpdateAccessTime$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UpdateAccessTime$ &&
+            other is _$UpdateAccessTime$ &&
             const DeepCollectionEquality().equals(other.id, id));
   }
 
@@ -1357,16 +1240,16 @@ class _$UpdateAccessTime$ implements UpdateAccessTime$ {
 
   @JsonKey(ignore: true)
   @override
-  $UpdateAccessTime$CopyWith<UpdateAccessTime$> get copyWith =>
-      _$UpdateAccessTime$CopyWithImpl<UpdateAccessTime$>(this, _$identity);
+  _$$UpdateAccessTime$CopyWith<_$UpdateAccessTime$> get copyWith =>
+      __$$UpdateAccessTime$CopyWithImpl<_$UpdateAccessTime$>(this, _$identity);
 }
 
 abstract class UpdateAccessTime$ implements UpdateAccessTime {
-  const factory UpdateAccessTime$(String id) = _$UpdateAccessTime$;
+  const factory UpdateAccessTime$(final String id) = _$UpdateAccessTime$;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UpdateAccessTime$CopyWith<UpdateAccessTime$> get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateAccessTime$CopyWith<_$UpdateAccessTime$> get copyWith => throw _privateConstructorUsedError;
 }

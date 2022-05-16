@@ -12,27 +12,11 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Address _$AddressFromJson(Map<String, dynamic> json) {
   return Address$.fromJson(json);
 }
-
-/// @nodoc
-class _$AddressTearOff {
-  const _$AddressTearOff();
-
-  Address$ call() {
-    return const Address$();
-  }
-
-  Address fromJson(Map<String, Object?> json) {
-    return Address.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Address = _$AddressTearOff();
 
 /// @nodoc
 mixin _$Address {
@@ -54,16 +38,17 @@ class _$AddressCopyWithImpl<$Res> implements $AddressCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $Address$CopyWith<$Res> {
-  factory $Address$CopyWith(Address$ value, $Res Function(Address$) then) = _$Address$CopyWithImpl<$Res>;
+abstract class _$$Address$CopyWith<$Res> {
+  factory _$$Address$CopyWith(_$Address$ value, $Res Function(_$Address$) then) = __$$Address$CopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$Address$CopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res> implements $Address$CopyWith<$Res> {
-  _$Address$CopyWithImpl(Address$ _value, $Res Function(Address$) _then) : super(_value, (v) => _then(v as Address$));
+class __$$Address$CopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res> implements _$$Address$CopyWith<$Res> {
+  __$$Address$CopyWithImpl(_$Address$ _value, $Res Function(_$Address$) _then)
+      : super(_value, (v) => _then(v as _$Address$));
 
   @override
-  Address$ get _value => super._value as Address$;
+  _$Address$ get _value => super._value as _$Address$;
 }
 
 /// @nodoc
@@ -80,9 +65,10 @@ class _$Address$ implements Address$ {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is Address$);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$Address$);
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -101,37 +87,6 @@ abstract class Address$ implements Address {
 AppState _$AppStateFromJson(Map<String, dynamic> json) {
   return AppState$.fromJson(json);
 }
-
-/// @nodoc
-class _$AppStateTearOff {
-  const _$AppStateTearOff();
-
-  AppState$ call(
-      {Set<String> pending = const <String>{},
-      AppUser? user,
-      AppPage selectedPage = AppPage.home,
-      Bundle bundle = const Bundle(),
-      DetailsState detailsState = const DetailsState(),
-      CreateCodeState createCodeState = const CreateCodeState(),
-      UIState uiState = const UIState()}) {
-    return AppState$(
-      pending: pending,
-      user: user,
-      selectedPage: selectedPage,
-      bundle: bundle,
-      detailsState: detailsState,
-      createCodeState: createCodeState,
-      uiState: uiState,
-    );
-  }
-
-  AppState fromJson(Map<String, Object?> json) {
-    return AppState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AppState = _$AppStateTearOff();
 
 /// @nodoc
 mixin _$AppState {
@@ -258,8 +213,8 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory $AppState$CopyWith(AppState$ value, $Res Function(AppState$) then) = _$AppState$CopyWithImpl<$Res>;
+abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$$AppState$CopyWith(_$AppState$ value, $Res Function(_$AppState$) then) = __$$AppState$CopyWithImpl<$Res>;
   @override
   $Res call(
       {Set<String> pending,
@@ -283,12 +238,12 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> implements $AppState$CopyWith<$Res> {
-  _$AppState$CopyWithImpl(AppState$ _value, $Res Function(AppState$) _then)
-      : super(_value, (v) => _then(v as AppState$));
+class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> implements _$$AppState$CopyWith<$Res> {
+  __$$AppState$CopyWithImpl(_$AppState$ _value, $Res Function(_$AppState$) _then)
+      : super(_value, (v) => _then(v as _$AppState$));
 
   @override
-  AppState$ get _value => super._value as AppState$;
+  _$AppState$ get _value => super._value as _$AppState$;
 
   @override
   $Res call({
@@ -300,9 +255,9 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
     Object? createCodeState = freezed,
     Object? uiState = freezed,
   }) {
-    return _then(AppState$(
+    return _then(_$AppState$(
       pending: pending == freezed
-          ? _value.pending
+          ? _value._pending
           : pending // ignore: cast_nullable_to_non_nullable
               as Set<String>,
       user: user == freezed
@@ -337,35 +292,41 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
 @JsonSerializable()
 class _$AppState$ implements AppState$ {
   const _$AppState$(
-      {this.pending = const <String>{},
+      {final Set<String> pending = const <String>{},
       this.user,
       this.selectedPage = AppPage.home,
       this.bundle = const Bundle(),
       this.detailsState = const DetailsState(),
       this.createCodeState = const CreateCodeState(),
-      this.uiState = const UIState()});
+      this.uiState = const UIState()})
+      : _pending = pending;
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
-  @JsonKey()
+  final Set<String> _pending;
   @override
-  final Set<String> pending;
+  @JsonKey()
+  Set<String> get pending {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_pending);
+  }
+
   @override
   final AppUser? user;
-  @JsonKey()
   @override
+  @JsonKey()
   final AppPage selectedPage;
-  @JsonKey()
   @override
+  @JsonKey()
   final Bundle bundle;
-  @JsonKey()
   @override
+  @JsonKey()
   final DetailsState detailsState;
-  @JsonKey()
   @override
+  @JsonKey()
   final CreateCodeState createCodeState;
-  @JsonKey()
   @override
+  @JsonKey()
   final UIState uiState;
 
   @override
@@ -377,8 +338,8 @@ class _$AppState$ implements AppState$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AppState$ &&
-            const DeepCollectionEquality().equals(other.pending, pending) &&
+            other is _$AppState$ &&
+            const DeepCollectionEquality().equals(other._pending, _pending) &&
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
@@ -387,10 +348,11 @@ class _$AppState$ implements AppState$ {
             const DeepCollectionEquality().equals(other.uiState, uiState));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(pending),
+      const DeepCollectionEquality().hash(_pending),
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(selectedPage),
       const DeepCollectionEquality().hash(bundle),
@@ -400,7 +362,7 @@ class _$AppState$ implements AppState$ {
 
   @JsonKey(ignore: true)
   @override
-  $AppState$CopyWith<AppState$> get copyWith => _$AppState$CopyWithImpl<AppState$>(this, _$identity);
+  _$$AppState$CopyWith<_$AppState$> get copyWith => __$$AppState$CopyWithImpl<_$AppState$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -410,57 +372,38 @@ class _$AppState$ implements AppState$ {
 
 abstract class AppState$ implements AppState {
   const factory AppState$(
-      {Set<String> pending,
-      AppUser? user,
-      AppPage selectedPage,
-      Bundle bundle,
-      DetailsState detailsState,
-      CreateCodeState createCodeState,
-      UIState uiState}) = _$AppState$;
+      {final Set<String> pending,
+      final AppUser? user,
+      final AppPage selectedPage,
+      final Bundle bundle,
+      final DetailsState detailsState,
+      final CreateCodeState createCodeState,
+      final UIState uiState}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
   @override
-  Set<String> get pending;
+  Set<String> get pending => throw _privateConstructorUsedError;
   @override
-  AppUser? get user;
+  AppUser? get user => throw _privateConstructorUsedError;
   @override
-  AppPage get selectedPage;
+  AppPage get selectedPage => throw _privateConstructorUsedError;
   @override
-  Bundle get bundle;
+  Bundle get bundle => throw _privateConstructorUsedError;
   @override
-  DetailsState get detailsState;
+  DetailsState get detailsState => throw _privateConstructorUsedError;
   @override
-  CreateCodeState get createCodeState;
+  CreateCodeState get createCodeState => throw _privateConstructorUsedError;
   @override
-  UIState get uiState;
+  UIState get uiState => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;
+  _$$AppState$CopyWith<_$AppState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 DetailsState _$DetailsStateFromJson(Map<String, dynamic> json) {
   return DetailsState$.fromJson(json);
 }
-
-/// @nodoc
-class _$DetailsStateTearOff {
-  const _$DetailsStateTearOff();
-
-  DetailsState$ call({String selectedId = '', bool editing = false}) {
-    return DetailsState$(
-      selectedId: selectedId,
-      editing: editing,
-    );
-  }
-
-  DetailsState fromJson(Map<String, Object?> json) {
-    return DetailsState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DetailsState = _$DetailsStateTearOff();
 
 /// @nodoc
 mixin _$DetailsState {
@@ -506,28 +449,28 @@ class _$DetailsStateCopyWithImpl<$Res> implements $DetailsStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $DetailsState$CopyWith<$Res> implements $DetailsStateCopyWith<$Res> {
-  factory $DetailsState$CopyWith(DetailsState$ value, $Res Function(DetailsState$) then) =
-      _$DetailsState$CopyWithImpl<$Res>;
+abstract class _$$DetailsState$CopyWith<$Res> implements $DetailsStateCopyWith<$Res> {
+  factory _$$DetailsState$CopyWith(_$DetailsState$ value, $Res Function(_$DetailsState$) then) =
+      __$$DetailsState$CopyWithImpl<$Res>;
   @override
   $Res call({String selectedId, bool editing});
 }
 
 /// @nodoc
-class _$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
-    implements $DetailsState$CopyWith<$Res> {
-  _$DetailsState$CopyWithImpl(DetailsState$ _value, $Res Function(DetailsState$) _then)
-      : super(_value, (v) => _then(v as DetailsState$));
+class __$$DetailsState$CopyWithImpl<$Res> extends _$DetailsStateCopyWithImpl<$Res>
+    implements _$$DetailsState$CopyWith<$Res> {
+  __$$DetailsState$CopyWithImpl(_$DetailsState$ _value, $Res Function(_$DetailsState$) _then)
+      : super(_value, (v) => _then(v as _$DetailsState$));
 
   @override
-  DetailsState$ get _value => super._value as DetailsState$;
+  _$DetailsState$ get _value => super._value as _$DetailsState$;
 
   @override
   $Res call({
     Object? selectedId = freezed,
     Object? editing = freezed,
   }) {
-    return _then(DetailsState$(
+    return _then(_$DetailsState$(
       selectedId: selectedId == freezed
           ? _value.selectedId
           : selectedId // ignore: cast_nullable_to_non_nullable
@@ -547,11 +490,11 @@ class _$DetailsState$ implements DetailsState$ {
 
   factory _$DetailsState$.fromJson(Map<String, dynamic> json) => _$$DetailsState$FromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String selectedId;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool editing;
 
   @override
@@ -563,18 +506,20 @@ class _$DetailsState$ implements DetailsState$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is DetailsState$ &&
+            other is _$DetailsState$ &&
             const DeepCollectionEquality().equals(other.selectedId, selectedId) &&
             const DeepCollectionEquality().equals(other.editing, editing));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(selectedId), const DeepCollectionEquality().hash(editing));
 
   @JsonKey(ignore: true)
   @override
-  $DetailsState$CopyWith<DetailsState$> get copyWith => _$DetailsState$CopyWithImpl<DetailsState$>(this, _$identity);
+  _$$DetailsState$CopyWith<_$DetailsState$> get copyWith =>
+      __$$DetailsState$CopyWithImpl<_$DetailsState$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -583,40 +528,22 @@ class _$DetailsState$ implements DetailsState$ {
 }
 
 abstract class DetailsState$ implements DetailsState {
-  const factory DetailsState$({String selectedId, bool editing}) = _$DetailsState$;
+  const factory DetailsState$({final String selectedId, final bool editing}) = _$DetailsState$;
 
   factory DetailsState$.fromJson(Map<String, dynamic> json) = _$DetailsState$.fromJson;
 
   @override
-  String get selectedId;
+  String get selectedId => throw _privateConstructorUsedError;
   @override
-  bool get editing;
+  bool get editing => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $DetailsState$CopyWith<DetailsState$> get copyWith => throw _privateConstructorUsedError;
+  _$$DetailsState$CopyWith<_$DetailsState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 CreateCodeState _$CreateCodeStateFromJson(Map<String, dynamic> json) {
   return CreateCodeState$.fromJson(json);
 }
-
-/// @nodoc
-class _$CreateCodeStateTearOff {
-  const _$CreateCodeStateTearOff();
-
-  CreateCodeState$ call({Code? code}) {
-    return CreateCodeState$(
-      code: code,
-    );
-  }
-
-  CreateCodeState fromJson(Map<String, Object?> json) {
-    return CreateCodeState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $CreateCodeState = _$CreateCodeStateTearOff();
 
 /// @nodoc
 mixin _$CreateCodeState {
@@ -669,9 +596,9 @@ class _$CreateCodeStateCopyWithImpl<$Res> implements $CreateCodeStateCopyWith<$R
 }
 
 /// @nodoc
-abstract class $CreateCodeState$CopyWith<$Res> implements $CreateCodeStateCopyWith<$Res> {
-  factory $CreateCodeState$CopyWith(CreateCodeState$ value, $Res Function(CreateCodeState$) then) =
-      _$CreateCodeState$CopyWithImpl<$Res>;
+abstract class _$$CreateCodeState$CopyWith<$Res> implements $CreateCodeStateCopyWith<$Res> {
+  factory _$$CreateCodeState$CopyWith(_$CreateCodeState$ value, $Res Function(_$CreateCodeState$) then) =
+      __$$CreateCodeState$CopyWithImpl<$Res>;
   @override
   $Res call({Code? code});
 
@@ -680,19 +607,19 @@ abstract class $CreateCodeState$CopyWith<$Res> implements $CreateCodeStateCopyWi
 }
 
 /// @nodoc
-class _$CreateCodeState$CopyWithImpl<$Res> extends _$CreateCodeStateCopyWithImpl<$Res>
-    implements $CreateCodeState$CopyWith<$Res> {
-  _$CreateCodeState$CopyWithImpl(CreateCodeState$ _value, $Res Function(CreateCodeState$) _then)
-      : super(_value, (v) => _then(v as CreateCodeState$));
+class __$$CreateCodeState$CopyWithImpl<$Res> extends _$CreateCodeStateCopyWithImpl<$Res>
+    implements _$$CreateCodeState$CopyWith<$Res> {
+  __$$CreateCodeState$CopyWithImpl(_$CreateCodeState$ _value, $Res Function(_$CreateCodeState$) _then)
+      : super(_value, (v) => _then(v as _$CreateCodeState$));
 
   @override
-  CreateCodeState$ get _value => super._value as CreateCodeState$;
+  _$CreateCodeState$ get _value => super._value as _$CreateCodeState$;
 
   @override
   $Res call({
     Object? code = freezed,
   }) {
-    return _then(CreateCodeState$(
+    return _then(_$CreateCodeState$(
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -720,17 +647,18 @@ class _$CreateCodeState$ implements CreateCodeState$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CreateCodeState$ &&
+            other is _$CreateCodeState$ &&
             const DeepCollectionEquality().equals(other.code, code));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(code));
 
   @JsonKey(ignore: true)
   @override
-  $CreateCodeState$CopyWith<CreateCodeState$> get copyWith =>
-      _$CreateCodeState$CopyWithImpl<CreateCodeState$>(this, _$identity);
+  _$$CreateCodeState$CopyWith<_$CreateCodeState$> get copyWith =>
+      __$$CreateCodeState$CopyWithImpl<_$CreateCodeState$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -739,38 +667,20 @@ class _$CreateCodeState$ implements CreateCodeState$ {
 }
 
 abstract class CreateCodeState$ implements CreateCodeState {
-  const factory CreateCodeState$({Code? code}) = _$CreateCodeState$;
+  const factory CreateCodeState$({final Code? code}) = _$CreateCodeState$;
 
   factory CreateCodeState$.fromJson(Map<String, dynamic> json) = _$CreateCodeState$.fromJson;
 
   @override
-  Code? get code;
+  Code? get code => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $CreateCodeState$CopyWith<CreateCodeState$> get copyWith => throw _privateConstructorUsedError;
+  _$$CreateCodeState$CopyWith<_$CreateCodeState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 UIState _$UIStateFromJson(Map<String, dynamic> json) {
   return UIState$.fromJson(json);
 }
-
-/// @nodoc
-class _$UIStateTearOff {
-  const _$UIStateTearOff();
-
-  UIState$ call({bool showPassword = false}) {
-    return UIState$(
-      showPassword: showPassword,
-    );
-  }
-
-  UIState fromJson(Map<String, Object?> json) {
-    return UIState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UIState = _$UIStateTearOff();
 
 /// @nodoc
 mixin _$UIState {
@@ -809,24 +719,25 @@ class _$UIStateCopyWithImpl<$Res> implements $UIStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $UIState$CopyWith<$Res> implements $UIStateCopyWith<$Res> {
-  factory $UIState$CopyWith(UIState$ value, $Res Function(UIState$) then) = _$UIState$CopyWithImpl<$Res>;
+abstract class _$$UIState$CopyWith<$Res> implements $UIStateCopyWith<$Res> {
+  factory _$$UIState$CopyWith(_$UIState$ value, $Res Function(_$UIState$) then) = __$$UIState$CopyWithImpl<$Res>;
   @override
   $Res call({bool showPassword});
 }
 
 /// @nodoc
-class _$UIState$CopyWithImpl<$Res> extends _$UIStateCopyWithImpl<$Res> implements $UIState$CopyWith<$Res> {
-  _$UIState$CopyWithImpl(UIState$ _value, $Res Function(UIState$) _then) : super(_value, (v) => _then(v as UIState$));
+class __$$UIState$CopyWithImpl<$Res> extends _$UIStateCopyWithImpl<$Res> implements _$$UIState$CopyWith<$Res> {
+  __$$UIState$CopyWithImpl(_$UIState$ _value, $Res Function(_$UIState$) _then)
+      : super(_value, (v) => _then(v as _$UIState$));
 
   @override
-  UIState$ get _value => super._value as UIState$;
+  _$UIState$ get _value => super._value as _$UIState$;
 
   @override
   $Res call({
     Object? showPassword = freezed,
   }) {
-    return _then(UIState$(
+    return _then(_$UIState$(
       showPassword: showPassword == freezed
           ? _value.showPassword
           : showPassword // ignore: cast_nullable_to_non_nullable
@@ -842,8 +753,8 @@ class _$UIState$ implements UIState$ {
 
   factory _$UIState$.fromJson(Map<String, dynamic> json) => _$$UIState$FromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool showPassword;
 
   @override
@@ -855,16 +766,17 @@ class _$UIState$ implements UIState$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UIState$ &&
+            other is _$UIState$ &&
             const DeepCollectionEquality().equals(other.showPassword, showPassword));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(showPassword));
 
   @JsonKey(ignore: true)
   @override
-  $UIState$CopyWith<UIState$> get copyWith => _$UIState$CopyWithImpl<UIState$>(this, _$identity);
+  _$$UIState$CopyWith<_$UIState$> get copyWith => __$$UIState$CopyWithImpl<_$UIState$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -873,41 +785,20 @@ class _$UIState$ implements UIState$ {
 }
 
 abstract class UIState$ implements UIState {
-  const factory UIState$({bool showPassword}) = _$UIState$;
+  const factory UIState$({final bool showPassword}) = _$UIState$;
 
   factory UIState$.fromJson(Map<String, dynamic> json) = _$UIState$.fromJson;
 
   @override
-  bool get showPassword;
+  bool get showPassword => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UIState$CopyWith<UIState$> get copyWith => throw _privateConstructorUsedError;
+  _$$UIState$CopyWith<_$UIState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 AppUser _$AppUserFromJson(Map<String, dynamic> json) {
   return AppUser$.fromJson(json);
 }
-
-/// @nodoc
-class _$AppUserTearOff {
-  const _$AppUserTearOff();
-
-  AppUser$ call({required String uid, required String email, required String username, String? masterKey}) {
-    return AppUser$(
-      uid: uid,
-      email: email,
-      username: username,
-      masterKey: masterKey,
-    );
-  }
-
-  AppUser fromJson(Map<String, Object?> json) {
-    return AppUser.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AppUser = _$AppUserTearOff();
 
 /// @nodoc
 mixin _$AppUser {
@@ -964,18 +855,19 @@ class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
-  factory $AppUser$CopyWith(AppUser$ value, $Res Function(AppUser$) then) = _$AppUser$CopyWithImpl<$Res>;
+abstract class _$$AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
+  factory _$$AppUser$CopyWith(_$AppUser$ value, $Res Function(_$AppUser$) then) = __$$AppUser$CopyWithImpl<$Res>;
   @override
   $Res call({String uid, String email, String username, String? masterKey});
 }
 
 /// @nodoc
-class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res> implements $AppUser$CopyWith<$Res> {
-  _$AppUser$CopyWithImpl(AppUser$ _value, $Res Function(AppUser$) _then) : super(_value, (v) => _then(v as AppUser$));
+class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res> implements _$$AppUser$CopyWith<$Res> {
+  __$$AppUser$CopyWithImpl(_$AppUser$ _value, $Res Function(_$AppUser$) _then)
+      : super(_value, (v) => _then(v as _$AppUser$));
 
   @override
-  AppUser$ get _value => super._value as AppUser$;
+  _$AppUser$ get _value => super._value as _$AppUser$;
 
   @override
   $Res call({
@@ -984,7 +876,7 @@ class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res> implement
     Object? username = freezed,
     Object? masterKey = freezed,
   }) {
-    return _then(AppUser$(
+    return _then(_$AppUser$(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -1030,13 +922,14 @@ class _$AppUser$ implements AppUser$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is AppUser$ &&
+            other is _$AppUser$ &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1047,7 +940,7 @@ class _$AppUser$ implements AppUser$ {
 
   @JsonKey(ignore: true)
   @override
-  $AppUser$CopyWith<AppUser$> get copyWith => _$AppUser$CopyWithImpl<AppUser$>(this, _$identity);
+  _$$AppUser$CopyWith<_$AppUser$> get copyWith => __$$AppUser$CopyWithImpl<_$AppUser$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1056,46 +949,30 @@ class _$AppUser$ implements AppUser$ {
 }
 
 abstract class AppUser$ implements AppUser {
-  const factory AppUser$({required String uid, required String email, required String username, String? masterKey}) =
-      _$AppUser$;
+  const factory AppUser$(
+      {required final String uid,
+      required final String email,
+      required final String username,
+      final String? masterKey}) = _$AppUser$;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
 
   @override
-  String get uid;
+  String get uid => throw _privateConstructorUsedError;
   @override
-  String get email;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String? get masterKey;
+  String? get masterKey => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $AppUser$CopyWith<AppUser$> get copyWith => throw _privateConstructorUsedError;
+  _$$AppUser$CopyWith<_$AppUser$> get copyWith => throw _privateConstructorUsedError;
 }
 
 Bundle _$BundleFromJson(Map<String, dynamic> json) {
   return Bundle$.fromJson(json);
 }
-
-/// @nodoc
-class _$BundleTearOff {
-  const _$BundleTearOff();
-
-  Bundle$ call({List<Password> passwords = const <Password>[], List<Code> codes = const <Code>[]}) {
-    return Bundle$(
-      passwords: passwords,
-      codes: codes,
-    );
-  }
-
-  Bundle fromJson(Map<String, Object?> json) {
-    return Bundle.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Bundle = _$BundleTearOff();
 
 /// @nodoc
 mixin _$Bundle {
@@ -1140,31 +1017,32 @@ class _$BundleCopyWithImpl<$Res> implements $BundleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $Bundle$CopyWith<$Res> implements $BundleCopyWith<$Res> {
-  factory $Bundle$CopyWith(Bundle$ value, $Res Function(Bundle$) then) = _$Bundle$CopyWithImpl<$Res>;
+abstract class _$$Bundle$CopyWith<$Res> implements $BundleCopyWith<$Res> {
+  factory _$$Bundle$CopyWith(_$Bundle$ value, $Res Function(_$Bundle$) then) = __$$Bundle$CopyWithImpl<$Res>;
   @override
   $Res call({List<Password> passwords, List<Code> codes});
 }
 
 /// @nodoc
-class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements $Bundle$CopyWith<$Res> {
-  _$Bundle$CopyWithImpl(Bundle$ _value, $Res Function(Bundle$) _then) : super(_value, (v) => _then(v as Bundle$));
+class __$$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements _$$Bundle$CopyWith<$Res> {
+  __$$Bundle$CopyWithImpl(_$Bundle$ _value, $Res Function(_$Bundle$) _then)
+      : super(_value, (v) => _then(v as _$Bundle$));
 
   @override
-  Bundle$ get _value => super._value as Bundle$;
+  _$Bundle$ get _value => super._value as _$Bundle$;
 
   @override
   $Res call({
     Object? passwords = freezed,
     Object? codes = freezed,
   }) {
-    return _then(Bundle$(
+    return _then(_$Bundle$(
       passwords: passwords == freezed
-          ? _value.passwords
+          ? _value._passwords
           : passwords // ignore: cast_nullable_to_non_nullable
               as List<Password>,
       codes: codes == freezed
-          ? _value.codes
+          ? _value._codes
           : codes // ignore: cast_nullable_to_non_nullable
               as List<Code>,
     ));
@@ -1174,16 +1052,27 @@ class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements 
 /// @nodoc
 @JsonSerializable()
 class _$Bundle$ implements Bundle$ {
-  const _$Bundle$({this.passwords = const <Password>[], this.codes = const <Code>[]});
+  const _$Bundle$({final List<Password> passwords = const <Password>[], final List<Code> codes = const <Code>[]})
+      : _passwords = passwords,
+        _codes = codes;
 
   factory _$Bundle$.fromJson(Map<String, dynamic> json) => _$$Bundle$FromJson(json);
 
-  @JsonKey()
+  final List<Password> _passwords;
   @override
-  final List<Password> passwords;
   @JsonKey()
+  List<Password> get passwords {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_passwords);
+  }
+
+  final List<Code> _codes;
   @override
-  final List<Code> codes;
+  @JsonKey()
+  List<Code> get codes {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_codes);
+  }
 
   @override
   String toString() {
@@ -1194,18 +1083,19 @@ class _$Bundle$ implements Bundle$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Bundle$ &&
-            const DeepCollectionEquality().equals(other.passwords, passwords) &&
-            const DeepCollectionEquality().equals(other.codes, codes));
+            other is _$Bundle$ &&
+            const DeepCollectionEquality().equals(other._passwords, _passwords) &&
+            const DeepCollectionEquality().equals(other._codes, _codes));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(passwords), const DeepCollectionEquality().hash(codes));
 
   @JsonKey(ignore: true)
   @override
-  $Bundle$CopyWith<Bundle$> get copyWith => _$Bundle$CopyWithImpl<Bundle$>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_passwords), const DeepCollectionEquality().hash(_codes));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$Bundle$CopyWith<_$Bundle$> get copyWith => __$$Bundle$CopyWithImpl<_$Bundle$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1214,55 +1104,22 @@ class _$Bundle$ implements Bundle$ {
 }
 
 abstract class Bundle$ implements Bundle {
-  const factory Bundle$({List<Password> passwords, List<Code> codes}) = _$Bundle$;
+  const factory Bundle$({final List<Password> passwords, final List<Code> codes}) = _$Bundle$;
 
   factory Bundle$.fromJson(Map<String, dynamic> json) = _$Bundle$.fromJson;
 
   @override
-  List<Password> get passwords;
+  List<Password> get passwords => throw _privateConstructorUsedError;
   @override
-  List<Code> get codes;
+  List<Code> get codes => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $Bundle$CopyWith<Bundle$> get copyWith => throw _privateConstructorUsedError;
+  _$$Bundle$CopyWith<_$Bundle$> get copyWith => throw _privateConstructorUsedError;
 }
 
 Password _$PasswordFromJson(Map<String, dynamic> json) {
   return Password$.fromJson(json);
 }
-
-/// @nodoc
-class _$PasswordTearOff {
-  const _$PasswordTearOff();
-
-  Password$ call(
-      {required String id,
-      required String title,
-      required String username,
-      required String password,
-      required String note,
-      required DateTime createdAt,
-      required DateTime lastAccess,
-      int timesAccessed = 0}) {
-    return Password$(
-      id: id,
-      title: title,
-      username: username,
-      password: password,
-      note: note,
-      createdAt: createdAt,
-      lastAccess: lastAccess,
-      timesAccessed: timesAccessed,
-    );
-  }
-
-  Password fromJson(Map<String, Object?> json) {
-    return Password.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Password = _$PasswordTearOff();
 
 /// @nodoc
 mixin _$Password {
@@ -1351,8 +1208,8 @@ class _$PasswordCopyWithImpl<$Res> implements $PasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $Password$CopyWith<$Res> implements $PasswordCopyWith<$Res> {
-  factory $Password$CopyWith(Password$ value, $Res Function(Password$) then) = _$Password$CopyWithImpl<$Res>;
+abstract class _$$Password$CopyWith<$Res> implements $PasswordCopyWith<$Res> {
+  factory _$$Password$CopyWith(_$Password$ value, $Res Function(_$Password$) then) = __$$Password$CopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -1366,12 +1223,12 @@ abstract class $Password$CopyWith<$Res> implements $PasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$Password$CopyWithImpl<$Res> extends _$PasswordCopyWithImpl<$Res> implements $Password$CopyWith<$Res> {
-  _$Password$CopyWithImpl(Password$ _value, $Res Function(Password$) _then)
-      : super(_value, (v) => _then(v as Password$));
+class __$$Password$CopyWithImpl<$Res> extends _$PasswordCopyWithImpl<$Res> implements _$$Password$CopyWith<$Res> {
+  __$$Password$CopyWithImpl(_$Password$ _value, $Res Function(_$Password$) _then)
+      : super(_value, (v) => _then(v as _$Password$));
 
   @override
-  Password$ get _value => super._value as Password$;
+  _$Password$ get _value => super._value as _$Password$;
 
   @override
   $Res call({
@@ -1384,7 +1241,7 @@ class _$Password$CopyWithImpl<$Res> extends _$PasswordCopyWithImpl<$Res> impleme
     Object? lastAccess = freezed,
     Object? timesAccessed = freezed,
   }) {
-    return _then(Password$(
+    return _then(_$Password$(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1450,8 +1307,8 @@ class _$Password$ implements Password$ {
   final DateTime createdAt;
   @override
   final DateTime lastAccess;
-  @JsonKey()
   @override
+  @JsonKey()
   final int timesAccessed;
 
   @override
@@ -1463,7 +1320,7 @@ class _$Password$ implements Password$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Password$ &&
+            other is _$Password$ &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.username, username) &&
@@ -1474,6 +1331,7 @@ class _$Password$ implements Password$ {
             const DeepCollectionEquality().equals(other.timesAccessed, timesAccessed));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1488,7 +1346,7 @@ class _$Password$ implements Password$ {
 
   @JsonKey(ignore: true)
   @override
-  $Password$CopyWith<Password$> get copyWith => _$Password$CopyWithImpl<Password$>(this, _$identity);
+  _$$Password$CopyWith<_$Password$> get copyWith => __$$Password$CopyWithImpl<_$Password$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1498,74 +1356,41 @@ class _$Password$ implements Password$ {
 
 abstract class Password$ implements Password {
   factory Password$(
-      {required String id,
-      required String title,
-      required String username,
-      required String password,
-      required String note,
-      required DateTime createdAt,
-      required DateTime lastAccess,
-      int timesAccessed}) = _$Password$;
+      {required final String id,
+      required final String title,
+      required final String username,
+      required final String password,
+      required final String note,
+      required final DateTime createdAt,
+      required final DateTime lastAccess,
+      final int timesAccessed}) = _$Password$;
 
   factory Password$.fromJson(Map<String, dynamic> json) = _$Password$.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get username;
+  String get username => throw _privateConstructorUsedError;
   @override
-  String get password;
+  String get password => throw _privateConstructorUsedError;
   @override
-  String get note;
+  String get note => throw _privateConstructorUsedError;
   @override
-  DateTime get createdAt;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
-  DateTime get lastAccess;
+  DateTime get lastAccess => throw _privateConstructorUsedError;
   @override
-  int get timesAccessed;
+  int get timesAccessed => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $Password$CopyWith<Password$> get copyWith => throw _privateConstructorUsedError;
+  _$$Password$CopyWith<_$Password$> get copyWith => throw _privateConstructorUsedError;
 }
 
 Code _$CodeFromJson(Map<String, dynamic> json) {
   return Code$.fromJson(json);
 }
-
-/// @nodoc
-class _$CodeTearOff {
-  const _$CodeTearOff();
-
-  Code$ call(
-      {required String id,
-      String title = '',
-      required String data,
-      required BarcodeFormat format,
-      String note = '',
-      required DateTime createdAt,
-      required DateTime lastAccess,
-      int timesAccessed = 0}) {
-    return Code$(
-      id: id,
-      title: title,
-      data: data,
-      format: format,
-      note: note,
-      createdAt: createdAt,
-      lastAccess: lastAccess,
-      timesAccessed: timesAccessed,
-    );
-  }
-
-  Code fromJson(Map<String, Object?> json) {
-    return Code.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Code = _$CodeTearOff();
 
 /// @nodoc
 mixin _$Code {
@@ -1654,8 +1479,8 @@ class _$CodeCopyWithImpl<$Res> implements $CodeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $Code$CopyWith<$Res> implements $CodeCopyWith<$Res> {
-  factory $Code$CopyWith(Code$ value, $Res Function(Code$) then) = _$Code$CopyWithImpl<$Res>;
+abstract class _$$Code$CopyWith<$Res> implements $CodeCopyWith<$Res> {
+  factory _$$Code$CopyWith(_$Code$ value, $Res Function(_$Code$) then) = __$$Code$CopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -1669,11 +1494,11 @@ abstract class $Code$CopyWith<$Res> implements $CodeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$Code$CopyWithImpl<$Res> extends _$CodeCopyWithImpl<$Res> implements $Code$CopyWith<$Res> {
-  _$Code$CopyWithImpl(Code$ _value, $Res Function(Code$) _then) : super(_value, (v) => _then(v as Code$));
+class __$$Code$CopyWithImpl<$Res> extends _$CodeCopyWithImpl<$Res> implements _$$Code$CopyWith<$Res> {
+  __$$Code$CopyWithImpl(_$Code$ _value, $Res Function(_$Code$) _then) : super(_value, (v) => _then(v as _$Code$));
 
   @override
-  Code$ get _value => super._value as Code$;
+  _$Code$ get _value => super._value as _$Code$;
 
   @override
   $Res call({
@@ -1686,7 +1511,7 @@ class _$Code$CopyWithImpl<$Res> extends _$CodeCopyWithImpl<$Res> implements $Cod
     Object? lastAccess = freezed,
     Object? timesAccessed = freezed,
   }) {
-    return _then(Code$(
+    return _then(_$Code$(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1740,22 +1565,22 @@ class _$Code$ implements Code$ {
 
   @override
   final String id;
-  @JsonKey()
   @override
+  @JsonKey()
   final String title;
   @override
   final String data;
   @override
   final BarcodeFormat format;
-  @JsonKey()
   @override
+  @JsonKey()
   final String note;
   @override
   final DateTime createdAt;
   @override
   final DateTime lastAccess;
-  @JsonKey()
   @override
+  @JsonKey()
   final int timesAccessed;
 
   @override
@@ -1767,7 +1592,7 @@ class _$Code$ implements Code$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is Code$ &&
+            other is _$Code$ &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.data, data) &&
@@ -1778,6 +1603,7 @@ class _$Code$ implements Code$ {
             const DeepCollectionEquality().equals(other.timesAccessed, timesAccessed));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1792,7 +1618,7 @@ class _$Code$ implements Code$ {
 
   @JsonKey(ignore: true)
   @override
-  $Code$CopyWith<Code$> get copyWith => _$Code$CopyWithImpl<Code$>(this, _$identity);
+  _$$Code$CopyWith<_$Code$> get copyWith => __$$Code$CopyWithImpl<_$Code$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1802,34 +1628,34 @@ class _$Code$ implements Code$ {
 
 abstract class Code$ implements Code {
   const factory Code$(
-      {required String id,
-      String title,
-      required String data,
-      required BarcodeFormat format,
-      String note,
-      required DateTime createdAt,
-      required DateTime lastAccess,
-      int timesAccessed}) = _$Code$;
+      {required final String id,
+      final String title,
+      required final String data,
+      required final BarcodeFormat format,
+      final String note,
+      required final DateTime createdAt,
+      required final DateTime lastAccess,
+      final int timesAccessed}) = _$Code$;
 
   factory Code$.fromJson(Map<String, dynamic> json) = _$Code$.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
   @override
-  String get data;
+  String get data => throw _privateConstructorUsedError;
   @override
-  BarcodeFormat get format;
+  BarcodeFormat get format => throw _privateConstructorUsedError;
   @override
-  String get note;
+  String get note => throw _privateConstructorUsedError;
   @override
-  DateTime get createdAt;
+  DateTime get createdAt => throw _privateConstructorUsedError;
   @override
-  DateTime get lastAccess;
+  DateTime get lastAccess => throw _privateConstructorUsedError;
   @override
-  int get timesAccessed;
+  int get timesAccessed => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $Code$CopyWith<Code$> get copyWith => throw _privateConstructorUsedError;
+  _$$Code$CopyWith<_$Code$> get copyWith => throw _privateConstructorUsedError;
 }

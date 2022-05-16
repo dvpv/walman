@@ -20,9 +20,10 @@ class HomePage extends StatelessWidget {
             ? const Center(child: CircularProgressIndicator())
             : BundleContainer(
                 builder: (BuildContext context, Bundle bundle) {
-                  final List<Password> passwords = bundle.passwords
+                  final List<Password> passwords = bundle.passwords.toList()
                     ..sort((Password a, Password b) => b.timesAccessed - a.timesAccessed);
-                  final List<Code> codes = bundle.codes..sort((Code a, Code b) => b.timesAccessed - a.timesAccessed);
+                  final List<Code> codes = bundle.codes.toList()
+                    ..sort((Code a, Code b) => b.timesAccessed - a.timesAccessed);
                   return ListView(
                     physics: const BouncingScrollPhysics(),
                     children: <Widget>[

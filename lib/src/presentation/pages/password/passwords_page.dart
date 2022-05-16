@@ -22,7 +22,7 @@ class _PasswordsPageState extends State<PasswordsPage> {
     return Center(
       child: BundleContainer(
         builder: (BuildContext context, Bundle bundle) {
-          final List<Password> passwords = bundle.passwords
+          final List<Password> passwords = bundle.passwords.toList()
             ..sort((Password a, Password b) => b.timesAccessed - a.timesAccessed);
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
