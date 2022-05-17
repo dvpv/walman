@@ -48,7 +48,7 @@ class UIState with _$UIState {
 @freezed
 class PasswordGeneratorState with _$PasswordGeneratorState {
   const factory PasswordGeneratorState({
-    @Default(CharacterPool.values) List<CharacterPool> characterPool,
+    @Default(kCharacterPoolValues) Set<CharacterPool> characterPool,
     @Default(16) int length,
     @Default('') String password,
   }) = PasswordGeneratorState$;

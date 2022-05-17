@@ -9,7 +9,7 @@ const String _symbols = '!@#\$%^&*()_+|-=\\{}[]:";\'<>,.?/~`';
 enum CharacterPool {
   lowercaseLetters,
   uppercaseLetters,
-  numbers,
+  digits,
   symbols,
 }
 
@@ -20,7 +20,7 @@ extension _CharacterPool on CharacterPool {
         return _lowercaseLetters;
       case CharacterPool.uppercaseLetters:
         return _uppercaseLetters;
-      case CharacterPool.numbers:
+      case CharacterPool.digits:
         return _numbers;
       case CharacterPool.symbols:
         return _symbols;
@@ -28,22 +28,31 @@ extension _CharacterPool on CharacterPool {
   }
 }
 
-extension _CharacterPoolList on List<CharacterPool> {
+const Set<CharacterPool> kCharacterPoolValues = <CharacterPool>{
+  CharacterPool.lowercaseLetters,
+  CharacterPool.uppercaseLetters,
+  CharacterPool.digits,
+  CharacterPool.symbols,
+};
+
+extension _CharacterPoolList on Set<CharacterPool> {
   List<int> get codes {
     return map((CharacterPool e) => e.characters.codeUnits)
-        .reduce((List<int> value, List<int> element) => value + element);
+        .fold(<int>[], (List<int> value, List<int> element) => value + element);
   }
 }
 
-String generatePassword({required List<CharacterPool> characterPool, required int length, String? customPool}) {
+String generatePassword({required Set<CharacterPool> characterPool, required int length, String? customPool}) {
   final Random random = Random();
   final Set<int> codes = (characterPool.codes + (customPool ?? '').codeUnits).toSet();
-  return String.fromCharCodes(
-    List<int>.generate(
-      length,
-      (_) => codes.elementAt(
-        random.nextInt(codes.length),
-      ),
-    ),
-  );
+  return codes.isNotEmpty
+      ? String.fromCharCodes(
+          List<int>.generate(
+            length,
+            (_) => codes.elementAt(
+              random.nextInt(codes.length),
+            ),
+          ),
+        )
+      : '';
 }

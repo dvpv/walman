@@ -73,8 +73,8 @@ Map<String, dynamic> _$$UIState$ToJson(_$UIState$ instance) => <String, dynamic>
 
 _$PasswordGeneratorState$ _$$PasswordGeneratorState$FromJson(Map<String, dynamic> json) => _$PasswordGeneratorState$(
       characterPool:
-          (json['characterPool'] as List<dynamic>?)?.map((e) => $enumDecode(_$CharacterPoolEnumMap, e)).toList() ??
-              CharacterPool.values,
+          (json['characterPool'] as List<dynamic>?)?.map((e) => $enumDecode(_$CharacterPoolEnumMap, e)).toSet() ??
+              kCharacterPoolValues,
       length: json['length'] as int? ?? 16,
       password: json['password'] as String? ?? '',
     );
@@ -88,7 +88,7 @@ Map<String, dynamic> _$$PasswordGeneratorState$ToJson(_$PasswordGeneratorState$ 
 const _$CharacterPoolEnumMap = {
   CharacterPool.lowercaseLetters: 'lowercaseLetters',
   CharacterPool.uppercaseLetters: 'uppercaseLetters',
-  CharacterPool.numbers: 'numbers',
+  CharacterPool.digits: 'digits',
   CharacterPool.symbols: 'symbols',
 };
 

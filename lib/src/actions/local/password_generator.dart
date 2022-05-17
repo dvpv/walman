@@ -18,6 +18,6 @@ class ChangePasswordGeneratorLength with _$ChangePasswordGeneratorLength impleme
 @freezed
 class ChangePasswordGeneratorCharacterPool with _$ChangePasswordGeneratorCharacterPool implements AppAction {
   const factory ChangePasswordGeneratorCharacterPool({
-    required List<CharacterPool> characterPool,
+    required Set<CharacterPool> characterPool,
   }) = ChangePasswordGeneratorCharacterPool$;
 }

@@ -927,7 +927,7 @@ class _$PasswordGeneratorStateTearOff {
   const _$PasswordGeneratorStateTearOff();
 
   PasswordGeneratorState$ call(
-      {List<CharacterPool> characterPool = CharacterPool.values, int length = 16, String password = ''}) {
+      {Set<CharacterPool> characterPool = kCharacterPoolValues, int length = 16, String password = ''}) {
     return PasswordGeneratorState$(
       characterPool: characterPool,
       length: length,
@@ -945,7 +945,7 @@ const $PasswordGeneratorState = _$PasswordGeneratorStateTearOff();
 
 /// @nodoc
 mixin _$PasswordGeneratorState {
-  List<CharacterPool> get characterPool => throw _privateConstructorUsedError;
+  Set<CharacterPool> get characterPool => throw _privateConstructorUsedError;
   int get length => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
@@ -958,7 +958,7 @@ mixin _$PasswordGeneratorState {
 abstract class $PasswordGeneratorStateCopyWith<$Res> {
   factory $PasswordGeneratorStateCopyWith(PasswordGeneratorState value, $Res Function(PasswordGeneratorState) then) =
       _$PasswordGeneratorStateCopyWithImpl<$Res>;
-  $Res call({List<CharacterPool> characterPool, int length, String password});
+  $Res call({Set<CharacterPool> characterPool, int length, String password});
 }
 
 /// @nodoc
@@ -979,7 +979,7 @@ class _$PasswordGeneratorStateCopyWithImpl<$Res> implements $PasswordGeneratorSt
       characterPool: characterPool == freezed
           ? _value.characterPool
           : characterPool // ignore: cast_nullable_to_non_nullable
-              as List<CharacterPool>,
+              as Set<CharacterPool>,
       length: length == freezed
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
@@ -997,7 +997,7 @@ abstract class $PasswordGeneratorState$CopyWith<$Res> implements $PasswordGenera
   factory $PasswordGeneratorState$CopyWith(PasswordGeneratorState$ value, $Res Function(PasswordGeneratorState$) then) =
       _$PasswordGeneratorState$CopyWithImpl<$Res>;
   @override
-  $Res call({List<CharacterPool> characterPool, int length, String password});
+  $Res call({Set<CharacterPool> characterPool, int length, String password});
 }
 
 /// @nodoc
@@ -1019,7 +1019,7 @@ class _$PasswordGeneratorState$CopyWithImpl<$Res> extends _$PasswordGeneratorSta
       characterPool: characterPool == freezed
           ? _value.characterPool
           : characterPool // ignore: cast_nullable_to_non_nullable
-              as List<CharacterPool>,
+              as Set<CharacterPool>,
       length: length == freezed
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
@@ -1035,13 +1035,13 @@ class _$PasswordGeneratorState$CopyWithImpl<$Res> extends _$PasswordGeneratorSta
 /// @nodoc
 @JsonSerializable()
 class _$PasswordGeneratorState$ implements PasswordGeneratorState$ {
-  const _$PasswordGeneratorState$({this.characterPool = CharacterPool.values, this.length = 16, this.password = ''});
+  const _$PasswordGeneratorState$({this.characterPool = kCharacterPoolValues, this.length = 16, this.password = ''});
 
   factory _$PasswordGeneratorState$.fromJson(Map<String, dynamic> json) => _$$PasswordGeneratorState$FromJson(json);
 
   @JsonKey()
   @override
-  final List<CharacterPool> characterPool;
+  final Set<CharacterPool> characterPool;
   @JsonKey()
   @override
   final int length;
@@ -1080,13 +1080,13 @@ class _$PasswordGeneratorState$ implements PasswordGeneratorState$ {
 }
 
 abstract class PasswordGeneratorState$ implements PasswordGeneratorState {
-  const factory PasswordGeneratorState$({List<CharacterPool> characterPool, int length, String password}) =
+  const factory PasswordGeneratorState$({Set<CharacterPool> characterPool, int length, String password}) =
       _$PasswordGeneratorState$;
 
   factory PasswordGeneratorState$.fromJson(Map<String, dynamic> json) = _$PasswordGeneratorState$.fromJson;
 
   @override
-  List<CharacterPool> get characterPool;
+  Set<CharacterPool> get characterPool;
   @override
   int get length;
   @override

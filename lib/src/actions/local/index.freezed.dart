@@ -1978,7 +1978,7 @@ abstract class ChangePasswordGeneratorLength$ implements ChangePasswordGenerator
 class _$ChangePasswordGeneratorCharacterPoolTearOff {
   const _$ChangePasswordGeneratorCharacterPoolTearOff();
 
-  ChangePasswordGeneratorCharacterPool$ call({required List<CharacterPool> characterPool}) {
+  ChangePasswordGeneratorCharacterPool$ call({required Set<CharacterPool> characterPool}) {
     return ChangePasswordGeneratorCharacterPool$(
       characterPool: characterPool,
     );
@@ -1990,7 +1990,7 @@ const $ChangePasswordGeneratorCharacterPool = _$ChangePasswordGeneratorCharacter
 
 /// @nodoc
 mixin _$ChangePasswordGeneratorCharacterPool {
-  List<CharacterPool> get characterPool => throw _privateConstructorUsedError;
+  Set<CharacterPool> get characterPool => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChangePasswordGeneratorCharacterPoolCopyWith<ChangePasswordGeneratorCharacterPool> get copyWith =>
@@ -2002,7 +2002,7 @@ abstract class $ChangePasswordGeneratorCharacterPoolCopyWith<$Res> {
   factory $ChangePasswordGeneratorCharacterPoolCopyWith(
           ChangePasswordGeneratorCharacterPool value, $Res Function(ChangePasswordGeneratorCharacterPool) then) =
       _$ChangePasswordGeneratorCharacterPoolCopyWithImpl<$Res>;
-  $Res call({List<CharacterPool> characterPool});
+  $Res call({Set<CharacterPool> characterPool});
 }
 
 /// @nodoc
@@ -2022,7 +2022,7 @@ class _$ChangePasswordGeneratorCharacterPoolCopyWithImpl<$Res>
       characterPool: characterPool == freezed
           ? _value.characterPool
           : characterPool // ignore: cast_nullable_to_non_nullable
-              as List<CharacterPool>,
+              as Set<CharacterPool>,
     ));
   }
 }
@@ -2034,7 +2034,7 @@ abstract class $ChangePasswordGeneratorCharacterPool$CopyWith<$Res>
           ChangePasswordGeneratorCharacterPool$ value, $Res Function(ChangePasswordGeneratorCharacterPool$) then) =
       _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<$Res>;
   @override
-  $Res call({List<CharacterPool> characterPool});
+  $Res call({Set<CharacterPool> characterPool});
 }
 
 /// @nodoc
@@ -2056,7 +2056,7 @@ class _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<$Res>
       characterPool: characterPool == freezed
           ? _value.characterPool
           : characterPool // ignore: cast_nullable_to_non_nullable
-              as List<CharacterPool>,
+              as Set<CharacterPool>,
     ));
   }
 }
@@ -2067,7 +2067,7 @@ class _$ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGenerator
   const _$ChangePasswordGeneratorCharacterPool$({required this.characterPool});
 
   @override
-  final List<CharacterPool> characterPool;
+  final Set<CharacterPool> characterPool;
 
   @override
   String toString() {
@@ -2092,11 +2092,11 @@ class _$ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGenerator
 }
 
 abstract class ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGeneratorCharacterPool {
-  const factory ChangePasswordGeneratorCharacterPool$({required List<CharacterPool> characterPool}) =
+  const factory ChangePasswordGeneratorCharacterPool$({required Set<CharacterPool> characterPool}) =
       _$ChangePasswordGeneratorCharacterPool$;
 
   @override
-  List<CharacterPool> get characterPool;
+  Set<CharacterPool> get characterPool;
   @override
   @JsonKey(ignore: true)
   $ChangePasswordGeneratorCharacterPool$CopyWith<ChangePasswordGeneratorCharacterPool$> get copyWith =>
