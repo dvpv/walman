@@ -22,6 +22,9 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
           ? const CreateCodeState()
           : CreateCodeState.fromJson(json['createCodeState'] as Map<String, dynamic>),
       uiState: json['uiState'] == null ? const UIState() : UIState.fromJson(json['uiState'] as Map<String, dynamic>),
+      passwordGeneratorState: json['passwordGeneratorState'] == null
+          ? const PasswordGeneratorState()
+          : PasswordGeneratorState.fromJson(json['passwordGeneratorState'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
@@ -32,6 +35,7 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynami
       'detailsState': instance.detailsState,
       'createCodeState': instance.createCodeState,
       'uiState': instance.uiState,
+      'passwordGeneratorState': instance.passwordGeneratorState,
     };
 
 const _$AppPageEnumMap = {
@@ -66,6 +70,27 @@ _$UIState$ _$$UIState$FromJson(Map<String, dynamic> json) => _$UIState$(
 Map<String, dynamic> _$$UIState$ToJson(_$UIState$ instance) => <String, dynamic>{
       'showPassword': instance.showPassword,
     };
+
+_$PasswordGeneratorState$ _$$PasswordGeneratorState$FromJson(Map<String, dynamic> json) => _$PasswordGeneratorState$(
+      characterPool:
+          (json['characterPool'] as List<dynamic>?)?.map((e) => $enumDecode(_$CharacterPoolEnumMap, e)).toList() ??
+              CharacterPool.values,
+      length: json['length'] as int? ?? 16,
+      password: json['password'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$PasswordGeneratorState$ToJson(_$PasswordGeneratorState$ instance) => <String, dynamic>{
+      'characterPool': instance.characterPool.map((e) => _$CharacterPoolEnumMap[e]).toList(),
+      'length': instance.length,
+      'password': instance.password,
+    };
+
+const _$CharacterPoolEnumMap = {
+  CharacterPool.lowercaseLetters: 'lowercaseLetters',
+  CharacterPool.uppercaseLetters: 'uppercaseLetters',
+  CharacterPool.numbers: 'numbers',
+  CharacterPool.symbols: 'symbols',
+};
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,

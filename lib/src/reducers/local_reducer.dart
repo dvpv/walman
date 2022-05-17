@@ -12,6 +12,9 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, CreateNewCode>(_createNewCode),
   TypedReducer<AppState, SelectItemDetailsStart>(_selectItemDetails),
   TypedReducer<AppState, UpdateAccessTime>(_updateAccessTime),
+  TypedReducer<AppState, GeneratePasswordSuccessful>(_generatePasswordSuccessful),
+  TypedReducer<AppState, ChangePasswordGeneratorCharacterPool>(_changePasswordGeneratorCharacterPool),
+  TypedReducer<AppState, ChangePasswordGeneratorLength>(_changePasswordGeneratorCharacterLength),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -89,4 +92,28 @@ AppState _updateAccessTime(AppState state, UpdateAccessTime action) {
     );
   }
   return state;
+}
+
+AppState _generatePasswordSuccessful(AppState state, GeneratePasswordSuccessful action) {
+  return state.copyWith(
+    passwordGeneratorState: state.passwordGeneratorState.copyWith(
+      password: action.password,
+    ),
+  );
+}
+
+AppState _changePasswordGeneratorCharacterPool(AppState state, ChangePasswordGeneratorCharacterPool action) {
+  return state.copyWith(
+    passwordGeneratorState: state.passwordGeneratorState.copyWith(
+      characterPool: action.characterPool,
+    ),
+  );
+}
+
+AppState _changePasswordGeneratorCharacterLength(AppState state, ChangePasswordGeneratorLength action) {
+  return state.copyWith(
+    passwordGeneratorState: state.passwordGeneratorState.copyWith(
+      length: action.length,
+    ),
+  );
 }

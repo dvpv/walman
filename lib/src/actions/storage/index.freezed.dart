@@ -12,11 +12,42 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$GetDataTearOff {
+  const _$GetDataTearOff();
+
+  GetDataStart start({required String masterKey, String pendingId = _kGetDataPendingId}) {
+    return GetDataStart(
+      masterKey: masterKey,
+      pendingId: pendingId,
+    );
+  }
+
+  GetDataSuccessful successful(Bundle? bundle, [String pendingId = _kGetDataPendingId]) {
+    return GetDataSuccessful(
+      bundle,
+      pendingId,
+    );
+  }
+
+  GetDataError error(Object error, StackTrace stackTrace, [String pendingId = _kGetDataPendingId]) {
+    return GetDataError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $GetData = _$GetDataTearOff();
 
 /// @nodoc
 mixin _$GetData {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
@@ -94,27 +125,27 @@ class _$GetDataCopyWithImpl<$Res> implements $GetDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$GetDataStartCopyWith<$Res> implements $GetDataCopyWith<$Res> {
-  factory _$$GetDataStartCopyWith(_$GetDataStart value, $Res Function(_$GetDataStart) then) =
-      __$$GetDataStartCopyWithImpl<$Res>;
+abstract class $GetDataStartCopyWith<$Res> implements $GetDataCopyWith<$Res> {
+  factory $GetDataStartCopyWith(GetDataStart value, $Res Function(GetDataStart) then) =
+      _$GetDataStartCopyWithImpl<$Res>;
   @override
   $Res call({String masterKey, String pendingId});
 }
 
 /// @nodoc
-class __$$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> implements _$$GetDataStartCopyWith<$Res> {
-  __$$GetDataStartCopyWithImpl(_$GetDataStart _value, $Res Function(_$GetDataStart) _then)
-      : super(_value, (v) => _then(v as _$GetDataStart));
+class _$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> implements $GetDataStartCopyWith<$Res> {
+  _$GetDataStartCopyWithImpl(GetDataStart _value, $Res Function(GetDataStart) _then)
+      : super(_value, (v) => _then(v as GetDataStart));
 
   @override
-  _$GetDataStart get _value => super._value as _$GetDataStart;
+  GetDataStart get _value => super._value as GetDataStart;
 
   @override
   $Res call({
     Object? masterKey = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$GetDataStart(
+    return _then(GetDataStart(
       masterKey: masterKey == freezed
           ? _value.masterKey
           : masterKey // ignore: cast_nullable_to_non_nullable
@@ -129,13 +160,14 @@ class __$$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imp
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$GetDataStart implements GetDataStart {
   const _$GetDataStart({required this.masterKey, this.pendingId = _kGetDataPendingId});
 
   @override
   final String masterKey;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -147,7 +179,7 @@ class _$GetDataStart implements GetDataStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetDataStart &&
+            other is GetDataStart &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -158,8 +190,7 @@ class _$GetDataStart implements GetDataStart {
 
   @JsonKey(ignore: true)
   @override
-  _$$GetDataStartCopyWith<_$GetDataStart> get copyWith =>
-      __$$GetDataStartCopyWithImpl<_$GetDataStart>(this, _$identity);
+  $GetDataStartCopyWith<GetDataStart> get copyWith => _$GetDataStartCopyWithImpl<GetDataStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -231,20 +262,20 @@ class _$GetDataStart implements GetDataStart {
 }
 
 abstract class GetDataStart implements GetData, ActionStart {
-  const factory GetDataStart({required final String masterKey, final String pendingId}) = _$GetDataStart;
+  const factory GetDataStart({required String masterKey, String pendingId}) = _$GetDataStart;
 
-  String get masterKey => throw _privateConstructorUsedError;
+  String get masterKey;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDataStartCopyWith<_$GetDataStart> get copyWith => throw _privateConstructorUsedError;
+  $GetDataStartCopyWith<GetDataStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDataSuccessfulCopyWith<$Res> implements $GetDataCopyWith<$Res> {
-  factory _$$GetDataSuccessfulCopyWith(_$GetDataSuccessful value, $Res Function(_$GetDataSuccessful) then) =
-      __$$GetDataSuccessfulCopyWithImpl<$Res>;
+abstract class $GetDataSuccessfulCopyWith<$Res> implements $GetDataCopyWith<$Res> {
+  factory $GetDataSuccessfulCopyWith(GetDataSuccessful value, $Res Function(GetDataSuccessful) then) =
+      _$GetDataSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({Bundle? bundle, String pendingId});
 
@@ -252,20 +283,20 @@ abstract class _$$GetDataSuccessfulCopyWith<$Res> implements $GetDataCopyWith<$R
 }
 
 /// @nodoc
-class __$$GetDataSuccessfulCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res>
-    implements _$$GetDataSuccessfulCopyWith<$Res> {
-  __$$GetDataSuccessfulCopyWithImpl(_$GetDataSuccessful _value, $Res Function(_$GetDataSuccessful) _then)
-      : super(_value, (v) => _then(v as _$GetDataSuccessful));
+class _$GetDataSuccessfulCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res>
+    implements $GetDataSuccessfulCopyWith<$Res> {
+  _$GetDataSuccessfulCopyWithImpl(GetDataSuccessful _value, $Res Function(GetDataSuccessful) _then)
+      : super(_value, (v) => _then(v as GetDataSuccessful));
 
   @override
-  _$GetDataSuccessful get _value => super._value as _$GetDataSuccessful;
+  GetDataSuccessful get _value => super._value as GetDataSuccessful;
 
   @override
   $Res call({
     Object? bundle = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$GetDataSuccessful(
+    return _then(GetDataSuccessful(
       bundle == freezed
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
@@ -291,13 +322,14 @@ class __$$GetDataSuccessfulCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$GetDataSuccessful implements GetDataSuccessful {
   const _$GetDataSuccessful(this.bundle, [this.pendingId = _kGetDataPendingId]);
 
   @override
   final Bundle? bundle;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -309,7 +341,7 @@ class _$GetDataSuccessful implements GetDataSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetDataSuccessful &&
+            other is GetDataSuccessful &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -320,8 +352,8 @@ class _$GetDataSuccessful implements GetDataSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  _$$GetDataSuccessfulCopyWith<_$GetDataSuccessful> get copyWith =>
-      __$$GetDataSuccessfulCopyWithImpl<_$GetDataSuccessful>(this, _$identity);
+  $GetDataSuccessfulCopyWith<GetDataSuccessful> get copyWith =>
+      _$GetDataSuccessfulCopyWithImpl<GetDataSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -393,31 +425,31 @@ class _$GetDataSuccessful implements GetDataSuccessful {
 }
 
 abstract class GetDataSuccessful implements GetData, ActionDone {
-  const factory GetDataSuccessful(final Bundle? bundle, [final String pendingId]) = _$GetDataSuccessful;
+  const factory GetDataSuccessful(Bundle? bundle, [String pendingId]) = _$GetDataSuccessful;
 
-  Bundle? get bundle => throw _privateConstructorUsedError;
+  Bundle? get bundle;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDataSuccessfulCopyWith<_$GetDataSuccessful> get copyWith => throw _privateConstructorUsedError;
+  $GetDataSuccessfulCopyWith<GetDataSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetDataErrorCopyWith<$Res> implements $GetDataCopyWith<$Res> {
-  factory _$$GetDataErrorCopyWith(_$GetDataError value, $Res Function(_$GetDataError) then) =
-      __$$GetDataErrorCopyWithImpl<$Res>;
+abstract class $GetDataErrorCopyWith<$Res> implements $GetDataCopyWith<$Res> {
+  factory $GetDataErrorCopyWith(GetDataError value, $Res Function(GetDataError) then) =
+      _$GetDataErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class __$$GetDataErrorCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> implements _$$GetDataErrorCopyWith<$Res> {
-  __$$GetDataErrorCopyWithImpl(_$GetDataError _value, $Res Function(_$GetDataError) _then)
-      : super(_value, (v) => _then(v as _$GetDataError));
+class _$GetDataErrorCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> implements $GetDataErrorCopyWith<$Res> {
+  _$GetDataErrorCopyWithImpl(GetDataError _value, $Res Function(GetDataError) _then)
+      : super(_value, (v) => _then(v as GetDataError));
 
   @override
-  _$GetDataError get _value => super._value as _$GetDataError;
+  GetDataError get _value => super._value as GetDataError;
 
   @override
   $Res call({
@@ -425,7 +457,7 @@ class __$$GetDataErrorCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imp
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$GetDataError(
+    return _then(GetDataError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -444,6 +476,8 @@ class __$$GetDataErrorCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> imp
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$GetDataError implements GetDataError {
   const _$GetDataError(this.error, this.stackTrace, [this.pendingId = _kGetDataPendingId]);
 
@@ -451,8 +485,8 @@ class _$GetDataError implements GetDataError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -464,7 +498,7 @@ class _$GetDataError implements GetDataError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetDataError &&
+            other is GetDataError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -476,8 +510,7 @@ class _$GetDataError implements GetDataError {
 
   @JsonKey(ignore: true)
   @override
-  _$$GetDataErrorCopyWith<_$GetDataError> get copyWith =>
-      __$$GetDataErrorCopyWithImpl<_$GetDataError>(this, _$identity);
+  $GetDataErrorCopyWith<GetDataError> get copyWith => _$GetDataErrorCopyWithImpl<GetDataError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -549,21 +582,50 @@ class _$GetDataError implements GetDataError {
 }
 
 abstract class GetDataError implements GetData, ActionDone, ErrorAction {
-  const factory GetDataError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
-      _$GetDataError;
+  const factory GetDataError(Object error, StackTrace stackTrace, [String pendingId]) = _$GetDataError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$GetDataErrorCopyWith<_$GetDataError> get copyWith => throw _privateConstructorUsedError;
+  $GetDataErrorCopyWith<GetDataError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$StoreDataTearOff {
+  const _$StoreDataTearOff();
+
+  StoreDataStart start({required String masterKey, String pendingId = _kStoreDataPendingId}) {
+    return StoreDataStart(
+      masterKey: masterKey,
+      pendingId: pendingId,
+    );
+  }
+
+  StoreDataSuccessful successful([String pendingId = _kStoreDataPendingId]) {
+    return StoreDataSuccessful(
+      pendingId,
+    );
+  }
+
+  StoreDataError error(Object error, StackTrace stackTrace, [String pendingId = _kStoreDataPendingId]) {
+    return StoreDataError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $StoreData = _$StoreDataTearOff();
 
 /// @nodoc
 mixin _$StoreData {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
@@ -641,28 +703,28 @@ class _$StoreDataCopyWithImpl<$Res> implements $StoreDataCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$StoreDataStartCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
-  factory _$$StoreDataStartCopyWith(_$StoreDataStart value, $Res Function(_$StoreDataStart) then) =
-      __$$StoreDataStartCopyWithImpl<$Res>;
+abstract class $StoreDataStartCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
+  factory $StoreDataStartCopyWith(StoreDataStart value, $Res Function(StoreDataStart) then) =
+      _$StoreDataStartCopyWithImpl<$Res>;
   @override
   $Res call({String masterKey, String pendingId});
 }
 
 /// @nodoc
-class __$$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
-    implements _$$StoreDataStartCopyWith<$Res> {
-  __$$StoreDataStartCopyWithImpl(_$StoreDataStart _value, $Res Function(_$StoreDataStart) _then)
-      : super(_value, (v) => _then(v as _$StoreDataStart));
+class _$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
+    implements $StoreDataStartCopyWith<$Res> {
+  _$StoreDataStartCopyWithImpl(StoreDataStart _value, $Res Function(StoreDataStart) _then)
+      : super(_value, (v) => _then(v as StoreDataStart));
 
   @override
-  _$StoreDataStart get _value => super._value as _$StoreDataStart;
+  StoreDataStart get _value => super._value as StoreDataStart;
 
   @override
   $Res call({
     Object? masterKey = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$StoreDataStart(
+    return _then(StoreDataStart(
       masterKey: masterKey == freezed
           ? _value.masterKey
           : masterKey // ignore: cast_nullable_to_non_nullable
@@ -677,13 +739,14 @@ class __$$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$StoreDataStart implements StoreDataStart {
   const _$StoreDataStart({required this.masterKey, this.pendingId = _kStoreDataPendingId});
 
   @override
   final String masterKey;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -695,7 +758,7 @@ class _$StoreDataStart implements StoreDataStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StoreDataStart &&
+            other is StoreDataStart &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -706,8 +769,8 @@ class _$StoreDataStart implements StoreDataStart {
 
   @JsonKey(ignore: true)
   @override
-  _$$StoreDataStartCopyWith<_$StoreDataStart> get copyWith =>
-      __$$StoreDataStartCopyWithImpl<_$StoreDataStart>(this, _$identity);
+  $StoreDataStartCopyWith<StoreDataStart> get copyWith =>
+      _$StoreDataStartCopyWithImpl<StoreDataStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -779,38 +842,38 @@ class _$StoreDataStart implements StoreDataStart {
 }
 
 abstract class StoreDataStart implements StoreData, ActionStart {
-  const factory StoreDataStart({required final String masterKey, final String pendingId}) = _$StoreDataStart;
+  const factory StoreDataStart({required String masterKey, String pendingId}) = _$StoreDataStart;
 
-  String get masterKey => throw _privateConstructorUsedError;
+  String get masterKey;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$StoreDataStartCopyWith<_$StoreDataStart> get copyWith => throw _privateConstructorUsedError;
+  $StoreDataStartCopyWith<StoreDataStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StoreDataSuccessfulCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
-  factory _$$StoreDataSuccessfulCopyWith(_$StoreDataSuccessful value, $Res Function(_$StoreDataSuccessful) then) =
-      __$$StoreDataSuccessfulCopyWithImpl<$Res>;
+abstract class $StoreDataSuccessfulCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
+  factory $StoreDataSuccessfulCopyWith(StoreDataSuccessful value, $Res Function(StoreDataSuccessful) then) =
+      _$StoreDataSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class __$$StoreDataSuccessfulCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
-    implements _$$StoreDataSuccessfulCopyWith<$Res> {
-  __$$StoreDataSuccessfulCopyWithImpl(_$StoreDataSuccessful _value, $Res Function(_$StoreDataSuccessful) _then)
-      : super(_value, (v) => _then(v as _$StoreDataSuccessful));
+class _$StoreDataSuccessfulCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
+    implements $StoreDataSuccessfulCopyWith<$Res> {
+  _$StoreDataSuccessfulCopyWithImpl(StoreDataSuccessful _value, $Res Function(StoreDataSuccessful) _then)
+      : super(_value, (v) => _then(v as StoreDataSuccessful));
 
   @override
-  _$StoreDataSuccessful get _value => super._value as _$StoreDataSuccessful;
+  StoreDataSuccessful get _value => super._value as StoreDataSuccessful;
 
   @override
   $Res call({
     Object? pendingId = freezed,
   }) {
-    return _then(_$StoreDataSuccessful(
+    return _then(StoreDataSuccessful(
       pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -821,11 +884,12 @@ class __$$StoreDataSuccessfulCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$StoreDataSuccessful implements StoreDataSuccessful {
   const _$StoreDataSuccessful([this.pendingId = _kStoreDataPendingId]);
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -837,7 +901,7 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StoreDataSuccessful &&
+            other is StoreDataSuccessful &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
@@ -846,8 +910,8 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  _$$StoreDataSuccessfulCopyWith<_$StoreDataSuccessful> get copyWith =>
-      __$$StoreDataSuccessfulCopyWithImpl<_$StoreDataSuccessful>(this, _$identity);
+  $StoreDataSuccessfulCopyWith<StoreDataSuccessful> get copyWith =>
+      _$StoreDataSuccessfulCopyWithImpl<StoreDataSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -919,31 +983,31 @@ class _$StoreDataSuccessful implements StoreDataSuccessful {
 }
 
 abstract class StoreDataSuccessful implements StoreData, ActionDone {
-  const factory StoreDataSuccessful([final String pendingId]) = _$StoreDataSuccessful;
+  const factory StoreDataSuccessful([String pendingId]) = _$StoreDataSuccessful;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$StoreDataSuccessfulCopyWith<_$StoreDataSuccessful> get copyWith => throw _privateConstructorUsedError;
+  $StoreDataSuccessfulCopyWith<StoreDataSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$StoreDataErrorCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
-  factory _$$StoreDataErrorCopyWith(_$StoreDataError value, $Res Function(_$StoreDataError) then) =
-      __$$StoreDataErrorCopyWithImpl<$Res>;
+abstract class $StoreDataErrorCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
+  factory $StoreDataErrorCopyWith(StoreDataError value, $Res Function(StoreDataError) then) =
+      _$StoreDataErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class __$$StoreDataErrorCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
-    implements _$$StoreDataErrorCopyWith<$Res> {
-  __$$StoreDataErrorCopyWithImpl(_$StoreDataError _value, $Res Function(_$StoreDataError) _then)
-      : super(_value, (v) => _then(v as _$StoreDataError));
+class _$StoreDataErrorCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
+    implements $StoreDataErrorCopyWith<$Res> {
+  _$StoreDataErrorCopyWithImpl(StoreDataError _value, $Res Function(StoreDataError) _then)
+      : super(_value, (v) => _then(v as StoreDataError));
 
   @override
-  _$StoreDataError get _value => super._value as _$StoreDataError;
+  StoreDataError get _value => super._value as StoreDataError;
 
   @override
   $Res call({
@@ -951,7 +1015,7 @@ class __$$StoreDataErrorCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$StoreDataError(
+    return _then(StoreDataError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -970,6 +1034,8 @@ class __$$StoreDataErrorCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$StoreDataError implements StoreDataError {
   const _$StoreDataError(this.error, this.stackTrace, [this.pendingId = _kStoreDataPendingId]);
 
@@ -977,8 +1043,8 @@ class _$StoreDataError implements StoreDataError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -990,7 +1056,7 @@ class _$StoreDataError implements StoreDataError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StoreDataError &&
+            other is StoreDataError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -1002,8 +1068,8 @@ class _$StoreDataError implements StoreDataError {
 
   @JsonKey(ignore: true)
   @override
-  _$$StoreDataErrorCopyWith<_$StoreDataError> get copyWith =>
-      __$$StoreDataErrorCopyWithImpl<_$StoreDataError>(this, _$identity);
+  $StoreDataErrorCopyWith<StoreDataError> get copyWith =>
+      _$StoreDataErrorCopyWithImpl<StoreDataError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1075,14 +1141,13 @@ class _$StoreDataError implements StoreDataError {
 }
 
 abstract class StoreDataError implements StoreData, ActionDone, ErrorAction {
-  const factory StoreDataError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
-      _$StoreDataError;
+  const factory StoreDataError(Object error, StackTrace stackTrace, [String pendingId]) = _$StoreDataError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$StoreDataErrorCopyWith<_$StoreDataError> get copyWith => throw _privateConstructorUsedError;
+  $StoreDataErrorCopyWith<StoreDataError> get copyWith => throw _privateConstructorUsedError;
 }

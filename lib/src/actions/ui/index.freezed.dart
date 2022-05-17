@@ -12,7 +12,21 @@ part of 'index.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+class _$ChangeAppPageTearOff {
+  const _$ChangeAppPageTearOff();
+
+  ChangeAppPage$ call(AppPage page) {
+    return ChangeAppPage$(
+      page,
+    );
+  }
+}
+
+/// @nodoc
+const $ChangeAppPage = _$ChangeAppPageTearOff();
 
 /// @nodoc
 mixin _$ChangeAppPage {
@@ -51,27 +65,27 @@ class _$ChangeAppPageCopyWithImpl<$Res> implements $ChangeAppPageCopyWith<$Res> 
 }
 
 /// @nodoc
-abstract class _$$ChangeAppPage$CopyWith<$Res> implements $ChangeAppPageCopyWith<$Res> {
-  factory _$$ChangeAppPage$CopyWith(_$ChangeAppPage$ value, $Res Function(_$ChangeAppPage$) then) =
-      __$$ChangeAppPage$CopyWithImpl<$Res>;
+abstract class $ChangeAppPage$CopyWith<$Res> implements $ChangeAppPageCopyWith<$Res> {
+  factory $ChangeAppPage$CopyWith(ChangeAppPage$ value, $Res Function(ChangeAppPage$) then) =
+      _$ChangeAppPage$CopyWithImpl<$Res>;
   @override
   $Res call({AppPage page});
 }
 
 /// @nodoc
-class __$$ChangeAppPage$CopyWithImpl<$Res> extends _$ChangeAppPageCopyWithImpl<$Res>
-    implements _$$ChangeAppPage$CopyWith<$Res> {
-  __$$ChangeAppPage$CopyWithImpl(_$ChangeAppPage$ _value, $Res Function(_$ChangeAppPage$) _then)
-      : super(_value, (v) => _then(v as _$ChangeAppPage$));
+class _$ChangeAppPage$CopyWithImpl<$Res> extends _$ChangeAppPageCopyWithImpl<$Res>
+    implements $ChangeAppPage$CopyWith<$Res> {
+  _$ChangeAppPage$CopyWithImpl(ChangeAppPage$ _value, $Res Function(ChangeAppPage$) _then)
+      : super(_value, (v) => _then(v as ChangeAppPage$));
 
   @override
-  _$ChangeAppPage$ get _value => super._value as _$ChangeAppPage$;
+  ChangeAppPage$ get _value => super._value as ChangeAppPage$;
 
   @override
   $Res call({
     Object? page = freezed,
   }) {
-    return _then(_$ChangeAppPage$(
+    return _then(ChangeAppPage$(
       page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -97,7 +111,7 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ChangeAppPage$ &&
+            other is ChangeAppPage$ &&
             const DeepCollectionEquality().equals(other.page, page));
   }
 
@@ -106,23 +120,53 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
 
   @JsonKey(ignore: true)
   @override
-  _$$ChangeAppPage$CopyWith<_$ChangeAppPage$> get copyWith =>
-      __$$ChangeAppPage$CopyWithImpl<_$ChangeAppPage$>(this, _$identity);
+  $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith =>
+      _$ChangeAppPage$CopyWithImpl<ChangeAppPage$>(this, _$identity);
 }
 
 abstract class ChangeAppPage$ implements ChangeAppPage {
-  const factory ChangeAppPage$(final AppPage page) = _$ChangeAppPage$;
+  const factory ChangeAppPage$(AppPage page) = _$ChangeAppPage$;
 
   @override
-  AppPage get page => throw _privateConstructorUsedError;
+  AppPage get page;
   @override
   @JsonKey(ignore: true)
-  _$$ChangeAppPage$CopyWith<_$ChangeAppPage$> get copyWith => throw _privateConstructorUsedError;
+  $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SetEditingTearOff {
+  const _$SetEditingTearOff();
+
+  SetEditingStart start({required bool editing, String pendingId = _kSetEditingPendingId}) {
+    return SetEditingStart(
+      editing: editing,
+      pendingId: pendingId,
+    );
+  }
+
+  SetEditingSuccessful successful([String pendingId = _kSetEditingPendingId]) {
+    return SetEditingSuccessful(
+      pendingId,
+    );
+  }
+
+  SetEditingError error(Object error, StackTrace stackTrace, [String pendingId = _kSetEditingPendingId]) {
+    return SetEditingError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $SetEditing = _$SetEditingTearOff();
 
 /// @nodoc
 mixin _$SetEditing {
   String get pendingId => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(bool editing, String pendingId) start,
@@ -200,28 +244,28 @@ class _$SetEditingCopyWithImpl<$Res> implements $SetEditingCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$SetEditingStartCopyWith<$Res> implements $SetEditingCopyWith<$Res> {
-  factory _$$SetEditingStartCopyWith(_$SetEditingStart value, $Res Function(_$SetEditingStart) then) =
-      __$$SetEditingStartCopyWithImpl<$Res>;
+abstract class $SetEditingStartCopyWith<$Res> implements $SetEditingCopyWith<$Res> {
+  factory $SetEditingStartCopyWith(SetEditingStart value, $Res Function(SetEditingStart) then) =
+      _$SetEditingStartCopyWithImpl<$Res>;
   @override
   $Res call({bool editing, String pendingId});
 }
 
 /// @nodoc
-class __$$SetEditingStartCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Res>
-    implements _$$SetEditingStartCopyWith<$Res> {
-  __$$SetEditingStartCopyWithImpl(_$SetEditingStart _value, $Res Function(_$SetEditingStart) _then)
-      : super(_value, (v) => _then(v as _$SetEditingStart));
+class _$SetEditingStartCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Res>
+    implements $SetEditingStartCopyWith<$Res> {
+  _$SetEditingStartCopyWithImpl(SetEditingStart _value, $Res Function(SetEditingStart) _then)
+      : super(_value, (v) => _then(v as SetEditingStart));
 
   @override
-  _$SetEditingStart get _value => super._value as _$SetEditingStart;
+  SetEditingStart get _value => super._value as SetEditingStart;
 
   @override
   $Res call({
     Object? editing = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$SetEditingStart(
+    return _then(SetEditingStart(
       editing: editing == freezed
           ? _value.editing
           : editing // ignore: cast_nullable_to_non_nullable
@@ -236,13 +280,14 @@ class __$$SetEditingStartCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Re
 
 /// @nodoc
 
+@Implements<ActionStart>()
 class _$SetEditingStart implements SetEditingStart {
   const _$SetEditingStart({required this.editing, this.pendingId = _kSetEditingPendingId});
 
   @override
   final bool editing;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -254,7 +299,7 @@ class _$SetEditingStart implements SetEditingStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetEditingStart &&
+            other is SetEditingStart &&
             const DeepCollectionEquality().equals(other.editing, editing) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -265,8 +310,8 @@ class _$SetEditingStart implements SetEditingStart {
 
   @JsonKey(ignore: true)
   @override
-  _$$SetEditingStartCopyWith<_$SetEditingStart> get copyWith =>
-      __$$SetEditingStartCopyWithImpl<_$SetEditingStart>(this, _$identity);
+  $SetEditingStartCopyWith<SetEditingStart> get copyWith =>
+      _$SetEditingStartCopyWithImpl<SetEditingStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -338,38 +383,38 @@ class _$SetEditingStart implements SetEditingStart {
 }
 
 abstract class SetEditingStart implements SetEditing, ActionStart {
-  const factory SetEditingStart({required final bool editing, final String pendingId}) = _$SetEditingStart;
+  const factory SetEditingStart({required bool editing, String pendingId}) = _$SetEditingStart;
 
-  bool get editing => throw _privateConstructorUsedError;
+  bool get editing;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SetEditingStartCopyWith<_$SetEditingStart> get copyWith => throw _privateConstructorUsedError;
+  $SetEditingStartCopyWith<SetEditingStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetEditingSuccessfulCopyWith<$Res> implements $SetEditingCopyWith<$Res> {
-  factory _$$SetEditingSuccessfulCopyWith(_$SetEditingSuccessful value, $Res Function(_$SetEditingSuccessful) then) =
-      __$$SetEditingSuccessfulCopyWithImpl<$Res>;
+abstract class $SetEditingSuccessfulCopyWith<$Res> implements $SetEditingCopyWith<$Res> {
+  factory $SetEditingSuccessfulCopyWith(SetEditingSuccessful value, $Res Function(SetEditingSuccessful) then) =
+      _$SetEditingSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class __$$SetEditingSuccessfulCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Res>
-    implements _$$SetEditingSuccessfulCopyWith<$Res> {
-  __$$SetEditingSuccessfulCopyWithImpl(_$SetEditingSuccessful _value, $Res Function(_$SetEditingSuccessful) _then)
-      : super(_value, (v) => _then(v as _$SetEditingSuccessful));
+class _$SetEditingSuccessfulCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Res>
+    implements $SetEditingSuccessfulCopyWith<$Res> {
+  _$SetEditingSuccessfulCopyWithImpl(SetEditingSuccessful _value, $Res Function(SetEditingSuccessful) _then)
+      : super(_value, (v) => _then(v as SetEditingSuccessful));
 
   @override
-  _$SetEditingSuccessful get _value => super._value as _$SetEditingSuccessful;
+  SetEditingSuccessful get _value => super._value as SetEditingSuccessful;
 
   @override
   $Res call({
     Object? pendingId = freezed,
   }) {
-    return _then(_$SetEditingSuccessful(
+    return _then(SetEditingSuccessful(
       pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -380,11 +425,12 @@ class __$$SetEditingSuccessfulCopyWithImpl<$Res> extends _$SetEditingCopyWithImp
 
 /// @nodoc
 
+@Implements<ActionDone>()
 class _$SetEditingSuccessful implements SetEditingSuccessful {
   const _$SetEditingSuccessful([this.pendingId = _kSetEditingPendingId]);
 
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -396,7 +442,7 @@ class _$SetEditingSuccessful implements SetEditingSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetEditingSuccessful &&
+            other is SetEditingSuccessful &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
@@ -405,8 +451,8 @@ class _$SetEditingSuccessful implements SetEditingSuccessful {
 
   @JsonKey(ignore: true)
   @override
-  _$$SetEditingSuccessfulCopyWith<_$SetEditingSuccessful> get copyWith =>
-      __$$SetEditingSuccessfulCopyWithImpl<_$SetEditingSuccessful>(this, _$identity);
+  $SetEditingSuccessfulCopyWith<SetEditingSuccessful> get copyWith =>
+      _$SetEditingSuccessfulCopyWithImpl<SetEditingSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -478,31 +524,31 @@ class _$SetEditingSuccessful implements SetEditingSuccessful {
 }
 
 abstract class SetEditingSuccessful implements SetEditing, ActionDone {
-  const factory SetEditingSuccessful([final String pendingId]) = _$SetEditingSuccessful;
+  const factory SetEditingSuccessful([String pendingId]) = _$SetEditingSuccessful;
 
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SetEditingSuccessfulCopyWith<_$SetEditingSuccessful> get copyWith => throw _privateConstructorUsedError;
+  $SetEditingSuccessfulCopyWith<SetEditingSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetEditingErrorCopyWith<$Res> implements $SetEditingCopyWith<$Res> {
-  factory _$$SetEditingErrorCopyWith(_$SetEditingError value, $Res Function(_$SetEditingError) then) =
-      __$$SetEditingErrorCopyWithImpl<$Res>;
+abstract class $SetEditingErrorCopyWith<$Res> implements $SetEditingCopyWith<$Res> {
+  factory $SetEditingErrorCopyWith(SetEditingError value, $Res Function(SetEditingError) then) =
+      _$SetEditingErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class __$$SetEditingErrorCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Res>
-    implements _$$SetEditingErrorCopyWith<$Res> {
-  __$$SetEditingErrorCopyWithImpl(_$SetEditingError _value, $Res Function(_$SetEditingError) _then)
-      : super(_value, (v) => _then(v as _$SetEditingError));
+class _$SetEditingErrorCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Res>
+    implements $SetEditingErrorCopyWith<$Res> {
+  _$SetEditingErrorCopyWithImpl(SetEditingError _value, $Res Function(SetEditingError) _then)
+      : super(_value, (v) => _then(v as SetEditingError));
 
   @override
-  _$SetEditingError get _value => super._value as _$SetEditingError;
+  SetEditingError get _value => super._value as SetEditingError;
 
   @override
   $Res call({
@@ -510,7 +556,7 @@ class __$$SetEditingErrorCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Re
     Object? stackTrace = freezed,
     Object? pendingId = freezed,
   }) {
-    return _then(_$SetEditingError(
+    return _then(SetEditingError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -529,6 +575,8 @@ class __$$SetEditingErrorCopyWithImpl<$Res> extends _$SetEditingCopyWithImpl<$Re
 
 /// @nodoc
 
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
 class _$SetEditingError implements SetEditingError {
   const _$SetEditingError(this.error, this.stackTrace, [this.pendingId = _kSetEditingPendingId]);
 
@@ -536,8 +584,8 @@ class _$SetEditingError implements SetEditingError {
   final Object error;
   @override
   final StackTrace stackTrace;
-  @override
   @JsonKey()
+  @override
   final String pendingId;
 
   @override
@@ -549,7 +597,7 @@ class _$SetEditingError implements SetEditingError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetEditingError &&
+            other is SetEditingError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
@@ -561,8 +609,8 @@ class _$SetEditingError implements SetEditingError {
 
   @JsonKey(ignore: true)
   @override
-  _$$SetEditingErrorCopyWith<_$SetEditingError> get copyWith =>
-      __$$SetEditingErrorCopyWithImpl<_$SetEditingError>(this, _$identity);
+  $SetEditingErrorCopyWith<SetEditingError> get copyWith =>
+      _$SetEditingErrorCopyWithImpl<SetEditingError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -634,17 +682,42 @@ class _$SetEditingError implements SetEditingError {
 }
 
 abstract class SetEditingError implements SetEditing, ActionDone, ErrorAction {
-  const factory SetEditingError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
-      _$SetEditingError;
+  const factory SetEditingError(Object error, StackTrace stackTrace, [String pendingId]) = _$SetEditingError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @override
-  String get pendingId => throw _privateConstructorUsedError;
+  String get pendingId;
   @override
   @JsonKey(ignore: true)
-  _$$SetEditingErrorCopyWith<_$SetEditingError> get copyWith => throw _privateConstructorUsedError;
+  $SetEditingErrorCopyWith<SetEditingError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SelectItemDetailsTearOff {
+  const _$SelectItemDetailsTearOff();
+
+  SelectItemDetailsStart call(String id, ActionResult onResult) {
+    return SelectItemDetailsStart(
+      id,
+      onResult,
+    );
+  }
+
+  SelectItemDetailsSuccessful successful() {
+    return const SelectItemDetailsSuccessful();
+  }
+
+  SelectItemDetailsError error(Object error, StackTrace stackTrace) {
+    return SelectItemDetailsError(
+      error,
+      stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $SelectItemDetails = _$SelectItemDetailsTearOff();
 
 /// @nodoc
 mixin _$SelectItemDetails {
@@ -710,28 +783,27 @@ class _$SelectItemDetailsCopyWithImpl<$Res> implements $SelectItemDetailsCopyWit
 }
 
 /// @nodoc
-abstract class _$$SelectItemDetailsStartCopyWith<$Res> {
-  factory _$$SelectItemDetailsStartCopyWith(
-          _$SelectItemDetailsStart value, $Res Function(_$SelectItemDetailsStart) then) =
-      __$$SelectItemDetailsStartCopyWithImpl<$Res>;
+abstract class $SelectItemDetailsStartCopyWith<$Res> {
+  factory $SelectItemDetailsStartCopyWith(SelectItemDetailsStart value, $Res Function(SelectItemDetailsStart) then) =
+      _$SelectItemDetailsStartCopyWithImpl<$Res>;
   $Res call({String id, ActionResult onResult});
 }
 
 /// @nodoc
-class __$$SelectItemDetailsStartCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
-    implements _$$SelectItemDetailsStartCopyWith<$Res> {
-  __$$SelectItemDetailsStartCopyWithImpl(_$SelectItemDetailsStart _value, $Res Function(_$SelectItemDetailsStart) _then)
-      : super(_value, (v) => _then(v as _$SelectItemDetailsStart));
+class _$SelectItemDetailsStartCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetailsStartCopyWith<$Res> {
+  _$SelectItemDetailsStartCopyWithImpl(SelectItemDetailsStart _value, $Res Function(SelectItemDetailsStart) _then)
+      : super(_value, (v) => _then(v as SelectItemDetailsStart));
 
   @override
-  _$SelectItemDetailsStart get _value => super._value as _$SelectItemDetailsStart;
+  SelectItemDetailsStart get _value => super._value as SelectItemDetailsStart;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? onResult = freezed,
   }) {
-    return _then(_$SelectItemDetailsStart(
+    return _then(SelectItemDetailsStart(
       id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -763,7 +835,7 @@ class _$SelectItemDetailsStart implements SelectItemDetailsStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectItemDetailsStart &&
+            other is SelectItemDetailsStart &&
             const DeepCollectionEquality().equals(other.id, id) &&
             (identical(other.onResult, onResult) || other.onResult == onResult));
   }
@@ -773,8 +845,8 @@ class _$SelectItemDetailsStart implements SelectItemDetailsStart {
 
   @JsonKey(ignore: true)
   @override
-  _$$SelectItemDetailsStartCopyWith<_$SelectItemDetailsStart> get copyWith =>
-      __$$SelectItemDetailsStartCopyWithImpl<_$SelectItemDetailsStart>(this, _$identity);
+  $SelectItemDetailsStartCopyWith<SelectItemDetailsStart> get copyWith =>
+      _$SelectItemDetailsStartCopyWithImpl<SelectItemDetailsStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -846,30 +918,30 @@ class _$SelectItemDetailsStart implements SelectItemDetailsStart {
 }
 
 abstract class SelectItemDetailsStart implements SelectItemDetails {
-  const factory SelectItemDetailsStart(final String id, final ActionResult onResult) = _$SelectItemDetailsStart;
+  const factory SelectItemDetailsStart(String id, ActionResult onResult) = _$SelectItemDetailsStart;
 
-  String get id => throw _privateConstructorUsedError;
-  ActionResult get onResult => throw _privateConstructorUsedError;
+  String get id;
+  ActionResult get onResult;
   @JsonKey(ignore: true)
-  _$$SelectItemDetailsStartCopyWith<_$SelectItemDetailsStart> get copyWith => throw _privateConstructorUsedError;
+  $SelectItemDetailsStartCopyWith<SelectItemDetailsStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SelectItemDetailsSuccessfulCopyWith<$Res> {
-  factory _$$SelectItemDetailsSuccessfulCopyWith(
-          _$SelectItemDetailsSuccessful value, $Res Function(_$SelectItemDetailsSuccessful) then) =
-      __$$SelectItemDetailsSuccessfulCopyWithImpl<$Res>;
+abstract class $SelectItemDetailsSuccessfulCopyWith<$Res> {
+  factory $SelectItemDetailsSuccessfulCopyWith(
+          SelectItemDetailsSuccessful value, $Res Function(SelectItemDetailsSuccessful) then) =
+      _$SelectItemDetailsSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SelectItemDetailsSuccessfulCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
-    implements _$$SelectItemDetailsSuccessfulCopyWith<$Res> {
-  __$$SelectItemDetailsSuccessfulCopyWithImpl(
-      _$SelectItemDetailsSuccessful _value, $Res Function(_$SelectItemDetailsSuccessful) _then)
-      : super(_value, (v) => _then(v as _$SelectItemDetailsSuccessful));
+class _$SelectItemDetailsSuccessfulCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetailsSuccessfulCopyWith<$Res> {
+  _$SelectItemDetailsSuccessfulCopyWithImpl(
+      SelectItemDetailsSuccessful _value, $Res Function(SelectItemDetailsSuccessful) _then)
+      : super(_value, (v) => _then(v as SelectItemDetailsSuccessful));
 
   @override
-  _$SelectItemDetailsSuccessful get _value => super._value as _$SelectItemDetailsSuccessful;
+  SelectItemDetailsSuccessful get _value => super._value as SelectItemDetailsSuccessful;
 }
 
 /// @nodoc
@@ -884,7 +956,7 @@ class _$SelectItemDetailsSuccessful implements SelectItemDetailsSuccessful {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SelectItemDetailsSuccessful);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is SelectItemDetailsSuccessful);
   }
 
   @override
@@ -964,28 +1036,27 @@ abstract class SelectItemDetailsSuccessful implements SelectItemDetails {
 }
 
 /// @nodoc
-abstract class _$$SelectItemDetailsErrorCopyWith<$Res> {
-  factory _$$SelectItemDetailsErrorCopyWith(
-          _$SelectItemDetailsError value, $Res Function(_$SelectItemDetailsError) then) =
-      __$$SelectItemDetailsErrorCopyWithImpl<$Res>;
+abstract class $SelectItemDetailsErrorCopyWith<$Res> {
+  factory $SelectItemDetailsErrorCopyWith(SelectItemDetailsError value, $Res Function(SelectItemDetailsError) then) =
+      _$SelectItemDetailsErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$SelectItemDetailsErrorCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
-    implements _$$SelectItemDetailsErrorCopyWith<$Res> {
-  __$$SelectItemDetailsErrorCopyWithImpl(_$SelectItemDetailsError _value, $Res Function(_$SelectItemDetailsError) _then)
-      : super(_value, (v) => _then(v as _$SelectItemDetailsError));
+class _$SelectItemDetailsErrorCopyWithImpl<$Res> extends _$SelectItemDetailsCopyWithImpl<$Res>
+    implements $SelectItemDetailsErrorCopyWith<$Res> {
+  _$SelectItemDetailsErrorCopyWithImpl(SelectItemDetailsError _value, $Res Function(SelectItemDetailsError) _then)
+      : super(_value, (v) => _then(v as SelectItemDetailsError));
 
   @override
-  _$SelectItemDetailsError get _value => super._value as _$SelectItemDetailsError;
+  SelectItemDetailsError get _value => super._value as SelectItemDetailsError;
 
   @override
   $Res call({
     Object? error = freezed,
     Object? stackTrace = freezed,
   }) {
-    return _then(_$SelectItemDetailsError(
+    return _then(SelectItemDetailsError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1000,6 +1071,7 @@ class __$$SelectItemDetailsErrorCopyWithImpl<$Res> extends _$SelectItemDetailsCo
 
 /// @nodoc
 
+@Implements<ErrorAction>()
 class _$SelectItemDetailsError implements SelectItemDetailsError {
   const _$SelectItemDetailsError(this.error, this.stackTrace);
 
@@ -1017,7 +1089,7 @@ class _$SelectItemDetailsError implements SelectItemDetailsError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SelectItemDetailsError &&
+            other is SelectItemDetailsError &&
             const DeepCollectionEquality().equals(other.error, error) &&
             const DeepCollectionEquality().equals(other.stackTrace, stackTrace));
   }
@@ -1028,8 +1100,8 @@ class _$SelectItemDetailsError implements SelectItemDetailsError {
 
   @JsonKey(ignore: true)
   @override
-  _$$SelectItemDetailsErrorCopyWith<_$SelectItemDetailsError> get copyWith =>
-      __$$SelectItemDetailsErrorCopyWithImpl<_$SelectItemDetailsError>(this, _$identity);
+  $SelectItemDetailsErrorCopyWith<SelectItemDetailsError> get copyWith =>
+      _$SelectItemDetailsErrorCopyWithImpl<SelectItemDetailsError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1101,13 +1173,27 @@ class _$SelectItemDetailsError implements SelectItemDetailsError {
 }
 
 abstract class SelectItemDetailsError implements SelectItemDetails, ErrorAction {
-  const factory SelectItemDetailsError(final Object error, final StackTrace stackTrace) = _$SelectItemDetailsError;
+  const factory SelectItemDetailsError(Object error, StackTrace stackTrace) = _$SelectItemDetailsError;
 
-  Object get error => throw _privateConstructorUsedError;
-  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  Object get error;
+  StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  _$$SelectItemDetailsErrorCopyWith<_$SelectItemDetailsError> get copyWith => throw _privateConstructorUsedError;
+  $SelectItemDetailsErrorCopyWith<SelectItemDetailsError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$ShowPasswordTearOff {
+  const _$ShowPasswordTearOff();
+
+  ShowPassword$ call({required bool show}) {
+    return ShowPassword$(
+      show: show,
+    );
+  }
+}
+
+/// @nodoc
+const $ShowPassword = _$ShowPasswordTearOff();
 
 /// @nodoc
 mixin _$ShowPassword {
@@ -1146,27 +1232,27 @@ class _$ShowPasswordCopyWithImpl<$Res> implements $ShowPasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$ShowPassword$CopyWith<$Res> implements $ShowPasswordCopyWith<$Res> {
-  factory _$$ShowPassword$CopyWith(_$ShowPassword$ value, $Res Function(_$ShowPassword$) then) =
-      __$$ShowPassword$CopyWithImpl<$Res>;
+abstract class $ShowPassword$CopyWith<$Res> implements $ShowPasswordCopyWith<$Res> {
+  factory $ShowPassword$CopyWith(ShowPassword$ value, $Res Function(ShowPassword$) then) =
+      _$ShowPassword$CopyWithImpl<$Res>;
   @override
   $Res call({bool show});
 }
 
 /// @nodoc
-class __$$ShowPassword$CopyWithImpl<$Res> extends _$ShowPasswordCopyWithImpl<$Res>
-    implements _$$ShowPassword$CopyWith<$Res> {
-  __$$ShowPassword$CopyWithImpl(_$ShowPassword$ _value, $Res Function(_$ShowPassword$) _then)
-      : super(_value, (v) => _then(v as _$ShowPassword$));
+class _$ShowPassword$CopyWithImpl<$Res> extends _$ShowPasswordCopyWithImpl<$Res>
+    implements $ShowPassword$CopyWith<$Res> {
+  _$ShowPassword$CopyWithImpl(ShowPassword$ _value, $Res Function(ShowPassword$) _then)
+      : super(_value, (v) => _then(v as ShowPassword$));
 
   @override
-  _$ShowPassword$ get _value => super._value as _$ShowPassword$;
+  ShowPassword$ get _value => super._value as ShowPassword$;
 
   @override
   $Res call({
     Object? show = freezed,
   }) {
-    return _then(_$ShowPassword$(
+    return _then(ShowPassword$(
       show: show == freezed
           ? _value.show
           : show // ignore: cast_nullable_to_non_nullable
@@ -1192,7 +1278,7 @@ class _$ShowPassword$ implements ShowPassword$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ShowPassword$ &&
+            other is ShowPassword$ &&
             const DeepCollectionEquality().equals(other.show, show));
   }
 
@@ -1201,16 +1287,15 @@ class _$ShowPassword$ implements ShowPassword$ {
 
   @JsonKey(ignore: true)
   @override
-  _$$ShowPassword$CopyWith<_$ShowPassword$> get copyWith =>
-      __$$ShowPassword$CopyWithImpl<_$ShowPassword$>(this, _$identity);
+  $ShowPassword$CopyWith<ShowPassword$> get copyWith => _$ShowPassword$CopyWithImpl<ShowPassword$>(this, _$identity);
 }
 
 abstract class ShowPassword$ implements ShowPassword {
-  const factory ShowPassword$({required final bool show}) = _$ShowPassword$;
+  const factory ShowPassword$({required bool show}) = _$ShowPassword$;
 
   @override
-  bool get show => throw _privateConstructorUsedError;
+  bool get show;
   @override
   @JsonKey(ignore: true)
-  _$$ShowPassword$CopyWith<_$ShowPassword$> get copyWith => throw _privateConstructorUsedError;
+  $ShowPassword$CopyWith<ShowPassword$> get copyWith => throw _privateConstructorUsedError;
 }

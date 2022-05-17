@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:walman/src/utils/password_generator.dart';
 
 part 'index.freezed.dart';
 

@@ -5,6 +5,7 @@ import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/utils/password_generator.dart';
 
 class LocalEpic {
   Epic<AppState> get epics {
@@ -15,6 +16,7 @@ class LocalEpic {
       TypedEpic<AppState, EditPasswordStart>(_editPasswordStart),
       TypedEpic<AppState, DeleteCode>(_deleteCode),
       TypedEpic<AppState, SelectItemDetailsStart>(_selectItemDetailsSuccess),
+      TypedEpic<AppState, GeneratePasswordStart>(_generatePassword),
     ]);
   }
 
@@ -55,6 +57,22 @@ class LocalEpic {
           .mapTo<AppAction>(const SelectItemDetailsSuccessful())
           .onErrorReturnWith(SelectItemDetailsError.new)
           .doOnData(action.onResult);
+    });
+  }
+
+  Stream<AppAction> _generatePassword(Stream<GeneratePasswordStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((GeneratePasswordStart action) {
+      final PasswordGeneratorState state = store.state.passwordGeneratorState;
+      return Stream<void>.value(null)
+          .mapTo<AppAction>(
+            GeneratePasswordSuccessful(
+              generatePassword(
+                characterPool: state.characterPool,
+                length: state.length,
+              ),
+            ),
+          )
+          .onErrorReturnWith(GeneratePasswordError.new);
     });
   }
 }

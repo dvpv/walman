@@ -10,6 +10,7 @@ class AppState with _$AppState {
     @Default(DetailsState()) DetailsState detailsState,
     @Default(CreateCodeState()) CreateCodeState createCodeState,
     @Default(UIState()) UIState uiState,
+    @Default(PasswordGeneratorState()) PasswordGeneratorState passwordGeneratorState,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
@@ -42,4 +43,16 @@ class UIState with _$UIState {
   }) = UIState$;
 
   factory UIState.fromJson(Map<dynamic, dynamic> json) => _$UIStateFromJson(Map<String, dynamic>.from(json));
+}
+
+@freezed
+class PasswordGeneratorState with _$PasswordGeneratorState {
+  const factory PasswordGeneratorState({
+    @Default(CharacterPool.values) List<CharacterPool> characterPool,
+    @Default(16) int length,
+    @Default('') String password,
+  }) = PasswordGeneratorState$;
+
+  factory PasswordGeneratorState.fromJson(Map<dynamic, dynamic> json) =>
+      _$PasswordGeneratorStateFromJson(Map<String, dynamic>.from(json));
 }

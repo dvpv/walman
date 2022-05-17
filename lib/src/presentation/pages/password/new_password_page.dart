@@ -5,6 +5,7 @@ import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/password_generator.dart';
 import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class NewPasswordPage extends StatefulWidget {
@@ -53,6 +54,18 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
         ),
       );
       Navigator.pop(context);
+    }
+  }
+
+  Future<void> _onGenerate(BuildContext context) async {
+    final String? password = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return const PasswordGeneratorDialog();
+      },
+    );
+    if (password != null && password.isNotEmpty) {
+      _password.text = password;
     }
   }
 
@@ -175,6 +188,24 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     onFieldSubmitted: (_) {
                       FocusScope.of(context).requestFocus(_noteNode);
                     },
+                  ),
+                ),
+                Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.indigo,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: TextButton(
+                      child: const Text(
+                        'Generate password',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ),
+                      ),
+                      onPressed: () => _onGenerate(context),
+                    ),
                   ),
                 ),
                 Padding(
