@@ -8,6 +8,7 @@ import 'package:walman/src/containers/editing_container.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/password_generator.dart';
 import 'package:walman/src/presentation/pages/password/password_menu_button.dart';
 import 'package:walman/src/presentation/styles/button_styles.dart';
 
@@ -74,6 +75,18 @@ class _PasswordDetailsState extends State<PasswordDetails> {
     );
   }
 
+  Future<void> _onGenerate(BuildContext context) async {
+    final String? password = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return const PasswordGeneratorDialog();
+      },
+    );
+    if (password != null && password.isNotEmpty) {
+      _passwordController.text = password;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return UIContainer(
@@ -114,7 +127,9 @@ class _PasswordDetailsState extends State<PasswordDetails> {
                                       onPressed: () {
                                         StoreProvider.of<AppState>(context)
                                           ..dispatch(const SetEditingStart(editing: false))
-                                          ..dispatch(const ShowPassword(show: false));
+                                          ..dispatch(
+                                            const ShowPassword(show: false),
+                                          );
 
                                         Navigator.pop(context);
                                       },
@@ -292,6 +307,25 @@ class _PasswordDetailsState extends State<PasswordDetails> {
                                 ),
                               ),
                             ),
+                            if (editing)
+                              Center(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.indigo,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: TextButton(
+                                    child: const Text(
+                                      'Generate password',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    onPressed: () => _onGenerate(context),
+                                  ),
+                                ),
+                              ),
                             if (editing || _password.note != '')
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 16),
