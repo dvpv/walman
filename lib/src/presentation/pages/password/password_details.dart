@@ -76,6 +76,7 @@ class _PasswordDetailsState extends State<PasswordDetails> {
   }
 
   Future<void> _onGenerate(BuildContext context) async {
+    StoreProvider.of<AppState>(context).dispatch(const GeneratePasswordStart());
     final String? password = await showDialog<String>(
       context: context,
       builder: (BuildContext context) {
