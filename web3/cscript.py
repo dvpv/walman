@@ -21,9 +21,6 @@ def main() -> None:
         option: str = sys.argv[1]
         print(os.getcwd())
 
-
-
-
         if option == "build":
             build("BundleStorage.sol")
         elif option == "deploy":
