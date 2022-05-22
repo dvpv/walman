@@ -10,10 +10,8 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 CONTRACTS_PATH: str = "./contracts"
 BUILD_PATH: str = "./build"
 CONFIG_PATH: str = "config.json"
-PRIVATE_CONFIG_PATH: str = "private_config.json"
 
 config: dict = read_json(CONFIG_PATH)
-private_config: dict = read_json(PRIVATE_CONFIG_PATH)
 
 
 def main() -> None:

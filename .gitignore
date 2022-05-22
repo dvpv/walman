@@ -51,9 +51,6 @@ app.*.map.json
 # VS Code
 .vscode
 
-# Private Blockchain related data secrets
-/web3/private_config.json
-
 # Blockchain build
 /web3/build
 *__pycache__*
