@@ -54,6 +54,7 @@ def build(contract_name: str) -> dict:
         solc_version=config["solidity_version"],
     )
     print(config["solidity_version"])
+    os.makedirs(BUILD_PATH, exist_ok=True)
     with open(f"{BUILD_PATH}/{contract_name.replace('.sol','.json')}", "w") as file:
         json.dump(compiled_sol, file, indent=2)
 
