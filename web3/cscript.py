@@ -5,6 +5,8 @@ import os
 
 from utils.functions import read_json
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 CONTRACTS_PATH: str = "./contracts"
 BUILD_PATH: str = "./build"
 CONFIG_PATH: str = "config.json"
@@ -17,6 +19,11 @@ private_config: dict = read_json(PRIVATE_CONFIG_PATH)
 def main() -> None:
     if len(sys.argv) >= 2:
         option: str = sys.argv[1]
+        print(os.getcwd())
+
+
+
+
         if option == "build":
             build("BundleStorage.sol")
         elif option == "deploy":
@@ -57,10 +64,7 @@ def build(contract_name: str) -> dict:
 
 
 def deploy(contract_name: str) -> None:
-    compiled_sol = build(contract_name)
-    bytecode = compiled_sol["contracts"][contract_name][
-        contract_name.replace(".sol", "")
-    ]["evm"]["bytecode"]["object"]
+    pass
 
 
 main()
