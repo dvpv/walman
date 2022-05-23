@@ -119,6 +119,24 @@ Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
       'codes': instance.codes,
     };
 
+_$BlockchainBundle$ _$$BlockchainBundle$FromJson(Map<String, dynamic> json) => _$BlockchainBundle$(
+      bundle: Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
+      storedAt: DateTime.parse(json['storedAt'] as String),
+    );
+
+Map<String, dynamic> _$$BlockchainBundle$ToJson(_$BlockchainBundle$ instance) => <String, dynamic>{
+      'bundle': instance.bundle,
+      'storedAt': instance.storedAt.toIso8601String(),
+    };
+
+_$BlockchainVault$ _$$BlockchainVault$FromJson(Map<String, dynamic> json) => _$BlockchainVault$(
+      bundles: (json['bundles'] as List<dynamic>).map((e) => Bundle.fromJson(e as Map<String, dynamic>)).toList(),
+    );
+
+Map<String, dynamic> _$$BlockchainVault$ToJson(_$BlockchainVault$ instance) => <String, dynamic>{
+      'bundles': instance.bundles,
+    };
+
 _$Password$ _$$Password$FromJson(Map<String, dynamic> json) => _$Password$(
       id: json['id'] as String,
       title: json['title'] as String,
@@ -180,3 +198,13 @@ const _$BarcodeFormatEnumMap = {
   BarcodeFormat.pdf417: 'pdf417',
   BarcodeFormat.aztec: 'aztec',
 };
+
+_$Secret$ _$$Secret$FromJson(Map<String, dynamic> json) => _$Secret$(
+      walletPrivateKey: json['walletPrivateKey'] as String,
+      walletPublicKey: json['walletPublicKey'] as String,
+    );
+
+Map<String, dynamic> _$$Secret$ToJson(_$Secret$ instance) => <String, dynamic>{
+      'walletPrivateKey': instance.walletPrivateKey,
+      'walletPublicKey': instance.walletPublicKey,
+    };

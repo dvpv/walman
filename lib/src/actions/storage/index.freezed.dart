@@ -1151,3 +1151,579 @@ abstract class StoreDataError implements StoreData, ActionDone, ErrorAction {
   @JsonKey(ignore: true)
   $StoreDataErrorCopyWith<StoreDataError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$BlockchainAddBundleTearOff {
+  const _$BlockchainAddBundleTearOff();
+
+  BlockchainAddBundleStart start({required Bundle bundle, String pendingId = _kBlockchainAddBundlePendingId}) {
+    return BlockchainAddBundleStart(
+      bundle: bundle,
+      pendingId: pendingId,
+    );
+  }
+
+  BlockchainAddBundleSuccessful successful([String pendingId = _kBlockchainAddBundlePendingId]) {
+    return BlockchainAddBundleSuccessful(
+      pendingId,
+    );
+  }
+
+  BlockchainAddBundleError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kBlockchainAddBundlePendingId]) {
+    return BlockchainAddBundleError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $BlockchainAddBundle = _$BlockchainAddBundleTearOff();
+
+/// @nodoc
+mixin _$BlockchainAddBundle {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainAddBundleStart value) start,
+    required TResult Function(BlockchainAddBundleSuccessful value) successful,
+    required TResult Function(BlockchainAddBundleError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BlockchainAddBundleCopyWith<BlockchainAddBundle> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainAddBundleCopyWith<$Res> {
+  factory $BlockchainAddBundleCopyWith(BlockchainAddBundle value, $Res Function(BlockchainAddBundle) then) =
+      _$BlockchainAddBundleCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainAddBundleCopyWithImpl<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
+  _$BlockchainAddBundleCopyWithImpl(this._value, this._then);
+
+  final BlockchainAddBundle _value;
+  // ignore: unused_field
+  final $Res Function(BlockchainAddBundle) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $BlockchainAddBundleStartCopyWith<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
+  factory $BlockchainAddBundleStartCopyWith(
+          BlockchainAddBundleStart value, $Res Function(BlockchainAddBundleStart) then) =
+      _$BlockchainAddBundleStartCopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle, String pendingId});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$BlockchainAddBundleStartCopyWithImpl<$Res> extends _$BlockchainAddBundleCopyWithImpl<$Res>
+    implements $BlockchainAddBundleStartCopyWith<$Res> {
+  _$BlockchainAddBundleStartCopyWithImpl(BlockchainAddBundleStart _value, $Res Function(BlockchainAddBundleStart) _then)
+      : super(_value, (v) => _then(v as BlockchainAddBundleStart));
+
+  @override
+  BlockchainAddBundleStart get _value => super._value as BlockchainAddBundleStart;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainAddBundleStart(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
+  const _$BlockchainAddBundleStart({required this.bundle, this.pendingId = _kBlockchainAddBundlePendingId});
+
+  @override
+  final Bundle bundle;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainAddBundle.start(bundle: $bundle, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainAddBundleStart &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainAddBundleStartCopyWith<BlockchainAddBundleStart> get copyWith =>
+      _$BlockchainAddBundleStartCopyWithImpl<BlockchainAddBundleStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(bundle, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainAddBundleStart value) start,
+    required TResult Function(BlockchainAddBundleSuccessful value) successful,
+    required TResult Function(BlockchainAddBundleError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainAddBundleStart implements BlockchainAddBundle, ActionStart {
+  const factory BlockchainAddBundleStart({required Bundle bundle, String pendingId}) = _$BlockchainAddBundleStart;
+
+  Bundle get bundle;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainAddBundleStartCopyWith<BlockchainAddBundleStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainAddBundleSuccessfulCopyWith<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
+  factory $BlockchainAddBundleSuccessfulCopyWith(
+          BlockchainAddBundleSuccessful value, $Res Function(BlockchainAddBundleSuccessful) then) =
+      _$BlockchainAddBundleSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainAddBundleSuccessfulCopyWithImpl<$Res> extends _$BlockchainAddBundleCopyWithImpl<$Res>
+    implements $BlockchainAddBundleSuccessfulCopyWith<$Res> {
+  _$BlockchainAddBundleSuccessfulCopyWithImpl(
+      BlockchainAddBundleSuccessful _value, $Res Function(BlockchainAddBundleSuccessful) _then)
+      : super(_value, (v) => _then(v as BlockchainAddBundleSuccessful));
+
+  @override
+  BlockchainAddBundleSuccessful get _value => super._value as BlockchainAddBundleSuccessful;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainAddBundleSuccessful(
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
+  const _$BlockchainAddBundleSuccessful([this.pendingId = _kBlockchainAddBundlePendingId]);
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainAddBundle.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainAddBundleSuccessful &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainAddBundleSuccessfulCopyWith<BlockchainAddBundleSuccessful> get copyWith =>
+      _$BlockchainAddBundleSuccessfulCopyWithImpl<BlockchainAddBundleSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainAddBundleStart value) start,
+    required TResult Function(BlockchainAddBundleSuccessful value) successful,
+    required TResult Function(BlockchainAddBundleError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainAddBundleSuccessful implements BlockchainAddBundle, ActionDone {
+  const factory BlockchainAddBundleSuccessful([String pendingId]) = _$BlockchainAddBundleSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainAddBundleSuccessfulCopyWith<BlockchainAddBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainAddBundleErrorCopyWith<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
+  factory $BlockchainAddBundleErrorCopyWith(
+          BlockchainAddBundleError value, $Res Function(BlockchainAddBundleError) then) =
+      _$BlockchainAddBundleErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainAddBundleErrorCopyWithImpl<$Res> extends _$BlockchainAddBundleCopyWithImpl<$Res>
+    implements $BlockchainAddBundleErrorCopyWith<$Res> {
+  _$BlockchainAddBundleErrorCopyWithImpl(BlockchainAddBundleError _value, $Res Function(BlockchainAddBundleError) _then)
+      : super(_value, (v) => _then(v as BlockchainAddBundleError));
+
+  @override
+  BlockchainAddBundleError get _value => super._value as BlockchainAddBundleError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainAddBundleError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$BlockchainAddBundleError implements BlockchainAddBundleError {
+  const _$BlockchainAddBundleError(this.error, this.stackTrace, [this.pendingId = _kBlockchainAddBundlePendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainAddBundle.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainAddBundleError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainAddBundleErrorCopyWith<BlockchainAddBundleError> get copyWith =>
+      _$BlockchainAddBundleErrorCopyWithImpl<BlockchainAddBundleError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainAddBundleStart value) start,
+    required TResult Function(BlockchainAddBundleSuccessful value) successful,
+    required TResult Function(BlockchainAddBundleError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainAddBundleStart value)? start,
+    TResult Function(BlockchainAddBundleSuccessful value)? successful,
+    TResult Function(BlockchainAddBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainAddBundleError implements BlockchainAddBundle, ActionDone, ErrorAction {
+  const factory BlockchainAddBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$BlockchainAddBundleError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainAddBundleErrorCopyWith<BlockchainAddBundleError> get copyWith => throw _privateConstructorUsedError;
+}

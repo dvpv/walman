@@ -1,0 +1,90 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "content",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "createdAt",
+        "type": "string"
+      }
+    ],
+    "name": "addBundle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLatestBundle",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "content",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "createdAt",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct BundleStorage.Bundle",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getVault",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "content",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "createdAt",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct BundleStorage.Bundle[]",
+            "name": "bundles",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct BundleStorage.Vault",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      }
+    ],
+    "name": "removeBundle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

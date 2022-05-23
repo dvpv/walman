@@ -52,5 +52,7 @@ app.*.map.json
 .vscode
 
 # Blockchain build
-/web3/build
 *__pycache__*
+
+# App secrets
+lib/secrets.json

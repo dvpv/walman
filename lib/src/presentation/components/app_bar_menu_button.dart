@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/actions/local/index.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/password_generator.dart';
 
 enum _MenuOptions {
   logout,
   generator,
+  saveToBlockchain,
 }
 
 class AppBarMenuButton extends StatelessWidget {
@@ -30,6 +32,10 @@ class AppBarMenuButton extends StatelessWidget {
               },
             );
             break;
+          case _MenuOptions.saveToBlockchain:
+            // TODO(dvpv): change bundle with the one form state
+            StoreProvider.of<AppState>(context).dispatch(const BlockchainAddBundleStart(bundle: Bundle()));
+            break;
         }
       },
       icon: const Icon(
@@ -37,6 +43,14 @@ class AppBarMenuButton extends StatelessWidget {
         color: Colors.black,
       ),
       itemBuilder: (BuildContext context) => <PopupMenuEntry<_MenuOptions>>[
+        const PopupMenuItem<_MenuOptions>(
+          value: _MenuOptions.saveToBlockchain,
+          child: ListTile(
+            title: Text(
+              'Save to blockchain',
+            ),
+          ),
+        ),
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.generator,
           child: ListTile(

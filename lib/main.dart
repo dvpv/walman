@@ -8,6 +8,7 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/data/auth/firebase_auth_api.dart';
+import 'package:walman/src/data/storage/blockchain_storage_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
@@ -29,8 +30,10 @@ Future<void> main() async {
   const FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
   final FirebaseAuthApi authApi = FirebaseAuthApi(auth);
-  final SecureStorageApi storageApi = SecureStorageApi(secureStorage);
-  final AppEpic epic = AppEpic(authApi, storageApi);
+  final SecureStorageApi secureStorageApi = SecureStorageApi(secureStorage);
+  final BlockchainStorageApi blockchainStorageApi = await BlockchainStorageApi.build;
+  final AppEpic epic =
+      AppEpic(authApi: authApi, secureStorageApi: secureStorageApi, blockchainStorageApi: blockchainStorageApi);
 
   final Store<AppState> store = Store<AppState>(
     reducer,

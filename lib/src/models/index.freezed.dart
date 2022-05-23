@@ -1439,6 +1439,312 @@ abstract class Bundle$ implements Bundle {
   $Bundle$CopyWith<Bundle$> get copyWith => throw _privateConstructorUsedError;
 }
 
+BlockchainBundle _$BlockchainBundleFromJson(Map<String, dynamic> json) {
+  return BlockchainBundle$.fromJson(json);
+}
+
+/// @nodoc
+class _$BlockchainBundleTearOff {
+  const _$BlockchainBundleTearOff();
+
+  BlockchainBundle$ call({required Bundle bundle, required DateTime storedAt}) {
+    return BlockchainBundle$(
+      bundle: bundle,
+      storedAt: storedAt,
+    );
+  }
+
+  BlockchainBundle fromJson(Map<String, Object?> json) {
+    return BlockchainBundle.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $BlockchainBundle = _$BlockchainBundleTearOff();
+
+/// @nodoc
+mixin _$BlockchainBundle {
+  Bundle get bundle => throw _privateConstructorUsedError;
+  DateTime get storedAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BlockchainBundleCopyWith<BlockchainBundle> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainBundleCopyWith<$Res> {
+  factory $BlockchainBundleCopyWith(BlockchainBundle value, $Res Function(BlockchainBundle) then) =
+      _$BlockchainBundleCopyWithImpl<$Res>;
+  $Res call({Bundle bundle, DateTime storedAt});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$BlockchainBundleCopyWithImpl<$Res> implements $BlockchainBundleCopyWith<$Res> {
+  _$BlockchainBundleCopyWithImpl(this._value, this._then);
+
+  final BlockchainBundle _value;
+  // ignore: unused_field
+  final $Res Function(BlockchainBundle) _then;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? storedAt = freezed,
+  }) {
+    return _then(_value.copyWith(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      storedAt: storedAt == freezed
+          ? _value.storedAt
+          : storedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $BlockchainBundle$CopyWith<$Res> implements $BlockchainBundleCopyWith<$Res> {
+  factory $BlockchainBundle$CopyWith(BlockchainBundle$ value, $Res Function(BlockchainBundle$) then) =
+      _$BlockchainBundle$CopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle, DateTime storedAt});
+
+  @override
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$BlockchainBundle$CopyWithImpl<$Res> extends _$BlockchainBundleCopyWithImpl<$Res>
+    implements $BlockchainBundle$CopyWith<$Res> {
+  _$BlockchainBundle$CopyWithImpl(BlockchainBundle$ _value, $Res Function(BlockchainBundle$) _then)
+      : super(_value, (v) => _then(v as BlockchainBundle$));
+
+  @override
+  BlockchainBundle$ get _value => super._value as BlockchainBundle$;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? storedAt = freezed,
+  }) {
+    return _then(BlockchainBundle$(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      storedAt: storedAt == freezed
+          ? _value.storedAt
+          : storedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BlockchainBundle$ implements BlockchainBundle$ {
+  const _$BlockchainBundle$({required this.bundle, required this.storedAt});
+
+  factory _$BlockchainBundle$.fromJson(Map<String, dynamic> json) => _$$BlockchainBundle$FromJson(json);
+
+  @override
+  final Bundle bundle;
+  @override
+  final DateTime storedAt;
+
+  @override
+  String toString() {
+    return 'BlockchainBundle(bundle: $bundle, storedAt: $storedAt)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainBundle$ &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.storedAt, storedAt));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(storedAt));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainBundle$CopyWith<BlockchainBundle$> get copyWith =>
+      _$BlockchainBundle$CopyWithImpl<BlockchainBundle$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BlockchainBundle$ToJson(this);
+  }
+}
+
+abstract class BlockchainBundle$ implements BlockchainBundle {
+  const factory BlockchainBundle$({required Bundle bundle, required DateTime storedAt}) = _$BlockchainBundle$;
+
+  factory BlockchainBundle$.fromJson(Map<String, dynamic> json) = _$BlockchainBundle$.fromJson;
+
+  @override
+  Bundle get bundle;
+  @override
+  DateTime get storedAt;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainBundle$CopyWith<BlockchainBundle$> get copyWith => throw _privateConstructorUsedError;
+}
+
+BlockchainVault _$BlockchainVaultFromJson(Map<String, dynamic> json) {
+  return BlockchainVault$.fromJson(json);
+}
+
+/// @nodoc
+class _$BlockchainVaultTearOff {
+  const _$BlockchainVaultTearOff();
+
+  BlockchainVault$ call({required List<Bundle> bundles}) {
+    return BlockchainVault$(
+      bundles: bundles,
+    );
+  }
+
+  BlockchainVault fromJson(Map<String, Object?> json) {
+    return BlockchainVault.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $BlockchainVault = _$BlockchainVaultTearOff();
+
+/// @nodoc
+mixin _$BlockchainVault {
+  List<Bundle> get bundles => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BlockchainVaultCopyWith<BlockchainVault> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainVaultCopyWith<$Res> {
+  factory $BlockchainVaultCopyWith(BlockchainVault value, $Res Function(BlockchainVault) then) =
+      _$BlockchainVaultCopyWithImpl<$Res>;
+  $Res call({List<Bundle> bundles});
+}
+
+/// @nodoc
+class _$BlockchainVaultCopyWithImpl<$Res> implements $BlockchainVaultCopyWith<$Res> {
+  _$BlockchainVaultCopyWithImpl(this._value, this._then);
+
+  final BlockchainVault _value;
+  // ignore: unused_field
+  final $Res Function(BlockchainVault) _then;
+
+  @override
+  $Res call({
+    Object? bundles = freezed,
+  }) {
+    return _then(_value.copyWith(
+      bundles: bundles == freezed
+          ? _value.bundles
+          : bundles // ignore: cast_nullable_to_non_nullable
+              as List<Bundle>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $BlockchainVault$CopyWith<$Res> implements $BlockchainVaultCopyWith<$Res> {
+  factory $BlockchainVault$CopyWith(BlockchainVault$ value, $Res Function(BlockchainVault$) then) =
+      _$BlockchainVault$CopyWithImpl<$Res>;
+  @override
+  $Res call({List<Bundle> bundles});
+}
+
+/// @nodoc
+class _$BlockchainVault$CopyWithImpl<$Res> extends _$BlockchainVaultCopyWithImpl<$Res>
+    implements $BlockchainVault$CopyWith<$Res> {
+  _$BlockchainVault$CopyWithImpl(BlockchainVault$ _value, $Res Function(BlockchainVault$) _then)
+      : super(_value, (v) => _then(v as BlockchainVault$));
+
+  @override
+  BlockchainVault$ get _value => super._value as BlockchainVault$;
+
+  @override
+  $Res call({
+    Object? bundles = freezed,
+  }) {
+    return _then(BlockchainVault$(
+      bundles: bundles == freezed
+          ? _value.bundles
+          : bundles // ignore: cast_nullable_to_non_nullable
+              as List<Bundle>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BlockchainVault$ implements BlockchainVault$ {
+  const _$BlockchainVault$({required this.bundles});
+
+  factory _$BlockchainVault$.fromJson(Map<String, dynamic> json) => _$$BlockchainVault$FromJson(json);
+
+  @override
+  final List<Bundle> bundles;
+
+  @override
+  String toString() {
+    return 'BlockchainVault(bundles: $bundles)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainVault$ &&
+            const DeepCollectionEquality().equals(other.bundles, bundles));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundles));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainVault$CopyWith<BlockchainVault$> get copyWith =>
+      _$BlockchainVault$CopyWithImpl<BlockchainVault$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BlockchainVault$ToJson(this);
+  }
+}
+
+abstract class BlockchainVault$ implements BlockchainVault {
+  const factory BlockchainVault$({required List<Bundle> bundles}) = _$BlockchainVault$;
+
+  factory BlockchainVault$.fromJson(Map<String, dynamic> json) = _$BlockchainVault$.fromJson;
+
+  @override
+  List<Bundle> get bundles;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainVault$CopyWith<BlockchainVault$> get copyWith => throw _privateConstructorUsedError;
+}
+
 Password _$PasswordFromJson(Map<String, dynamic> json) {
   return Password$.fromJson(json);
 }
@@ -2044,4 +2350,155 @@ abstract class Code$ implements Code {
   @override
   @JsonKey(ignore: true)
   $Code$CopyWith<Code$> get copyWith => throw _privateConstructorUsedError;
+}
+
+Secret _$SecretFromJson(Map<String, dynamic> json) {
+  return Secret$.fromJson(json);
+}
+
+/// @nodoc
+class _$SecretTearOff {
+  const _$SecretTearOff();
+
+  Secret$ call({required String walletPrivateKey, required String walletPublicKey}) {
+    return Secret$(
+      walletPrivateKey: walletPrivateKey,
+      walletPublicKey: walletPublicKey,
+    );
+  }
+
+  Secret fromJson(Map<String, Object?> json) {
+    return Secret.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Secret = _$SecretTearOff();
+
+/// @nodoc
+mixin _$Secret {
+  String get walletPrivateKey => throw _privateConstructorUsedError;
+  String get walletPublicKey => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SecretCopyWith<Secret> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecretCopyWith<$Res> {
+  factory $SecretCopyWith(Secret value, $Res Function(Secret) then) = _$SecretCopyWithImpl<$Res>;
+  $Res call({String walletPrivateKey, String walletPublicKey});
+}
+
+/// @nodoc
+class _$SecretCopyWithImpl<$Res> implements $SecretCopyWith<$Res> {
+  _$SecretCopyWithImpl(this._value, this._then);
+
+  final Secret _value;
+  // ignore: unused_field
+  final $Res Function(Secret) _then;
+
+  @override
+  $Res call({
+    Object? walletPrivateKey = freezed,
+    Object? walletPublicKey = freezed,
+  }) {
+    return _then(_value.copyWith(
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      walletPublicKey: walletPublicKey == freezed
+          ? _value.walletPublicKey
+          : walletPublicKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $Secret$CopyWith<$Res> implements $SecretCopyWith<$Res> {
+  factory $Secret$CopyWith(Secret$ value, $Res Function(Secret$) then) = _$Secret$CopyWithImpl<$Res>;
+  @override
+  $Res call({String walletPrivateKey, String walletPublicKey});
+}
+
+/// @nodoc
+class _$Secret$CopyWithImpl<$Res> extends _$SecretCopyWithImpl<$Res> implements $Secret$CopyWith<$Res> {
+  _$Secret$CopyWithImpl(Secret$ _value, $Res Function(Secret$) _then) : super(_value, (v) => _then(v as Secret$));
+
+  @override
+  Secret$ get _value => super._value as Secret$;
+
+  @override
+  $Res call({
+    Object? walletPrivateKey = freezed,
+    Object? walletPublicKey = freezed,
+  }) {
+    return _then(Secret$(
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      walletPublicKey: walletPublicKey == freezed
+          ? _value.walletPublicKey
+          : walletPublicKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Secret$ implements Secret$ {
+  const _$Secret$({required this.walletPrivateKey, required this.walletPublicKey});
+
+  factory _$Secret$.fromJson(Map<String, dynamic> json) => _$$Secret$FromJson(json);
+
+  @override
+  final String walletPrivateKey;
+  @override
+  final String walletPublicKey;
+
+  @override
+  String toString() {
+    return 'Secret(walletPrivateKey: $walletPrivateKey, walletPublicKey: $walletPublicKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Secret$ &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.walletPublicKey, walletPublicKey));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
+      const DeepCollectionEquality().hash(walletPublicKey));
+
+  @JsonKey(ignore: true)
+  @override
+  $Secret$CopyWith<Secret$> get copyWith => _$Secret$CopyWithImpl<Secret$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Secret$ToJson(this);
+  }
+}
+
+abstract class Secret$ implements Secret {
+  const factory Secret$({required String walletPrivateKey, required String walletPublicKey}) = _$Secret$;
+
+  factory Secret$.fromJson(Map<String, dynamic> json) = _$Secret$.fromJson;
+
+  @override
+  String get walletPrivateKey;
+  @override
+  String get walletPublicKey;
+  @override
+  @JsonKey(ignore: true)
+  $Secret$CopyWith<Secret$> get copyWith => throw _privateConstructorUsedError;
 }

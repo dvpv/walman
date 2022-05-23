@@ -57,6 +57,14 @@ def build(contract_name: str) -> dict:
     os.makedirs(BUILD_PATH, exist_ok=True)
     with open(f"{BUILD_PATH}/{contract_name.replace('.sol','.json')}", "w") as file:
         json.dump(compiled_sol, file, indent=2)
+    with open(
+        f"{BUILD_PATH}/{contract_name.replace('.sol', '_abi.json')}", "w"
+    ) as file:
+        json.dump(
+            compiled_sol["contracts"]["BundleStorage.sol"]["BundleStorage"]["abi"],
+            file,
+            indent=2,
+        )
 
 
 def deploy(contract_name: str) -> None:

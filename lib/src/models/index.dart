@@ -20,6 +20,8 @@ part 'code.dart';
 
 part 'bundle_item.dart';
 
+part 'secret.dart';
+
 enum AppPage {
   home,
   passwords,
