@@ -17,6 +17,7 @@ class StorageEpic {
       TypedEpic<AppState, GetDataStart>(_getDataStart),
       TypedEpic<AppState, StoreDataStart>(_storeDataStart),
       TypedEpic<AppState, BlockchainAddBundleStart>(_blockchainAddBundle),
+      TypedEpic<AppState, BlockchainRestoreLatestBundleStart>(_blockchainRestoreLatestBundle),
     ]);
   }
 
@@ -49,6 +50,22 @@ class StorageEpic {
           .map<AppAction>((_) => BlockchainAddBundleSuccessful(action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => BlockchainAddBundleError(error, stackTrace, action.pendingId),
+          )
+          .doOnData(action.onResult ?? (_) {});
+    });
+  }
+
+  Stream<AppAction> _blockchainRestoreLatestBundle(
+    Stream<BlockchainRestoreLatestBundleStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((BlockchainRestoreLatestBundleStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => blockchainStorageApi.getLatestBundle(store.state.user!.masterKey!))
+          .asyncMap<AppAction>((Bundle bundle) => BlockchainRestoreLatestBundleSuccessful(bundle: bundle))
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) =>
+                BlockchainRestoreLatestBundleError(error, stackTrace, action.pendingId),
           )
           .doOnData(action.onResult ?? (_) {});
     });

@@ -1740,3 +1740,606 @@ abstract class BlockchainAddBundleError implements BlockchainAddBundle, ActionDo
   @JsonKey(ignore: true)
   $BlockchainAddBundleErrorCopyWith<BlockchainAddBundleError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$BlockchainRestoreLatestBundleTearOff {
+  const _$BlockchainRestoreLatestBundleTearOff();
+
+  BlockchainRestoreLatestBundleStart start(
+      {ActionResult? onResult, String pendingId = _kBlockchainRestoreLatestBundlePendingId}) {
+    return BlockchainRestoreLatestBundleStart(
+      onResult: onResult,
+      pendingId: pendingId,
+    );
+  }
+
+  BlockchainRestoreLatestBundleSuccessful successful(
+      {required Bundle bundle, String pendingId = _kBlockchainRestoreLatestBundlePendingId}) {
+    return BlockchainRestoreLatestBundleSuccessful(
+      bundle: bundle,
+      pendingId: pendingId,
+    );
+  }
+
+  BlockchainRestoreLatestBundleError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kBlockchainRestoreLatestBundlePendingId]) {
+    return BlockchainRestoreLatestBundleError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $BlockchainRestoreLatestBundle = _$BlockchainRestoreLatestBundleTearOff();
+
+/// @nodoc
+mixin _$BlockchainRestoreLatestBundle {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult? onResult, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainRestoreLatestBundleStart value) start,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
+    required TResult Function(BlockchainRestoreLatestBundleError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BlockchainRestoreLatestBundleCopyWith<BlockchainRestoreLatestBundle> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainRestoreLatestBundleCopyWith<$Res> {
+  factory $BlockchainRestoreLatestBundleCopyWith(
+          BlockchainRestoreLatestBundle value, $Res Function(BlockchainRestoreLatestBundle) then) =
+      _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainRestoreLatestBundleCopyWithImpl<$Res> implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
+  _$BlockchainRestoreLatestBundleCopyWithImpl(this._value, this._then);
+
+  final BlockchainRestoreLatestBundle _value;
+  // ignore: unused_field
+  final $Res Function(BlockchainRestoreLatestBundle) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $BlockchainRestoreLatestBundleStartCopyWith<$Res>
+    implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
+  factory $BlockchainRestoreLatestBundleStartCopyWith(
+          BlockchainRestoreLatestBundleStart value, $Res Function(BlockchainRestoreLatestBundleStart) then) =
+      _$BlockchainRestoreLatestBundleStartCopyWithImpl<$Res>;
+  @override
+  $Res call({ActionResult? onResult, String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainRestoreLatestBundleStartCopyWithImpl<$Res> extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
+    implements $BlockchainRestoreLatestBundleStartCopyWith<$Res> {
+  _$BlockchainRestoreLatestBundleStartCopyWithImpl(
+      BlockchainRestoreLatestBundleStart _value, $Res Function(BlockchainRestoreLatestBundleStart) _then)
+      : super(_value, (v) => _then(v as BlockchainRestoreLatestBundleStart));
+
+  @override
+  BlockchainRestoreLatestBundleStart get _value => super._value as BlockchainRestoreLatestBundleStart;
+
+  @override
+  $Res call({
+    Object? onResult = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainRestoreLatestBundleStart(
+      onResult: onResult == freezed
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult?,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$BlockchainRestoreLatestBundleStart implements BlockchainRestoreLatestBundleStart {
+  const _$BlockchainRestoreLatestBundleStart(
+      {this.onResult, this.pendingId = _kBlockchainRestoreLatestBundlePendingId});
+
+  @override
+  final ActionResult? onResult;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainRestoreLatestBundle.start(onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainRestoreLatestBundleStart &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, onResult, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainRestoreLatestBundleStartCopyWith<BlockchainRestoreLatestBundleStart> get copyWith =>
+      _$BlockchainRestoreLatestBundleStartCopyWithImpl<BlockchainRestoreLatestBundleStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult? onResult, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainRestoreLatestBundleStart value) start,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
+    required TResult Function(BlockchainRestoreLatestBundleError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainRestoreLatestBundleStart implements BlockchainRestoreLatestBundle, ActionStart {
+  const factory BlockchainRestoreLatestBundleStart({ActionResult? onResult, String pendingId}) =
+      _$BlockchainRestoreLatestBundleStart;
+
+  ActionResult? get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainRestoreLatestBundleStartCopyWith<BlockchainRestoreLatestBundleStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainRestoreLatestBundleSuccessfulCopyWith<$Res>
+    implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
+  factory $BlockchainRestoreLatestBundleSuccessfulCopyWith(
+          BlockchainRestoreLatestBundleSuccessful value, $Res Function(BlockchainRestoreLatestBundleSuccessful) then) =
+      _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle, String pendingId});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<$Res>
+    extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
+    implements $BlockchainRestoreLatestBundleSuccessfulCopyWith<$Res> {
+  _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl(
+      BlockchainRestoreLatestBundleSuccessful _value, $Res Function(BlockchainRestoreLatestBundleSuccessful) _then)
+      : super(_value, (v) => _then(v as BlockchainRestoreLatestBundleSuccessful));
+
+  @override
+  BlockchainRestoreLatestBundleSuccessful get _value => super._value as BlockchainRestoreLatestBundleSuccessful;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainRestoreLatestBundleSuccessful(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$BlockchainRestoreLatestBundleSuccessful implements BlockchainRestoreLatestBundleSuccessful {
+  const _$BlockchainRestoreLatestBundleSuccessful(
+      {required this.bundle, this.pendingId = _kBlockchainRestoreLatestBundlePendingId});
+
+  @override
+  final Bundle bundle;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainRestoreLatestBundle.successful(bundle: $bundle, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainRestoreLatestBundleSuccessful &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainRestoreLatestBundleSuccessfulCopyWith<BlockchainRestoreLatestBundleSuccessful> get copyWith =>
+      _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<BlockchainRestoreLatestBundleSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult? onResult, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(bundle, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainRestoreLatestBundleStart value) start,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
+    required TResult Function(BlockchainRestoreLatestBundleError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainRestoreLatestBundleSuccessful implements BlockchainRestoreLatestBundle, ActionDone {
+  const factory BlockchainRestoreLatestBundleSuccessful({required Bundle bundle, String pendingId}) =
+      _$BlockchainRestoreLatestBundleSuccessful;
+
+  Bundle get bundle;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainRestoreLatestBundleSuccessfulCopyWith<BlockchainRestoreLatestBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainRestoreLatestBundleErrorCopyWith<$Res>
+    implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
+  factory $BlockchainRestoreLatestBundleErrorCopyWith(
+          BlockchainRestoreLatestBundleError value, $Res Function(BlockchainRestoreLatestBundleError) then) =
+      _$BlockchainRestoreLatestBundleErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainRestoreLatestBundleErrorCopyWithImpl<$Res> extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
+    implements $BlockchainRestoreLatestBundleErrorCopyWith<$Res> {
+  _$BlockchainRestoreLatestBundleErrorCopyWithImpl(
+      BlockchainRestoreLatestBundleError _value, $Res Function(BlockchainRestoreLatestBundleError) _then)
+      : super(_value, (v) => _then(v as BlockchainRestoreLatestBundleError));
+
+  @override
+  BlockchainRestoreLatestBundleError get _value => super._value as BlockchainRestoreLatestBundleError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainRestoreLatestBundleError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$BlockchainRestoreLatestBundleError implements BlockchainRestoreLatestBundleError {
+  const _$BlockchainRestoreLatestBundleError(this.error, this.stackTrace,
+      [this.pendingId = _kBlockchainRestoreLatestBundlePendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainRestoreLatestBundle.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainRestoreLatestBundleError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainRestoreLatestBundleErrorCopyWith<BlockchainRestoreLatestBundleError> get copyWith =>
+      _$BlockchainRestoreLatestBundleErrorCopyWithImpl<BlockchainRestoreLatestBundleError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(ActionResult? onResult, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ActionResult? onResult, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainRestoreLatestBundleStart value) start,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
+    required TResult Function(BlockchainRestoreLatestBundleError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainRestoreLatestBundleStart value)? start,
+    TResult Function(BlockchainRestoreLatestBundleSuccessful value)? successful,
+    TResult Function(BlockchainRestoreLatestBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainRestoreLatestBundleError implements BlockchainRestoreLatestBundle, ActionDone, ErrorAction {
+  const factory BlockchainRestoreLatestBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$BlockchainRestoreLatestBundleError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainRestoreLatestBundleErrorCopyWith<BlockchainRestoreLatestBundleError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
