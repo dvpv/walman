@@ -1156,9 +1156,11 @@ abstract class StoreDataError implements StoreData, ActionDone, ErrorAction {
 class _$BlockchainAddBundleTearOff {
   const _$BlockchainAddBundleTearOff();
 
-  BlockchainAddBundleStart start({required Bundle bundle, String pendingId = _kBlockchainAddBundlePendingId}) {
+  BlockchainAddBundleStart start(
+      {required Bundle bundle, ActionResult? onResult, String pendingId = _kBlockchainAddBundlePendingId}) {
     return BlockchainAddBundleStart(
       bundle: bundle,
+      onResult: onResult,
       pendingId: pendingId,
     );
   }
@@ -1188,21 +1190,21 @@ mixin _$BlockchainAddBundle {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -1269,7 +1271,7 @@ abstract class $BlockchainAddBundleStartCopyWith<$Res> implements $BlockchainAdd
           BlockchainAddBundleStart value, $Res Function(BlockchainAddBundleStart) then) =
       _$BlockchainAddBundleStartCopyWithImpl<$Res>;
   @override
-  $Res call({Bundle bundle, String pendingId});
+  $Res call({Bundle bundle, ActionResult? onResult, String pendingId});
 
   $BundleCopyWith<$Res> get bundle;
 }
@@ -1286,6 +1288,7 @@ class _$BlockchainAddBundleStartCopyWithImpl<$Res> extends _$BlockchainAddBundle
   @override
   $Res call({
     Object? bundle = freezed,
+    Object? onResult = freezed,
     Object? pendingId = freezed,
   }) {
     return _then(BlockchainAddBundleStart(
@@ -1293,6 +1296,10 @@ class _$BlockchainAddBundleStartCopyWithImpl<$Res> extends _$BlockchainAddBundle
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
               as Bundle,
+      onResult: onResult == freezed
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult?,
       pendingId: pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -1312,17 +1319,20 @@ class _$BlockchainAddBundleStartCopyWithImpl<$Res> extends _$BlockchainAddBundle
 
 @Implements<ActionStart>()
 class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
-  const _$BlockchainAddBundleStart({required this.bundle, this.pendingId = _kBlockchainAddBundlePendingId});
+  const _$BlockchainAddBundleStart(
+      {required this.bundle, this.onResult, this.pendingId = _kBlockchainAddBundlePendingId});
 
   @override
   final Bundle bundle;
+  @override
+  final ActionResult? onResult;
   @JsonKey()
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'BlockchainAddBundle.start(bundle: $bundle, pendingId: $pendingId)';
+    return 'BlockchainAddBundle.start(bundle: $bundle, onResult: $onResult, pendingId: $pendingId)';
   }
 
   @override
@@ -1331,12 +1341,13 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
         (other.runtimeType == runtimeType &&
             other is BlockchainAddBundleStart &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundle), onResult,
+      const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -1346,33 +1357,33 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return start(bundle, pendingId);
+    return start(bundle, onResult, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return start?.call(bundle, pendingId);
+    return start?.call(bundle, onResult, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(bundle, pendingId);
+      return start(bundle, onResult, pendingId);
     }
     return orElse();
   }
@@ -1413,9 +1424,11 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
 }
 
 abstract class BlockchainAddBundleStart implements BlockchainAddBundle, ActionStart {
-  const factory BlockchainAddBundleStart({required Bundle bundle, String pendingId}) = _$BlockchainAddBundleStart;
+  const factory BlockchainAddBundleStart({required Bundle bundle, ActionResult? onResult, String pendingId}) =
+      _$BlockchainAddBundleStart;
 
   Bundle get bundle;
+  ActionResult? get onResult;
   @override
   String get pendingId;
   @override
@@ -1489,7 +1502,7 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -1499,7 +1512,7 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -1509,7 +1522,7 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -1649,7 +1662,7 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Bundle bundle, String pendingId) start,
+    required TResult Function(Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -1659,7 +1672,7 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -1669,7 +1682,7 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle bundle, String pendingId)? start,
+    TResult Function(Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),

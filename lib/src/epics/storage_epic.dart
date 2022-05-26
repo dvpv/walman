@@ -45,11 +45,12 @@ class StorageEpic {
   Stream<AppAction> _blockchainAddBundle(Stream<BlockchainAddBundleStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((BlockchainAddBundleStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => blockchainStorageApi.addBundle())
+          .asyncMap((_) => blockchainStorageApi.addBundle(action.bundle, store.state.user!.masterKey!))
           .map<AppAction>((_) => BlockchainAddBundleSuccessful(action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => BlockchainAddBundleError(error, stackTrace, action.pendingId),
-          );
+          )
+          .doOnData(action.onResult ?? (_) {});
     });
   }
 }

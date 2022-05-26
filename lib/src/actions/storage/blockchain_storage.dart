@@ -7,6 +7,7 @@ class BlockchainAddBundle with _$BlockchainAddBundle implements AppAction {
   @Implements<ActionStart>()
   const factory BlockchainAddBundle.start({
     required Bundle bundle,
+    ActionResult? onResult,
     @Default(_kBlockchainAddBundlePendingId) String pendingId,
   }) = BlockchainAddBundleStart;
 

@@ -3,8 +3,11 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/utils/encryption.dart';
 import 'package:web3dart/web3dart.dart';
 
+// TODO(dvpv): add this to secrets
+// TODO(dvpv): use flutter .env
 const String _kSmartContractAddress = '0x71Bc8F00275456e1Db848c8d2662CB376A9BD35D';
 const String _kRpcServer = 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161';
 const String _kContractPath = 'web3/build/BundleStorage_abi.json';
@@ -36,14 +39,17 @@ class BlockchainStorageApi {
   final Web3Client client;
   final Secret secret;
 
-  Future<void> addBundle() async {
+  Future<void> addBundle(Bundle bundle, String key) async {
     final EthPrivateKey privateKey = EthPrivateKey.fromHex(secret.walletPrivateKey);
     await client.sendTransaction(
       privateKey,
       Transaction.callContract(
         contract: contract,
         function: contract.function('addBundle'),
-        parameters: <String>['mere', 'pere'], // TODO(dvpv): replace with actual data
+        parameters: <String>[
+          encrypt(message: bundle.toString(), key: key),
+          encrypt(message: DateTime.now().microsecondsSinceEpoch.toString(), key: key),
+        ], // TODO(dvpv): replace with actual data
       ),
       chainId: 4,
     );

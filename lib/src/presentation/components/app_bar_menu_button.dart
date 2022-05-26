@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
@@ -34,7 +35,23 @@ class AppBarMenuButton extends StatelessWidget {
             break;
           case _MenuOptions.saveToBlockchain:
             // TODO(dvpv): change bundle with the one form state
-            StoreProvider.of<AppState>(context).dispatch(const BlockchainAddBundleStart(bundle: Bundle()));
+            StoreProvider.of<AppState>(context).dispatch(
+              BlockchainAddBundleStart(
+                bundle: const Bundle(),
+                onResult: (AppAction action) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        action is BlockchainAddBundleSuccessful
+                            ? 'Data successfully saved to the blockchain'
+                            : 'Data save to the blockchain failed',
+                        style: action is BlockchainAddBundleSuccessful ? null : const TextStyle(color: Colors.red),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            );
             break;
         }
       },
