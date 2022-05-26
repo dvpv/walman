@@ -60,18 +60,17 @@ class AppBarMenuButton extends StatelessWidget {
                 StoreProvider.of<AppState>(context).dispatch(
                   BlockchainRestoreLatestBundleStart(
                     onResult: (AppAction action) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            action is BlockchainRestoreLatestBundleSuccessful
-                                ? 'Bundle restored successfully'
-                                : 'Bundle restore failed',
-                            style: action is BlockchainRestoreLatestBundleSuccessful
-                                ? null
-                                : const TextStyle(color: Colors.red),
+                      if (action is BlockchainRestoreLatestBundleError) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Bundle restore failed', style: TextStyle(color: Colors.red)),
                           ),
-                        ),
-                      );
+                        );
+                      } else if (action is BlockchainRestoreLatestBundleSuccessful) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Bundle restored successfully')),
+                        );
+                      }
                     },
                   ),
                 );

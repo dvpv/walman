@@ -6,7 +6,7 @@ const String _kStoreDataPendingId = 'StoreData';
 class StoreData with _$StoreData implements AppAction {
   @Implements<ActionStart>()
   const factory StoreData.start({
-    required String masterKey,
+    Bundle? bundle,
     @Default(_kStoreDataPendingId) String pendingId,
   }) = StoreDataStart;
 

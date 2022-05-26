@@ -21,7 +21,7 @@ class LocalEpic {
   }
 
   Stream<AppAction> _createNewPassword(Stream<CreateNewPassword> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((CreateNewPassword action) => StoreDataStart(masterKey: action.masterKey));
+    return actions.map<AppAction>((CreateNewPassword action) => const StoreDataStart());
   }
 
   Stream<AppAction> _editPasswordStart(Stream<EditPasswordStart> actions, EpicStore<AppState> store) {
@@ -30,7 +30,7 @@ class LocalEpic {
           .expand<AppAction>(
             (_) => <AppAction>[
               EditPasswordSuccessful(action.pendingId),
-              StoreDataStart(masterKey: store.state.user!.masterKey!),
+              const StoreDataStart(),
             ],
           )
           .onErrorReturnWith(
@@ -40,15 +40,15 @@ class LocalEpic {
   }
 
   Stream<AppAction> _deletePassword(Stream<DeletePassword> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((DeletePassword action) => StoreDataStart(masterKey: store.state.user!.masterKey!));
+    return actions.map<AppAction>((DeletePassword action) => const StoreDataStart());
   }
 
   Stream<AppAction> _createNewCode(Stream<CreateNewCode> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((CreateNewCode action) => StoreDataStart(masterKey: action.masterKey));
+    return actions.map<AppAction>((CreateNewCode action) => const StoreDataStart());
   }
 
   Stream<AppAction> _deleteCode(Stream<DeleteCode> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((DeleteCode action) => StoreDataStart(masterKey: store.state.user!.masterKey!));
+    return actions.map<AppAction>((DeleteCode action) => const StoreDataStart());
   }
 
   Stream<AppAction> _selectItemDetailsSuccess(Stream<SelectItemDetailsStart> actions, EpicStore<AppState> store) {

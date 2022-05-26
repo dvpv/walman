@@ -32,11 +32,13 @@ class StorageEpic {
     });
   }
 
-  Stream<StoreData> _storeDataStart(Stream<StoreDataStart> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _storeDataStart(Stream<StoreDataStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreDataStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => secureStorageApi.storeData(store.state.bundle, action.masterKey))
-          .mapTo<StoreData>(StoreDataSuccessful(action.pendingId))
+          .asyncMap(
+            (_) => secureStorageApi.storeData(action.bundle ?? store.state.bundle, store.state.user!.masterKey!),
+          )
+          .mapTo<AppAction>(StoreDataSuccessful(store.state.user!.masterKey!))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => StoreDataError(error, stackTrace, action.pendingId),
           );
@@ -62,7 +64,12 @@ class StorageEpic {
     return actions.flatMap((BlockchainRestoreLatestBundleStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => blockchainStorageApi.getLatestBundle(store.state.user!.masterKey!))
-          .asyncMap<AppAction>((Bundle bundle) => BlockchainRestoreLatestBundleSuccessful(bundle: bundle))
+          .expand<AppAction>(
+            (Bundle bundle) => <AppAction>[
+              BlockchainRestoreLatestBundleSuccessful(bundle: bundle, pendingId: action.pendingId),
+              StoreDataStart(bundle: bundle),
+            ],
+          )
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) =>
                 BlockchainRestoreLatestBundleError(error, stackTrace, action.pendingId),
