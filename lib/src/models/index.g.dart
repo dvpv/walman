@@ -198,13 +198,3 @@ const _$BarcodeFormatEnumMap = {
   BarcodeFormat.pdf417: 'pdf417',
   BarcodeFormat.aztec: 'aztec',
 };
-
-_$Secret$ _$$Secret$FromJson(Map<String, dynamic> json) => _$Secret$(
-      walletPrivateKey: json['walletPrivateKey'] as String,
-      walletPublicKey: json['walletPublicKey'] as String,
-    );
-
-Map<String, dynamic> _$$Secret$ToJson(_$Secret$ instance) => <String, dynamic>{
-      'walletPrivateKey': instance.walletPrivateKey,
-      'walletPublicKey': instance.walletPublicKey,
-    };

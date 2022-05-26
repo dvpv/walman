@@ -2,20 +2,21 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/utils/encryption.dart';
 import 'package:web3dart/web3dart.dart';
 
-// TODO(dvpv): add this to secrets
-// TODO(dvpv): use flutter .env
-const String _kSmartContractAddress = '0x71Bc8F00275456e1Db848c8d2662CB376A9BD35D';
 const String _kRpcServer = 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161';
 const String _kContractPath = 'web3/build/BundleStorage_abi.json';
-const String _secretPath = 'lib/secrets.json';
 
 class BlockchainStorageApi {
-  BlockchainStorageApi({required this.contract, required this.client, required this.secret});
+  BlockchainStorageApi({
+    required this.contract,
+    required this.client,
+    required this.privateKey,
+  });
 
   static Future<BlockchainStorageApi> get build async {
     return BlockchainStorageApi(
@@ -24,24 +25,21 @@ class BlockchainStorageApi {
           await rootBundle.loadString(_kContractPath),
           'BundleStorage',
         ),
-        EthereumAddress.fromHex(_kSmartContractAddress),
+        EthereumAddress.fromHex(dotenv.env['SMART_CONTRACT_ADDRESS']!),
       ),
       client: Web3Client(
         _kRpcServer,
         Client(),
       ),
-      secret: await rootBundle.loadStructuredData<Secret>(_secretPath, (String json) async {
-        return Secret.fromJson(jsonDecode(json) as Map<dynamic, dynamic>);
-      }),
+      privateKey: EthPrivateKey.fromHex(dotenv.env['WALLET_PRIVATE_KEY']!),
     );
   }
 
   final DeployedContract contract;
   final Web3Client client;
-  final Secret secret;
+  final EthPrivateKey privateKey;
 
   Future<void> addBundle(Bundle bundle, String key) async {
-    final EthPrivateKey privateKey = EthPrivateKey.fromHex(secret.walletPrivateKey);
     await client.sendTransaction(
       privateKey,
       Transaction.callContract(
@@ -68,7 +66,6 @@ class BlockchainStorageApi {
   }
 
   Future<Bundle> getLatestBundle(String key) async {
-    final EthPrivateKey privateKey = EthPrivateKey.fromHex(secret.walletPrivateKey);
     final List<dynamic> response = await client.call(
       contract: contract,
       function: contract.function('getLatestBundle'),

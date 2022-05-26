@@ -56,3 +56,4 @@ app.*.map.json
 
 # App secrets
 lib/secrets.json
+.env
