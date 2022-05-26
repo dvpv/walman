@@ -1,5 +1,5 @@
 name: ci
-on: [push]
+on: [ push ]
 jobs:
   check-flutter-code:
     runs-on: ubuntu-latest
@@ -12,6 +12,9 @@ jobs:
           channel: 'stable'
       - name: Update packages
         run: flutter pub get
+      - name: Create mock .env
+        run: |
+          touch .env
       - name: Flutter format
         run: flutter format lib -l 120 --set-exit-if-changed
       - name: Flutter analyze
