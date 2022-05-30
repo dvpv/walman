@@ -29,6 +29,7 @@ class AuthEpic {
             (AppUser user) => <AppAction>[
               LoginSuccessful(user, action.pendingId),
               SecureStorageGetBundleStart(masterKey: user.masterKey),
+              SecureStorageGetWalletPrivateKeyStart(masterKey: user.masterKey),
             ],
           )
           .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginError(error, stackTrace, action.pendingId))
@@ -72,6 +73,7 @@ class AuthEpic {
             (AppUser user) => <AppAction>[
               UnlockAppSuccessful(user, action.pendingId),
               SecureStorageGetBundleStart(masterKey: user.masterKey),
+              SecureStorageGetWalletPrivateKeyStart(masterKey: user.masterKey),
             ],
           )
           .onErrorReturnWith(

@@ -28,8 +28,15 @@ class SecureStorageApi {
     await _storage.write(key: _kBundleStorageKey, value: encrypt(message: jsonEncode(bundle), key: masterKey));
   }
 
-  Future<void> storeWalletPrivateKey(String walletPrivateKey, String masterKey) async {
-    await _storage.write(key: _kWalletPrivateKeyStorageKey, value: encrypt(message: walletPrivateKey, key: masterKey));
+  Future<void> storeWalletPrivateKey(String? walletPrivateKey, String masterKey) async {
+    if (walletPrivateKey != null && walletPrivateKey.isNotEmpty) {
+      await _storage.write(
+        key: _kWalletPrivateKeyStorageKey,
+        value: encrypt(message: walletPrivateKey, key: masterKey),
+      );
+    } else {
+      await _storage.delete(key: _kWalletPrivateKeyStorageKey);
+    }
   }
 
   Future<String?> getWalletPrivateKey(String masterKey) async {

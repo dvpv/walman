@@ -6,6 +6,7 @@ const String _kBlockchainAddBundlePendingId = 'BlockchainAddBundle';
 class BlockchainAddBundle with _$BlockchainAddBundle implements AppAction {
   @Implements<ActionStart>()
   const factory BlockchainAddBundle.start({
+    required String walletPrivateKey,
     required Bundle bundle,
     ActionResult? onResult,
     @Default(_kBlockchainAddBundlePendingId) String pendingId,
@@ -33,6 +34,7 @@ const String _kBlockchainRestoreLatestBundlePendingId = 'BlockchainRestoreLatest
 class BlockchainRestoreLatestBundle with _$BlockchainRestoreLatestBundle implements AppAction {
   @Implements<ActionStart>()
   const factory BlockchainRestoreLatestBundle.start({
+    required String walletPrivateKey,
     ActionResult? onResult,
     @Default(_kBlockchainRestoreLatestBundlePendingId) String pendingId,
   }) = BlockchainRestoreLatestBundleStart;

@@ -16,6 +16,8 @@ class StorageEpic {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, SecureStorageGetBundleStart>(_secureStorageGetBundle),
       TypedEpic<AppState, SecureStorageStoreBundleStart>(_secureStorageStoreBundle),
+      TypedEpic<AppState, SecureStorageStoreWalletPrivateKeyStart>(_secureStorageStoreWalletPrivateKey),
+      TypedEpic<AppState, SecureStorageGetWalletPrivateKeyStart>(_secureStorageGetWalletPrivateKey),
       TypedEpic<AppState, BlockchainAddBundleStart>(_blockchainAddBundle),
       TypedEpic<AppState, BlockchainRestoreLatestBundleStart>(_blockchainRestoreLatestBundle),
     ]);
@@ -53,10 +55,55 @@ class StorageEpic {
     });
   }
 
+  Stream<AppAction> _secureStorageStoreWalletPrivateKey(
+    Stream<SecureStorageStoreWalletPrivateKeyStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((SecureStorageStoreWalletPrivateKeyStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) => secureStorageApi.storeWalletPrivateKey(
+              store.state.persistentState.walletPrivateKey,
+              store.state.user!.masterKey!,
+            ),
+          )
+          .mapTo<SecureStorageStoreBundle>(SecureStorageStoreBundleSuccessful(action.pendingId))
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => SecureStorageStoreBundleError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
+  Stream<AppAction> _secureStorageGetWalletPrivateKey(
+    Stream<SecureStorageGetWalletPrivateKeyStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((SecureStorageGetWalletPrivateKeyStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => secureStorageApi.getWalletPrivateKey(action.masterKey ?? store.state.user!.masterKey!))
+          .map<SecureStorageGetWalletPrivateKey>(
+            (String? walletPrivateKey) => SecureStorageGetWalletPrivateKeySuccessful(
+              walletPrivateKey: walletPrivateKey,
+              pendingId: action.pendingId,
+            ),
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) =>
+                SecureStorageGetWalletPrivateKeyError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
   Stream<AppAction> _blockchainAddBundle(Stream<BlockchainAddBundleStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((BlockchainAddBundleStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => blockchainStorageApi.addBundle(action.bundle, store.state.user!.masterKey!))
+          .asyncMap(
+            (_) => blockchainStorageApi.addBundle(
+              bundle: action.bundle,
+              walletPrivateKey: action.walletPrivateKey,
+              masterKey: store.state.user!.masterKey!,
+            ),
+          )
           .map<AppAction>((_) => BlockchainAddBundleSuccessful(action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => BlockchainAddBundleError(error, stackTrace, action.pendingId),
@@ -71,7 +118,12 @@ class StorageEpic {
   ) {
     return actions.flatMap((BlockchainRestoreLatestBundleStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => blockchainStorageApi.getLatestBundle(store.state.user!.masterKey!))
+          .asyncMap(
+            (_) => blockchainStorageApi.getLatestBundle(
+              walletPrivateKey: action.walletPrivateKey,
+              masterKey: store.state.user!.masterKey!,
+            ),
+          )
           .expand<AppAction>(
             (Bundle bundle) => <AppAction>[
               BlockchainRestoreLatestBundleSuccessful(bundle: bundle, pendingId: action.pendingId),

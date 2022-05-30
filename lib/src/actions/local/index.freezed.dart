@@ -2102,3 +2102,123 @@ abstract class ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGe
   $ChangePasswordGeneratorCharacterPool$CopyWith<ChangePasswordGeneratorCharacterPool$> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SetWalletPrivateKeyTearOff {
+  const _$SetWalletPrivateKeyTearOff();
+
+  SetWalletPrivateKey$ call(String walletPrivateKey) {
+    return SetWalletPrivateKey$(
+      walletPrivateKey,
+    );
+  }
+}
+
+/// @nodoc
+const $SetWalletPrivateKey = _$SetWalletPrivateKeyTearOff();
+
+/// @nodoc
+mixin _$SetWalletPrivateKey {
+  String get walletPrivateKey => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetWalletPrivateKeyCopyWith<SetWalletPrivateKey> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetWalletPrivateKeyCopyWith<$Res> {
+  factory $SetWalletPrivateKeyCopyWith(SetWalletPrivateKey value, $Res Function(SetWalletPrivateKey) then) =
+      _$SetWalletPrivateKeyCopyWithImpl<$Res>;
+  $Res call({String walletPrivateKey});
+}
+
+/// @nodoc
+class _$SetWalletPrivateKeyCopyWithImpl<$Res> implements $SetWalletPrivateKeyCopyWith<$Res> {
+  _$SetWalletPrivateKeyCopyWithImpl(this._value, this._then);
+
+  final SetWalletPrivateKey _value;
+  // ignore: unused_field
+  final $Res Function(SetWalletPrivateKey) _then;
+
+  @override
+  $Res call({
+    Object? walletPrivateKey = freezed,
+  }) {
+    return _then(_value.copyWith(
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetWalletPrivateKey$CopyWith<$Res> implements $SetWalletPrivateKeyCopyWith<$Res> {
+  factory $SetWalletPrivateKey$CopyWith(SetWalletPrivateKey$ value, $Res Function(SetWalletPrivateKey$) then) =
+      _$SetWalletPrivateKey$CopyWithImpl<$Res>;
+  @override
+  $Res call({String walletPrivateKey});
+}
+
+/// @nodoc
+class _$SetWalletPrivateKey$CopyWithImpl<$Res> extends _$SetWalletPrivateKeyCopyWithImpl<$Res>
+    implements $SetWalletPrivateKey$CopyWith<$Res> {
+  _$SetWalletPrivateKey$CopyWithImpl(SetWalletPrivateKey$ _value, $Res Function(SetWalletPrivateKey$) _then)
+      : super(_value, (v) => _then(v as SetWalletPrivateKey$));
+
+  @override
+  SetWalletPrivateKey$ get _value => super._value as SetWalletPrivateKey$;
+
+  @override
+  $Res call({
+    Object? walletPrivateKey = freezed,
+  }) {
+    return _then(SetWalletPrivateKey$(
+      walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetWalletPrivateKey$ implements SetWalletPrivateKey$ {
+  const _$SetWalletPrivateKey$(this.walletPrivateKey);
+
+  @override
+  final String walletPrivateKey;
+
+  @override
+  String toString() {
+    return 'SetWalletPrivateKey(walletPrivateKey: $walletPrivateKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SetWalletPrivateKey$ &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey));
+
+  @JsonKey(ignore: true)
+  @override
+  $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith =>
+      _$SetWalletPrivateKey$CopyWithImpl<SetWalletPrivateKey$>(this, _$identity);
+}
+
+abstract class SetWalletPrivateKey$ implements SetWalletPrivateKey {
+  const factory SetWalletPrivateKey$(String walletPrivateKey) = _$SetWalletPrivateKey$;
+
+  @override
+  String get walletPrivateKey;
+  @override
+  @JsonKey(ignore: true)
+  $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith => throw _privateConstructorUsedError;
+}

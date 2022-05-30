@@ -17,6 +17,7 @@ class LocalEpic {
       TypedEpic<AppState, DeleteCode>(_deleteCode),
       TypedEpic<AppState, SelectItemDetailsStart>(_selectItemDetailsSuccess),
       TypedEpic<AppState, GeneratePasswordStart>(_generatePassword),
+      TypedEpic<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
     ]);
   }
 
@@ -74,5 +75,9 @@ class LocalEpic {
           )
           .onErrorReturnWith(GeneratePasswordError.new);
     });
+  }
+
+  Stream<AppAction> _setWalletPrivateKey(Stream<SetWalletPrivateKey> actions, EpicStore<AppState> store) {
+    return actions.map((SetWalletPrivateKey action) => const SecureStorageStoreWalletPrivateKeyStart());
   }
 }

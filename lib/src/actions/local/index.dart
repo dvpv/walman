@@ -16,3 +16,5 @@ part 'set_scanned_code.dart';
 part 'update_access_time.dart';
 
 part 'password_generator.dart';
+
+part 'update_persistent_state.dart';

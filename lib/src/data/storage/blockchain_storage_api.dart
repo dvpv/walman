@@ -15,7 +15,6 @@ class BlockchainStorageApi {
   BlockchainStorageApi({
     required this.contract,
     required this.client,
-    required this.privateKey,
   });
 
   static Future<BlockchainStorageApi> get build async {
@@ -31,25 +30,24 @@ class BlockchainStorageApi {
         _kRpcServer,
         Client(),
       ),
-      privateKey: EthPrivateKey.fromHex(dotenv.env['WALLET_PRIVATE_KEY']!),
     );
   }
 
   final DeployedContract contract;
   final Web3Client client;
-  final EthPrivateKey privateKey;
 
-  Future<void> addBundle(Bundle bundle, String key) async {
+  Future<void> addBundle({required Bundle bundle, required String walletPrivateKey, required String masterKey}) async {
+    final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
     await client.sendTransaction(
       privateKey,
       Transaction.callContract(
         contract: contract,
         function: contract.function('addBundle'),
         parameters: <String>[
-          encrypt(message: jsonEncode(bundle), key: key),
+          encrypt(message: jsonEncode(bundle), key: masterKey),
           encrypt(
             message: DateTime.now().microsecondsSinceEpoch.toString(),
-            key: key,
+            key: masterKey,
           ),
         ],
       ),
@@ -65,7 +63,8 @@ class BlockchainStorageApi {
     throw Error();
   }
 
-  Future<Bundle> getLatestBundle(String key) async {
+  Future<Bundle> getLatestBundle({required String walletPrivateKey, required String masterKey}) async {
+    final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
     final List<dynamic> response = await client.call(
       contract: contract,
       function: contract.function('getLatestBundle'),
@@ -77,7 +76,7 @@ class BlockchainStorageApi {
     }
     final String encryptedBundle = (response[0] as List<dynamic>)[0] as String;
     final Bundle bundle =
-        Bundle.fromJson(jsonDecode(decrypt(message: encryptedBundle, key: key)) as Map<dynamic, dynamic>);
+        Bundle.fromJson(jsonDecode(decrypt(message: encryptedBundle, key: masterKey)) as Map<dynamic, dynamic>);
     return bundle;
   }
 }

@@ -15,6 +15,7 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, GeneratePasswordSuccessful>(_generatePasswordSuccessful),
   TypedReducer<AppState, ChangePasswordGeneratorCharacterPool>(_changePasswordGeneratorCharacterPool),
   TypedReducer<AppState, ChangePasswordGeneratorLength>(_changePasswordGeneratorCharacterLength),
+  TypedReducer<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -137,6 +138,14 @@ AppState _changePasswordGeneratorCharacterLength(AppState state, ChangePasswordG
   return state.copyWith(
     passwordGeneratorState: state.passwordGeneratorState.copyWith(
       length: action.length,
+    ),
+  );
+}
+
+AppState _setWalletPrivateKey(AppState state, SetWalletPrivateKey action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      walletPrivateKey: action.walletPrivateKey,
     ),
   );
 }

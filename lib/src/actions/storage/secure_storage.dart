@@ -58,3 +58,58 @@ class SecureStorageGetBundle with _$SecureStorageGetBundle implements AppAction 
 
   static String get pendingKey => _kSecureStorageGetBundlePendingId;
 }
+
+const String _kSecureStorageStoreWalletPrivateKeyPendingId = 'SecureStorageStoreWalletPrivateKey';
+
+@freezed
+class SecureStorageStoreWalletPrivateKey with _$SecureStorageStoreWalletPrivateKey implements AppAction {
+  @Implements<ActionStart>()
+  const factory SecureStorageStoreWalletPrivateKey.start({
+    @Default(_kSecureStorageStoreWalletPrivateKeyPendingId) String pendingId,
+  }) = SecureStorageStoreWalletPrivateKeyStart;
+
+  @Implements<ActionDone>()
+  const factory SecureStorageStoreWalletPrivateKey.successful([
+    @Default(_kSecureStorageStoreWalletPrivateKeyPendingId) String pendingId,
+  ]) = SecureStorageStoreWalletPrivateKeySuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory SecureStorageStoreWalletPrivateKey.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kSecureStorageStoreWalletPrivateKeyPendingId) String pendingId,
+  ]) = SecureStorageStoreWalletPrivateKeyError;
+
+  static String get pendingKey => _kSecureStorageStoreWalletPrivateKeyPendingId;
+}
+
+const String _kSecureStorageGetWalletPrivateKeyPendingId = 'SecureStorageGetWalletPrivateKey';
+
+@freezed
+class SecureStorageGetWalletPrivateKey with _$SecureStorageGetWalletPrivateKey implements AppAction {
+  @Implements<ActionStart>()
+  const factory SecureStorageGetWalletPrivateKey.start({
+    /*
+    * Needed for the cases where there is concurrency between this and state upgrade.
+    * */
+    String? masterKey,
+    @Default(_kSecureStorageGetWalletPrivateKeyPendingId) String pendingId,
+  }) = SecureStorageGetWalletPrivateKeyStart;
+
+  @Implements<ActionDone>()
+  const factory SecureStorageGetWalletPrivateKey.successful({
+    required String? walletPrivateKey,
+    @Default(_kSecureStorageGetWalletPrivateKeyPendingId) String pendingId,
+  }) = SecureStorageGetWalletPrivateKeySuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory SecureStorageGetWalletPrivateKey.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kSecureStorageGetWalletPrivateKeyPendingId) String pendingId,
+  ]) = SecureStorageGetWalletPrivateKeyError;
+
+  static String get pendingKey => _kSecureStorageGetWalletPrivateKeyPendingId;
+}

@@ -21,6 +21,7 @@ import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/password_details.dart';
 import 'package:walman/src/presentation/pages/place/new_place_page.dart';
 import 'package:walman/src/presentation/pages/signup_page.dart';
+import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';
 import 'package:walman/src/presentation/start_page.dart';
 import 'package:walman/src/reducers/reducer.dart';
 
@@ -71,6 +72,7 @@ class App extends StatelessWidget {
           PasswordDetails.route: (BuildContext context) => const PasswordDetails(),
           NewCodePage.route: (BuildContext context) => const NewCodePage(),
           CodeDetails.route: (BuildContext context) => const CodeDetails(),
+          WalletPage.route: (BuildContext context) => const WalletPage(),
         },
       ),
     );
