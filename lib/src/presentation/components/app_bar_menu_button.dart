@@ -51,7 +51,30 @@ class AppBarMenuButton extends StatelessWidget {
               onSelected: (_MenuOptions result) {
                 switch (result) {
                   case _MenuOptions.logout:
-                    StoreProvider.of<AppState>(context).dispatch(const LogoutStart());
+                    showDialog<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          actions: <Widget>[
+                            TextButton(
+                              child: const Text('CANCEL'),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                StoreProvider.of<AppState>(context).dispatch(const LogoutStart());
+                                Navigator.pop(context);
+                              },
+                              child: const Text('LOGOUT'),
+                            ),
+                          ],
+                          title: const Text('Logout'),
+                          content: const Text('Are you sure you want to logout?'),
+                        );
+                      },
+                    );
                     break;
                   case _MenuOptions.generator:
                     StoreProvider.of<AppState>(context).dispatch(const GeneratePasswordStart());
