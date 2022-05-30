@@ -20,7 +20,7 @@ class AppEpic {
       AuthEpic(authApi).epics,
       LocalEpic().epics,
       StorageEpic(secureStorageApi: secureStorageApi, blockchainStorageApi: blockchainStorageApi).epics,
-      UiEpic().epics,
+      UiEpic(blockchainStorageApi).epics,
     ]);
   }
 }

@@ -36,6 +36,12 @@ class BlockchainStorageApi {
   final DeployedContract contract;
   final Web3Client client;
 
+  Future<WalletInfo> getWalletInfo({required String walletPrivateKey}) async {
+    final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
+    final EtherAmount balance = await client.getBalance(privateKey.address);
+    return WalletInfo(balance: (balance.getInWei.toDouble() * 0.000000000000000001).toStringAsFixed(8));
+  }
+
   Future<void> addBundle({required Bundle bundle, required String walletPrivateKey, required String masterKey}) async {
     final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
     await client.sendTransaction(

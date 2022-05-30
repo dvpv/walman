@@ -50,6 +50,7 @@ class CreateCodeState with _$CreateCodeState {
 @freezed
 class UIState with _$UIState {
   const factory UIState({
+    WalletInfo? walletInfo,
     @Default(false) bool showPassword,
   }) = UIState$;
 
@@ -66,4 +67,13 @@ class PasswordGeneratorState with _$PasswordGeneratorState {
 
   factory PasswordGeneratorState.fromJson(Map<dynamic, dynamic> json) =>
       _$PasswordGeneratorStateFromJson(Map<String, dynamic>.from(json));
+}
+
+@freezed
+class WalletInfo with _$WalletInfo {
+  const factory WalletInfo({
+    required String balance,
+  }) = WalletInfo$;
+
+  factory WalletInfo.fromJson(Map<dynamic, dynamic> json) => _$WalletInfoFromJson(Map<String, dynamic>.from(json));
 }

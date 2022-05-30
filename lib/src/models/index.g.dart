@@ -76,10 +76,12 @@ Map<String, dynamic> _$$CreateCodeState$ToJson(_$CreateCodeState$ instance) => <
     };
 
 _$UIState$ _$$UIState$FromJson(Map<String, dynamic> json) => _$UIState$(
+      walletInfo: json['walletInfo'] == null ? null : WalletInfo.fromJson(json['walletInfo'] as Map<String, dynamic>),
       showPassword: json['showPassword'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$UIState$ToJson(_$UIState$ instance) => <String, dynamic>{
+      'walletInfo': instance.walletInfo,
       'showPassword': instance.showPassword,
     };
 
@@ -103,6 +105,14 @@ const _$CharacterPoolEnumMap = {
   CharacterPool.digits: 'digits',
   CharacterPool.symbols: 'symbols',
 };
+
+_$WalletInfo$ _$$WalletInfo$FromJson(Map<String, dynamic> json) => _$WalletInfo$(
+      balance: json['balance'] as String,
+    );
+
+Map<String, dynamic> _$$WalletInfo$ToJson(_$WalletInfo$ instance) => <String, dynamic>{
+      'balance': instance.balance,
+    };
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,

@@ -1299,3 +1299,583 @@ abstract class ShowPassword$ implements ShowPassword {
   @JsonKey(ignore: true)
   $ShowPassword$CopyWith<ShowPassword$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$GetWalletInfoTearOff {
+  const _$GetWalletInfoTearOff();
+
+  GetWalletInfoStart start({required String walletPrivateKey, String pendingId = _kGetWalletInfoPendingId}) {
+    return GetWalletInfoStart(
+      walletPrivateKey: walletPrivateKey,
+      pendingId: pendingId,
+    );
+  }
+
+  GetWalletInfoSuccessful successful(WalletInfo walletInfo, [String pendingId = _kGetWalletInfoPendingId]) {
+    return GetWalletInfoSuccessful(
+      walletInfo,
+      pendingId,
+    );
+  }
+
+  GetWalletInfoError error(Object error, StackTrace stackTrace, [String pendingId = _kGetWalletInfoPendingId]) {
+    return GetWalletInfoError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $GetWalletInfo = _$GetWalletInfoTearOff();
+
+/// @nodoc
+mixin _$GetWalletInfo {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String walletPrivateKey, String pendingId) start,
+    required TResult Function(WalletInfo walletInfo, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetWalletInfoStart value) start,
+    required TResult Function(GetWalletInfoSuccessful value) successful,
+    required TResult Function(GetWalletInfoError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetWalletInfoCopyWith<GetWalletInfo> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetWalletInfoCopyWith<$Res> {
+  factory $GetWalletInfoCopyWith(GetWalletInfo value, $Res Function(GetWalletInfo) then) =
+      _$GetWalletInfoCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetWalletInfoCopyWithImpl<$Res> implements $GetWalletInfoCopyWith<$Res> {
+  _$GetWalletInfoCopyWithImpl(this._value, this._then);
+
+  final GetWalletInfo _value;
+  // ignore: unused_field
+  final $Res Function(GetWalletInfo) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $GetWalletInfoStartCopyWith<$Res> implements $GetWalletInfoCopyWith<$Res> {
+  factory $GetWalletInfoStartCopyWith(GetWalletInfoStart value, $Res Function(GetWalletInfoStart) then) =
+      _$GetWalletInfoStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String walletPrivateKey, String pendingId});
+}
+
+/// @nodoc
+class _$GetWalletInfoStartCopyWithImpl<$Res> extends _$GetWalletInfoCopyWithImpl<$Res>
+    implements $GetWalletInfoStartCopyWith<$Res> {
+  _$GetWalletInfoStartCopyWithImpl(GetWalletInfoStart _value, $Res Function(GetWalletInfoStart) _then)
+      : super(_value, (v) => _then(v as GetWalletInfoStart));
+
+  @override
+  GetWalletInfoStart get _value => super._value as GetWalletInfoStart;
+
+  @override
+  $Res call({
+    Object? walletPrivateKey = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(GetWalletInfoStart(
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$GetWalletInfoStart implements GetWalletInfoStart {
+  const _$GetWalletInfoStart({required this.walletPrivateKey, this.pendingId = _kGetWalletInfoPendingId});
+
+  @override
+  final String walletPrivateKey;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetWalletInfo.start(walletPrivateKey: $walletPrivateKey, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetWalletInfoStart &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
+      const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $GetWalletInfoStartCopyWith<GetWalletInfoStart> get copyWith =>
+      _$GetWalletInfoStartCopyWithImpl<GetWalletInfoStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String walletPrivateKey, String pendingId) start,
+    required TResult Function(WalletInfo walletInfo, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(walletPrivateKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(walletPrivateKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(walletPrivateKey, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetWalletInfoStart value) start,
+    required TResult Function(GetWalletInfoSuccessful value) successful,
+    required TResult Function(GetWalletInfoError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetWalletInfoStart implements GetWalletInfo, ActionStart {
+  const factory GetWalletInfoStart({required String walletPrivateKey, String pendingId}) = _$GetWalletInfoStart;
+
+  String get walletPrivateKey;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $GetWalletInfoStartCopyWith<GetWalletInfoStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetWalletInfoSuccessfulCopyWith<$Res> implements $GetWalletInfoCopyWith<$Res> {
+  factory $GetWalletInfoSuccessfulCopyWith(GetWalletInfoSuccessful value, $Res Function(GetWalletInfoSuccessful) then) =
+      _$GetWalletInfoSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({WalletInfo walletInfo, String pendingId});
+
+  $WalletInfoCopyWith<$Res> get walletInfo;
+}
+
+/// @nodoc
+class _$GetWalletInfoSuccessfulCopyWithImpl<$Res> extends _$GetWalletInfoCopyWithImpl<$Res>
+    implements $GetWalletInfoSuccessfulCopyWith<$Res> {
+  _$GetWalletInfoSuccessfulCopyWithImpl(GetWalletInfoSuccessful _value, $Res Function(GetWalletInfoSuccessful) _then)
+      : super(_value, (v) => _then(v as GetWalletInfoSuccessful));
+
+  @override
+  GetWalletInfoSuccessful get _value => super._value as GetWalletInfoSuccessful;
+
+  @override
+  $Res call({
+    Object? walletInfo = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(GetWalletInfoSuccessful(
+      walletInfo == freezed
+          ? _value.walletInfo
+          : walletInfo // ignore: cast_nullable_to_non_nullable
+              as WalletInfo,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $WalletInfoCopyWith<$Res> get walletInfo {
+    return $WalletInfoCopyWith<$Res>(_value.walletInfo, (value) {
+      return _then(_value.copyWith(walletInfo: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$GetWalletInfoSuccessful implements GetWalletInfoSuccessful {
+  const _$GetWalletInfoSuccessful(this.walletInfo, [this.pendingId = _kGetWalletInfoPendingId]);
+
+  @override
+  final WalletInfo walletInfo;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetWalletInfo.successful(walletInfo: $walletInfo, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetWalletInfoSuccessful &&
+            const DeepCollectionEquality().equals(other.walletInfo, walletInfo) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(walletInfo), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $GetWalletInfoSuccessfulCopyWith<GetWalletInfoSuccessful> get copyWith =>
+      _$GetWalletInfoSuccessfulCopyWithImpl<GetWalletInfoSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String walletPrivateKey, String pendingId) start,
+    required TResult Function(WalletInfo walletInfo, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(walletInfo, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(walletInfo, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(walletInfo, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetWalletInfoStart value) start,
+    required TResult Function(GetWalletInfoSuccessful value) successful,
+    required TResult Function(GetWalletInfoError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetWalletInfoSuccessful implements GetWalletInfo, ActionDone {
+  const factory GetWalletInfoSuccessful(WalletInfo walletInfo, [String pendingId]) = _$GetWalletInfoSuccessful;
+
+  WalletInfo get walletInfo;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $GetWalletInfoSuccessfulCopyWith<GetWalletInfoSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetWalletInfoErrorCopyWith<$Res> implements $GetWalletInfoCopyWith<$Res> {
+  factory $GetWalletInfoErrorCopyWith(GetWalletInfoError value, $Res Function(GetWalletInfoError) then) =
+      _$GetWalletInfoErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$GetWalletInfoErrorCopyWithImpl<$Res> extends _$GetWalletInfoCopyWithImpl<$Res>
+    implements $GetWalletInfoErrorCopyWith<$Res> {
+  _$GetWalletInfoErrorCopyWithImpl(GetWalletInfoError _value, $Res Function(GetWalletInfoError) _then)
+      : super(_value, (v) => _then(v as GetWalletInfoError));
+
+  @override
+  GetWalletInfoError get _value => super._value as GetWalletInfoError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(GetWalletInfoError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$GetWalletInfoError implements GetWalletInfoError {
+  const _$GetWalletInfoError(this.error, this.stackTrace, [this.pendingId = _kGetWalletInfoPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetWalletInfo.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GetWalletInfoError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $GetWalletInfoErrorCopyWith<GetWalletInfoError> get copyWith =>
+      _$GetWalletInfoErrorCopyWithImpl<GetWalletInfoError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String walletPrivateKey, String pendingId) start,
+    required TResult Function(WalletInfo walletInfo, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String walletPrivateKey, String pendingId)? start,
+    TResult Function(WalletInfo walletInfo, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetWalletInfoStart value) start,
+    required TResult Function(GetWalletInfoSuccessful value) successful,
+    required TResult Function(GetWalletInfoError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetWalletInfoStart value)? start,
+    TResult Function(GetWalletInfoSuccessful value)? successful,
+    TResult Function(GetWalletInfoError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetWalletInfoError implements GetWalletInfo, ActionDone, ErrorAction {
+  const factory GetWalletInfoError(Object error, StackTrace stackTrace, [String pendingId]) = _$GetWalletInfoError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $GetWalletInfoErrorCopyWith<GetWalletInfoError> get copyWith => throw _privateConstructorUsedError;
+}

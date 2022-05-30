@@ -6,6 +6,7 @@ Reducer<AppState> uiReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, ChangeAppPage>(_changeAppPage),
   TypedReducer<AppState, SetEditingStart>(_setEditingStart),
   TypedReducer<AppState, ShowPassword>(_showPassword),
+  TypedReducer<AppState, GetWalletInfoSuccessful>(_getWalletInfo),
 ]);
 
 AppState _changeAppPage(AppState state, ChangeAppPage action) {
@@ -18,4 +19,8 @@ AppState _setEditingStart(AppState state, SetEditingStart action) {
 
 AppState _showPassword(AppState state, ShowPassword action) {
   return state.copyWith(uiState: state.uiState.copyWith(showPassword: action.show));
+}
+
+AppState _getWalletInfo(AppState state, GetWalletInfoSuccessful action) {
+  return state.copyWith(uiState: state.uiState.copyWith(walletInfo: action.walletInfo));
 }

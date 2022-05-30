@@ -961,8 +961,9 @@ UIState _$UIStateFromJson(Map<String, dynamic> json) {
 class _$UIStateTearOff {
   const _$UIStateTearOff();
 
-  UIState$ call({bool showPassword = false}) {
+  UIState$ call({WalletInfo? walletInfo, bool showPassword = false}) {
     return UIState$(
+      walletInfo: walletInfo,
       showPassword: showPassword,
     );
   }
@@ -977,6 +978,7 @@ const $UIState = _$UIStateTearOff();
 
 /// @nodoc
 mixin _$UIState {
+  WalletInfo? get walletInfo => throw _privateConstructorUsedError;
   bool get showPassword => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -987,7 +989,9 @@ mixin _$UIState {
 /// @nodoc
 abstract class $UIStateCopyWith<$Res> {
   factory $UIStateCopyWith(UIState value, $Res Function(UIState) then) = _$UIStateCopyWithImpl<$Res>;
-  $Res call({bool showPassword});
+  $Res call({WalletInfo? walletInfo, bool showPassword});
+
+  $WalletInfoCopyWith<$Res>? get walletInfo;
 }
 
 /// @nodoc
@@ -1000,14 +1004,30 @@ class _$UIStateCopyWithImpl<$Res> implements $UIStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? walletInfo = freezed,
     Object? showPassword = freezed,
   }) {
     return _then(_value.copyWith(
+      walletInfo: walletInfo == freezed
+          ? _value.walletInfo
+          : walletInfo // ignore: cast_nullable_to_non_nullable
+              as WalletInfo?,
       showPassword: showPassword == freezed
           ? _value.showPassword
           : showPassword // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+
+  @override
+  $WalletInfoCopyWith<$Res>? get walletInfo {
+    if (_value.walletInfo == null) {
+      return null;
+    }
+
+    return $WalletInfoCopyWith<$Res>(_value.walletInfo!, (value) {
+      return _then(_value.copyWith(walletInfo: value));
+    });
   }
 }
 
@@ -1015,7 +1035,10 @@ class _$UIStateCopyWithImpl<$Res> implements $UIStateCopyWith<$Res> {
 abstract class $UIState$CopyWith<$Res> implements $UIStateCopyWith<$Res> {
   factory $UIState$CopyWith(UIState$ value, $Res Function(UIState$) then) = _$UIState$CopyWithImpl<$Res>;
   @override
-  $Res call({bool showPassword});
+  $Res call({WalletInfo? walletInfo, bool showPassword});
+
+  @override
+  $WalletInfoCopyWith<$Res>? get walletInfo;
 }
 
 /// @nodoc
@@ -1027,9 +1050,14 @@ class _$UIState$CopyWithImpl<$Res> extends _$UIStateCopyWithImpl<$Res> implement
 
   @override
   $Res call({
+    Object? walletInfo = freezed,
     Object? showPassword = freezed,
   }) {
     return _then(UIState$(
+      walletInfo: walletInfo == freezed
+          ? _value.walletInfo
+          : walletInfo // ignore: cast_nullable_to_non_nullable
+              as WalletInfo?,
       showPassword: showPassword == freezed
           ? _value.showPassword
           : showPassword // ignore: cast_nullable_to_non_nullable
@@ -1041,17 +1069,19 @@ class _$UIState$CopyWithImpl<$Res> extends _$UIStateCopyWithImpl<$Res> implement
 /// @nodoc
 @JsonSerializable()
 class _$UIState$ implements UIState$ {
-  const _$UIState$({this.showPassword = false});
+  const _$UIState$({this.walletInfo, this.showPassword = false});
 
   factory _$UIState$.fromJson(Map<String, dynamic> json) => _$$UIState$FromJson(json);
 
+  @override
+  final WalletInfo? walletInfo;
   @JsonKey()
   @override
   final bool showPassword;
 
   @override
   String toString() {
-    return 'UIState(showPassword: $showPassword)';
+    return 'UIState(walletInfo: $walletInfo, showPassword: $showPassword)';
   }
 
   @override
@@ -1059,11 +1089,13 @@ class _$UIState$ implements UIState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is UIState$ &&
+            const DeepCollectionEquality().equals(other.walletInfo, walletInfo) &&
             const DeepCollectionEquality().equals(other.showPassword, showPassword));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(showPassword));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(walletInfo), const DeepCollectionEquality().hash(showPassword));
 
   @JsonKey(ignore: true)
   @override
@@ -1076,10 +1108,12 @@ class _$UIState$ implements UIState$ {
 }
 
 abstract class UIState$ implements UIState {
-  const factory UIState$({bool showPassword}) = _$UIState$;
+  const factory UIState$({WalletInfo? walletInfo, bool showPassword}) = _$UIState$;
 
   factory UIState$.fromJson(Map<String, dynamic> json) = _$UIState$.fromJson;
 
+  @override
+  WalletInfo? get walletInfo;
   @override
   bool get showPassword;
   @override
@@ -1263,6 +1297,140 @@ abstract class PasswordGeneratorState$ implements PasswordGeneratorState {
   @override
   @JsonKey(ignore: true)
   $PasswordGeneratorState$CopyWith<PasswordGeneratorState$> get copyWith => throw _privateConstructorUsedError;
+}
+
+WalletInfo _$WalletInfoFromJson(Map<String, dynamic> json) {
+  return WalletInfo$.fromJson(json);
+}
+
+/// @nodoc
+class _$WalletInfoTearOff {
+  const _$WalletInfoTearOff();
+
+  WalletInfo$ call({required String balance}) {
+    return WalletInfo$(
+      balance: balance,
+    );
+  }
+
+  WalletInfo fromJson(Map<String, Object?> json) {
+    return WalletInfo.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $WalletInfo = _$WalletInfoTearOff();
+
+/// @nodoc
+mixin _$WalletInfo {
+  String get balance => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $WalletInfoCopyWith<WalletInfo> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $WalletInfoCopyWith<$Res> {
+  factory $WalletInfoCopyWith(WalletInfo value, $Res Function(WalletInfo) then) = _$WalletInfoCopyWithImpl<$Res>;
+  $Res call({String balance});
+}
+
+/// @nodoc
+class _$WalletInfoCopyWithImpl<$Res> implements $WalletInfoCopyWith<$Res> {
+  _$WalletInfoCopyWithImpl(this._value, this._then);
+
+  final WalletInfo _value;
+  // ignore: unused_field
+  final $Res Function(WalletInfo) _then;
+
+  @override
+  $Res call({
+    Object? balance = freezed,
+  }) {
+    return _then(_value.copyWith(
+      balance: balance == freezed
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $WalletInfo$CopyWith<$Res> implements $WalletInfoCopyWith<$Res> {
+  factory $WalletInfo$CopyWith(WalletInfo$ value, $Res Function(WalletInfo$) then) = _$WalletInfo$CopyWithImpl<$Res>;
+  @override
+  $Res call({String balance});
+}
+
+/// @nodoc
+class _$WalletInfo$CopyWithImpl<$Res> extends _$WalletInfoCopyWithImpl<$Res> implements $WalletInfo$CopyWith<$Res> {
+  _$WalletInfo$CopyWithImpl(WalletInfo$ _value, $Res Function(WalletInfo$) _then)
+      : super(_value, (v) => _then(v as WalletInfo$));
+
+  @override
+  WalletInfo$ get _value => super._value as WalletInfo$;
+
+  @override
+  $Res call({
+    Object? balance = freezed,
+  }) {
+    return _then(WalletInfo$(
+      balance: balance == freezed
+          ? _value.balance
+          : balance // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$WalletInfo$ implements WalletInfo$ {
+  const _$WalletInfo$({required this.balance});
+
+  factory _$WalletInfo$.fromJson(Map<String, dynamic> json) => _$$WalletInfo$FromJson(json);
+
+  @override
+  final String balance;
+
+  @override
+  String toString() {
+    return 'WalletInfo(balance: $balance)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is WalletInfo$ &&
+            const DeepCollectionEquality().equals(other.balance, balance));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(balance));
+
+  @JsonKey(ignore: true)
+  @override
+  $WalletInfo$CopyWith<WalletInfo$> get copyWith => _$WalletInfo$CopyWithImpl<WalletInfo$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$WalletInfo$ToJson(this);
+  }
+}
+
+abstract class WalletInfo$ implements WalletInfo {
+  const factory WalletInfo$({required String balance}) = _$WalletInfo$;
+
+  factory WalletInfo$.fromJson(Map<String, dynamic> json) = _$WalletInfo$.fromJson;
+
+  @override
+  String get balance;
+  @override
+  @JsonKey(ignore: true)
+  $WalletInfo$CopyWith<WalletInfo$> get copyWith => throw _privateConstructorUsedError;
 }
 
 AppUser _$AppUserFromJson(Map<String, dynamic> json) {
