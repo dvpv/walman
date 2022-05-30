@@ -110,20 +110,20 @@ class _$AppStateTearOff {
       {Set<String> pending = const <String>{},
       AppUser? user,
       AppPage selectedPage = AppPage.home,
-      Bundle bundle = const Bundle(),
       DetailsState detailsState = const DetailsState(),
       CreateCodeState createCodeState = const CreateCodeState(),
       UIState uiState = const UIState(),
-      PasswordGeneratorState passwordGeneratorState = const PasswordGeneratorState()}) {
+      PasswordGeneratorState passwordGeneratorState = const PasswordGeneratorState(),
+      PersistentState persistentState = const PersistentState()}) {
     return AppState$(
       pending: pending,
       user: user,
       selectedPage: selectedPage,
-      bundle: bundle,
       detailsState: detailsState,
       createCodeState: createCodeState,
       uiState: uiState,
       passwordGeneratorState: passwordGeneratorState,
+      persistentState: persistentState,
     );
   }
 
@@ -140,11 +140,11 @@ mixin _$AppState {
   Set<String> get pending => throw _privateConstructorUsedError;
   AppUser? get user => throw _privateConstructorUsedError;
   AppPage get selectedPage => throw _privateConstructorUsedError;
-  Bundle get bundle => throw _privateConstructorUsedError;
   DetailsState get detailsState => throw _privateConstructorUsedError;
   CreateCodeState get createCodeState => throw _privateConstructorUsedError;
   UIState get uiState => throw _privateConstructorUsedError;
   PasswordGeneratorState get passwordGeneratorState => throw _privateConstructorUsedError;
+  PersistentState get persistentState => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -158,18 +158,18 @@ abstract class $AppStateCopyWith<$Res> {
       {Set<String> pending,
       AppUser? user,
       AppPage selectedPage,
-      Bundle bundle,
       DetailsState detailsState,
       CreateCodeState createCodeState,
       UIState uiState,
-      PasswordGeneratorState passwordGeneratorState});
+      PasswordGeneratorState passwordGeneratorState,
+      PersistentState persistentState});
 
   $AppUserCopyWith<$Res>? get user;
-  $BundleCopyWith<$Res> get bundle;
   $DetailsStateCopyWith<$Res> get detailsState;
   $CreateCodeStateCopyWith<$Res> get createCodeState;
   $UIStateCopyWith<$Res> get uiState;
   $PasswordGeneratorStateCopyWith<$Res> get passwordGeneratorState;
+  $PersistentStateCopyWith<$Res> get persistentState;
 }
 
 /// @nodoc
@@ -185,11 +185,11 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? pending = freezed,
     Object? user = freezed,
     Object? selectedPage = freezed,
-    Object? bundle = freezed,
     Object? detailsState = freezed,
     Object? createCodeState = freezed,
     Object? uiState = freezed,
     Object? passwordGeneratorState = freezed,
+    Object? persistentState = freezed,
   }) {
     return _then(_value.copyWith(
       pending: pending == freezed
@@ -204,10 +204,6 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
               as AppPage,
-      bundle: bundle == freezed
-          ? _value.bundle
-          : bundle // ignore: cast_nullable_to_non_nullable
-              as Bundle,
       detailsState: detailsState == freezed
           ? _value.detailsState
           : detailsState // ignore: cast_nullable_to_non_nullable
@@ -224,6 +220,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.passwordGeneratorState
           : passwordGeneratorState // ignore: cast_nullable_to_non_nullable
               as PasswordGeneratorState,
+      persistentState: persistentState == freezed
+          ? _value.persistentState
+          : persistentState // ignore: cast_nullable_to_non_nullable
+              as PersistentState,
     ));
   }
 
@@ -235,13 +235,6 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
 
     return $AppUserCopyWith<$Res>(_value.user!, (value) {
       return _then(_value.copyWith(user: value));
-    });
-  }
-
-  @override
-  $BundleCopyWith<$Res> get bundle {
-    return $BundleCopyWith<$Res>(_value.bundle, (value) {
-      return _then(_value.copyWith(bundle: value));
     });
   }
 
@@ -272,6 +265,13 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       return _then(_value.copyWith(passwordGeneratorState: value));
     });
   }
+
+  @override
+  $PersistentStateCopyWith<$Res> get persistentState {
+    return $PersistentStateCopyWith<$Res>(_value.persistentState, (value) {
+      return _then(_value.copyWith(persistentState: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -282,16 +282,14 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
       {Set<String> pending,
       AppUser? user,
       AppPage selectedPage,
-      Bundle bundle,
       DetailsState detailsState,
       CreateCodeState createCodeState,
       UIState uiState,
-      PasswordGeneratorState passwordGeneratorState});
+      PasswordGeneratorState passwordGeneratorState,
+      PersistentState persistentState});
 
   @override
   $AppUserCopyWith<$Res>? get user;
-  @override
-  $BundleCopyWith<$Res> get bundle;
   @override
   $DetailsStateCopyWith<$Res> get detailsState;
   @override
@@ -300,6 +298,8 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $UIStateCopyWith<$Res> get uiState;
   @override
   $PasswordGeneratorStateCopyWith<$Res> get passwordGeneratorState;
+  @override
+  $PersistentStateCopyWith<$Res> get persistentState;
 }
 
 /// @nodoc
@@ -315,11 +315,11 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
     Object? pending = freezed,
     Object? user = freezed,
     Object? selectedPage = freezed,
-    Object? bundle = freezed,
     Object? detailsState = freezed,
     Object? createCodeState = freezed,
     Object? uiState = freezed,
     Object? passwordGeneratorState = freezed,
+    Object? persistentState = freezed,
   }) {
     return _then(AppState$(
       pending: pending == freezed
@@ -334,10 +334,6 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
               as AppPage,
-      bundle: bundle == freezed
-          ? _value.bundle
-          : bundle // ignore: cast_nullable_to_non_nullable
-              as Bundle,
       detailsState: detailsState == freezed
           ? _value.detailsState
           : detailsState // ignore: cast_nullable_to_non_nullable
@@ -354,6 +350,10 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.passwordGeneratorState
           : passwordGeneratorState // ignore: cast_nullable_to_non_nullable
               as PasswordGeneratorState,
+      persistentState: persistentState == freezed
+          ? _value.persistentState
+          : persistentState // ignore: cast_nullable_to_non_nullable
+              as PersistentState,
     ));
   }
 }
@@ -365,11 +365,11 @@ class _$AppState$ implements AppState$ {
       {this.pending = const <String>{},
       this.user,
       this.selectedPage = AppPage.home,
-      this.bundle = const Bundle(),
       this.detailsState = const DetailsState(),
       this.createCodeState = const CreateCodeState(),
       this.uiState = const UIState(),
-      this.passwordGeneratorState = const PasswordGeneratorState()});
+      this.passwordGeneratorState = const PasswordGeneratorState(),
+      this.persistentState = const PersistentState()});
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
@@ -383,9 +383,6 @@ class _$AppState$ implements AppState$ {
   final AppPage selectedPage;
   @JsonKey()
   @override
-  final Bundle bundle;
-  @JsonKey()
-  @override
   final DetailsState detailsState;
   @JsonKey()
   @override
@@ -396,10 +393,13 @@ class _$AppState$ implements AppState$ {
   @JsonKey()
   @override
   final PasswordGeneratorState passwordGeneratorState;
+  @JsonKey()
+  @override
+  final PersistentState persistentState;
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, bundle: $bundle, detailsState: $detailsState, createCodeState: $createCodeState, uiState: $uiState, passwordGeneratorState: $passwordGeneratorState)';
+    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, detailsState: $detailsState, createCodeState: $createCodeState, uiState: $uiState, passwordGeneratorState: $passwordGeneratorState, persistentState: $persistentState)';
   }
 
   @override
@@ -410,11 +410,11 @@ class _$AppState$ implements AppState$ {
             const DeepCollectionEquality().equals(other.pending, pending) &&
             const DeepCollectionEquality().equals(other.user, user) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
-            const DeepCollectionEquality().equals(other.bundle, bundle) &&
             const DeepCollectionEquality().equals(other.detailsState, detailsState) &&
             const DeepCollectionEquality().equals(other.createCodeState, createCodeState) &&
             const DeepCollectionEquality().equals(other.uiState, uiState) &&
-            const DeepCollectionEquality().equals(other.passwordGeneratorState, passwordGeneratorState));
+            const DeepCollectionEquality().equals(other.passwordGeneratorState, passwordGeneratorState) &&
+            const DeepCollectionEquality().equals(other.persistentState, persistentState));
   }
 
   @override
@@ -423,11 +423,11 @@ class _$AppState$ implements AppState$ {
       const DeepCollectionEquality().hash(pending),
       const DeepCollectionEquality().hash(user),
       const DeepCollectionEquality().hash(selectedPage),
-      const DeepCollectionEquality().hash(bundle),
       const DeepCollectionEquality().hash(detailsState),
       const DeepCollectionEquality().hash(createCodeState),
       const DeepCollectionEquality().hash(uiState),
-      const DeepCollectionEquality().hash(passwordGeneratorState));
+      const DeepCollectionEquality().hash(passwordGeneratorState),
+      const DeepCollectionEquality().hash(persistentState));
 
   @JsonKey(ignore: true)
   @override
@@ -444,11 +444,11 @@ abstract class AppState$ implements AppState {
       {Set<String> pending,
       AppUser? user,
       AppPage selectedPage,
-      Bundle bundle,
       DetailsState detailsState,
       CreateCodeState createCodeState,
       UIState uiState,
-      PasswordGeneratorState passwordGeneratorState}) = _$AppState$;
+      PasswordGeneratorState passwordGeneratorState,
+      PersistentState persistentState}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -459,8 +459,6 @@ abstract class AppState$ implements AppState {
   @override
   AppPage get selectedPage;
   @override
-  Bundle get bundle;
-  @override
   DetailsState get detailsState;
   @override
   CreateCodeState get createCodeState;
@@ -469,8 +467,179 @@ abstract class AppState$ implements AppState {
   @override
   PasswordGeneratorState get passwordGeneratorState;
   @override
+  PersistentState get persistentState;
+  @override
   @JsonKey(ignore: true)
   $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;
+}
+
+PersistentState _$PersistentStateFromJson(Map<String, dynamic> json) {
+  return PersistentState$.fromJson(json);
+}
+
+/// @nodoc
+class _$PersistentStateTearOff {
+  const _$PersistentStateTearOff();
+
+  PersistentState$ call({Bundle bundle = const Bundle(), String? walletPrivateKey}) {
+    return PersistentState$(
+      bundle: bundle,
+      walletPrivateKey: walletPrivateKey,
+    );
+  }
+
+  PersistentState fromJson(Map<String, Object?> json) {
+    return PersistentState.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $PersistentState = _$PersistentStateTearOff();
+
+/// @nodoc
+mixin _$PersistentState {
+  Bundle get bundle => throw _privateConstructorUsedError; // Current bundle
+  String? get walletPrivateKey => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PersistentStateCopyWith<PersistentState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PersistentStateCopyWith<$Res> {
+  factory $PersistentStateCopyWith(PersistentState value, $Res Function(PersistentState) then) =
+      _$PersistentStateCopyWithImpl<$Res>;
+  $Res call({Bundle bundle, String? walletPrivateKey});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$PersistentStateCopyWithImpl<$Res> implements $PersistentStateCopyWith<$Res> {
+  _$PersistentStateCopyWithImpl(this._value, this._then);
+
+  final PersistentState _value;
+  // ignore: unused_field
+  final $Res Function(PersistentState) _then;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? walletPrivateKey = freezed,
+  }) {
+    return _then(_value.copyWith(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $PersistentState$CopyWith<$Res> implements $PersistentStateCopyWith<$Res> {
+  factory $PersistentState$CopyWith(PersistentState$ value, $Res Function(PersistentState$) then) =
+      _$PersistentState$CopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle, String? walletPrivateKey});
+
+  @override
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$PersistentState$CopyWithImpl<$Res> extends _$PersistentStateCopyWithImpl<$Res>
+    implements $PersistentState$CopyWith<$Res> {
+  _$PersistentState$CopyWithImpl(PersistentState$ _value, $Res Function(PersistentState$) _then)
+      : super(_value, (v) => _then(v as PersistentState$));
+
+  @override
+  PersistentState$ get _value => super._value as PersistentState$;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? walletPrivateKey = freezed,
+  }) {
+    return _then(PersistentState$(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PersistentState$ implements PersistentState$ {
+  const _$PersistentState$({this.bundle = const Bundle(), this.walletPrivateKey});
+
+  factory _$PersistentState$.fromJson(Map<String, dynamic> json) => _$$PersistentState$FromJson(json);
+
+  @JsonKey()
+  @override
+  final Bundle bundle;
+  @override // Current bundle
+  final String? walletPrivateKey;
+
+  @override
+  String toString() {
+    return 'PersistentState(bundle: $bundle, walletPrivateKey: $walletPrivateKey)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PersistentState$ &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(walletPrivateKey));
+
+  @JsonKey(ignore: true)
+  @override
+  $PersistentState$CopyWith<PersistentState$> get copyWith =>
+      _$PersistentState$CopyWithImpl<PersistentState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PersistentState$ToJson(this);
+  }
+}
+
+abstract class PersistentState$ implements PersistentState {
+  const factory PersistentState$({Bundle bundle, String? walletPrivateKey}) = _$PersistentState$;
+
+  factory PersistentState$.fromJson(Map<String, dynamic> json) = _$PersistentState$.fromJson;
+
+  @override
+  Bundle get bundle;
+  @override // Current bundle
+  String? get walletPrivateKey;
+  @override
+  @JsonKey(ignore: true)
+  $PersistentState$CopyWith<PersistentState$> get copyWith => throw _privateConstructorUsedError;
 }
 
 DetailsState _$DetailsStateFromJson(Map<String, dynamic> json) {

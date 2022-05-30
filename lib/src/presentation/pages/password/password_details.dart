@@ -35,7 +35,8 @@ class _PasswordDetailsState extends State<PasswordDetails> {
   @override
   void initState() {
     final AppState state = StoreProvider.of<AppState>(context, listen: false).state;
-    _password = state.bundle.passwords.firstWhere((Password password) => password.id == state.detailsState.selectedId);
+    _password = state.persistentState.bundle.passwords
+        .firstWhere((Password password) => password.id == state.detailsState.selectedId);
     _titleController = TextEditingController(text: _password.title);
     _usernameController = TextEditingController(text: _password.username);
     _passwordController = TextEditingController(text: _password.password);

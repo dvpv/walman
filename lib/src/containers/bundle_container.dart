@@ -11,7 +11,7 @@ class BundleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, Bundle>(
-      converter: (Store<AppState> store) => store.state.bundle,
+      converter: (Store<AppState> store) => store.state.persistentState.bundle,
       builder: builder,
     );
   }

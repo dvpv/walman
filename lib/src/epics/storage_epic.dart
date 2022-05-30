@@ -14,33 +14,41 @@ class StorageEpic {
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, GetDataStart>(_getDataStart),
-      TypedEpic<AppState, StoreDataStart>(_storeDataStart),
+      TypedEpic<AppState, SecureStorageGetBundleStart>(_secureStorageGetBundle),
+      TypedEpic<AppState, SecureStorageStoreBundleStart>(_secureStorageStoreBundle),
       TypedEpic<AppState, BlockchainAddBundleStart>(_blockchainAddBundle),
       TypedEpic<AppState, BlockchainRestoreLatestBundleStart>(_blockchainRestoreLatestBundle),
     ]);
   }
 
-  Stream<GetData> _getDataStart(Stream<GetDataStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((GetDataStart action) {
+  Stream<AppAction> _secureStorageGetBundle(Stream<SecureStorageGetBundleStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((SecureStorageGetBundleStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => secureStorageApi.getData(action.masterKey))
-          .map<GetData>((Bundle? data) => GetDataSuccessful(data, action.pendingId))
+          .asyncMap((_) => secureStorageApi.getBundle(action.masterKey ?? store.state.user!.masterKey!))
+          .map<SecureStorageGetBundle>(
+            (Bundle bundle) => SecureStorageGetBundleSuccessful(bundle: bundle, pendingId: action.pendingId),
+          )
           .onErrorReturnWith(
-            (Object error, StackTrace stackTrace) => GetDataError(error, stackTrace, action.pendingId),
+            (Object error, StackTrace stackTrace) => SecureStorageGetBundleError(error, stackTrace, action.pendingId),
           );
     });
   }
 
-  Stream<AppAction> _storeDataStart(Stream<StoreDataStart> actions, EpicStore<AppState> store) {
-    return actions.flatMap((StoreDataStart action) {
+  Stream<AppAction> _secureStorageStoreBundle(
+    Stream<SecureStorageStoreBundleStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((SecureStorageStoreBundleStart action) {
       return Stream<void>.value(null)
           .asyncMap(
-            (_) => secureStorageApi.storeData(action.bundle ?? store.state.bundle, store.state.user!.masterKey!),
+            (_) => secureStorageApi.storeBundle(
+              action.bundle ?? store.state.persistentState.bundle,
+              store.state.user!.masterKey!,
+            ),
           )
-          .mapTo<AppAction>(StoreDataSuccessful(store.state.user!.masterKey!))
+          .mapTo<SecureStorageStoreBundle>(SecureStorageStoreBundleSuccessful(action.pendingId))
           .onErrorReturnWith(
-            (Object error, StackTrace stackTrace) => StoreDataError(error, stackTrace, action.pendingId),
+            (Object error, StackTrace stackTrace) => SecureStorageStoreBundleError(error, stackTrace, action.pendingId),
           );
     });
   }
@@ -67,7 +75,7 @@ class StorageEpic {
           .expand<AppAction>(
             (Bundle bundle) => <AppAction>[
               BlockchainRestoreLatestBundleSuccessful(bundle: bundle, pendingId: action.pendingId),
-              StoreDataStart(bundle: bundle),
+              SecureStorageStoreBundleStart(bundle: bundle),
             ],
           )
           .onErrorReturnWith(

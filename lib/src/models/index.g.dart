@@ -14,7 +14,6 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
       user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
       selectedPage: $enumDecodeNullable(_$AppPageEnumMap, json['selectedPage']) ?? AppPage.home,
-      bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
       detailsState: json['detailsState'] == null
           ? const DetailsState()
           : DetailsState.fromJson(json['detailsState'] as Map<String, dynamic>),
@@ -25,17 +24,20 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       passwordGeneratorState: json['passwordGeneratorState'] == null
           ? const PasswordGeneratorState()
           : PasswordGeneratorState.fromJson(json['passwordGeneratorState'] as Map<String, dynamic>),
+      persistentState: json['persistentState'] == null
+          ? const PersistentState()
+          : PersistentState.fromJson(json['persistentState'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
       'user': instance.user,
       'selectedPage': _$AppPageEnumMap[instance.selectedPage],
-      'bundle': instance.bundle,
       'detailsState': instance.detailsState,
       'createCodeState': instance.createCodeState,
       'uiState': instance.uiState,
       'passwordGeneratorState': instance.passwordGeneratorState,
+      'persistentState': instance.persistentState,
     };
 
 const _$AppPageEnumMap = {
@@ -44,6 +46,16 @@ const _$AppPageEnumMap = {
   AppPage.places: 'places',
   AppPage.codes: 'codes',
 };
+
+_$PersistentState$ _$$PersistentState$FromJson(Map<String, dynamic> json) => _$PersistentState$(
+      bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
+      walletPrivateKey: json['walletPrivateKey'] as String?,
+    );
+
+Map<String, dynamic> _$$PersistentState$ToJson(_$PersistentState$ instance) => <String, dynamic>{
+      'bundle': instance.bundle,
+      'walletPrivateKey': instance.walletPrivateKey,
+    };
 
 _$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) => _$DetailsState$(
       selectedId: json['selectedId'] as String? ?? '',

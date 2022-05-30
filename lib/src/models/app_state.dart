@@ -6,14 +6,25 @@ class AppState with _$AppState {
     @Default(<String>{}) Set<String> pending,
     AppUser? user,
     @Default(AppPage.home) AppPage selectedPage,
-    @Default(Bundle()) Bundle bundle,
     @Default(DetailsState()) DetailsState detailsState,
     @Default(CreateCodeState()) CreateCodeState createCodeState,
     @Default(UIState()) UIState uiState,
     @Default(PasswordGeneratorState()) PasswordGeneratorState passwordGeneratorState,
+    @Default(PersistentState()) PersistentState persistentState,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
+}
+
+@freezed
+class PersistentState with _$PersistentState {
+  const factory PersistentState({
+    @Default(Bundle()) Bundle bundle, // Current bundle
+    String? walletPrivateKey, // Current crypto-wallet private key
+  }) = PersistentState$;
+
+  factory PersistentState.fromJson(Map<dynamic, dynamic> json) =>
+      _$PersistentStateFromJson(Map<String, dynamic>.from(json));
 }
 
 @freezed

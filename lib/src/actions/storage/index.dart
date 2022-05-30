@@ -4,8 +4,6 @@ import 'package:walman/src/models/index.dart';
 
 part 'index.freezed.dart';
 
-part 'get_data.dart';
-
-part 'store_data.dart';
-
 part 'blockchain_storage.dart';
+
+part 'secure_storage.dart';

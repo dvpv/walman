@@ -3,14 +3,22 @@ import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/models/index.dart';
 
 Reducer<AppState> storageReducer = combineReducers<AppState>(<Reducer<AppState>>[
-  TypedReducer<AppState, GetDataSuccessful>(_getDataSuccessful),
+  TypedReducer<AppState, SecureStorageGetBundleSuccessful>(_secureStorageGetBundle),
   TypedReducer<AppState, BlockchainRestoreLatestBundleSuccessful>(_blockchainRestoreLatestBundle),
 ]);
 
-AppState _getDataSuccessful(AppState state, GetDataSuccessful action) {
-  return state.copyWith(bundle: action.bundle ?? const Bundle());
+AppState _secureStorageGetBundle(AppState state, SecureStorageGetBundleSuccessful action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      bundle: action.bundle,
+    ),
+  );
 }
 
 AppState _blockchainRestoreLatestBundle(AppState state, BlockchainRestoreLatestBundleSuccessful action) {
-  return state.copyWith(bundle: action.bundle);
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      bundle: action.bundle,
+    ),
+  );
 }

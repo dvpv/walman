@@ -15,1157 +15,6 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$GetDataTearOff {
-  const _$GetDataTearOff();
-
-  GetDataStart start({required String masterKey, String pendingId = _kGetDataPendingId}) {
-    return GetDataStart(
-      masterKey: masterKey,
-      pendingId: pendingId,
-    );
-  }
-
-  GetDataSuccessful successful(Bundle? bundle, [String pendingId = _kGetDataPendingId]) {
-    return GetDataSuccessful(
-      bundle,
-      pendingId,
-    );
-  }
-
-  GetDataError error(Object error, StackTrace stackTrace, [String pendingId = _kGetDataPendingId]) {
-    return GetDataError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $GetData = _$GetDataTearOff();
-
-/// @nodoc
-mixin _$GetData {
-  String get pendingId => throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(Bundle? bundle, String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetDataStart value) start,
-    required TResult Function(GetDataSuccessful value) successful,
-    required TResult Function(GetDataError value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $GetDataCopyWith<GetData> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetDataCopyWith<$Res> {
-  factory $GetDataCopyWith(GetData value, $Res Function(GetData) then) = _$GetDataCopyWithImpl<$Res>;
-  $Res call({String pendingId});
-}
-
-/// @nodoc
-class _$GetDataCopyWithImpl<$Res> implements $GetDataCopyWith<$Res> {
-  _$GetDataCopyWithImpl(this._value, this._then);
-
-  final GetData _value;
-  // ignore: unused_field
-  final $Res Function(GetData) _then;
-
-  @override
-  $Res call({
-    Object? pendingId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      pendingId: pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class $GetDataStartCopyWith<$Res> implements $GetDataCopyWith<$Res> {
-  factory $GetDataStartCopyWith(GetDataStart value, $Res Function(GetDataStart) then) =
-      _$GetDataStartCopyWithImpl<$Res>;
-  @override
-  $Res call({String masterKey, String pendingId});
-}
-
-/// @nodoc
-class _$GetDataStartCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> implements $GetDataStartCopyWith<$Res> {
-  _$GetDataStartCopyWithImpl(GetDataStart _value, $Res Function(GetDataStart) _then)
-      : super(_value, (v) => _then(v as GetDataStart));
-
-  @override
-  GetDataStart get _value => super._value as GetDataStart;
-
-  @override
-  $Res call({
-    Object? masterKey = freezed,
-    Object? pendingId = freezed,
-  }) {
-    return _then(GetDataStart(
-      masterKey: masterKey == freezed
-          ? _value.masterKey
-          : masterKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      pendingId: pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@Implements<ActionStart>()
-class _$GetDataStart implements GetDataStart {
-  const _$GetDataStart({required this.masterKey, this.pendingId = _kGetDataPendingId});
-
-  @override
-  final String masterKey;
-  @JsonKey()
-  @override
-  final String pendingId;
-
-  @override
-  String toString() {
-    return 'GetData.start(masterKey: $masterKey, pendingId: $pendingId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetDataStart &&
-            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
-            const DeepCollectionEquality().equals(other.pendingId, pendingId));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetDataStartCopyWith<GetDataStart> get copyWith => _$GetDataStartCopyWithImpl<GetDataStart>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(Bundle? bundle, String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) {
-    return start(masterKey, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) {
-    return start?.call(masterKey, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) {
-    if (start != null) {
-      return start(masterKey, pendingId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetDataStart value) start,
-    required TResult Function(GetDataSuccessful value) successful,
-    required TResult Function(GetDataError value) error,
-  }) {
-    return start(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-  }) {
-    return start?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-    required TResult orElse(),
-  }) {
-    if (start != null) {
-      return start(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetDataStart implements GetData, ActionStart {
-  const factory GetDataStart({required String masterKey, String pendingId}) = _$GetDataStart;
-
-  String get masterKey;
-  @override
-  String get pendingId;
-  @override
-  @JsonKey(ignore: true)
-  $GetDataStartCopyWith<GetDataStart> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetDataSuccessfulCopyWith<$Res> implements $GetDataCopyWith<$Res> {
-  factory $GetDataSuccessfulCopyWith(GetDataSuccessful value, $Res Function(GetDataSuccessful) then) =
-      _$GetDataSuccessfulCopyWithImpl<$Res>;
-  @override
-  $Res call({Bundle? bundle, String pendingId});
-
-  $BundleCopyWith<$Res>? get bundle;
-}
-
-/// @nodoc
-class _$GetDataSuccessfulCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res>
-    implements $GetDataSuccessfulCopyWith<$Res> {
-  _$GetDataSuccessfulCopyWithImpl(GetDataSuccessful _value, $Res Function(GetDataSuccessful) _then)
-      : super(_value, (v) => _then(v as GetDataSuccessful));
-
-  @override
-  GetDataSuccessful get _value => super._value as GetDataSuccessful;
-
-  @override
-  $Res call({
-    Object? bundle = freezed,
-    Object? pendingId = freezed,
-  }) {
-    return _then(GetDataSuccessful(
-      bundle == freezed
-          ? _value.bundle
-          : bundle // ignore: cast_nullable_to_non_nullable
-              as Bundle?,
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-
-  @override
-  $BundleCopyWith<$Res>? get bundle {
-    if (_value.bundle == null) {
-      return null;
-    }
-
-    return $BundleCopyWith<$Res>(_value.bundle!, (value) {
-      return _then(_value.copyWith(bundle: value));
-    });
-  }
-}
-
-/// @nodoc
-
-@Implements<ActionDone>()
-class _$GetDataSuccessful implements GetDataSuccessful {
-  const _$GetDataSuccessful(this.bundle, [this.pendingId = _kGetDataPendingId]);
-
-  @override
-  final Bundle? bundle;
-  @JsonKey()
-  @override
-  final String pendingId;
-
-  @override
-  String toString() {
-    return 'GetData.successful(bundle: $bundle, pendingId: $pendingId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetDataSuccessful &&
-            const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            const DeepCollectionEquality().equals(other.pendingId, pendingId));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetDataSuccessfulCopyWith<GetDataSuccessful> get copyWith =>
-      _$GetDataSuccessfulCopyWithImpl<GetDataSuccessful>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(Bundle? bundle, String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) {
-    return successful(bundle, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) {
-    return successful?.call(bundle, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) {
-    if (successful != null) {
-      return successful(bundle, pendingId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetDataStart value) start,
-    required TResult Function(GetDataSuccessful value) successful,
-    required TResult Function(GetDataError value) error,
-  }) {
-    return successful(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-  }) {
-    return successful?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-    required TResult orElse(),
-  }) {
-    if (successful != null) {
-      return successful(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetDataSuccessful implements GetData, ActionDone {
-  const factory GetDataSuccessful(Bundle? bundle, [String pendingId]) = _$GetDataSuccessful;
-
-  Bundle? get bundle;
-  @override
-  String get pendingId;
-  @override
-  @JsonKey(ignore: true)
-  $GetDataSuccessfulCopyWith<GetDataSuccessful> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GetDataErrorCopyWith<$Res> implements $GetDataCopyWith<$Res> {
-  factory $GetDataErrorCopyWith(GetDataError value, $Res Function(GetDataError) then) =
-      _$GetDataErrorCopyWithImpl<$Res>;
-  @override
-  $Res call({Object error, StackTrace stackTrace, String pendingId});
-}
-
-/// @nodoc
-class _$GetDataErrorCopyWithImpl<$Res> extends _$GetDataCopyWithImpl<$Res> implements $GetDataErrorCopyWith<$Res> {
-  _$GetDataErrorCopyWithImpl(GetDataError _value, $Res Function(GetDataError) _then)
-      : super(_value, (v) => _then(v as GetDataError));
-
-  @override
-  GetDataError get _value => super._value as GetDataError;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-    Object? stackTrace = freezed,
-    Object? pendingId = freezed,
-  }) {
-    return _then(GetDataError(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as Object,
-      stackTrace == freezed
-          ? _value.stackTrace
-          : stackTrace // ignore: cast_nullable_to_non_nullable
-              as StackTrace,
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
-class _$GetDataError implements GetDataError {
-  const _$GetDataError(this.error, this.stackTrace, [this.pendingId = _kGetDataPendingId]);
-
-  @override
-  final Object error;
-  @override
-  final StackTrace stackTrace;
-  @JsonKey()
-  @override
-  final String pendingId;
-
-  @override
-  String toString() {
-    return 'GetData.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is GetDataError &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
-            const DeepCollectionEquality().equals(other.pendingId, pendingId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
-
-  @JsonKey(ignore: true)
-  @override
-  $GetDataErrorCopyWith<GetDataError> get copyWith => _$GetDataErrorCopyWithImpl<GetDataError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(Bundle? bundle, String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) {
-    return error(this.error, stackTrace, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) {
-    return error?.call(this.error, stackTrace, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
-    TResult Function(Bundle? bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this.error, stackTrace, pendingId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GetDataStart value) start,
-    required TResult Function(GetDataSuccessful value) successful,
-    required TResult Function(GetDataError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetDataStart value)? start,
-    TResult Function(GetDataSuccessful value)? successful,
-    TResult Function(GetDataError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetDataError implements GetData, ActionDone, ErrorAction {
-  const factory GetDataError(Object error, StackTrace stackTrace, [String pendingId]) = _$GetDataError;
-
-  Object get error;
-  StackTrace get stackTrace;
-  @override
-  String get pendingId;
-  @override
-  @JsonKey(ignore: true)
-  $GetDataErrorCopyWith<GetDataError> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$StoreDataTearOff {
-  const _$StoreDataTearOff();
-
-  StoreDataStart start({Bundle? bundle, String pendingId = _kStoreDataPendingId}) {
-    return StoreDataStart(
-      bundle: bundle,
-      pendingId: pendingId,
-    );
-  }
-
-  StoreDataSuccessful successful([String pendingId = _kStoreDataPendingId]) {
-    return StoreDataSuccessful(
-      pendingId,
-    );
-  }
-
-  StoreDataError error(Object error, StackTrace stackTrace, [String pendingId = _kStoreDataPendingId]) {
-    return StoreDataError(
-      error,
-      stackTrace,
-      pendingId,
-    );
-  }
-}
-
-/// @nodoc
-const $StoreData = _$StoreDataTearOff();
-
-/// @nodoc
-mixin _$StoreData {
-  String get pendingId => throw _privateConstructorUsedError;
-
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Bundle? bundle, String pendingId) start,
-    required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StoreDataStart value) start,
-    required TResult Function(StoreDataSuccessful value) successful,
-    required TResult Function(StoreDataError value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $StoreDataCopyWith<StoreData> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StoreDataCopyWith<$Res> {
-  factory $StoreDataCopyWith(StoreData value, $Res Function(StoreData) then) = _$StoreDataCopyWithImpl<$Res>;
-  $Res call({String pendingId});
-}
-
-/// @nodoc
-class _$StoreDataCopyWithImpl<$Res> implements $StoreDataCopyWith<$Res> {
-  _$StoreDataCopyWithImpl(this._value, this._then);
-
-  final StoreData _value;
-  // ignore: unused_field
-  final $Res Function(StoreData) _then;
-
-  @override
-  $Res call({
-    Object? pendingId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      pendingId: pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class $StoreDataStartCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
-  factory $StoreDataStartCopyWith(StoreDataStart value, $Res Function(StoreDataStart) then) =
-      _$StoreDataStartCopyWithImpl<$Res>;
-  @override
-  $Res call({Bundle? bundle, String pendingId});
-
-  $BundleCopyWith<$Res>? get bundle;
-}
-
-/// @nodoc
-class _$StoreDataStartCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
-    implements $StoreDataStartCopyWith<$Res> {
-  _$StoreDataStartCopyWithImpl(StoreDataStart _value, $Res Function(StoreDataStart) _then)
-      : super(_value, (v) => _then(v as StoreDataStart));
-
-  @override
-  StoreDataStart get _value => super._value as StoreDataStart;
-
-  @override
-  $Res call({
-    Object? bundle = freezed,
-    Object? pendingId = freezed,
-  }) {
-    return _then(StoreDataStart(
-      bundle: bundle == freezed
-          ? _value.bundle
-          : bundle // ignore: cast_nullable_to_non_nullable
-              as Bundle?,
-      pendingId: pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-
-  @override
-  $BundleCopyWith<$Res>? get bundle {
-    if (_value.bundle == null) {
-      return null;
-    }
-
-    return $BundleCopyWith<$Res>(_value.bundle!, (value) {
-      return _then(_value.copyWith(bundle: value));
-    });
-  }
-}
-
-/// @nodoc
-
-@Implements<ActionStart>()
-class _$StoreDataStart implements StoreDataStart {
-  const _$StoreDataStart({this.bundle, this.pendingId = _kStoreDataPendingId});
-
-  @override
-  final Bundle? bundle;
-  @JsonKey()
-  @override
-  final String pendingId;
-
-  @override
-  String toString() {
-    return 'StoreData.start(bundle: $bundle, pendingId: $pendingId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is StoreDataStart &&
-            const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            const DeepCollectionEquality().equals(other.pendingId, pendingId));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
-
-  @JsonKey(ignore: true)
-  @override
-  $StoreDataStartCopyWith<StoreDataStart> get copyWith =>
-      _$StoreDataStartCopyWithImpl<StoreDataStart>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Bundle? bundle, String pendingId) start,
-    required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) {
-    return start(bundle, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) {
-    return start?.call(bundle, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) {
-    if (start != null) {
-      return start(bundle, pendingId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StoreDataStart value) start,
-    required TResult Function(StoreDataSuccessful value) successful,
-    required TResult Function(StoreDataError value) error,
-  }) {
-    return start(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-  }) {
-    return start?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-    required TResult orElse(),
-  }) {
-    if (start != null) {
-      return start(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StoreDataStart implements StoreData, ActionStart {
-  const factory StoreDataStart({Bundle? bundle, String pendingId}) = _$StoreDataStart;
-
-  Bundle? get bundle;
-  @override
-  String get pendingId;
-  @override
-  @JsonKey(ignore: true)
-  $StoreDataStartCopyWith<StoreDataStart> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StoreDataSuccessfulCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
-  factory $StoreDataSuccessfulCopyWith(StoreDataSuccessful value, $Res Function(StoreDataSuccessful) then) =
-      _$StoreDataSuccessfulCopyWithImpl<$Res>;
-  @override
-  $Res call({String pendingId});
-}
-
-/// @nodoc
-class _$StoreDataSuccessfulCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
-    implements $StoreDataSuccessfulCopyWith<$Res> {
-  _$StoreDataSuccessfulCopyWithImpl(StoreDataSuccessful _value, $Res Function(StoreDataSuccessful) _then)
-      : super(_value, (v) => _then(v as StoreDataSuccessful));
-
-  @override
-  StoreDataSuccessful get _value => super._value as StoreDataSuccessful;
-
-  @override
-  $Res call({
-    Object? pendingId = freezed,
-  }) {
-    return _then(StoreDataSuccessful(
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@Implements<ActionDone>()
-class _$StoreDataSuccessful implements StoreDataSuccessful {
-  const _$StoreDataSuccessful([this.pendingId = _kStoreDataPendingId]);
-
-  @JsonKey()
-  @override
-  final String pendingId;
-
-  @override
-  String toString() {
-    return 'StoreData.successful(pendingId: $pendingId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is StoreDataSuccessful &&
-            const DeepCollectionEquality().equals(other.pendingId, pendingId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
-
-  @JsonKey(ignore: true)
-  @override
-  $StoreDataSuccessfulCopyWith<StoreDataSuccessful> get copyWith =>
-      _$StoreDataSuccessfulCopyWithImpl<StoreDataSuccessful>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Bundle? bundle, String pendingId) start,
-    required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) {
-    return successful(pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) {
-    return successful?.call(pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) {
-    if (successful != null) {
-      return successful(pendingId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StoreDataStart value) start,
-    required TResult Function(StoreDataSuccessful value) successful,
-    required TResult Function(StoreDataError value) error,
-  }) {
-    return successful(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-  }) {
-    return successful?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-    required TResult orElse(),
-  }) {
-    if (successful != null) {
-      return successful(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StoreDataSuccessful implements StoreData, ActionDone {
-  const factory StoreDataSuccessful([String pendingId]) = _$StoreDataSuccessful;
-
-  @override
-  String get pendingId;
-  @override
-  @JsonKey(ignore: true)
-  $StoreDataSuccessfulCopyWith<StoreDataSuccessful> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StoreDataErrorCopyWith<$Res> implements $StoreDataCopyWith<$Res> {
-  factory $StoreDataErrorCopyWith(StoreDataError value, $Res Function(StoreDataError) then) =
-      _$StoreDataErrorCopyWithImpl<$Res>;
-  @override
-  $Res call({Object error, StackTrace stackTrace, String pendingId});
-}
-
-/// @nodoc
-class _$StoreDataErrorCopyWithImpl<$Res> extends _$StoreDataCopyWithImpl<$Res>
-    implements $StoreDataErrorCopyWith<$Res> {
-  _$StoreDataErrorCopyWithImpl(StoreDataError _value, $Res Function(StoreDataError) _then)
-      : super(_value, (v) => _then(v as StoreDataError));
-
-  @override
-  StoreDataError get _value => super._value as StoreDataError;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-    Object? stackTrace = freezed,
-    Object? pendingId = freezed,
-  }) {
-    return _then(StoreDataError(
-      error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as Object,
-      stackTrace == freezed
-          ? _value.stackTrace
-          : stackTrace // ignore: cast_nullable_to_non_nullable
-              as StackTrace,
-      pendingId == freezed
-          ? _value.pendingId
-          : pendingId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@Implements<ActionDone>()
-@Implements<ErrorAction>()
-class _$StoreDataError implements StoreDataError {
-  const _$StoreDataError(this.error, this.stackTrace, [this.pendingId = _kStoreDataPendingId]);
-
-  @override
-  final Object error;
-  @override
-  final StackTrace stackTrace;
-  @JsonKey()
-  @override
-  final String pendingId;
-
-  @override
-  String toString() {
-    return 'StoreData.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is StoreDataError &&
-            const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
-            const DeepCollectionEquality().equals(other.pendingId, pendingId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
-
-  @JsonKey(ignore: true)
-  @override
-  $StoreDataErrorCopyWith<StoreDataError> get copyWith =>
-      _$StoreDataErrorCopyWithImpl<StoreDataError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Bundle? bundle, String pendingId) start,
-    required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
-  }) {
-    return error(this.error, stackTrace, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-  }) {
-    return error?.call(this.error, stackTrace, pendingId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Bundle? bundle, String pendingId)? start,
-    TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this.error, stackTrace, pendingId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StoreDataStart value) start,
-    required TResult Function(StoreDataSuccessful value) successful,
-    required TResult Function(StoreDataError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StoreDataStart value)? start,
-    TResult Function(StoreDataSuccessful value)? successful,
-    TResult Function(StoreDataError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StoreDataError implements StoreData, ActionDone, ErrorAction {
-  const factory StoreDataError(Object error, StackTrace stackTrace, [String pendingId]) = _$StoreDataError;
-
-  Object get error;
-  StackTrace get stackTrace;
-  @override
-  String get pendingId;
-  @override
-  @JsonKey(ignore: true)
-  $StoreDataErrorCopyWith<StoreDataError> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 class _$BlockchainAddBundleTearOff {
   const _$BlockchainAddBundleTearOff();
 
@@ -2355,4 +1204,1192 @@ abstract class BlockchainRestoreLatestBundleError implements BlockchainRestoreLa
   @JsonKey(ignore: true)
   $BlockchainRestoreLatestBundleErrorCopyWith<BlockchainRestoreLatestBundleError> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SecureStorageStoreBundleTearOff {
+  const _$SecureStorageStoreBundleTearOff();
+
+  SecureStorageStoreBundleStart start({Bundle? bundle, String pendingId = _kSecureStorageStoreBundlePendingId}) {
+    return SecureStorageStoreBundleStart(
+      bundle: bundle,
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageStoreBundleSuccessful successful([String pendingId = _kSecureStorageStoreBundlePendingId]) {
+    return SecureStorageStoreBundleSuccessful(
+      pendingId,
+    );
+  }
+
+  SecureStorageStoreBundleError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kSecureStorageStoreBundlePendingId]) {
+    return SecureStorageStoreBundleError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $SecureStorageStoreBundle = _$SecureStorageStoreBundleTearOff();
+
+/// @nodoc
+mixin _$SecureStorageStoreBundle {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle? bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreBundleStart value) start,
+    required TResult Function(SecureStorageStoreBundleSuccessful value) successful,
+    required TResult Function(SecureStorageStoreBundleError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SecureStorageStoreBundleCopyWith<SecureStorageStoreBundle> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreBundleCopyWith<$Res> {
+  factory $SecureStorageStoreBundleCopyWith(
+          SecureStorageStoreBundle value, $Res Function(SecureStorageStoreBundle) then) =
+      _$SecureStorageStoreBundleCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreBundleCopyWithImpl<$Res> implements $SecureStorageStoreBundleCopyWith<$Res> {
+  _$SecureStorageStoreBundleCopyWithImpl(this._value, this._then);
+
+  final SecureStorageStoreBundle _value;
+  // ignore: unused_field
+  final $Res Function(SecureStorageStoreBundle) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreBundleStartCopyWith<$Res> implements $SecureStorageStoreBundleCopyWith<$Res> {
+  factory $SecureStorageStoreBundleStartCopyWith(
+          SecureStorageStoreBundleStart value, $Res Function(SecureStorageStoreBundleStart) then) =
+      _$SecureStorageStoreBundleStartCopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle? bundle, String pendingId});
+
+  $BundleCopyWith<$Res>? get bundle;
+}
+
+/// @nodoc
+class _$SecureStorageStoreBundleStartCopyWithImpl<$Res> extends _$SecureStorageStoreBundleCopyWithImpl<$Res>
+    implements $SecureStorageStoreBundleStartCopyWith<$Res> {
+  _$SecureStorageStoreBundleStartCopyWithImpl(
+      SecureStorageStoreBundleStart _value, $Res Function(SecureStorageStoreBundleStart) _then)
+      : super(_value, (v) => _then(v as SecureStorageStoreBundleStart));
+
+  @override
+  SecureStorageStoreBundleStart get _value => super._value as SecureStorageStoreBundleStart;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageStoreBundleStart(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle?,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res>? get bundle {
+    if (_value.bundle == null) {
+      return null;
+    }
+
+    return $BundleCopyWith<$Res>(_value.bundle!, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$SecureStorageStoreBundleStart implements SecureStorageStoreBundleStart {
+  const _$SecureStorageStoreBundleStart({this.bundle, this.pendingId = _kSecureStorageStoreBundlePendingId});
+
+  @override /*
+    * Needed for the cases where there is concurrency between this and state upgrade.
+    * */
+  final Bundle? bundle;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageStoreBundle.start(bundle: $bundle, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageStoreBundleStart &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageStoreBundleStartCopyWith<SecureStorageStoreBundleStart> get copyWith =>
+      _$SecureStorageStoreBundleStartCopyWithImpl<SecureStorageStoreBundleStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle? bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(bundle, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreBundleStart value) start,
+    required TResult Function(SecureStorageStoreBundleSuccessful value) successful,
+    required TResult Function(SecureStorageStoreBundleError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageStoreBundleStart implements SecureStorageStoreBundle, ActionStart {
+  const factory SecureStorageStoreBundleStart({Bundle? bundle, String pendingId}) = _$SecureStorageStoreBundleStart;
+
+/*
+    * Needed for the cases where there is concurrency between this and state upgrade.
+    * */
+  Bundle? get bundle;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageStoreBundleStartCopyWith<SecureStorageStoreBundleStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreBundleSuccessfulCopyWith<$Res> implements $SecureStorageStoreBundleCopyWith<$Res> {
+  factory $SecureStorageStoreBundleSuccessfulCopyWith(
+          SecureStorageStoreBundleSuccessful value, $Res Function(SecureStorageStoreBundleSuccessful) then) =
+      _$SecureStorageStoreBundleSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreBundleSuccessfulCopyWithImpl<$Res> extends _$SecureStorageStoreBundleCopyWithImpl<$Res>
+    implements $SecureStorageStoreBundleSuccessfulCopyWith<$Res> {
+  _$SecureStorageStoreBundleSuccessfulCopyWithImpl(
+      SecureStorageStoreBundleSuccessful _value, $Res Function(SecureStorageStoreBundleSuccessful) _then)
+      : super(_value, (v) => _then(v as SecureStorageStoreBundleSuccessful));
+
+  @override
+  SecureStorageStoreBundleSuccessful get _value => super._value as SecureStorageStoreBundleSuccessful;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageStoreBundleSuccessful(
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$SecureStorageStoreBundleSuccessful implements SecureStorageStoreBundleSuccessful {
+  const _$SecureStorageStoreBundleSuccessful([this.pendingId = _kSecureStorageStoreBundlePendingId]);
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageStoreBundle.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageStoreBundleSuccessful &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageStoreBundleSuccessfulCopyWith<SecureStorageStoreBundleSuccessful> get copyWith =>
+      _$SecureStorageStoreBundleSuccessfulCopyWithImpl<SecureStorageStoreBundleSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle? bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreBundleStart value) start,
+    required TResult Function(SecureStorageStoreBundleSuccessful value) successful,
+    required TResult Function(SecureStorageStoreBundleError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageStoreBundleSuccessful implements SecureStorageStoreBundle, ActionDone {
+  const factory SecureStorageStoreBundleSuccessful([String pendingId]) = _$SecureStorageStoreBundleSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageStoreBundleSuccessfulCopyWith<SecureStorageStoreBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreBundleErrorCopyWith<$Res> implements $SecureStorageStoreBundleCopyWith<$Res> {
+  factory $SecureStorageStoreBundleErrorCopyWith(
+          SecureStorageStoreBundleError value, $Res Function(SecureStorageStoreBundleError) then) =
+      _$SecureStorageStoreBundleErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreBundleErrorCopyWithImpl<$Res> extends _$SecureStorageStoreBundleCopyWithImpl<$Res>
+    implements $SecureStorageStoreBundleErrorCopyWith<$Res> {
+  _$SecureStorageStoreBundleErrorCopyWithImpl(
+      SecureStorageStoreBundleError _value, $Res Function(SecureStorageStoreBundleError) _then)
+      : super(_value, (v) => _then(v as SecureStorageStoreBundleError));
+
+  @override
+  SecureStorageStoreBundleError get _value => super._value as SecureStorageStoreBundleError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageStoreBundleError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$SecureStorageStoreBundleError implements SecureStorageStoreBundleError {
+  const _$SecureStorageStoreBundleError(this.error, this.stackTrace,
+      [this.pendingId = _kSecureStorageStoreBundlePendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageStoreBundle.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageStoreBundleError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageStoreBundleErrorCopyWith<SecureStorageStoreBundleError> get copyWith =>
+      _$SecureStorageStoreBundleErrorCopyWithImpl<SecureStorageStoreBundleError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Bundle? bundle, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Bundle? bundle, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreBundleStart value) start,
+    required TResult Function(SecureStorageStoreBundleSuccessful value) successful,
+    required TResult Function(SecureStorageStoreBundleError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreBundleStart value)? start,
+    TResult Function(SecureStorageStoreBundleSuccessful value)? successful,
+    TResult Function(SecureStorageStoreBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageStoreBundleError implements SecureStorageStoreBundle, ActionDone, ErrorAction {
+  const factory SecureStorageStoreBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$SecureStorageStoreBundleError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageStoreBundleErrorCopyWith<SecureStorageStoreBundleError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SecureStorageGetBundleTearOff {
+  const _$SecureStorageGetBundleTearOff();
+
+  SecureStorageGetBundleStart start({String? masterKey, String pendingId = _kSecureStorageGetBundlePendingId}) {
+    return SecureStorageGetBundleStart(
+      masterKey: masterKey,
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageGetBundleSuccessful successful(
+      {required Bundle bundle, String pendingId = _kSecureStorageGetBundlePendingId}) {
+    return SecureStorageGetBundleSuccessful(
+      bundle: bundle,
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageGetBundleError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kSecureStorageGetBundlePendingId]) {
+    return SecureStorageGetBundleError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $SecureStorageGetBundle = _$SecureStorageGetBundleTearOff();
+
+/// @nodoc
+mixin _$SecureStorageGetBundle {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKey, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetBundleStart value) start,
+    required TResult Function(SecureStorageGetBundleSuccessful value) successful,
+    required TResult Function(SecureStorageGetBundleError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SecureStorageGetBundleCopyWith<SecureStorageGetBundle> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageGetBundleCopyWith<$Res> {
+  factory $SecureStorageGetBundleCopyWith(SecureStorageGetBundle value, $Res Function(SecureStorageGetBundle) then) =
+      _$SecureStorageGetBundleCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetBundleCopyWithImpl<$Res> implements $SecureStorageGetBundleCopyWith<$Res> {
+  _$SecureStorageGetBundleCopyWithImpl(this._value, this._then);
+
+  final SecureStorageGetBundle _value;
+  // ignore: unused_field
+  final $Res Function(SecureStorageGetBundle) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SecureStorageGetBundleStartCopyWith<$Res> implements $SecureStorageGetBundleCopyWith<$Res> {
+  factory $SecureStorageGetBundleStartCopyWith(
+          SecureStorageGetBundleStart value, $Res Function(SecureStorageGetBundleStart) then) =
+      _$SecureStorageGetBundleStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String? masterKey, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetBundleStartCopyWithImpl<$Res> extends _$SecureStorageGetBundleCopyWithImpl<$Res>
+    implements $SecureStorageGetBundleStartCopyWith<$Res> {
+  _$SecureStorageGetBundleStartCopyWithImpl(
+      SecureStorageGetBundleStart _value, $Res Function(SecureStorageGetBundleStart) _then)
+      : super(_value, (v) => _then(v as SecureStorageGetBundleStart));
+
+  @override
+  SecureStorageGetBundleStart get _value => super._value as SecureStorageGetBundleStart;
+
+  @override
+  $Res call({
+    Object? masterKey = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageGetBundleStart(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$SecureStorageGetBundleStart implements SecureStorageGetBundleStart {
+  const _$SecureStorageGetBundleStart({this.masterKey, this.pendingId = _kSecureStorageGetBundlePendingId});
+
+  @override /*
+    * Needed for the cases where there is concurrency between this and state upgrade.
+    * */
+  final String? masterKey;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageGetBundle.start(masterKey: $masterKey, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageGetBundleStart &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageGetBundleStartCopyWith<SecureStorageGetBundleStart> get copyWith =>
+      _$SecureStorageGetBundleStartCopyWithImpl<SecureStorageGetBundleStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKey, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(masterKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(masterKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(masterKey, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetBundleStart value) start,
+    required TResult Function(SecureStorageGetBundleSuccessful value) successful,
+    required TResult Function(SecureStorageGetBundleError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageGetBundleStart implements SecureStorageGetBundle, ActionStart {
+  const factory SecureStorageGetBundleStart({String? masterKey, String pendingId}) = _$SecureStorageGetBundleStart;
+
+/*
+    * Needed for the cases where there is concurrency between this and state upgrade.
+    * */
+  String? get masterKey;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageGetBundleStartCopyWith<SecureStorageGetBundleStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageGetBundleSuccessfulCopyWith<$Res> implements $SecureStorageGetBundleCopyWith<$Res> {
+  factory $SecureStorageGetBundleSuccessfulCopyWith(
+          SecureStorageGetBundleSuccessful value, $Res Function(SecureStorageGetBundleSuccessful) then) =
+      _$SecureStorageGetBundleSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle, String pendingId});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$SecureStorageGetBundleSuccessfulCopyWithImpl<$Res> extends _$SecureStorageGetBundleCopyWithImpl<$Res>
+    implements $SecureStorageGetBundleSuccessfulCopyWith<$Res> {
+  _$SecureStorageGetBundleSuccessfulCopyWithImpl(
+      SecureStorageGetBundleSuccessful _value, $Res Function(SecureStorageGetBundleSuccessful) _then)
+      : super(_value, (v) => _then(v as SecureStorageGetBundleSuccessful));
+
+  @override
+  SecureStorageGetBundleSuccessful get _value => super._value as SecureStorageGetBundleSuccessful;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageGetBundleSuccessful(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$SecureStorageGetBundleSuccessful implements SecureStorageGetBundleSuccessful {
+  const _$SecureStorageGetBundleSuccessful({required this.bundle, this.pendingId = _kSecureStorageGetBundlePendingId});
+
+  @override
+  final Bundle bundle;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageGetBundle.successful(bundle: $bundle, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageGetBundleSuccessful &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageGetBundleSuccessfulCopyWith<SecureStorageGetBundleSuccessful> get copyWith =>
+      _$SecureStorageGetBundleSuccessfulCopyWithImpl<SecureStorageGetBundleSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKey, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(bundle, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetBundleStart value) start,
+    required TResult Function(SecureStorageGetBundleSuccessful value) successful,
+    required TResult Function(SecureStorageGetBundleError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageGetBundleSuccessful implements SecureStorageGetBundle, ActionDone {
+  const factory SecureStorageGetBundleSuccessful({required Bundle bundle, String pendingId}) =
+      _$SecureStorageGetBundleSuccessful;
+
+  Bundle get bundle;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageGetBundleSuccessfulCopyWith<SecureStorageGetBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageGetBundleErrorCopyWith<$Res> implements $SecureStorageGetBundleCopyWith<$Res> {
+  factory $SecureStorageGetBundleErrorCopyWith(
+          SecureStorageGetBundleError value, $Res Function(SecureStorageGetBundleError) then) =
+      _$SecureStorageGetBundleErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetBundleErrorCopyWithImpl<$Res> extends _$SecureStorageGetBundleCopyWithImpl<$Res>
+    implements $SecureStorageGetBundleErrorCopyWith<$Res> {
+  _$SecureStorageGetBundleErrorCopyWithImpl(
+      SecureStorageGetBundleError _value, $Res Function(SecureStorageGetBundleError) _then)
+      : super(_value, (v) => _then(v as SecureStorageGetBundleError));
+
+  @override
+  SecureStorageGetBundleError get _value => super._value as SecureStorageGetBundleError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageGetBundleError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$SecureStorageGetBundleError implements SecureStorageGetBundleError {
+  const _$SecureStorageGetBundleError(this.error, this.stackTrace,
+      [this.pendingId = _kSecureStorageGetBundlePendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageGetBundle.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageGetBundleError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageGetBundleErrorCopyWith<SecureStorageGetBundleError> get copyWith =>
+      _$SecureStorageGetBundleErrorCopyWithImpl<SecureStorageGetBundleError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKey, String pendingId) start,
+    required TResult Function(Bundle bundle, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKey, String pendingId)? start,
+    TResult Function(Bundle bundle, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetBundleStart value) start,
+    required TResult Function(SecureStorageGetBundleSuccessful value) successful,
+    required TResult Function(SecureStorageGetBundleError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetBundleStart value)? start,
+    TResult Function(SecureStorageGetBundleSuccessful value)? successful,
+    TResult Function(SecureStorageGetBundleError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageGetBundleError implements SecureStorageGetBundle, ActionDone, ErrorAction {
+  const factory SecureStorageGetBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$SecureStorageGetBundleError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageGetBundleErrorCopyWith<SecureStorageGetBundleError> get copyWith => throw _privateConstructorUsedError;
 }

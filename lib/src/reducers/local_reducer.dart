@@ -19,32 +19,45 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
   return state.copyWith(
-    bundle: state.bundle.copyWith(passwords: <Password>[...state.bundle.passwords, action.password]),
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle
+          .copyWith(passwords: <Password>[...state.persistentState.bundle.passwords, action.password]),
+    ),
   );
 }
 
 AppState _editPasswordStart(AppState state, EditPasswordStart action) {
   return state.copyWith(
-    bundle: state.bundle.copyWith(
-      passwords:
-          state.bundle.passwords.toList().where((Password password) => password.id != action.password.id).toList()
-            ..add(action.password),
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle.copyWith(
+        passwords: state.persistentState.bundle.passwords
+            .toList()
+            .where((Password password) => password.id != action.password.id)
+            .toList()
+          ..add(action.password),
+      ),
     ),
   );
 }
 
 AppState _deletePassword(AppState state, DeletePassword action) {
   return state.copyWith(
-    bundle: state.bundle.copyWith(
-      passwords: <Password>[...state.bundle.passwords].where((Password password) => action.id != password.id).toList(),
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle.copyWith(
+        passwords: <Password>[...state.persistentState.bundle.passwords]
+            .where((Password password) => action.id != password.id)
+            .toList(),
+      ),
     ),
   );
 }
 
 AppState _deleteCode(AppState state, DeleteCode action) {
   return state.copyWith(
-    bundle: state.bundle.copyWith(
-      codes: <Code>[...state.bundle.codes].where((Code code) => action.id != code.id).toList(),
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle.copyWith(
+        codes: <Code>[...state.persistentState.bundle.codes].where((Code code) => action.id != code.id).toList(),
+      ),
     ),
   );
 }
@@ -54,7 +67,11 @@ AppState _setScannedCode(AppState state, SetScannedCode action) {
 }
 
 AppState _createNewCode(AppState state, CreateNewCode action) {
-  return state.copyWith(bundle: state.bundle.copyWith(codes: <Code>[...state.bundle.codes, action.code]));
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle.copyWith(codes: <Code>[...state.persistentState.bundle.codes, action.code]),
+    ),
+  );
 }
 
 AppState _selectItemDetails(AppState state, SelectItemDetailsStart action) {
@@ -62,32 +79,38 @@ AppState _selectItemDetails(AppState state, SelectItemDetailsStart action) {
 }
 
 AppState _updateAccessTime(AppState state, UpdateAccessTime action) {
-  if (state.bundle.passwords.any((Password password) => password.id == action.id)) {
-    final Password oldPassword = state.bundle.passwords.firstWhere((Password password) => password.id == action.id);
+  if (state.persistentState.bundle.passwords.any((Password password) => password.id == action.id)) {
+    final Password oldPassword =
+        state.persistentState.bundle.passwords.firstWhere((Password password) => password.id == action.id);
     final Password password = oldPassword.copyWith(
       timesAccessed: oldPassword.timesAccessed + 1,
       lastAccess: DateTime.now(),
     );
     return state.copyWith(
-      bundle: state.bundle.copyWith(
-        passwords: state.bundle.passwords.toList().where((Password password) => password.id != action.id).toList()
-          ..add(
-            password,
-          ),
+      persistentState: state.persistentState.copyWith(
+        bundle: state.persistentState.bundle.copyWith(
+          passwords: state.persistentState.bundle.passwords
+              .toList()
+              .where((Password password) => password.id != action.id)
+              .toList()
+            ..add(password),
+        ),
       ),
     );
-  } else if (state.bundle.codes.any((Code code) => code.id == action.id)) {
-    final Code oldCode = state.bundle.codes.firstWhere((Code code) => code.id == action.id);
+  } else if (state.persistentState.bundle.codes.any((Code code) => code.id == action.id)) {
+    final Code oldCode = state.persistentState.bundle.codes.firstWhere((Code code) => code.id == action.id);
     final Code code = oldCode.copyWith(
       timesAccessed: oldCode.timesAccessed + 1,
       lastAccess: DateTime.now(),
     );
     return state.copyWith(
-      bundle: state.bundle.copyWith(
-        codes: state.bundle.codes.toList().where((Code code) => code.id != action.id).toList()
-          ..add(
-            code,
-          ),
+      persistentState: state.persistentState.copyWith(
+        bundle: state.persistentState.bundle.copyWith(
+          codes: state.persistentState.bundle.codes.toList().where((Code code) => code.id != action.id).toList()
+            ..add(
+              code,
+            ),
+        ),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:encrypt/encrypt.dart';
 
-const int _kRoundsOfEncryption = 10;
+const int _kRoundsOfEncryption = 3;
 
 String encrypt({
   required String message,

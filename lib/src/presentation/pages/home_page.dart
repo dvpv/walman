@@ -16,7 +16,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PendingContainer(
       builder: (BuildContext context, Set<String> pending) {
-        return pending.contains(GetData.pendingKey) || pending.contains(BlockchainRestoreLatestBundle.pendingKey)
+        return pending.contains(SecureStorageGetBundle.pendingKey) ||
+                pending.contains(BlockchainRestoreLatestBundle.pendingKey)
             ? const Center(child: CircularProgressIndicator())
             : BundleContainer(
                 builder: (BuildContext context, Bundle bundle) {
