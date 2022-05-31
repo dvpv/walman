@@ -77,114 +77,124 @@ class _WalletPageState extends State<WalletPage> {
         builder: (BuildContext context, Set<String> pending) {
           return WalletInfoContainer(
             builder: (BuildContext context, WalletInfo? walletInfo) {
-              if (walletInfo == null || pending.contains(GetWalletInfo.pendingKey)) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else {
-                return PersistentStateContainer(
-                  builder: (BuildContext context, PersistentState persistentState) {
-                    return persistentState.walletPrivateKey != null
-                        ? RefreshIndicator(
-                            onRefresh: () async => StoreProvider.of<AppState>(context).dispatch(
-                              GetWalletInfoStart(walletPrivateKey: persistentState.walletPrivateKey!),
+              return PersistentStateContainer(
+                builder: (BuildContext context, PersistentState persistentState) {
+                  if (pending.contains(GetWalletInfo.pendingKey) || pending.contains(CreateWallet.pendingKey)) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  if (persistentState.walletPrivateKey == null || walletInfo == null) {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Center(
+                            child: Text(
+                              'No wallet connected!',
+                              style: TextStyle(fontSize: 24),
                             ),
-                            child: ListView(
-                              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                              children: <Widget>[
-                                const Padding(
-                                  padding: EdgeInsets.all(16),
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      'Balance:',
-                                      style: TextStyle(color: Colors.black, fontSize: 30),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(16),
-                                  child: Center(
-                                    child: Text(
-                                      walletInfo.balance,
-                                      style: const TextStyle(color: Colors.indigo, fontSize: 42),
-                                    ),
-                                  ),
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.all(16),
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Text(
-                                      'Address:',
-                                      style: TextStyle(color: Colors.black, fontSize: 30),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(16),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      SizedBox(
-                                        width: MediaQuery.of(context).size.width * 0.7,
-                                        child: Text(
-                                          walletInfo.address,
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
-                                          style: const TextStyle(fontSize: 24),
-                                        ),
-                                      ),
-                                      IconButton(
-                                        icon: const Icon(Icons.copy),
-                                        onPressed: () {
-                                          Clipboard.setData(ClipboardData(text: walletInfo.address));
-                                          ScaffoldMessenger.of(context).showSnackBar(
-                                            const SnackBar(
-                                              content: Text('Public Address key copied to clipboard'),
-                                              behavior: SnackBarBehavior.floating,
-                                            ),
-                                          );
-                                        },
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.indigo),
                             ),
-                          )
-                        : Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            onPressed: () => StoreProvider.of<AppState>(context).dispatch(const CreateWalletStart()),
+                            child: const Text('Create a new wallet'),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.indigo),
+                            ),
+                            onPressed: () {
+                              showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) => const ConnectWalletDialog(),
+                              );
+                            },
+                            child: const Text('Connect an existing wallet'),
+                          ),
+                        )
+                      ],
+                    );
+                  }
+                  return RefreshIndicator(
+                    onRefresh: () async => StoreProvider.of<AppState>(context).dispatch(
+                      GetWalletInfoStart(walletPrivateKey: persistentState.walletPrivateKey!),
+                    ),
+                    child: ListView(
+                      physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                      children: <Widget>[
+                        const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Balance:',
+                              style: TextStyle(color: Colors.black, fontSize: 30),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Center(
+                            child: Text(
+                              walletInfo.balance,
+                              style: const TextStyle(color: Colors.indigo, fontSize: 42),
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Address:',
+                              style: TextStyle(color: Colors.black, fontSize: 30),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              const Padding(
-                                padding: EdgeInsets.all(16),
-                                child: Center(
-                                  child: Text(
-                                    'No wallet connected!',
-                                    style: TextStyle(fontSize: 24),
-                                  ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.7,
+                                child: Text(
+                                  walletInfo.address,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: const TextStyle(fontSize: 24),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(16),
-                                child: ElevatedButton(
-                                  style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(Colors.indigo),
-                                  ),
-                                  onPressed: () {
-                                    showDialog<void>(
-                                      context: context,
-                                      builder: (BuildContext context) => const ConnectWalletDialog(),
-                                    );
-                                  },
-                                  child: const Text('Connect an existing wallet'),
-                                ),
+                              IconButton(
+                                icon: const Icon(Icons.copy),
+                                onPressed: () {
+                                  Clipboard.setData(ClipboardData(text: walletInfo.address));
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Public Address key copied to clipboard'),
+                                      behavior: SnackBarBehavior.floating,
+                                    ),
+                                  );
+                                },
                               )
                             ],
-                          );
-                  },
-                );
-              }
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
             },
           );
         },

@@ -12,4 +12,4 @@ part 'select_item_details.dart';
 
 part 'show_password.dart';
 
-part 'get_wallet_info.dart';
+part 'wallet.dart';

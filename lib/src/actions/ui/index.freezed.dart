@@ -1878,3 +1878,563 @@ abstract class GetWalletInfoError implements GetWalletInfo, ActionDone, ErrorAct
   @JsonKey(ignore: true)
   $GetWalletInfoErrorCopyWith<GetWalletInfoError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$CreateWalletTearOff {
+  const _$CreateWalletTearOff();
+
+  CreateWalletStart start({String pendingId = _kCreateWalletPendingId}) {
+    return CreateWalletStart(
+      pendingId: pendingId,
+    );
+  }
+
+  CreateWalletSuccessful successful(String walletPrivateKey, [String pendingId = _kCreateWalletPendingId]) {
+    return CreateWalletSuccessful(
+      walletPrivateKey,
+      pendingId,
+    );
+  }
+
+  CreateWalletError error(Object error, StackTrace stackTrace, [String pendingId = _kCreateWalletPendingId]) {
+    return CreateWalletError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $CreateWallet = _$CreateWalletTearOff();
+
+/// @nodoc
+mixin _$CreateWallet {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateWalletStart value) start,
+    required TResult Function(CreateWalletSuccessful value) successful,
+    required TResult Function(CreateWalletError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CreateWalletCopyWith<CreateWallet> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateWalletCopyWith<$Res> {
+  factory $CreateWalletCopyWith(CreateWallet value, $Res Function(CreateWallet) then) =
+      _$CreateWalletCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CreateWalletCopyWithImpl<$Res> implements $CreateWalletCopyWith<$Res> {
+  _$CreateWalletCopyWithImpl(this._value, this._then);
+
+  final CreateWallet _value;
+  // ignore: unused_field
+  final $Res Function(CreateWallet) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $CreateWalletStartCopyWith<$Res> implements $CreateWalletCopyWith<$Res> {
+  factory $CreateWalletStartCopyWith(CreateWalletStart value, $Res Function(CreateWalletStart) then) =
+      _$CreateWalletStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CreateWalletStartCopyWithImpl<$Res> extends _$CreateWalletCopyWithImpl<$Res>
+    implements $CreateWalletStartCopyWith<$Res> {
+  _$CreateWalletStartCopyWithImpl(CreateWalletStart _value, $Res Function(CreateWalletStart) _then)
+      : super(_value, (v) => _then(v as CreateWalletStart));
+
+  @override
+  CreateWalletStart get _value => super._value as CreateWalletStart;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(CreateWalletStart(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$CreateWalletStart implements CreateWalletStart {
+  const _$CreateWalletStart({this.pendingId = _kCreateWalletPendingId});
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CreateWallet.start(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateWalletStart &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateWalletStartCopyWith<CreateWalletStart> get copyWith =>
+      _$CreateWalletStartCopyWithImpl<CreateWalletStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateWalletStart value) start,
+    required TResult Function(CreateWalletSuccessful value) successful,
+    required TResult Function(CreateWalletError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateWalletStart implements CreateWallet, ActionStart {
+  const factory CreateWalletStart({String pendingId}) = _$CreateWalletStart;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CreateWalletStartCopyWith<CreateWalletStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateWalletSuccessfulCopyWith<$Res> implements $CreateWalletCopyWith<$Res> {
+  factory $CreateWalletSuccessfulCopyWith(CreateWalletSuccessful value, $Res Function(CreateWalletSuccessful) then) =
+      _$CreateWalletSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String walletPrivateKey, String pendingId});
+}
+
+/// @nodoc
+class _$CreateWalletSuccessfulCopyWithImpl<$Res> extends _$CreateWalletCopyWithImpl<$Res>
+    implements $CreateWalletSuccessfulCopyWith<$Res> {
+  _$CreateWalletSuccessfulCopyWithImpl(CreateWalletSuccessful _value, $Res Function(CreateWalletSuccessful) _then)
+      : super(_value, (v) => _then(v as CreateWalletSuccessful));
+
+  @override
+  CreateWalletSuccessful get _value => super._value as CreateWalletSuccessful;
+
+  @override
+  $Res call({
+    Object? walletPrivateKey = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CreateWalletSuccessful(
+      walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$CreateWalletSuccessful implements CreateWalletSuccessful {
+  const _$CreateWalletSuccessful(this.walletPrivateKey, [this.pendingId = _kCreateWalletPendingId]);
+
+  @override
+  final String walletPrivateKey;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CreateWallet.successful(walletPrivateKey: $walletPrivateKey, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateWalletSuccessful &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
+      const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateWalletSuccessfulCopyWith<CreateWalletSuccessful> get copyWith =>
+      _$CreateWalletSuccessfulCopyWithImpl<CreateWalletSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(walletPrivateKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(walletPrivateKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(walletPrivateKey, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateWalletStart value) start,
+    required TResult Function(CreateWalletSuccessful value) successful,
+    required TResult Function(CreateWalletError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateWalletSuccessful implements CreateWallet, ActionDone {
+  const factory CreateWalletSuccessful(String walletPrivateKey, [String pendingId]) = _$CreateWalletSuccessful;
+
+  String get walletPrivateKey;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CreateWalletSuccessfulCopyWith<CreateWalletSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateWalletErrorCopyWith<$Res> implements $CreateWalletCopyWith<$Res> {
+  factory $CreateWalletErrorCopyWith(CreateWalletError value, $Res Function(CreateWalletError) then) =
+      _$CreateWalletErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$CreateWalletErrorCopyWithImpl<$Res> extends _$CreateWalletCopyWithImpl<$Res>
+    implements $CreateWalletErrorCopyWith<$Res> {
+  _$CreateWalletErrorCopyWithImpl(CreateWalletError _value, $Res Function(CreateWalletError) _then)
+      : super(_value, (v) => _then(v as CreateWalletError));
+
+  @override
+  CreateWalletError get _value => super._value as CreateWalletError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CreateWalletError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$CreateWalletError implements CreateWalletError {
+  const _$CreateWalletError(this.error, this.stackTrace, [this.pendingId = _kCreateWalletPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CreateWallet.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateWalletError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateWalletErrorCopyWith<CreateWalletError> get copyWith =>
+      _$CreateWalletErrorCopyWithImpl<CreateWalletError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String walletPrivateKey, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateWalletStart value) start,
+    required TResult Function(CreateWalletSuccessful value) successful,
+    required TResult Function(CreateWalletError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateWalletStart value)? start,
+    TResult Function(CreateWalletSuccessful value)? successful,
+    TResult Function(CreateWalletError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateWalletError implements CreateWallet, ActionDone, ErrorAction {
+  const factory CreateWalletError(Object error, StackTrace stackTrace, [String pendingId]) = _$CreateWalletError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CreateWalletErrorCopyWith<CreateWalletError> get copyWith => throw _privateConstructorUsedError;
+}

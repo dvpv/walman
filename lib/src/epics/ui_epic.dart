@@ -14,6 +14,7 @@ class UiEpic {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, SetEditingStart>(_setEditingStart),
       TypedEpic<AppState, GetWalletInfoStart>(_getWalletInfo),
+      TypedEpic<AppState, CreateWalletStart>(_createWallet),
     ]);
   }
 
@@ -38,6 +39,24 @@ class UiEpic {
           .map<AppAction>((WalletInfo walletInfo) => GetWalletInfoSuccessful(walletInfo, action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => SetEditingError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
+  Stream<AppAction> _createWallet(Stream<CreateWalletStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((CreateWalletStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) => _blockchainStorageApi.createWallet(),
+          )
+          .expand(
+            (String walletPrivateKey) => <AppAction>[
+              CreateWalletSuccessful(walletPrivateKey, action.pendingId),
+              GetWalletInfoStart(walletPrivateKey: walletPrivateKey),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => CreateWalletError(error, stackTrace, action.pendingId),
           );
     });
   }

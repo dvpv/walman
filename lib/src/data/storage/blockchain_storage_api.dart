@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -35,6 +36,12 @@ class BlockchainStorageApi {
 
   final DeployedContract contract;
   final Web3Client client;
+
+  Future<String> createWallet() async {
+    final Random random = Random.secure();
+    final String walletPrivateKey = EthPrivateKey.createRandom(random).address.hex;
+    return walletPrivateKey;
+  }
 
   Future<WalletInfo> getWalletInfo({required String walletPrivateKey}) async {
     final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
