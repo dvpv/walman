@@ -108,10 +108,12 @@ const _$CharacterPoolEnumMap = {
 
 _$WalletInfo$ _$$WalletInfo$FromJson(Map<String, dynamic> json) => _$WalletInfo$(
       balance: json['balance'] as String,
+      address: json['address'] as String,
     );
 
 Map<String, dynamic> _$$WalletInfo$ToJson(_$WalletInfo$ instance) => <String, dynamic>{
       'balance': instance.balance,
+      'address': instance.address,
     };
 
 _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(

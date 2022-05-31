@@ -30,8 +30,12 @@ class UiEpic {
   Stream<AppAction> _getWalletInfo(Stream<GetWalletInfoStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetWalletInfoStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => _blockchainStorageApi.getWalletInfo(walletPrivateKey: action.walletPrivateKey))
-          .map<AppAction>(GetWalletInfoSuccessful.new)
+          .asyncMap(
+            (_) => _blockchainStorageApi.getWalletInfo(
+              walletPrivateKey: action.walletPrivateKey,
+            ),
+          )
+          .map<AppAction>((WalletInfo walletInfo) => GetWalletInfoSuccessful(walletInfo, action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => SetEditingError(error, stackTrace, action.pendingId),
           );

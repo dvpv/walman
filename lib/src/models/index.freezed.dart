@@ -1307,9 +1307,10 @@ WalletInfo _$WalletInfoFromJson(Map<String, dynamic> json) {
 class _$WalletInfoTearOff {
   const _$WalletInfoTearOff();
 
-  WalletInfo$ call({required String balance}) {
+  WalletInfo$ call({required String balance, required String address}) {
     return WalletInfo$(
       balance: balance,
+      address: address,
     );
   }
 
@@ -1324,6 +1325,7 @@ const $WalletInfo = _$WalletInfoTearOff();
 /// @nodoc
 mixin _$WalletInfo {
   String get balance => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1333,7 +1335,7 @@ mixin _$WalletInfo {
 /// @nodoc
 abstract class $WalletInfoCopyWith<$Res> {
   factory $WalletInfoCopyWith(WalletInfo value, $Res Function(WalletInfo) then) = _$WalletInfoCopyWithImpl<$Res>;
-  $Res call({String balance});
+  $Res call({String balance, String address});
 }
 
 /// @nodoc
@@ -1347,11 +1349,16 @@ class _$WalletInfoCopyWithImpl<$Res> implements $WalletInfoCopyWith<$Res> {
   @override
   $Res call({
     Object? balance = freezed,
+    Object? address = freezed,
   }) {
     return _then(_value.copyWith(
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1361,7 +1368,7 @@ class _$WalletInfoCopyWithImpl<$Res> implements $WalletInfoCopyWith<$Res> {
 abstract class $WalletInfo$CopyWith<$Res> implements $WalletInfoCopyWith<$Res> {
   factory $WalletInfo$CopyWith(WalletInfo$ value, $Res Function(WalletInfo$) then) = _$WalletInfo$CopyWithImpl<$Res>;
   @override
-  $Res call({String balance});
+  $Res call({String balance, String address});
 }
 
 /// @nodoc
@@ -1375,11 +1382,16 @@ class _$WalletInfo$CopyWithImpl<$Res> extends _$WalletInfoCopyWithImpl<$Res> imp
   @override
   $Res call({
     Object? balance = freezed,
+    Object? address = freezed,
   }) {
     return _then(WalletInfo$(
       balance: balance == freezed
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
+              as String,
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1388,16 +1400,18 @@ class _$WalletInfo$CopyWithImpl<$Res> extends _$WalletInfoCopyWithImpl<$Res> imp
 /// @nodoc
 @JsonSerializable()
 class _$WalletInfo$ implements WalletInfo$ {
-  const _$WalletInfo$({required this.balance});
+  const _$WalletInfo$({required this.balance, required this.address});
 
   factory _$WalletInfo$.fromJson(Map<String, dynamic> json) => _$$WalletInfo$FromJson(json);
 
   @override
   final String balance;
+  @override
+  final String address;
 
   @override
   String toString() {
-    return 'WalletInfo(balance: $balance)';
+    return 'WalletInfo(balance: $balance, address: $address)';
   }
 
   @override
@@ -1405,11 +1419,13 @@ class _$WalletInfo$ implements WalletInfo$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WalletInfo$ &&
-            const DeepCollectionEquality().equals(other.balance, balance));
+            const DeepCollectionEquality().equals(other.balance, balance) &&
+            const DeepCollectionEquality().equals(other.address, address));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(balance));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(balance), const DeepCollectionEquality().hash(address));
 
   @JsonKey(ignore: true)
   @override
@@ -1422,12 +1438,14 @@ class _$WalletInfo$ implements WalletInfo$ {
 }
 
 abstract class WalletInfo$ implements WalletInfo {
-  const factory WalletInfo$({required String balance}) = _$WalletInfo$;
+  const factory WalletInfo$({required String balance, required String address}) = _$WalletInfo$;
 
   factory WalletInfo$.fromJson(Map<String, dynamic> json) = _$WalletInfo$.fromJson;
 
   @override
   String get balance;
+  @override
+  String get address;
   @override
   @JsonKey(ignore: true)
   $WalletInfo$CopyWith<WalletInfo$> get copyWith => throw _privateConstructorUsedError;

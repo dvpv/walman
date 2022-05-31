@@ -1311,7 +1311,7 @@ class _$GetWalletInfoTearOff {
     );
   }
 
-  GetWalletInfoSuccessful successful(WalletInfo walletInfo, [String pendingId = _kGetWalletInfoPendingId]) {
+  GetWalletInfoSuccessful successful(WalletInfo walletInfo, String pendingId) {
     return GetWalletInfoSuccessful(
       walletInfo,
       pendingId,
@@ -1609,11 +1609,10 @@ class _$GetWalletInfoSuccessfulCopyWithImpl<$Res> extends _$GetWalletInfoCopyWit
 
 @Implements<ActionDone>()
 class _$GetWalletInfoSuccessful implements GetWalletInfoSuccessful {
-  const _$GetWalletInfoSuccessful(this.walletInfo, [this.pendingId = _kGetWalletInfoPendingId]);
+  const _$GetWalletInfoSuccessful(this.walletInfo, this.pendingId);
 
   @override
   final WalletInfo walletInfo;
-  @JsonKey()
   @override
   final String pendingId;
 
@@ -1710,7 +1709,7 @@ class _$GetWalletInfoSuccessful implements GetWalletInfoSuccessful {
 }
 
 abstract class GetWalletInfoSuccessful implements GetWalletInfo, ActionDone {
-  const factory GetWalletInfoSuccessful(WalletInfo walletInfo, [String pendingId]) = _$GetWalletInfoSuccessful;
+  const factory GetWalletInfoSuccessful(WalletInfo walletInfo, String pendingId) = _$GetWalletInfoSuccessful;
 
   WalletInfo get walletInfo;
   @override

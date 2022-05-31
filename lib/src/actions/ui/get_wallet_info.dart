@@ -12,9 +12,9 @@ class GetWalletInfo with _$GetWalletInfo implements AppAction {
 
   @Implements<ActionDone>()
   const factory GetWalletInfo.successful(
-    WalletInfo walletInfo, [
-    @Default(_kGetWalletInfoPendingId) String pendingId,
-  ]) = GetWalletInfoSuccessful;
+    WalletInfo walletInfo,
+    String pendingId,
+  ) = GetWalletInfoSuccessful;
 
   @Implements<ActionDone>()
   @Implements<ErrorAction>()

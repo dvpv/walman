@@ -73,6 +73,7 @@ class PasswordGeneratorState with _$PasswordGeneratorState {
 class WalletInfo with _$WalletInfo {
   const factory WalletInfo({
     required String balance,
+    required String address,
   }) = WalletInfo$;
 
   factory WalletInfo.fromJson(Map<dynamic, dynamic> json) => _$WalletInfoFromJson(Map<String, dynamic>.from(json));
