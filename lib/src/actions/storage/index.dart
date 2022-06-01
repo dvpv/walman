@@ -6,4 +6,8 @@ part 'index.freezed.dart';
 
 part 'blockchain_storage.dart';
 
-part 'secure_storage.dart';
+part 'master_key_hash.dart';
+
+part 'bundle.dart';
+
+part 'wallet_private_key.dart';

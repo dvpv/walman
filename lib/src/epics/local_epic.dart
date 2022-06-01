@@ -22,7 +22,8 @@ class LocalEpic {
   }
 
   Stream<AppAction> _createNewPassword(Stream<CreateNewPassword> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((CreateNewPassword action) => const SecureStorageStoreBundleStart());
+    return actions
+        .map<AppAction>((CreateNewPassword action) => StoreBundleStart(bundle: store.state.persistentState.bundle));
   }
 
   Stream<AppAction> _editPasswordStart(Stream<EditPasswordStart> actions, EpicStore<AppState> store) {
@@ -31,7 +32,7 @@ class LocalEpic {
           .expand<AppAction>(
             (_) => <AppAction>[
               EditPasswordSuccessful(action.pendingId),
-              const SecureStorageStoreBundleStart(),
+              StoreBundleStart(bundle: store.state.persistentState.bundle),
             ],
           )
           .onErrorReturnWith(
@@ -41,15 +42,17 @@ class LocalEpic {
   }
 
   Stream<AppAction> _deletePassword(Stream<DeletePassword> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((DeletePassword action) => const SecureStorageStoreBundleStart());
+    return actions
+        .map<AppAction>((DeletePassword action) => StoreBundleStart(bundle: store.state.persistentState.bundle));
   }
 
   Stream<AppAction> _createNewCode(Stream<CreateNewCode> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((CreateNewCode action) => const SecureStorageStoreBundleStart());
+    return actions
+        .map<AppAction>((CreateNewCode action) => StoreBundleStart(bundle: store.state.persistentState.bundle));
   }
 
   Stream<AppAction> _deleteCode(Stream<DeleteCode> actions, EpicStore<AppState> store) {
-    return actions.map<AppAction>((DeleteCode action) => const SecureStorageStoreBundleStart());
+    return actions.map<AppAction>((DeleteCode action) => StoreBundleStart(bundle: store.state.persistentState.bundle));
   }
 
   Stream<AppAction> _selectItemDetailsSuccess(Stream<SelectItemDetailsStart> actions, EpicStore<AppState> store) {
@@ -78,6 +81,6 @@ class LocalEpic {
   }
 
   Stream<AppAction> _setWalletPrivateKey(Stream<SetWalletPrivateKey> actions, EpicStore<AppState> store) {
-    return actions.map((SetWalletPrivateKey action) => const SecureStorageStoreWalletPrivateKeyStart());
+    return actions.map((SetWalletPrivateKey action) => StoreWalletPrivateKeyStart(masterKey: store.state.masterKey!));
   }
 }

@@ -3,16 +3,32 @@ import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/models/index.dart';
 
 Reducer<AppState> storageReducer = combineReducers<AppState>(<Reducer<AppState>>[
-  TypedReducer<AppState, SecureStorageGetBundleSuccessful>(_secureStorageGetBundle),
-  TypedReducer<AppState, SecureStorageGetWalletPrivateKeySuccessful>(_secureStorageGetWalletPrivateKey),
-  TypedReducer<AppState, SecureStorageGetMasterKeyHashSuccessful>(_secureStorageGetMasterKeyHash),
+  TypedReducer<AppState, GetBundleSuccessful>(_getBundle),
+  TypedReducer<AppState, GetWalletPrivateKeySuccessful>(_getWalletPrivateKey),
+  TypedReducer<AppState, GetMasterKeyHashSuccessful>(_getMasterKeyHash),
   TypedReducer<AppState, BlockchainRestoreLatestBundleSuccessful>(_blockchainRestoreLatestBundle),
 ]);
 
-AppState _secureStorageGetBundle(AppState state, SecureStorageGetBundleSuccessful action) {
+AppState _getBundle(AppState state, GetBundleSuccessful action) {
   return state.copyWith(
     persistentState: state.persistentState.copyWith(
       bundle: action.bundle,
+    ),
+  );
+}
+
+AppState _getWalletPrivateKey(AppState state, GetWalletPrivateKeySuccessful action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      walletPrivateKey: action.walletPrivateKey,
+    ),
+  );
+}
+
+AppState _getMasterKeyHash(AppState state, GetMasterKeyHashSuccessful action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      materKeyHash: action.masterKeyHash,
     ),
   );
 }
@@ -21,22 +37,6 @@ AppState _blockchainRestoreLatestBundle(AppState state, BlockchainRestoreLatestB
   return state.copyWith(
     persistentState: state.persistentState.copyWith(
       bundle: action.bundle,
-    ),
-  );
-}
-
-AppState _secureStorageGetWalletPrivateKey(AppState state, SecureStorageGetWalletPrivateKeySuccessful action) {
-  return state.copyWith(
-    persistentState: state.persistentState.copyWith(
-      walletPrivateKey: action.walletPrivateKey,
-    ),
-  );
-}
-
-AppState _secureStorageGetMasterKeyHash(AppState state, SecureStorageGetMasterKeyHashSuccessful action) {
-  return state.copyWith(
-    persistentState: state.persistentState.copyWith(
-      materKeyHash: action.masterKeyHash,
     ),
   );
 }

@@ -16,7 +16,7 @@ class StartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PendingContainer(
       builder: (BuildContext context, Set<String> pending) {
-        if (pending.contains(SecureStorageGetMasterKeyHash.pendingKey)) {
+        if (pending.contains(GetMasterKeyHash.pendingKey)) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );

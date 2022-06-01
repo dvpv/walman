@@ -45,7 +45,7 @@ Future<void> main() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epic.epics),
     ],
-  )..dispatch(const SecureStorageGetMasterKeyHashStart());
+  )..dispatch(const GetMasterKeyHashStart());
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
   ]);

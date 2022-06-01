@@ -53,7 +53,7 @@ class UiEpic {
           .expand(
             (String walletPrivateKey) => <AppAction>[
               CreateWalletSuccessful(walletPrivateKey, action.pendingId),
-              const SecureStorageStoreWalletPrivateKeyStart(),
+              StoreWalletPrivateKeyStart(masterKey: store.state.masterKey!),
               GetWalletInfoStart(walletPrivateKey: walletPrivateKey),
             ],
           )

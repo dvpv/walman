@@ -93,8 +93,8 @@ class AuthEpic {
             (String masterKey) => <AppAction>[
               UnlockAppSuccessful(masterKey: masterKey, pendingId: action.pendingId),
               const GetCurrentFirebaseUserStart(),
-              SecureStorageGetBundleStart(masterKey: masterKey),
-              SecureStorageGetWalletPrivateKeyStart(masterKey: masterKey),
+              GetBundleStart(masterKey: masterKey),
+              GetWalletPrivateKeyStart(masterKey: masterKey),
             ],
           )
           .onErrorReturnWith(
@@ -110,7 +110,7 @@ class AuthEpic {
           .expand<AppAction>(
             (String masterKeyHash) => <AppAction>[
               CreateMasterKeySuccessful(masterKey: action.masterKey, pendingId: action.pendingId),
-              SecureStorageStoreMasterKeyHashStart(masterKeyHash: masterKeyHash),
+              StoreMasterKeyHashStart(masterKeyHash: masterKeyHash),
             ],
           )
           .onErrorReturnWith(
