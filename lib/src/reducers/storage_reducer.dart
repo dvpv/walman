@@ -5,6 +5,7 @@ import 'package:walman/src/models/index.dart';
 Reducer<AppState> storageReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, SecureStorageGetBundleSuccessful>(_secureStorageGetBundle),
   TypedReducer<AppState, SecureStorageGetWalletPrivateKeySuccessful>(_secureStorageGetWalletPrivateKey),
+  TypedReducer<AppState, SecureStorageGetMasterKeyHashSuccessful>(_secureStorageGetMasterKeyHash),
   TypedReducer<AppState, BlockchainRestoreLatestBundleSuccessful>(_blockchainRestoreLatestBundle),
 ]);
 
@@ -28,6 +29,14 @@ AppState _secureStorageGetWalletPrivateKey(AppState state, SecureStorageGetWalle
   return state.copyWith(
     persistentState: state.persistentState.copyWith(
       walletPrivateKey: action.walletPrivateKey,
+    ),
+  );
+}
+
+AppState _secureStorageGetMasterKeyHash(AppState state, SecureStorageGetMasterKeyHashSuccessful action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      materKeyHash: action.masterKeyHash,
     ),
   );
 }

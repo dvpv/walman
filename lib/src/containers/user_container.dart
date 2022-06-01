@@ -3,15 +3,15 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:walman/src/models/index.dart';
 
-class UserContainer extends StatelessWidget {
-  const UserContainer({Key? key, required this.builder}) : super(key: key);
+class FirebaseUserContainer extends StatelessWidget {
+  const FirebaseUserContainer({Key? key, required this.builder}) : super(key: key);
 
-  final ViewModelBuilder<AppUser?> builder;
+  final ViewModelBuilder<FirebaseUser?> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppUser?>(
-      converter: (Store<AppState> store) => store.state.user,
+    return StoreConnector<AppState, FirebaseUser?>(
+      converter: (Store<AppState> store) => store.state.firebaseUser,
       builder: builder,
     );
   }

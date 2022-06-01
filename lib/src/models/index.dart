@@ -10,8 +10,6 @@ part 'address.dart';
 
 part 'app_state.dart';
 
-part 'app_user.dart';
-
 part 'bundle.dart';
 
 part 'password.dart';
@@ -19,6 +17,8 @@ part 'password.dart';
 part 'code.dart';
 
 part 'bundle_item.dart';
+
+part 'firebase_user.dart';
 
 enum AppPage {
   home,

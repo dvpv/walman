@@ -4,13 +4,15 @@ part of 'index.dart';
 class AppState with _$AppState {
   const factory AppState({
     @Default(<String>{}) Set<String> pending,
-    AppUser? user,
+    String? masterKey,
+    FirebaseUser? firebaseUser,
     @Default(AppPage.home) AppPage selectedPage,
+    @Default(PersistentState()) PersistentState persistentState,
+    // UI states
     @Default(DetailsState()) DetailsState detailsState,
     @Default(CreateCodeState()) CreateCodeState createCodeState,
     @Default(UIState()) UIState uiState,
     @Default(PasswordGeneratorState()) PasswordGeneratorState passwordGeneratorState,
-    @Default(PersistentState()) PersistentState persistentState,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
@@ -21,11 +23,14 @@ class PersistentState with _$PersistentState {
   const factory PersistentState({
     @Default(Bundle()) Bundle bundle, // Current bundle
     String? walletPrivateKey, // Current crypto-wallet private key
+    String? materKeyHash,
   }) = PersistentState$;
 
   factory PersistentState.fromJson(Map<dynamic, dynamic> json) =>
       _$PersistentStateFromJson(Map<String, dynamic>.from(json));
 }
+
+// UI states
 
 @freezed
 class DetailsState with _$DetailsState {

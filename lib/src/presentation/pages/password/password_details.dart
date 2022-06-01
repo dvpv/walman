@@ -8,9 +8,9 @@ import 'package:walman/src/containers/editing_container.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/button_styles.dart';
 import 'package:walman/src/presentation/components/password_generator.dart';
 import 'package:walman/src/presentation/pages/password/password_menu_button.dart';
-import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class PasswordDetails extends StatefulWidget {
   const PasswordDetails({Key? key}) : super(key: key);

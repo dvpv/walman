@@ -146,7 +146,7 @@ class _WalletPageState extends State<WalletPage> {
                           padding: const EdgeInsets.all(16),
                           child: Center(
                             child: Text(
-                              walletInfo.balance,
+                              '${walletInfo.balance} ETH',
                               style: const TextStyle(color: Colors.indigo, fontSize: 42),
                             ),
                           ),

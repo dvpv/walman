@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/app_action.dart';
-import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/containers/bundle_container.dart';
@@ -11,7 +10,6 @@ import 'package:walman/src/presentation/components/password_generator.dart';
 import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';
 
 enum _MenuOptions {
-  logout,
   generator,
   saveToBlockchain,
   loadFromBlockchain,
@@ -50,32 +48,6 @@ class AppBarMenuButton extends StatelessWidget {
             return PopupMenuButton<_MenuOptions>(
               onSelected: (_MenuOptions result) {
                 switch (result) {
-                  case _MenuOptions.logout:
-                    showDialog<void>(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          actions: <Widget>[
-                            TextButton(
-                              child: const Text('CANCEL'),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                StoreProvider.of<AppState>(context).dispatch(const LogoutStart());
-                                Navigator.pop(context);
-                              },
-                              child: const Text('LOGOUT'),
-                            ),
-                          ],
-                          title: const Text('Logout'),
-                          content: const Text('Are you sure you want to logout?'),
-                        );
-                      },
-                    );
-                    break;
                   case _MenuOptions.generator:
                     StoreProvider.of<AppState>(context).dispatch(const GeneratePasswordStart());
                     showDialog<String>(
@@ -179,14 +151,6 @@ class AppBarMenuButton extends StatelessWidget {
                     ),
                   ),
                 ),
-                const PopupMenuItem<_MenuOptions>(
-                  value: _MenuOptions.logout,
-                  child: ListTile(
-                    title: Text(
-                      'Logout',
-                    ),
-                  ),
-                )
               ],
             );
           },

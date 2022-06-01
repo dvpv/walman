@@ -45,10 +45,9 @@ class _LoginPageState extends State<LoginPage> {
   void _onLogin(BuildContext context) {
     if (!Form.of(context)!.validate()) {
       return;
-    } else {
-      StoreProvider.of<AppState>(context)
-          .dispatch(LoginStart(email: _email.text, password: _password.text, onResult: _onLoginResult));
     }
+    StoreProvider.of<AppState>(context)
+        .dispatch(FirebaseLoginStart(email: _email.text, password: _password.text, onResult: _onLoginResult));
   }
 
   @override
@@ -58,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
         builder: (BuildContext context, UIState uiState) {
           return PendingContainer(
             builder: (BuildContext context, Set<String> pending) {
-              return pending.contains(Login.pendingKey)
+              return pending.contains(FirebaseLogin.pendingKey)
                   ? const Center(child: CircularProgressIndicator())
                   : Form(
                       child: PendingContainer(

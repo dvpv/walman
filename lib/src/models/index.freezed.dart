@@ -108,22 +108,24 @@ class _$AppStateTearOff {
 
   AppState$ call(
       {Set<String> pending = const <String>{},
-      AppUser? user,
+      String? masterKey,
+      FirebaseUser? firebaseUser,
       AppPage selectedPage = AppPage.home,
+      PersistentState persistentState = const PersistentState(),
       DetailsState detailsState = const DetailsState(),
       CreateCodeState createCodeState = const CreateCodeState(),
       UIState uiState = const UIState(),
-      PasswordGeneratorState passwordGeneratorState = const PasswordGeneratorState(),
-      PersistentState persistentState = const PersistentState()}) {
+      PasswordGeneratorState passwordGeneratorState = const PasswordGeneratorState()}) {
     return AppState$(
       pending: pending,
-      user: user,
+      masterKey: masterKey,
+      firebaseUser: firebaseUser,
       selectedPage: selectedPage,
+      persistentState: persistentState,
       detailsState: detailsState,
       createCodeState: createCodeState,
       uiState: uiState,
       passwordGeneratorState: passwordGeneratorState,
-      persistentState: persistentState,
     );
   }
 
@@ -138,13 +140,14 @@ const $AppState = _$AppStateTearOff();
 /// @nodoc
 mixin _$AppState {
   Set<String> get pending => throw _privateConstructorUsedError;
-  AppUser? get user => throw _privateConstructorUsedError;
+  String? get masterKey => throw _privateConstructorUsedError;
+  FirebaseUser? get firebaseUser => throw _privateConstructorUsedError;
   AppPage get selectedPage => throw _privateConstructorUsedError;
+  PersistentState get persistentState => throw _privateConstructorUsedError; // UI states
   DetailsState get detailsState => throw _privateConstructorUsedError;
   CreateCodeState get createCodeState => throw _privateConstructorUsedError;
   UIState get uiState => throw _privateConstructorUsedError;
   PasswordGeneratorState get passwordGeneratorState => throw _privateConstructorUsedError;
-  PersistentState get persistentState => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -156,20 +159,21 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res>;
   $Res call(
       {Set<String> pending,
-      AppUser? user,
+      String? masterKey,
+      FirebaseUser? firebaseUser,
       AppPage selectedPage,
+      PersistentState persistentState,
       DetailsState detailsState,
       CreateCodeState createCodeState,
       UIState uiState,
-      PasswordGeneratorState passwordGeneratorState,
-      PersistentState persistentState});
+      PasswordGeneratorState passwordGeneratorState});
 
-  $AppUserCopyWith<$Res>? get user;
+  $FirebaseUserCopyWith<$Res>? get firebaseUser;
+  $PersistentStateCopyWith<$Res> get persistentState;
   $DetailsStateCopyWith<$Res> get detailsState;
   $CreateCodeStateCopyWith<$Res> get createCodeState;
   $UIStateCopyWith<$Res> get uiState;
   $PasswordGeneratorStateCopyWith<$Res> get passwordGeneratorState;
-  $PersistentStateCopyWith<$Res> get persistentState;
 }
 
 /// @nodoc
@@ -183,27 +187,36 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call({
     Object? pending = freezed,
-    Object? user = freezed,
+    Object? masterKey = freezed,
+    Object? firebaseUser = freezed,
     Object? selectedPage = freezed,
+    Object? persistentState = freezed,
     Object? detailsState = freezed,
     Object? createCodeState = freezed,
     Object? uiState = freezed,
     Object? passwordGeneratorState = freezed,
-    Object? persistentState = freezed,
   }) {
     return _then(_value.copyWith(
       pending: pending == freezed
           ? _value.pending
           : pending // ignore: cast_nullable_to_non_nullable
               as Set<String>,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AppUser?,
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser?,
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
               as AppPage,
+      persistentState: persistentState == freezed
+          ? _value.persistentState
+          : persistentState // ignore: cast_nullable_to_non_nullable
+              as PersistentState,
       detailsState: detailsState == freezed
           ? _value.detailsState
           : detailsState // ignore: cast_nullable_to_non_nullable
@@ -220,21 +233,24 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.passwordGeneratorState
           : passwordGeneratorState // ignore: cast_nullable_to_non_nullable
               as PasswordGeneratorState,
-      persistentState: persistentState == freezed
-          ? _value.persistentState
-          : persistentState // ignore: cast_nullable_to_non_nullable
-              as PersistentState,
     ));
   }
 
   @override
-  $AppUserCopyWith<$Res>? get user {
-    if (_value.user == null) {
+  $FirebaseUserCopyWith<$Res>? get firebaseUser {
+    if (_value.firebaseUser == null) {
       return null;
     }
 
-    return $AppUserCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value));
+    return $FirebaseUserCopyWith<$Res>(_value.firebaseUser!, (value) {
+      return _then(_value.copyWith(firebaseUser: value));
+    });
+  }
+
+  @override
+  $PersistentStateCopyWith<$Res> get persistentState {
+    return $PersistentStateCopyWith<$Res>(_value.persistentState, (value) {
+      return _then(_value.copyWith(persistentState: value));
     });
   }
 
@@ -265,13 +281,6 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       return _then(_value.copyWith(passwordGeneratorState: value));
     });
   }
-
-  @override
-  $PersistentStateCopyWith<$Res> get persistentState {
-    return $PersistentStateCopyWith<$Res>(_value.persistentState, (value) {
-      return _then(_value.copyWith(persistentState: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -280,16 +289,19 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call(
       {Set<String> pending,
-      AppUser? user,
+      String? masterKey,
+      FirebaseUser? firebaseUser,
       AppPage selectedPage,
+      PersistentState persistentState,
       DetailsState detailsState,
       CreateCodeState createCodeState,
       UIState uiState,
-      PasswordGeneratorState passwordGeneratorState,
-      PersistentState persistentState});
+      PasswordGeneratorState passwordGeneratorState});
 
   @override
-  $AppUserCopyWith<$Res>? get user;
+  $FirebaseUserCopyWith<$Res>? get firebaseUser;
+  @override
+  $PersistentStateCopyWith<$Res> get persistentState;
   @override
   $DetailsStateCopyWith<$Res> get detailsState;
   @override
@@ -298,8 +310,6 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   $UIStateCopyWith<$Res> get uiState;
   @override
   $PasswordGeneratorStateCopyWith<$Res> get passwordGeneratorState;
-  @override
-  $PersistentStateCopyWith<$Res> get persistentState;
 }
 
 /// @nodoc
@@ -313,27 +323,36 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
   @override
   $Res call({
     Object? pending = freezed,
-    Object? user = freezed,
+    Object? masterKey = freezed,
+    Object? firebaseUser = freezed,
     Object? selectedPage = freezed,
+    Object? persistentState = freezed,
     Object? detailsState = freezed,
     Object? createCodeState = freezed,
     Object? uiState = freezed,
     Object? passwordGeneratorState = freezed,
-    Object? persistentState = freezed,
   }) {
     return _then(AppState$(
       pending: pending == freezed
           ? _value.pending
           : pending // ignore: cast_nullable_to_non_nullable
               as Set<String>,
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as AppUser?,
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser?,
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
               as AppPage,
+      persistentState: persistentState == freezed
+          ? _value.persistentState
+          : persistentState // ignore: cast_nullable_to_non_nullable
+              as PersistentState,
       detailsState: detailsState == freezed
           ? _value.detailsState
           : detailsState // ignore: cast_nullable_to_non_nullable
@@ -350,10 +369,6 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.passwordGeneratorState
           : passwordGeneratorState // ignore: cast_nullable_to_non_nullable
               as PasswordGeneratorState,
-      persistentState: persistentState == freezed
-          ? _value.persistentState
-          : persistentState // ignore: cast_nullable_to_non_nullable
-              as PersistentState,
     ));
   }
 }
@@ -363,13 +378,14 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
 class _$AppState$ implements AppState$ {
   const _$AppState$(
       {this.pending = const <String>{},
-      this.user,
+      this.masterKey,
+      this.firebaseUser,
       this.selectedPage = AppPage.home,
+      this.persistentState = const PersistentState(),
       this.detailsState = const DetailsState(),
       this.createCodeState = const CreateCodeState(),
       this.uiState = const UIState(),
-      this.passwordGeneratorState = const PasswordGeneratorState(),
-      this.persistentState = const PersistentState()});
+      this.passwordGeneratorState = const PasswordGeneratorState()});
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
 
@@ -377,12 +393,17 @@ class _$AppState$ implements AppState$ {
   @override
   final Set<String> pending;
   @override
-  final AppUser? user;
+  final String? masterKey;
+  @override
+  final FirebaseUser? firebaseUser;
   @JsonKey()
   @override
   final AppPage selectedPage;
   @JsonKey()
   @override
+  final PersistentState persistentState;
+  @JsonKey()
+  @override // UI states
   final DetailsState detailsState;
   @JsonKey()
   @override
@@ -393,13 +414,10 @@ class _$AppState$ implements AppState$ {
   @JsonKey()
   @override
   final PasswordGeneratorState passwordGeneratorState;
-  @JsonKey()
-  @override
-  final PersistentState persistentState;
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, user: $user, selectedPage: $selectedPage, detailsState: $detailsState, createCodeState: $createCodeState, uiState: $uiState, passwordGeneratorState: $passwordGeneratorState, persistentState: $persistentState)';
+    return 'AppState(pending: $pending, masterKey: $masterKey, firebaseUser: $firebaseUser, selectedPage: $selectedPage, persistentState: $persistentState, detailsState: $detailsState, createCodeState: $createCodeState, uiState: $uiState, passwordGeneratorState: $passwordGeneratorState)';
   }
 
   @override
@@ -408,26 +426,28 @@ class _$AppState$ implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is AppState$ &&
             const DeepCollectionEquality().equals(other.pending, pending) &&
-            const DeepCollectionEquality().equals(other.user, user) &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
+            const DeepCollectionEquality().equals(other.persistentState, persistentState) &&
             const DeepCollectionEquality().equals(other.detailsState, detailsState) &&
             const DeepCollectionEquality().equals(other.createCodeState, createCodeState) &&
             const DeepCollectionEquality().equals(other.uiState, uiState) &&
-            const DeepCollectionEquality().equals(other.passwordGeneratorState, passwordGeneratorState) &&
-            const DeepCollectionEquality().equals(other.persistentState, persistentState));
+            const DeepCollectionEquality().equals(other.passwordGeneratorState, passwordGeneratorState));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(pending),
-      const DeepCollectionEquality().hash(user),
+      const DeepCollectionEquality().hash(masterKey),
+      const DeepCollectionEquality().hash(firebaseUser),
       const DeepCollectionEquality().hash(selectedPage),
+      const DeepCollectionEquality().hash(persistentState),
       const DeepCollectionEquality().hash(detailsState),
       const DeepCollectionEquality().hash(createCodeState),
       const DeepCollectionEquality().hash(uiState),
-      const DeepCollectionEquality().hash(passwordGeneratorState),
-      const DeepCollectionEquality().hash(persistentState));
+      const DeepCollectionEquality().hash(passwordGeneratorState));
 
   @JsonKey(ignore: true)
   @override
@@ -442,23 +462,28 @@ class _$AppState$ implements AppState$ {
 abstract class AppState$ implements AppState {
   const factory AppState$(
       {Set<String> pending,
-      AppUser? user,
+      String? masterKey,
+      FirebaseUser? firebaseUser,
       AppPage selectedPage,
+      PersistentState persistentState,
       DetailsState detailsState,
       CreateCodeState createCodeState,
       UIState uiState,
-      PasswordGeneratorState passwordGeneratorState,
-      PersistentState persistentState}) = _$AppState$;
+      PasswordGeneratorState passwordGeneratorState}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
   @override
   Set<String> get pending;
   @override
-  AppUser? get user;
+  String? get masterKey;
+  @override
+  FirebaseUser? get firebaseUser;
   @override
   AppPage get selectedPage;
   @override
+  PersistentState get persistentState;
+  @override // UI states
   DetailsState get detailsState;
   @override
   CreateCodeState get createCodeState;
@@ -466,8 +491,6 @@ abstract class AppState$ implements AppState {
   UIState get uiState;
   @override
   PasswordGeneratorState get passwordGeneratorState;
-  @override
-  PersistentState get persistentState;
   @override
   @JsonKey(ignore: true)
   $AppState$CopyWith<AppState$> get copyWith => throw _privateConstructorUsedError;
@@ -481,10 +504,11 @@ PersistentState _$PersistentStateFromJson(Map<String, dynamic> json) {
 class _$PersistentStateTearOff {
   const _$PersistentStateTearOff();
 
-  PersistentState$ call({Bundle bundle = const Bundle(), String? walletPrivateKey}) {
+  PersistentState$ call({Bundle bundle = const Bundle(), String? walletPrivateKey, String? materKeyHash}) {
     return PersistentState$(
       bundle: bundle,
       walletPrivateKey: walletPrivateKey,
+      materKeyHash: materKeyHash,
     );
   }
 
@@ -499,7 +523,8 @@ const $PersistentState = _$PersistentStateTearOff();
 /// @nodoc
 mixin _$PersistentState {
   Bundle get bundle => throw _privateConstructorUsedError; // Current bundle
-  String? get walletPrivateKey => throw _privateConstructorUsedError;
+  String? get walletPrivateKey => throw _privateConstructorUsedError; // Current crypto-wallet private key
+  String? get materKeyHash => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -510,7 +535,7 @@ mixin _$PersistentState {
 abstract class $PersistentStateCopyWith<$Res> {
   factory $PersistentStateCopyWith(PersistentState value, $Res Function(PersistentState) then) =
       _$PersistentStateCopyWithImpl<$Res>;
-  $Res call({Bundle bundle, String? walletPrivateKey});
+  $Res call({Bundle bundle, String? walletPrivateKey, String? materKeyHash});
 
   $BundleCopyWith<$Res> get bundle;
 }
@@ -527,6 +552,7 @@ class _$PersistentStateCopyWithImpl<$Res> implements $PersistentStateCopyWith<$R
   $Res call({
     Object? bundle = freezed,
     Object? walletPrivateKey = freezed,
+    Object? materKeyHash = freezed,
   }) {
     return _then(_value.copyWith(
       bundle: bundle == freezed
@@ -536,6 +562,10 @@ class _$PersistentStateCopyWithImpl<$Res> implements $PersistentStateCopyWith<$R
       walletPrivateKey: walletPrivateKey == freezed
           ? _value.walletPrivateKey
           : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String?,
+      materKeyHash: materKeyHash == freezed
+          ? _value.materKeyHash
+          : materKeyHash // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -553,7 +583,7 @@ abstract class $PersistentState$CopyWith<$Res> implements $PersistentStateCopyWi
   factory $PersistentState$CopyWith(PersistentState$ value, $Res Function(PersistentState$) then) =
       _$PersistentState$CopyWithImpl<$Res>;
   @override
-  $Res call({Bundle bundle, String? walletPrivateKey});
+  $Res call({Bundle bundle, String? walletPrivateKey, String? materKeyHash});
 
   @override
   $BundleCopyWith<$Res> get bundle;
@@ -572,6 +602,7 @@ class _$PersistentState$CopyWithImpl<$Res> extends _$PersistentStateCopyWithImpl
   $Res call({
     Object? bundle = freezed,
     Object? walletPrivateKey = freezed,
+    Object? materKeyHash = freezed,
   }) {
     return _then(PersistentState$(
       bundle: bundle == freezed
@@ -582,6 +613,10 @@ class _$PersistentState$CopyWithImpl<$Res> extends _$PersistentStateCopyWithImpl
           ? _value.walletPrivateKey
           : walletPrivateKey // ignore: cast_nullable_to_non_nullable
               as String?,
+      materKeyHash: materKeyHash == freezed
+          ? _value.materKeyHash
+          : materKeyHash // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -589,7 +624,7 @@ class _$PersistentState$CopyWithImpl<$Res> extends _$PersistentStateCopyWithImpl
 /// @nodoc
 @JsonSerializable()
 class _$PersistentState$ implements PersistentState$ {
-  const _$PersistentState$({this.bundle = const Bundle(), this.walletPrivateKey});
+  const _$PersistentState$({this.bundle = const Bundle(), this.walletPrivateKey, this.materKeyHash});
 
   factory _$PersistentState$.fromJson(Map<String, dynamic> json) => _$$PersistentState$FromJson(json);
 
@@ -598,10 +633,12 @@ class _$PersistentState$ implements PersistentState$ {
   final Bundle bundle;
   @override // Current bundle
   final String? walletPrivateKey;
+  @override // Current crypto-wallet private key
+  final String? materKeyHash;
 
   @override
   String toString() {
-    return 'PersistentState(bundle: $bundle, walletPrivateKey: $walletPrivateKey)';
+    return 'PersistentState(bundle: $bundle, walletPrivateKey: $walletPrivateKey, materKeyHash: $materKeyHash)';
   }
 
   @override
@@ -610,12 +647,13 @@ class _$PersistentState$ implements PersistentState$ {
         (other.runtimeType == runtimeType &&
             other is PersistentState$ &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey));
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.materKeyHash, materKeyHash));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(walletPrivateKey));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundle),
+      const DeepCollectionEquality().hash(walletPrivateKey), const DeepCollectionEquality().hash(materKeyHash));
 
   @JsonKey(ignore: true)
   @override
@@ -629,7 +667,7 @@ class _$PersistentState$ implements PersistentState$ {
 }
 
 abstract class PersistentState$ implements PersistentState {
-  const factory PersistentState$({Bundle bundle, String? walletPrivateKey}) = _$PersistentState$;
+  const factory PersistentState$({Bundle bundle, String? walletPrivateKey, String? materKeyHash}) = _$PersistentState$;
 
   factory PersistentState$.fromJson(Map<String, dynamic> json) = _$PersistentState$.fromJson;
 
@@ -637,6 +675,8 @@ abstract class PersistentState$ implements PersistentState {
   Bundle get bundle;
   @override // Current bundle
   String? get walletPrivateKey;
+  @override // Current crypto-wallet private key
+  String? get materKeyHash;
   @override
   @JsonKey(ignore: true)
   $PersistentState$CopyWith<PersistentState$> get copyWith => throw _privateConstructorUsedError;
@@ -1449,196 +1489,6 @@ abstract class WalletInfo$ implements WalletInfo {
   @override
   @JsonKey(ignore: true)
   $WalletInfo$CopyWith<WalletInfo$> get copyWith => throw _privateConstructorUsedError;
-}
-
-AppUser _$AppUserFromJson(Map<String, dynamic> json) {
-  return AppUser$.fromJson(json);
-}
-
-/// @nodoc
-class _$AppUserTearOff {
-  const _$AppUserTearOff();
-
-  AppUser$ call({required String uid, required String email, required String username, String? masterKey}) {
-    return AppUser$(
-      uid: uid,
-      email: email,
-      username: username,
-      masterKey: masterKey,
-    );
-  }
-
-  AppUser fromJson(Map<String, Object?> json) {
-    return AppUser.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $AppUser = _$AppUserTearOff();
-
-/// @nodoc
-mixin _$AppUser {
-  String get uid => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
-  String? get masterKey => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AppUserCopyWith<AppUser> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AppUserCopyWith<$Res> {
-  factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) = _$AppUserCopyWithImpl<$Res>;
-  $Res call({String uid, String email, String username, String? masterKey});
-}
-
-/// @nodoc
-class _$AppUserCopyWithImpl<$Res> implements $AppUserCopyWith<$Res> {
-  _$AppUserCopyWithImpl(this._value, this._then);
-
-  final AppUser _value;
-  // ignore: unused_field
-  final $Res Function(AppUser) _then;
-
-  @override
-  $Res call({
-    Object? uid = freezed,
-    Object? email = freezed,
-    Object? username = freezed,
-    Object? masterKey = freezed,
-  }) {
-    return _then(_value.copyWith(
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      masterKey: masterKey == freezed
-          ? _value.masterKey
-          : masterKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class $AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
-  factory $AppUser$CopyWith(AppUser$ value, $Res Function(AppUser$) then) = _$AppUser$CopyWithImpl<$Res>;
-  @override
-  $Res call({String uid, String email, String username, String? masterKey});
-}
-
-/// @nodoc
-class _$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res> implements $AppUser$CopyWith<$Res> {
-  _$AppUser$CopyWithImpl(AppUser$ _value, $Res Function(AppUser$) _then) : super(_value, (v) => _then(v as AppUser$));
-
-  @override
-  AppUser$ get _value => super._value as AppUser$;
-
-  @override
-  $Res call({
-    Object? uid = freezed,
-    Object? email = freezed,
-    Object? username = freezed,
-    Object? masterKey = freezed,
-  }) {
-    return _then(AppUser$(
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: username == freezed
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      masterKey: masterKey == freezed
-          ? _value.masterKey
-          : masterKey // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AppUser$ implements AppUser$ {
-  const _$AppUser$({required this.uid, required this.email, required this.username, this.masterKey});
-
-  factory _$AppUser$.fromJson(Map<String, dynamic> json) => _$$AppUser$FromJson(json);
-
-  @override
-  final String uid;
-  @override
-  final String email;
-  @override
-  final String username;
-  @override
-  final String? masterKey;
-
-  @override
-  String toString() {
-    return 'AppUser(uid: $uid, email: $email, username: $username, masterKey: $masterKey)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AppUser$ &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.username, username) &&
-            const DeepCollectionEquality().equals(other.masterKey, masterKey));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(username),
-      const DeepCollectionEquality().hash(masterKey));
-
-  @JsonKey(ignore: true)
-  @override
-  $AppUser$CopyWith<AppUser$> get copyWith => _$AppUser$CopyWithImpl<AppUser$>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppUser$ToJson(this);
-  }
-}
-
-abstract class AppUser$ implements AppUser {
-  const factory AppUser$({required String uid, required String email, required String username, String? masterKey}) =
-      _$AppUser$;
-
-  factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
-
-  @override
-  String get uid;
-  @override
-  String get email;
-  @override
-  String get username;
-  @override
-  String? get masterKey;
-  @override
-  @JsonKey(ignore: true)
-  $AppUser$CopyWith<AppUser$> get copyWith => throw _privateConstructorUsedError;
 }
 
 Bundle _$BundleFromJson(Map<String, dynamic> json) {
@@ -2705,4 +2555,176 @@ abstract class Code$ implements Code {
   @override
   @JsonKey(ignore: true)
   $Code$CopyWith<Code$> get copyWith => throw _privateConstructorUsedError;
+}
+
+FirebaseUser _$FirebaseUserFromJson(Map<String, dynamic> json) {
+  return FirebaseUser$.fromJson(json);
+}
+
+/// @nodoc
+class _$FirebaseUserTearOff {
+  const _$FirebaseUserTearOff();
+
+  FirebaseUser$ call({required String uid, required String email, required String username}) {
+    return FirebaseUser$(
+      uid: uid,
+      email: email,
+      username: username,
+    );
+  }
+
+  FirebaseUser fromJson(Map<String, Object?> json) {
+    return FirebaseUser.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $FirebaseUser = _$FirebaseUserTearOff();
+
+/// @nodoc
+mixin _$FirebaseUser {
+  String get uid => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FirebaseUserCopyWith<FirebaseUser> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FirebaseUserCopyWith<$Res> {
+  factory $FirebaseUserCopyWith(FirebaseUser value, $Res Function(FirebaseUser) then) =
+      _$FirebaseUserCopyWithImpl<$Res>;
+  $Res call({String uid, String email, String username});
+}
+
+/// @nodoc
+class _$FirebaseUserCopyWithImpl<$Res> implements $FirebaseUserCopyWith<$Res> {
+  _$FirebaseUserCopyWithImpl(this._value, this._then);
+
+  final FirebaseUser _value;
+  // ignore: unused_field
+  final $Res Function(FirebaseUser) _then;
+
+  @override
+  $Res call({
+    Object? uid = freezed,
+    Object? email = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(_value.copyWith(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $FirebaseUser$CopyWith<$Res> implements $FirebaseUserCopyWith<$Res> {
+  factory $FirebaseUser$CopyWith(FirebaseUser$ value, $Res Function(FirebaseUser$) then) =
+      _$FirebaseUser$CopyWithImpl<$Res>;
+  @override
+  $Res call({String uid, String email, String username});
+}
+
+/// @nodoc
+class _$FirebaseUser$CopyWithImpl<$Res> extends _$FirebaseUserCopyWithImpl<$Res>
+    implements $FirebaseUser$CopyWith<$Res> {
+  _$FirebaseUser$CopyWithImpl(FirebaseUser$ _value, $Res Function(FirebaseUser$) _then)
+      : super(_value, (v) => _then(v as FirebaseUser$));
+
+  @override
+  FirebaseUser$ get _value => super._value as FirebaseUser$;
+
+  @override
+  $Res call({
+    Object? uid = freezed,
+    Object? email = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(FirebaseUser$(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FirebaseUser$ implements FirebaseUser$ {
+  const _$FirebaseUser$({required this.uid, required this.email, required this.username});
+
+  factory _$FirebaseUser$.fromJson(Map<String, dynamic> json) => _$$FirebaseUser$FromJson(json);
+
+  @override
+  final String uid;
+  @override
+  final String email;
+  @override
+  final String username;
+
+  @override
+  String toString() {
+    return 'FirebaseUser(uid: $uid, email: $email, username: $username)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FirebaseUser$ &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.username, username));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(email), const DeepCollectionEquality().hash(username));
+
+  @JsonKey(ignore: true)
+  @override
+  $FirebaseUser$CopyWith<FirebaseUser$> get copyWith => _$FirebaseUser$CopyWithImpl<FirebaseUser$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FirebaseUser$ToJson(this);
+  }
+}
+
+abstract class FirebaseUser$ implements FirebaseUser {
+  const factory FirebaseUser$({required String uid, required String email, required String username}) = _$FirebaseUser$;
+
+  factory FirebaseUser$.fromJson(Map<String, dynamic> json) = _$FirebaseUser$.fromJson;
+
+  @override
+  String get uid;
+  @override
+  String get email;
+  @override
+  String get username;
+  @override
+  @JsonKey(ignore: true)
+  $FirebaseUser$CopyWith<FirebaseUser$> get copyWith => throw _privateConstructorUsedError;
 }

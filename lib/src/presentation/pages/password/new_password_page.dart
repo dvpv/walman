@@ -5,8 +5,8 @@ import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/button_styles.dart';
 import 'package:walman/src/presentation/components/password_generator.dart';
-import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class NewPasswordPage extends StatefulWidget {
   const NewPasswordPage({Key? key}) : super(key: key);
@@ -50,7 +50,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
             lastAccess: DateTime.now(),
             createdAt: DateTime.now(),
           ),
-          StoreProvider.of<AppState>(context).state.user!.masterKey!,
+          StoreProvider.of<AppState>(context).state.masterKey!,
         ),
       );
       Navigator.pop(context);

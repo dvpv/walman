@@ -5,7 +5,7 @@ import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/editing_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/styles/button_styles.dart';
+import 'package:walman/src/presentation/components/button_styles.dart';
 import 'package:walman/src/utils/code.dart';
 
 class CodeDetails extends StatelessWidget {

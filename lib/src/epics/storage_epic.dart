@@ -18,6 +18,8 @@ class StorageEpic {
       TypedEpic<AppState, SecureStorageStoreBundleStart>(_secureStorageStoreBundle),
       TypedEpic<AppState, SecureStorageStoreWalletPrivateKeyStart>(_secureStorageStoreWalletPrivateKey),
       TypedEpic<AppState, SecureStorageGetWalletPrivateKeyStart>(_secureStorageGetWalletPrivateKey),
+      TypedEpic<AppState, SecureStorageStoreMasterKeyHashStart>(_secureStorageStoreMasterKeyHash),
+      TypedEpic<AppState, SecureStorageGetMasterKeyHashStart>(_secureStorageGetMasterKeyHash),
       TypedEpic<AppState, BlockchainAddBundleStart>(_blockchainAddBundle),
       TypedEpic<AppState, BlockchainRestoreLatestBundleStart>(_blockchainRestoreLatestBundle),
     ]);
@@ -26,7 +28,8 @@ class StorageEpic {
   Stream<AppAction> _secureStorageGetBundle(Stream<SecureStorageGetBundleStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((SecureStorageGetBundleStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => secureStorageApi.getBundle(action.masterKey ?? store.state.user!.masterKey!))
+          // TODO(dvpv): always require masterKey
+          .asyncMap((_) => secureStorageApi.getBundle(action.masterKey ?? store.state.masterKey!))
           .map<SecureStorageGetBundle>(
             (Bundle bundle) => SecureStorageGetBundleSuccessful(bundle: bundle, pendingId: action.pendingId),
           )
@@ -45,7 +48,8 @@ class StorageEpic {
           .asyncMap(
             (_) => secureStorageApi.storeBundle(
               action.bundle ?? store.state.persistentState.bundle,
-              store.state.user!.masterKey!,
+              // TODO(dvpv): always require masterKey
+              store.state.masterKey!,
             ),
           )
           .mapTo<SecureStorageStoreBundle>(SecureStorageStoreBundleSuccessful(action.pendingId))
@@ -64,7 +68,8 @@ class StorageEpic {
           .asyncMap(
             (_) => secureStorageApi.storeWalletPrivateKey(
               store.state.persistentState.walletPrivateKey,
-              store.state.user!.masterKey!,
+              // TODO(dvpv): always require masterKey
+              store.state.masterKey!,
             ),
           )
           .mapTo<SecureStorageStoreBundle>(SecureStorageStoreBundleSuccessful(action.pendingId))
@@ -80,7 +85,8 @@ class StorageEpic {
   ) {
     return actions.flatMap((SecureStorageGetWalletPrivateKeyStart action) {
       return Stream<void>.value(null)
-          .asyncMap((_) => secureStorageApi.getWalletPrivateKey(action.masterKey ?? store.state.user!.masterKey!))
+          // TODO(dvpv): always require masterKey
+          .asyncMap((_) => secureStorageApi.getWalletPrivateKey(action.masterKey ?? store.state.masterKey!))
           .map<SecureStorageGetWalletPrivateKey>(
             (String? walletPrivateKey) => SecureStorageGetWalletPrivateKeySuccessful(
               walletPrivateKey: walletPrivateKey,
@@ -94,6 +100,44 @@ class StorageEpic {
     });
   }
 
+  Stream<AppAction> _secureStorageStoreMasterKeyHash(
+    Stream<SecureStorageStoreMasterKeyHashStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((SecureStorageStoreMasterKeyHashStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => secureStorageApi.storeMasterKeyHash(action.masterKeyHash))
+          .expand<AppAction>(
+            (_) => <AppAction>[
+              SecureStorageStoreMasterKeyHashSuccessful(pendingId: action.pendingId),
+              SecureStorageGetMasterKeyHashStart(pendingId: action.pendingId),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) =>
+                SecureStorageStoreMasterKeyHashError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
+  Stream<AppAction> _secureStorageGetMasterKeyHash(
+    Stream<SecureStorageGetMasterKeyHashStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((SecureStorageGetMasterKeyHashStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => secureStorageApi.getMasterKeyHash())
+          .map<AppAction>(
+            (String? masterKeyHash) =>
+                SecureStorageGetMasterKeyHashSuccessful(masterKeyHash: masterKeyHash, pendingId: action.pendingId),
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) =>
+                SecureStorageGetMasterKeyHashError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
   Stream<AppAction> _blockchainAddBundle(Stream<BlockchainAddBundleStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((BlockchainAddBundleStart action) {
       return Stream<void>.value(null)
@@ -101,7 +145,8 @@ class StorageEpic {
             (_) => blockchainStorageApi.addBundle(
               bundle: action.bundle,
               walletPrivateKey: action.walletPrivateKey,
-              masterKey: store.state.user!.masterKey!,
+              // TODO(dvpv): always require masterKey
+              masterKey: store.state.masterKey!,
             ),
           )
           .map<AppAction>((_) => BlockchainAddBundleSuccessful(action.pendingId))
@@ -121,7 +166,8 @@ class StorageEpic {
           .asyncMap(
             (_) => blockchainStorageApi.getLatestBundle(
               walletPrivateKey: action.walletPrivateKey,
-              masterKey: store.state.user!.masterKey!,
+              // TODO(dvpv): always require masterKey
+              masterKey: store.state.masterKey!,
             ),
           )
           .expand<AppAction>(

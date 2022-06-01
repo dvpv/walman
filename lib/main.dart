@@ -7,7 +7,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
-import 'package:walman/src/actions/auth/index.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/data/storage/blockchain_storage_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
@@ -44,7 +44,7 @@ Future<void> main() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epic.epics),
     ],
-  )..dispatch(const GetCurrentUser());
+  )..dispatch(const SecureStorageGetMasterKeyHashStart());
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
   ]);
@@ -62,6 +62,9 @@ class App extends StatelessWidget {
       store: store,
       child: MaterialApp(
         title: 'walman',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+        ),
         routes: <String, WidgetBuilder>{
           StartPage.route: (BuildContext context) => const StartPage(),
           SignupPage.route: (BuildContext context) => const SignupPage(),

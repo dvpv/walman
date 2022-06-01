@@ -43,7 +43,7 @@ class _SignupPageState extends State<SignupPage> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
       }
-    } else if (action is SignUpSuccessful) {
+    } else if (action is FirebaseSignUpSuccessful) {
       Navigator.pushNamedAndRemoveUntil(context, StartPage.route, (_) => false);
     }
   }
@@ -53,7 +53,7 @@ class _SignupPageState extends State<SignupPage> {
       return;
     } else {
       StoreProvider.of<AppState>(context).dispatch(
-        SignUpStart(
+        FirebaseSignUpStart(
           email: _email.text,
           password: _password.text,
           username: _username.text,

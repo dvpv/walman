@@ -1,5 +1,5 @@
 import 'package:redux_epics/redux_epics.dart';
-import 'package:walman/src/data/auth/auth_api.dart';
+import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/data/storage/blockchain_storage_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/auth_epic.dart';
@@ -11,7 +11,7 @@ import 'package:walman/src/models/index.dart';
 class AppEpic {
   AppEpic({required this.authApi, required this.secureStorageApi, required this.blockchainStorageApi});
 
-  final AuthApi authApi;
+  final FirebaseAuthApi authApi;
   final SecureStorageApi secureStorageApi;
   final BlockchainStorageApi blockchainStorageApi;
 

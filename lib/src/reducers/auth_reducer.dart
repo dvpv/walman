@@ -3,29 +3,34 @@ import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/models/index.dart';
 
 Reducer<AppState> authReducer = combineReducers<AppState>(<Reducer<AppState>>[
-  TypedReducer<AppState, LoginSuccessful>(_loginSuccessful),
-  TypedReducer<AppState, SignUpSuccessful>(_signupSuccessful),
-  TypedReducer<AppState, GetCurrentUserSuccessful>(_getCurrentUserSuccessful),
-  TypedReducer<AppState, LogoutSuccessful>(_logoutSuccessful),
+  TypedReducer<AppState, FirebaseLoginSuccessful>(_firebaseLoginSuccessful),
+  TypedReducer<AppState, FirebaseSignUpSuccessful>(_firebaseSignupSuccessful),
+  TypedReducer<AppState, GetCurrentFirebaseUserSuccessful>(_getCurrentFirebaseUserSuccessful),
+  TypedReducer<AppState, FirebaseLogoutSuccessful>(_firebaseLogoutSuccessful),
   TypedReducer<AppState, UnlockAppSuccessful>(_unlockAppSuccessful),
+  TypedReducer<AppState, CreateMasterKeySuccessful>(_createMaterKey),
 ]);
 
-AppState _loginSuccessful(AppState state, LoginSuccessful action) {
-  return state.copyWith(user: action.user);
+AppState _firebaseLoginSuccessful(AppState state, FirebaseLoginSuccessful action) {
+  return state.copyWith(firebaseUser: action.firebaseUser);
 }
 
-AppState _signupSuccessful(AppState state, SignUpSuccessful action) {
-  return state.copyWith(user: action.user);
+AppState _firebaseSignupSuccessful(AppState state, FirebaseSignUpSuccessful action) {
+  return state.copyWith(firebaseUser: action.firebaseUser);
 }
 
-AppState _getCurrentUserSuccessful(AppState state, GetCurrentUserSuccessful action) {
-  return state.copyWith(user: action.user);
+AppState _getCurrentFirebaseUserSuccessful(AppState state, GetCurrentFirebaseUserSuccessful action) {
+  return state.copyWith(firebaseUser: action.firebaseUser);
 }
 
-AppState _logoutSuccessful(AppState state, LogoutSuccessful action) {
-  return const AppState();
+AppState _firebaseLogoutSuccessful(AppState state, FirebaseLogoutSuccessful action) {
+  return state.copyWith(firebaseUser: null);
 }
 
 AppState _unlockAppSuccessful(AppState state, UnlockAppSuccessful action) {
-  return state.copyWith(user: action.user);
+  return state.copyWith(masterKey: action.masterKey);
+}
+
+AppState _createMaterKey(AppState state, CreateMasterKeySuccessful action) {
+  return state.copyWith(masterKey: action.masterKey);
 }

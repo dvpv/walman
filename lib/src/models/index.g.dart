@@ -12,8 +12,13 @@ Map<String, dynamic> _$$Address$ToJson(_$Address$ instance) => <String, dynamic>
 
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
-      user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
+      masterKey: json['masterKey'] as String?,
+      firebaseUser:
+          json['firebaseUser'] == null ? null : FirebaseUser.fromJson(json['firebaseUser'] as Map<String, dynamic>),
       selectedPage: $enumDecodeNullable(_$AppPageEnumMap, json['selectedPage']) ?? AppPage.home,
+      persistentState: json['persistentState'] == null
+          ? const PersistentState()
+          : PersistentState.fromJson(json['persistentState'] as Map<String, dynamic>),
       detailsState: json['detailsState'] == null
           ? const DetailsState()
           : DetailsState.fromJson(json['detailsState'] as Map<String, dynamic>),
@@ -24,20 +29,18 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       passwordGeneratorState: json['passwordGeneratorState'] == null
           ? const PasswordGeneratorState()
           : PasswordGeneratorState.fromJson(json['passwordGeneratorState'] as Map<String, dynamic>),
-      persistentState: json['persistentState'] == null
-          ? const PersistentState()
-          : PersistentState.fromJson(json['persistentState'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
-      'user': instance.user,
+      'masterKey': instance.masterKey,
+      'firebaseUser': instance.firebaseUser,
       'selectedPage': _$AppPageEnumMap[instance.selectedPage],
+      'persistentState': instance.persistentState,
       'detailsState': instance.detailsState,
       'createCodeState': instance.createCodeState,
       'uiState': instance.uiState,
       'passwordGeneratorState': instance.passwordGeneratorState,
-      'persistentState': instance.persistentState,
     };
 
 const _$AppPageEnumMap = {
@@ -50,11 +53,13 @@ const _$AppPageEnumMap = {
 _$PersistentState$ _$$PersistentState$FromJson(Map<String, dynamic> json) => _$PersistentState$(
       bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
       walletPrivateKey: json['walletPrivateKey'] as String?,
+      materKeyHash: json['materKeyHash'] as String?,
     );
 
 Map<String, dynamic> _$$PersistentState$ToJson(_$PersistentState$ instance) => <String, dynamic>{
       'bundle': instance.bundle,
       'walletPrivateKey': instance.walletPrivateKey,
+      'materKeyHash': instance.materKeyHash,
     };
 
 _$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) => _$DetailsState$(
@@ -114,20 +119,6 @@ _$WalletInfo$ _$$WalletInfo$FromJson(Map<String, dynamic> json) => _$WalletInfo$
 Map<String, dynamic> _$$WalletInfo$ToJson(_$WalletInfo$ instance) => <String, dynamic>{
       'balance': instance.balance,
       'address': instance.address,
-    };
-
-_$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
-      uid: json['uid'] as String,
-      email: json['email'] as String,
-      username: json['username'] as String,
-      masterKey: json['masterKey'] as String?,
-    );
-
-Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>{
-      'uid': instance.uid,
-      'email': instance.email,
-      'username': instance.username,
-      'masterKey': instance.masterKey,
     };
 
 _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(
@@ -222,3 +213,15 @@ const _$BarcodeFormatEnumMap = {
   BarcodeFormat.pdf417: 'pdf417',
   BarcodeFormat.aztec: 'aztec',
 };
+
+_$FirebaseUser$ _$$FirebaseUser$FromJson(Map<String, dynamic> json) => _$FirebaseUser$(
+      uid: json['uid'] as String,
+      email: json['email'] as String,
+      username: json['username'] as String,
+    );
+
+Map<String, dynamic> _$$FirebaseUser$ToJson(_$FirebaseUser$ instance) => <String, dynamic>{
+      'uid': instance.uid,
+      'email': instance.email,
+      'username': instance.username,
+    };

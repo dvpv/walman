@@ -113,3 +113,55 @@ class SecureStorageGetWalletPrivateKey with _$SecureStorageGetWalletPrivateKey i
 
   static String get pendingKey => _kSecureStorageGetWalletPrivateKeyPendingId;
 }
+
+const String _kSecureStorageGetMasterKeyHashPendingId = 'SecureStorageGetMasterKeyHash';
+
+@freezed
+class SecureStorageGetMasterKeyHash with _$SecureStorageGetMasterKeyHash implements AppAction {
+  @Implements<ActionStart>()
+  const factory SecureStorageGetMasterKeyHash.start({
+    @Default(_kSecureStorageGetMasterKeyHashPendingId) String pendingId,
+  }) = SecureStorageGetMasterKeyHashStart;
+
+  @Implements<ActionDone>()
+  const factory SecureStorageGetMasterKeyHash.successful({
+    required String? masterKeyHash,
+    @Default(_kSecureStorageGetMasterKeyHashPendingId) String pendingId,
+  }) = SecureStorageGetMasterKeyHashSuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory SecureStorageGetMasterKeyHash.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kSecureStorageGetMasterKeyHashPendingId) String pendingId,
+  ]) = SecureStorageGetMasterKeyHashError;
+
+  static String get pendingKey => _kSecureStorageGetMasterKeyHashPendingId;
+}
+
+const String _kSecureStorageStoreMasterKeyHashPendingId = 'SecureStorageStoreMasterKeyHash';
+
+@freezed
+class SecureStorageStoreMasterKeyHash with _$SecureStorageStoreMasterKeyHash implements AppAction {
+  @Implements<ActionStart>()
+  const factory SecureStorageStoreMasterKeyHash.start({
+    required String? masterKeyHash,
+    @Default(_kSecureStorageStoreMasterKeyHashPendingId) String pendingId,
+  }) = SecureStorageStoreMasterKeyHashStart;
+
+  @Implements<ActionDone>()
+  const factory SecureStorageStoreMasterKeyHash.successful({
+    @Default(_kSecureStorageStoreMasterKeyHashPendingId) String pendingId,
+  }) = SecureStorageStoreMasterKeyHashSuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory SecureStorageStoreMasterKeyHash.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kSecureStorageStoreMasterKeyHashPendingId) String pendingId,
+  ]) = SecureStorageStoreMasterKeyHashError;
+
+  static String get pendingKey => _kSecureStorageStoreMasterKeyHashPendingId;
+}

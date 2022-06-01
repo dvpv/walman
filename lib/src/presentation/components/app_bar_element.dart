@@ -3,7 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/navigation_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/styles/button_styles.dart';
+import 'package:walman/src/presentation/components/button_styles.dart';
 
 class AppBarElement extends StatelessWidget {
   const AppBarElement({Key? key, required this.icon, required this.page, required this.label}) : super(key: key);

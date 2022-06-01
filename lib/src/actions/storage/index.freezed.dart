@@ -3607,3 +3607,1171 @@ abstract class SecureStorageGetWalletPrivateKeyError
   $SecureStorageGetWalletPrivateKeyErrorCopyWith<SecureStorageGetWalletPrivateKeyError> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SecureStorageGetMasterKeyHashTearOff {
+  const _$SecureStorageGetMasterKeyHashTearOff();
+
+  SecureStorageGetMasterKeyHashStart start({String pendingId = _kSecureStorageGetMasterKeyHashPendingId}) {
+    return SecureStorageGetMasterKeyHashStart(
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageGetMasterKeyHashSuccessful successful(
+      {required String? masterKeyHash, String pendingId = _kSecureStorageGetMasterKeyHashPendingId}) {
+    return SecureStorageGetMasterKeyHashSuccessful(
+      masterKeyHash: masterKeyHash,
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageGetMasterKeyHashError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kSecureStorageGetMasterKeyHashPendingId]) {
+    return SecureStorageGetMasterKeyHashError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $SecureStorageGetMasterKeyHash = _$SecureStorageGetMasterKeyHashTearOff();
+
+/// @nodoc
+mixin _$SecureStorageGetMasterKeyHash {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageGetMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageGetMasterKeyHashError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SecureStorageGetMasterKeyHashCopyWith<SecureStorageGetMasterKeyHash> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageGetMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageGetMasterKeyHashCopyWith(
+          SecureStorageGetMasterKeyHash value, $Res Function(SecureStorageGetMasterKeyHash) then) =
+      _$SecureStorageGetMasterKeyHashCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetMasterKeyHashCopyWithImpl<$Res> implements $SecureStorageGetMasterKeyHashCopyWith<$Res> {
+  _$SecureStorageGetMasterKeyHashCopyWithImpl(this._value, this._then);
+
+  final SecureStorageGetMasterKeyHash _value;
+  // ignore: unused_field
+  final $Res Function(SecureStorageGetMasterKeyHash) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SecureStorageGetMasterKeyHashStartCopyWith<$Res>
+    implements $SecureStorageGetMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageGetMasterKeyHashStartCopyWith(
+          SecureStorageGetMasterKeyHashStart value, $Res Function(SecureStorageGetMasterKeyHashStart) then) =
+      _$SecureStorageGetMasterKeyHashStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetMasterKeyHashStartCopyWithImpl<$Res> extends _$SecureStorageGetMasterKeyHashCopyWithImpl<$Res>
+    implements $SecureStorageGetMasterKeyHashStartCopyWith<$Res> {
+  _$SecureStorageGetMasterKeyHashStartCopyWithImpl(
+      SecureStorageGetMasterKeyHashStart _value, $Res Function(SecureStorageGetMasterKeyHashStart) _then)
+      : super(_value, (v) => _then(v as SecureStorageGetMasterKeyHashStart));
+
+  @override
+  SecureStorageGetMasterKeyHashStart get _value => super._value as SecureStorageGetMasterKeyHashStart;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageGetMasterKeyHashStart(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$SecureStorageGetMasterKeyHashStart implements SecureStorageGetMasterKeyHashStart {
+  const _$SecureStorageGetMasterKeyHashStart({this.pendingId = _kSecureStorageGetMasterKeyHashPendingId});
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageGetMasterKeyHash.start(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageGetMasterKeyHashStart &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageGetMasterKeyHashStartCopyWith<SecureStorageGetMasterKeyHashStart> get copyWith =>
+      _$SecureStorageGetMasterKeyHashStartCopyWithImpl<SecureStorageGetMasterKeyHashStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageGetMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageGetMasterKeyHashError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageGetMasterKeyHashStart implements SecureStorageGetMasterKeyHash, ActionStart {
+  const factory SecureStorageGetMasterKeyHashStart({String pendingId}) = _$SecureStorageGetMasterKeyHashStart;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageGetMasterKeyHashStartCopyWith<SecureStorageGetMasterKeyHashStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageGetMasterKeyHashSuccessfulCopyWith<$Res>
+    implements $SecureStorageGetMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageGetMasterKeyHashSuccessfulCopyWith(
+          SecureStorageGetMasterKeyHashSuccessful value, $Res Function(SecureStorageGetMasterKeyHashSuccessful) then) =
+      _$SecureStorageGetMasterKeyHashSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String? masterKeyHash, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetMasterKeyHashSuccessfulCopyWithImpl<$Res>
+    extends _$SecureStorageGetMasterKeyHashCopyWithImpl<$Res>
+    implements $SecureStorageGetMasterKeyHashSuccessfulCopyWith<$Res> {
+  _$SecureStorageGetMasterKeyHashSuccessfulCopyWithImpl(
+      SecureStorageGetMasterKeyHashSuccessful _value, $Res Function(SecureStorageGetMasterKeyHashSuccessful) _then)
+      : super(_value, (v) => _then(v as SecureStorageGetMasterKeyHashSuccessful));
+
+  @override
+  SecureStorageGetMasterKeyHashSuccessful get _value => super._value as SecureStorageGetMasterKeyHashSuccessful;
+
+  @override
+  $Res call({
+    Object? masterKeyHash = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageGetMasterKeyHashSuccessful(
+      masterKeyHash: masterKeyHash == freezed
+          ? _value.masterKeyHash
+          : masterKeyHash // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$SecureStorageGetMasterKeyHashSuccessful implements SecureStorageGetMasterKeyHashSuccessful {
+  const _$SecureStorageGetMasterKeyHashSuccessful(
+      {required this.masterKeyHash, this.pendingId = _kSecureStorageGetMasterKeyHashPendingId});
+
+  @override
+  final String? masterKeyHash;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageGetMasterKeyHash.successful(masterKeyHash: $masterKeyHash, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageGetMasterKeyHashSuccessful &&
+            const DeepCollectionEquality().equals(other.masterKeyHash, masterKeyHash) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(masterKeyHash), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageGetMasterKeyHashSuccessfulCopyWith<SecureStorageGetMasterKeyHashSuccessful> get copyWith =>
+      _$SecureStorageGetMasterKeyHashSuccessfulCopyWithImpl<SecureStorageGetMasterKeyHashSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(masterKeyHash, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(masterKeyHash, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(masterKeyHash, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageGetMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageGetMasterKeyHashError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageGetMasterKeyHashSuccessful implements SecureStorageGetMasterKeyHash, ActionDone {
+  const factory SecureStorageGetMasterKeyHashSuccessful({required String? masterKeyHash, String pendingId}) =
+      _$SecureStorageGetMasterKeyHashSuccessful;
+
+  String? get masterKeyHash;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageGetMasterKeyHashSuccessfulCopyWith<SecureStorageGetMasterKeyHashSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageGetMasterKeyHashErrorCopyWith<$Res>
+    implements $SecureStorageGetMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageGetMasterKeyHashErrorCopyWith(
+          SecureStorageGetMasterKeyHashError value, $Res Function(SecureStorageGetMasterKeyHashError) then) =
+      _$SecureStorageGetMasterKeyHashErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageGetMasterKeyHashErrorCopyWithImpl<$Res> extends _$SecureStorageGetMasterKeyHashCopyWithImpl<$Res>
+    implements $SecureStorageGetMasterKeyHashErrorCopyWith<$Res> {
+  _$SecureStorageGetMasterKeyHashErrorCopyWithImpl(
+      SecureStorageGetMasterKeyHashError _value, $Res Function(SecureStorageGetMasterKeyHashError) _then)
+      : super(_value, (v) => _then(v as SecureStorageGetMasterKeyHashError));
+
+  @override
+  SecureStorageGetMasterKeyHashError get _value => super._value as SecureStorageGetMasterKeyHashError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageGetMasterKeyHashError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$SecureStorageGetMasterKeyHashError implements SecureStorageGetMasterKeyHashError {
+  const _$SecureStorageGetMasterKeyHashError(this.error, this.stackTrace,
+      [this.pendingId = _kSecureStorageGetMasterKeyHashPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageGetMasterKeyHash.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageGetMasterKeyHashError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageGetMasterKeyHashErrorCopyWith<SecureStorageGetMasterKeyHashError> get copyWith =>
+      _$SecureStorageGetMasterKeyHashErrorCopyWithImpl<SecureStorageGetMasterKeyHashError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String? masterKeyHash, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageGetMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageGetMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageGetMasterKeyHashError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageGetMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageGetMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageGetMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageGetMasterKeyHashError implements SecureStorageGetMasterKeyHash, ActionDone, ErrorAction {
+  const factory SecureStorageGetMasterKeyHashError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$SecureStorageGetMasterKeyHashError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageGetMasterKeyHashErrorCopyWith<SecureStorageGetMasterKeyHashError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SecureStorageStoreMasterKeyHashTearOff {
+  const _$SecureStorageStoreMasterKeyHashTearOff();
+
+  SecureStorageStoreMasterKeyHashStart start(
+      {required String? masterKeyHash, String pendingId = _kSecureStorageStoreMasterKeyHashPendingId}) {
+    return SecureStorageStoreMasterKeyHashStart(
+      masterKeyHash: masterKeyHash,
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageStoreMasterKeyHashSuccessful successful(
+      {String pendingId = _kSecureStorageStoreMasterKeyHashPendingId}) {
+    return SecureStorageStoreMasterKeyHashSuccessful(
+      pendingId: pendingId,
+    );
+  }
+
+  SecureStorageStoreMasterKeyHashError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kSecureStorageStoreMasterKeyHashPendingId]) {
+    return SecureStorageStoreMasterKeyHashError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $SecureStorageStoreMasterKeyHash = _$SecureStorageStoreMasterKeyHashTearOff();
+
+/// @nodoc
+mixin _$SecureStorageStoreMasterKeyHash {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKeyHash, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageStoreMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageStoreMasterKeyHashError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SecureStorageStoreMasterKeyHashCopyWith<SecureStorageStoreMasterKeyHash> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageStoreMasterKeyHashCopyWith(
+          SecureStorageStoreMasterKeyHash value, $Res Function(SecureStorageStoreMasterKeyHash) then) =
+      _$SecureStorageStoreMasterKeyHashCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreMasterKeyHashCopyWithImpl<$Res> implements $SecureStorageStoreMasterKeyHashCopyWith<$Res> {
+  _$SecureStorageStoreMasterKeyHashCopyWithImpl(this._value, this._then);
+
+  final SecureStorageStoreMasterKeyHash _value;
+  // ignore: unused_field
+  final $Res Function(SecureStorageStoreMasterKeyHash) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreMasterKeyHashStartCopyWith<$Res>
+    implements $SecureStorageStoreMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageStoreMasterKeyHashStartCopyWith(
+          SecureStorageStoreMasterKeyHashStart value, $Res Function(SecureStorageStoreMasterKeyHashStart) then) =
+      _$SecureStorageStoreMasterKeyHashStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String? masterKeyHash, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreMasterKeyHashStartCopyWithImpl<$Res>
+    extends _$SecureStorageStoreMasterKeyHashCopyWithImpl<$Res>
+    implements $SecureStorageStoreMasterKeyHashStartCopyWith<$Res> {
+  _$SecureStorageStoreMasterKeyHashStartCopyWithImpl(
+      SecureStorageStoreMasterKeyHashStart _value, $Res Function(SecureStorageStoreMasterKeyHashStart) _then)
+      : super(_value, (v) => _then(v as SecureStorageStoreMasterKeyHashStart));
+
+  @override
+  SecureStorageStoreMasterKeyHashStart get _value => super._value as SecureStorageStoreMasterKeyHashStart;
+
+  @override
+  $Res call({
+    Object? masterKeyHash = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageStoreMasterKeyHashStart(
+      masterKeyHash: masterKeyHash == freezed
+          ? _value.masterKeyHash
+          : masterKeyHash // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$SecureStorageStoreMasterKeyHashStart implements SecureStorageStoreMasterKeyHashStart {
+  const _$SecureStorageStoreMasterKeyHashStart(
+      {required this.masterKeyHash, this.pendingId = _kSecureStorageStoreMasterKeyHashPendingId});
+
+  @override
+  final String? masterKeyHash;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageStoreMasterKeyHash.start(masterKeyHash: $masterKeyHash, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageStoreMasterKeyHashStart &&
+            const DeepCollectionEquality().equals(other.masterKeyHash, masterKeyHash) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(masterKeyHash), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageStoreMasterKeyHashStartCopyWith<SecureStorageStoreMasterKeyHashStart> get copyWith =>
+      _$SecureStorageStoreMasterKeyHashStartCopyWithImpl<SecureStorageStoreMasterKeyHashStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKeyHash, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(masterKeyHash, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(masterKeyHash, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(masterKeyHash, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageStoreMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageStoreMasterKeyHashError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageStoreMasterKeyHashStart implements SecureStorageStoreMasterKeyHash, ActionStart {
+  const factory SecureStorageStoreMasterKeyHashStart({required String? masterKeyHash, String pendingId}) =
+      _$SecureStorageStoreMasterKeyHashStart;
+
+  String? get masterKeyHash;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageStoreMasterKeyHashStartCopyWith<SecureStorageStoreMasterKeyHashStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreMasterKeyHashSuccessfulCopyWith<$Res>
+    implements $SecureStorageStoreMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageStoreMasterKeyHashSuccessfulCopyWith(SecureStorageStoreMasterKeyHashSuccessful value,
+          $Res Function(SecureStorageStoreMasterKeyHashSuccessful) then) =
+      _$SecureStorageStoreMasterKeyHashSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreMasterKeyHashSuccessfulCopyWithImpl<$Res>
+    extends _$SecureStorageStoreMasterKeyHashCopyWithImpl<$Res>
+    implements $SecureStorageStoreMasterKeyHashSuccessfulCopyWith<$Res> {
+  _$SecureStorageStoreMasterKeyHashSuccessfulCopyWithImpl(
+      SecureStorageStoreMasterKeyHashSuccessful _value, $Res Function(SecureStorageStoreMasterKeyHashSuccessful) _then)
+      : super(_value, (v) => _then(v as SecureStorageStoreMasterKeyHashSuccessful));
+
+  @override
+  SecureStorageStoreMasterKeyHashSuccessful get _value => super._value as SecureStorageStoreMasterKeyHashSuccessful;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageStoreMasterKeyHashSuccessful(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$SecureStorageStoreMasterKeyHashSuccessful implements SecureStorageStoreMasterKeyHashSuccessful {
+  const _$SecureStorageStoreMasterKeyHashSuccessful({this.pendingId = _kSecureStorageStoreMasterKeyHashPendingId});
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageStoreMasterKeyHash.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageStoreMasterKeyHashSuccessful &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageStoreMasterKeyHashSuccessfulCopyWith<SecureStorageStoreMasterKeyHashSuccessful> get copyWith =>
+      _$SecureStorageStoreMasterKeyHashSuccessfulCopyWithImpl<SecureStorageStoreMasterKeyHashSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKeyHash, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageStoreMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageStoreMasterKeyHashError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageStoreMasterKeyHashSuccessful implements SecureStorageStoreMasterKeyHash, ActionDone {
+  const factory SecureStorageStoreMasterKeyHashSuccessful({String pendingId}) =
+      _$SecureStorageStoreMasterKeyHashSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageStoreMasterKeyHashSuccessfulCopyWith<SecureStorageStoreMasterKeyHashSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SecureStorageStoreMasterKeyHashErrorCopyWith<$Res>
+    implements $SecureStorageStoreMasterKeyHashCopyWith<$Res> {
+  factory $SecureStorageStoreMasterKeyHashErrorCopyWith(
+          SecureStorageStoreMasterKeyHashError value, $Res Function(SecureStorageStoreMasterKeyHashError) then) =
+      _$SecureStorageStoreMasterKeyHashErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$SecureStorageStoreMasterKeyHashErrorCopyWithImpl<$Res>
+    extends _$SecureStorageStoreMasterKeyHashCopyWithImpl<$Res>
+    implements $SecureStorageStoreMasterKeyHashErrorCopyWith<$Res> {
+  _$SecureStorageStoreMasterKeyHashErrorCopyWithImpl(
+      SecureStorageStoreMasterKeyHashError _value, $Res Function(SecureStorageStoreMasterKeyHashError) _then)
+      : super(_value, (v) => _then(v as SecureStorageStoreMasterKeyHashError));
+
+  @override
+  SecureStorageStoreMasterKeyHashError get _value => super._value as SecureStorageStoreMasterKeyHashError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(SecureStorageStoreMasterKeyHashError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$SecureStorageStoreMasterKeyHashError implements SecureStorageStoreMasterKeyHashError {
+  const _$SecureStorageStoreMasterKeyHashError(this.error, this.stackTrace,
+      [this.pendingId = _kSecureStorageStoreMasterKeyHashPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SecureStorageStoreMasterKeyHash.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SecureStorageStoreMasterKeyHashError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $SecureStorageStoreMasterKeyHashErrorCopyWith<SecureStorageStoreMasterKeyHashError> get copyWith =>
+      _$SecureStorageStoreMasterKeyHashErrorCopyWithImpl<SecureStorageStoreMasterKeyHashError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? masterKeyHash, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? masterKeyHash, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SecureStorageStoreMasterKeyHashStart value) start,
+    required TResult Function(SecureStorageStoreMasterKeyHashSuccessful value) successful,
+    required TResult Function(SecureStorageStoreMasterKeyHashError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SecureStorageStoreMasterKeyHashStart value)? start,
+    TResult Function(SecureStorageStoreMasterKeyHashSuccessful value)? successful,
+    TResult Function(SecureStorageStoreMasterKeyHashError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SecureStorageStoreMasterKeyHashError
+    implements SecureStorageStoreMasterKeyHash, ActionDone, ErrorAction {
+  const factory SecureStorageStoreMasterKeyHashError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$SecureStorageStoreMasterKeyHashError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $SecureStorageStoreMasterKeyHashErrorCopyWith<SecureStorageStoreMasterKeyHashError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -5,8 +5,8 @@ import 'package:redux/redux.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/containers/create_code_state_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/button_styles.dart';
 import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
-import 'package:walman/src/presentation/styles/button_styles.dart';
 import 'package:walman/src/utils/code.dart';
 
 class NewCodePage extends StatefulWidget {
@@ -36,7 +36,7 @@ class _NewCodePageState extends State<NewCodePage> {
             title: _title.text,
             note: _note.text,
           ),
-          store.state.user!.masterKey!,
+          store.state.masterKey!,
         ),
       );
       Navigator.pop(context);

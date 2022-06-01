@@ -6,15 +6,16 @@ const String _kUnlockAppPendingId = 'UnlockApp';
 class UnlockApp with _$UnlockApp implements AppAction {
   @Implements<ActionStart>()
   const factory UnlockApp.start({
-    required String password,
+    required String masterKey,
+    required String masterKeyHash,
     @Default(_kUnlockAppPendingId) String pendingId,
   }) = UnlockAppStart;
 
   @Implements<ActionDone>()
-  const factory UnlockApp.successful(
-    AppUser? user, [
+  const factory UnlockApp.successful({
+    required String? masterKey,
     @Default(_kUnlockAppPendingId) String pendingId,
-  ]) = UnlockAppSuccessful;
+  }) = UnlockAppSuccessful;
 
   @Implements<ActionDone>()
   @Implements<ErrorAction>()

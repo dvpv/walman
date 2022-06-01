@@ -4,8 +4,8 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:uuid/uuid.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/components/button_styles.dart';
 import 'package:walman/src/presentation/pages/code/new_code_page.dart';
-import 'package:walman/src/presentation/styles/button_styles.dart';
 
 class ScanNewCodePage extends StatelessWidget {
   const ScanNewCodePage({Key? key}) : super(key: key);
