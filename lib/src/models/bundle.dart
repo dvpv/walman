@@ -1,5 +1,10 @@
 part of 'index.dart';
 
+enum BundleType {
+  blockchain,
+  cloud,
+}
+
 @freezed
 class Bundle with _$Bundle {
   const factory Bundle({
@@ -10,23 +15,19 @@ class Bundle with _$Bundle {
   factory Bundle.fromJson(Map<dynamic, dynamic> json) => _$BundleFromJson(Map<String, dynamic>.from(json));
 }
 
-@freezed
-class BlockchainBundle with _$BlockchainBundle {
-  const factory BlockchainBundle({
-    required Bundle bundle,
-    required DateTime storedAt,
-  }) = BlockchainBundle$;
-
-  factory BlockchainBundle.fromJson(Map<dynamic, dynamic> json) =>
-      _$BlockchainBundleFromJson(Map<String, dynamic>.from(json));
+extension BundleExtension on Bundle {
+  int get itemCount {
+    return codes.length + passwords.length;
+  }
 }
 
 @freezed
-class BlockchainVault with _$BlockchainVault {
-  const factory BlockchainVault({
-    required List<Bundle> bundles,
-  }) = BlockchainVault$;
+class VaultBundle with _$VaultBundle {
+  const factory VaultBundle({
+    required Bundle bundle,
+    required DateTime storedAt,
+    required BundleType type,
+  }) = VaultBundle$;
 
-  factory BlockchainVault.fromJson(Map<dynamic, dynamic> json) =>
-      _$BlockchainVaultFromJson(Map<String, dynamic>.from(json));
+  factory VaultBundle.fromJson(Map<dynamic, dynamic> json) => _$VaultBundleFromJson(Map<String, dynamic>.from(json));
 }

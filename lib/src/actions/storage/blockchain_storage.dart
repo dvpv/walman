@@ -55,3 +55,31 @@ class BlockchainRestoreLatestBundle with _$BlockchainRestoreLatestBundle impleme
 
   static String get pendingKey => _kBlockchainRestoreLatestBundlePendingId;
 }
+
+const String _kBlockchainGetVaultPendingId = 'BlockchainGetVault';
+
+@freezed
+class BlockchainGetVault with _$BlockchainGetVault implements AppAction {
+  @Implements<ActionStart>()
+  const factory BlockchainGetVault.start({
+    required String masterKey,
+    required String walletPrivateKey,
+    @Default(_kBlockchainGetVaultPendingId) String pendingId,
+  }) = BlockchainGetVaultStart;
+
+  @Implements<ActionDone>()
+  const factory BlockchainGetVault.successful({
+    required List<VaultBundle> vault,
+    @Default(_kBlockchainGetVaultPendingId) String pendingId,
+  }) = BlockchainGetVaultSuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory BlockchainGetVault.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kBlockchainGetVaultPendingId) String pendingId,
+  ]) = BlockchainGetVaultError;
+
+  static String get pendingKey => _kBlockchainGetVaultPendingId;
+}

@@ -6,6 +6,7 @@ class AppState with _$AppState {
     @Default(<String>{}) Set<String> pending,
     String? masterKey,
     FirebaseUser? firebaseUser,
+    @Default(<VaultBundle>[]) List<VaultBundle> vault,
     @Default(AppPage.home) AppPage selectedPage,
     @Default(PersistentState()) PersistentState persistentState,
     // UI states

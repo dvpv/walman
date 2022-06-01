@@ -110,6 +110,7 @@ class _$AppStateTearOff {
       {Set<String> pending = const <String>{},
       String? masterKey,
       FirebaseUser? firebaseUser,
+      List<VaultBundle> vault = const <VaultBundle>[],
       AppPage selectedPage = AppPage.home,
       PersistentState persistentState = const PersistentState(),
       DetailsState detailsState = const DetailsState(),
@@ -120,6 +121,7 @@ class _$AppStateTearOff {
       pending: pending,
       masterKey: masterKey,
       firebaseUser: firebaseUser,
+      vault: vault,
       selectedPage: selectedPage,
       persistentState: persistentState,
       detailsState: detailsState,
@@ -142,6 +144,7 @@ mixin _$AppState {
   Set<String> get pending => throw _privateConstructorUsedError;
   String? get masterKey => throw _privateConstructorUsedError;
   FirebaseUser? get firebaseUser => throw _privateConstructorUsedError;
+  List<VaultBundle> get vault => throw _privateConstructorUsedError;
   AppPage get selectedPage => throw _privateConstructorUsedError;
   PersistentState get persistentState => throw _privateConstructorUsedError; // UI states
   DetailsState get detailsState => throw _privateConstructorUsedError;
@@ -161,6 +164,7 @@ abstract class $AppStateCopyWith<$Res> {
       {Set<String> pending,
       String? masterKey,
       FirebaseUser? firebaseUser,
+      List<VaultBundle> vault,
       AppPage selectedPage,
       PersistentState persistentState,
       DetailsState detailsState,
@@ -189,6 +193,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
     Object? pending = freezed,
     Object? masterKey = freezed,
     Object? firebaseUser = freezed,
+    Object? vault = freezed,
     Object? selectedPage = freezed,
     Object? persistentState = freezed,
     Object? detailsState = freezed,
@@ -209,6 +214,10 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
           ? _value.firebaseUser
           : firebaseUser // ignore: cast_nullable_to_non_nullable
               as FirebaseUser?,
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
@@ -291,6 +300,7 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
       {Set<String> pending,
       String? masterKey,
       FirebaseUser? firebaseUser,
+      List<VaultBundle> vault,
       AppPage selectedPage,
       PersistentState persistentState,
       DetailsState detailsState,
@@ -325,6 +335,7 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
     Object? pending = freezed,
     Object? masterKey = freezed,
     Object? firebaseUser = freezed,
+    Object? vault = freezed,
     Object? selectedPage = freezed,
     Object? persistentState = freezed,
     Object? detailsState = freezed,
@@ -345,6 +356,10 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
           ? _value.firebaseUser
           : firebaseUser // ignore: cast_nullable_to_non_nullable
               as FirebaseUser?,
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
@@ -380,6 +395,7 @@ class _$AppState$ implements AppState$ {
       {this.pending = const <String>{},
       this.masterKey,
       this.firebaseUser,
+      this.vault = const <VaultBundle>[],
       this.selectedPage = AppPage.home,
       this.persistentState = const PersistentState(),
       this.detailsState = const DetailsState(),
@@ -396,6 +412,9 @@ class _$AppState$ implements AppState$ {
   final String? masterKey;
   @override
   final FirebaseUser? firebaseUser;
+  @JsonKey()
+  @override
+  final List<VaultBundle> vault;
   @JsonKey()
   @override
   final AppPage selectedPage;
@@ -417,7 +436,7 @@ class _$AppState$ implements AppState$ {
 
   @override
   String toString() {
-    return 'AppState(pending: $pending, masterKey: $masterKey, firebaseUser: $firebaseUser, selectedPage: $selectedPage, persistentState: $persistentState, detailsState: $detailsState, createCodeState: $createCodeState, uiState: $uiState, passwordGeneratorState: $passwordGeneratorState)';
+    return 'AppState(pending: $pending, masterKey: $masterKey, firebaseUser: $firebaseUser, vault: $vault, selectedPage: $selectedPage, persistentState: $persistentState, detailsState: $detailsState, createCodeState: $createCodeState, uiState: $uiState, passwordGeneratorState: $passwordGeneratorState)';
   }
 
   @override
@@ -428,6 +447,7 @@ class _$AppState$ implements AppState$ {
             const DeepCollectionEquality().equals(other.pending, pending) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.vault, vault) &&
             const DeepCollectionEquality().equals(other.selectedPage, selectedPage) &&
             const DeepCollectionEquality().equals(other.persistentState, persistentState) &&
             const DeepCollectionEquality().equals(other.detailsState, detailsState) &&
@@ -442,6 +462,7 @@ class _$AppState$ implements AppState$ {
       const DeepCollectionEquality().hash(pending),
       const DeepCollectionEquality().hash(masterKey),
       const DeepCollectionEquality().hash(firebaseUser),
+      const DeepCollectionEquality().hash(vault),
       const DeepCollectionEquality().hash(selectedPage),
       const DeepCollectionEquality().hash(persistentState),
       const DeepCollectionEquality().hash(detailsState),
@@ -464,6 +485,7 @@ abstract class AppState$ implements AppState {
       {Set<String> pending,
       String? masterKey,
       FirebaseUser? firebaseUser,
+      List<VaultBundle> vault,
       AppPage selectedPage,
       PersistentState persistentState,
       DetailsState detailsState,
@@ -479,6 +501,8 @@ abstract class AppState$ implements AppState {
   String? get masterKey;
   @override
   FirebaseUser? get firebaseUser;
+  @override
+  List<VaultBundle> get vault;
   @override
   AppPage get selectedPage;
   @override
@@ -1644,60 +1668,62 @@ abstract class Bundle$ implements Bundle {
   $Bundle$CopyWith<Bundle$> get copyWith => throw _privateConstructorUsedError;
 }
 
-BlockchainBundle _$BlockchainBundleFromJson(Map<String, dynamic> json) {
-  return BlockchainBundle$.fromJson(json);
+VaultBundle _$VaultBundleFromJson(Map<String, dynamic> json) {
+  return VaultBundle$.fromJson(json);
 }
 
 /// @nodoc
-class _$BlockchainBundleTearOff {
-  const _$BlockchainBundleTearOff();
+class _$VaultBundleTearOff {
+  const _$VaultBundleTearOff();
 
-  BlockchainBundle$ call({required Bundle bundle, required DateTime storedAt}) {
-    return BlockchainBundle$(
+  VaultBundle$ call({required Bundle bundle, required DateTime storedAt, required BundleType type}) {
+    return VaultBundle$(
       bundle: bundle,
       storedAt: storedAt,
+      type: type,
     );
   }
 
-  BlockchainBundle fromJson(Map<String, Object?> json) {
-    return BlockchainBundle.fromJson(json);
+  VaultBundle fromJson(Map<String, Object?> json) {
+    return VaultBundle.fromJson(json);
   }
 }
 
 /// @nodoc
-const $BlockchainBundle = _$BlockchainBundleTearOff();
+const $VaultBundle = _$VaultBundleTearOff();
 
 /// @nodoc
-mixin _$BlockchainBundle {
+mixin _$VaultBundle {
   Bundle get bundle => throw _privateConstructorUsedError;
   DateTime get storedAt => throw _privateConstructorUsedError;
+  BundleType get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BlockchainBundleCopyWith<BlockchainBundle> get copyWith => throw _privateConstructorUsedError;
+  $VaultBundleCopyWith<VaultBundle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainBundleCopyWith<$Res> {
-  factory $BlockchainBundleCopyWith(BlockchainBundle value, $Res Function(BlockchainBundle) then) =
-      _$BlockchainBundleCopyWithImpl<$Res>;
-  $Res call({Bundle bundle, DateTime storedAt});
+abstract class $VaultBundleCopyWith<$Res> {
+  factory $VaultBundleCopyWith(VaultBundle value, $Res Function(VaultBundle) then) = _$VaultBundleCopyWithImpl<$Res>;
+  $Res call({Bundle bundle, DateTime storedAt, BundleType type});
 
   $BundleCopyWith<$Res> get bundle;
 }
 
 /// @nodoc
-class _$BlockchainBundleCopyWithImpl<$Res> implements $BlockchainBundleCopyWith<$Res> {
-  _$BlockchainBundleCopyWithImpl(this._value, this._then);
+class _$VaultBundleCopyWithImpl<$Res> implements $VaultBundleCopyWith<$Res> {
+  _$VaultBundleCopyWithImpl(this._value, this._then);
 
-  final BlockchainBundle _value;
+  final VaultBundle _value;
   // ignore: unused_field
-  final $Res Function(BlockchainBundle) _then;
+  final $Res Function(VaultBundle) _then;
 
   @override
   $Res call({
     Object? bundle = freezed,
     Object? storedAt = freezed,
+    Object? type = freezed,
   }) {
     return _then(_value.copyWith(
       bundle: bundle == freezed
@@ -1708,6 +1734,10 @@ class _$BlockchainBundleCopyWithImpl<$Res> implements $BlockchainBundleCopyWith<
           ? _value.storedAt
           : storedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as BundleType,
     ));
   }
 
@@ -1720,31 +1750,31 @@ class _$BlockchainBundleCopyWithImpl<$Res> implements $BlockchainBundleCopyWith<
 }
 
 /// @nodoc
-abstract class $BlockchainBundle$CopyWith<$Res> implements $BlockchainBundleCopyWith<$Res> {
-  factory $BlockchainBundle$CopyWith(BlockchainBundle$ value, $Res Function(BlockchainBundle$) then) =
-      _$BlockchainBundle$CopyWithImpl<$Res>;
+abstract class $VaultBundle$CopyWith<$Res> implements $VaultBundleCopyWith<$Res> {
+  factory $VaultBundle$CopyWith(VaultBundle$ value, $Res Function(VaultBundle$) then) =
+      _$VaultBundle$CopyWithImpl<$Res>;
   @override
-  $Res call({Bundle bundle, DateTime storedAt});
+  $Res call({Bundle bundle, DateTime storedAt, BundleType type});
 
   @override
   $BundleCopyWith<$Res> get bundle;
 }
 
 /// @nodoc
-class _$BlockchainBundle$CopyWithImpl<$Res> extends _$BlockchainBundleCopyWithImpl<$Res>
-    implements $BlockchainBundle$CopyWith<$Res> {
-  _$BlockchainBundle$CopyWithImpl(BlockchainBundle$ _value, $Res Function(BlockchainBundle$) _then)
-      : super(_value, (v) => _then(v as BlockchainBundle$));
+class _$VaultBundle$CopyWithImpl<$Res> extends _$VaultBundleCopyWithImpl<$Res> implements $VaultBundle$CopyWith<$Res> {
+  _$VaultBundle$CopyWithImpl(VaultBundle$ _value, $Res Function(VaultBundle$) _then)
+      : super(_value, (v) => _then(v as VaultBundle$));
 
   @override
-  BlockchainBundle$ get _value => super._value as BlockchainBundle$;
+  VaultBundle$ get _value => super._value as VaultBundle$;
 
   @override
   $Res call({
     Object? bundle = freezed,
     Object? storedAt = freezed,
+    Object? type = freezed,
   }) {
-    return _then(BlockchainBundle$(
+    return _then(VaultBundle$(
       bundle: bundle == freezed
           ? _value.bundle
           : bundle // ignore: cast_nullable_to_non_nullable
@@ -1753,201 +1783,72 @@ class _$BlockchainBundle$CopyWithImpl<$Res> extends _$BlockchainBundleCopyWithIm
           ? _value.storedAt
           : storedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as BundleType,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$BlockchainBundle$ implements BlockchainBundle$ {
-  const _$BlockchainBundle$({required this.bundle, required this.storedAt});
+class _$VaultBundle$ implements VaultBundle$ {
+  const _$VaultBundle$({required this.bundle, required this.storedAt, required this.type});
 
-  factory _$BlockchainBundle$.fromJson(Map<String, dynamic> json) => _$$BlockchainBundle$FromJson(json);
+  factory _$VaultBundle$.fromJson(Map<String, dynamic> json) => _$$VaultBundle$FromJson(json);
 
   @override
   final Bundle bundle;
   @override
   final DateTime storedAt;
+  @override
+  final BundleType type;
 
   @override
   String toString() {
-    return 'BlockchainBundle(bundle: $bundle, storedAt: $storedAt)';
+    return 'VaultBundle(bundle: $bundle, storedAt: $storedAt, type: $type)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is BlockchainBundle$ &&
+            other is VaultBundle$ &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            const DeepCollectionEquality().equals(other.storedAt, storedAt));
+            const DeepCollectionEquality().equals(other.storedAt, storedAt) &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(storedAt));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundle),
+      const DeepCollectionEquality().hash(storedAt), const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainBundle$CopyWith<BlockchainBundle$> get copyWith =>
-      _$BlockchainBundle$CopyWithImpl<BlockchainBundle$>(this, _$identity);
+  $VaultBundle$CopyWith<VaultBundle$> get copyWith => _$VaultBundle$CopyWithImpl<VaultBundle$>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BlockchainBundle$ToJson(this);
+    return _$$VaultBundle$ToJson(this);
   }
 }
 
-abstract class BlockchainBundle$ implements BlockchainBundle {
-  const factory BlockchainBundle$({required Bundle bundle, required DateTime storedAt}) = _$BlockchainBundle$;
+abstract class VaultBundle$ implements VaultBundle {
+  const factory VaultBundle$({required Bundle bundle, required DateTime storedAt, required BundleType type}) =
+      _$VaultBundle$;
 
-  factory BlockchainBundle$.fromJson(Map<String, dynamic> json) = _$BlockchainBundle$.fromJson;
+  factory VaultBundle$.fromJson(Map<String, dynamic> json) = _$VaultBundle$.fromJson;
 
   @override
   Bundle get bundle;
   @override
   DateTime get storedAt;
   @override
-  @JsonKey(ignore: true)
-  $BlockchainBundle$CopyWith<BlockchainBundle$> get copyWith => throw _privateConstructorUsedError;
-}
-
-BlockchainVault _$BlockchainVaultFromJson(Map<String, dynamic> json) {
-  return BlockchainVault$.fromJson(json);
-}
-
-/// @nodoc
-class _$BlockchainVaultTearOff {
-  const _$BlockchainVaultTearOff();
-
-  BlockchainVault$ call({required List<Bundle> bundles}) {
-    return BlockchainVault$(
-      bundles: bundles,
-    );
-  }
-
-  BlockchainVault fromJson(Map<String, Object?> json) {
-    return BlockchainVault.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $BlockchainVault = _$BlockchainVaultTearOff();
-
-/// @nodoc
-mixin _$BlockchainVault {
-  List<Bundle> get bundles => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BlockchainVaultCopyWith<BlockchainVault> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BlockchainVaultCopyWith<$Res> {
-  factory $BlockchainVaultCopyWith(BlockchainVault value, $Res Function(BlockchainVault) then) =
-      _$BlockchainVaultCopyWithImpl<$Res>;
-  $Res call({List<Bundle> bundles});
-}
-
-/// @nodoc
-class _$BlockchainVaultCopyWithImpl<$Res> implements $BlockchainVaultCopyWith<$Res> {
-  _$BlockchainVaultCopyWithImpl(this._value, this._then);
-
-  final BlockchainVault _value;
-  // ignore: unused_field
-  final $Res Function(BlockchainVault) _then;
-
-  @override
-  $Res call({
-    Object? bundles = freezed,
-  }) {
-    return _then(_value.copyWith(
-      bundles: bundles == freezed
-          ? _value.bundles
-          : bundles // ignore: cast_nullable_to_non_nullable
-              as List<Bundle>,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class $BlockchainVault$CopyWith<$Res> implements $BlockchainVaultCopyWith<$Res> {
-  factory $BlockchainVault$CopyWith(BlockchainVault$ value, $Res Function(BlockchainVault$) then) =
-      _$BlockchainVault$CopyWithImpl<$Res>;
-  @override
-  $Res call({List<Bundle> bundles});
-}
-
-/// @nodoc
-class _$BlockchainVault$CopyWithImpl<$Res> extends _$BlockchainVaultCopyWithImpl<$Res>
-    implements $BlockchainVault$CopyWith<$Res> {
-  _$BlockchainVault$CopyWithImpl(BlockchainVault$ _value, $Res Function(BlockchainVault$) _then)
-      : super(_value, (v) => _then(v as BlockchainVault$));
-
-  @override
-  BlockchainVault$ get _value => super._value as BlockchainVault$;
-
-  @override
-  $Res call({
-    Object? bundles = freezed,
-  }) {
-    return _then(BlockchainVault$(
-      bundles: bundles == freezed
-          ? _value.bundles
-          : bundles // ignore: cast_nullable_to_non_nullable
-              as List<Bundle>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BlockchainVault$ implements BlockchainVault$ {
-  const _$BlockchainVault$({required this.bundles});
-
-  factory _$BlockchainVault$.fromJson(Map<String, dynamic> json) => _$$BlockchainVault$FromJson(json);
-
-  @override
-  final List<Bundle> bundles;
-
-  @override
-  String toString() {
-    return 'BlockchainVault(bundles: $bundles)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is BlockchainVault$ &&
-            const DeepCollectionEquality().equals(other.bundles, bundles));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundles));
-
-  @JsonKey(ignore: true)
-  @override
-  $BlockchainVault$CopyWith<BlockchainVault$> get copyWith =>
-      _$BlockchainVault$CopyWithImpl<BlockchainVault$>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BlockchainVault$ToJson(this);
-  }
-}
-
-abstract class BlockchainVault$ implements BlockchainVault {
-  const factory BlockchainVault$({required List<Bundle> bundles}) = _$BlockchainVault$;
-
-  factory BlockchainVault$.fromJson(Map<String, dynamic> json) = _$BlockchainVault$.fromJson;
-
-  @override
-  List<Bundle> get bundles;
+  BundleType get type;
   @override
   @JsonKey(ignore: true)
-  $BlockchainVault$CopyWith<BlockchainVault$> get copyWith => throw _privateConstructorUsedError;
+  $VaultBundle$CopyWith<VaultBundle$> get copyWith => throw _privateConstructorUsedError;
 }
 
 Password _$PasswordFromJson(Map<String, dynamic> json) {

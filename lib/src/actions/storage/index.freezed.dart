@@ -1241,6 +1241,597 @@ abstract class BlockchainRestoreLatestBundleError implements BlockchainRestoreLa
 }
 
 /// @nodoc
+class _$BlockchainGetVaultTearOff {
+  const _$BlockchainGetVaultTearOff();
+
+  BlockchainGetVaultStart start(
+      {required String masterKey, required String walletPrivateKey, String pendingId = _kBlockchainGetVaultPendingId}) {
+    return BlockchainGetVaultStart(
+      masterKey: masterKey,
+      walletPrivateKey: walletPrivateKey,
+      pendingId: pendingId,
+    );
+  }
+
+  BlockchainGetVaultSuccessful successful(
+      {required List<VaultBundle> vault, String pendingId = _kBlockchainGetVaultPendingId}) {
+    return BlockchainGetVaultSuccessful(
+      vault: vault,
+      pendingId: pendingId,
+    );
+  }
+
+  BlockchainGetVaultError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kBlockchainGetVaultPendingId]) {
+    return BlockchainGetVaultError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $BlockchainGetVault = _$BlockchainGetVaultTearOff();
+
+/// @nodoc
+mixin _$BlockchainGetVault {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainGetVaultStart value) start,
+    required TResult Function(BlockchainGetVaultSuccessful value) successful,
+    required TResult Function(BlockchainGetVaultError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $BlockchainGetVaultCopyWith<BlockchainGetVault> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainGetVaultCopyWith<$Res> {
+  factory $BlockchainGetVaultCopyWith(BlockchainGetVault value, $Res Function(BlockchainGetVault) then) =
+      _$BlockchainGetVaultCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainGetVaultCopyWithImpl<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
+  _$BlockchainGetVaultCopyWithImpl(this._value, this._then);
+
+  final BlockchainGetVault _value;
+  // ignore: unused_field
+  final $Res Function(BlockchainGetVault) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $BlockchainGetVaultStartCopyWith<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
+  factory $BlockchainGetVaultStartCopyWith(BlockchainGetVaultStart value, $Res Function(BlockchainGetVaultStart) then) =
+      _$BlockchainGetVaultStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String masterKey, String walletPrivateKey, String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainGetVaultStartCopyWithImpl<$Res> extends _$BlockchainGetVaultCopyWithImpl<$Res>
+    implements $BlockchainGetVaultStartCopyWith<$Res> {
+  _$BlockchainGetVaultStartCopyWithImpl(BlockchainGetVaultStart _value, $Res Function(BlockchainGetVaultStart) _then)
+      : super(_value, (v) => _then(v as BlockchainGetVaultStart));
+
+  @override
+  BlockchainGetVaultStart get _value => super._value as BlockchainGetVaultStart;
+
+  @override
+  $Res call({
+    Object? masterKey = freezed,
+    Object? walletPrivateKey = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainGetVaultStart(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$BlockchainGetVaultStart implements BlockchainGetVaultStart {
+  const _$BlockchainGetVaultStart(
+      {required this.masterKey, required this.walletPrivateKey, this.pendingId = _kBlockchainGetVaultPendingId});
+
+  @override
+  final String masterKey;
+  @override
+  final String walletPrivateKey;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainGetVault.start(masterKey: $masterKey, walletPrivateKey: $walletPrivateKey, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainGetVaultStart &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(masterKey),
+      const DeepCollectionEquality().hash(walletPrivateKey), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainGetVaultStartCopyWith<BlockchainGetVaultStart> get copyWith =>
+      _$BlockchainGetVaultStartCopyWithImpl<BlockchainGetVaultStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(masterKey, walletPrivateKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(masterKey, walletPrivateKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(masterKey, walletPrivateKey, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainGetVaultStart value) start,
+    required TResult Function(BlockchainGetVaultSuccessful value) successful,
+    required TResult Function(BlockchainGetVaultError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainGetVaultStart implements BlockchainGetVault, ActionStart {
+  const factory BlockchainGetVaultStart(
+      {required String masterKey, required String walletPrivateKey, String pendingId}) = _$BlockchainGetVaultStart;
+
+  String get masterKey;
+  String get walletPrivateKey;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainGetVaultStartCopyWith<BlockchainGetVaultStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainGetVaultSuccessfulCopyWith<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
+  factory $BlockchainGetVaultSuccessfulCopyWith(
+          BlockchainGetVaultSuccessful value, $Res Function(BlockchainGetVaultSuccessful) then) =
+      _$BlockchainGetVaultSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({List<VaultBundle> vault, String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainGetVaultSuccessfulCopyWithImpl<$Res> extends _$BlockchainGetVaultCopyWithImpl<$Res>
+    implements $BlockchainGetVaultSuccessfulCopyWith<$Res> {
+  _$BlockchainGetVaultSuccessfulCopyWithImpl(
+      BlockchainGetVaultSuccessful _value, $Res Function(BlockchainGetVaultSuccessful) _then)
+      : super(_value, (v) => _then(v as BlockchainGetVaultSuccessful));
+
+  @override
+  BlockchainGetVaultSuccessful get _value => super._value as BlockchainGetVaultSuccessful;
+
+  @override
+  $Res call({
+    Object? vault = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainGetVaultSuccessful(
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$BlockchainGetVaultSuccessful implements BlockchainGetVaultSuccessful {
+  const _$BlockchainGetVaultSuccessful({required this.vault, this.pendingId = _kBlockchainGetVaultPendingId});
+
+  @override
+  final List<VaultBundle> vault;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainGetVault.successful(vault: $vault, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainGetVaultSuccessful &&
+            const DeepCollectionEquality().equals(other.vault, vault) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(vault), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainGetVaultSuccessfulCopyWith<BlockchainGetVaultSuccessful> get copyWith =>
+      _$BlockchainGetVaultSuccessfulCopyWithImpl<BlockchainGetVaultSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(vault, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(vault, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(vault, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainGetVaultStart value) start,
+    required TResult Function(BlockchainGetVaultSuccessful value) successful,
+    required TResult Function(BlockchainGetVaultError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainGetVaultSuccessful implements BlockchainGetVault, ActionDone {
+  const factory BlockchainGetVaultSuccessful({required List<VaultBundle> vault, String pendingId}) =
+      _$BlockchainGetVaultSuccessful;
+
+  List<VaultBundle> get vault;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainGetVaultSuccessfulCopyWith<BlockchainGetVaultSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockchainGetVaultErrorCopyWith<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
+  factory $BlockchainGetVaultErrorCopyWith(BlockchainGetVaultError value, $Res Function(BlockchainGetVaultError) then) =
+      _$BlockchainGetVaultErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$BlockchainGetVaultErrorCopyWithImpl<$Res> extends _$BlockchainGetVaultCopyWithImpl<$Res>
+    implements $BlockchainGetVaultErrorCopyWith<$Res> {
+  _$BlockchainGetVaultErrorCopyWithImpl(BlockchainGetVaultError _value, $Res Function(BlockchainGetVaultError) _then)
+      : super(_value, (v) => _then(v as BlockchainGetVaultError));
+
+  @override
+  BlockchainGetVaultError get _value => super._value as BlockchainGetVaultError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(BlockchainGetVaultError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$BlockchainGetVaultError implements BlockchainGetVaultError {
+  const _$BlockchainGetVaultError(this.error, this.stackTrace, [this.pendingId = _kBlockchainGetVaultPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'BlockchainGetVault.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BlockchainGetVaultError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $BlockchainGetVaultErrorCopyWith<BlockchainGetVaultError> get copyWith =>
+      _$BlockchainGetVaultErrorCopyWithImpl<BlockchainGetVaultError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BlockchainGetVaultStart value) start,
+    required TResult Function(BlockchainGetVaultSuccessful value) successful,
+    required TResult Function(BlockchainGetVaultError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BlockchainGetVaultStart value)? start,
+    TResult Function(BlockchainGetVaultSuccessful value)? successful,
+    TResult Function(BlockchainGetVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BlockchainGetVaultError implements BlockchainGetVault, ActionDone, ErrorAction {
+  const factory BlockchainGetVaultError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$BlockchainGetVaultError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $BlockchainGetVaultErrorCopyWith<BlockchainGetVaultError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$GetMasterKeyHashTearOff {
   const _$GetMasterKeyHashTearOff();
 

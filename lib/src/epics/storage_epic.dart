@@ -22,6 +22,7 @@ class StorageEpic {
       TypedEpic<AppState, GetMasterKeyHashStart>(_getMasterKeyHash),
       TypedEpic<AppState, BlockchainAddBundleStart>(_blockchainAddBundle),
       TypedEpic<AppState, BlockchainRestoreLatestBundleStart>(_blockchainRestoreLatestBundle),
+      TypedEpic<AppState, BlockchainGetVaultStart>(_blockchainGetVault),
     ]);
   }
 
@@ -172,6 +173,22 @@ class StorageEpic {
                 BlockchainRestoreLatestBundleError(error, stackTrace, action.pendingId),
           )
           .doOnData(action.onResult ?? (_) {});
+    });
+  }
+
+  Stream<AppAction> _blockchainGetVault(Stream<BlockchainGetVaultStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((BlockchainGetVaultStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) =>
+                blockchainStorageApi.getVault(walletPrivateKey: action.walletPrivateKey, masterKey: action.masterKey),
+          )
+          .map<AppAction>(
+            (List<VaultBundle> vault) => BlockchainGetVaultSuccessful(vault: vault, pendingId: action.pendingId),
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => BlockchainGetVaultError(error, stackTrace, action.pendingId),
+          );
     });
   }
 }

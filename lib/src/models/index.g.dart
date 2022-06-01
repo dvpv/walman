@@ -15,6 +15,8 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       masterKey: json['masterKey'] as String?,
       firebaseUser:
           json['firebaseUser'] == null ? null : FirebaseUser.fromJson(json['firebaseUser'] as Map<String, dynamic>),
+      vault: (json['vault'] as List<dynamic>?)?.map((e) => VaultBundle.fromJson(e as Map<String, dynamic>)).toList() ??
+          const <VaultBundle>[],
       selectedPage: $enumDecodeNullable(_$AppPageEnumMap, json['selectedPage']) ?? AppPage.home,
       persistentState: json['persistentState'] == null
           ? const PersistentState()
@@ -35,6 +37,7 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynami
       'pending': instance.pending.toList(),
       'masterKey': instance.masterKey,
       'firebaseUser': instance.firebaseUser,
+      'vault': instance.vault,
       'selectedPage': _$AppPageEnumMap[instance.selectedPage],
       'persistentState': instance.persistentState,
       'detailsState': instance.detailsState,
@@ -134,23 +137,22 @@ Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
       'codes': instance.codes,
     };
 
-_$BlockchainBundle$ _$$BlockchainBundle$FromJson(Map<String, dynamic> json) => _$BlockchainBundle$(
+_$VaultBundle$ _$$VaultBundle$FromJson(Map<String, dynamic> json) => _$VaultBundle$(
       bundle: Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
       storedAt: DateTime.parse(json['storedAt'] as String),
+      type: $enumDecode(_$BundleTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$$BlockchainBundle$ToJson(_$BlockchainBundle$ instance) => <String, dynamic>{
+Map<String, dynamic> _$$VaultBundle$ToJson(_$VaultBundle$ instance) => <String, dynamic>{
       'bundle': instance.bundle,
       'storedAt': instance.storedAt.toIso8601String(),
+      'type': _$BundleTypeEnumMap[instance.type],
     };
 
-_$BlockchainVault$ _$$BlockchainVault$FromJson(Map<String, dynamic> json) => _$BlockchainVault$(
-      bundles: (json['bundles'] as List<dynamic>).map((e) => Bundle.fromJson(e as Map<String, dynamic>)).toList(),
-    );
-
-Map<String, dynamic> _$$BlockchainVault$ToJson(_$BlockchainVault$ instance) => <String, dynamic>{
-      'bundles': instance.bundles,
-    };
+const _$BundleTypeEnumMap = {
+  BundleType.blockchain: 'blockchain',
+  BundleType.cloud: 'cloud',
+};
 
 _$Password$ _$$Password$FromJson(Map<String, dynamic> json) => _$Password$(
       id: json['id'] as String,

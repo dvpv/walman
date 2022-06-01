@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart';
@@ -61,10 +60,7 @@ class BlockchainStorageApi {
         function: contract.function('addBundle'),
         parameters: <String>[
           encrypt(message: jsonEncode(bundle), key: masterKey),
-          encrypt(
-            message: DateTime.now().microsecondsSinceEpoch.toString(),
-            key: masterKey,
-          ),
+          DateTime.now().millisecondsSinceEpoch.toString(),
         ],
       ),
       chainId: 4,
@@ -75,8 +71,32 @@ class BlockchainStorageApi {
     throw Error();
   }
 
-  Future<BlockchainVault> getVault() async {
-    throw Error();
+  Future<List<VaultBundle>> getVault({required String walletPrivateKey, required String masterKey}) async {
+    final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
+    final List<dynamic> response = await client.call(
+      contract: contract,
+      function: contract.function('getVault'),
+      params: <void>[],
+      sender: await privateKey.extractAddress(),
+    );
+    final List<dynamic> encryptedVault = (response[0] as List<dynamic>)[0] as List<dynamic>;
+    final List<VaultBundle> vault = encryptedVault.map((dynamic x) => x as List<dynamic>).map(
+      (List<dynamic> l) {
+        return VaultBundle(
+          bundle: Bundle.fromJson(
+            jsonDecode(
+              decrypt(
+                message: l[0] as String,
+                key: masterKey,
+              ),
+            ) as Map<dynamic, dynamic>,
+          ),
+          storedAt: DateTime.fromMillisecondsSinceEpoch(int.parse(l[1] as String)),
+          type: BundleType.blockchain,
+        );
+      },
+    ).toList();
+    return vault;
   }
 
   Future<Bundle> getLatestBundle({required String walletPrivateKey, required String masterKey}) async {
@@ -87,9 +107,6 @@ class BlockchainStorageApi {
       params: <void>[],
       sender: await privateKey.extractAddress(),
     );
-    if (kDebugMode) {
-      print('response: $response');
-    }
     final String encryptedBundle = (response[0] as List<dynamic>)[0] as String;
     final Bundle bundle =
         Bundle.fromJson(jsonDecode(decrypt(message: encryptedBundle, key: masterKey)) as Map<dynamic, dynamic>);

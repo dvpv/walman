@@ -7,6 +7,7 @@ Reducer<AppState> storageReducer = combineReducers<AppState>(<Reducer<AppState>>
   TypedReducer<AppState, GetWalletPrivateKeySuccessful>(_getWalletPrivateKey),
   TypedReducer<AppState, GetMasterKeyHashSuccessful>(_getMasterKeyHash),
   TypedReducer<AppState, BlockchainRestoreLatestBundleSuccessful>(_blockchainRestoreLatestBundle),
+  TypedReducer<AppState, BlockchainGetVaultSuccessful>(_blockchainGetVault),
 ]);
 
 AppState _getBundle(AppState state, GetBundleSuccessful action) {
@@ -38,5 +39,11 @@ AppState _blockchainRestoreLatestBundle(AppState state, BlockchainRestoreLatestB
     persistentState: state.persistentState.copyWith(
       bundle: action.bundle,
     ),
+  );
+}
+
+AppState _blockchainGetVault(AppState state, BlockchainGetVaultSuccessful action) {
+  return state.copyWith(
+    vault: <VaultBundle>{...state.vault, ...action.vault}.toList(),
   );
 }
