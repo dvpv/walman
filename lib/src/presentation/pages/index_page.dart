@@ -39,9 +39,6 @@ class IndexPage extends StatelessWidget {
           builder: (BuildContext context, Bundle bundle) {
             return Scaffold(
               appBar: AppBar(
-                bottomOpacity: 0,
-                elevation: 0,
-                backgroundColor: Colors.transparent,
                 leading: IconButton(
                   icon: const Icon(
                     Icons.notifications_none,

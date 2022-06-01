@@ -9,7 +9,7 @@ import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/containers/wallet_info_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/wallet/connect_wallet_dialog.dart';
-import 'package:walman/src/presentation/pages/wallet/wallet_app_bar_menu_button.dart';
+import 'package:walman/src/presentation/pages/wallet/wallet_menu_button.dart';
 
 class WalletPage extends StatefulWidget {
   const WalletPage({Key? key}) : super(key: key);
@@ -54,23 +54,17 @@ class _WalletPageState extends State<WalletPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        bottomOpacity: 0,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
         title: const Text(
           'Wallet',
-          style: TextStyle(color: Colors.black),
         ),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
           ),
           onPressed: () => Navigator.pop(context),
         ),
         actions: const <Widget>[
-          WalletAppBarMenuButton(),
+          WalletMenuButton(),
         ],
       ),
       body: PendingContainer(

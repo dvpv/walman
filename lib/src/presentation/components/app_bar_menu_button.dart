@@ -7,12 +7,14 @@ import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/password_generator.dart';
+import 'package:walman/src/presentation/pages/sync/sync_page.dart';
 import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';
 
 enum _MenuOptions {
   generator,
   saveToBlockchain,
   loadFromBlockchain,
+  sync,
   wallet,
 }
 
@@ -112,6 +114,9 @@ class AppBarMenuButton extends StatelessWidget {
                   case _MenuOptions.wallet:
                     Navigator.pushNamed(context, WalletPage.route);
                     break;
+                  case _MenuOptions.sync:
+                    Navigator.pushNamed(context, SyncPage.route);
+                    break;
                 }
               },
               icon: const Icon(
@@ -140,6 +145,14 @@ class AppBarMenuButton extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       'Wallet',
+                    ),
+                  ),
+                ),
+                const PopupMenuItem<_MenuOptions>(
+                  value: _MenuOptions.sync,
+                  child: ListTile(
+                    title: Text(
+                      'Sync',
                     ),
                   ),
                 ),

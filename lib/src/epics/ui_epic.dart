@@ -1,6 +1,7 @@
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 import 'package:walman/src/actions/app_action.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/data/storage/blockchain_storage_api.dart';
 import 'package:walman/src/models/index.dart';
@@ -52,6 +53,7 @@ class UiEpic {
           .expand(
             (String walletPrivateKey) => <AppAction>[
               CreateWalletSuccessful(walletPrivateKey, action.pendingId),
+              const SecureStorageStoreWalletPrivateKeyStart(),
               GetWalletInfoStart(walletPrivateKey: walletPrivateKey),
             ],
           )

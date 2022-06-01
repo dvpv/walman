@@ -16,14 +16,14 @@ const String _kChangeWalletBody =
     'All the bundles currently stored on the blockchain will be un-accessible form the new wallet!'
     ' Make sure you saved your wallet someplace else, if not, any currency on this wallet will be lost!';
 
-class WalletAppBarMenuButton extends StatefulWidget {
-  const WalletAppBarMenuButton({Key? key}) : super(key: key);
+class WalletMenuButton extends StatefulWidget {
+  const WalletMenuButton({Key? key}) : super(key: key);
 
   @override
-  State<WalletAppBarMenuButton> createState() => _WalletAppBarMenuButtonState();
+  State<WalletMenuButton> createState() => _WalletMenuButtonState();
 }
 
-class _WalletAppBarMenuButtonState extends State<WalletAppBarMenuButton> {
+class _WalletMenuButtonState extends State<WalletMenuButton> {
   @override
   Widget build(BuildContext context) {
     return PersistentStateContainer(

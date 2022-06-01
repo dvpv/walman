@@ -21,6 +21,7 @@ import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/password_details.dart';
 import 'package:walman/src/presentation/pages/place/new_place_page.dart';
 import 'package:walman/src/presentation/pages/signup_page.dart';
+import 'package:walman/src/presentation/pages/sync/sync_page.dart';
 import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';
 import 'package:walman/src/presentation/start_page.dart';
 import 'package:walman/src/reducers/reducer.dart';
@@ -64,6 +65,18 @@ class App extends StatelessWidget {
         title: 'walman',
         theme: ThemeData(
           primarySwatch: Colors.indigo,
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            centerTitle: true,
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            ),
+            titleTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+            ),
+          ),
         ),
         routes: <String, WidgetBuilder>{
           StartPage.route: (BuildContext context) => const StartPage(),
@@ -76,6 +89,7 @@ class App extends StatelessWidget {
           NewCodePage.route: (BuildContext context) => const NewCodePage(),
           CodeDetails.route: (BuildContext context) => const CodeDetails(),
           WalletPage.route: (BuildContext context) => const WalletPage(),
+          SyncPage.route: (BuildContext context) => const SyncPage(),
         },
       ),
     );
