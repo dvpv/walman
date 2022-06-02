@@ -11,6 +11,7 @@ import 'package:walman/src/containers/user_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/cloud/signup_page.dart';
 import 'package:walman/src/presentation/pages/sync/sync_page.dart';
+import 'package:walman/src/presentation/start_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -44,7 +45,10 @@ class _LoginPageState extends State<LoginPage> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
       }
     } else {
-      Navigator.popUntil(context, ModalRoute.withName(SyncPage.route));
+      Navigator.popUntil(
+        context,
+        (Route<void> route) => route.settings.name == StartPage.route || route.settings.name == SyncPage.route,
+      );
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Login successful')));
     }
   }

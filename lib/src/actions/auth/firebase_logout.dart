@@ -6,6 +6,7 @@ const String _kFirebaseLogoutPendingId = 'FirebaseLogout';
 class FirebaseLogout with _$FirebaseLogout implements AppAction {
   @Implements<ActionStart>()
   const factory FirebaseLogout.start({
+    required ActionResult onResult,
     @Default(_kFirebaseLogoutPendingId) String pendingId,
   }) = FirebaseLogoutStart;
 

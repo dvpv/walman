@@ -1266,8 +1266,9 @@ abstract class FirebaseSignUpError implements FirebaseSignUp, ActionDone, ErrorA
 class _$FirebaseLogoutTearOff {
   const _$FirebaseLogoutTearOff();
 
-  FirebaseLogoutStart start({String pendingId = _kFirebaseLogoutPendingId}) {
+  FirebaseLogoutStart start({required ActionResult onResult, String pendingId = _kFirebaseLogoutPendingId}) {
     return FirebaseLogoutStart(
+      onResult: onResult,
       pendingId: pendingId,
     );
   }
@@ -1296,21 +1297,21 @@ mixin _$FirebaseLogout {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -1376,7 +1377,7 @@ abstract class $FirebaseLogoutStartCopyWith<$Res> implements $FirebaseLogoutCopy
   factory $FirebaseLogoutStartCopyWith(FirebaseLogoutStart value, $Res Function(FirebaseLogoutStart) then) =
       _$FirebaseLogoutStartCopyWithImpl<$Res>;
   @override
-  $Res call({String pendingId});
+  $Res call({ActionResult onResult, String pendingId});
 }
 
 /// @nodoc
@@ -1390,9 +1391,14 @@ class _$FirebaseLogoutStartCopyWithImpl<$Res> extends _$FirebaseLogoutCopyWithIm
 
   @override
   $Res call({
+    Object? onResult = freezed,
     Object? pendingId = freezed,
   }) {
     return _then(FirebaseLogoutStart(
+      onResult: onResult == freezed
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
       pendingId: pendingId == freezed
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -1405,15 +1411,17 @@ class _$FirebaseLogoutStartCopyWithImpl<$Res> extends _$FirebaseLogoutCopyWithIm
 
 @Implements<ActionStart>()
 class _$FirebaseLogoutStart implements FirebaseLogoutStart {
-  const _$FirebaseLogoutStart({this.pendingId = _kFirebaseLogoutPendingId});
+  const _$FirebaseLogoutStart({required this.onResult, this.pendingId = _kFirebaseLogoutPendingId});
 
+  @override
+  final ActionResult onResult;
   @JsonKey()
   @override
   final String pendingId;
 
   @override
   String toString() {
-    return 'FirebaseLogout.start(pendingId: $pendingId)';
+    return 'FirebaseLogout.start(onResult: $onResult, pendingId: $pendingId)';
   }
 
   @override
@@ -1421,11 +1429,12 @@ class _$FirebaseLogoutStart implements FirebaseLogoutStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FirebaseLogoutStart &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, onResult, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -1435,33 +1444,33 @@ class _$FirebaseLogoutStart implements FirebaseLogoutStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return start(pendingId);
+    return start(onResult, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return start?.call(pendingId);
+    return start?.call(onResult, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(pendingId);
+      return start(onResult, pendingId);
     }
     return orElse();
   }
@@ -1502,8 +1511,9 @@ class _$FirebaseLogoutStart implements FirebaseLogoutStart {
 }
 
 abstract class FirebaseLogoutStart implements FirebaseLogout, ActionStart {
-  const factory FirebaseLogoutStart({String pendingId}) = _$FirebaseLogoutStart;
+  const factory FirebaseLogoutStart({required ActionResult onResult, String pendingId}) = _$FirebaseLogoutStart;
 
+  ActionResult get onResult;
   @override
   String get pendingId;
   @override
@@ -1576,7 +1586,7 @@ class _$FirebaseLogoutSuccessful implements FirebaseLogoutSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -1586,7 +1596,7 @@ class _$FirebaseLogoutSuccessful implements FirebaseLogoutSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -1596,7 +1606,7 @@ class _$FirebaseLogoutSuccessful implements FirebaseLogoutSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -1734,7 +1744,7 @@ class _$FirebaseLogoutError implements FirebaseLogoutError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String pendingId) start,
+    required TResult Function(ActionResult onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -1744,7 +1754,7 @@ class _$FirebaseLogoutError implements FirebaseLogoutError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -1754,7 +1764,7 @@ class _$FirebaseLogoutError implements FirebaseLogoutError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String pendingId)? start,
+    TResult Function(ActionResult onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -3550,4 +3560,658 @@ abstract class CreateMasterKeyError implements CreateMasterKey, ActionDone, Erro
   @override
   @JsonKey(ignore: true)
   $CreateMasterKeyErrorCopyWith<CreateMasterKeyError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$FirebaseChangePasswordTearOff {
+  const _$FirebaseChangePasswordTearOff();
+
+  FirebaseChangePasswordStart start(
+      {required String currentPassword,
+      required String newPassword,
+      required FirebaseUser firebaseUser,
+      required ActionResult onResult,
+      String pendingId = _kFirebaseChangePasswordPendingId}) {
+    return FirebaseChangePasswordStart(
+      currentPassword: currentPassword,
+      newPassword: newPassword,
+      firebaseUser: firebaseUser,
+      onResult: onResult,
+      pendingId: pendingId,
+    );
+  }
+
+  FirebaseChangePasswordSuccessful successful({String pendingId = _kFirebaseChangePasswordPendingId}) {
+    return FirebaseChangePasswordSuccessful(
+      pendingId: pendingId,
+    );
+  }
+
+  FirebaseChangePasswordError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kFirebaseChangePasswordPendingId]) {
+    return FirebaseChangePasswordError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $FirebaseChangePassword = _$FirebaseChangePasswordTearOff();
+
+/// @nodoc
+mixin _$FirebaseChangePassword {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser,
+            ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FirebaseChangePasswordStart value) start,
+    required TResult Function(FirebaseChangePasswordSuccessful value) successful,
+    required TResult Function(FirebaseChangePasswordError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $FirebaseChangePasswordCopyWith<FirebaseChangePassword> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FirebaseChangePasswordCopyWith<$Res> {
+  factory $FirebaseChangePasswordCopyWith(FirebaseChangePassword value, $Res Function(FirebaseChangePassword) then) =
+      _$FirebaseChangePasswordCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$FirebaseChangePasswordCopyWithImpl<$Res> implements $FirebaseChangePasswordCopyWith<$Res> {
+  _$FirebaseChangePasswordCopyWithImpl(this._value, this._then);
+
+  final FirebaseChangePassword _value;
+  // ignore: unused_field
+  final $Res Function(FirebaseChangePassword) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $FirebaseChangePasswordStartCopyWith<$Res> implements $FirebaseChangePasswordCopyWith<$Res> {
+  factory $FirebaseChangePasswordStartCopyWith(
+          FirebaseChangePasswordStart value, $Res Function(FirebaseChangePasswordStart) then) =
+      _$FirebaseChangePasswordStartCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult, String pendingId});
+
+  $FirebaseUserCopyWith<$Res> get firebaseUser;
+}
+
+/// @nodoc
+class _$FirebaseChangePasswordStartCopyWithImpl<$Res> extends _$FirebaseChangePasswordCopyWithImpl<$Res>
+    implements $FirebaseChangePasswordStartCopyWith<$Res> {
+  _$FirebaseChangePasswordStartCopyWithImpl(
+      FirebaseChangePasswordStart _value, $Res Function(FirebaseChangePasswordStart) _then)
+      : super(_value, (v) => _then(v as FirebaseChangePasswordStart));
+
+  @override
+  FirebaseChangePasswordStart get _value => super._value as FirebaseChangePasswordStart;
+
+  @override
+  $Res call({
+    Object? currentPassword = freezed,
+    Object? newPassword = freezed,
+    Object? firebaseUser = freezed,
+    Object? onResult = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(FirebaseChangePasswordStart(
+      currentPassword: currentPassword == freezed
+          ? _value.currentPassword
+          : currentPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPassword: newPassword == freezed
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+      onResult: onResult == freezed
+          ? _value.onResult
+          : onResult // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $FirebaseUserCopyWith<$Res> get firebaseUser {
+    return $FirebaseUserCopyWith<$Res>(_value.firebaseUser, (value) {
+      return _then(_value.copyWith(firebaseUser: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$FirebaseChangePasswordStart implements FirebaseChangePasswordStart {
+  const _$FirebaseChangePasswordStart(
+      {required this.currentPassword,
+      required this.newPassword,
+      required this.firebaseUser,
+      required this.onResult,
+      this.pendingId = _kFirebaseChangePasswordPendingId});
+
+  @override
+  final String currentPassword;
+  @override
+  final String newPassword;
+  @override
+  final FirebaseUser firebaseUser;
+  @override
+  final ActionResult onResult;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'FirebaseChangePassword.start(currentPassword: $currentPassword, newPassword: $newPassword, firebaseUser: $firebaseUser, onResult: $onResult, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FirebaseChangePasswordStart &&
+            const DeepCollectionEquality().equals(other.currentPassword, currentPassword) &&
+            const DeepCollectionEquality().equals(other.newPassword, newPassword) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(currentPassword),
+      const DeepCollectionEquality().hash(newPassword),
+      const DeepCollectionEquality().hash(firebaseUser),
+      onResult,
+      const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $FirebaseChangePasswordStartCopyWith<FirebaseChangePasswordStart> get copyWith =>
+      _$FirebaseChangePasswordStartCopyWithImpl<FirebaseChangePasswordStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser,
+            ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(currentPassword, newPassword, firebaseUser, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(currentPassword, newPassword, firebaseUser, onResult, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(currentPassword, newPassword, firebaseUser, onResult, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FirebaseChangePasswordStart value) start,
+    required TResult Function(FirebaseChangePasswordSuccessful value) successful,
+    required TResult Function(FirebaseChangePasswordError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirebaseChangePasswordStart implements FirebaseChangePassword, ActionStart {
+  const factory FirebaseChangePasswordStart(
+      {required String currentPassword,
+      required String newPassword,
+      required FirebaseUser firebaseUser,
+      required ActionResult onResult,
+      String pendingId}) = _$FirebaseChangePasswordStart;
+
+  String get currentPassword;
+  String get newPassword;
+  FirebaseUser get firebaseUser;
+  ActionResult get onResult;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $FirebaseChangePasswordStartCopyWith<FirebaseChangePasswordStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FirebaseChangePasswordSuccessfulCopyWith<$Res> implements $FirebaseChangePasswordCopyWith<$Res> {
+  factory $FirebaseChangePasswordSuccessfulCopyWith(
+          FirebaseChangePasswordSuccessful value, $Res Function(FirebaseChangePasswordSuccessful) then) =
+      _$FirebaseChangePasswordSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$FirebaseChangePasswordSuccessfulCopyWithImpl<$Res> extends _$FirebaseChangePasswordCopyWithImpl<$Res>
+    implements $FirebaseChangePasswordSuccessfulCopyWith<$Res> {
+  _$FirebaseChangePasswordSuccessfulCopyWithImpl(
+      FirebaseChangePasswordSuccessful _value, $Res Function(FirebaseChangePasswordSuccessful) _then)
+      : super(_value, (v) => _then(v as FirebaseChangePasswordSuccessful));
+
+  @override
+  FirebaseChangePasswordSuccessful get _value => super._value as FirebaseChangePasswordSuccessful;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(FirebaseChangePasswordSuccessful(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$FirebaseChangePasswordSuccessful implements FirebaseChangePasswordSuccessful {
+  const _$FirebaseChangePasswordSuccessful({this.pendingId = _kFirebaseChangePasswordPendingId});
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'FirebaseChangePassword.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FirebaseChangePasswordSuccessful &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $FirebaseChangePasswordSuccessfulCopyWith<FirebaseChangePasswordSuccessful> get copyWith =>
+      _$FirebaseChangePasswordSuccessfulCopyWithImpl<FirebaseChangePasswordSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser,
+            ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FirebaseChangePasswordStart value) start,
+    required TResult Function(FirebaseChangePasswordSuccessful value) successful,
+    required TResult Function(FirebaseChangePasswordError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirebaseChangePasswordSuccessful implements FirebaseChangePassword, ActionDone {
+  const factory FirebaseChangePasswordSuccessful({String pendingId}) = _$FirebaseChangePasswordSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $FirebaseChangePasswordSuccessfulCopyWith<FirebaseChangePasswordSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FirebaseChangePasswordErrorCopyWith<$Res> implements $FirebaseChangePasswordCopyWith<$Res> {
+  factory $FirebaseChangePasswordErrorCopyWith(
+          FirebaseChangePasswordError value, $Res Function(FirebaseChangePasswordError) then) =
+      _$FirebaseChangePasswordErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$FirebaseChangePasswordErrorCopyWithImpl<$Res> extends _$FirebaseChangePasswordCopyWithImpl<$Res>
+    implements $FirebaseChangePasswordErrorCopyWith<$Res> {
+  _$FirebaseChangePasswordErrorCopyWithImpl(
+      FirebaseChangePasswordError _value, $Res Function(FirebaseChangePasswordError) _then)
+      : super(_value, (v) => _then(v as FirebaseChangePasswordError));
+
+  @override
+  FirebaseChangePasswordError get _value => super._value as FirebaseChangePasswordError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(FirebaseChangePasswordError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$FirebaseChangePasswordError implements FirebaseChangePasswordError {
+  const _$FirebaseChangePasswordError(this.error, this.stackTrace,
+      [this.pendingId = _kFirebaseChangePasswordPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'FirebaseChangePassword.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FirebaseChangePasswordError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $FirebaseChangePasswordErrorCopyWith<FirebaseChangePasswordError> get copyWith =>
+      _$FirebaseChangePasswordErrorCopyWithImpl<FirebaseChangePasswordError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser,
+            ActionResult onResult, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String currentPassword, String newPassword, FirebaseUser firebaseUser, ActionResult onResult,
+            String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FirebaseChangePasswordStart value) start,
+    required TResult Function(FirebaseChangePasswordSuccessful value) successful,
+    required TResult Function(FirebaseChangePasswordError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FirebaseChangePasswordStart value)? start,
+    TResult Function(FirebaseChangePasswordSuccessful value)? successful,
+    TResult Function(FirebaseChangePasswordError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirebaseChangePasswordError implements FirebaseChangePassword, ActionDone, ErrorAction {
+  const factory FirebaseChangePasswordError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$FirebaseChangePasswordError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $FirebaseChangePasswordErrorCopyWith<FirebaseChangePasswordError> get copyWith => throw _privateConstructorUsedError;
 }

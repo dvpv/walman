@@ -2,6 +2,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
+import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/models/index.dart';
@@ -21,6 +22,7 @@ class AuthEpic {
       TypedEpic<AppState, FirebaseLogoutStart>(_firebaseLogout),
       TypedEpic<AppState, UnlockAppStart>(_unlockApp),
       TypedEpic<AppState, CreateMasterKeyStart>(_createMasterKey),
+      TypedEpic<AppState, FirebaseChangePasswordStart>(_firebaseChangePassword),
     ]);
   }
 
@@ -54,6 +56,24 @@ class AuthEpic {
     });
   }
 
+  Stream<AppAction> _firebaseChangePassword(Stream<FirebaseChangePasswordStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((FirebaseChangePasswordStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) => _auth.changePassword(
+              currentPassword: action.currentPassword,
+              firebaseUser: action.firebaseUser,
+              newPassword: action.newPassword,
+            ),
+          )
+          .mapTo<AppAction>(FirebaseChangePasswordSuccessful(pendingId: action.pendingId))
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => FirebaseChangePasswordError(error, stackTrace, action.pendingId),
+          )
+          .doOnData(action.onResult);
+    });
+  }
+
   Stream<AppAction> _getCurrentFirebaseUser(Stream<GetCurrentFirebaseUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetCurrentFirebaseUserStart action) {
       return Stream<void>.value(null)
@@ -72,10 +92,16 @@ class AuthEpic {
     return actions.flatMap((FirebaseLogoutStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.logout())
-          .mapTo<FirebaseLogout>(FirebaseLogoutSuccessful(action.pendingId))
+          .expand<AppAction>(
+            (_) => <AppAction>[
+              FirebaseLogoutSuccessful(action.pendingId),
+              const RemoveFromVault(BundleType.cloud),
+            ],
+          )
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => FirebaseLogoutError(error, stackTrace, action.pendingId),
-          );
+          )
+          .doOnData(action.onResult);
     });
   }
 

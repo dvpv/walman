@@ -15,3 +15,5 @@ part 'get_current_firebase_user.dart';
 part 'unlock_app.dart';
 
 part 'create_master_key.dart';
+
+part 'firebase_change_password.dart';

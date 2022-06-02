@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/settings/settings_page.dart';
 import 'package:walman/src/presentation/pages/sync/blockchain_functions.dart';
 import 'package:walman/src/presentation/pages/sync/cloud_functions.dart';
 
 enum _MenuOptions {
   cloudBackup,
   blockchainBackup,
+  settings,
 }
 
 class SyncPageMenuButton extends StatelessWidget {
@@ -32,6 +34,9 @@ class SyncPageMenuButton extends StatelessWidget {
                       bundle: bundle,
                     );
                     break;
+                  case _MenuOptions.settings:
+                    await Navigator.pushNamed(context, SettingsPage.route);
+                    break;
                 }
               },
               icon: const Icon(
@@ -49,6 +54,14 @@ class SyncPageMenuButton extends StatelessWidget {
                   value: _MenuOptions.cloudBackup,
                   child: ListTile(
                     title: Text('Save to cloud'),
+                  ),
+                ),
+                const PopupMenuItem<_MenuOptions>(
+                  value: _MenuOptions.settings,
+                  child: ListTile(
+                    title: Text(
+                      'Settings',
+                    ),
                   ),
                 ),
               ],

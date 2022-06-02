@@ -20,3 +20,5 @@ part 'password_generator.dart';
 part 'update_persistent_state.dart';
 
 part 'set_bundle.dart';
+
+part 'remove_from_vault.dart';

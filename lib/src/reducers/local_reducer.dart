@@ -17,6 +17,7 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, ChangePasswordGeneratorLength>(_changePasswordGeneratorCharacterLength),
   TypedReducer<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
   TypedReducer<AppState, SetBundle>(_setBundle),
+  TypedReducer<AppState, RemoveFromVault>(_removeFromVault),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -156,5 +157,11 @@ AppState _setBundle(AppState state, SetBundle action) {
     persistentState: state.persistentState.copyWith(
       bundle: action.bundle,
     ),
+  );
+}
+
+AppState _removeFromVault(AppState state, RemoveFromVault action) {
+  return state.copyWith(
+    vault: state.vault.where((VaultBundle element) => element.type != action.type).toList(),
   );
 }

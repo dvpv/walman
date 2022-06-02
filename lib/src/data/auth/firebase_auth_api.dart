@@ -38,6 +38,19 @@ class FirebaseAuthApi {
     );
   }
 
+  Future<void> changePassword({
+    required String currentPassword,
+    required String newPassword,
+    required FirebaseUser firebaseUser,
+  }) async {
+    final AuthCredential credential = EmailAuthProvider.credential(
+      email: firebaseUser.email,
+      password: currentPassword,
+    );
+    await auth.currentUser!.reauthenticateWithCredential(credential);
+    await auth.currentUser!.updatePassword(newPassword);
+  }
+
   Future<void> logout() async {
     await auth.signOut();
   }

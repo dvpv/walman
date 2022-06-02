@@ -10,6 +10,7 @@ import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/containers/user_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/sync/sync_page.dart';
+import 'package:walman/src/presentation/start_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -47,7 +48,10 @@ class _SignupPageState extends State<SignupPage> {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$error')));
       }
     } else if (action is FirebaseSignUpSuccessful) {
-      Navigator.popUntil(context, ModalRoute.withName(SyncPage.route));
+      Navigator.popUntil(
+        context,
+        (Route<void> route) => route.settings.name == StartPage.route || route.settings.name == SyncPage.route,
+      );
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Successfully created a new account')));
     }
   }

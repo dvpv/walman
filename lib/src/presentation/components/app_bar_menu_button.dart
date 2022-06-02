@@ -5,11 +5,13 @@ import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/password_generator.dart';
+import 'package:walman/src/presentation/pages/settings/settings_page.dart';
 import 'package:walman/src/presentation/pages/sync/sync_page.dart';
 
 enum _MenuOptions {
   generator,
   sync,
+  settings,
 }
 
 class AppBarMenuButton extends StatelessWidget {
@@ -36,6 +38,9 @@ class AppBarMenuButton extends StatelessWidget {
                   case _MenuOptions.sync:
                     Navigator.pushNamed(context, SyncPage.route);
                     break;
+                  case _MenuOptions.settings:
+                    Navigator.pushNamed(context, SettingsPage.route);
+                    break;
                 }
               },
               icon: const Icon(
@@ -56,6 +61,14 @@ class AppBarMenuButton extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       'Password Generator',
+                    ),
+                  ),
+                ),
+                const PopupMenuItem<_MenuOptions>(
+                  value: _MenuOptions.settings,
+                  child: ListTile(
+                    title: Text(
+                      'Settings',
                     ),
                   ),
                 ),

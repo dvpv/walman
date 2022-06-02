@@ -2350,3 +2350,123 @@ abstract class SetBundle$ implements SetBundle {
   @JsonKey(ignore: true)
   $SetBundle$CopyWith<SetBundle$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$RemoveFromVaultTearOff {
+  const _$RemoveFromVaultTearOff();
+
+  RemoveFromVault$ call(BundleType type) {
+    return RemoveFromVault$(
+      type,
+    );
+  }
+}
+
+/// @nodoc
+const $RemoveFromVault = _$RemoveFromVaultTearOff();
+
+/// @nodoc
+mixin _$RemoveFromVault {
+  BundleType get type => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RemoveFromVaultCopyWith<RemoveFromVault> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RemoveFromVaultCopyWith<$Res> {
+  factory $RemoveFromVaultCopyWith(RemoveFromVault value, $Res Function(RemoveFromVault) then) =
+      _$RemoveFromVaultCopyWithImpl<$Res>;
+  $Res call({BundleType type});
+}
+
+/// @nodoc
+class _$RemoveFromVaultCopyWithImpl<$Res> implements $RemoveFromVaultCopyWith<$Res> {
+  _$RemoveFromVaultCopyWithImpl(this._value, this._then);
+
+  final RemoveFromVault _value;
+  // ignore: unused_field
+  final $Res Function(RemoveFromVault) _then;
+
+  @override
+  $Res call({
+    Object? type = freezed,
+  }) {
+    return _then(_value.copyWith(
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as BundleType,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $RemoveFromVault$CopyWith<$Res> implements $RemoveFromVaultCopyWith<$Res> {
+  factory $RemoveFromVault$CopyWith(RemoveFromVault$ value, $Res Function(RemoveFromVault$) then) =
+      _$RemoveFromVault$CopyWithImpl<$Res>;
+  @override
+  $Res call({BundleType type});
+}
+
+/// @nodoc
+class _$RemoveFromVault$CopyWithImpl<$Res> extends _$RemoveFromVaultCopyWithImpl<$Res>
+    implements $RemoveFromVault$CopyWith<$Res> {
+  _$RemoveFromVault$CopyWithImpl(RemoveFromVault$ _value, $Res Function(RemoveFromVault$) _then)
+      : super(_value, (v) => _then(v as RemoveFromVault$));
+
+  @override
+  RemoveFromVault$ get _value => super._value as RemoveFromVault$;
+
+  @override
+  $Res call({
+    Object? type = freezed,
+  }) {
+    return _then(RemoveFromVault$(
+      type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as BundleType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveFromVault$ implements RemoveFromVault$ {
+  const _$RemoveFromVault$(this.type);
+
+  @override
+  final BundleType type;
+
+  @override
+  String toString() {
+    return 'RemoveFromVault(type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RemoveFromVault$ &&
+            const DeepCollectionEquality().equals(other.type, type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
+
+  @JsonKey(ignore: true)
+  @override
+  $RemoveFromVault$CopyWith<RemoveFromVault$> get copyWith =>
+      _$RemoveFromVault$CopyWithImpl<RemoveFromVault$>(this, _$identity);
+}
+
+abstract class RemoveFromVault$ implements RemoveFromVault {
+  const factory RemoveFromVault$(BundleType type) = _$RemoveFromVault$;
+
+  @override
+  BundleType get type;
+  @override
+  @JsonKey(ignore: true)
+  $RemoveFromVault$CopyWith<RemoveFromVault$> get copyWith => throw _privateConstructorUsedError;
+}
