@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/code_list_tile.dart';
+import 'package:walman/src/presentation/pages/code/no_codes_message.dart';
 
 class CodesPage extends StatelessWidget {
   const CodesPage({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class CodesPage extends StatelessWidget {
     return Center(
       child: BundleContainer(
         builder: (BuildContext context, Bundle bundle) {
+          if (bundle.codes.isEmpty) {
+            return const NoCodesMessage();
+          }
           final List<Code> codes = bundle.codes.toList()..sort((Code a, Code b) => b.timesAccessed - a.timesAccessed);
           return ListView.builder(
             physics: const BouncingScrollPhysics(),

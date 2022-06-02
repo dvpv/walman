@@ -8,7 +8,7 @@ import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/containers/wallet_info_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/pages/wallet/connect_wallet_dialog.dart';
+import 'package:walman/src/presentation/pages/wallet/no_wallet_message.dart';
 
 class WalletPage extends StatefulWidget {
   const WalletPage({Key? key}) : super(key: key);
@@ -64,45 +64,7 @@ class _WalletPageState extends State<WalletPage> {
                   );
                 }
                 if (persistentState.walletPrivateKey == null || walletInfo == null) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Padding(
-                        padding: EdgeInsets.all(16),
-                        child: Center(
-                          child: Text(
-                            'No wallet connected!',
-                            style: TextStyle(fontSize: 24),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.indigo),
-                          ),
-                          onPressed: () => StoreProvider.of<AppState>(context).dispatch(const CreateWalletStart()),
-                          child: const Text('Create a new wallet'),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.indigo),
-                          ),
-                          onPressed: () {
-                            showDialog<void>(
-                              context: context,
-                              builder: (BuildContext context) => const ConnectWalletDialog(),
-                            );
-                          },
-                          child: const Text('Connect an existing wallet'),
-                        ),
-                      )
-                    ],
-                  );
+                  return const NoWalletMessage();
                 }
                 return RefreshIndicator(
                   onRefresh: () async => StoreProvider.of<AppState>(context).dispatch(
