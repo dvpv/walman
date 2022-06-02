@@ -5,6 +5,7 @@ import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/containers/vault_container.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/sync/no_vault_message.dart';
 import 'package:walman/src/presentation/pages/sync/sync_page_menu_button.dart';
 import 'package:walman/src/presentation/pages/sync/vault_bundle_card.dart';
 
@@ -48,6 +49,9 @@ class _SyncPageState extends State<SyncPage> {
             builder: (BuildContext context, List<VaultBundle> vault) {
               if (pending.contains(BlockchainGetVault.pendingKey)) {
                 return const Center(child: CircularProgressIndicator());
+              }
+              if (vault.isEmpty) {
+                return const NoVaultMessage();
               }
               return RefreshIndicator(
                 onRefresh: () async {
