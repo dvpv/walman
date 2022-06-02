@@ -84,17 +84,32 @@ class CodeDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                body: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      BarcodeWidget(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        height: MediaQuery.of(context).size.width * 0.8,
-                        data: code.data,
-                        barcode: barcodeFromScannerBarcodeFormat(code.format),
-                      ),
-                    ],
+                body: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Center(
+                    child: ListView(
+                      children: <Widget>[
+                        BarcodeWidget(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          height: MediaQuery.of(context).size.width * 0.8,
+                          data: code.data,
+                          barcode: barcodeFromScannerBarcodeFormat(code.format),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 16),
+                          child: Text(
+                            'Content',
+                            style: TextStyle(
+                              fontSize: 24,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          code.data,
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );
