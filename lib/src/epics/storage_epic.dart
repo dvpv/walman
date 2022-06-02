@@ -3,14 +3,16 @@ import 'package:rxdart/transformers.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/data/storage/blockchain_storage_api.dart';
+import 'package:walman/src/data/storage/firestore_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/models/index.dart';
 
 class StorageEpic {
-  StorageEpic({required this.secureStorageApi, required this.blockchainStorageApi});
+  StorageEpic({required this.firestoreApi, required this.secureStorageApi, required this.blockchainStorageApi});
 
   final SecureStorageApi secureStorageApi;
   final BlockchainStorageApi blockchainStorageApi;
+  final FirestoreApi firestoreApi;
 
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
@@ -23,6 +25,9 @@ class StorageEpic {
       TypedEpic<AppState, BlockchainAddBundleStart>(_blockchainAddBundle),
       TypedEpic<AppState, BlockchainRestoreLatestBundleStart>(_blockchainRestoreLatestBundle),
       TypedEpic<AppState, BlockchainGetVaultStart>(_blockchainGetVault),
+      TypedEpic<AppState, CloudStoreVaultStart>(_cloudStoreVault),
+      TypedEpic<AppState, CloudGetVaultStart>(_cloudGetVault),
+      TypedEpic<AppState, CloudAddBundle>(_cloudAddBundle),
     ]);
   }
 
@@ -190,5 +195,53 @@ class StorageEpic {
             (Object error, StackTrace stackTrace) => BlockchainGetVaultError(error, stackTrace, action.pendingId),
           );
     });
+  }
+
+  Stream<AppAction> _cloudStoreVault(Stream<CloudStoreVaultStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((CloudStoreVaultStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) => firestoreApi.storeVault(
+              user: action.firebaseUser,
+              vault: action.vault,
+              masterKey: action.masterKey,
+            ),
+          )
+          .expand<AppAction>(
+            (_) => <AppAction>[
+              CloudStoreVaultSuccessful(action.pendingId),
+              CloudGetVaultStart(firebaseUser: action.firebaseUser, masterKey: action.masterKey),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => CloudStoreVaultError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
+  Stream<AppAction> _cloudGetVault(Stream<CloudGetVaultStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((CloudGetVaultStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => firestoreApi.getVault(user: action.firebaseUser, masterKey: action.masterKey))
+          .map<AppAction>(
+            (List<VaultBundle> valut) => CloudGetVaultSuccessful(vault: valut, pendingId: action.pendingId),
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => CloudGetVaultError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
+  Stream<AppAction> _cloudAddBundle(Stream<CloudAddBundle> actions, EpicStore<AppState> store) {
+    return actions.map(
+      (CloudAddBundle action) => CloudStoreVaultStart(
+        masterKey: action.masterKey,
+        vault: <VaultBundle>[
+          ...action.vault.where((VaultBundle bundle) => bundle.type == BundleType.cloud).toList(),
+          VaultBundle(bundle: action.bundle, storedAt: DateTime.now(), type: BundleType.cloud),
+        ],
+        firebaseUser: action.firebaseUser,
+      ),
+    );
   }
 }

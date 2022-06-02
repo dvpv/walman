@@ -65,7 +65,10 @@ class _SyncPageState extends State<SyncPage> {
                       ),
                     );
                   }
-                  // TODO(dvpv): Here we need to load the cloud bundles too!
+                  final FirebaseUser? firebaseUser = store.state.firebaseUser;
+                  if (firebaseUser != null) {
+                    store.dispatch(CloudGetVaultStart(firebaseUser: firebaseUser, masterKey: store.state.masterKey!));
+                  }
                 },
                 child: ListView.builder(
                   itemCount: vault.length,

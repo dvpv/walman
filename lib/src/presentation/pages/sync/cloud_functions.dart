@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/cloud/login_page.dart';
 
 void cloudBackup({required BuildContext context, required Bundle bundle}) {
   final Store<AppState> store = StoreProvider.of<AppState>(context);
-  if (store.state.firebaseUser == null) {
+  final FirebaseUser? firebaseUser = store.state.firebaseUser;
+  if (firebaseUser == null) {
     Navigator.pushNamed(context, LoginPage.route);
     _showNeedCloudAccountDialog(context);
+  } else {
+    store.dispatch(
+      CloudAddBundle(
+        firebaseUser: firebaseUser,
+        bundle: bundle,
+        masterKey: store.state.masterKey!,
+        vault: store.state.vault,
+      ),
+    );
   }
-
-  // TODO(dvpv): else dispatch cloud backup action
 }
 
 void _showNeedCloudAccountDialog(BuildContext context) {

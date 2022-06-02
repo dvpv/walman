@@ -5258,3 +5258,1415 @@ abstract class GetWalletPrivateKeyError implements GetWalletPrivateKey, ActionDo
   @JsonKey(ignore: true)
   $GetWalletPrivateKeyErrorCopyWith<GetWalletPrivateKeyError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$CloudAddBundleTearOff {
+  const _$CloudAddBundleTearOff();
+
+  CloudAddBundle$ call(
+      {required String masterKey,
+      required Bundle bundle,
+      required List<VaultBundle> vault,
+      required FirebaseUser firebaseUser}) {
+    return CloudAddBundle$(
+      masterKey: masterKey,
+      bundle: bundle,
+      vault: vault,
+      firebaseUser: firebaseUser,
+    );
+  }
+}
+
+/// @nodoc
+const $CloudAddBundle = _$CloudAddBundleTearOff();
+
+/// @nodoc
+mixin _$CloudAddBundle {
+  String get masterKey => throw _privateConstructorUsedError;
+  Bundle get bundle => throw _privateConstructorUsedError;
+  List<VaultBundle> get vault => throw _privateConstructorUsedError;
+  FirebaseUser get firebaseUser => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CloudAddBundleCopyWith<CloudAddBundle> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudAddBundleCopyWith<$Res> {
+  factory $CloudAddBundleCopyWith(CloudAddBundle value, $Res Function(CloudAddBundle) then) =
+      _$CloudAddBundleCopyWithImpl<$Res>;
+  $Res call({String masterKey, Bundle bundle, List<VaultBundle> vault, FirebaseUser firebaseUser});
+
+  $BundleCopyWith<$Res> get bundle;
+  $FirebaseUserCopyWith<$Res> get firebaseUser;
+}
+
+/// @nodoc
+class _$CloudAddBundleCopyWithImpl<$Res> implements $CloudAddBundleCopyWith<$Res> {
+  _$CloudAddBundleCopyWithImpl(this._value, this._then);
+
+  final CloudAddBundle _value;
+  // ignore: unused_field
+  final $Res Function(CloudAddBundle) _then;
+
+  @override
+  $Res call({
+    Object? masterKey = freezed,
+    Object? bundle = freezed,
+    Object? vault = freezed,
+    Object? firebaseUser = freezed,
+  }) {
+    return _then(_value.copyWith(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+
+  @override
+  $FirebaseUserCopyWith<$Res> get firebaseUser {
+    return $FirebaseUserCopyWith<$Res>(_value.firebaseUser, (value) {
+      return _then(_value.copyWith(firebaseUser: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $CloudAddBundle$CopyWith<$Res> implements $CloudAddBundleCopyWith<$Res> {
+  factory $CloudAddBundle$CopyWith(CloudAddBundle$ value, $Res Function(CloudAddBundle$) then) =
+      _$CloudAddBundle$CopyWithImpl<$Res>;
+  @override
+  $Res call({String masterKey, Bundle bundle, List<VaultBundle> vault, FirebaseUser firebaseUser});
+
+  @override
+  $BundleCopyWith<$Res> get bundle;
+  @override
+  $FirebaseUserCopyWith<$Res> get firebaseUser;
+}
+
+/// @nodoc
+class _$CloudAddBundle$CopyWithImpl<$Res> extends _$CloudAddBundleCopyWithImpl<$Res>
+    implements $CloudAddBundle$CopyWith<$Res> {
+  _$CloudAddBundle$CopyWithImpl(CloudAddBundle$ _value, $Res Function(CloudAddBundle$) _then)
+      : super(_value, (v) => _then(v as CloudAddBundle$));
+
+  @override
+  CloudAddBundle$ get _value => super._value as CloudAddBundle$;
+
+  @override
+  $Res call({
+    Object? masterKey = freezed,
+    Object? bundle = freezed,
+    Object? vault = freezed,
+    Object? firebaseUser = freezed,
+  }) {
+    return _then(CloudAddBundle$(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CloudAddBundle$ implements CloudAddBundle$ {
+  const _$CloudAddBundle$(
+      {required this.masterKey, required this.bundle, required this.vault, required this.firebaseUser});
+
+  @override
+  final String masterKey;
+  @override
+  final Bundle bundle;
+  @override
+  final List<VaultBundle> vault;
+  @override
+  final FirebaseUser firebaseUser;
+
+  @override
+  String toString() {
+    return 'CloudAddBundle(masterKey: $masterKey, bundle: $bundle, vault: $vault, firebaseUser: $firebaseUser)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudAddBundle$ &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.vault, vault) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(masterKey),
+      const DeepCollectionEquality().hash(bundle),
+      const DeepCollectionEquality().hash(vault),
+      const DeepCollectionEquality().hash(firebaseUser));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudAddBundle$CopyWith<CloudAddBundle$> get copyWith =>
+      _$CloudAddBundle$CopyWithImpl<CloudAddBundle$>(this, _$identity);
+}
+
+abstract class CloudAddBundle$ implements CloudAddBundle {
+  const factory CloudAddBundle$(
+      {required String masterKey,
+      required Bundle bundle,
+      required List<VaultBundle> vault,
+      required FirebaseUser firebaseUser}) = _$CloudAddBundle$;
+
+  @override
+  String get masterKey;
+  @override
+  Bundle get bundle;
+  @override
+  List<VaultBundle> get vault;
+  @override
+  FirebaseUser get firebaseUser;
+  @override
+  @JsonKey(ignore: true)
+  $CloudAddBundle$CopyWith<CloudAddBundle$> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$CloudStoreVaultTearOff {
+  const _$CloudStoreVaultTearOff();
+
+  CloudStoreVaultStart start(
+      {required String masterKey,
+      required List<VaultBundle> vault,
+      required FirebaseUser firebaseUser,
+      String pendingId = _kCloudStoreVaultPendingId}) {
+    return CloudStoreVaultStart(
+      masterKey: masterKey,
+      vault: vault,
+      firebaseUser: firebaseUser,
+      pendingId: pendingId,
+    );
+  }
+
+  CloudStoreVaultSuccessful successful([String pendingId = _kCloudStoreVaultPendingId]) {
+    return CloudStoreVaultSuccessful(
+      pendingId,
+    );
+  }
+
+  CloudStoreVaultError error(Object error, StackTrace stackTrace, [String pendingId = _kCloudStoreVaultPendingId]) {
+    return CloudStoreVaultError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $CloudStoreVault = _$CloudStoreVaultTearOff();
+
+/// @nodoc
+mixin _$CloudStoreVault {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudStoreVaultStart value) start,
+    required TResult Function(CloudStoreVaultSuccessful value) successful,
+    required TResult Function(CloudStoreVaultError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CloudStoreVaultCopyWith<CloudStoreVault> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultCopyWith(CloudStoreVault value, $Res Function(CloudStoreVault) then) =
+      _$CloudStoreVaultCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CloudStoreVaultCopyWithImpl<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  _$CloudStoreVaultCopyWithImpl(this._value, this._then);
+
+  final CloudStoreVault _value;
+  // ignore: unused_field
+  final $Res Function(CloudStoreVault) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $CloudStoreVaultStartCopyWith<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultStartCopyWith(CloudStoreVaultStart value, $Res Function(CloudStoreVaultStart) then) =
+      _$CloudStoreVaultStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId});
+
+  $FirebaseUserCopyWith<$Res> get firebaseUser;
+}
+
+/// @nodoc
+class _$CloudStoreVaultStartCopyWithImpl<$Res> extends _$CloudStoreVaultCopyWithImpl<$Res>
+    implements $CloudStoreVaultStartCopyWith<$Res> {
+  _$CloudStoreVaultStartCopyWithImpl(CloudStoreVaultStart _value, $Res Function(CloudStoreVaultStart) _then)
+      : super(_value, (v) => _then(v as CloudStoreVaultStart));
+
+  @override
+  CloudStoreVaultStart get _value => super._value as CloudStoreVaultStart;
+
+  @override
+  $Res call({
+    Object? masterKey = freezed,
+    Object? vault = freezed,
+    Object? firebaseUser = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudStoreVaultStart(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $FirebaseUserCopyWith<$Res> get firebaseUser {
+    return $FirebaseUserCopyWith<$Res>(_value.firebaseUser, (value) {
+      return _then(_value.copyWith(firebaseUser: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$CloudStoreVaultStart implements CloudStoreVaultStart {
+  const _$CloudStoreVaultStart(
+      {required this.masterKey,
+      required this.vault,
+      required this.firebaseUser,
+      this.pendingId = _kCloudStoreVaultPendingId});
+
+  @override
+  final String masterKey;
+  @override
+  final List<VaultBundle> vault;
+  @override
+  final FirebaseUser firebaseUser;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudStoreVault.start(masterKey: $masterKey, vault: $vault, firebaseUser: $firebaseUser, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudStoreVaultStart &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.vault, vault) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(masterKey),
+      const DeepCollectionEquality().hash(vault),
+      const DeepCollectionEquality().hash(firebaseUser),
+      const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudStoreVaultStartCopyWith<CloudStoreVaultStart> get copyWith =>
+      _$CloudStoreVaultStartCopyWithImpl<CloudStoreVaultStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(masterKey, vault, firebaseUser, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(masterKey, vault, firebaseUser, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(masterKey, vault, firebaseUser, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudStoreVaultStart value) start,
+    required TResult Function(CloudStoreVaultSuccessful value) successful,
+    required TResult Function(CloudStoreVaultError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudStoreVaultStart implements CloudStoreVault, ActionStart {
+  const factory CloudStoreVaultStart(
+      {required String masterKey,
+      required List<VaultBundle> vault,
+      required FirebaseUser firebaseUser,
+      String pendingId}) = _$CloudStoreVaultStart;
+
+  String get masterKey;
+  List<VaultBundle> get vault;
+  FirebaseUser get firebaseUser;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudStoreVaultStartCopyWith<CloudStoreVaultStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudStoreVaultSuccessfulCopyWith<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultSuccessfulCopyWith(
+          CloudStoreVaultSuccessful value, $Res Function(CloudStoreVaultSuccessful) then) =
+      _$CloudStoreVaultSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CloudStoreVaultSuccessfulCopyWithImpl<$Res> extends _$CloudStoreVaultCopyWithImpl<$Res>
+    implements $CloudStoreVaultSuccessfulCopyWith<$Res> {
+  _$CloudStoreVaultSuccessfulCopyWithImpl(
+      CloudStoreVaultSuccessful _value, $Res Function(CloudStoreVaultSuccessful) _then)
+      : super(_value, (v) => _then(v as CloudStoreVaultSuccessful));
+
+  @override
+  CloudStoreVaultSuccessful get _value => super._value as CloudStoreVaultSuccessful;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudStoreVaultSuccessful(
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$CloudStoreVaultSuccessful implements CloudStoreVaultSuccessful {
+  const _$CloudStoreVaultSuccessful([this.pendingId = _kCloudStoreVaultPendingId]);
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudStoreVault.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudStoreVaultSuccessful &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudStoreVaultSuccessfulCopyWith<CloudStoreVaultSuccessful> get copyWith =>
+      _$CloudStoreVaultSuccessfulCopyWithImpl<CloudStoreVaultSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudStoreVaultStart value) start,
+    required TResult Function(CloudStoreVaultSuccessful value) successful,
+    required TResult Function(CloudStoreVaultError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudStoreVaultSuccessful implements CloudStoreVault, ActionDone {
+  const factory CloudStoreVaultSuccessful([String pendingId]) = _$CloudStoreVaultSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudStoreVaultSuccessfulCopyWith<CloudStoreVaultSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudStoreVaultErrorCopyWith<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultErrorCopyWith(CloudStoreVaultError value, $Res Function(CloudStoreVaultError) then) =
+      _$CloudStoreVaultErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$CloudStoreVaultErrorCopyWithImpl<$Res> extends _$CloudStoreVaultCopyWithImpl<$Res>
+    implements $CloudStoreVaultErrorCopyWith<$Res> {
+  _$CloudStoreVaultErrorCopyWithImpl(CloudStoreVaultError _value, $Res Function(CloudStoreVaultError) _then)
+      : super(_value, (v) => _then(v as CloudStoreVaultError));
+
+  @override
+  CloudStoreVaultError get _value => super._value as CloudStoreVaultError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudStoreVaultError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$CloudStoreVaultError implements CloudStoreVaultError {
+  const _$CloudStoreVaultError(this.error, this.stackTrace, [this.pendingId = _kCloudStoreVaultPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudStoreVault.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudStoreVaultError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudStoreVaultErrorCopyWith<CloudStoreVaultError> get copyWith =>
+      _$CloudStoreVaultErrorCopyWithImpl<CloudStoreVaultError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudStoreVaultStart value) start,
+    required TResult Function(CloudStoreVaultSuccessful value) successful,
+    required TResult Function(CloudStoreVaultError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudStoreVaultStart value)? start,
+    TResult Function(CloudStoreVaultSuccessful value)? successful,
+    TResult Function(CloudStoreVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudStoreVaultError implements CloudStoreVault, ActionDone, ErrorAction {
+  const factory CloudStoreVaultError(Object error, StackTrace stackTrace, [String pendingId]) = _$CloudStoreVaultError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudStoreVaultErrorCopyWith<CloudStoreVaultError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$CloudGetVaultTearOff {
+  const _$CloudGetVaultTearOff();
+
+  CloudGetVaultStart start(
+      {required FirebaseUser firebaseUser, required String masterKey, String pendingId = _kCloudGetVaultPendingId}) {
+    return CloudGetVaultStart(
+      firebaseUser: firebaseUser,
+      masterKey: masterKey,
+      pendingId: pendingId,
+    );
+  }
+
+  CloudGetVaultSuccessful successful({required List<VaultBundle> vault, String pendingId = _kCloudGetVaultPendingId}) {
+    return CloudGetVaultSuccessful(
+      vault: vault,
+      pendingId: pendingId,
+    );
+  }
+
+  CloudGetVaultError error(Object error, StackTrace stackTrace, [String pendingId = _kCloudGetVaultPendingId]) {
+    return CloudGetVaultError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $CloudGetVault = _$CloudGetVaultTearOff();
+
+/// @nodoc
+mixin _$CloudGetVault {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudGetVaultStart value) start,
+    required TResult Function(CloudGetVaultSuccessful value) successful,
+    required TResult Function(CloudGetVaultError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CloudGetVaultCopyWith<CloudGetVault> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultCopyWith(CloudGetVault value, $Res Function(CloudGetVault) then) =
+      _$CloudGetVaultCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CloudGetVaultCopyWithImpl<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  _$CloudGetVaultCopyWithImpl(this._value, this._then);
+
+  final CloudGetVault _value;
+  // ignore: unused_field
+  final $Res Function(CloudGetVault) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $CloudGetVaultStartCopyWith<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultStartCopyWith(CloudGetVaultStart value, $Res Function(CloudGetVaultStart) then) =
+      _$CloudGetVaultStartCopyWithImpl<$Res>;
+  @override
+  $Res call({FirebaseUser firebaseUser, String masterKey, String pendingId});
+
+  $FirebaseUserCopyWith<$Res> get firebaseUser;
+}
+
+/// @nodoc
+class _$CloudGetVaultStartCopyWithImpl<$Res> extends _$CloudGetVaultCopyWithImpl<$Res>
+    implements $CloudGetVaultStartCopyWith<$Res> {
+  _$CloudGetVaultStartCopyWithImpl(CloudGetVaultStart _value, $Res Function(CloudGetVaultStart) _then)
+      : super(_value, (v) => _then(v as CloudGetVaultStart));
+
+  @override
+  CloudGetVaultStart get _value => super._value as CloudGetVaultStart;
+
+  @override
+  $Res call({
+    Object? firebaseUser = freezed,
+    Object? masterKey = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudGetVaultStart(
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $FirebaseUserCopyWith<$Res> get firebaseUser {
+    return $FirebaseUserCopyWith<$Res>(_value.firebaseUser, (value) {
+      return _then(_value.copyWith(firebaseUser: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$CloudGetVaultStart implements CloudGetVaultStart {
+  const _$CloudGetVaultStart(
+      {required this.firebaseUser, required this.masterKey, this.pendingId = _kCloudGetVaultPendingId});
+
+  @override
+  final FirebaseUser firebaseUser;
+  @override
+  final String masterKey;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudGetVault.start(firebaseUser: $firebaseUser, masterKey: $masterKey, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudGetVaultStart &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(firebaseUser),
+      const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudGetVaultStartCopyWith<CloudGetVaultStart> get copyWith =>
+      _$CloudGetVaultStartCopyWithImpl<CloudGetVaultStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(firebaseUser, masterKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(firebaseUser, masterKey, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(firebaseUser, masterKey, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudGetVaultStart value) start,
+    required TResult Function(CloudGetVaultSuccessful value) successful,
+    required TResult Function(CloudGetVaultError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudGetVaultStart implements CloudGetVault, ActionStart {
+  const factory CloudGetVaultStart({required FirebaseUser firebaseUser, required String masterKey, String pendingId}) =
+      _$CloudGetVaultStart;
+
+  FirebaseUser get firebaseUser;
+  String get masterKey;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudGetVaultStartCopyWith<CloudGetVaultStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudGetVaultSuccessfulCopyWith<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultSuccessfulCopyWith(CloudGetVaultSuccessful value, $Res Function(CloudGetVaultSuccessful) then) =
+      _$CloudGetVaultSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({List<VaultBundle> vault, String pendingId});
+}
+
+/// @nodoc
+class _$CloudGetVaultSuccessfulCopyWithImpl<$Res> extends _$CloudGetVaultCopyWithImpl<$Res>
+    implements $CloudGetVaultSuccessfulCopyWith<$Res> {
+  _$CloudGetVaultSuccessfulCopyWithImpl(CloudGetVaultSuccessful _value, $Res Function(CloudGetVaultSuccessful) _then)
+      : super(_value, (v) => _then(v as CloudGetVaultSuccessful));
+
+  @override
+  CloudGetVaultSuccessful get _value => super._value as CloudGetVaultSuccessful;
+
+  @override
+  $Res call({
+    Object? vault = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudGetVaultSuccessful(
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$CloudGetVaultSuccessful implements CloudGetVaultSuccessful {
+  const _$CloudGetVaultSuccessful({required this.vault, this.pendingId = _kCloudGetVaultPendingId});
+
+  @override
+  final List<VaultBundle> vault;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudGetVault.successful(vault: $vault, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudGetVaultSuccessful &&
+            const DeepCollectionEquality().equals(other.vault, vault) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(vault), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudGetVaultSuccessfulCopyWith<CloudGetVaultSuccessful> get copyWith =>
+      _$CloudGetVaultSuccessfulCopyWithImpl<CloudGetVaultSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(vault, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(vault, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(vault, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudGetVaultStart value) start,
+    required TResult Function(CloudGetVaultSuccessful value) successful,
+    required TResult Function(CloudGetVaultError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudGetVaultSuccessful implements CloudGetVault, ActionDone {
+  const factory CloudGetVaultSuccessful({required List<VaultBundle> vault, String pendingId}) =
+      _$CloudGetVaultSuccessful;
+
+  List<VaultBundle> get vault;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudGetVaultSuccessfulCopyWith<CloudGetVaultSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudGetVaultErrorCopyWith<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultErrorCopyWith(CloudGetVaultError value, $Res Function(CloudGetVaultError) then) =
+      _$CloudGetVaultErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$CloudGetVaultErrorCopyWithImpl<$Res> extends _$CloudGetVaultCopyWithImpl<$Res>
+    implements $CloudGetVaultErrorCopyWith<$Res> {
+  _$CloudGetVaultErrorCopyWithImpl(CloudGetVaultError _value, $Res Function(CloudGetVaultError) _then)
+      : super(_value, (v) => _then(v as CloudGetVaultError));
+
+  @override
+  CloudGetVaultError get _value => super._value as CloudGetVaultError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudGetVaultError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$CloudGetVaultError implements CloudGetVaultError {
+  const _$CloudGetVaultError(this.error, this.stackTrace, [this.pendingId = _kCloudGetVaultPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudGetVault.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudGetVaultError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudGetVaultErrorCopyWith<CloudGetVaultError> get copyWith =>
+      _$CloudGetVaultErrorCopyWithImpl<CloudGetVaultError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
+    TResult Function(List<VaultBundle> vault, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudGetVaultStart value) start,
+    required TResult Function(CloudGetVaultSuccessful value) successful,
+    required TResult Function(CloudGetVaultError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudGetVaultStart value)? start,
+    TResult Function(CloudGetVaultSuccessful value)? successful,
+    TResult Function(CloudGetVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudGetVaultError implements CloudGetVault, ActionDone, ErrorAction {
+  const factory CloudGetVaultError(Object error, StackTrace stackTrace, [String pendingId]) = _$CloudGetVaultError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudGetVaultErrorCopyWith<CloudGetVaultError> get copyWith => throw _privateConstructorUsedError;
+}

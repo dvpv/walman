@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ import 'package:redux_epics/redux_epics.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/data/auth/firebase_auth_api.dart';
 import 'package:walman/src/data/storage/blockchain_storage_api.dart';
+import 'package:walman/src/data/storage/firestore_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
@@ -31,13 +33,19 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final FirebaseApp app = await Firebase.initializeApp();
   final FirebaseAuth auth = FirebaseAuth.instanceFor(app: app);
+  final FirebaseFirestore firestore = FirebaseFirestore.instanceFor(app: app);
   const FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
-  final FirebaseAuthApi authApi = FirebaseAuthApi(auth);
+  final FirebaseAuthApi authApi = FirebaseAuthApi(auth: auth, firestore: firestore);
   final SecureStorageApi secureStorageApi = SecureStorageApi(secureStorage);
+  final FirestoreApi firestoreApi = FirestoreApi(firestore);
   final BlockchainStorageApi blockchainStorageApi = await BlockchainStorageApi.build;
-  final AppEpic epic =
-      AppEpic(authApi: authApi, secureStorageApi: secureStorageApi, blockchainStorageApi: blockchainStorageApi);
+  final AppEpic epic = AppEpic(
+    authApi: authApi,
+    secureStorageApi: secureStorageApi,
+    blockchainStorageApi: blockchainStorageApi,
+    firestoreApi: firestoreApi,
+  );
 
   final Store<AppState> store = Store<AppState>(
     reducer,

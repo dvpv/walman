@@ -11,3 +11,5 @@ part 'master_key_hash.dart';
 part 'bundle.dart';
 
 part 'wallet_private_key.dart';
+
+part 'cloud_storage.dart';
