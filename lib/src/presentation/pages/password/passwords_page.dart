@@ -6,6 +6,8 @@ import 'package:walman/src/presentation/components/password_list_tile.dart';
 class PasswordsPage extends StatefulWidget {
   const PasswordsPage({Key? key}) : super(key: key);
 
+  static const String title = 'Passwords';
+
   @override
   State<PasswordsPage> createState() => _PasswordsPageState();
 }

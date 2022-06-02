@@ -7,7 +7,7 @@ class AppState with _$AppState {
     String? masterKey,
     FirebaseUser? firebaseUser,
     @Default(<VaultBundle>[]) List<VaultBundle> vault,
-    @Default(AppPage.home) AppPage selectedPage,
+    @Default(0) int selectedPage,
     @Default(PersistentState()) PersistentState persistentState,
     // UI states
     @Default(DetailsState()) DetailsState detailsState,

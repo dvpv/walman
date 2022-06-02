@@ -13,13 +13,13 @@ import 'package:walman/src/data/storage/blockchain_storage_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/presentation/pages/authenticator/new_authenticator_page.dart';
 import 'package:walman/src/presentation/pages/code/code_details.dart';
 import 'package:walman/src/presentation/pages/code/new_code_page.dart';
 import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
 import 'package:walman/src/presentation/pages/login_page.dart';
 import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/password_details.dart';
-import 'package:walman/src/presentation/pages/place/new_place_page.dart';
 import 'package:walman/src/presentation/pages/signup_page.dart';
 import 'package:walman/src/presentation/pages/sync/sync_page.dart';
 import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';
@@ -83,7 +83,7 @@ class App extends StatelessWidget {
           SignupPage.route: (BuildContext context) => const SignupPage(),
           LoginPage.route: (BuildContext context) => const LoginPage(),
           NewPasswordPage.route: (BuildContext context) => const NewPasswordPage(),
-          NewPlacePage.route: (BuildContext context) => const NewPlacePage(),
+          NewAuthenticatorPage.route: (BuildContext context) => const NewAuthenticatorPage(),
           ScanNewCodePage.route: (BuildContext context) => const ScanNewCodePage(),
           PasswordDetails.route: (BuildContext context) => const PasswordDetails(),
           NewCodePage.route: (BuildContext context) => const NewCodePage(),

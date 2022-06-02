@@ -6,6 +6,8 @@ import 'package:walman/src/presentation/components/code_list_tile.dart';
 class CodesPage extends StatelessWidget {
   const CodesPage({Key? key}) : super(key: key);
 
+  static const String title = 'Codes';
+
   @override
   Widget build(BuildContext context) {
     return Center(

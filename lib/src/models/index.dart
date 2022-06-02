@@ -19,10 +19,3 @@ part 'code.dart';
 part 'bundle_item.dart';
 
 part 'firebase_user.dart';
-
-enum AppPage {
-  home,
-  passwords,
-  places,
-  codes,
-}

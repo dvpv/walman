@@ -18,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ChangeAppPageTearOff {
   const _$ChangeAppPageTearOff();
 
-  ChangeAppPage$ call(AppPage page) {
+  ChangeAppPage$ call(int index) {
     return ChangeAppPage$(
-      page,
+      index,
     );
   }
 }
@@ -30,7 +30,7 @@ const $ChangeAppPage = _$ChangeAppPageTearOff();
 
 /// @nodoc
 mixin _$ChangeAppPage {
-  AppPage get page => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChangeAppPageCopyWith<ChangeAppPage> get copyWith => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ mixin _$ChangeAppPage {
 abstract class $ChangeAppPageCopyWith<$Res> {
   factory $ChangeAppPageCopyWith(ChangeAppPage value, $Res Function(ChangeAppPage) then) =
       _$ChangeAppPageCopyWithImpl<$Res>;
-  $Res call({AppPage page});
+  $Res call({int index});
 }
 
 /// @nodoc
@@ -53,13 +53,13 @@ class _$ChangeAppPageCopyWithImpl<$Res> implements $ChangeAppPageCopyWith<$Res> 
 
   @override
   $Res call({
-    Object? page = freezed,
+    Object? index = freezed,
   }) {
     return _then(_value.copyWith(
-      page: page == freezed
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as AppPage,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -69,7 +69,7 @@ abstract class $ChangeAppPage$CopyWith<$Res> implements $ChangeAppPageCopyWith<$
   factory $ChangeAppPage$CopyWith(ChangeAppPage$ value, $Res Function(ChangeAppPage$) then) =
       _$ChangeAppPage$CopyWithImpl<$Res>;
   @override
-  $Res call({AppPage page});
+  $Res call({int index});
 }
 
 /// @nodoc
@@ -83,13 +83,13 @@ class _$ChangeAppPage$CopyWithImpl<$Res> extends _$ChangeAppPageCopyWithImpl<$Re
 
   @override
   $Res call({
-    Object? page = freezed,
+    Object? index = freezed,
   }) {
     return _then(ChangeAppPage$(
-      page == freezed
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as AppPage,
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -97,14 +97,14 @@ class _$ChangeAppPage$CopyWithImpl<$Res> extends _$ChangeAppPageCopyWithImpl<$Re
 /// @nodoc
 
 class _$ChangeAppPage$ implements ChangeAppPage$ {
-  const _$ChangeAppPage$(this.page);
+  const _$ChangeAppPage$(this.index);
 
   @override
-  final AppPage page;
+  final int index;
 
   @override
   String toString() {
-    return 'ChangeAppPage(page: $page)';
+    return 'ChangeAppPage(index: $index)';
   }
 
   @override
@@ -112,11 +112,11 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ChangeAppPage$ &&
-            const DeepCollectionEquality().equals(other.page, page));
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(page));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
 
   @JsonKey(ignore: true)
   @override
@@ -125,10 +125,10 @@ class _$ChangeAppPage$ implements ChangeAppPage$ {
 }
 
 abstract class ChangeAppPage$ implements ChangeAppPage {
-  const factory ChangeAppPage$(AppPage page) = _$ChangeAppPage$;
+  const factory ChangeAppPage$(int index) = _$ChangeAppPage$;
 
   @override
-  AppPage get page;
+  int get index;
   @override
   @JsonKey(ignore: true)
   $ChangeAppPage$CopyWith<ChangeAppPage$> get copyWith => throw _privateConstructorUsedError;

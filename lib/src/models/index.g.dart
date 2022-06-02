@@ -17,7 +17,7 @@ _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
           json['firebaseUser'] == null ? null : FirebaseUser.fromJson(json['firebaseUser'] as Map<String, dynamic>),
       vault: (json['vault'] as List<dynamic>?)?.map((e) => VaultBundle.fromJson(e as Map<String, dynamic>)).toList() ??
           const <VaultBundle>[],
-      selectedPage: $enumDecodeNullable(_$AppPageEnumMap, json['selectedPage']) ?? AppPage.home,
+      selectedPage: json['selectedPage'] as int? ?? 0,
       persistentState: json['persistentState'] == null
           ? const PersistentState()
           : PersistentState.fromJson(json['persistentState'] as Map<String, dynamic>),
@@ -38,20 +38,13 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynami
       'masterKey': instance.masterKey,
       'firebaseUser': instance.firebaseUser,
       'vault': instance.vault,
-      'selectedPage': _$AppPageEnumMap[instance.selectedPage],
+      'selectedPage': instance.selectedPage,
       'persistentState': instance.persistentState,
       'detailsState': instance.detailsState,
       'createCodeState': instance.createCodeState,
       'uiState': instance.uiState,
       'passwordGeneratorState': instance.passwordGeneratorState,
     };
-
-const _$AppPageEnumMap = {
-  AppPage.home: 'home',
-  AppPage.passwords: 'passwords',
-  AppPage.places: 'places',
-  AppPage.codes: 'codes',
-};
 
 _$PersistentState$ _$$PersistentState$FromJson(Map<String, dynamic> json) => _$PersistentState$(
       bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),

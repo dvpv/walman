@@ -111,7 +111,7 @@ class _$AppStateTearOff {
       String? masterKey,
       FirebaseUser? firebaseUser,
       List<VaultBundle> vault = const <VaultBundle>[],
-      AppPage selectedPage = AppPage.home,
+      int selectedPage = 0,
       PersistentState persistentState = const PersistentState(),
       DetailsState detailsState = const DetailsState(),
       CreateCodeState createCodeState = const CreateCodeState(),
@@ -145,7 +145,7 @@ mixin _$AppState {
   String? get masterKey => throw _privateConstructorUsedError;
   FirebaseUser? get firebaseUser => throw _privateConstructorUsedError;
   List<VaultBundle> get vault => throw _privateConstructorUsedError;
-  AppPage get selectedPage => throw _privateConstructorUsedError;
+  int get selectedPage => throw _privateConstructorUsedError;
   PersistentState get persistentState => throw _privateConstructorUsedError; // UI states
   DetailsState get detailsState => throw _privateConstructorUsedError;
   CreateCodeState get createCodeState => throw _privateConstructorUsedError;
@@ -165,7 +165,7 @@ abstract class $AppStateCopyWith<$Res> {
       String? masterKey,
       FirebaseUser? firebaseUser,
       List<VaultBundle> vault,
-      AppPage selectedPage,
+      int selectedPage,
       PersistentState persistentState,
       DetailsState detailsState,
       CreateCodeState createCodeState,
@@ -221,7 +221,7 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
-              as AppPage,
+              as int,
       persistentState: persistentState == freezed
           ? _value.persistentState
           : persistentState // ignore: cast_nullable_to_non_nullable
@@ -301,7 +301,7 @@ abstract class $AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
       String? masterKey,
       FirebaseUser? firebaseUser,
       List<VaultBundle> vault,
-      AppPage selectedPage,
+      int selectedPage,
       PersistentState persistentState,
       DetailsState detailsState,
       CreateCodeState createCodeState,
@@ -363,7 +363,7 @@ class _$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res> impleme
       selectedPage: selectedPage == freezed
           ? _value.selectedPage
           : selectedPage // ignore: cast_nullable_to_non_nullable
-              as AppPage,
+              as int,
       persistentState: persistentState == freezed
           ? _value.persistentState
           : persistentState // ignore: cast_nullable_to_non_nullable
@@ -396,7 +396,7 @@ class _$AppState$ implements AppState$ {
       this.masterKey,
       this.firebaseUser,
       this.vault = const <VaultBundle>[],
-      this.selectedPage = AppPage.home,
+      this.selectedPage = 0,
       this.persistentState = const PersistentState(),
       this.detailsState = const DetailsState(),
       this.createCodeState = const CreateCodeState(),
@@ -417,7 +417,7 @@ class _$AppState$ implements AppState$ {
   final List<VaultBundle> vault;
   @JsonKey()
   @override
-  final AppPage selectedPage;
+  final int selectedPage;
   @JsonKey()
   @override
   final PersistentState persistentState;
@@ -486,7 +486,7 @@ abstract class AppState$ implements AppState {
       String? masterKey,
       FirebaseUser? firebaseUser,
       List<VaultBundle> vault,
-      AppPage selectedPage,
+      int selectedPage,
       PersistentState persistentState,
       DetailsState detailsState,
       CreateCodeState createCodeState,
@@ -504,7 +504,7 @@ abstract class AppState$ implements AppState {
   @override
   List<VaultBundle> get vault;
   @override
-  AppPage get selectedPage;
+  int get selectedPage;
   @override
   PersistentState get persistentState;
   @override // UI states

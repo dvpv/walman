@@ -6,11 +6,11 @@ import 'package:walman/src/models/index.dart';
 class NavigationContainer extends StatelessWidget {
   const NavigationContainer({Key? key, required this.builder}) : super(key: key);
 
-  final ViewModelBuilder<AppPage> builder;
+  final ViewModelBuilder<int> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppPage>(
+    return StoreConnector<AppState, int>(
       converter: (Store<AppState> store) => store.state.selectedPage,
       builder: builder,
     );

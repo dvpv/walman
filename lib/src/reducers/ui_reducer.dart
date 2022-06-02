@@ -11,7 +11,7 @@ Reducer<AppState> uiReducer = combineReducers<AppState>(<Reducer<AppState>>[
 ]);
 
 AppState _changeAppPage(AppState state, ChangeAppPage action) {
-  return state.copyWith(selectedPage: action.page);
+  return state.copyWith(selectedPage: action.index);
 }
 
 AppState _setEditingStart(AppState state, SetEditingStart action) {

@@ -12,6 +12,8 @@ const double _kDividerHeight = 50;
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  static const String title = 'Home';
+
   @override
   Widget build(BuildContext context) {
     return PendingContainer(
