@@ -3,6 +3,7 @@ import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/sync/blockchain_functions.dart';
+import 'package:walman/src/presentation/pages/sync/cloud_functions.dart';
 
 class NoVaultMessage extends StatelessWidget {
   const NoVaultMessage({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class NoVaultMessage extends StatelessWidget {
                 children: <Widget>[
                   ElevatedButton(
                     child: const Text('Cloud backup'),
-                    onPressed: () {},
+                    onPressed: () => cloudBackup(context: context, bundle: bundle),
                   ),
                   PersistentStateContainer(
                     builder: (BuildContext context, PersistentState persistentState) {

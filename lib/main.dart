@@ -14,13 +14,13 @@ import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/authenticator/new_authenticator_page.dart';
+import 'package:walman/src/presentation/pages/cloud/login_page.dart';
+import 'package:walman/src/presentation/pages/cloud/signup_page.dart';
 import 'package:walman/src/presentation/pages/code/code_details.dart';
 import 'package:walman/src/presentation/pages/code/new_code_page.dart';
 import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
-import 'package:walman/src/presentation/pages/login_page.dart';
 import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/password_details.dart';
-import 'package:walman/src/presentation/pages/signup_page.dart';
 import 'package:walman/src/presentation/pages/sync/sync_page.dart';
 import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';
 import 'package:walman/src/presentation/start_page.dart';
@@ -76,6 +76,9 @@ class App extends StatelessWidget {
               color: Colors.black,
               fontSize: 20,
             ),
+          ),
+          inputDecorationTheme: const InputDecorationTheme(
+            border: OutlineInputBorder(),
           ),
         ),
         routes: <String, WidgetBuilder>{

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:walman/src/actions/auth/index.dart';
+import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/show_password_button.dart';
@@ -21,6 +22,12 @@ class _WelcomePageState extends State<WelcomePage> {
   final FocusNode _confirmMasterKeyNode = FocusNode();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  void initState() {
+    super.initState();
+    StoreProvider.of<AppState>(context, listen: false).dispatch(const ShowPassword(show: false));
+  }
 
   void _onSubmit(BuildContext context) {
     if (!_formKey.currentState!.validate()) {
@@ -86,7 +93,6 @@ class _WelcomePageState extends State<WelcomePage> {
                         decoration: const InputDecoration(
                           labelText: 'Master Key',
                           prefixIcon: Icon(Icons.lock),
-                          border: OutlineInputBorder(),
                           suffixIcon: ShowPasswordButton(),
                         ),
                         validator: _validate,
@@ -104,7 +110,6 @@ class _WelcomePageState extends State<WelcomePage> {
                         decoration: const InputDecoration(
                           labelText: 'Confirm Master Key',
                           prefixIcon: Icon(Icons.lock),
-                          border: OutlineInputBorder(),
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {

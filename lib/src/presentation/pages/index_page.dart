@@ -12,7 +12,7 @@ import 'package:walman/src/presentation/pages/authenticator/authenticator_page.d
 import 'package:walman/src/presentation/pages/authenticator/new_authenticator_page.dart';
 import 'package:walman/src/presentation/pages/code/codes_page.dart';
 import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
-import 'package:walman/src/presentation/pages/home_page.dart';
+import 'package:walman/src/presentation/pages/home/home_page.dart';
 import 'package:walman/src/presentation/pages/password/new_password_page.dart';
 import 'package:walman/src/presentation/pages/password/passwords_page.dart';
 import 'package:walman/src/presentation/pages/wallet/wallet_page.dart';

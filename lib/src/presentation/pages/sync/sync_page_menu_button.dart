@@ -3,10 +3,11 @@ import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/pages/sync/blockchain_functions.dart';
+import 'package:walman/src/presentation/pages/sync/cloud_functions.dart';
 
 enum _MenuOptions {
-  cloudSettings,
-  saveToBlockchain,
+  cloudBackup,
+  blockchainBackup,
 }
 
 class SyncPageMenuButton extends StatelessWidget {
@@ -21,9 +22,10 @@ class SyncPageMenuButton extends StatelessWidget {
             return PopupMenuButton<_MenuOptions>(
               onSelected: (_MenuOptions result) async {
                 switch (result) {
-                  case _MenuOptions.cloudSettings:
+                  case _MenuOptions.cloudBackup:
+                    cloudBackup(context: context, bundle: bundle);
                     break;
-                  case _MenuOptions.saveToBlockchain:
+                  case _MenuOptions.blockchainBackup:
                     blockchainBackup(
                       context: context,
                       walletPrivateKey: persistentState.walletPrivateKey,
@@ -38,17 +40,15 @@ class SyncPageMenuButton extends StatelessWidget {
               ),
               itemBuilder: (BuildContext context) => <PopupMenuEntry<_MenuOptions>>[
                 const PopupMenuItem<_MenuOptions>(
-                  value: _MenuOptions.saveToBlockchain,
+                  value: _MenuOptions.blockchainBackup,
                   child: ListTile(
-                    title: Text(
-                      'Save to blockchain',
-                    ),
+                    title: Text('Save to blockchain'),
                   ),
                 ),
                 const PopupMenuItem<_MenuOptions>(
-                  value: _MenuOptions.cloudSettings,
+                  value: _MenuOptions.cloudBackup,
                   child: ListTile(
-                    title: Text('Cloud Settings'),
+                    title: Text('Save to cloud'),
                   ),
                 ),
               ],

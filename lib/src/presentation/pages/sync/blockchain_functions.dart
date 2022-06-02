@@ -36,7 +36,7 @@ void blockchainBackup({required BuildContext context, required String? walletPri
 void _showNeedWalletDialog(BuildContext context) {
   showDialog<void>(
     context: context,
-    builder: (BuildContext dialogContext) {
+    builder: (BuildContext context) {
       return AlertDialog(
         title: const Text('Crypto wallet needed'),
         content: const Text('You need a crypto wallet with ETH in order to save bundles on the blockchain'),
@@ -44,7 +44,7 @@ void _showNeedWalletDialog(BuildContext context) {
           TextButton(
             child: const Text('OK'),
             onPressed: () {
-              Navigator.of(dialogContext).pop();
+              Navigator.of(context).pop();
             },
           ),
         ],
