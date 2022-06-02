@@ -18,6 +18,7 @@ class LocalEpic {
       TypedEpic<AppState, SelectItemDetailsStart>(_selectItemDetailsSuccess),
       TypedEpic<AppState, GeneratePasswordStart>(_generatePassword),
       TypedEpic<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
+      TypedEpic<AppState, SetBundle>(_setBundle),
     ]);
   }
 
@@ -82,5 +83,9 @@ class LocalEpic {
 
   Stream<AppAction> _setWalletPrivateKey(Stream<SetWalletPrivateKey> actions, EpicStore<AppState> store) {
     return actions.map((SetWalletPrivateKey action) => StoreWalletPrivateKeyStart(masterKey: store.state.masterKey!));
+  }
+
+  Stream<AppAction> _setBundle(Stream<SetBundle> actions, EpicStore<AppState> store) {
+    return actions.map((SetBundle action) => StoreBundleStart(bundle: action.bundle));
   }
 }

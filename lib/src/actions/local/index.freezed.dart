@@ -2222,3 +2222,131 @@ abstract class SetWalletPrivateKey$ implements SetWalletPrivateKey {
   @JsonKey(ignore: true)
   $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$SetBundleTearOff {
+  const _$SetBundleTearOff();
+
+  SetBundle$ call(Bundle bundle) {
+    return SetBundle$(
+      bundle,
+    );
+  }
+}
+
+/// @nodoc
+const $SetBundle = _$SetBundleTearOff();
+
+/// @nodoc
+mixin _$SetBundle {
+  Bundle get bundle => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetBundleCopyWith<SetBundle> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetBundleCopyWith<$Res> {
+  factory $SetBundleCopyWith(SetBundle value, $Res Function(SetBundle) then) = _$SetBundleCopyWithImpl<$Res>;
+  $Res call({Bundle bundle});
+
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$SetBundleCopyWithImpl<$Res> implements $SetBundleCopyWith<$Res> {
+  _$SetBundleCopyWithImpl(this._value, this._then);
+
+  final SetBundle _value;
+  // ignore: unused_field
+  final $Res Function(SetBundle) _then;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+  }) {
+    return _then(_value.copyWith(
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+    ));
+  }
+
+  @override
+  $BundleCopyWith<$Res> get bundle {
+    return $BundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $SetBundle$CopyWith<$Res> implements $SetBundleCopyWith<$Res> {
+  factory $SetBundle$CopyWith(SetBundle$ value, $Res Function(SetBundle$) then) = _$SetBundle$CopyWithImpl<$Res>;
+  @override
+  $Res call({Bundle bundle});
+
+  @override
+  $BundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$SetBundle$CopyWithImpl<$Res> extends _$SetBundleCopyWithImpl<$Res> implements $SetBundle$CopyWith<$Res> {
+  _$SetBundle$CopyWithImpl(SetBundle$ _value, $Res Function(SetBundle$) _then)
+      : super(_value, (v) => _then(v as SetBundle$));
+
+  @override
+  SetBundle$ get _value => super._value as SetBundle$;
+
+  @override
+  $Res call({
+    Object? bundle = freezed,
+  }) {
+    return _then(SetBundle$(
+      bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as Bundle,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetBundle$ implements SetBundle$ {
+  const _$SetBundle$(this.bundle);
+
+  @override
+  final Bundle bundle;
+
+  @override
+  String toString() {
+    return 'SetBundle(bundle: $bundle)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SetBundle$ &&
+            const DeepCollectionEquality().equals(other.bundle, bundle));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundle));
+
+  @JsonKey(ignore: true)
+  @override
+  $SetBundle$CopyWith<SetBundle$> get copyWith => _$SetBundle$CopyWithImpl<SetBundle$>(this, _$identity);
+}
+
+abstract class SetBundle$ implements SetBundle {
+  const factory SetBundle$(Bundle bundle) = _$SetBundle$;
+
+  @override
+  Bundle get bundle;
+  @override
+  @JsonKey(ignore: true)
+  $SetBundle$CopyWith<SetBundle$> get copyWith => throw _privateConstructorUsedError;
+}

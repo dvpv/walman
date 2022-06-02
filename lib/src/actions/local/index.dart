@@ -18,3 +18,5 @@ part 'update_access_time.dart';
 part 'password_generator.dart';
 
 part 'update_persistent_state.dart';
+
+part 'set_bundle.dart';

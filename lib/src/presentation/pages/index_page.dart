@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/containers/navigation_container.dart';
+import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/app_bar_element.dart';
 import 'package:walman/src/presentation/components/app_bar_menu_button.dart';
@@ -130,7 +132,14 @@ class IndexPage extends StatelessWidget {
                   ],
                 ),
               ),
-              body: body,
+              body: PendingContainer(
+                builder: (BuildContext context, Set<String> pending) {
+                  if (pending.contains(GetBundle.pendingKey)) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  return body;
+                },
+              ),
             );
           },
         );
