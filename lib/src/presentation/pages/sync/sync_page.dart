@@ -32,6 +32,10 @@ class _SyncPageState extends State<SyncPage> {
         ),
       );
     }
+    final FirebaseUser? firebaseUser = store.state.firebaseUser;
+    if (firebaseUser != null) {
+      store.dispatch(CloudGetVaultStart(firebaseUser: firebaseUser, masterKey: store.state.masterKey!));
+    }
   }
 
   @override
@@ -47,7 +51,7 @@ class _SyncPageState extends State<SyncPage> {
         builder: (BuildContext context, Set<String> pending) {
           return VaultContainer(
             builder: (BuildContext context, List<VaultBundle> vault) {
-              if (pending.contains(BlockchainGetVault.pendingKey)) {
+              if (pending.contains(BlockchainGetVault.pendingKey) || pending.contains(CloudGetVault.pendingKey)) {
                 return const Center(child: CircularProgressIndicator());
               }
               if (vault.isEmpty) {
