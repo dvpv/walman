@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walman/src/containers/bundle_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/components/code_list_tile.dart';
+import 'package:walman/src/presentation/pages/code/code_list_tile.dart';
 import 'package:walman/src/presentation/pages/code/no_codes_message.dart';
 
 class CodesPage extends StatelessWidget {

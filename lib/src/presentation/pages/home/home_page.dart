@@ -10,10 +10,10 @@ import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/containers/persistent_state.dart';
 import 'package:walman/src/containers/wallet_info_container.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/components/code_card.dart';
-import 'package:walman/src/presentation/components/password_list_tile.dart';
+import 'package:walman/src/presentation/pages/code/code_card.dart';
 import 'package:walman/src/presentation/pages/code/no_codes_message.dart';
 import 'package:walman/src/presentation/pages/password/no_passwords_message.dart';
+import 'package:walman/src/presentation/pages/password/password_list_tile.dart';
 import 'package:walman/src/presentation/pages/wallet/no_wallet_message.dart';
 
 const double _kDividerIndent = 50;

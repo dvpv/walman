@@ -19,6 +19,7 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
   TypedReducer<AppState, SetBundle>(_setBundle),
   TypedReducer<AppState, RemoveFromVault>(_removeFromVault),
+  TypedReducer<AppState, DeleteOTPToken>(_deleteOTPToken),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -172,6 +173,18 @@ AppState _createOTPToken(AppState state, CreateNewOTPTokenSuccessful action) {
     persistentState: state.persistentState.copyWith(
       bundle: state.persistentState.bundle.copyWith(
         otpTokens: <OTPToken>{...state.persistentState.bundle.otpTokens, action.otpToken}.toList(),
+      ),
+    ),
+  );
+}
+
+AppState _deleteOTPToken(AppState state, DeleteOTPToken action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle.copyWith(
+        otpTokens: <OTPToken>{...state.persistentState.bundle.otpTokens}
+            .where((OTPToken token) => token.id != action.otpToken.id)
+            .toList(),
       ),
     ),
   );

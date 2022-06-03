@@ -2987,3 +2987,135 @@ abstract class CreateNewOTPTokenError implements CreateNewOTPToken, ErrorAction 
   @JsonKey(ignore: true)
   $CreateNewOTPTokenErrorCopyWith<CreateNewOTPTokenError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$DeleteOTPTokenTearOff {
+  const _$DeleteOTPTokenTearOff();
+
+  DeleteOTPToken$ call(OTPToken otpToken) {
+    return DeleteOTPToken$(
+      otpToken,
+    );
+  }
+}
+
+/// @nodoc
+const $DeleteOTPToken = _$DeleteOTPTokenTearOff();
+
+/// @nodoc
+mixin _$DeleteOTPToken {
+  OTPToken get otpToken => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeleteOTPTokenCopyWith<DeleteOTPToken> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteOTPTokenCopyWith<$Res> {
+  factory $DeleteOTPTokenCopyWith(DeleteOTPToken value, $Res Function(DeleteOTPToken) then) =
+      _$DeleteOTPTokenCopyWithImpl<$Res>;
+  $Res call({OTPToken otpToken});
+
+  $OTPTokenCopyWith<$Res> get otpToken;
+}
+
+/// @nodoc
+class _$DeleteOTPTokenCopyWithImpl<$Res> implements $DeleteOTPTokenCopyWith<$Res> {
+  _$DeleteOTPTokenCopyWithImpl(this._value, this._then);
+
+  final DeleteOTPToken _value;
+  // ignore: unused_field
+  final $Res Function(DeleteOTPToken) _then;
+
+  @override
+  $Res call({
+    Object? otpToken = freezed,
+  }) {
+    return _then(_value.copyWith(
+      otpToken: otpToken == freezed
+          ? _value.otpToken
+          : otpToken // ignore: cast_nullable_to_non_nullable
+              as OTPToken,
+    ));
+  }
+
+  @override
+  $OTPTokenCopyWith<$Res> get otpToken {
+    return $OTPTokenCopyWith<$Res>(_value.otpToken, (value) {
+      return _then(_value.copyWith(otpToken: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class $DeleteOTPToken$CopyWith<$Res> implements $DeleteOTPTokenCopyWith<$Res> {
+  factory $DeleteOTPToken$CopyWith(DeleteOTPToken$ value, $Res Function(DeleteOTPToken$) then) =
+      _$DeleteOTPToken$CopyWithImpl<$Res>;
+  @override
+  $Res call({OTPToken otpToken});
+
+  @override
+  $OTPTokenCopyWith<$Res> get otpToken;
+}
+
+/// @nodoc
+class _$DeleteOTPToken$CopyWithImpl<$Res> extends _$DeleteOTPTokenCopyWithImpl<$Res>
+    implements $DeleteOTPToken$CopyWith<$Res> {
+  _$DeleteOTPToken$CopyWithImpl(DeleteOTPToken$ _value, $Res Function(DeleteOTPToken$) _then)
+      : super(_value, (v) => _then(v as DeleteOTPToken$));
+
+  @override
+  DeleteOTPToken$ get _value => super._value as DeleteOTPToken$;
+
+  @override
+  $Res call({
+    Object? otpToken = freezed,
+  }) {
+    return _then(DeleteOTPToken$(
+      otpToken == freezed
+          ? _value.otpToken
+          : otpToken // ignore: cast_nullable_to_non_nullable
+              as OTPToken,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteOTPToken$ implements DeleteOTPToken$ {
+  const _$DeleteOTPToken$(this.otpToken);
+
+  @override
+  final OTPToken otpToken;
+
+  @override
+  String toString() {
+    return 'DeleteOTPToken(otpToken: $otpToken)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DeleteOTPToken$ &&
+            const DeepCollectionEquality().equals(other.otpToken, otpToken));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(otpToken));
+
+  @JsonKey(ignore: true)
+  @override
+  $DeleteOTPToken$CopyWith<DeleteOTPToken$> get copyWith =>
+      _$DeleteOTPToken$CopyWithImpl<DeleteOTPToken$>(this, _$identity);
+}
+
+abstract class DeleteOTPToken$ implements DeleteOTPToken {
+  const factory DeleteOTPToken$(OTPToken otpToken) = _$DeleteOTPToken$;
+
+  @override
+  OTPToken get otpToken;
+  @override
+  @JsonKey(ignore: true)
+  $DeleteOTPToken$CopyWith<DeleteOTPToken$> get copyWith => throw _privateConstructorUsedError;
+}

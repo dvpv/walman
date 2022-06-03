@@ -9,3 +9,8 @@ class CreateNewOTPToken with _$CreateNewOTPToken implements AppAction {
   @Implements<ErrorAction>()
   const factory CreateNewOTPToken.error(Object error, StackTrace stackTrace) = CreateNewOTPTokenError;
 }
+
+@freezed
+class DeleteOTPToken with _$DeleteOTPToken implements AppAction {
+  const factory DeleteOTPToken(OTPToken otpToken) = DeleteOTPToken$;
+}

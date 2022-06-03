@@ -24,6 +24,7 @@ class LocalEpic {
       TypedEpic<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
       TypedEpic<AppState, SetBundle>(_setBundle),
       TypedEpic<AppState, CreateNewOTPTokenStart>(_createNewOTPToken),
+      TypedEpic<AppState, DeleteOTPToken>(_deleteOTPToken),
     ]);
   }
 
@@ -127,5 +128,9 @@ class LocalEpic {
           )
           .onErrorReturnWith(CreateNewOTPTokenError.new);
     });
+  }
+
+  Stream<AppAction> _deleteOTPToken(Stream<DeleteOTPToken> actions, EpicStore<AppState> store) {
+    return actions.map((DeleteOTPToken action) => StoreBundleStart(bundle: store.state.persistentState.bundle));
   }
 }

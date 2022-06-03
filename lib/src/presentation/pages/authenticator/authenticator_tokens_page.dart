@@ -50,6 +50,7 @@ class _AuthenticatorPageState extends State<AuthenticatorPage> {
         return TriggerUpdateContainer(
           builder: (BuildContext context, _) {
             return ListView.builder(
+              physics: const BouncingScrollPhysics(),
               itemCount: bundle.otpTokens.length,
               itemBuilder: (BuildContext context, int index) {
                 final OTPToken token = bundle.otpTokens[index];
