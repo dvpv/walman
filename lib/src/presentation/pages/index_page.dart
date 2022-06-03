@@ -43,18 +43,13 @@ class IndexPage extends StatelessWidget {
                   onTap: () => Navigator.popAndPushNamed(context, NewPasswordPage.route),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.place),
-                  title: const Text('Create a new place'),
-                  onTap: () => Navigator.popAndPushNamed(context, ScanNewAuthenticatorPage.route),
-                ),
-                ListTile(
                   leading: const Icon(Icons.qr_code),
                   title: const Text('Create a new code'),
                   onTap: () => Navigator.popAndPushNamed(context, ScanNewCodePage.route),
                 ),
                 ListTile(
                   leading: const Icon(Icons.password),
-                  title: const Text('Add a new authenticator token'),
+                  title: const Text('Add a new authentication token'),
                   onTap: () => Navigator.popAndPushNamed(context, ScanNewAuthenticatorPage.route),
                 ),
               ],

@@ -39,7 +39,7 @@ class HomePageSearchDelegate extends SearchDelegate<void> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    final List<BundleItem> items = <BundleItem>[..._bundle.passwords, ..._bundle.codes]
+    final List<BundleItem> items = <BundleItem>[..._bundle.passwords, ..._bundle.codes, ..._bundle.otpTokens]
         .where((BundleItem item) => item.title.toLowerCase().contains(query.toLowerCase()))
         .toList()
       ..sort((BundleItem a, BundleItem b) => a.timesAccessed - b.timesAccessed);
@@ -47,20 +47,49 @@ class HomePageSearchDelegate extends SearchDelegate<void> {
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
         final BundleItem item = items[index];
-        return ListTile(
-          leading: item is Password ? const Icon(Icons.lock) : const Icon(Icons.qr_code),
-          title: Text(item.title),
-          subtitle: item is Password ? Text(item.username) : null,
-          onTap: () {
-            close(context, null);
-            StoreProvider.of<AppState>(context).dispatch(
-              SelectItemDetails(
-                item.id,
-                (_) => Navigator.pushNamed(context, item is Password ? PasswordDetails.route : CodeDetails.route),
-              ),
-            );
-          },
-        );
+        if (item is Password) {
+          return ListTile(
+            leading: const Icon(Icons.lock),
+            title: Text(item.title),
+            subtitle: Text(item.username),
+            onTap: () {
+              close(context, null);
+              StoreProvider.of<AppState>(context).dispatch(
+                SelectItemDetails(
+                  item.id,
+                  (_) => Navigator.pushNamed(context, PasswordDetails.route),
+                ),
+              );
+            },
+          );
+        }
+        if (item is Code) {
+          return ListTile(
+            leading: const Icon(Icons.qr_code),
+            title: Text(item.title),
+            onTap: () {
+              close(context, null);
+              StoreProvider.of<AppState>(context).dispatch(
+                SelectItemDetails(
+                  item.id,
+                  (_) => Navigator.pushNamed(context, CodeDetails.route),
+                ),
+              );
+            },
+          );
+        }
+        if (item is OTPToken) {
+          return ListTile(
+            leading: const Icon(Icons.password),
+            title: Text(item.title),
+            subtitle: Text(item.path.replaceAll('/', '')),
+            onTap: () {
+              close(context, null);
+              StoreProvider.of<AppState>(context).dispatch(const ChangeAppPage(3));
+            },
+          );
+        }
+        return Container();
       },
     );
   }
