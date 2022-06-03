@@ -18,6 +18,7 @@ import 'package:walman/src/presentation/pages/wallet/no_wallet_message.dart';
 
 const double _kDividerIndent = 50;
 const double _kDividerHeight = 50;
+const int _kUpdateIntervalSeconds = 5;
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     if (walletPrivateKey != null) {
       store.dispatch(GetWalletInfoStart(walletPrivateKey: walletPrivateKey));
     }
-    _timer = Timer.periodic(const Duration(seconds: 5), (_) {
+    _timer = Timer.periodic(const Duration(seconds: _kUpdateIntervalSeconds), (_) {
       final Store<AppState> store = StoreProvider.of<AppState>(context, listen: false);
       final String? walletPrivateKey = store.state.persistentState.walletPrivateKey;
       if (walletPrivateKey != null) {
@@ -50,10 +51,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    super.dispose();
     if (_timer.isActive) {
       _timer.cancel();
     }
+    super.dispose();
   }
 
   @override

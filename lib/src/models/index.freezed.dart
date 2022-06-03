@@ -1523,10 +1523,14 @@ Bundle _$BundleFromJson(Map<String, dynamic> json) {
 class _$BundleTearOff {
   const _$BundleTearOff();
 
-  Bundle$ call({List<Password> passwords = const <Password>[], List<Code> codes = const <Code>[]}) {
+  Bundle$ call(
+      {List<Password> passwords = const <Password>[],
+      List<Code> codes = const <Code>[],
+      List<OTPToken> otpTokens = const <OTPToken>[]}) {
     return Bundle$(
       passwords: passwords,
       codes: codes,
+      otpTokens: otpTokens,
     );
   }
 
@@ -1542,6 +1546,7 @@ const $Bundle = _$BundleTearOff();
 mixin _$Bundle {
   List<Password> get passwords => throw _privateConstructorUsedError;
   List<Code> get codes => throw _privateConstructorUsedError;
+  List<OTPToken> get otpTokens => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1551,7 +1556,7 @@ mixin _$Bundle {
 /// @nodoc
 abstract class $BundleCopyWith<$Res> {
   factory $BundleCopyWith(Bundle value, $Res Function(Bundle) then) = _$BundleCopyWithImpl<$Res>;
-  $Res call({List<Password> passwords, List<Code> codes});
+  $Res call({List<Password> passwords, List<Code> codes, List<OTPToken> otpTokens});
 }
 
 /// @nodoc
@@ -1566,6 +1571,7 @@ class _$BundleCopyWithImpl<$Res> implements $BundleCopyWith<$Res> {
   $Res call({
     Object? passwords = freezed,
     Object? codes = freezed,
+    Object? otpTokens = freezed,
   }) {
     return _then(_value.copyWith(
       passwords: passwords == freezed
@@ -1576,6 +1582,10 @@ class _$BundleCopyWithImpl<$Res> implements $BundleCopyWith<$Res> {
           ? _value.codes
           : codes // ignore: cast_nullable_to_non_nullable
               as List<Code>,
+      otpTokens: otpTokens == freezed
+          ? _value.otpTokens
+          : otpTokens // ignore: cast_nullable_to_non_nullable
+              as List<OTPToken>,
     ));
   }
 }
@@ -1584,7 +1594,7 @@ class _$BundleCopyWithImpl<$Res> implements $BundleCopyWith<$Res> {
 abstract class $Bundle$CopyWith<$Res> implements $BundleCopyWith<$Res> {
   factory $Bundle$CopyWith(Bundle$ value, $Res Function(Bundle$) then) = _$Bundle$CopyWithImpl<$Res>;
   @override
-  $Res call({List<Password> passwords, List<Code> codes});
+  $Res call({List<Password> passwords, List<Code> codes, List<OTPToken> otpTokens});
 }
 
 /// @nodoc
@@ -1598,6 +1608,7 @@ class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements 
   $Res call({
     Object? passwords = freezed,
     Object? codes = freezed,
+    Object? otpTokens = freezed,
   }) {
     return _then(Bundle$(
       passwords: passwords == freezed
@@ -1608,6 +1619,10 @@ class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements 
           ? _value.codes
           : codes // ignore: cast_nullable_to_non_nullable
               as List<Code>,
+      otpTokens: otpTokens == freezed
+          ? _value.otpTokens
+          : otpTokens // ignore: cast_nullable_to_non_nullable
+              as List<OTPToken>,
     ));
   }
 }
@@ -1615,7 +1630,8 @@ class _$Bundle$CopyWithImpl<$Res> extends _$BundleCopyWithImpl<$Res> implements 
 /// @nodoc
 @JsonSerializable()
 class _$Bundle$ implements Bundle$ {
-  const _$Bundle$({this.passwords = const <Password>[], this.codes = const <Code>[]});
+  const _$Bundle$(
+      {this.passwords = const <Password>[], this.codes = const <Code>[], this.otpTokens = const <OTPToken>[]});
 
   factory _$Bundle$.fromJson(Map<String, dynamic> json) => _$$Bundle$FromJson(json);
 
@@ -1625,10 +1641,13 @@ class _$Bundle$ implements Bundle$ {
   @JsonKey()
   @override
   final List<Code> codes;
+  @JsonKey()
+  @override
+  final List<OTPToken> otpTokens;
 
   @override
   String toString() {
-    return 'Bundle(passwords: $passwords, codes: $codes)';
+    return 'Bundle(passwords: $passwords, codes: $codes, otpTokens: $otpTokens)';
   }
 
   @override
@@ -1637,12 +1656,13 @@ class _$Bundle$ implements Bundle$ {
         (other.runtimeType == runtimeType &&
             other is Bundle$ &&
             const DeepCollectionEquality().equals(other.passwords, passwords) &&
-            const DeepCollectionEquality().equals(other.codes, codes));
+            const DeepCollectionEquality().equals(other.codes, codes) &&
+            const DeepCollectionEquality().equals(other.otpTokens, otpTokens));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(passwords), const DeepCollectionEquality().hash(codes));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(passwords),
+      const DeepCollectionEquality().hash(codes), const DeepCollectionEquality().hash(otpTokens));
 
   @JsonKey(ignore: true)
   @override
@@ -1655,7 +1675,7 @@ class _$Bundle$ implements Bundle$ {
 }
 
 abstract class Bundle$ implements Bundle {
-  const factory Bundle$({List<Password> passwords, List<Code> codes}) = _$Bundle$;
+  const factory Bundle$({List<Password> passwords, List<Code> codes, List<OTPToken> otpTokens}) = _$Bundle$;
 
   factory Bundle$.fromJson(Map<String, dynamic> json) = _$Bundle$.fromJson;
 
@@ -1663,6 +1683,8 @@ abstract class Bundle$ implements Bundle {
   List<Password> get passwords;
   @override
   List<Code> get codes;
+  @override
+  List<OTPToken> get otpTokens;
   @override
   @JsonKey(ignore: true)
   $Bundle$CopyWith<Bundle$> get copyWith => throw _privateConstructorUsedError;
@@ -2628,4 +2650,421 @@ abstract class FirebaseUser$ implements FirebaseUser {
   @override
   @JsonKey(ignore: true)
   $FirebaseUser$CopyWith<FirebaseUser$> get copyWith => throw _privateConstructorUsedError;
+}
+
+OTPToken _$OTPTokenFromJson(Map<String, dynamic> json) {
+  return OTPToken$.fromJson(json);
+}
+
+/// @nodoc
+class _$OTPTokenTearOff {
+  const _$OTPTokenTearOff();
+
+  OTPToken$ call(
+      {required String id,
+      required String title,
+      required DateTime createdAt,
+      required DateTime lastAccess,
+      required int timesAccessed,
+      required OTPStandard standard,
+      required String path,
+      required String secret,
+      required String issuer,
+      required OTPAlgorithm algorithm,
+      required int period,
+      required int digits,
+      required Uri keyUri}) {
+    return OTPToken$(
+      id: id,
+      title: title,
+      createdAt: createdAt,
+      lastAccess: lastAccess,
+      timesAccessed: timesAccessed,
+      standard: standard,
+      path: path,
+      secret: secret,
+      issuer: issuer,
+      algorithm: algorithm,
+      period: period,
+      digits: digits,
+      keyUri: keyUri,
+    );
+  }
+
+  OTPToken fromJson(Map<String, Object?> json) {
+    return OTPToken.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $OTPToken = _$OTPTokenTearOff();
+
+/// @nodoc
+mixin _$OTPToken {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get lastAccess => throw _privateConstructorUsedError;
+  int get timesAccessed => throw _privateConstructorUsedError;
+  OTPStandard get standard => throw _privateConstructorUsedError;
+  String get path => throw _privateConstructorUsedError;
+  String get secret => throw _privateConstructorUsedError;
+  String get issuer => throw _privateConstructorUsedError;
+  OTPAlgorithm get algorithm => throw _privateConstructorUsedError;
+  int get period => throw _privateConstructorUsedError;
+  int get digits => throw _privateConstructorUsedError;
+  Uri get keyUri => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OTPTokenCopyWith<OTPToken> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OTPTokenCopyWith<$Res> {
+  factory $OTPTokenCopyWith(OTPToken value, $Res Function(OTPToken) then) = _$OTPTokenCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+      String title,
+      DateTime createdAt,
+      DateTime lastAccess,
+      int timesAccessed,
+      OTPStandard standard,
+      String path,
+      String secret,
+      String issuer,
+      OTPAlgorithm algorithm,
+      int period,
+      int digits,
+      Uri keyUri});
+}
+
+/// @nodoc
+class _$OTPTokenCopyWithImpl<$Res> implements $OTPTokenCopyWith<$Res> {
+  _$OTPTokenCopyWithImpl(this._value, this._then);
+
+  final OTPToken _value;
+  // ignore: unused_field
+  final $Res Function(OTPToken) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? createdAt = freezed,
+    Object? lastAccess = freezed,
+    Object? timesAccessed = freezed,
+    Object? standard = freezed,
+    Object? path = freezed,
+    Object? secret = freezed,
+    Object? issuer = freezed,
+    Object? algorithm = freezed,
+    Object? period = freezed,
+    Object? digits = freezed,
+    Object? keyUri = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lastAccess: lastAccess == freezed
+          ? _value.lastAccess
+          : lastAccess // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      timesAccessed: timesAccessed == freezed
+          ? _value.timesAccessed
+          : timesAccessed // ignore: cast_nullable_to_non_nullable
+              as int,
+      standard: standard == freezed
+          ? _value.standard
+          : standard // ignore: cast_nullable_to_non_nullable
+              as OTPStandard,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      secret: secret == freezed
+          ? _value.secret
+          : secret // ignore: cast_nullable_to_non_nullable
+              as String,
+      issuer: issuer == freezed
+          ? _value.issuer
+          : issuer // ignore: cast_nullable_to_non_nullable
+              as String,
+      algorithm: algorithm == freezed
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as OTPAlgorithm,
+      period: period == freezed
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as int,
+      digits: digits == freezed
+          ? _value.digits
+          : digits // ignore: cast_nullable_to_non_nullable
+              as int,
+      keyUri: keyUri == freezed
+          ? _value.keyUri
+          : keyUri // ignore: cast_nullable_to_non_nullable
+              as Uri,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $OTPToken$CopyWith<$Res> implements $OTPTokenCopyWith<$Res> {
+  factory $OTPToken$CopyWith(OTPToken$ value, $Res Function(OTPToken$) then) = _$OTPToken$CopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String id,
+      String title,
+      DateTime createdAt,
+      DateTime lastAccess,
+      int timesAccessed,
+      OTPStandard standard,
+      String path,
+      String secret,
+      String issuer,
+      OTPAlgorithm algorithm,
+      int period,
+      int digits,
+      Uri keyUri});
+}
+
+/// @nodoc
+class _$OTPToken$CopyWithImpl<$Res> extends _$OTPTokenCopyWithImpl<$Res> implements $OTPToken$CopyWith<$Res> {
+  _$OTPToken$CopyWithImpl(OTPToken$ _value, $Res Function(OTPToken$) _then)
+      : super(_value, (v) => _then(v as OTPToken$));
+
+  @override
+  OTPToken$ get _value => super._value as OTPToken$;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? createdAt = freezed,
+    Object? lastAccess = freezed,
+    Object? timesAccessed = freezed,
+    Object? standard = freezed,
+    Object? path = freezed,
+    Object? secret = freezed,
+    Object? issuer = freezed,
+    Object? algorithm = freezed,
+    Object? period = freezed,
+    Object? digits = freezed,
+    Object? keyUri = freezed,
+  }) {
+    return _then(OTPToken$(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: createdAt == freezed
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      lastAccess: lastAccess == freezed
+          ? _value.lastAccess
+          : lastAccess // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      timesAccessed: timesAccessed == freezed
+          ? _value.timesAccessed
+          : timesAccessed // ignore: cast_nullable_to_non_nullable
+              as int,
+      standard: standard == freezed
+          ? _value.standard
+          : standard // ignore: cast_nullable_to_non_nullable
+              as OTPStandard,
+      path: path == freezed
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      secret: secret == freezed
+          ? _value.secret
+          : secret // ignore: cast_nullable_to_non_nullable
+              as String,
+      issuer: issuer == freezed
+          ? _value.issuer
+          : issuer // ignore: cast_nullable_to_non_nullable
+              as String,
+      algorithm: algorithm == freezed
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as OTPAlgorithm,
+      period: period == freezed
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as int,
+      digits: digits == freezed
+          ? _value.digits
+          : digits // ignore: cast_nullable_to_non_nullable
+              as int,
+      keyUri: keyUri == freezed
+          ? _value.keyUri
+          : keyUri // ignore: cast_nullable_to_non_nullable
+              as Uri,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$OTPToken$ implements OTPToken$ {
+  const _$OTPToken$(
+      {required this.id,
+      required this.title,
+      required this.createdAt,
+      required this.lastAccess,
+      required this.timesAccessed,
+      required this.standard,
+      required this.path,
+      required this.secret,
+      required this.issuer,
+      required this.algorithm,
+      required this.period,
+      required this.digits,
+      required this.keyUri});
+
+  factory _$OTPToken$.fromJson(Map<String, dynamic> json) => _$$OTPToken$FromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String title;
+  @override
+  final DateTime createdAt;
+  @override
+  final DateTime lastAccess;
+  @override
+  final int timesAccessed;
+  @override
+  final OTPStandard standard;
+  @override
+  final String path;
+  @override
+  final String secret;
+  @override
+  final String issuer;
+  @override
+  final OTPAlgorithm algorithm;
+  @override
+  final int period;
+  @override
+  final int digits;
+  @override
+  final Uri keyUri;
+
+  @override
+  String toString() {
+    return 'OTPToken(id: $id, title: $title, createdAt: $createdAt, lastAccess: $lastAccess, timesAccessed: $timesAccessed, standard: $standard, path: $path, secret: $secret, issuer: $issuer, algorithm: $algorithm, period: $period, digits: $digits, keyUri: $keyUri)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is OTPToken$ &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
+            const DeepCollectionEquality().equals(other.lastAccess, lastAccess) &&
+            const DeepCollectionEquality().equals(other.timesAccessed, timesAccessed) &&
+            const DeepCollectionEquality().equals(other.standard, standard) &&
+            const DeepCollectionEquality().equals(other.path, path) &&
+            const DeepCollectionEquality().equals(other.secret, secret) &&
+            const DeepCollectionEquality().equals(other.issuer, issuer) &&
+            const DeepCollectionEquality().equals(other.algorithm, algorithm) &&
+            const DeepCollectionEquality().equals(other.period, period) &&
+            const DeepCollectionEquality().equals(other.digits, digits) &&
+            const DeepCollectionEquality().equals(other.keyUri, keyUri));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(createdAt),
+      const DeepCollectionEquality().hash(lastAccess),
+      const DeepCollectionEquality().hash(timesAccessed),
+      const DeepCollectionEquality().hash(standard),
+      const DeepCollectionEquality().hash(path),
+      const DeepCollectionEquality().hash(secret),
+      const DeepCollectionEquality().hash(issuer),
+      const DeepCollectionEquality().hash(algorithm),
+      const DeepCollectionEquality().hash(period),
+      const DeepCollectionEquality().hash(digits),
+      const DeepCollectionEquality().hash(keyUri));
+
+  @JsonKey(ignore: true)
+  @override
+  $OTPToken$CopyWith<OTPToken$> get copyWith => _$OTPToken$CopyWithImpl<OTPToken$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$OTPToken$ToJson(this);
+  }
+}
+
+abstract class OTPToken$ implements OTPToken {
+  const factory OTPToken$(
+      {required String id,
+      required String title,
+      required DateTime createdAt,
+      required DateTime lastAccess,
+      required int timesAccessed,
+      required OTPStandard standard,
+      required String path,
+      required String secret,
+      required String issuer,
+      required OTPAlgorithm algorithm,
+      required int period,
+      required int digits,
+      required Uri keyUri}) = _$OTPToken$;
+
+  factory OTPToken$.fromJson(Map<String, dynamic> json) = _$OTPToken$.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get title;
+  @override
+  DateTime get createdAt;
+  @override
+  DateTime get lastAccess;
+  @override
+  int get timesAccessed;
+  @override
+  OTPStandard get standard;
+  @override
+  String get path;
+  @override
+  String get secret;
+  @override
+  String get issuer;
+  @override
+  OTPAlgorithm get algorithm;
+  @override
+  int get period;
+  @override
+  int get digits;
+  @override
+  Uri get keyUri;
+  @override
+  @JsonKey(ignore: true)
+  $OTPToken$CopyWith<OTPToken$> get copyWith => throw _privateConstructorUsedError;
 }

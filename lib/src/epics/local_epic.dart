@@ -1,13 +1,17 @@
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
+import 'package:uuid/uuid.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/models/index.dart';
+import 'package:walman/src/utils/otp.dart';
 import 'package:walman/src/utils/password_generator.dart';
 
 class LocalEpic {
+  LocalEpic();
+
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, CreateNewPassword>(_createNewPassword),
@@ -19,6 +23,7 @@ class LocalEpic {
       TypedEpic<AppState, GeneratePasswordStart>(_generatePassword),
       TypedEpic<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
       TypedEpic<AppState, SetBundle>(_setBundle),
+      TypedEpic<AppState, CreateNewOTPTokenStart>(_createNewOTPToken),
     ]);
   }
 
@@ -87,5 +92,40 @@ class LocalEpic {
 
   Stream<AppAction> _setBundle(Stream<SetBundle> actions, EpicStore<AppState> store) {
     return actions.map((SetBundle action) => StoreBundleStart(bundle: action.bundle));
+  }
+
+  Stream<AppAction> _createNewOTPToken(Stream<CreateNewOTPTokenStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((CreateNewOTPTokenStart action) {
+      return Stream<void>.value(null)
+          .map((_) => Uri.parse(action.scanResult))
+          .map(
+            (Uri keyUri) => OTPToken(
+              id: const Uuid().v4(),
+              title: keyUri.queryParameters['issuer']!,
+              createdAt: DateTime.now(),
+              lastAccess: DateTime.now(),
+              timesAccessed: 0,
+              keyUri: keyUri,
+              issuer: keyUri.queryParameters['issuer']!,
+              path: keyUri.path,
+              secret: keyUri.queryParameters['secret']!,
+              standard: keyUri.host.toOTPStandard,
+              digits: int.parse(keyUri.queryParameters['digits']!),
+              period: int.parse(keyUri.queryParameters['period']!),
+              algorithm: keyUri.queryParameters['algorithm']!.toOTPAlgorithm,
+            ),
+          )
+          .expand<AppAction>(
+            (OTPToken otpToken) => <AppAction>[
+              CreateNewOTPTokenSuccessful(otpToken),
+              StoreBundleStart(
+                bundle: store.state.persistentState.bundle.copyWith(
+                  otpTokens: <OTPToken>{...store.state.persistentState.bundle.otpTokens, otpToken}.toList(),
+                ),
+              ),
+            ],
+          )
+          .onErrorReturnWith(CreateNewOTPTokenError.new);
+    });
   }
 }

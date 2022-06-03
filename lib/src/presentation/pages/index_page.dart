@@ -8,8 +8,8 @@ import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/app_bar_menu_button.dart';
 import 'package:walman/src/presentation/components/search_delegate.dart';
-import 'package:walman/src/presentation/pages/authenticator/authenticator_page.dart';
-import 'package:walman/src/presentation/pages/authenticator/new_authenticator_page.dart';
+import 'package:walman/src/presentation/pages/authenticator/authenticator_tokens_page.dart';
+import 'package:walman/src/presentation/pages/authenticator/scan_new_authenticator.dart';
 import 'package:walman/src/presentation/pages/code/codes_page.dart';
 import 'package:walman/src/presentation/pages/code/scan_new_code_page.dart';
 import 'package:walman/src/presentation/pages/home/home_page.dart';
@@ -45,12 +45,17 @@ class IndexPage extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.place),
                   title: const Text('Create a new place'),
-                  onTap: () => Navigator.popAndPushNamed(context, NewAuthenticatorPage.route),
+                  onTap: () => Navigator.popAndPushNamed(context, ScanNewAuthenticatorPage.route),
                 ),
                 ListTile(
                   leading: const Icon(Icons.qr_code),
                   title: const Text('Create a new code'),
                   onTap: () => Navigator.popAndPushNamed(context, ScanNewCodePage.route),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.password),
+                  title: const Text('Add a new authenticator token'),
+                  onTap: () => Navigator.popAndPushNamed(context, ScanNewAuthenticatorPage.route),
                 ),
               ],
             ),

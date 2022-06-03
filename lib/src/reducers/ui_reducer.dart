@@ -8,6 +8,7 @@ Reducer<AppState> uiReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, ShowPassword>(_showPassword),
   TypedReducer<AppState, GetWalletInfoSuccessful>(_getWalletInfo),
   TypedReducer<AppState, CreateWalletSuccessful>(_createWallet),
+  TypedReducer<AppState, TriggerUpdate>(_triggerUpdate),
 ]);
 
 AppState _changeAppPage(AppState state, ChangeAppPage action) {
@@ -28,4 +29,8 @@ AppState _getWalletInfo(AppState state, GetWalletInfoSuccessful action) {
 
 AppState _createWallet(AppState state, CreateWalletSuccessful action) {
   return state.copyWith(persistentState: state.persistentState.copyWith(walletPrivateKey: action.walletPrivateKey));
+}
+
+AppState _triggerUpdate(AppState state, TriggerUpdate action) {
+  return state;
 }

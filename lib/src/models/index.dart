@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:walman/src/utils/otp.dart';
 import 'package:walman/src/utils/password_generator.dart';
 
 part 'index.freezed.dart';
@@ -19,3 +20,5 @@ part 'code.dart';
 part 'bundle_item.dart';
 
 part 'firebase_user.dart';
+
+part 'otp_token.dart';

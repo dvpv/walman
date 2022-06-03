@@ -15,7 +15,7 @@ import 'package:walman/src/data/storage/firestore_api.dart';
 import 'package:walman/src/data/storage/secure_storage_api.dart';
 import 'package:walman/src/epics/app_epic.dart';
 import 'package:walman/src/models/index.dart';
-import 'package:walman/src/presentation/pages/authenticator/new_authenticator_page.dart';
+import 'package:walman/src/presentation/pages/authenticator/scan_new_authenticator.dart';
 import 'package:walman/src/presentation/pages/cloud/change_password.dart';
 import 'package:walman/src/presentation/pages/cloud/login_page.dart';
 import 'package:walman/src/presentation/pages/cloud/signup_page.dart';
@@ -96,8 +96,8 @@ class App extends StatelessWidget {
           SignupPage.route: (BuildContext context) => const SignupPage(),
           LoginPage.route: (BuildContext context) => const LoginPage(),
           NewPasswordPage.route: (BuildContext context) => const NewPasswordPage(),
-          NewAuthenticatorPage.route: (BuildContext context) => const NewAuthenticatorPage(),
           ScanNewCodePage.route: (BuildContext context) => const ScanNewCodePage(),
+          ScanNewAuthenticatorPage.route: (BuildContext context) => const ScanNewAuthenticatorPage(),
           PasswordDetails.route: (BuildContext context) => const PasswordDetails(),
           NewCodePage.route: (BuildContext context) => const NewCodePage(),
           CodeDetails.route: (BuildContext context) => const CodeDetails(),

@@ -27,20 +27,19 @@ class _NewCodePageState extends State<NewCodePage> {
   void _onSubmit(BuildContext context) {
     if (!_formKey.currentState!.validate()) {
       return;
-    } else {
-      final Store<AppState> store = StoreProvider.of<AppState>(context);
-      final Code code = store.state.createCodeState.code!;
-      store.dispatch(
-        CreateNewCode(
-          code.copyWith(
-            title: _title.text,
-            note: _note.text,
-          ),
-          store.state.masterKey!,
-        ),
-      );
-      Navigator.pop(context);
     }
+    final Store<AppState> store = StoreProvider.of<AppState>(context);
+    final Code code = store.state.createCodeState.code!;
+    store.dispatch(
+      CreateNewCode(
+        code.copyWith(
+          title: _title.text,
+          note: _note.text,
+        ),
+        store.state.masterKey!,
+      ),
+    );
+    Navigator.pop(context);
   }
 
   @override
@@ -49,9 +48,6 @@ class _NewCodePageState extends State<NewCodePage> {
       builder: (BuildContext context, CreateCodeState state) {
         return Scaffold(
           appBar: AppBar(
-            bottomOpacity: 0,
-            elevation: 0,
-            backgroundColor: Colors.transparent,
             leading: TextButton(
               style: appBarButtonStyle(),
               child: const Text(

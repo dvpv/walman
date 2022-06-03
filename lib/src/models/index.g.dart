@@ -123,11 +123,15 @@ _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(
               const <Password>[],
       codes: (json['codes'] as List<dynamic>?)?.map((e) => Code.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Code>[],
+      otpTokens:
+          (json['otpTokens'] as List<dynamic>?)?.map((e) => OTPToken.fromJson(e as Map<String, dynamic>)).toList() ??
+              const <OTPToken>[],
     );
 
 Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
       'passwords': instance.passwords,
       'codes': instance.codes,
+      'otpTokens': instance.otpTokens,
     };
 
 _$VaultBundle$ _$$VaultBundle$FromJson(Map<String, dynamic> json) => _$VaultBundle$(
@@ -220,3 +224,46 @@ Map<String, dynamic> _$$FirebaseUser$ToJson(_$FirebaseUser$ instance) => <String
       'email': instance.email,
       'username': instance.username,
     };
+
+_$OTPToken$ _$$OTPToken$FromJson(Map<String, dynamic> json) => _$OTPToken$(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      lastAccess: DateTime.parse(json['lastAccess'] as String),
+      timesAccessed: json['timesAccessed'] as int,
+      standard: $enumDecode(_$OTPStandardEnumMap, json['standard']),
+      path: json['path'] as String,
+      secret: json['secret'] as String,
+      issuer: json['issuer'] as String,
+      algorithm: $enumDecode(_$OTPAlgorithmEnumMap, json['algorithm']),
+      period: json['period'] as int,
+      digits: json['digits'] as int,
+      keyUri: Uri.parse(json['keyUri'] as String),
+    );
+
+Map<String, dynamic> _$$OTPToken$ToJson(_$OTPToken$ instance) => <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'lastAccess': instance.lastAccess.toIso8601String(),
+      'timesAccessed': instance.timesAccessed,
+      'standard': _$OTPStandardEnumMap[instance.standard],
+      'path': instance.path,
+      'secret': instance.secret,
+      'issuer': instance.issuer,
+      'algorithm': _$OTPAlgorithmEnumMap[instance.algorithm],
+      'period': instance.period,
+      'digits': instance.digits,
+      'keyUri': instance.keyUri.toString(),
+    };
+
+const _$OTPStandardEnumMap = {
+  OTPStandard.totp: 'totp',
+  OTPStandard.hotp: 'hotp',
+};
+
+const _$OTPAlgorithmEnumMap = {
+  OTPAlgorithm.sha1: 'sha1',
+  OTPAlgorithm.sha256: 'sha256',
+  OTPAlgorithm.md5: 'md5',
+};

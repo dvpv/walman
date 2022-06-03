@@ -10,6 +10,7 @@ class Bundle with _$Bundle {
   const factory Bundle({
     @Default(<Password>[]) List<Password> passwords,
     @Default(<Code>[]) List<Code> codes,
+    @Default(<OTPToken>[]) List<OTPToken> otpTokens,
   }) = Bundle$;
 
   factory Bundle.fromJson(Map<dynamic, dynamic> json) => _$BundleFromJson(Map<String, dynamic>.from(json));
@@ -17,7 +18,7 @@ class Bundle with _$Bundle {
 
 extension BundleExtension on Bundle {
   int get itemCount {
-    return codes.length + passwords.length;
+    return codes.length + passwords.length + otpTokens.length;
   }
 }
 

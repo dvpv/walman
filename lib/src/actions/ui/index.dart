@@ -13,3 +13,5 @@ part 'select_item_details.dart';
 part 'show_password.dart';
 
 part 'wallet.dart';
+
+part 'trigger_update.dart';

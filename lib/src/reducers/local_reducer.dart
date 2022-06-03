@@ -6,6 +6,7 @@ import 'package:walman/src/models/index.dart';
 Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, CreateNewPassword>(_createNewPassword),
   TypedReducer<AppState, EditPasswordStart>(_editPasswordStart),
+  TypedReducer<AppState, CreateNewOTPTokenSuccessful>(_createOTPToken),
   TypedReducer<AppState, DeletePassword>(_deletePassword),
   TypedReducer<AppState, DeleteCode>(_deleteCode),
   TypedReducer<AppState, SetScannedCode>(_setScannedCode),
@@ -163,5 +164,15 @@ AppState _setBundle(AppState state, SetBundle action) {
 AppState _removeFromVault(AppState state, RemoveFromVault action) {
   return state.copyWith(
     vault: state.vault.where((VaultBundle element) => element.type != action.type).toList(),
+  );
+}
+
+AppState _createOTPToken(AppState state, CreateNewOTPTokenSuccessful action) {
+  return state.copyWith(
+    persistentState: state.persistentState.copyWith(
+      bundle: state.persistentState.bundle.copyWith(
+        otpTokens: <OTPToken>{...state.persistentState.bundle.otpTokens, action.otpToken}.toList(),
+      ),
+    ),
   );
 }

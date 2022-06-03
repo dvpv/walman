@@ -88,6 +88,7 @@ class CodeDetails extends StatelessWidget {
                   padding: const EdgeInsets.all(24),
                   child: Center(
                     child: ListView(
+                      physics: const BouncingScrollPhysics(),
                       children: <Widget>[
                         BarcodeWidget(
                           width: MediaQuery.of(context).size.width * 0.8,

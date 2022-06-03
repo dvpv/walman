@@ -2438,3 +2438,72 @@ abstract class CreateWalletError implements CreateWallet, ActionDone, ErrorActio
   @JsonKey(ignore: true)
   $CreateWalletErrorCopyWith<CreateWalletError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$TriggerUpdateTearOff {
+  const _$TriggerUpdateTearOff();
+
+  TriggerUpdate$ call() {
+    return const TriggerUpdate$();
+  }
+}
+
+/// @nodoc
+const $TriggerUpdate = _$TriggerUpdateTearOff();
+
+/// @nodoc
+mixin _$TriggerUpdate {}
+
+/// @nodoc
+abstract class $TriggerUpdateCopyWith<$Res> {
+  factory $TriggerUpdateCopyWith(TriggerUpdate value, $Res Function(TriggerUpdate) then) =
+      _$TriggerUpdateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$TriggerUpdateCopyWithImpl<$Res> implements $TriggerUpdateCopyWith<$Res> {
+  _$TriggerUpdateCopyWithImpl(this._value, this._then);
+
+  final TriggerUpdate _value;
+  // ignore: unused_field
+  final $Res Function(TriggerUpdate) _then;
+}
+
+/// @nodoc
+abstract class $TriggerUpdate$CopyWith<$Res> {
+  factory $TriggerUpdate$CopyWith(TriggerUpdate$ value, $Res Function(TriggerUpdate$) then) =
+      _$TriggerUpdate$CopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$TriggerUpdate$CopyWithImpl<$Res> extends _$TriggerUpdateCopyWithImpl<$Res>
+    implements $TriggerUpdate$CopyWith<$Res> {
+  _$TriggerUpdate$CopyWithImpl(TriggerUpdate$ _value, $Res Function(TriggerUpdate$) _then)
+      : super(_value, (v) => _then(v as TriggerUpdate$));
+
+  @override
+  TriggerUpdate$ get _value => super._value as TriggerUpdate$;
+}
+
+/// @nodoc
+
+class _$TriggerUpdate$ implements TriggerUpdate$ {
+  const _$TriggerUpdate$();
+
+  @override
+  String toString() {
+    return 'TriggerUpdate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other.runtimeType == runtimeType && other is TriggerUpdate$);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+abstract class TriggerUpdate$ implements TriggerUpdate {
+  const factory TriggerUpdate$() = _$TriggerUpdate$;
+}

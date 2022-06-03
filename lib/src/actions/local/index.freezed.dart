@@ -2470,3 +2470,520 @@ abstract class RemoveFromVault$ implements RemoveFromVault {
   @JsonKey(ignore: true)
   $RemoveFromVault$CopyWith<RemoveFromVault$> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$CreateNewOTPTokenTearOff {
+  const _$CreateNewOTPTokenTearOff();
+
+  CreateNewOTPTokenStart call(String scanResult) {
+    return CreateNewOTPTokenStart(
+      scanResult,
+    );
+  }
+
+  CreateNewOTPTokenSuccessful successful(OTPToken otpToken) {
+    return CreateNewOTPTokenSuccessful(
+      otpToken,
+    );
+  }
+
+  CreateNewOTPTokenError error(Object error, StackTrace stackTrace) {
+    return CreateNewOTPTokenError(
+      error,
+      stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $CreateNewOTPToken = _$CreateNewOTPTokenTearOff();
+
+/// @nodoc
+mixin _$CreateNewOTPToken {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String scanResult) $default, {
+    required TResult Function(OTPToken otpToken) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value) $default, {
+    required TResult Function(CreateNewOTPTokenSuccessful value) successful,
+    required TResult Function(CreateNewOTPTokenError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateNewOTPTokenCopyWith<$Res> {
+  factory $CreateNewOTPTokenCopyWith(CreateNewOTPToken value, $Res Function(CreateNewOTPToken) then) =
+      _$CreateNewOTPTokenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CreateNewOTPTokenCopyWithImpl<$Res> implements $CreateNewOTPTokenCopyWith<$Res> {
+  _$CreateNewOTPTokenCopyWithImpl(this._value, this._then);
+
+  final CreateNewOTPToken _value;
+  // ignore: unused_field
+  final $Res Function(CreateNewOTPToken) _then;
+}
+
+/// @nodoc
+abstract class $CreateNewOTPTokenStartCopyWith<$Res> {
+  factory $CreateNewOTPTokenStartCopyWith(CreateNewOTPTokenStart value, $Res Function(CreateNewOTPTokenStart) then) =
+      _$CreateNewOTPTokenStartCopyWithImpl<$Res>;
+  $Res call({String scanResult});
+}
+
+/// @nodoc
+class _$CreateNewOTPTokenStartCopyWithImpl<$Res> extends _$CreateNewOTPTokenCopyWithImpl<$Res>
+    implements $CreateNewOTPTokenStartCopyWith<$Res> {
+  _$CreateNewOTPTokenStartCopyWithImpl(CreateNewOTPTokenStart _value, $Res Function(CreateNewOTPTokenStart) _then)
+      : super(_value, (v) => _then(v as CreateNewOTPTokenStart));
+
+  @override
+  CreateNewOTPTokenStart get _value => super._value as CreateNewOTPTokenStart;
+
+  @override
+  $Res call({
+    Object? scanResult = freezed,
+  }) {
+    return _then(CreateNewOTPTokenStart(
+      scanResult == freezed
+          ? _value.scanResult
+          : scanResult // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateNewOTPTokenStart implements CreateNewOTPTokenStart {
+  const _$CreateNewOTPTokenStart(this.scanResult);
+
+  @override
+  final String scanResult;
+
+  @override
+  String toString() {
+    return 'CreateNewOTPToken(scanResult: $scanResult)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateNewOTPTokenStart &&
+            const DeepCollectionEquality().equals(other.scanResult, scanResult));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(scanResult));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateNewOTPTokenStartCopyWith<CreateNewOTPTokenStart> get copyWith =>
+      _$CreateNewOTPTokenStartCopyWithImpl<CreateNewOTPTokenStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String scanResult) $default, {
+    required TResult Function(OTPToken otpToken) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default(scanResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return $default?.call(scanResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(scanResult);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value) $default, {
+    required TResult Function(CreateNewOTPTokenSuccessful value) successful,
+    required TResult Function(CreateNewOTPTokenError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateNewOTPTokenStart implements CreateNewOTPToken {
+  const factory CreateNewOTPTokenStart(String scanResult) = _$CreateNewOTPTokenStart;
+
+  String get scanResult;
+  @JsonKey(ignore: true)
+  $CreateNewOTPTokenStartCopyWith<CreateNewOTPTokenStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateNewOTPTokenSuccessfulCopyWith<$Res> {
+  factory $CreateNewOTPTokenSuccessfulCopyWith(
+          CreateNewOTPTokenSuccessful value, $Res Function(CreateNewOTPTokenSuccessful) then) =
+      _$CreateNewOTPTokenSuccessfulCopyWithImpl<$Res>;
+  $Res call({OTPToken otpToken});
+
+  $OTPTokenCopyWith<$Res> get otpToken;
+}
+
+/// @nodoc
+class _$CreateNewOTPTokenSuccessfulCopyWithImpl<$Res> extends _$CreateNewOTPTokenCopyWithImpl<$Res>
+    implements $CreateNewOTPTokenSuccessfulCopyWith<$Res> {
+  _$CreateNewOTPTokenSuccessfulCopyWithImpl(
+      CreateNewOTPTokenSuccessful _value, $Res Function(CreateNewOTPTokenSuccessful) _then)
+      : super(_value, (v) => _then(v as CreateNewOTPTokenSuccessful));
+
+  @override
+  CreateNewOTPTokenSuccessful get _value => super._value as CreateNewOTPTokenSuccessful;
+
+  @override
+  $Res call({
+    Object? otpToken = freezed,
+  }) {
+    return _then(CreateNewOTPTokenSuccessful(
+      otpToken == freezed
+          ? _value.otpToken
+          : otpToken // ignore: cast_nullable_to_non_nullable
+              as OTPToken,
+    ));
+  }
+
+  @override
+  $OTPTokenCopyWith<$Res> get otpToken {
+    return $OTPTokenCopyWith<$Res>(_value.otpToken, (value) {
+      return _then(_value.copyWith(otpToken: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$CreateNewOTPTokenSuccessful implements CreateNewOTPTokenSuccessful {
+  const _$CreateNewOTPTokenSuccessful(this.otpToken);
+
+  @override
+  final OTPToken otpToken;
+
+  @override
+  String toString() {
+    return 'CreateNewOTPToken.successful(otpToken: $otpToken)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateNewOTPTokenSuccessful &&
+            const DeepCollectionEquality().equals(other.otpToken, otpToken));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(otpToken));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateNewOTPTokenSuccessfulCopyWith<CreateNewOTPTokenSuccessful> get copyWith =>
+      _$CreateNewOTPTokenSuccessfulCopyWithImpl<CreateNewOTPTokenSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String scanResult) $default, {
+    required TResult Function(OTPToken otpToken) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful(otpToken);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return successful?.call(otpToken);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(otpToken);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value) $default, {
+    required TResult Function(CreateNewOTPTokenSuccessful value) successful,
+    required TResult Function(CreateNewOTPTokenError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateNewOTPTokenSuccessful implements CreateNewOTPToken {
+  const factory CreateNewOTPTokenSuccessful(OTPToken otpToken) = _$CreateNewOTPTokenSuccessful;
+
+  OTPToken get otpToken;
+  @JsonKey(ignore: true)
+  $CreateNewOTPTokenSuccessfulCopyWith<CreateNewOTPTokenSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateNewOTPTokenErrorCopyWith<$Res> {
+  factory $CreateNewOTPTokenErrorCopyWith(CreateNewOTPTokenError value, $Res Function(CreateNewOTPTokenError) then) =
+      _$CreateNewOTPTokenErrorCopyWithImpl<$Res>;
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class _$CreateNewOTPTokenErrorCopyWithImpl<$Res> extends _$CreateNewOTPTokenCopyWithImpl<$Res>
+    implements $CreateNewOTPTokenErrorCopyWith<$Res> {
+  _$CreateNewOTPTokenErrorCopyWithImpl(CreateNewOTPTokenError _value, $Res Function(CreateNewOTPTokenError) _then)
+      : super(_value, (v) => _then(v as CreateNewOTPTokenError));
+
+  @override
+  CreateNewOTPTokenError get _value => super._value as CreateNewOTPTokenError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+  }) {
+    return _then(CreateNewOTPTokenError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ErrorAction>()
+class _$CreateNewOTPTokenError implements CreateNewOTPTokenError {
+  const _$CreateNewOTPTokenError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'CreateNewOTPToken.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CreateNewOTPTokenError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(error), const DeepCollectionEquality().hash(stackTrace));
+
+  @JsonKey(ignore: true)
+  @override
+  $CreateNewOTPTokenErrorCopyWith<CreateNewOTPTokenError> get copyWith =>
+      _$CreateNewOTPTokenErrorCopyWithImpl<CreateNewOTPTokenError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String scanResult) $default, {
+    required TResult Function(OTPToken otpToken) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String scanResult)? $default, {
+    TResult Function(OTPToken otpToken)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value) $default, {
+    required TResult Function(CreateNewOTPTokenSuccessful value) successful,
+    required TResult Function(CreateNewOTPTokenError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(CreateNewOTPTokenStart value)? $default, {
+    TResult Function(CreateNewOTPTokenSuccessful value)? successful,
+    TResult Function(CreateNewOTPTokenError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateNewOTPTokenError implements CreateNewOTPToken, ErrorAction {
+  const factory CreateNewOTPTokenError(Object error, StackTrace stackTrace) = _$CreateNewOTPTokenError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @JsonKey(ignore: true)
+  $CreateNewOTPTokenErrorCopyWith<CreateNewOTPTokenError> get copyWith => throw _privateConstructorUsedError;
+}

@@ -24,7 +24,7 @@ class NoCodesMessage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: ElevatedButton(
             onPressed: () => Navigator.pushNamed(context, ScanNewCodePage.route),
-            child: const Text('Create'),
+            child: const Text('Scan'),
           ),
         ),
       ],
