@@ -64,3 +64,8 @@ docs/*.fdb_latexmk
 docs/*.fls
 docs/*.synctex.gz
 docs/*.toc
+docs/*.bbl
+docs/*.bcf
+docs/*.blg
+docs/*.run.xml
+

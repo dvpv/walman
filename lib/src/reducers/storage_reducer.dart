@@ -48,7 +48,8 @@ AppState _blockchainGetVault(AppState state, BlockchainGetVaultSuccessful action
     vault: <VaultBundle>{
       ...state.vault.where((VaultBundle element) => element.type != BundleType.blockchain),
       ...action.vault,
-    }.toList(),
+    }.toList()
+      ..sort((VaultBundle a, VaultBundle b) => b.storedAt.millisecondsSinceEpoch - a.storedAt.millisecondsSinceEpoch),
   );
 }
 
@@ -57,6 +58,7 @@ AppState _cloudGetVault(AppState state, CloudGetVaultSuccessful action) {
     vault: <VaultBundle>{
       ...state.vault.where((VaultBundle element) => element.type != BundleType.cloud),
       ...action.vault,
-    }.toList(),
+    }.toList()
+      ..sort((VaultBundle a, VaultBundle b) => b.storedAt.millisecondsSinceEpoch - a.storedAt.millisecondsSinceEpoch),
   );
 }

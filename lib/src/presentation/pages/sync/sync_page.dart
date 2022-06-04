@@ -51,9 +51,6 @@ class _SyncPageState extends State<SyncPage> {
         builder: (BuildContext context, Set<String> pending) {
           return VaultContainer(
             builder: (BuildContext context, List<VaultBundle> vault) {
-              vault.sort(
-                (VaultBundle a, VaultBundle b) => b.storedAt.millisecondsSinceEpoch - a.storedAt.millisecondsSinceEpoch,
-              );
               if (pending.contains(BlockchainGetVault.pendingKey) ||
                   pending.contains(CloudGetVault.pendingKey) ||
                   pending.contains(CloudDeleteItemFromVault.pendingKey)) {

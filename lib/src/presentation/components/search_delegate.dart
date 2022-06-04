@@ -44,6 +44,7 @@ class HomePageSearchDelegate extends SearchDelegate<void> {
         .toList()
       ..sort((BundleItem a, BundleItem b) => a.timesAccessed - b.timesAccessed);
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
         final BundleItem item = items[index];

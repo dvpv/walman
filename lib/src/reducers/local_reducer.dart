@@ -164,7 +164,8 @@ AppState _setBundle(AppState state, SetBundle action) {
 
 AppState _removeFromVault(AppState state, RemoveFromVault action) {
   return state.copyWith(
-    vault: state.vault.where((VaultBundle element) => element.type != action.type).toList(),
+    vault: state.vault.where((VaultBundle element) => element.type != action.type).toList()
+      ..sort((VaultBundle a, VaultBundle b) => b.storedAt.millisecondsSinceEpoch - a.storedAt.millisecondsSinceEpoch),
   );
 }
 

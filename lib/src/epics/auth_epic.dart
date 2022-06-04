@@ -30,9 +30,11 @@ class AuthEpic {
     return actions.flatMap((FirebaseLoginStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _auth.login(email: action.email, password: action.password))
-          .map<FirebaseLogin>(
-            (FirebaseUser firebaseUser) =>
-                FirebaseLoginSuccessful(firebaseUser: firebaseUser, pendingId: action.pendingId),
+          .expand<AppAction>(
+            (FirebaseUser firebaseUser) => <AppAction>[
+              FirebaseLoginSuccessful(firebaseUser: firebaseUser, pendingId: action.pendingId),
+              CloudGetVaultStart(firebaseUser: firebaseUser, masterKey: store.state.masterKey!),
+            ],
           )
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => FirebaseLoginError(error, stackTrace, action.pendingId),

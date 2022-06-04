@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{geometry}
+\usepackage{indentfirst}
 
 \newgeometry{
     top=2.5cm,
@@ -71,6 +72,29 @@
 % \end{figure}
 
 \section{Context}
+
+\par In the last 30 years, the number of tasks that are digitalized has increased
+exponentially. The most important part of the security systems of these tasks
+is user management and authentication. The password is the most widely spread
+form of user authentication and thus is often the prime target of attackers
+that want to impersonate someone else.
+
+According to~\cite{systematicAnalysis}, a \textit{``systematic literature
+    review in the area of passwords and passwords security''}, there are many
+problems with password security and management ranging from weak passwords and
+password reuse, to users writing down passwords or sending them through
+unsecure channels. Most of these problems according
+to~\cite{systematicAnalysis} are solved by using password recommendations. A
+good solution to most of these problems is a password management tool. A
+password manager is a piece of software designed for generating and managing
+passwords, in this way the user can have unique, complex and safely stored
+password without having to remember them.
+
+Another area that has seen a considerable development recently is the
+cryptocurrency market. As of May 2022, the market cap of Bitcoin is around 565
+billion USD, and the market cap of Ethereum is around 214 billion USD.\@ In the
+case of Bitcoin, that is more than double of what it was in 2019 (around 211
+billion USD), referenced in~\cite{cryptocurrencyMarketAnalysis}.
 
 \section{Motivation}
 
@@ -160,5 +184,8 @@
 
 \chapter*{References}
 \addcontentsline{toc}{chapter}{References}
+
+\bibliographystyle{plain}
+\bibliography{references}
 
 \end{document}
