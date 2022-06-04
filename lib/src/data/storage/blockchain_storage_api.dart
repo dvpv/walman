@@ -67,8 +67,25 @@ class BlockchainStorageApi {
     );
   }
 
-  Future<void> removeBundle(int id) async {
-    throw Error();
+  Future<void> removeBundle({
+    required VaultBundle bundle,
+    required String walletPrivateKey,
+    required String masterKey,
+  }) async {
+    final List<VaultBundle> vault = await getVault(walletPrivateKey: walletPrivateKey, masterKey: masterKey);
+    final int index = vault.indexOf(bundle);
+    if (index != -1) {
+      final EthPrivateKey privateKey = EthPrivateKey.fromHex(walletPrivateKey);
+      await client.sendTransaction(
+        privateKey,
+        Transaction.callContract(
+          contract: contract,
+          function: contract.function('removeBundle'),
+          parameters: <int>[index],
+        ),
+        chainId: 4,
+      );
+    }
   }
 
   Future<List<VaultBundle>> getVault({required String walletPrivateKey, required String masterKey}) async {

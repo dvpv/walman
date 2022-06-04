@@ -16,6 +16,13 @@ class VaultBundleCard extends StatelessWidget {
     final Store<AppState> store = StoreProvider.of<AppState>(context);
     switch (vaultBundle.type) {
       case BundleType.blockchain:
+        store.dispatch(
+          BlockchainRemoveBundleStart(
+            masterKey: store.state.masterKey!,
+            walletPrivateKey: store.state.persistentState.walletPrivateKey!,
+            bundle: vaultBundle,
+          ),
+        );
         break;
       case BundleType.cloud:
         store.dispatch(

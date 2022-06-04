@@ -29,6 +29,7 @@ class StorageEpic {
       TypedEpic<AppState, CloudGetVaultStart>(_cloudGetVault),
       TypedEpic<AppState, CloudAddBundle>(_cloudAddBundle),
       TypedEpic<AppState, CloudDeleteItemFromVaultStart>(_cloudDeleteItemFromVault),
+      TypedEpic<AppState, BlockchainRemoveBundleStart>(_blockchainRemoveBundle),
     ]);
   }
 
@@ -268,6 +269,28 @@ class StorageEpic {
           )
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => CloudDeleteItemFromVaultError(error, stackTrace, action.pendingId),
+          );
+    });
+  }
+
+  Stream<AppAction> _blockchainRemoveBundle(Stream<BlockchainRemoveBundleStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((BlockchainRemoveBundleStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) => blockchainStorageApi.removeBundle(
+              bundle: action.bundle,
+              walletPrivateKey: action.walletPrivateKey,
+              masterKey: action.masterKey,
+            ),
+          )
+          .expand<AppAction>(
+            (_) => <AppAction>[
+              BlockchainRemoveBundleSuccessful(action.pendingId),
+              BlockchainGetVaultStart(masterKey: action.masterKey, walletPrivateKey: action.walletPrivateKey),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => BlockchainRemoveBundleError(error, stackTrace, action.pendingId),
           );
     });
   }

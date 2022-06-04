@@ -83,3 +83,31 @@ class BlockchainGetVault with _$BlockchainGetVault implements AppAction {
 
   static String get pendingKey => _kBlockchainGetVaultPendingId;
 }
+
+const String _kBlockchainRemoveBundlePendingId = 'BlockchainRemoveBundle';
+
+@freezed
+class BlockchainRemoveBundle with _$BlockchainRemoveBundle implements AppAction {
+  @Implements<ActionStart>()
+  const factory BlockchainRemoveBundle.start({
+    required String masterKey,
+    required String walletPrivateKey,
+    required VaultBundle bundle,
+    @Default(_kBlockchainRemoveBundlePendingId) String pendingId,
+  }) = BlockchainRemoveBundleStart;
+
+  @Implements<ActionDone>()
+  const factory BlockchainRemoveBundle.successful([
+    @Default(_kBlockchainRemoveBundlePendingId) String pendingId,
+  ]) = BlockchainRemoveBundleSuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory BlockchainRemoveBundle.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kBlockchainRemoveBundlePendingId) String pendingId,
+  ]) = BlockchainRemoveBundleError;
+
+  static String get pendingKey => _kBlockchainRemoveBundlePendingId;
+}
