@@ -45,12 +45,18 @@ AppState _blockchainRestoreLatestBundle(AppState state, BlockchainRestoreLatestB
 
 AppState _blockchainGetVault(AppState state, BlockchainGetVaultSuccessful action) {
   return state.copyWith(
-    vault: <VaultBundle>{...state.vault, ...action.vault}.toList(),
+    vault: <VaultBundle>{
+      ...state.vault.where((VaultBundle element) => element.type != BundleType.blockchain),
+      ...action.vault,
+    }.toList(),
   );
 }
 
 AppState _cloudGetVault(AppState state, CloudGetVaultSuccessful action) {
   return state.copyWith(
-    vault: <VaultBundle>{...state.vault, ...action.vault}.toList(),
+    vault: <VaultBundle>{
+      ...state.vault.where((VaultBundle element) => element.type != BundleType.cloud),
+      ...action.vault,
+    }.toList(),
   );
 }

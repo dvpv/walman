@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:redux/redux.dart';
 import 'package:walman/src/actions/local/index.dart';
+import 'package:walman/src/actions/storage/index.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/start_page.dart';
 
@@ -9,6 +11,24 @@ class VaultBundleCard extends StatelessWidget {
   const VaultBundleCard({Key? key, required this.vaultBundle}) : super(key: key);
 
   final VaultBundle vaultBundle;
+
+  void _delete(BuildContext context) {
+    final Store<AppState> store = StoreProvider.of<AppState>(context);
+    switch (vaultBundle.type) {
+      case BundleType.blockchain:
+        break;
+      case BundleType.cloud:
+        store.dispatch(
+          CloudDeleteItemFromVaultStart(
+            masterKey: store.state.masterKey!,
+            vault: store.state.vault,
+            firebaseUser: store.state.firebaseUser!,
+            bundle: vaultBundle,
+          ),
+        );
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +39,7 @@ class VaultBundleCard extends StatelessWidget {
           motion: const DrawerMotion(),
           children: <Widget>[
             SlidableAction(
-              onPressed: (BuildContext context) {},
+              onPressed: _delete,
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
               icon: Icons.delete,
@@ -28,6 +48,38 @@ class VaultBundleCard extends StatelessWidget {
           ],
         ),
         child: ListTile(
+          onLongPress: () {
+            showModalBottomSheet<void>(
+              context: context,
+              builder: (BuildContext context) {
+                return Container(
+                  color: Colors.black54,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(24),
+                        topRight: Radius.circular(24),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: const Icon(Icons.delete),
+                          title: const Text('Delete'),
+                          onTap: () {
+                            Navigator.pop(context);
+                            _delete(context);
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            );
+          },
           title: Text('${vaultBundle.bundle.itemCount} ${vaultBundle.bundle.itemCount < 2 ? 'item' : 'items'}'),
           subtitle: Text(
             '${vaultBundle.storedAt.hour}:${vaultBundle.storedAt.minute}:${vaultBundle.storedAt.second} - '

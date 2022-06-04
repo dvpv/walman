@@ -65,3 +65,32 @@ class CloudGetVault with _$CloudGetVault implements AppAction {
 
   static String get pendingKey => _kCloudGetVaultPendingId;
 }
+
+const String _kCloudDeleteItemFromVaultPendingId = 'CloudDeleteItemFromVault';
+
+@freezed
+class CloudDeleteItemFromVault with _$CloudDeleteItemFromVault implements AppAction {
+  @Implements<ActionStart>()
+  const factory CloudDeleteItemFromVault.start({
+    required String masterKey,
+    required List<VaultBundle> vault,
+    required FirebaseUser firebaseUser,
+    required VaultBundle bundle,
+    @Default(_kCloudDeleteItemFromVaultPendingId) String pendingId,
+  }) = CloudDeleteItemFromVaultStart;
+
+  @Implements<ActionDone>()
+  const factory CloudDeleteItemFromVault.successful([
+    @Default(_kCloudDeleteItemFromVaultPendingId) String pendingId,
+  ]) = CloudDeleteItemFromVaultSuccessful;
+
+  @Implements<ActionDone>()
+  @Implements<ErrorAction>()
+  const factory CloudDeleteItemFromVault.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kCloudDeleteItemFromVaultPendingId) String pendingId,
+  ]) = CloudDeleteItemFromVaultError;
+
+  static String get pendingKey => _kCloudDeleteItemFromVaultPendingId;
+}

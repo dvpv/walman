@@ -46,4 +46,22 @@ class FirestoreApi {
         .toList();
     await _firestore.doc('vaults/${user.uid}').set(<String, dynamic>{'vault': encryptedVault});
   }
+
+  Future<void> deleteBundleFromVault({
+    required FirebaseUser user,
+    required List<VaultBundle> vault,
+    required VaultBundle bundle,
+    required String masterKey,
+  }) async {
+    final List<Map<String, dynamic>> encryptedVault = vault
+        .where((VaultBundle element) => element.storedAt != bundle.storedAt)
+        .map(
+          (VaultBundle vaultBundle) => <String, dynamic>{
+            'bundle': encrypt(message: jsonEncode(vaultBundle.bundle), key: masterKey),
+            'storedAt': vaultBundle.storedAt.millisecondsSinceEpoch,
+          },
+        )
+        .toList();
+    await _firestore.doc('vaults/${user.uid}').set(<String, dynamic>{'vault': encryptedVault});
+  }
 }

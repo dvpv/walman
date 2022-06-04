@@ -6670,3 +6670,668 @@ abstract class CloudGetVaultError implements CloudGetVault, ActionDone, ErrorAct
   @JsonKey(ignore: true)
   $CloudGetVaultErrorCopyWith<CloudGetVaultError> get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$CloudDeleteItemFromVaultTearOff {
+  const _$CloudDeleteItemFromVaultTearOff();
+
+  CloudDeleteItemFromVaultStart start(
+      {required String masterKey,
+      required List<VaultBundle> vault,
+      required FirebaseUser firebaseUser,
+      required VaultBundle bundle,
+      String pendingId = _kCloudDeleteItemFromVaultPendingId}) {
+    return CloudDeleteItemFromVaultStart(
+      masterKey: masterKey,
+      vault: vault,
+      firebaseUser: firebaseUser,
+      bundle: bundle,
+      pendingId: pendingId,
+    );
+  }
+
+  CloudDeleteItemFromVaultSuccessful successful([String pendingId = _kCloudDeleteItemFromVaultPendingId]) {
+    return CloudDeleteItemFromVaultSuccessful(
+      pendingId,
+    );
+  }
+
+  CloudDeleteItemFromVaultError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kCloudDeleteItemFromVaultPendingId]) {
+    return CloudDeleteItemFromVaultError(
+      error,
+      stackTrace,
+      pendingId,
+    );
+  }
+}
+
+/// @nodoc
+const $CloudDeleteItemFromVault = _$CloudDeleteItemFromVaultTearOff();
+
+/// @nodoc
+mixin _$CloudDeleteItemFromVault {
+  String get pendingId => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudDeleteItemFromVaultStart value) start,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
+    required TResult Function(CloudDeleteItemFromVaultError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CloudDeleteItemFromVaultCopyWith<CloudDeleteItemFromVault> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudDeleteItemFromVaultCopyWith<$Res> {
+  factory $CloudDeleteItemFromVaultCopyWith(
+          CloudDeleteItemFromVault value, $Res Function(CloudDeleteItemFromVault) then) =
+      _$CloudDeleteItemFromVaultCopyWithImpl<$Res>;
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CloudDeleteItemFromVaultCopyWithImpl<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+  _$CloudDeleteItemFromVaultCopyWithImpl(this._value, this._then);
+
+  final CloudDeleteItemFromVault _value;
+  // ignore: unused_field
+  final $Res Function(CloudDeleteItemFromVault) _then;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $CloudDeleteItemFromVaultStartCopyWith<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+  factory $CloudDeleteItemFromVaultStartCopyWith(
+          CloudDeleteItemFromVaultStart value, $Res Function(CloudDeleteItemFromVaultStart) then) =
+      _$CloudDeleteItemFromVaultStartCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId});
+
+  $FirebaseUserCopyWith<$Res> get firebaseUser;
+  $VaultBundleCopyWith<$Res> get bundle;
+}
+
+/// @nodoc
+class _$CloudDeleteItemFromVaultStartCopyWithImpl<$Res> extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
+    implements $CloudDeleteItemFromVaultStartCopyWith<$Res> {
+  _$CloudDeleteItemFromVaultStartCopyWithImpl(
+      CloudDeleteItemFromVaultStart _value, $Res Function(CloudDeleteItemFromVaultStart) _then)
+      : super(_value, (v) => _then(v as CloudDeleteItemFromVaultStart));
+
+  @override
+  CloudDeleteItemFromVaultStart get _value => super._value as CloudDeleteItemFromVaultStart;
+
+  @override
+  $Res call({
+    Object? masterKey = freezed,
+    Object? vault = freezed,
+    Object? firebaseUser = freezed,
+    Object? bundle = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudDeleteItemFromVaultStart(
+      masterKey: masterKey == freezed
+          ? _value.masterKey
+          : masterKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      vault: vault == freezed
+          ? _value.vault
+          : vault // ignore: cast_nullable_to_non_nullable
+              as List<VaultBundle>,
+      firebaseUser: firebaseUser == freezed
+          ? _value.firebaseUser
+          : firebaseUser // ignore: cast_nullable_to_non_nullable
+              as FirebaseUser,
+      bundle: bundle == freezed
+          ? _value.bundle
+          : bundle // ignore: cast_nullable_to_non_nullable
+              as VaultBundle,
+      pendingId: pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $FirebaseUserCopyWith<$Res> get firebaseUser {
+    return $FirebaseUserCopyWith<$Res>(_value.firebaseUser, (value) {
+      return _then(_value.copyWith(firebaseUser: value));
+    });
+  }
+
+  @override
+  $VaultBundleCopyWith<$Res> get bundle {
+    return $VaultBundleCopyWith<$Res>(_value.bundle, (value) {
+      return _then(_value.copyWith(bundle: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionStart>()
+class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
+  const _$CloudDeleteItemFromVaultStart(
+      {required this.masterKey,
+      required this.vault,
+      required this.firebaseUser,
+      required this.bundle,
+      this.pendingId = _kCloudDeleteItemFromVaultPendingId});
+
+  @override
+  final String masterKey;
+  @override
+  final List<VaultBundle> vault;
+  @override
+  final FirebaseUser firebaseUser;
+  @override
+  final VaultBundle bundle;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudDeleteItemFromVault.start(masterKey: $masterKey, vault: $vault, firebaseUser: $firebaseUser, bundle: $bundle, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudDeleteItemFromVaultStart &&
+            const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
+            const DeepCollectionEquality().equals(other.vault, vault) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.bundle, bundle) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(masterKey),
+      const DeepCollectionEquality().hash(vault),
+      const DeepCollectionEquality().hash(firebaseUser),
+      const DeepCollectionEquality().hash(bundle),
+      const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudDeleteItemFromVaultStartCopyWith<CloudDeleteItemFromVaultStart> get copyWith =>
+      _$CloudDeleteItemFromVaultStartCopyWithImpl<CloudDeleteItemFromVaultStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(masterKey, vault, firebaseUser, bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(masterKey, vault, firebaseUser, bundle, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(masterKey, vault, firebaseUser, bundle, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudDeleteItemFromVaultStart value) start,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
+    required TResult Function(CloudDeleteItemFromVaultError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVault, ActionStart {
+  const factory CloudDeleteItemFromVaultStart(
+      {required String masterKey,
+      required List<VaultBundle> vault,
+      required FirebaseUser firebaseUser,
+      required VaultBundle bundle,
+      String pendingId}) = _$CloudDeleteItemFromVaultStart;
+
+  String get masterKey;
+  List<VaultBundle> get vault;
+  FirebaseUser get firebaseUser;
+  VaultBundle get bundle;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudDeleteItemFromVaultStartCopyWith<CloudDeleteItemFromVaultStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudDeleteItemFromVaultSuccessfulCopyWith<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+  factory $CloudDeleteItemFromVaultSuccessfulCopyWith(
+          CloudDeleteItemFromVaultSuccessful value, $Res Function(CloudDeleteItemFromVaultSuccessful) then) =
+      _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<$Res>;
+  @override
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<$Res> extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
+    implements $CloudDeleteItemFromVaultSuccessfulCopyWith<$Res> {
+  _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl(
+      CloudDeleteItemFromVaultSuccessful _value, $Res Function(CloudDeleteItemFromVaultSuccessful) _then)
+      : super(_value, (v) => _then(v as CloudDeleteItemFromVaultSuccessful));
+
+  @override
+  CloudDeleteItemFromVaultSuccessful get _value => super._value as CloudDeleteItemFromVaultSuccessful;
+
+  @override
+  $Res call({
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudDeleteItemFromVaultSuccessful(
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+class _$CloudDeleteItemFromVaultSuccessful implements CloudDeleteItemFromVaultSuccessful {
+  const _$CloudDeleteItemFromVaultSuccessful([this.pendingId = _kCloudDeleteItemFromVaultPendingId]);
+
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudDeleteItemFromVault.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudDeleteItemFromVaultSuccessful &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudDeleteItemFromVaultSuccessfulCopyWith<CloudDeleteItemFromVaultSuccessful> get copyWith =>
+      _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<CloudDeleteItemFromVaultSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudDeleteItemFromVaultStart value) start,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
+    required TResult Function(CloudDeleteItemFromVaultError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudDeleteItemFromVaultSuccessful implements CloudDeleteItemFromVault, ActionDone {
+  const factory CloudDeleteItemFromVaultSuccessful([String pendingId]) = _$CloudDeleteItemFromVaultSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudDeleteItemFromVaultSuccessfulCopyWith<CloudDeleteItemFromVaultSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CloudDeleteItemFromVaultErrorCopyWith<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+  factory $CloudDeleteItemFromVaultErrorCopyWith(
+          CloudDeleteItemFromVaultError value, $Res Function(CloudDeleteItemFromVaultError) then) =
+      _$CloudDeleteItemFromVaultErrorCopyWithImpl<$Res>;
+  @override
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class _$CloudDeleteItemFromVaultErrorCopyWithImpl<$Res> extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
+    implements $CloudDeleteItemFromVaultErrorCopyWith<$Res> {
+  _$CloudDeleteItemFromVaultErrorCopyWithImpl(
+      CloudDeleteItemFromVaultError _value, $Res Function(CloudDeleteItemFromVaultError) _then)
+      : super(_value, (v) => _then(v as CloudDeleteItemFromVaultError));
+
+  @override
+  CloudDeleteItemFromVaultError get _value => super._value as CloudDeleteItemFromVaultError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+    Object? pendingId = freezed,
+  }) {
+    return _then(CloudDeleteItemFromVaultError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      pendingId == freezed
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements<ActionDone>()
+@Implements<ErrorAction>()
+class _$CloudDeleteItemFromVaultError implements CloudDeleteItemFromVaultError {
+  const _$CloudDeleteItemFromVaultError(this.error, this.stackTrace,
+      [this.pendingId = _kCloudDeleteItemFromVaultPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @JsonKey()
+  @override
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'CloudDeleteItemFromVault.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CloudDeleteItemFromVaultError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.pendingId, pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+
+  @JsonKey(ignore: true)
+  @override
+  $CloudDeleteItemFromVaultErrorCopyWith<CloudDeleteItemFromVaultError> get copyWith =>
+      _$CloudDeleteItemFromVaultErrorCopyWithImpl<CloudDeleteItemFromVaultError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+        start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+        start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CloudDeleteItemFromVaultStart value) start,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
+    required TResult Function(CloudDeleteItemFromVaultError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CloudDeleteItemFromVaultStart value)? start,
+    TResult Function(CloudDeleteItemFromVaultSuccessful value)? successful,
+    TResult Function(CloudDeleteItemFromVaultError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudDeleteItemFromVaultError implements CloudDeleteItemFromVault, ActionDone, ErrorAction {
+  const factory CloudDeleteItemFromVaultError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$CloudDeleteItemFromVaultError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  $CloudDeleteItemFromVaultErrorCopyWith<CloudDeleteItemFromVaultError> get copyWith =>
+      throw _privateConstructorUsedError;
+}

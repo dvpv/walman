@@ -28,6 +28,7 @@ class StorageEpic {
       TypedEpic<AppState, CloudStoreVaultStart>(_cloudStoreVault),
       TypedEpic<AppState, CloudGetVaultStart>(_cloudGetVault),
       TypedEpic<AppState, CloudAddBundle>(_cloudAddBundle),
+      TypedEpic<AppState, CloudDeleteItemFromVaultStart>(_cloudDeleteItemFromVault),
     ]);
   }
 
@@ -243,5 +244,31 @@ class StorageEpic {
         firebaseUser: action.firebaseUser,
       ),
     );
+  }
+
+  Stream<AppAction> _cloudDeleteItemFromVault(
+    Stream<CloudDeleteItemFromVaultStart> actions,
+    EpicStore<AppState> store,
+  ) {
+    return actions.flatMap((CloudDeleteItemFromVaultStart action) {
+      return Stream<void>.value(null)
+          .asyncMap(
+            (_) => firestoreApi.deleteBundleFromVault(
+              user: action.firebaseUser,
+              vault: action.vault.where((VaultBundle element) => element.type == BundleType.cloud).toList(),
+              bundle: action.bundle,
+              masterKey: store.state.masterKey!,
+            ),
+          )
+          .expand<AppAction>(
+            (_) => <AppAction>[
+              CloudDeleteItemFromVaultSuccessful(action.pendingId),
+              CloudGetVaultStart(firebaseUser: action.firebaseUser, masterKey: store.state.masterKey!),
+            ],
+          )
+          .onErrorReturnWith(
+            (Object error, StackTrace stackTrace) => CloudDeleteItemFromVaultError(error, stackTrace, action.pendingId),
+          );
+    });
   }
 }

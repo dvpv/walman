@@ -69,58 +69,61 @@ class CodeListTile extends StatelessWidget {
             ),
           ],
         ),
-        child: ListTile(
-          title: Text(code.title),
-          trailing: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: BarcodeWidget(
-              drawText: false,
-              width: 50,
-              data: code.data,
-              barcode: barcodeFromScannerBarcodeFormat(code.format),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: ListTile(
+            title: Text(code.title),
+            trailing: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: BarcodeWidget(
+                drawText: false,
+                width: 50,
+                data: code.data,
+                barcode: barcodeFromScannerBarcodeFormat(code.format),
+              ),
             ),
-          ),
-          onTap: () => _onDetails(context, code),
-          onLongPress: () {
-            showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(
-                  color: Colors.black54,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(24),
-                        topRight: Radius.circular(24),
+            onTap: () => _onDetails(context, code),
+            onLongPress: () {
+              showModalBottomSheet<void>(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    color: Colors.black54,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24),
+                          topRight: Radius.circular(24),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          ListTile(
+                            leading: const Icon(Icons.remove_red_eye),
+                            title: const Text('View'),
+                            onTap: () {
+                              Navigator.pop(context);
+                              _onDetails(context, code);
+                            },
+                          ),
+                          ListTile(
+                            leading: const Icon(Icons.delete),
+                            title: const Text('Delete'),
+                            onTap: () {
+                              Navigator.pop(context);
+                              _onDelete(context, code);
+                            },
+                          ),
+                        ],
                       ),
                     ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        ListTile(
-                          leading: const Icon(Icons.remove_red_eye),
-                          title: const Text('View'),
-                          onTap: () {
-                            Navigator.pop(context);
-                            _onDetails(context, code);
-                          },
-                        ),
-                        ListTile(
-                          leading: const Icon(Icons.delete),
-                          title: const Text('Delete'),
-                          onTap: () {
-                            Navigator.pop(context);
-                            _onDelete(context, code);
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            );
-          },
+                  );
+                },
+              );
+            },
+          ),
         ),
       ),
     );

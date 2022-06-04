@@ -51,7 +51,9 @@ class _SyncPageState extends State<SyncPage> {
         builder: (BuildContext context, Set<String> pending) {
           return VaultContainer(
             builder: (BuildContext context, List<VaultBundle> vault) {
-              if (pending.contains(BlockchainGetVault.pendingKey) || pending.contains(CloudGetVault.pendingKey)) {
+              if (pending.contains(BlockchainGetVault.pendingKey) ||
+                  pending.contains(CloudGetVault.pendingKey) ||
+                  pending.contains(CloudDeleteItemFromVault.pendingKey)) {
                 return const Center(child: CircularProgressIndicator());
               }
               if (vault.isEmpty) {
