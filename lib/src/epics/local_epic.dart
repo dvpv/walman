@@ -126,7 +126,8 @@ class LocalEpic {
               ),
             ],
           )
-          .onErrorReturnWith(CreateNewOTPTokenError.new);
+          .onErrorReturnWith(CreateNewOTPTokenError.new)
+          .doOnData(action.onResult);
     });
   }
 

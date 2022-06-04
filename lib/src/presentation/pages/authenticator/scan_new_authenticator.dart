@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/local/index.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/button_styles.dart';
+import 'package:walman/src/presentation/components/snackbar.dart';
 import 'package:walman/src/presentation/start_page.dart';
 
 class ScanNewAuthenticatorPage extends StatelessWidget {
@@ -36,7 +38,19 @@ class ScanNewAuthenticatorPage extends StatelessWidget {
               torchEnabled: true,
             ),
             onDetect: (Barcode barcode, MobileScannerArguments? args) {
-              StoreProvider.of<AppState>(context).dispatch(CreateNewOTPTokenStart(barcode.rawValue!));
+              StoreProvider.of<AppState>(context).dispatch(
+                CreateNewOTPTokenStart(
+                  barcode.rawValue!,
+                  (AppAction action) {
+                    if (action is ErrorAction) {
+                      ScaffoldMessenger.of(context).showSnackBar(FailureSnackbar(content: 'Invalid Token'));
+                    }
+                    if (action is CreateNewOTPTokenSuccessful) {
+                      ScaffoldMessenger.of(context).showSnackBar(SuccessSnackbar(content: 'Token Created'));
+                    }
+                  },
+                ),
+              );
               Navigator.popUntil(context, ModalRoute.withName(StartPage.route));
             },
           ),
