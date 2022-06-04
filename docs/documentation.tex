@@ -1,0 +1,164 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+
+\newgeometry{
+    top=2.5cm,
+    bottom=3cm,
+    inner=2cm,
+    outer=2cm,
+}
+
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+
+\lhead{\scriptsize Computing and Information Technology\\
+    2022\\
+    David Daniel, Pava\\
+    Walman: A Virtual Wallet Management System}
+\rhead{\includegraphics[width=4cm]{images/logo_upt.jpg}}
+\cfoot{- \thepage\ -}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\headheight}{44pt}
+
+\fancypagestyle{titlepage}{
+    \lhead{\footnotesize Computing and Information Technology\\\textbf{2022}}
+    \rhead{\includegraphics[width=4cm]{images/logo_upt.jpg}}
+    \cfoot{}
+}
+
+\titleformat{\chapter}{\center\normalfont\LARGE\bfseries\MakeUppercase}{\thechapter}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\title{\LARGE WALMAN\\{ A Virtual Wallet Management System}}
+
+\titleformat{\section}{\normalfont\large\bfseries\MakeUppercase}{\thesection}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\title{\LARGE WALMAN\\{ A Virtual Wallet Management System}}
+
+\author{Candidate: David Daniel, Pava
+    \\Coordinator: Assoc. Prof.\ Razvan, Bogdan}
+
+\date{June 2022 Session}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{titlepage}
+    \begin{center}
+        \vspace*{10cm}
+        \LARGE\textbf{Walman\\A Virtual Wallet Management System}\\
+        \vfill
+    \end{center}
+    \begin{flushleft}
+        \large\textbf{Candidate: David Daniel, Pava
+            \\Coordinator: Assoc. Prof.\ Razvan, Bogdan}
+    \end{flushleft}
+
+\end{titlepage}
+
+\chapter*{Abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[scale=0.1]{images/utp_logo.jpg}
+%     \caption{Qr Code}\label{fig:qr}
+% \end{figure}
+
+\section{Context}
+
+\section{Motivation}
+
+\section{Similar Products Available on the Market}
+
+\chapter{Features}
+
+\section{Use Cases}
+
+\section{Password Management}
+
+\section{QR and Barcode Management}
+
+\section{OTP Authenticator}
+
+\subsection{The HOTP algorithm}
+
+\subsection{The TOTP algorithm}
+
+\section{Cryptocurrency Wallet}
+
+\section{Backup}
+
+\subsection{Cloud Backup}
+
+\subsection{Blockchain Backup}
+
+\chapter{Technology Stack}
+
+\section{Frontend}
+
+\subsection{Dart}
+
+\subsection{Flutter}
+
+\section{Firebase}
+
+\subsection{User Management}
+
+\subsection{Firestore}
+
+\section{Blockchain}
+
+\subsection{Ethereum}
+
+\subsection{Smart Contracts}
+
+\subsection{Solidity}
+
+\section{Development Environment}
+
+\chapter{Implementation}
+
+\section{System Architecture}
+
+\section{Redux}
+
+\section{Password Management}
+
+\section{QR and Barcode Management}
+
+\section{OTP Token Management}
+
+\section{Cryptocurrency Wallet}
+
+\section{Backup}
+
+\subsection{Cloud Backup}
+
+\subsection{Blockchain Backup}
+
+\section{Security}
+
+\chapter{Tests}
+
+\section{Test Pipeline}
+
+\section{Unit Tests}
+
+\section{Widget Tests}
+
+\section{Performance Statistics}
+
+\chapter{Conclusions}
+
+\section{Possible Improvements}
+
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+
+\end{document}
