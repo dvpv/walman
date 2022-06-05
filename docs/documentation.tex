@@ -4,6 +4,9 @@
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{indentfirst}
+\usepackage{plantuml}
+
+% chktex-file 44
 
 \newgeometry{
     top=2.5cm,
@@ -90,15 +93,108 @@ password manager is a piece of software designed for generating and managing
 passwords, in this way the user can have unique, complex and safely stored
 password without having to remember them.
 
-Another area that has seen a considerable development recently is the
-cryptocurrency market. As of May 2022, the market cap of Bitcoin is around 565
+Another great method to better secure you accounts is using a two factor
+authentication (2FA) method. These method vary from security questions, to one
+time passwords (OTP) sent from the server to the user via email or SMS, to OTPs
+generated using specialized algorithms such as: HMAC-based One Time Password
+(HOTP)\cite{hotp} and Time Based One Time Password (TOTP)\cite{totp}.
+
+The cryptocurrency market is another area that has seen a considerable
+development lately. As of May 2022, the market cap of Bitcoin is around 565
 billion USD, and the market cap of Ethereum is around 214 billion USD.\@ In the
 case of Bitcoin, that is more than double of what it was in 2019 (around 211
 billion USD), referenced in~\cite{cryptocurrencyMarketAnalysis}.
+Cryptocurrencies also offer secure and long term storage capabilities thanks to
+the blockchain technology. Blockchain backups, thanks to the decentralized
+nature of the blockchain, are very hard to be tempered with. A traditional
+cloud backup could be lost or inaccessible in more than one situations. The
+most obvious one is data loss happening as result of a cyber attack or the
+company simply going bankrupt. There are also situations in which the company
+itself can refuse to serve you anymore. They can freeze your account or just
+refuse to serve an entire country all-together, we have the recent example of
+companies like Visa and Mastercard refusing to serve russian citizens as result
+of political tensions. All these scenarios cannot happen in a decentralized
+blockchain system.
+
+Businesses that were traditionally not online like shopping also have inversely
+digitalized. Nowadays most of the hypermarkets offer fidelity cards. Usually
+these cards are built around a unique barcode or qr code. Often it's hard to
+manage all your cards, so a digital storage solution to solve this issue would
+help the end user better manage their cards.
+
+Considered all mentioned above, a user has to remember and manage a lot of
+information in order to interact with the currently available online
+infrastructure. A tool that could help them manage all this data better is a
+wallet manager.
 
 \section{Motivation}
 
+My personal motivation for creating a wallet manager is the fact that I want to
+use it myself. Also I wanted for a long time to explore the state of the art in
+smart contract development, so this was a great occasion to do so.
+
+I chose to create this project in the form of a mobile application since people
+tend to have their smartphones with them most of the time, so having a virtual
+wallet on your mobile device makes sense.
+
+Another factor that motivates me is the fact that currently in the mobile
+application market there are almost no free and open source password management
+applications available. The user needs to \textit{trust} the creators of the
+application with their data, not knowing how the implementation of the product
+is made, they have no guarantee that the data is safe.
+
 \section{Similar Products Available on the Market}
+
+There are a lot of password managers available on the market. In this section
+we are going to try to make a comparison between some of the most popular
+options available.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ | l | l | l | l | l | l | }
+        \hline
+        \textbf{Property}           & \textbf{LastPass} & \textbf{RememBear} & \textbf{KeePass} & \textbf{PassMan} & \textbf{KeyBase} \\
+        \hline
+        \textbf{Mobile Version}     & Yes               & Yes                & No               & Yes              & Yes              \\
+        \hline
+        \textbf{Blockchain Storage} & No                & No                 & No               & No               & Yes              \\
+        \hline
+        \textbf{Price}              & \$3/month         & \$6/month          & Free             & Free             & Free             \\
+        \hline
+        \textbf{License}            & Proprietary       & Proprietary        & GPL-2.0          & AGPL-3.0         & BSD-3            \\
+        \hline
+    \end{tabular}
+    \caption{A comparison between some of the most popular password managers.}\label{tab:otherProducts}
+\end{table}
+
+First off we have LastPass and RememBear, two very similar password managers,
+both having a free and a payed plan. Neither of these two is open source, so
+the most pressing issue regarding them is the guarantee that your data is safe.
+Without having the ability to see how your data is managed and stored you
+cannot be certain that it is secure. Also these applications do not have
+blockchain backups.
+
+KeePass is probably the most popular password manager for desktop. It is free
+and open source, and the code was analyzed and certified by specialized
+organizations such as the Open Source Initiative. The biggest drawback to
+KeePass is the aged user interface and the missing mobile application
+counterpart. Nowadays a lot of the situations where a user needs access to
+their credentials are happening while using smartphones. Also the features are
+limited, KeePass doing one thing and doing it well that being password
+management. There are no cloud or blockchain backups, so the user needs to
+manager backing up and storing their password database themselves.
+
+Similar with KeePass, PassMan is a free and open source password manager. They
+have a mobile version of the application, but blockchain backups are missing.
+Also, again, PassMan is just a password manager. It does not manage shopping
+cards or crypto wallets.
+
+Last but not least there is KeyBase which is not technically a password
+manager. KeyBase is a blockchain, decentralized, social media application. You
+can store password and secure notes inside the application but from the user
+experience point of view, KeyBase was never designed to be a password or wallet
+manager. The reason why it is mentioned, is because KeyBase is implemented on
+the blockchain, all user data is encrypted and it's free and open source.
 
 \chapter{Features}
 
@@ -130,6 +226,10 @@ billion USD), referenced in~\cite{cryptocurrencyMarketAnalysis}.
 
 \subsection{Flutter}
 
+\subsection{Code Generation}
+
+\subsection{Redux}
+
 \section{Firebase}
 
 \subsection{User Management}
@@ -144,13 +244,13 @@ billion USD), referenced in~\cite{cryptocurrencyMarketAnalysis}.
 
 \subsection{Solidity}
 
+\subsection{Test Networks}
+
 \section{Development Environment}
 
 \chapter{Implementation}
 
 \section{System Architecture}
-
-\section{Redux}
 
 \section{Password Management}
 
