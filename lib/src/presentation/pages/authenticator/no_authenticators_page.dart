@@ -26,8 +26,8 @@ class NoAuthenticatorTokensPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16),
             child: ElevatedButton(
-              onPressed: () => Navigator.pushNamed(context, ScanNewAuthenticatorPage.route),
               child: const Text('Scan'),
+              onPressed: () => Navigator.pushNamed(context, ScanNewAuthenticatorPage.route),
             ),
           ),
         ],

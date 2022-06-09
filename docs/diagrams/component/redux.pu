@@ -1,0 +1,30 @@
+@startuml redux
+
+title Redux Architecture
+
+skinparam componentStyle rectangle
+
+actor User #White
+
+component Store {
+    component State #TECHNOLOGY
+    component Reducer #LightGreen
+}
+
+component Middleware {
+    component Epics #LightPink
+}
+component Actions #LightSalmon
+component "User Interface" as UI #LightGoldenRodYellow
+component APIs #LightSteelBlue
+
+User ..> UI : User Interaction
+UI -> Actions : Dispatch Action
+Actions -> Epics : React to Action event
+Actions <- Epics : Create new Actions
+Epics <--> APIs : Process Data
+Actions --> Reducer : React to Action event
+Reducer -> State : Update the State
+State --> UI : Update the UI
+
+@enduml

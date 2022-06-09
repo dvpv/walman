@@ -5,6 +5,9 @@
 \usepackage{geometry}
 \usepackage{indentfirst}
 \usepackage{plantuml}
+\usepackage{tikz}
+\usepackage{aeguill}
+\usepackage{float}
 
 % chktex-file 44
 
@@ -68,11 +71,11 @@
 \tableofcontents
 
 \chapter{Introduction}
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[scale=0.1]{images/utp_logo.jpg}
-%     \caption{Qr Code}\label{fig:qr}
-% \end{figure}
+In this project I implemented a wallet manager in the form of a mobile
+application. The main features are password management, password generation, qr
+and barcode storage and management, crypto wallet and OTP token management. The
+user has the option to backup the data either in the cloud or on the
+blockchain. Once backed up, the data will be available to be restored.
 
 \section{Context}
 
@@ -167,50 +170,174 @@ options available.
     \caption{A comparison between some of the most popular password managers.}\label{tab:otherProducts}
 \end{table}
 
-First off we have LastPass and RememBear, two very similar password managers,
-both having a free and a payed plan. Neither of these two is open source, so
-the most pressing issue regarding them is the guarantee that your data is safe.
-Without having the ability to see how your data is managed and stored you
-cannot be certain that it is secure. Also these applications do not have
-blockchain backups.
+First off we have LastPass\cite{lastpass} and RememBear\cite{remembear}, two
+very similar password managers, both having a free and a payed plan. Neither of
+these two is open source, so the most pressing issue regarding them is the
+guarantee that your data is safe. Without having the ability to see how your
+data is managed and stored you cannot be certain that it is secure. Also these
+applications do not have blockchain backups.
 
-KeePass is probably the most popular password manager for desktop. It is free
-and open source, and the code was analyzed and certified by specialized
-organizations such as the Open Source Initiative. The biggest drawback to
-KeePass is the aged user interface and the missing mobile application
-counterpart. Nowadays a lot of the situations where a user needs access to
-their credentials are happening while using smartphones. Also the features are
-limited, KeePass doing one thing and doing it well that being password
-management. There are no cloud or blockchain backups, so the user needs to
-manager backing up and storing their password database themselves.
+KeePass\cite{keepass} is probably the most popular password manager for
+desktop. It is free and open source, and the code was analyzed and certified by
+specialized organizations such as the Open Source Initiative. The biggest
+drawback to KeePass is the aged user interface and the missing mobile
+application counterpart. Nowadays a lot of the situations where a user needs
+access to their credentials are happening while using smartphones. Also the
+features are limited, KeePass doing one thing and doing it well that being
+password management. There are no cloud or blockchain backups, so the user
+needs to manager backing up and storing their password database themselves.
 
-Similar with KeePass, PassMan is a free and open source password manager. They
-have a mobile version of the application, but blockchain backups are missing.
-Also, again, PassMan is just a password manager. It does not manage shopping
-cards or crypto wallets.
+Similar with KeePass, PassMan\cite{passman} is a free and open source password
+manager. They have a mobile version of the application, but blockchain backups
+are missing. Also, again, PassMan is just a password manager. It does not
+manage shopping cards or crypto wallets.
 
-Last but not least there is KeyBase which is not technically a password
-manager. KeyBase is a blockchain, decentralized, social media application. You
-can store password and secure notes inside the application but from the user
-experience point of view, KeyBase was never designed to be a password or wallet
-manager. The reason why it is mentioned, is because KeyBase is implemented on
-the blockchain, all user data is encrypted and it's free and open source.
+Last but not least there is KeyBase\cite{keybase} which is not technically a
+password manager. KeyBase is a blockchain, decentralized, social media
+application. You can store password and secure notes inside the application but
+from the user experience point of view, KeyBase was never designed to be a
+password or wallet manager. The reason why it is mentioned, is because KeyBase
+is implemented on the blockchain, all user data is encrypted and it's free and
+open source.
 
 \chapter{Technology Stack}
 
+In this chapter I am going to describe the technologies used. The application
+has 3 main components. The first component is the frontend, a mobile
+application. The second one is the cloud storage backend. The last part are the
+smart contracts deployed on the blockchain.
+
 \section{Frontend}
+
+The most important aspects I considered when I chose the technologies used for
+the frontend was cross-platform capabilities, ease of testing, documentation
+availability and performance. This is why for this project I chose a Flutter
+stack.
 
 \subsection{Flutter}
 
-Flutter is a mobile application development framework developed by Google in
-the Dart programming language. It was released in May 2017 and it currently is
-one of the most popular mobile development frameworks.
+Flutter\cite{flutterDocs} is a mobile application development framework
+developed by Google in the Dart programming language. It was released in May
+2017 and it currently is one of the most popular mobile development frameworks.
+
+According to \textit{``An empirical investigation of performance overhead in
+    cross-platform mobile development frameworks''}\cite{flutterPerformance},
+Flutter has one of the better resource management systems when compared with
+other popular mobile development frameworks.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/flutterPerformance/ram.png}
+    \caption{Boxplot from~\cite{flutterPerformance} of RAM usage across all tests done in~\cite{flutterPerformance} }\label{fig:flutterPerformanceRAM}
+\end{figure}
+
+As seen in~\ref{fig:flutterPerformanceRAM}, on average Flutter outperforms most
+of the other frameworks in memory management.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/flutterPerformance/cpu.png}
+    \caption{Boxplot from~\cite{flutterPerformance} of CPU usage across all tests done in~\cite{flutterPerformance} }\label{fig:flutterPerformanceCPU}
+\end{figure}
+
+In~\ref{fig:flutterPerformanceCPU} we have a comparison between CPU usage of
+similar applications implemented in different frameworks
+in~\cite{flutterPerformance}, where Flutter achieves a competitive result when
+compared to the other frameworks.
+
+Another very important feature of Flutter is cross-platform compatibility. A
+mobile application developed in this framework can be build in native Android
+and IOS applications with minimal performance loss. There is also Flutter Web
+for web applications, offering the option to create a browser variant of the
+application in the future, reusing already developed and tested parts from the
+mobile application.
+
+Flutter comes with a very rich and detailed documentations, the Flutter
+Docs\cite{flutterDocs} and a set of development plugins for the most used IDE
+and text editors such as Android Studio, Intellij or Visual Studio Code. During
+the development process the code is executed into a runtime environment,
+allowing almost instant compilation times speeding up the development, and in
+production, the code is compiled into a native application for performance
+enhancement.
+
+The User Interface in Flutter is build based on a widget tree, similar to
+React. Every User Interface item inherits the Widget class.
 
 \subsection{Dart}\label{chapter:dart}
 
+Dart\cite{dartDocs} is a general purpose programming language developed by
+Google starting with 2011. It was intended to replace JavaScript and TypeScript
+for frontend applications, but instead, later, it was used to create the
+Flutter framework.
+
+Dart is a type safe, C-like programming language. It can be both interpreted by
+a runtime or compiled. The memory management is handled by a garbage collector
+similar with Python or JavaScript.
+
+One of the strongest features of Dart is the compiler. It can be compiled in
+binary code, JavaScript or mobile native code such as Java and Kotlin for
+Android and Objective-C and Swift for IOS devices. Dart also performs tree
+shaking at compile time, discarding unused objects, methods and functions.
+
 \subsection{Code Generation}
 
-\subsection{Redux}
+During the development of the project I used multiple packages (dart libraries)
+in the process. One very important package that needs to be mentioned is the
+\textit{freezed} package\cite{freezedDocs}. This offers code generation for
+common model functionalities such as json encoders and decoders, copyWith
+methods, different constructors and access functions and more.
+
+Classes generated by the package are annotated with the \textit{@freezed} tag.
+The generated code is stored into files that contain the \textit{.freezed.dart}
+and \textit{.g.dart} extensions.
+
+\subsection{State Management}
+
+One of the most important aspects of frontend application development is state
+management architecture. There are a lot of different state management patterns
+available in Flutter\cite{flutterStateManagement} such as Provider, BLoC or the
+simple setState. These state management patterns tell the application when the
+state has changed and when certain components of the presentation layer (the UI
+of the application) needs to be updated as a result of that.
+
+For this project I used the Redux state management architecture. This pattern
+is a very popular solution for managing the state of an application, and it is
+commonly used in web development. There is an implementation for it in Flutter
+in the packages: flutter\_redux\cite{flutterReduxDocs}, redux\cite{reduxDocs}
+and redux\_epics\cite{reduxEpicsDocs}.
+
+\begin{figure}[H]
+    \centering
+    \scalebox{0.75}{\input{diagrams/component/redux.latex}}
+    \caption{Basic structure of a Redux State Management System}\label{fig:reduxArchitecture}
+\end{figure}
+
+In~\ref{fig:reduxArchitecture} we can see the core structure of the redux
+architecture I used in the project. A state change begins the dispatch of an
+action. They are usually triggered by the user interface, but in some cases
+they can be triggered by an API event. The Epics are a set of listeners which
+analyze the action stream. When an Epic recognizes an Action, it performs a
+series of operations which can process the data using the APIs (business logic)
+or dispatch new actions. Every action is also watched by the Reducer, which
+listens for Actions and changes the State accordingly. When the State changes,
+the Widgets (in case of Flutter) that depend on the elements updated in the
+State, are triggered to pe updated.
+
+In order to access specific elements of the state, and not update every widget,
+every time the state changes. Containers can be used to access a specific part
+of the state. In order to access the State, the User Interface needs to request
+it from the Store, in this way, the Store knows when to redraw the object. The
+widgets that update when the state is modified and have access to the Store are
+part of the flutter\_redux package\cite{flutterReduxDocs}.
+
+Error handling in redux is made using special stream functions from the RxDart
+package\cite{rxDart}. RxDart offers and extension to the functional
+capabilities of dart. In redux the application is represented as a stream of
+actions. In order to make error handling efficiently, every action sequence
+spawns a new stream. In case of an exception, the stream will have an exception
+and we can dispatch a new Action with relevant information about the error. In
+this way the probability of total application wide runtime exceptions is
+dramatically lowered.
 
 \section{Firebase}
 
