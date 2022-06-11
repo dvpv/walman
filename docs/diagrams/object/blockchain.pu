@@ -1,0 +1,26 @@
+@startuml blockchain
+
+skinparam DefaultTextAlignment center
+
+map "Block" as block1 #White {
+    blockNumber => 1
+    nonce => 66173
+    transactions => Balance: $100
+    parentHash => 0000000000000000
+    mixHash => 000071d551f2bc6b
+}
+
+map "Block" as block2 #White {
+    blockNumber => 2
+    nonce => 9836
+    transactions => other data
+    parentHash => 000071d551f2bc6b
+    mixHash => 00008b82914780b8
+}
+
+
+block1 -[hidden]> block2
+block2 -[hidden]-> block1
+block2::parentHash -> block1::mixHash
+
+@enduml

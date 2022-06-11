@@ -1,0 +1,28 @@
+@startuml block
+
+skinparam DefaultTextAlignment center
+
+rectangle Block #White [
+    <b>Block
+    ==
+    blockNumber
+    --
+    timestamp
+    --
+    nonce
+    --
+    stateRoot
+    --
+    transactions
+    --
+    difficulty
+    --
+    baseFeePerGas
+    --
+    parentHash
+    --
+    mixHash
+]
+
+
+@enduml

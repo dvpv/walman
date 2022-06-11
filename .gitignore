@@ -69,3 +69,4 @@ docs/*.bcf
 docs/*.blg
 docs/*.run.xml
 docs/*.pytxcode
+docs/*.out

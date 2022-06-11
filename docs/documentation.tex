@@ -8,6 +8,8 @@
 \usepackage{tikz}
 \usepackage{aeguill}
 \usepackage{float}
+\usepackage{url}
+\usepackage{hyperref}
 
 % chktex-file 44
 
@@ -116,8 +118,9 @@ company simply going bankrupt. There are also situations in which the company
 itself can refuse to serve you anymore. They can freeze your account or just
 refuse to serve an entire country all-together, we have the recent example of
 companies like Visa and Mastercard refusing to serve russian citizens as result
-of political tensions. All these scenarios cannot happen in a decentralized
-blockchain system.
+of political tensions as described in~\cite{russiaSanctions}
+and~\cite{russiaSanctions2}. All these scenarios cannot happen in a
+decentralized blockchain system.
 
 Businesses that were traditionally not online like shopping also have inversely
 digitalized. Nowadays most of the hypermarkets offer fidelity cards. Usually
@@ -331,7 +334,7 @@ widgets that update when the state is modified and have access to the Store are
 part of the flutter\_redux package\cite{flutterReduxDocs}.
 
 Error handling in redux is made using special stream functions from the RxDart
-package\cite{rxDart}. RxDart offers and extension to the functional
+package\cite{rxDartDocs}. RxDart offers and extension to the functional
 capabilities of dart. In redux the application is represented as a stream of
 actions. In order to make error handling efficiently, every action sequence
 spawns a new stream. In case of an exception, the stream will have an exception
@@ -341,11 +344,109 @@ dramatically lowered.
 
 \section{Firebase}
 
-\subsection{User Management}
+In this section I am going to describe the technologies used for the creation
+of the cloud storage server portion of the application. In order to use the
+cloud storage, the user needs to create an account. After the account is
+created, the user needs to have the ability to create backup entries and
+restore previous backups.
 
-\subsection{Firestore}
+Firebase\cite{firebaseDocs} is an app development platform created by Google,
+designed as a backend for mobile and web applications. Firebase offers already
+implemented solutions for user management, artificial intelligence integration
+and databases. A firebase backend is hosted by Google in a ``pay as you use''
+monetization scheme.
+
+For this project I chose to use the services provided by Firebase to implement
+the cloud storage part of the project, mainly for ease of deployment, the good
+integration with Flutter throughout the dedicated packages and reduced costs
+(so far free).
+
+The user management uses the email and password login service provided by
+Firebase. Once a user account is created, a database entry is also made, access
+to this database being restricted to the user base on their unique identifier.
+
+For the storage, Firebase provides two different services. The first one is
+Real Time Database, which is a NoSQL type database, that resembles a Json type
+file. There are drawbacks to the Real Time Database such as low fragmentation
+which increases the data transfer size between the client and the server. A
+solution to this problem is the second service, Firestore, which is also a
+NoSQL type database similar with Real Time Database but it has some additional
+features. Firestore is structured into collections of documents which each have
+multiple fields of different types. This approach allows the client a more
+granular access to the data, reducing the size of files transferred between the
+client and the server and client side processing.
 
 \section{Blockchain}
+
+For the Blockchain storage of the application I used the Ethereum smart
+contract development stack with Solidity. In this chapter I am going to explain
+the basic logic behind the blockchains, how smart contracts are built into them
+and the economy between smart contract deployment and usage.
+
+\subsection{What is a Blockchain?}
+
+The blockchain is the basic structure that sits at the base of most of the
+cryptocurrencies. At it's core, it is a decentralized, distributed system of
+data storage and processing.
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1}{\input{diagrams/deployment/block.latex}}
+    \caption{The structure of a block as described by the Ethereum documentation\cite{ethereumDocs}}\label{fig:block}
+\end{figure}
+
+The blockchain is made up of a list of blocks connected to each other. Every
+block contains a set of information about itself and a reference to the
+previous block, the \textit{parentHash} field in case of Ethereum, in the form
+of a hash as described in~\ref{fig:block}. The \textit{parentHash} of the
+current block is the \textit{mixHash} of the previous block.
+
+The \textit{mixHash} is the digest of a hashing algorithm of the entire content
+of the block. The \textit{mixHash} needs to have the first two bytes 0, in
+order to be considered mined. This is achieved by incrementing the
+\textit{nonce} field until the target \textit{mixHash} is reached.
+
+For the hashing algorithm, Ethereum was developed using the Keccak-256 hashing
+function, which was later standardized as SHA-3 in~\cite{sha3}.
+
+The block also has the \textit{timestamp} when it was mined and the
+\textit{stateRoot} which contains metadata about the current state of the
+system.
+
+Information about the difficulty of the mining process and the respective price
+of the process are also stored in the block, in the \textit{difficulty} and
+\textit{baseFeePerGas} fields.
+
+The \textit{transactions} field contains information about the transactions
+associated with the block and the optional data exchanged. This is the place
+where the smart contract logic is deployed and later interacted with.
+
+A successfully mined block is added to the blockchain and then the transaction
+is confirmed by every subsequent blocks.
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.1}{\footnotesize\input{diagrams/object/blockchain.latex}}
+    \caption{High level relationship between two blocks}\label{fig:blockchain}
+\end{figure}
+
+In~\ref{fig:blockchain} the relationship between two blocks is represented. As
+stated before, \textit{block 2} has the mixHash of \textit{block 1} in it's
+parentHash field. In this example, \textit{block 1} being the first block in
+the blockchain has the null value as parentHash.
+
+If the data in \textit{block 1} was to be changed, it would invalidate the
+mixHash of \textit{block 1}. The mixHash would have to be mined again, but then
+it will be different thant the parentHash of \textit{block 2}, therefore
+invalidating the blockchain. This is the first mechanism of defense against
+malicious data manipulation. There cannot be changes in any previous blocks of
+the blockchain without invalidating every block starting from the change.
+
+The blocks following a changed block can be mined again in order to re-validate
+the blockchain. Here is where the second line of defense comes in,
+distribution. Every chain is stored on multiple nodes, therefore a change in
+one has to be reflected in all of them. This makes data alteration nearly
+impossible.
 
 \subsection{Ethereum}
 
