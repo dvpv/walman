@@ -1,0 +1,54 @@
+@startuml system
+
+left to right direction
+skinparam componentStyle rectangle
+skinparam actorStyle awesome
+
+actor User
+
+component "Mobile Phone" as phone #LightYellow {
+    component "Mobile Application" as mobile #White {
+        component "User Interface" as UI #LightYellow
+        component "Middleware" as middleware #LightYellow
+        component "Blockchain Storage API" as blockchainAPI #LightYellow
+        component "Cloud Storage API" as cloudAPI #LightYellow
+        component "Cloud Authentication API" as authAPI #LightYellow
+        component "Secure Storage API" as secureStorageAPI #LightYellow
+    }
+    database "Secure Storage" as secureStorage #White
+}
+
+cloud Firebase #LightCyan {
+    database "Firestore" as firestore #LightBlue {
+        [Cloud Vault] as cvault #White
+    }
+    [Authentication] as firebaseAuth #White
+}
+
+
+component "Ethereum Blockchain" as blockchain #TECHNOLOGY{
+    component "Smart Contract" as smartContract #White {
+        [Blockchain Vault] as bvault #TECHNOLOGY
+    }
+}
+
+User <-left-> UI
+
+
+
+UI <.[norank].> middleware
+middleware <..> blockchainAPI
+middleware <..> cloudAPI
+middleware <..> authAPI
+middleware <..[norank].> secureStorageAPI
+
+cloudAPI --> firestore : Access cloud backups
+authAPI --> firebaseAuth : User authentication API
+blockchainAPI --> smartContract : Access blockchain backups
+
+firestore .> firebaseAuth : Verify request user id
+
+secureStorage <-[norank]-> secureStorageAPI : Save/Load Application State
+
+
+@enduml

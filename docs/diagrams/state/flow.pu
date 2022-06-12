@@ -1,0 +1,23 @@
+@startuml flow
+
+skinparam DefaultTextAlignment center
+
+state "Unlock Application" as unlock : Page where the user needs to\nenter the Master Key in order\n to unlock the application
+state "Create Master Key" as createMK : Page where the user needs to\ncreate a new Master Key
+
+state "Index Page" as index {
+    state "Home Page" as home
+    state "Passwords Page" as passwords
+    state "Codes Page" as codes
+    state "OTP Page" as OTP
+    state "Wallet Page" as Wallet
+    state "OTP Page" as OTP
+}
+
+[*] --> unlock : Master Key found in Secure Storage
+[*] --> createMK : Master Key not found in Secure Storage
+unlock --> index : Application unlocked
+createMK --> index : Master Key created
+
+
+@enduml

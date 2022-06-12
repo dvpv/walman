@@ -173,12 +173,14 @@ options available.
     \caption{A comparison between some of the most popular password managers.}\label{tab:otherProducts}
 \end{table}
 
-First off we have LastPass\cite{lastpass} and RememBear\cite{remembear}, two
-very similar password managers, both having a free and a payed plan. Neither of
-these two is open source, so the most pressing issue regarding them is the
-guarantee that your data is safe. Without having the ability to see how your
-data is managed and stored you cannot be certain that it is secure. Also these
-applications do not have blockchain backups.
+In \autoref{tab:otherProducts} we have a comparison between some of the most
+popular password managers available on the market. First off we have
+LastPass\cite{lastpass} and RememBear\cite{remembear}, two very similar
+password managers, both having a free and a payed plan. Neither of these two is
+open source, so the most pressing issue regarding them is the guarantee that
+your data is safe. Without having the ability to see how your data is managed
+and stored you cannot be certain that it is secure. Also these applications do
+not have blockchain backups.
 
 KeePass\cite{keepass} is probably the most popular password manager for
 desktop. It is free and open source, and the code was analyzed and certified by
@@ -234,8 +236,8 @@ other popular mobile development frameworks.
     \caption{Boxplot from~\cite{flutterPerformance} of RAM usage across all tests done in~\cite{flutterPerformance} }\label{fig:flutterPerformanceRAM}
 \end{figure}
 
-As seen in~\ref{fig:flutterPerformanceRAM}, on average Flutter outperforms most
-of the other frameworks in memory management.
+As seen in~\autoref{fig:flutterPerformanceRAM}, on average Flutter outperforms
+most of the other frameworks in memory management.
 
 \begin{figure}[H]
     \centering
@@ -243,8 +245,8 @@ of the other frameworks in memory management.
     \caption{Boxplot from~\cite{flutterPerformance} of CPU usage across all tests done in~\cite{flutterPerformance} }\label{fig:flutterPerformanceCPU}
 \end{figure}
 
-In~\ref{fig:flutterPerformanceCPU} we have a comparison between CPU usage of
-similar applications implemented in different frameworks
+In~\autoref{fig:flutterPerformanceCPU} we have a comparison between CPU usage
+of similar applications implemented in different frameworks
 in~\cite{flutterPerformance}, where Flutter achieves a competitive result when
 compared to the other frameworks.
 
@@ -315,7 +317,7 @@ and redux\_epics\cite{reduxEpicsDocs}.
     \caption{Basic structure of a Redux State Management System}\label{fig:reduxArchitecture}
 \end{figure}
 
-In~\ref{fig:reduxArchitecture} we can see the core structure of the redux
+In~\autoref{fig:reduxArchitecture} we can see the core structure of the redux
 architecture I used in the project. A state change begins the dispatch of an
 action. They are usually triggered by the user interface, but in some cases
 they can be triggered by an API event. The Epics are a set of listeners which
@@ -398,7 +400,7 @@ data storage and processing.
 The blockchain is made up of a list of blocks connected to each other. Every
 block contains a set of information about itself and a reference to the
 previous block, the \textit{parentHash} field in case of Ethereum, in the form
-of a hash as described in~\ref{fig:block}. The \textit{parentHash} of the
+of a hash as described in~\autoref{fig:block}. The \textit{parentHash} of the
 current block is the \textit{mixHash} of the previous block.
 
 The \textit{mixHash} is the digest of a hashing algorithm of the entire content
@@ -430,8 +432,8 @@ is confirmed by every subsequent blocks.
     \caption{High level relationship between two blocks}\label{fig:blockchain}
 \end{figure}
 
-In~\ref{fig:blockchain} the relationship between two blocks is represented. As
-stated before, \textit{block 2} has the mixHash of \textit{block 1} in it's
+In~\autoref{fig:blockchain} the relationship between two blocks is represented.
+As stated before, \textit{block 2} has the mixHash of \textit{block 1} in it's
 parentHash field. In this example, \textit{block 1} being the first block in
 the blockchain has the null value as parentHash.
 
@@ -450,19 +452,211 @@ impossible.
 
 \subsection{Ethereum}
 
+Ethereum is one of the most popular cryptocurrencies. Other than the popularity
+and the implicit high amount of resources that is implied, and unlike other
+popular cryptocurrencies like Bitcoin, Ethereum offers the ability to run code
+on the blockchain using the Ethereum Virtual Machine (EVM)\cite{ethereumDocs}.
+
+Every execution on the Ethereum Virtual Machine requires Gas, which is an
+amount of Ethereum cryptocurrency units (ETH) proportional with the complexity
+and the memory requirements of the task. Since the cost of an ETH has raised
+dramatically over the last 5 years, subdivisions of the currently were created.
+The two most widely used subdivisions are \textit{wei} (\(10^{-18}\) ETH) and
+\textit{gwei} (\(10^{-9}\) ETH).
+
+Since the development of a blockchain application implies a lot of testing and
+prototyping, solutions of simulating the blockchain were created. Ganache is
+such a software developed in JavaScript, it simulates an Ethereum blockchain on
+a local machine or on a server. For this project I tinkered with Ganache but
+later I decided to go one step further and deploy my contracts on an Ethereum
+Testnet.
+
+Ethereum Testnets are networks similar with the main Ethereum network
+(mainnet), designed to provide a free of charge development environment
+identical with the mainnet. Testnets are blockchains that run in parallel with
+the mainnet, having the same functionalities and features. There are a lot of
+Ethereum Testnets like: Ropsten, Kovan or Goerli. In this project I worked with
+the Rinkeby network. Unlike on the mainnet, ETH is generated constantly on the
+Testnets and it is distributed to any wallet that requests it via faucets.
+There are no costs involved with developing a blockchain application on a
+Testnet. After the development process is complete, in production the
+application can be easily redeployed on the mainnet.
+
 \subsection{Smart Contracts}
+
+The code that can be executed by the Ethereum Virtual Machine has to be
+compiled into a specific binary code. Smart contracts are transactions that
+contain binary code that can be later executed from subsequent transactions.
+Gas cost afferent to the execution of the contract is payed by the transaction
+that wants to execute the contract, not the contract itself. Therefore in order
+to create a blockchain application, one of the requirements of such a program
+is having an attached cryptocurrency wallet. In the case of server
+applications, this wallet can be a server secret, managed by the administrator,
+but in the case of client applications, the wallet cannot be incorporated by
+default into the application, since that would mean that everyone has access to
+it and is able to act maliciously. This is is the reason why this project
+requires an integrated wallet. An external wallet can also be used, but it
+would deteriorate the user experience.
+
+Once a smart contract is deployed, it cannot be changed, therefore testing such
+a contract for vulnerabilities and bugs is essential.
+
+One very important aspect of blockchain applications is gas efficiency. Certain
+operations consume more gas than others, and storing data also consumes gas.
+The application should be optimized to leave a minimal data footprint focusing
+on using non persistent memory.
+
+Accessing data from a smart contract is free of charge. As long as there is no
+new data to be stored or there is no code to be executed, accessing the data in
+a smart contract is cost free.
+
+A very important security aspect of smart contracts and blockchains in general
+is that data is always visible by anyone who accesses the blockchain and it
+cannot be modified. Therefore sensitive data needs to be encrypted.
 
 \subsection{Solidity}
 
-\subsection{Test Networks}
+Solidity\cite{solidityDocs} is a dedicated programming language for blockchain
+applications. It was designed specifically for the creation of smart contracts.
+This language is an object oriented, compiled language that resembles C++ and
+JavaScript.
+
+Code written in Solidity is compiled into binary code that can be executed on
+the Ethereum Virtual Machine and there are specific modifiers for the
+interaction with the EVM and code optimization. Some of these modifiers are:
+\textit{view} which specifies that the afferent function is forbidden from
+changing the state and \textit{payable} which allows ETH to be transferred with
+the function call. There are also more commonly used modifiers like:
+\textit{override}, \textit{virtual}, \textit{private} or \textit{public}.
 
 \section{Development Environment}
+
+For the creation of this project I used a wide variety of tools. They range
+from Integrated Development Environments (IDEs) to task management
+applications.
+
+For the development of the mobile application I used Intellij and Visual Studio
+Code with the Flutter specific plugins. I also used Adobe XD for user interface
+design and plantuml for diagrams. In order to test the application, I used the
+Android Virtual Machine provided by Android Studio.
+
+For the blockchain part of the application I wrote the smart contracts using
+Solidity. I created a python compilation script for the smart contracts that is
+also used in the testing pipeline.
+
+For the cloud portion I used the Firebase console and the specific packages for
+Flutter.
+
+All the code was managed using the Git software versioning system and it was
+deployed on Github at \url{https://github.com/dvpv/walman}. I used the Github
+Actions feature in order to manage the two test pipelines for the mobile
+application and blockchain smart contracts.
+
+The smart contracts were deployed on the Rinkeby Testnet using the Remix
+Ethereum IDE, and in order to access them from the mobile application, the
+web3dart\cite{web3dartDocs} flutter package was used.
+
+For task management I used Focalboard, a free and open source alternative to
+Trello.
 
 \chapter{Implementation}
 
 \section{Use Cases}
 
+The application has six main components: the password, qr and barcode, OTP and
+crypto-wallet managers and the cloud and blockchain backup solutions.
+
+\begin{figure}[H]
+    \centering
+    \scalebox{0.45}{\large\input{diagrams/usecase/usecase.latex}}
+    \caption{Principal use cases of the application}\label{fig:useCase}
+\end{figure}
+
+In~\autoref{fig:useCase} the main use cases of the application are depicted.
+
+The entire application is locked and encrypted using the mater key. If a master
+key was not set yet, in the case of a first time launch of the application, the
+user is prompted to create a new master key. After the application is unlocked,
+the user has access to multiple functionalities and features.
+
+The home page of the application shows in a short format the passwords, codes
+and wallet balance. The user can navigate to different pages for each of the
+functionalities.
+
+The passwords page, shows the user a list with the passwords that are currently
+stored into the database. Here the user has the option to add, edit or remove
+passwords.
+
+The codes page is similar with the passwords page, the user has the ability to
+scan new codes, view existing ones and delete them.
+
+On the OTP page, the user can see the currently stored one time passwords. The
+codes are updated every second and a timer representing the remaining time in
+which the current code is valid is displayed.
+
+On the wallet page, the user can see the current balance of the wallet and the
+public address. The only transactions that can be made with this wallet are
+blockchain backup operations.
+
+The sync page shows all available cloud and blockchain backups. The use has the
+option to restore a backup, or create new ones.
+
+In order to create a blockchain backup the user needs to have a crypto wallet.
+If there is no crypto wallet created, the user has the option to import one by
+private key or create a new one. For the backup to work, the wallet needs to
+have enough currency in it in order to pay for the gas price. Restoring a
+backup requires no gas payment. Crypto wallets are not backed up on blockchain
+backups and neither they are on cloud backups.
+
+For a cloud backup to be created the usr needs to be logged into a cloud
+account. If the user is not yet logged in, they can create new account, or
+login into an existing one.
+
+On the settings page, the user can manage the cloud account and view and delete
+the wallet private key.
+
+There is an app-wide search button which displays results from the entire
+application. If the user clicks on one of the results, they will be redirected
+to the respective page in order to view the content.
+
+\newpage
 \section{System Architecture}
+
+The system in composed out of three main components. The communication between
+these components is made exclusively using the HTTPS protocol.
+
+\begin{figure}[H]
+    \centering
+    \scalebox{0.499}{\large\input{diagrams/component/system.latex}}
+    \caption{High level system architecture}\label{fig:system}
+\end{figure}
+
+In~\autoref{fig:system} a high level representation of the system is depicted
+into a component diagram. The user can directly interact only with the mobile
+application. The Firebase component is deployed online in the cloud platform
+provided by google and the smart contract is deployed on the Ethereum
+blockchain.
+
+The mobile application is the first component and it is the only component that
+initiates data exchange in the system. It has three API sub components for each
+of the online services it needs to communicate with and one API for interaction
+with the Secure Storage.
+
+The Secure Storage (or Secure Enclave on IOS) is a special persistent memory
+zone created to store sensitive information on a mobile device. I used the
+Secure Storage to save the part of the application state that needs to be
+recovered at each application start.
+
+The middleware consists of the redux epics defined into the application. The
+epics are the only part of the mobile application which has access to the
+external APIs.
+
+The user interface interacts with the middleware by dispatching redux actions.
+The state of the application is updated by the reducer when it detects specific
+action events that require a state update. The user interface code is
+completely separated from the APIs, the only connection being the middleware.
+
+\section{Application Flow}
 
 \section{Password Management}
 

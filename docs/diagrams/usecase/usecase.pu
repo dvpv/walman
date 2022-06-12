@@ -1,0 +1,38 @@
+@startuml usecase
+
+left to right direction
+skinparam actorStyle awesome
+
+usecase (Unlock app) as UnlockApp
+usecase (Application Unlocked) as ApplicationUnlocked
+usecase (Create MasterKey) as CreateMasterKey
+usecase (Manage Passwords) as ManagePassword
+usecase (Manage Codes) as ManageCode
+usecase (Manage OTPs) as ManageOTP
+usecase (Create or import a crypto wallet) as NewWallet
+usecase (Crypto wallet exists) as Wallet
+usecase (Manage blockchain backups) as BlockchainBackup
+usecase (Login/Signup into a cloud account) as NewAccount
+usecase (Manage the cloud account) as ManageAccount
+usecase (Logged in to the cloud account) as Account
+usecase (Manage cloud backups) as CloudBackup
+
+actor User
+
+User -> UnlockApp
+UnlockApp - CreateMasterKey : <<extends>> a MasterKey was not created yet
+ApplicationUnlocked -- UnlockApp : <<include>>
+ApplicationUnlocked - CreateMasterKey : <<include>>
+
+ApplicationUnlocked -- ManagePassword : <<include>>
+ApplicationUnlocked -- ManageCode : <<include>>
+ApplicationUnlocked -- ManageOTP : <<include>>
+ApplicationUnlocked -- NewWallet : <<include>>
+ApplicationUnlocked -- Wallet : <<include>>
+ApplicationUnlocked -- Account : <<include>>
+ApplicationUnlocked -- NewAccount : <<include>>
+Wallet - BlockchainBackup : <<include>>
+ManageAccount - Account : <<include>>
+Account - CloudBackup : <<include>>
+
+@enduml
