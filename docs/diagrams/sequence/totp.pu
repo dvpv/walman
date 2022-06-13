@@ -1,0 +1,27 @@
+@startuml totp
+
+scale 2
+
+skinparam SequenceMessageAlign center
+
+participant Client as client
+participant Server as server
+
+rnote over client, server
+    Secret is known by both the client and the server
+end note
+
+
+client -> server : Authenticate with user and password
+server -> server : verify credentials
+server -> client : Request OTP
+client -> client : generate OTP based on secret
+client --> server : send the generated OTP
+server -> server : generate OTP based on secret
+alt #TECHNOLOGY If OTPs are equal
+    server --> client : access granted
+else #LightSalmon OTPs are different
+    server --> client : access denied
+end
+
+@enduml

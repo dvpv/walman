@@ -1084,6 +1084,47 @@ to find a standardized QR code format for this type of token.
 
 \subsection{TOTP}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.69]{diagrams/syntax/TOTP.png}
+    \caption{Syntax diagram showing the anatomy of a TOTP token}\label{fig:totp_anatomy}
+\end{figure}
+
+A TOTP token contains the information needed to create an authentication code.
+In~\autoref{fig:totp_anatomy} we can see the structure of a TOTP token. The
+form of the token strongly resembles the URI format, some of the information
+even being represented as query parameters.
+
+The token starts withe the specification of what type of token it is. After
+that the username for which the token was generated is provided. This username
+can be an email address or just a string.
+
+The query parameters don't have a specific order,~\autoref{fig:totp_anatomy}
+shows just one of the possible arrangements. We start with the \textit{secret}
+witch is the first query parameter in this case. The \textit{secret} is one of
+the inputs into the HMAC function used to generate the key. The
+\textit{algorithm} parameter specifies what hashing algorithm should be used to
+generate the code. SHA1 is the most popular one from what I've seen, but MD5 or
+SHA256 are also valid algorithms. The counter is created based on the
+\textit{period} query parameter using the following simple formula:
+
+\[counter=\frac{secondsSinceEpoch}{period}\]
+
+The \textit{digits} query parameter specifies the length of the generated code.
+And at last the \textit{issuer} is the entity who generated the token.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{diagrams/sequence/totp.png}
+    \caption{Sequence diagram showing the basic concept of OTP authentication}\label{fig:totp_server_client}
+\end{figure}
+
+In~\autoref{fig:totp_server_client} I created a sequence diagram showing a
+basic authentication scenario based on OTP two factor authentication. Both the
+client and the server have previously shared the secret with each other (by
+scanning a TOTP QR token) and they each generate a code which is validated by
+the server.
+
 \section{Cryptocurrency Wallet}
 
 \section{Backup}
