@@ -984,11 +984,103 @@ automatically triggered when the generator dialog is opened. Instead of an API,
 here the GeneratePasswordStart function calls an utility function with the
 generator settings, which returns a random password based on the parameters.
 
+\subsection{Create/Edit a Password}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/app/new_password.png}
+    \caption{New password page}\label{fig:new_password}
+\end{figure}
+
+When the user wants to create a new password they have to complete a form that
+contains the password data. Here they have the option to use the password
+generator in order to create a password which will automatically complete the
+password field.
+
+When the user taps on the create button a \textit{CreateNewPassword} action is
+dispatched. This is a simple action that first updates the state in the reducer
+and after that, in the epics, a new \textit{StoreBundleStart} action is
+dispatched that will store the new password into the Secure Storage.
+
+Editing a password is very similar with the creation process. The only
+difference is that the first action replaces the existing password with the new
+one instead of just adding it to the list.
+
+\subsection{Delete a Password}
+
+The user can delete the password from many different channels. The first one is
+the long tap on the list element and the subsequent selection of the Delete
+option form the context menu. Another one is pressing the delete button in the
+edit page. There is also a button hidden into a slide action, similar with
+deleting messages into an email application.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/app/warn_delete_password.png}
+    \caption{Alert dialog with a warning that an item is about to be deleted}\label{fig:warn_delete_password}
+\end{figure}
+
+Whenever the user wants to delete a password they are shown a warning message
+that the data will be lost that needs to be accepted. When the delete button is
+pressed a DeletePassword action is dispatched and similar with the create and
+edit ones it updates the state and triggers a bundle storage action.
+
 \section{QR and Barcode Management}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{images/app/view_qr.png}
+    \caption{Code Details page}\label{fig:code_details}
+\end{figure}
+
+QR and Barcodes can be scanned, viewed and deleted.
+In~\autoref{fig:code_details} we can see a QR code details page where the user
+has a big image with the respective QR code generated and the content of the
+code displayed.
+
+When the user creates a new code a dedicated page is displayed where the user
+is prompted to scan the code with the back camera of their mobile device. When
+a code is detected, the page is swapped with another one in which the code is
+displayed and the user needs to add a title. After the title is added a similar
+process with the creation of a password happens and the code new is added to
+the bundle.
+
+Codes are scanned using the mobile\_scanner package~\cite{mobileScannerDocs}
+which implements the scanning functionality of a QR or a barcode for dart. The
+codes are then displayed using the barcode\_widget
+package~\cite{barcodeWidgetDocs} which can generate a barcode of QR code of
+different types from raw data. This way only the raw data and the algorithm
+type are kept into permanent memory, reducing the storage size dramatically,
+further reducing blockchain backup creation gas cost. No images are related to
+QR or barcodes is stored.
 
 \section{OTP Authenticator}
 
-\subsection{HOTP}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/app/tokens.png}
+    \caption{OTP fragment from the index page}\label{fig:otp}
+\end{figure}
+
+The OTP authenticator functionality is the last piece of information that is
+stored into the data bundle and is backed up. The creation process is similar
+with creating a new Code but instead of entering a title, after scanning, the
+title is automatically deduced based on the token. In~\autoref{fig:otp} is
+shown the OTP fragment of the application where the list of tokens is
+displayed.
+
+The OTP tokens in~\autoref{fig:otp} have different parameters and their codes
+are calculated correctly according to the TOTP specifications from~\cite{totp}.
+
+HOTP tokens are not supported by the application. These tokens are usually used
+on hardware implementations that don't have an exact clock and are considered
+less secure. A HOTP could be converted into a TOTP, according to~\cite{totp}
+the only difference is that the counter should be generated based on time, but
+there is an issue with the server implementation of such a system which is not
+guaranteed to increment the counter enough for it to find the current token.
+The implementation of a true HOTP authenticator is basically included into the
+implementation of the TOTP one according to~\cite{totp}, but I did not manage
+to find a standardized QR code format for this type of token.
 
 \subsection{TOTP}
 
