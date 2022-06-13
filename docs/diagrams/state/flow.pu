@@ -2,22 +2,64 @@
 
 skinparam DefaultTextAlignment center
 
-state "Unlock Application" as unlock : Page where the user needs to\nenter the Master Key in order\n to unlock the application
-state "Create Master Key" as createMK : Page where the user needs to\ncreate a new Master Key
+scale 2
+
+state "Unlock Application" as unlock
+state "Create Master Key" as createMK
 
 state "Index Page" as index {
-    state "Home Page" as home
-    state "Passwords Page" as passwords
-    state "Codes Page" as codes
-    state "OTP Page" as OTP
-    state "Wallet Page" as Wallet
-    state "OTP Page" as OTP
+    state "OTP " as otp
+    state "Home" as home
+    state "Passwords" as passwords
+    state "Codes" as codes
+    state "Wallet" as wallet
+    state "Add" as add
+    state "Menu" as menu
+    state "New Password" as newp
+    state "View Password" as viewp
+    state "Edit Password" as editp
+    state "New Code" as newc
+    state "View Code" as viewc
+    state "New OTP" as newo
+    passwords --> viewp
+    passwords --> editp
+    home --> viewp
+    home --> editp
+    codes --> viewc
+    home --> viewc
+    add --> newp
+    add --> newc
+    add --> newo
+    viewp -> editp
+    editp -> viewp
+    newc -[hidden]-> wallet
+    newc -[hidden]-> menu
+    otp -[hidden]> passwords
+    viewp -[hidden]-> add
 }
 
-[*] --> unlock : Master Key found in Secure Storage
-[*] --> createMK : Master Key not found in Secure Storage
+state "Sync Page" as sync
+state "Settings Page" as settings
+state "Login Page" as login
+state "Signup Page" as signup
+state "Change Password Page" as change
+state "Backup Cloud" as cbackup
+state "Backup Blockchain" as bbackup
+
+[*] --> unlock : Master Key found in\nSecure Storage
+[*] --> createMK : Master Key not found in\nSecure Storage
 unlock --> index : Application unlocked
 createMK --> index : Master Key created
-
+menu --> sync
+menu --> settings
+settings --> change : if cloud account\nlogged in
+settings --> login : if cloud account\nnot logged in
+login --> signup
+signup --> login
+sync --> bbackup
+wallet <-- bbackup : there is\nno crypto wallet
+sync --> cbackup
+login <- cbackup : if cloud account\nnot logged in
+change -[hidden]> login
 
 @enduml

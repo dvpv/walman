@@ -658,6 +658,80 @@ completely separated from the APIs, the only connection being the middleware.
 
 \section{Application Flow}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.23]{diagrams/state/flow.png}
+    \caption{Flow diagram showing the main pages and fragments of the application}\label{fig:flow}
+\end{figure}
+
+In~\autoref{fig:flow} we can see the flow between the main elements of the user
+interface. Initially the user needs to input the master key in order to unlock
+the application or create one if it does not exist.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/app/home.png}
+    \caption{Home fragment of the application}\label{fig:homepage}
+\end{figure}
+
+After the application is unlocked the user is redirected to the Home
+fragment,~\autoref{fig:homepage}, of the Index page. Here the user has quick
+access to passwords, codes and the wallet balance. The user can navigate
+different fragments using the bottom navigation bar. The passwords fragment
+contains a list with all the passwords. Here the user can copy the passwords if
+they tap on the copy button of a password. On long tap a context menu giving
+the user the delete, edit and copy options shows up. On tap a password opens a
+details page containing information about the password. From this page the user
+can go to the edit page where they can change the data related to the selected
+password.
+
+The Codes fragment is similar with the password page. It shows a list that
+contains all the codes. If the user taps on a code, a details page will be
+opened showing a big picture of the code and it's content. The user can delete
+the code in the details page or in the Codes fragment by log tapping and
+selecting the delete option in the context menu.
+
+The OTP fragment shows a list containing all the stored tokens and the current
+code for each. If the user taps on one of these list entries the code will be
+copied to the clipboard. The user can delete an OTP token by selecting the
+delete option from the context menu after a long tap on a token.
+
+The last fragment is the Wallet. Where if there is no wallet created yet, the
+user can create a new wallet or import one by introducing the private key. When
+a wallet exists the balance of the wallet and the public address are displayed.
+
+On the top right of the Index Page there is a menu, seen
+in~\autoref{fig:homepage}. This menu offers the user the option to open the
+sync page, the settings page or the password generator.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/app/sync.png}
+    \caption{Sync page of the application}\label{fig:syncpage}
+\end{figure}
+
+The sync page,~\autoref{fig:syncpage}, contains a list with all the available
+backups the user can restore. A backup can be restored by pressing the restore
+button of the desired backup. Every backup has the number of items displayed
+and also the date and time when it was created is also shown. The backups are
+sorted chronologically, the most recent ones being at the top. The blockchain
+backups are represented by an infinity icon and the cloud ones by ca cloud
+icon.
+
+In case there are no backups available the user is prompted with the option to
+create one instead of being shown an empty list. The user can also create a
+backup by selecting the appropriate option form the top right menu.
+
+If the user tries to create a blockchain backup but there is no wallet set,
+they are redirected to the wallet fragment of the index page. Where they are
+prompted to create or import a wallet.
+
+Similar, in the case when the user wants to create a cloud backup but they are
+not logged into a cloud account, they are redirected to the login page and
+prompted to login or signup for the cloud service. After the login process is
+done they are redirected back to the sync page and a cloud backup can now be
+created.
+
 \section{Password Management}
 
 \section{QR and Barcode Management}

@@ -93,13 +93,6 @@ class IndexPage extends StatelessWidget {
             return Scaffold(
               appBar: AppBar(
                 title: Text(title),
-                leading: IconButton(
-                  icon: const Icon(
-                    Icons.notifications_none,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {},
-                ),
                 actions: <Widget>[
                   IconButton(
                     icon: const Icon(
