@@ -6,6 +6,7 @@ const String _kStoreWalletPrivateKeyPendingId = 'StoreWalletPrivateKey';
 class StoreWalletPrivateKey with _$StoreWalletPrivateKey implements AppAction {
   @Implements<ActionStart>()
   const factory StoreWalletPrivateKey.start({
+    required String? walletPrivateKey,
     required String masterKey,
     @Default(_kStoreWalletPrivateKeyPendingId) String pendingId,
   }) = StoreWalletPrivateKeyStart;

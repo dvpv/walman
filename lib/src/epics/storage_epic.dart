@@ -73,7 +73,7 @@ class StorageEpic {
       return Stream<void>.value(null)
           .asyncMap(
             (_) => secureStorageApi.storeWalletPrivateKey(
-              store.state.persistentState.walletPrivateKey,
+              action.walletPrivateKey,
               store.state.masterKey!,
             ),
           )

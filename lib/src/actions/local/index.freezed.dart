@@ -2107,7 +2107,7 @@ abstract class ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGe
 class _$SetWalletPrivateKeyTearOff {
   const _$SetWalletPrivateKeyTearOff();
 
-  SetWalletPrivateKey$ call(String walletPrivateKey) {
+  SetWalletPrivateKey$ call(String? walletPrivateKey) {
     return SetWalletPrivateKey$(
       walletPrivateKey,
     );
@@ -2119,7 +2119,7 @@ const $SetWalletPrivateKey = _$SetWalletPrivateKeyTearOff();
 
 /// @nodoc
 mixin _$SetWalletPrivateKey {
-  String get walletPrivateKey => throw _privateConstructorUsedError;
+  String? get walletPrivateKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SetWalletPrivateKeyCopyWith<SetWalletPrivateKey> get copyWith => throw _privateConstructorUsedError;
@@ -2129,7 +2129,7 @@ mixin _$SetWalletPrivateKey {
 abstract class $SetWalletPrivateKeyCopyWith<$Res> {
   factory $SetWalletPrivateKeyCopyWith(SetWalletPrivateKey value, $Res Function(SetWalletPrivateKey) then) =
       _$SetWalletPrivateKeyCopyWithImpl<$Res>;
-  $Res call({String walletPrivateKey});
+  $Res call({String? walletPrivateKey});
 }
 
 /// @nodoc
@@ -2148,7 +2148,7 @@ class _$SetWalletPrivateKeyCopyWithImpl<$Res> implements $SetWalletPrivateKeyCop
       walletPrivateKey: walletPrivateKey == freezed
           ? _value.walletPrivateKey
           : walletPrivateKey // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -2158,7 +2158,7 @@ abstract class $SetWalletPrivateKey$CopyWith<$Res> implements $SetWalletPrivateK
   factory $SetWalletPrivateKey$CopyWith(SetWalletPrivateKey$ value, $Res Function(SetWalletPrivateKey$) then) =
       _$SetWalletPrivateKey$CopyWithImpl<$Res>;
   @override
-  $Res call({String walletPrivateKey});
+  $Res call({String? walletPrivateKey});
 }
 
 /// @nodoc
@@ -2178,7 +2178,7 @@ class _$SetWalletPrivateKey$CopyWithImpl<$Res> extends _$SetWalletPrivateKeyCopy
       walletPrivateKey == freezed
           ? _value.walletPrivateKey
           : walletPrivateKey // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -2189,7 +2189,7 @@ class _$SetWalletPrivateKey$ implements SetWalletPrivateKey$ {
   const _$SetWalletPrivateKey$(this.walletPrivateKey);
 
   @override
-  final String walletPrivateKey;
+  final String? walletPrivateKey;
 
   @override
   String toString() {
@@ -2214,10 +2214,10 @@ class _$SetWalletPrivateKey$ implements SetWalletPrivateKey$ {
 }
 
 abstract class SetWalletPrivateKey$ implements SetWalletPrivateKey {
-  const factory SetWalletPrivateKey$(String walletPrivateKey) = _$SetWalletPrivateKey$;
+  const factory SetWalletPrivateKey$(String? walletPrivateKey) = _$SetWalletPrivateKey$;
 
   @override
-  String get walletPrivateKey;
+  String? get walletPrivateKey;
   @override
   @JsonKey(ignore: true)
   $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith => throw _privateConstructorUsedError;

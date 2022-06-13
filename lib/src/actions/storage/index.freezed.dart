@@ -4727,8 +4727,12 @@ abstract class GetBundleError implements GetBundle, ActionDone, ErrorAction {
 class _$StoreWalletPrivateKeyTearOff {
   const _$StoreWalletPrivateKeyTearOff();
 
-  StoreWalletPrivateKeyStart start({required String masterKey, String pendingId = _kStoreWalletPrivateKeyPendingId}) {
+  StoreWalletPrivateKeyStart start(
+      {required String? walletPrivateKey,
+      required String masterKey,
+      String pendingId = _kStoreWalletPrivateKeyPendingId}) {
     return StoreWalletPrivateKeyStart(
+      walletPrivateKey: walletPrivateKey,
       masterKey: masterKey,
       pendingId: pendingId,
     );
@@ -4759,21 +4763,21 @@ mixin _$StoreWalletPrivateKey {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -4840,7 +4844,7 @@ abstract class $StoreWalletPrivateKeyStartCopyWith<$Res> implements $StoreWallet
           StoreWalletPrivateKeyStart value, $Res Function(StoreWalletPrivateKeyStart) then) =
       _$StoreWalletPrivateKeyStartCopyWithImpl<$Res>;
   @override
-  $Res call({String masterKey, String pendingId});
+  $Res call({String? walletPrivateKey, String masterKey, String pendingId});
 }
 
 /// @nodoc
@@ -4855,10 +4859,15 @@ class _$StoreWalletPrivateKeyStartCopyWithImpl<$Res> extends _$StoreWalletPrivat
 
   @override
   $Res call({
+    Object? walletPrivateKey = freezed,
     Object? masterKey = freezed,
     Object? pendingId = freezed,
   }) {
     return _then(StoreWalletPrivateKeyStart(
+      walletPrivateKey: walletPrivateKey == freezed
+          ? _value.walletPrivateKey
+          : walletPrivateKey // ignore: cast_nullable_to_non_nullable
+              as String?,
       masterKey: masterKey == freezed
           ? _value.masterKey
           : masterKey // ignore: cast_nullable_to_non_nullable
@@ -4875,8 +4884,11 @@ class _$StoreWalletPrivateKeyStartCopyWithImpl<$Res> extends _$StoreWalletPrivat
 
 @Implements<ActionStart>()
 class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
-  const _$StoreWalletPrivateKeyStart({required this.masterKey, this.pendingId = _kStoreWalletPrivateKeyPendingId});
+  const _$StoreWalletPrivateKeyStart(
+      {required this.walletPrivateKey, required this.masterKey, this.pendingId = _kStoreWalletPrivateKeyPendingId});
 
+  @override
+  final String? walletPrivateKey;
   @override
   final String masterKey;
   @JsonKey()
@@ -4885,7 +4897,7 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
 
   @override
   String toString() {
-    return 'StoreWalletPrivateKey.start(masterKey: $masterKey, pendingId: $pendingId)';
+    return 'StoreWalletPrivateKey.start(walletPrivateKey: $walletPrivateKey, masterKey: $masterKey, pendingId: $pendingId)';
   }
 
   @override
@@ -4893,13 +4905,14 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StoreWalletPrivateKeyStart &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
+      const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -4909,33 +4922,33 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
-    return start(masterKey, pendingId);
+    return start(walletPrivateKey, masterKey, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
-    return start?.call(masterKey, pendingId);
+    return start?.call(walletPrivateKey, masterKey, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
-      return start(masterKey, pendingId);
+      return start(walletPrivateKey, masterKey, pendingId);
     }
     return orElse();
   }
@@ -4976,9 +4989,10 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
 }
 
 abstract class StoreWalletPrivateKeyStart implements StoreWalletPrivateKey, ActionStart {
-  const factory StoreWalletPrivateKeyStart({required String masterKey, String pendingId}) =
-      _$StoreWalletPrivateKeyStart;
+  const factory StoreWalletPrivateKeyStart(
+      {required String? walletPrivateKey, required String masterKey, String pendingId}) = _$StoreWalletPrivateKeyStart;
 
+  String? get walletPrivateKey;
   String get masterKey;
   @override
   String get pendingId;
@@ -5053,7 +5067,7 @@ class _$StoreWalletPrivateKeySuccessful implements StoreWalletPrivateKeySuccessf
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -5063,7 +5077,7 @@ class _$StoreWalletPrivateKeySuccessful implements StoreWalletPrivateKeySuccessf
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -5073,7 +5087,7 @@ class _$StoreWalletPrivateKeySuccessful implements StoreWalletPrivateKeySuccessf
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
@@ -5214,7 +5228,7 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String pendingId) start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
     required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
@@ -5224,7 +5238,7 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
@@ -5234,7 +5248,7 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String pendingId)? start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),

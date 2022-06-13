@@ -88,7 +88,10 @@ class LocalEpic {
   }
 
   Stream<AppAction> _setWalletPrivateKey(Stream<SetWalletPrivateKey> actions, EpicStore<AppState> store) {
-    return actions.map((SetWalletPrivateKey action) => StoreWalletPrivateKeyStart(masterKey: store.state.masterKey!));
+    return actions.map(
+      (SetWalletPrivateKey action) =>
+          StoreWalletPrivateKeyStart(walletPrivateKey: action.walletPrivateKey, masterKey: store.state.masterKey!),
+    );
   }
 
   Stream<AppAction> _setBundle(Stream<SetBundle> actions, EpicStore<AppState> store) {

@@ -13,6 +13,7 @@ dependencies:
   base32: ^2.1.1
   bip39: ^1.0.6
   cloud_firestore: ^3.1.16
+  convert: ^3.0.2
   crypto: ^3.0.2
   cupertino_icons: ^1.0.4
   email_validator: ^2.0.1
