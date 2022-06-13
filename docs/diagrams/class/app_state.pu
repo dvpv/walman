@@ -1,0 +1,67 @@
+@startuml app_state
+
+scale 2
+
+class AppState {
+    masterKey : String?
+    firebaseUser : FirebaseUser?
+    pending : Set<String>
+    vault : List<VaultBundle>
+    selectedPage : int
+    persistentState : PersistentState
+    detailsState : DetailsState
+    createCodeState : CreateCodeState
+    uiState : UIState
+    passwordGeneratorState : PasswordGeneratorState
+    copyWith(...) : AppState
+    fromJson(Map<dynamic, dynamic>) : AppState
+    toJson() : Map<dynamic, dynamic>
+    {method}...
+}
+
+class PersistentState {
+    bundle : Bundle
+    walletPrivateKey : String?
+    masterKeyHash : String?
+    {method}...
+}
+
+class DetailsState {
+    selectedId : String
+    editing : bool
+    {method}...
+}
+
+class CreateCodeState {
+    code : Code?
+    {method}...
+}
+
+class UIState {
+    walletInfo : WalletInfo?
+    showPassword : bool
+    {method}...
+}
+
+class PasswordGeneratorState {
+    characterPool : Set<CharacterPool>
+    length : int
+    password : String
+    {method}...
+}
+
+AppState *-- PersistentState
+AppState *--- DetailsState
+AppState *---- CreateCodeState
+AppState *--- UIState
+AppState *-- PasswordGeneratorState
+
+note left of AppState
+    Some of the classes are not
+    described in this diagram
+    in order to save space.
+    They will be discussed in their
+    respective chapters.
+end note
+
+@enduml

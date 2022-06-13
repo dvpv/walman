@@ -1,0 +1,48 @@
+@startuml action
+
+scale 2
+
+participant UI as ui
+participant ActionStream as actions
+participant Reducer as reducer
+participant Epic as epic
+participant API as api
+
+ui -> actions : Dispatch ActionStart
+
+...
+
+actions -> reducer : ActionStart event
+alt #LightCyan State needs to be updated
+    reducer -> reducer : update state
+    reducer -> ui : updated state
+    ui -> ui : update UI
+end
+
+...
+
+actions -> epic : ActionStart event
+epic -> api : API call
+api --> epic : response
+alt #TECHNOLOGY Successful API call
+    epic -> actions : ActionSuccessful
+    alt #LightCyan If ActionStart has callback
+        epic -> ui : callback(ActionSuccessful)
+    end
+else #LightSalmon API call failed
+    epic -> actions : ActionError
+    alt #LightCyan If ActionStart has callback
+        epic -> ui : callback(ActionError)
+    end
+end
+
+...
+
+actions -> reducer : ActionSuccessful event
+alt #LightCyan State needs to be updated
+    reducer -> reducer : update state
+    reducer -> ui : updated state
+    ui -> ui : update UI
+end
+
+@enduml

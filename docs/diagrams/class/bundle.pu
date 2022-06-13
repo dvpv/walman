@@ -1,0 +1,55 @@
+@startuml bundle
+
+scale 2
+
+class Bundle {
+    passwords : List<Passwords>
+    codes : List<Codes>
+    optTokens : List<OTPToken>
+    {method}get itemCount : int
+    {method}...
+}
+
+abstract BundleItem {
+    id : String
+    title : String
+    createdAt : DateTime
+    lastAccess : DateTime
+    timesAccessed : int
+    {method}...
+}
+
+class Password {
+    username : String
+    password : String
+    note : String
+    {method}...
+}
+
+class Code {
+    data : String
+    format : BarcodeFormat
+    {method}...
+}
+
+class OTPToken {
+    standard : OTPStandard
+    path : String
+    secret : String
+    issuer : String
+    algorithm : OTPAlgorithm
+    period : int
+    digits : int
+    keyUri : Uri
+    {method}...
+}
+
+Password --|> BundleItem
+Code --|> BundleItem
+OTPToken --|> BundleItem
+
+Bundle *-- Password : 1..*
+Bundle *-- Code : 1..*
+Bundle *-- OTPToken : 1..*
+
+@enduml

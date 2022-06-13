@@ -1,0 +1,28 @@
+@startuml app_action
+
+scale 2
+
+abstract AppAction
+
+abstract ErrorAction {
+    error : Object
+}
+
+abstract PendingAction {
+    pendingId : String
+}
+
+abstract ActionStart {
+    pendingId : String
+}
+
+abstract ActionDone {
+    pendingId : String
+}
+
+AppAction <|-- ErrorAction
+AppAction <|-- PendingAction
+PendingAction <|-- ActionStart
+PendingAction <|-- ActionDone
+
+@enduml

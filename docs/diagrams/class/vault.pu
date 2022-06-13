@@ -1,0 +1,29 @@
+@startuml vault
+
+scale 2
+
+class Bundle {
+    passwords : List<Passwords>
+    codes : List<Codes>
+    optTokens : List<OTPToken>
+    {method}get itemCount : int
+    {method}...
+}
+
+class VaultBundle {
+    storedAt : DateTime
+    bundle : Bundle
+    type : BundleType
+    {method}...
+}
+
+enum BundleType {
+    cloud
+    blockchain
+}
+
+VaultBundle *-- BundleType
+VaultBundle *-- Bundle
+
+
+@enduml

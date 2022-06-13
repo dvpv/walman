@@ -732,7 +732,257 @@ prompted to login or signup for the cloud service. After the login process is
 done they are redirected back to the sync page and a cloud backup can now be
 created.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{images/app/settings.png}
+    \caption{Settings page of the application}\label{fig:settings}
+\end{figure}
+
+The settings page,~\autoref{fig:settings}, can be accessed form the index page
+menu. Here the user can delete or view the wallet private key and manage their
+cloud account. The settings page changes depending on the state of the
+application. If the user did not create or link a wallet yet, the settings page
+will display the options to do so instead of the delete and view ones. If the
+user did not login to the cloud account yet the settings page will display a
+login option.
+
+\section{Application State}
+
+The application state is responsible for storing the data the application works
+with. This data is needed to build the user interface.
+
+As stated in the \textit{Technology Stack} chapter, the state management system
+used in this application is Redux. Unlike in other architectures like BloC, in
+this pattern the entire application has only one state object that contains all
+the information.
+
+Each time the state is updated, the user interface is rebuilt as well. In order
+to selectively rebuild the user interface components, containers are used.
+Containers are specific providers that select only one object from the AppState
+class that is used to build the user interface. If there are more than a single
+element from the AppState needed to build a part of the user interface, nested
+containers can be used. Each time the container detects that the represented
+data has changed, it rebuilds the afferent user interface. Implementation for
+containers is partly provided by the flutter\_redux
+package\cite{flutterReduxDocs}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.33]{diagrams/class/app_state.png}
+    \caption{Class diagram of the AppState model}\label{fig:appstate}
+\end{figure}
+
+The AppState model is described in~\autoref{fig:appstate}. This model is
+composed of five other state classes. In Dart `\textit{?}' next to some
+variables signifies that the specific type is nullable and the null value can
+be assigned to it.
+
+First we have the master key in the form of a nullable string. At the start of
+the application, the master key is null and after it was verified with the
+master key hash from the persistent state, it is set to the appropriate value.
+
+The \textit{firebaseUser} field contains data about the cloud user account if
+it exists. In case the user is not logged into the cloud account the field is
+null.
+
+The set of pending strings is used to signal to the user interface when some
+special actions processes are ongoing. These actions have a specific pendingId
+which is added to the set when they are dispatched and removed when the final
+action is completed. This helps makes it so the user interface can show
+progress indicators to the user when an operation is ongoing.
+
+All the fetched backups form the cloud and the blockchain are stored inside the
+state into the \textit{vault} list. The VaultBundle type contains a timestamp
+at which the backup was made and a `Bundle' which is a an object containing the
+passwords, OTP tokens and codes of the application at one point in time and it
+will be described in more detail in another chapter.
+
+The \textit{selectedPage} integer represents which fragment will be shown on
+the index page.
+
+The persistent state is the data of the state that needs to be stored using the
+Secure Storage API into permanent memory so it will be loaded back when the
+application is restarted. In this state we keep the `Bundle' with the current
+database, the master key hash and the private wallet key. Everything except the
+master key hash is encrypted with the master key itself and decrypted after the
+user unlocks the application.
+
+The details state is a small state used when the password details page is
+displayed.
+
+When the user scans a new QR, barcode or OTP token, the result of the scan
+operation is temporally stored into the \textit{code} field of the
+CreateCodeState.
+
+The UIState is used to store information that is only relevant to the user
+interface and it's not used when calling the APIs.
+
+The last part is the password generator state which contains the options of the
+generator and the generated password.
+
+All the states are immutable and in order to be changed, a new state is
+created. This is done using the \textit{copyWith} method which as arguments has
+all the fields form the class as nullable types. If a field is nullable and it
+is not preceded by the \textbf{required} modifier, it is an optional field with
+the default value null. If the \textit{copyWith} function does not receive a
+parameter, it defaults to the value that the object stores at the moment of the
+call. The method returns an object of the same type as the class it is
+contained in.
+
+The \textit{copyWith} function as well as some more utility functions like json
+encoders and more, are automatically generated using the
+freezed\cite{freezedDocs} package. There are no issues with having methods that
+are not used in the final code since Dart has the tree shaking feature which
+automatically drops unused code components, and form the maintenance point of
+view there are no issue since this is generated code, tested by the package
+itself.
+
+\section{Application Action}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.45]{diagrams/class/app_action.png}
+    \caption{Class diagram of the AppAction model}\label{fig:appaction}
+\end{figure}
+
+The application action is the base type for the action events. These actions
+are dispatched by the user interface as result of user interaction and they are
+intercepted into the epics and reducers where they trigger API calls and state
+change respectively.
+
+In~\autoref{fig:appaction} we can see the inheritance relationship between the
+action base types. The \textit{AppAction} class is the base of all actions and
+it is detected by the reducers and epics.
+
+The \textit{ErrorAction} class is used when an action failed due to an error.
+When an action stream crashes, an \textit{ErrorAction} type object is emitted
+by the epic.
+
+The \textit{PendingAction} types \textit{ActionStart} and \textit{ActionDone}
+contain a specific pendingId of the action that implements them which is added
+or removed from the \textit{pending} set in the \textit{AppState} by a specific
+reducer.
+
+There are three main types of actions used in this project.
+
+The first type is the \textit{simple action} which has only one stage. I used
+these for simple processes that do not require API calls like for example
+toggling the `show password' option.
+
+The second type are the \textit{normal actions} which are actions that are used
+usually with API calls and have 3 steps: \textit{Start}, \textit{Successful}
+and \textit{Error}. The \textit{Start} action is the one that is dispatched by
+the user interface at the beginning of the process and it contains the data
+needed to make the API call. The \textit{Successful} action is the one that
+returns the response form the API and finishes the process. The last,
+\textit{ErrorAction} is used in case the API call failed and contains an error.
+These actions can also have callbacks with error handling procedures.
+
+The last type of actions used are the \textit{pending actions} which are nearly
+identical to the normal ones, the only difference being that they have a
+pendingId and the \textit{Start} action implements the \textit{ActionStart}
+class and the \textit{Successful} and \textit{Error} actions implement the
+\textit{ActionDone} classes. This type of actions is usually used with API
+calls that take more time to execute during which the user needs to get
+progress indicator feedback.
+
+\section{Epics}
+
+The epics are the middleware part of the application which make the connection
+between the application state and the APIs.
+
+An epic is basically a listener function that is executed when an action of a
+designated type is dispatched. It can after that make calls to the APIs and
+create new subsequent actions following up the first one.
+
+Most actions in this project have epics of their own and at the application
+level the epics are basically a list wrapped into a specific class from the
+redux\_epics\cite{reduxEpicsDocs} package.
+
+\section{Reducers}
+
+The reducers are very similar to the epics. They are functions that listens for
+specifically designated types of actions and rebuild the \textit{AppState}
+based on the data contained within the actions.
+
+One very important aspect of the redux architecture is that the reducers are
+the only places in which the application state should be changed. This is one
+of the reasons why the \textit{AppState} class is immutable. Also, another
+important aspect is that reducers are executed before epics when an action is
+detected.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{diagrams/sequence/action.png}
+    \caption{Sequence diagram of a generic normal action}\label{fig:action_sequence}
+\end{figure}
+
+In~\autoref{fig:action_sequence} I represented using a sequence diagram how a
+generic normal action is processed by the application using in the redux
+architecture. Some of the handlers have not been included into the diagram
+because of size considerations but overall this is how most of the actions are
+processed throughout the application.
+
+An epic can also dispatch actions that are not part of the current process, for
+example when creating a new password we want to also store it into the
+permanent storage, thus the stream is expanded into the afferent
+\textit{Success} action and a \textit{Start} action for the storage process.
+
+\section{Application Models}
+
+The data is represented by appropriate classes. All the passwords, codes and
+OTP tokens toughener create a \textit{Bundle} of data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{diagrams/class/bundle.png}
+    \caption{Class diagram of the Bundle model}\label{fig:bundle}
+\end{figure}
+
+A \textit{Bundle} contains a list of passwords, one of codes and a list of OTP
+tokens as seen in~\autoref{fig:bundle}. The passwords, codes and tokens, all
+implement the Bundle Item abstract class that contains general information
+about them such as an unique id based on the UUID version 4
+algorithm\cite{uuid} implemented into the uuid package\cite{uuidDocs}, title,
+creation date and usage trends.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{diagrams/class/vault.png}
+    \caption{Class diagram of Bundle element in backup storage}\label{fig:vault_bundle}
+\end{figure}
+
+A \textit{VaultBundle} is what is closer to what is stored on the blockchain.
+As seen in~\autoref{fig:vault_bundle}, in addition to the bundle, storage date
+and time and the type of storage are contained as well.
+
 \section{Password Management}
+
+Password management is one of the core functionalities of the application and
+it is the most important feature. There are multiple operations that the user
+can do related to password management and most of them are accessed from the
+passwords fragment from the index page.
+
+\subsection{Password Generator}
+
+One of the features related to the password management is the password
+generator.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.33]{images/app/password_generator.png}
+    \caption{Password generator dialog}\label{fig:password_generator}
+\end{figure}
+
+In~\autoref{fig:password_generator} there is a screenshot with the password
+generator dialog. As depicted into the image, the generator has two settings:
+password length and character pool. When modified these settings are saved into
+the state by appropriate actions. Every time the settings are changed, a
+GeneratePassword action sequence is triggered in the epics. This action can
+also be dispatched by the user by pressing the refresh button, and it is
+automatically triggered when the generator dialog is opened. Instead of an API,
+here the GeneratePasswordStart function calls an utility function with the
+generator settings, which returns a random password based on the parameters.
 
 \section{QR and Barcode Management}
 
