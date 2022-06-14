@@ -1,0 +1,25 @@
+@startuml contract
+
+scale 2
+
+class BundleStorage{
+    - vaults : map<address, Vault>
+    + addBundle(string memory content, string memory createdAt) : void
+    + removeBundle(uint256 id) : void
+    + getVault() : Vault
+    + getLatestBundle() : Bundle
+}
+
+class Vault {
+    + bundles : List<Bundle>
+}
+
+class Bundle {
+    + content : string
+    + createdAt : string
+}
+
+BundleStorage *-- Vault
+Vault *-- Bundle
+
+@enduml

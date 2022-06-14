@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                         height: 16,
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.2,
+                        height: MediaQuery.of(context).size.height * 0.3,
                         child: WalletInfoContainer(
                           builder: (BuildContext context, WalletInfo? walletInfo) {
                             return PersistentStateContainer(

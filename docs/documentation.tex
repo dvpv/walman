@@ -670,7 +670,7 @@ the application or create one if it does not exist.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{images/app/home.png}
+    \includegraphics[scale=0.45]{images/app/home.png}
     \caption{Home fragment of the application}\label{fig:homepage}
 \end{figure}
 
@@ -706,7 +706,7 @@ sync page, the settings page or the password generator.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{images/app/sync.png}
+    \includegraphics[scale=0.45]{images/app/sync.png}
     \caption{Sync page of the application}\label{fig:syncpage}
 \end{figure}
 
@@ -734,7 +734,7 @@ created.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{images/app/settings.png}
+    \includegraphics[scale=0.45]{images/app/settings.png}
     \caption{Settings page of the application}\label{fig:settings}
 \end{figure}
 
@@ -988,7 +988,7 @@ generator settings, which returns a random password based on the parameters.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{images/app/new_password.png}
+    \includegraphics[scale=0.45]{images/app/new_password.png}
     \caption{New password page}\label{fig:new_password}
 \end{figure}
 
@@ -1029,7 +1029,7 @@ edit ones it updates the state and triggers a bundle storage action.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.35]{images/app/view_qr.png}
+    \includegraphics[scale=0.45]{images/app/view_qr.png}
     \caption{Code Details page}\label{fig:code_details}
 \end{figure}
 
@@ -1058,7 +1058,7 @@ QR or barcodes is stored.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{images/app/tokens.png}
+    \includegraphics[scale=0.43]{images/app/tokens.png}
     \caption{OTP fragment from the index page}\label{fig:otp}
 \end{figure}
 
@@ -1125,25 +1125,141 @@ client and the server have previously shared the secret with each other (by
 scanning a TOTP QR token) and they each generate a code which is validated by
 the server.
 
+I implemented the TOTP algorithm following the specifications and technical
+guidance of~\cite{totp}.
+
 \section{Cryptocurrency Wallet}
+
+The application needs to have a cryptocurrency wallet in order to create
+blockchain backups. Therefore the implementation for this wallet is restricted
+to only spend cryptocurrency when a backup is created or deleted.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.45]{images/app/wallet.png}
+    \caption{Wallet fragment from the index page}\label{fig:wallet}
+\end{figure}
+
+On the wallet screen, the user can see the current balance of the account and
+the wallet public address as seen in~\autoref{fig:wallet}.
+
+The page can be refreshed by making a drag gesture. When an update is triggered
+the \textit{WalletInfo} object is rebuilt based on the information fetched from
+the blockchain.
+
+This page refresh is also triggered automatically by a \textit{periodic timer}
+every 5 seconds. This is done in order to keep the page updated in case of a
+balance change.
+
+The \textit{WalletInfo} object has two string fields. The first one is the
+\textit{address} which is generated from the private key. The second one is the
+\textit{balance} which is given by an API call.
 
 \section{Backup}
 
+Backing up the bundle of data is another important feature of the application.
+A backup item is based on the \textit{VaultBundle} class depicted
+in~\autoref{fig:vault_bundle}. On the cloud and blockchain respectively the
+backup is stored in the form of a JSON object with two fields: the
+\textit{bundle} field containing the encrypted bundle and the \textit{storedAt}
+field that contains the timestamp when the backup was created stored in
+\textit{milliseconds since epoch}.
+
 \subsection{Cloud Backup}
+
+For the cloud backup, the Firestore online database was used. This database is
+a simple key value NoSQL database. The access to the database items is made
+based on the cloud account that the user needs to log into before the creation
+of the backup.
 
 \subsection{Blockchain Backup}
 
+For the blockchain backup part I created a smart contract and deployed it on
+the Rinkeby Ethereum testnet. In future this smart contract can easily be
+deployed on the mainnet, but for development cost reduction I decided to keep
+it on the testnet.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{diagrams/class/contract.png}
+    \caption{Class diagram of the smart contract}\label{fig:contract}
+\end{figure}
+
+The smart contract is a simple class like data structure as seen
+in~\autoref{fig:contract}. The contract has 4 access functions. These classes
+have the parameters specified in~\autoref{fig:contract} as well as the
+transaction details. From the transaction details, the most important detail
+for this smart contract is the public address of the sender (the mobile
+application wallet public address). The \textit{vaults} are stored into a map
+where the key value is the public address of the sender thus everyone will have
+access only to their vault.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.272]{diagrams/sequence/contract.png}
+    \caption{Sequence diagram showing the addBundle and getVault API calls}\label{fig:contract_sequence}
+\end{figure}
+
+In~\autoref{fig:contract_sequence} I represented using a sequence diagram the
+two most used API calls: \textit{addBundle} and \textit{getVault}.
+
+The \textit{addBundle} API call starts when the method with the same name of
+the \textit{BlockchainStorageAPI} class is called by an epic. As parameters
+this functions receives the bundle that needs to be stored, the wallet private
+key used for signing the transaction and the master key that is used to encrypt
+the bundle. The \textit{encrypt} static utility function encrypts the bundle
+with the master key and after the timestamp is fetched using the DateTime Dart
+class, the request is sent over to the smart contract. Here the contract does
+the simple operation of pushing the bundle to the list of bundles in the vault
+and then finishes the transaction.
+
+When the application requests the list of backups form the cloud, the
+\textit{getVault} method of the \textit{BlockchainStorageAPI} class is called.
+This method takes as parameters the wallet private key and the master key. The
+method then immediately sends the request to the smart contract which responds
+with the appropriate map entry vault. When it receives the bundle, the method
+decrypts each bundle from the vault using the master key. After everything is
+decrypted it returns the vault to the caller.
+
+The \textit{getLatestBundle} and \textit{removeBundle} contract methods are
+similar with the ones presented.
+
 \section{Security}
+
+Since this is an application that is meant to store sensitive data, security
+was the top priority of the development. Every piece of information that is not
+in the current volatile state memory is encrypted with the master key or
+hashed.
+
+For the encryption algorithm I used AES with the master key padded into a 32
+byte key. Instead of implementing AES myself, I used the implementation
+provided by the encrypt package\cite{encryptDocs}. The data is encrypted 3
+rounds. Initially I wanted to increase this number but due to data expansion,
+the gas prices raised exponentially, so a balanced choice was 3 rounds of
+encryption.
+
+The masterKey is stored only in the Secure Storage which itself is supposed to
+be encrypted by the operating system. I decided to encrypt even the data stored
+into the Secure Storage as an additional line of defense. The master key itself
+is salted and hashed using the SHA512 hashing function provided in the crypto
+package\cite{cryptoDocs}. The salt is randomly generated using the password
+generator functionality of the application, and the hash function is applied in
+12 rounds.
+
+Additionally the application has strict master password requirements, the
+password needing to be at least 8 characters long and it has to contain at
+least a lowercase and an uppercase letter, a symbol and a number.
 
 \chapter{Tests}
 
-\section{Test Pipeline}
-
 \section{Unit Tests}
 
-\section{Widget Tests}
+\section{Test Pipeline}
 
 \section{Performance Statistics}
+
+The Flutter plugins offer statistics about the performance of the application
+such as RAM and CPU usage and the average FPS the application is outputting.
 
 \chapter{Conclusions}
 

@@ -1,0 +1,46 @@
+@startuml contract
+
+scale 2
+
+skinparam SequenceMessageAlignment center
+skinparam BoxPadding 10
+skinparam ParticipantPadding 10
+
+box Mobile Application #TECHNOLOGY
+participant "BlockchainStorageAPI" as api
+end box
+
+box Blockchain #LightCyan
+participant "Smart Contract" as contract
+end box
+
+== Adding a bundle ==
+
+-> api : addBundle(bundle, walletPrivateKey, masterKey)
+activate api
+api -> api : encrypt(bundle, masterKey)
+api -> api : timestamp = DateTime.now()
+api -> contract : addBundle(bundle, timestamp)
+activate contract
+contract -> contract : vaults[msg.sender].bundles.push(\n{content: bundle, cratedAt: timestamp})
+contract --> api
+deactivate contract
+<-- api
+deactivate api
+
+== Getting the Vault ==
+
+-> api : getVault(walletPrivateKey, masterKey)
+activate api
+api -> contract : getVault()
+activate contract
+contract -> contract : response = vaults[msg.sender]
+contract --> api : vault
+deactivate contract
+loop for each bundle in vault.bundles
+    api -> api : bundle = decrypt(encrypted_bundle, masterKey)
+end
+<-- api : decrypted_vault
+deactivate api
+
+@enduml
