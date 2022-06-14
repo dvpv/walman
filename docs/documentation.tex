@@ -68,7 +68,62 @@
 
 \end{titlepage}
 
+\chapter*{Rezumat}
+
+\bigskip
+\bigskip
+\bigskip
+
+Walman este o aplicație pentru management-ul unui portofel virtual în care
+user-ul își poate stoca în siguranță parolele, card-uri de fidelitate și de
+shopping și token-uri pentru autentificare în doi factori. Datele pot fi
+salvate ca backup pe o paltformă cloud de încredere sau pe blockchain.
+Aplicația a fost creata folosind Flutter, un framework cross platform pentru
+dezvoltare de aplicații mobile.
+
+Pentru backup-ul pe cloud, aplicația a fost integrată cu Firebase si Firestore,
+două servicii backend `pay as you use' dezvoltate de Google care oferă o
+implementare rapidă și sigură a unei aplicații de tip server.
+
+Backup-urile pe blockchain sunt implementate folosind smart contracts pe o
+rețea Ethereum dezvoltate in limbajul de programare Solidity, care este
+standardul dezvoltării de aplicații decentralizate în momentul actual.
+
+Management-ul stării aplicației este implementat folosind o arhitectură bazată
+pe Redux, un șablon care minimizează timpul de dezvoltare, reduce costul
+menenanței și este ușor de testat.
+
+Aplicația are multe caracteristici de la management de parole pâna la un
+portofel pentru crypto monede și poate fii imbunătațită si dezvoltată intr-o
+aplicație comercială.
+
 \chapter*{Abstract}
+
+\bigskip
+\bigskip
+\bigskip
+
+Walman is a wallet manager designed to help the user safely store their
+passwords, shopping and fidelity cards and one time password authentication
+tokens. The data can be backed up on a reliable cloud platform or on the
+blockchain. The application was created using Flutter, a cross platform mobile
+development framework.
+
+For the cloud backup, the application was integrated with Firebase and
+Firestore, a `pay as you use' backend platform developed by Google which offers
+a quick and secure implementation for a server application.
+
+The blockchain backups are implemented using smart contracts on an Ethereum
+network developed using the Solidity programming language, which is the state
+of the art of decentralized application development at the moment.
+
+The state management architecture of the application is based on Redux, a
+pattern that minimizes development time, reduces maintenance cost and it's easy
+to test.
+
+In the end the application has a lot of different features ranging from
+password management to a crypto wallet functionality and it can be further
+developed and improved into a commercial application.
 
 \tableofcontents
 
@@ -90,13 +145,13 @@ that want to impersonate someone else.
 According to~\cite{systematicAnalysis}, a \textit{``systematic literature
     review in the area of passwords and passwords security''}, there are many
 problems with password security and management ranging from weak passwords and
-password reuse, to users writing down passwords or sending them through
-unsecure channels. Most of these problems according
-to~\cite{systematicAnalysis} are solved by using password recommendations. A
-good solution to most of these problems is a password management tool. A
-password manager is a piece of software designed for generating and managing
-passwords, in this way the user can have unique, complex and safely stored
-password without having to remember them.
+password reuse to users writing down passwords or sending them through unsecure
+channels. Most of these problems according to~\cite{systematicAnalysis} are
+solved by using password recommendations. A good solution to most of these
+problems is a password management tool. A password manager is a piece of
+software designed for generating and managing passwords, in this way the user
+can have unique, complex and safely stored password without having to remember
+them.
 
 Another great method to better secure you accounts is using a two factor
 authentication (2FA) method. These method vary from security questions, to one
@@ -109,26 +164,26 @@ development lately. As of May 2022, the market cap of Bitcoin is around 565
 billion USD, and the market cap of Ethereum is around 214 billion USD.\@ In the
 case of Bitcoin, that is more than double of what it was in 2019 (around 211
 billion USD), referenced in~\cite{cryptocurrencyMarketAnalysis}.
-Cryptocurrencies also offer secure and long term storage capabilities thanks to
+Cryptocurrencies also offer secure and long-term storage capabilities thanks to
 the blockchain technology. Blockchain backups, thanks to the decentralized
 nature of the blockchain, are very hard to be tempered with. A traditional
-cloud backup could be lost or inaccessible in more than one situations. The
-most obvious one is data loss happening as result of a cyber attack or the
-company simply going bankrupt. There are also situations in which the company
-itself can refuse to serve you anymore. They can freeze your account or just
-refuse to serve an entire country all-together, we have the recent example of
-companies like Visa and Mastercard refusing to serve russian citizens as result
-of political tensions as described in~\cite{russiaSanctions}
+cloud backup could be lost or inaccessible in more than one situation. The most
+obvious one is data loss happening as result of a cyber-attack or the company
+simply going bankrupt. There are also situations in which the company itself
+can refuse to serve you anymore. They can freeze your account or just refuse to
+serve an entire country all-together, we have the recent example of companies
+like Visa and Mastercard refusing to serve Russian citizens as result of
+political tensions as described in~\cite{russiaSanctions}
 and~\cite{russiaSanctions2}. All these scenarios cannot happen in a
 decentralized blockchain system.
 
 Businesses that were traditionally not online like shopping also have inversely
-digitalized. Nowadays most of the hypermarkets offer fidelity cards. Usually
-these cards are built around a unique barcode or qr code. Often it's hard to
+digitalized. Nowadays most of the hypermarkets offer fidelity cards. Usually,
+these cards are built around a unique barcode or qr code. Often, it's hard to
 manage all your cards, so a digital storage solution to solve this issue would
 help the end user better manage their cards.
 
-Considered all mentioned above, a user has to remember and manage a lot of
+Considered all mentioned above, a user must remember and manage a lot of
 information in order to interact with the currently available online
 infrastructure. A tool that could help them manage all this data better is a
 wallet manager.
@@ -136,15 +191,15 @@ wallet manager.
 \section{Motivation}
 
 My personal motivation for creating a wallet manager is the fact that I want to
-use it myself. Also I wanted for a long time to explore the state of the art in
-smart contract development, so this was a great occasion to do so.
+use it myself. Also, I wanted for a long time to explore the state of the art
+in smart contract development, so this was a great occasion to do so.
 
 I chose to create this project in the form of a mobile application since people
 tend to have their smartphones with them most of the time, so having a virtual
 wallet on your mobile device makes sense.
 
 Another factor that motivates me is the fact that currently in the mobile
-application market there are almost no free and open source password management
+application market there are almost no free and open-source password management
 applications available. The user needs to \textit{trust} the creators of the
 application with their data, not knowing how the implementation of the product
 is made, they have no guarantee that the data is safe.
@@ -174,25 +229,25 @@ options available.
 \end{table}
 
 In \autoref{tab:otherProducts} we have a comparison between some of the most
-popular password managers available on the market. First off we have
+popular password managers available on the market. First off, we have
 LastPass\cite{lastpass} and RememBear\cite{remembear}, two very similar
-password managers, both having a free and a payed plan. Neither of these two is
-open source, so the most pressing issue regarding them is the guarantee that
+password managers, both having a free and a paid plan. Neither of these two is
+open-source, so the most pressing issue regarding them is the guarantee that
 your data is safe. Without having the ability to see how your data is managed
-and stored you cannot be certain that it is secure. Also these applications do
+and stored you cannot be certain that it is secure. Also, these applications do
 not have blockchain backups.
 
 KeePass\cite{keepass} is probably the most popular password manager for
-desktop. It is free and open source, and the code was analyzed and certified by
-specialized organizations such as the Open Source Initiative. The biggest
+desktop. It is free and open-source, and the code was analyzed and certified by
+specialized organizations such as the Open-Source Initiative. The biggest
 drawback to KeePass is the aged user interface and the missing mobile
 application counterpart. Nowadays a lot of the situations where a user needs
-access to their credentials are happening while using smartphones. Also the
+access to their credentials are happening while using smartphones. Also, the
 features are limited, KeePass doing one thing and doing it well that being
-password management. There are no cloud or blockchain backups, so the user
-needs to manager backing up and storing their password database themselves.
+password management. There is no cloud or blockchain backups, so the user needs
+to manager backing up and storing their password database themselves.
 
-Similar with KeePass, PassMan\cite{passman} is a free and open source password
+Similar with KeePass, PassMan\cite{passman} is a free and open-source password
 manager. They have a mobile version of the application, but blockchain backups
 are missing. Also, again, PassMan is just a password manager. It does not
 manage shopping cards or crypto wallets.
@@ -203,7 +258,7 @@ application. You can store password and secure notes inside the application but
 from the user experience point of view, KeyBase was never designed to be a
 password or wallet manager. The reason why it is mentioned, is because KeyBase
 is implemented on the blockchain, all user data is encrypted and it's free and
-open source.
+open-source.
 
 \chapter{Technology Stack}
 
@@ -216,14 +271,15 @@ smart contracts deployed on the blockchain.
 
 The most important aspects I considered when I chose the technologies used for
 the frontend was cross-platform capabilities, ease of testing, documentation
-availability and performance. This is why for this project I chose a Flutter
+availability and performance. Therefore, for this project I chose a Flutter
 stack.
 
 \subsection{Flutter}
 
 Flutter\cite{flutterDocs} is a mobile application development framework
 developed by Google in the Dart programming language. It was released in May
-2017 and it currently is one of the most popular mobile development frameworks.
+2017, and it currently is one of the most popular mobile development
+frameworks.
 
 According to \textit{``An empirical investigation of performance overhead in
     cross-platform mobile development frameworks''}\cite{flutterPerformance},
@@ -251,7 +307,7 @@ in~\cite{flutterPerformance}, where Flutter achieves a competitive result when
 compared to the other frameworks.
 
 Another very important feature of Flutter is cross-platform compatibility. A
-mobile application developed in this framework can be build in native Android
+mobile application developed in this framework can be built in native Android
 and IOS applications with minimal performance loss. There is also Flutter Web
 for web applications, offering the option to create a browser variant of the
 application in the future, reusing already developed and tested parts from the
@@ -265,8 +321,8 @@ allowing almost instant compilation times speeding up the development, and in
 production, the code is compiled into a native application for performance
 enhancement.
 
-The User Interface in Flutter is build based on a widget tree, similar to
-React. Every User Interface item inherits the Widget class.
+The User Interface in Flutter is build based on a widget tree, like React.
+Every User Interface item inherits the Widget class.
 
 \subsection{Dart}\label{chapter:dart}
 
@@ -286,15 +342,15 @@ shaking at compile time, discarding unused objects, methods and functions.
 
 \subsection{Code Generation}
 
-During the development of the project I used multiple packages (dart libraries)
-in the process. One very important package that needs to be mentioned is the
-\textit{freezed} package\cite{freezedDocs}. This offers code generation for
-common model functionalities such as json encoders and decoders, copyWith
-methods, different constructors and access functions and more.
+During the development of the project, I used multiple packages (dart
+libraries) in the process. One very important package that needs to be
+mentioned is the \textit{freezed} package\cite{freezedDocs}. This offers code
+generation for common model functionalities such as json encoders and decoders,
+copyWith methods, different constructors and access functions and more.
 
 Classes generated by the package are annotated with the \textit{@freezed} tag.
-The generated code is stored into files that contain the \textit{.freezed.dart}
-and \textit{.g.dart} extensions.
+The generated code is stored into files that contain the
+`\textit{.freezed.dart}' and `\textit{.g.dart}' extensions.
 
 \subsection{State Management}
 
@@ -303,7 +359,7 @@ management architecture. There are a lot of different state management patterns
 available in Flutter\cite{flutterStateManagement} such as Provider, BLoC or the
 simple setState. These state management patterns tell the application when the
 state has changed and when certain components of the presentation layer (the UI
-of the application) needs to be updated as a result of that.
+of the application) need to be updated as a result of that.
 
 For this project I used the Redux state management architecture. This pattern
 is a very popular solution for managing the state of an application, and it is
@@ -319,7 +375,7 @@ and redux\_epics\cite{reduxEpicsDocs}.
 
 In~\autoref{fig:reduxArchitecture} we can see the core structure of the redux
 architecture I used in the project. A state change begins the dispatch of an
-action. They are usually triggered by the user interface, but in some cases
+action. They are usually triggered by the user interface, but in some cases,
 they can be triggered by an API event. The Epics are a set of listeners which
 analyze the action stream. When an Epic recognizes an Action, it performs a
 series of operations which can process the data using the APIs (business logic)
@@ -376,7 +432,7 @@ NoSQL type database similar with Real Time Database but it has some additional
 features. Firestore is structured into collections of documents which each have
 multiple fields of different types. This approach allows the client a more
 granular access to the data, reducing the size of files transferred between the
-client and the server and client side processing.
+client and the server and client-side processing.
 
 \section{Blockchain}
 
@@ -388,7 +444,7 @@ and the economy between smart contract deployment and usage.
 \subsection{What is a Blockchain?}
 
 The blockchain is the basic structure that sits at the base of most of the
-cryptocurrencies. At it's core, it is a decentralized, distributed system of
+cryptocurrencies. At its core, it is a decentralized, distributed system of
 data storage and processing.
 
 \begin{figure}[H]
@@ -433,7 +489,7 @@ is confirmed by every subsequent blocks.
 \end{figure}
 
 In~\autoref{fig:blockchain} the relationship between two blocks is represented.
-As stated before, \textit{block 2} has the mixHash of \textit{block 1} in it's
+As stated before, \textit{block 2} has the mixHash of \textit{block 1} in its
 parentHash field. In this example, \textit{block 1} being the first block in
 the blockchain has the null value as parentHash.
 
@@ -447,7 +503,7 @@ the blockchain without invalidating every block starting from the change.
 The blocks following a changed block can be mined again in order to re-validate
 the blockchain. Here is where the second line of defense comes in,
 distribution. Every chain is stored on multiple nodes, therefore a change in
-one has to be reflected in all of them. This makes data alteration nearly
+one must be reflected in all of them. This makes data alteration nearly
 impossible.
 
 \subsection{Ethereum}
@@ -484,19 +540,19 @@ application can be easily redeployed on the mainnet.
 
 \subsection{Smart Contracts}
 
-The code that can be executed by the Ethereum Virtual Machine has to be
-compiled into a specific binary code. Smart contracts are transactions that
-contain binary code that can be later executed from subsequent transactions.
-Gas cost afferent to the execution of the contract is payed by the transaction
-that wants to execute the contract, not the contract itself. Therefore in order
-to create a blockchain application, one of the requirements of such a program
-is having an attached cryptocurrency wallet. In the case of server
-applications, this wallet can be a server secret, managed by the administrator,
-but in the case of client applications, the wallet cannot be incorporated by
-default into the application, since that would mean that everyone has access to
-it and is able to act maliciously. This is is the reason why this project
-requires an integrated wallet. An external wallet can also be used, but it
-would deteriorate the user experience.
+The code that can be executed by the Ethereum Virtual Machine must be compiled
+into a specific binary code. Smart contracts are transactions that contain
+binary code that can be later executed from subsequent transactions. Gas cost
+afferent to the execution of the contract is paid by the transaction that wants
+to execute the contract, not the contract itself. Therefore, in order to create
+a blockchain application, one of the requirements of such a program is having
+an attached cryptocurrency wallet. In the case of server applications, this
+wallet can be a server secret, managed by the administrator, but in the case of
+client applications, the wallet cannot be incorporated by default into the
+application, since that would mean that everyone has access to it and is able
+to act maliciously. This is is the reason why this project requires an
+integrated wallet. An external wallet can also be used, but it would
+deteriorate the user experience.
 
 Once a smart contract is deployed, it cannot be changed, therefore testing such
 a contract for vulnerabilities and bugs is essential.
@@ -506,13 +562,13 @@ operations consume more gas than others, and storing data also consumes gas.
 The application should be optimized to leave a minimal data footprint focusing
 on using non persistent memory.
 
-Accessing data from a smart contract is free of charge. As long as there is no
-new data to be stored or there is no code to be executed, accessing the data in
-a smart contract is cost free.
+Accessing data from a smart contract is free of charge. If there is no new data
+to be stored or there is no code to be executed, accessing the data in a smart
+contract is cost free.
 
 A very important security aspect of smart contracts and blockchains in general
 is that data is always visible by anyone who accesses the blockchain and it
-cannot be modified. Therefore sensitive data needs to be encrypted.
+cannot be modified. Therefore, sensitive data needs to be encrypted.
 
 \subsection{Solidity}
 
@@ -523,7 +579,7 @@ JavaScript.
 
 Code written in Solidity is compiled into binary code that can be executed on
 the Ethereum Virtual Machine and there are specific modifiers for the
-interaction with the EVM and code optimization. Some of these modifiers are:
+interaction with the EVM and code optimization. Some of these modifiers are
 \textit{view} which specifies that the afferent function is forbidden from
 changing the state and \textit{payable} which allows ETH to be transferred with
 the function call. There are also more commonly used modifiers like:
@@ -531,14 +587,14 @@ the function call. There are also more commonly used modifiers like:
 
 \section{Development Environment}
 
-For the creation of this project I used a wide variety of tools. They range
+For the creation of this project, I used a wide variety of tools. They range
 from Integrated Development Environments (IDEs) to task management
 applications.
 
-For the development of the mobile application I used Intellij and Visual Studio
-Code with the Flutter specific plugins. I also used Adobe XD for user interface
-design and plantuml for diagrams. In order to test the application, I used the
-Android Virtual Machine provided by Android Studio.
+For the development of the mobile application, I used Intellij and Visual
+Studio Code with the Flutter specific plugins. I also used Adobe XD for user
+interface design and plantuml for diagrams. In order to test the application, I
+used the Android Virtual Machine provided by Android Studio.
 
 For the blockchain part of the application I wrote the smart contracts using
 Solidity. I created a python compilation script for the smart contracts that is
@@ -556,14 +612,14 @@ The smart contracts were deployed on the Rinkeby Testnet using the Remix
 Ethereum IDE, and in order to access them from the mobile application, the
 web3dart\cite{web3dartDocs} flutter package was used.
 
-For task management I used Focalboard, a free and open source alternative to
+For task management I used Focalboard, a free and open-source alternative to
 Trello.
 
 \chapter{Implementation}
 
 \section{Use Cases}
 
-The application has six main components: the password, qr and barcode, OTP and
+The application has six main components: the password, QR and barcode, OTP and
 crypto-wallet managers and the cloud and blockchain backup solutions.
 
 \begin{figure}[H]
@@ -583,14 +639,14 @@ The home page of the application shows in a short format the passwords, codes
 and wallet balance. The user can navigate to different pages for each of the
 functionalities.
 
-The passwords page, shows the user a list with the passwords that are currently
+The passwords page shows the user a list with the passwords that are currently
 stored into the database. Here the user has the option to add, edit or remove
 passwords.
 
-The codes page is similar with the passwords page, the user has the ability to
-scan new codes, view existing ones and delete them.
+The codes page is similar with the passwords page, the user can scan new codes,
+view existing ones and delete them.
 
-On the OTP page, the user can see the currently stored one time passwords. The
+On the OTP page, the user can see the currently stored one-time passwords. The
 codes are updated every second and a timer representing the remaining time in
 which the current code is valid is displayed.
 
@@ -599,7 +655,7 @@ public address. The only transactions that can be made with this wallet are
 blockchain backup operations.
 
 The sync page shows all available cloud and blockchain backups. The use has the
-option to restore a backup, or create new ones.
+option to restore a backup or create new ones.
 
 In order to create a blockchain backup the user needs to have a crypto wallet.
 If there is no crypto wallet created, the user has the option to import one by
@@ -608,7 +664,7 @@ have enough currency in it in order to pay for the gas price. Restoring a
 backup requires no gas payment. Crypto wallets are not backed up on blockchain
 backups and neither they are on cloud backups.
 
-For a cloud backup to be created the usr needs to be logged into a cloud
+For a cloud backup to be created the user needs to be logged into a cloud
 account. If the user is not yet logged in, they can create new account, or
 login into an existing one.
 
@@ -631,16 +687,16 @@ these components is made exclusively using the HTTPS protocol.
     \caption{High level system architecture}\label{fig:system}
 \end{figure}
 
-In~\autoref{fig:system} a high level representation of the system is depicted
+In~\autoref{fig:system} a high-level representation of the system is depicted
 into a component diagram. The user can directly interact only with the mobile
 application. The Firebase component is deployed online in the cloud platform
 provided by google and the smart contract is deployed on the Ethereum
 blockchain.
 
-The mobile application is the first component and it is the only component that
-initiates data exchange in the system. It has three API sub components for each
-of the online services it needs to communicate with and one API for interaction
-with the Secure Storage.
+The mobile application is the first component, and it is the only component
+that initiates data exchange in the system. It has three API sub-components for
+each of the online services it needs to communicate with and one API for
+interaction with the Secure Storage.
 
 The Secure Storage (or Secure Enclave on IOS) is a special persistent memory
 zone created to store sensitive information on a mobile device. I used the
@@ -674,7 +730,7 @@ the application or create one if it does not exist.
     \caption{Home fragment of the application}\label{fig:homepage}
 \end{figure}
 
-After the application is unlocked the user is redirected to the Home
+After the application is unlocked, the user is redirected to the Home
 fragment,~\autoref{fig:homepage}, of the Index page. Here the user has quick
 access to passwords, codes and the wallet balance. The user can navigate
 different fragments using the bottom navigation bar. The passwords fragment
@@ -687,7 +743,7 @@ password.
 
 The Codes fragment is similar with the password page. It shows a list that
 contains all the codes. If the user taps on a code, a details page will be
-opened showing a big picture of the code and it's content. The user can delete
+opened showing a big picture of the code and its content. The user can delete
 the code in the details page or in the Codes fragment by log tapping and
 selecting the delete option in the context menu.
 
@@ -713,10 +769,9 @@ sync page, the settings page or the password generator.
 The sync page,~\autoref{fig:syncpage}, contains a list with all the available
 backups the user can restore. A backup can be restored by pressing the restore
 button of the desired backup. Every backup has the number of items displayed
-and also the date and time when it was created is also shown. The backups are
-sorted chronologically, the most recent ones being at the top. The blockchain
-backups are represented by an infinity icon and the cloud ones by ca cloud
-icon.
+and the date and time when it was created is also shown. The backups are sorted
+chronologically, the most recent ones being at the top. The blockchain backups
+are represented by an infinity icon and the cloud ones by ca cloud icon.
 
 In case there are no backups available the user is prompted with the option to
 create one instead of being shown an empty list. The user can also create a
@@ -726,10 +781,10 @@ If the user tries to create a blockchain backup but there is no wallet set,
 they are redirected to the wallet fragment of the index page. Where they are
 prompted to create or import a wallet.
 
-Similar, in the case when the user wants to create a cloud backup but they are
+Similar, in the case when the user wants to create a cloud backup, but they are
 not logged into a cloud account, they are redirected to the login page and
 prompted to login or signup for the cloud service. After the login process is
-done they are redirected back to the sync page and a cloud backup can now be
+done, they are redirected back to the sync page and a cloud backup can now be
 created.
 
 \begin{figure}[H]
@@ -777,7 +832,7 @@ composed of five other state classes. In Dart `\textit{?}' next to some
 variables signifies that the specific type is nullable and the null value can
 be assigned to it.
 
-First we have the master key in the form of a nullable string. At the start of
+First, we have the master key in the form of a nullable string. At the start of
 the application, the master key is null and after it was verified with the
 master key hash from the persistent state, it is set to the appropriate value.
 
@@ -793,7 +848,7 @@ progress indicators to the user when an operation is ongoing.
 
 All the fetched backups form the cloud and the blockchain are stored inside the
 state into the \textit{vault} list. The VaultBundle type contains a timestamp
-at which the backup was made and a `Bundle' which is a an object containing the
+at which the backup was made and a `Bundle' which is an object containing the
 passwords, OTP tokens and codes of the application at one point in time and it
 will be described in more detail in another chapter.
 
@@ -815,7 +870,7 @@ operation is temporally stored into the \textit{code} field of the
 CreateCodeState.
 
 The UIState is used to store information that is only relevant to the user
-interface and it's not used when calling the APIs.
+interface, and it's not used when calling the APIs.
 
 The last part is the password generator state which contains the options of the
 generator and the generated password.
@@ -826,14 +881,14 @@ all the fields form the class as nullable types. If a field is nullable and it
 is not preceded by the \textbf{required} modifier, it is an optional field with
 the default value null. If the \textit{copyWith} function does not receive a
 parameter, it defaults to the value that the object stores at the moment of the
-call. The method returns an object of the same type as the class it is
+call is made. The method returns an object of the same type as the class it is
 contained in.
 
 The \textit{copyWith} function as well as some more utility functions like json
 encoders and more, are automatically generated using the
 freezed\cite{freezedDocs} package. There are no issues with having methods that
 are not used in the final code since Dart has the tree shaking feature which
-automatically drops unused code components, and form the maintenance point of
+automatically drops unused code components and form the maintenance point of
 view there are no issue since this is generated code, tested by the package
 itself.
 
@@ -846,12 +901,12 @@ itself.
 \end{figure}
 
 The application action is the base type for the action events. These actions
-are dispatched by the user interface as result of user interaction and they are
-intercepted into the epics and reducers where they trigger API calls and state
-change respectively.
+are dispatched by the user interface as result of user interaction, and they
+are intercepted into the epics and reducers where they trigger API calls and
+state change respectively.
 
 In~\autoref{fig:appaction} we can see the inheritance relationship between the
-action base types. The \textit{AppAction} class is the base of all actions and
+action base types. The \textit{AppAction} class is the base of all actions, and
 it is detected by the reducers and epics.
 
 The \textit{ErrorAction} class is used when an action failed due to an error.
@@ -872,7 +927,7 @@ toggling the `show password' option.
 The second type are the \textit{normal actions} which are actions that are used
 usually with API calls and have 3 steps: \textit{Start}, \textit{Successful}
 and \textit{Error}. The \textit{Start} action is the one that is dispatched by
-the user interface at the beginning of the process and it contains the data
+the user interface at the beginning of the process, and it contains the data
 needed to make the API call. The \textit{Successful} action is the one that
 returns the response form the API and finishes the process. The last,
 \textit{ErrorAction} is used in case the API call failed and contains an error.
@@ -920,11 +975,11 @@ detected.
 In~\autoref{fig:action_sequence} I represented using a sequence diagram how a
 generic normal action is processed by the application using in the redux
 architecture. Some of the handlers have not been included into the diagram
-because of size considerations but overall this is how most of the actions are
+because of size considerations but overall, this is how most of the actions are
 processed throughout the application.
 
 An epic can also dispatch actions that are not part of the current process, for
-example when creating a new password we want to also store it into the
+example when creating a new password, we want to also store it into the
 permanent storage, thus the stream is expanded into the afferent
 \textit{Success} action and a \textit{Start} action for the storage process.
 
@@ -981,7 +1036,7 @@ the state by appropriate actions. Every time the settings are changed, a
 GeneratePassword action sequence is triggered in the epics. This action can
 also be dispatched by the user by pressing the refresh button, and it is
 automatically triggered when the generator dialog is opened. Instead of an API,
-here the GeneratePasswordStart function calls an utility function with the
+here the GeneratePasswordStart function calls a utility function with the
 generator settings, which returns a random password based on the parameters.
 
 \subsection{Create/Edit a Password}
@@ -992,7 +1047,7 @@ generator settings, which returns a random password based on the parameters.
     \caption{New password page}\label{fig:new_password}
 \end{figure}
 
-When the user wants to create a new password they have to complete a form that
+When the user wants to create a new password, they have to complete a form that
 contains the password data. Here they have the option to use the password
 generator in order to create a password which will automatically complete the
 password field.
@@ -1020,7 +1075,7 @@ deleting messages into an email application.
     \caption{Alert dialog with a warning that an item is about to be deleted}\label{fig:warn_delete_password}
 \end{figure}
 
-Whenever the user wants to delete a password they are shown a warning message
+Whenever the user wants to delete a password, they are shown a warning message
 that the data will be lost that needs to be accepted. When the delete button is
 pressed a DeletePassword action is dispatched and similar with the create and
 edit ones it updates the state and triggers a bundle storage action.
@@ -1038,12 +1093,12 @@ In~\autoref{fig:code_details} we can see a QR code details page where the user
 has a big image with the respective QR code generated and the content of the
 code displayed.
 
-When the user creates a new code a dedicated page is displayed where the user
+When the user creates a new code, a dedicated page is displayed where the user
 is prompted to scan the code with the back camera of their mobile device. When
 a code is detected, the page is swapped with another one in which the code is
-displayed and the user needs to add a title. After the title is added a similar
-process with the creation of a password happens and the code new is added to
-the bundle.
+displayed, and the user needs to add a title. After the title is added a
+similar process with the creation of a password happens and the code new is
+added to the bundle.
 
 Codes are scanned using the mobile\_scanner package~\cite{mobileScannerDocs}
 which implements the scanning functionality of a QR or a barcode for dart. The
@@ -1095,9 +1150,9 @@ In~\autoref{fig:totp_anatomy} we can see the structure of a TOTP token. The
 form of the token strongly resembles the URI format, some of the information
 even being represented as query parameters.
 
-The token starts withe the specification of what type of token it is. After
-that the username for which the token was generated is provided. This username
-can be an email address or just a string.
+The token starts with the specification of what type of token it is. After that
+the username for which the token was generated is provided. This username can
+be an email address or just a string.
 
 The query parameters don't have a specific order,~\autoref{fig:totp_anatomy}
 shows just one of the possible arrangements. We start with the \textit{secret}
@@ -1111,7 +1166,7 @@ SHA256 are also valid algorithms. The counter is created based on the
 \[counter=\frac{secondsSinceEpoch}{period}\]
 
 The \textit{digits} query parameter specifies the length of the generated code.
-And at last the \textit{issuer} is the entity who generated the token.
+And at last, the \textit{issuer} is the entity who generated the token.
 
 \begin{figure}[H]
     \centering
@@ -1120,7 +1175,7 @@ And at last the \textit{issuer} is the entity who generated the token.
 \end{figure}
 
 In~\autoref{fig:totp_server_client} I created a sequence diagram showing a
-basic authentication scenario based on OTP two factor authentication. Both the
+basic authentication scenario based on OTP two-factor authentication. Both the
 client and the server have previously shared the secret with each other (by
 scanning a TOTP QR token) and they each generate a code which is validated by
 the server.
@@ -1131,7 +1186,7 @@ guidance of~\cite{totp}.
 \section{Cryptocurrency Wallet}
 
 The application needs to have a cryptocurrency wallet in order to create
-blockchain backups. Therefore the implementation for this wallet is restricted
+blockchain backups. Therefore, the implementation for this wallet is restricted
 to only spend cryptocurrency when a backup is created or deleted.
 
 \begin{figure}[H]
@@ -1205,7 +1260,7 @@ two most used API calls: \textit{addBundle} and \textit{getVault}.
 
 The \textit{addBundle} API call starts when the method with the same name of
 the \textit{BlockchainStorageAPI} class is called by an epic. As parameters
-this functions receives the bundle that needs to be stored, the wallet private
+this function receives the bundle that needs to be stored, the wallet private
 key used for signing the transaction and the master key that is used to encrypt
 the bundle. The \textit{encrypt} static utility function encrypts the bundle
 with the master key and after the timestamp is fetched using the DateTime Dart
@@ -1219,7 +1274,7 @@ This method takes as parameters the wallet private key and the master key. The
 method then immediately sends the request to the smart contract which responds
 with the appropriate map entry vault. When it receives the bundle, the method
 decrypts each bundle from the vault using the master key. After everything is
-decrypted it returns the vault to the caller.
+decrypted, it returns the vault to the caller.
 
 The \textit{getLatestBundle} and \textit{removeBundle} contract methods are
 similar with the ones presented.
@@ -1246,9 +1301,9 @@ package\cite{cryptoDocs}. The salt is randomly generated using the password
 generator functionality of the application, and the hash function is applied in
 12 rounds.
 
-Additionally the application has strict master password requirements, the
-password needing to be at least 8 characters long and it has to contain at
-least a lowercase and an uppercase letter, a symbol and a number.
+Additionally, the application has strict master password requirements, the
+password needing to be at least 8 characters long and it must contain at least
+a lowercase and an uppercase letter, a symbol and a number.
 
 \chapter{Tests}
 
@@ -1285,10 +1340,50 @@ release version should considerably outperform these results.
 
 \chapter{Conclusions}
 
+Creating this project was a very challenging yet pleasant task. From creating a
+decentralized app on the blockchain to implementing a lot of different
+features, I believe this application has touched a lot of different subjects.
+Implementing a Flutter application with a Redux state management was also an
+interesting aspect of the project and it is something that I wanted to do for
+some time. In the end I plan to further develop the application, maybe add some
+new features and use it myself for password management.
+
+\section{Limitations}
+
+There are some limitations to the application that I did not forsee when I
+started implementing it. Initially I wanted to also implement an autocomplete
+feature which would automatically detect when a password is needed and suggest
+to the user to use it. Implementing this in Flutter requires an external native
+service since there is no access to the autofill API yet in Flutter. This task
+would have taken too much time to complete in the time framework I was working
+with, and I dropped it.
+
+Another limitation is the gas price required to saving a backup on the
+blockchain. In the current Ethereum market, saving a backup on the blockchain
+would require a considerable amount of money (about \$100 according to my
+estimations).
+
 \section{Possible Improvements}
 
-\bibliographystyle{plain}
-\bibliography{references}
+There are a lot of possible improvements and additional features that could be
+implemented. The first one and most useful feature is the autocomplete
+functionality. This however as mentioned above would take a considerable
+effort.
+
+Another improvement is the creation of a desktop application, creating a local
+backup on the desktop would be a useful feature. This application could also
+have an import function so the user could add the passwords stored in the
+KeePass\cite{keepass} password manager.
+
+Using another blockchain could help with the high gas prices. Monero, Litecoin
+or Solana are some of the options.
+
+The crypto wallet could also be improved. The way it is implemented right now
+is only to pay for blockchain backup deployment. The ability to store multiple
+different currencies, view transactions and send money to an address would be
+very useful features.
+
+\bibliographystyle{plain} \bibliography{references}
 \addcontentsline{toc}{chapter}{Bibliography}
 
 \end{document}
