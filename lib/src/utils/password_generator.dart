@@ -13,7 +13,7 @@ enum CharacterPool {
   symbols,
 }
 
-extension _CharacterPool on CharacterPool {
+extension CharacterPoolExtension on CharacterPool {
   String get characters {
     switch (this) {
       case CharacterPool.lowercaseLetters:

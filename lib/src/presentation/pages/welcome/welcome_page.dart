@@ -5,8 +5,16 @@ import 'package:walman/src/actions/ui/index.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/show_password_button.dart';
+import 'package:walman/src/utils/password_generator.dart';
 
-const int _kRequiredPasswordLength = 6;
+const int _kRequiredPasswordLength = 8;
+
+extension _StringExtension on String {
+  bool hasCharacter(CharacterPool characterPool) {
+    final RegExp regex = RegExp('[${characterPool.characters}]');
+    return regex.hasMatch(this);
+  }
+}
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -43,7 +51,18 @@ class _WelcomePageState extends State<WelcomePage> {
     if (password.length < _kRequiredPasswordLength) {
       return 'Password is too short';
     }
-    // TODO(dvpv): add additional requirements for password validation based on the password generator module
+    if (!password.hasCharacter(CharacterPool.lowercaseLetters)) {
+      return 'Password needs to have at least a lowercase letter';
+    }
+    if (!password.hasCharacter(CharacterPool.uppercaseLetters)) {
+      return 'Password needs to have at least a uppercase letter';
+    }
+    if (!password.hasCharacter(CharacterPool.digits)) {
+      return 'Password needs to have at least a digit';
+    }
+    if (!RegExp(r'[!@#$%^&*\-_+=?]').hasMatch(password)) {
+      return 'Password needs to have at least one symbol';
+    }
     return null;
   }
 
