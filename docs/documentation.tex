@@ -75,8 +75,8 @@
 \bigskip
 
 Walman este o aplicație pentru management-ul unui portofel virtual în care
-user-ul își poate stoca în siguranță parolele, card-uri de fidelitate și de
-shopping și token-uri pentru autentificare în doi factori. Datele pot fi
+utilizatorul își poate stoca în siguranță parolele, card-uri de fidelitate și
+de shopping și token-uri pentru autentificare în doi factori. Datele pot fi
 salvate ca backup pe o paltformă cloud de încredere sau pe blockchain.
 Aplicația a fost creata folosind Flutter, un framework cross platform pentru
 dezvoltare de aplicații mobile.
@@ -832,6 +832,16 @@ composed of five other state classes. In Dart `\textit{?}' next to some
 variables signifies that the specific type is nullable and the null value can
 be assigned to it.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/app_state_model.png}
+    \caption{AppState model implementation}\label{fig:app_state_model}
+\end{figure}
+
+In~\autoref{fig:app_state_model} is the implementation of the \textit{AppState}
+model. This model is generated using the freezed package based on the template
+shown in~\autoref{fig:app_state_model}.
+
 First, we have the master key in the form of a nullable string. At the start of
 the application, the master key is null and after it was verified with the
 master key hash from the persistent state, it is set to the appropriate value.
@@ -892,11 +902,23 @@ automatically drops unused code components and form the maintenance point of
 view there are no issue since this is generated code, tested by the package
 itself.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/store.png}
+    \caption{Store implementation}\label{fig:store}
+\end{figure}
+
+The store contains the \textit{AppState} and it is responsible for triggering
+the user interface update when the \textit{AppState} is changed, and it also
+binds the reducer, epic, state and user interface together.
+In~\autoref{fig:store} the store is declared and it is linked to the other
+components.
+
 \section{Application Action}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.45]{diagrams/class/app_action.png}
+    \includegraphics[scale=0.4]{diagrams/class/app_action.png}
     \caption{Class diagram of the AppAction model}\label{fig:appaction}
 \end{figure}
 
@@ -1003,13 +1025,30 @@ creation date and usage trends.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{diagrams/class/vault.png}
+    \includegraphics[scale=0.35]{diagrams/class/vault.png}
     \caption{Class diagram of Bundle element in backup storage}\label{fig:vault_bundle}
 \end{figure}
 
 A \textit{VaultBundle} is what is closer to what is stored on the blockchain.
 As seen in~\autoref{fig:vault_bundle}, in addition to the bundle, storage date
 and time and the type of storage are contained as well.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/bundle_model.png}
+    \caption{Bundle model implementation}\label{fig:bundle_model}
+\end{figure}
+
+The \textit{Bundle} adn \textit{VaultBundle} models are implemented using the
+freezed package to generate classes based on templates. The templates contain
+the fields the models should have, as seen in~\autoref{fig:bundle_model}, and
+they are used to create simple but verbose classes with utility functions such
+as \textit{toJson} which encodes the model into a JSON object,
+\textit{copyWith} which creates a new object based on the model it is called on
+and many more~\cite{freezedDocs}. I also implemented a class extension to the
+Bundle model which has a function parameter that returns the sum of items in
+the bundle. The \textit{BundleType} enum is used to represent where the backup
+bundle was stored to.
 
 \section{Password Management}
 
@@ -1052,10 +1091,85 @@ contains the password data. Here they have the option to use the password
 generator in order to create a password which will automatically complete the
 password field.
 
-When the user taps on the create button a \textit{CreateNewPassword} action is
-dispatched. This is a simple action that first updates the state in the reducer
-and after that, in the epics, a new \textit{StoreBundleStart} action is
-dispatched that will store the new password into the Secure Storage.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/submit_new_password.png}
+    \caption{Function executed when the user creates a new password}\label{fig:submit_new_password}
+\end{figure}
+
+When the user taps on the `Create' button, the form is validated and a
+\textit{CreateNewPassword} action is dispatched, as seen
+in~\autoref{fig:submit_new_password}. This action requires a Password parameter
+which is also created here. After the action is dispatched, the current page is
+`popped', the view returning to the screen where the new password creation
+process was triggered from.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/create_new_password_simple_action.png}
+    \caption{The CreateNewPassword action}\label{fig:create_new_password_action}
+\end{figure}
+
+\textit{CreateNewPassword} is a simple action generated based on the template
+from~\autoref{fig:create_new_password_action}. The class has two parameters, the
+password that will be added to the bundle and the master key that will be used
+to encrypt the bundle when it is stored.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/create_new_password_reducer.png}
+    \caption{The CreateNewPassword reducer}\label{fig:create_new_password_reducer}
+\end{figure}
+
+After the action is dispatched, it first is handled into the reducer where the
+state is updated to contain the new password as seen
+in~\autoref{fig:create_new_password_reducer}. Since the state is immutable,
+this is done using the \textit{copyWith} function.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/create_new_password_epic.png}
+    \caption{The CreateNewPassword epic}\label{fig:create_new_password_epic}
+\end{figure}
+
+Next, the action is handled by the epic see
+in~\autoref{fig:create_new_password_epic}. Here it spawns another action called
+\textit{StoreBundleStart}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/store_bundle_pending_action.png}
+    \caption{The StoreBundle pending action}\label{fig:store_bundle_action}
+\end{figure}
+
+The \textit{StoreBundle} action is a three step pending action as seen
+in~\autoref{fig:store_bundle_action}. In addition to the bundle that needs to
+be stored, the actions of this type also receive the \textit{pendingId}. This
+id is monitored in the user interface and it is used to signal the process is
+ongoing.
+
+The \textit{StoreActionSuccessful} action is the ending of the process that
+indicates that everything went wall and the API call was successful.
+
+On the other side, the \textit{StoreActionError} action is used when an
+exception was thrown during the API call.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/store_bundle_epic.png}
+    \caption{The StoreBundle epic}\label{fig:store_bundle_epic}
+\end{figure}
+
+This action is handled only by the epic seen
+in~\autoref{fig:store_bundle_epic}. First, the epic maps the start action to
+the result of the \textit{SecureStorageAPI} function call. The
+\textit{SecureStorageAPI} returns a \textit{Future<void>}, so the result can by
+directly mapped to the \textit{StoreBundleSuccessful} action. In case of an
+exception, the \textit{StoreBundleError} action is emitted using the
+\textit{onErrorReturnWith} function provided by the rxdart package. The reason
+why the initial action is not mapped directly to the API call, but instead a
+secondary stream is created is that in case of an error only the secondary
+stream will crash instead of the entire application action stream.
 
 Editing a password is very similar with the creation process. The only
 difference is that the first action replaces the existing password with the new
@@ -1100,14 +1214,29 @@ displayed, and the user needs to add a title. After the title is added a
 similar process with the creation of a password happens and the code new is
 added to the bundle.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/mobile_scanner.png}
+    \caption{Scanning a code with the MobileScanner Widget}\label{fig:mobile_scanner}
+\end{figure}
+
 Codes are scanned using the mobile\_scanner package~\cite{mobileScannerDocs}
-which implements the scanning functionality of a QR or a barcode for dart. The
-codes are then displayed using the barcode\_widget
-package~\cite{barcodeWidgetDocs} which can generate a barcode of QR code of
-different types from raw data. This way only the raw data and the algorithm
-type are kept into permanent memory, reducing the storage size dramatically,
-further reducing blockchain backup creation gas cost. No images are related to
-QR or barcodes is stored.
+which offers a Flutter widget that implements the scanning functionality of a
+QR or a barcode for dart and it is used as seen
+in~\autoref{fig:mobile_scanner}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/barcode_widget.png}
+    \caption{Scanning a code with the MobileScanner Widget}\label{fig:barcode_widget}
+\end{figure}
+
+The codes are then displayed using the barcode\_widget
+package~\cite{barcodeWidgetDocs}, as see in~\autoref{fig:mobile_scanner}, which
+can generate a barcode of QR code of different types from raw data. This way
+only the raw data and the algorithm type are kept into permanent memory,
+reducing the storage size dramatically, further reducing blockchain backup
+creation gas cost. No images are related to QR or barcodes is stored.
 
 \section{OTP Authenticator}
 
@@ -1183,6 +1312,27 @@ the server.
 I implemented the TOTP algorithm following the specifications and technical
 guidance of~\cite{totp}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/totp.png}
+    \caption{TOTP algorithm implementation}\label{fig:totp_impl}
+\end{figure}
+
+First, as mentioned before, the only difference between TOTP and HTOP is how
+the counter is calculated. The function \textit{\_getTOTPToken} calls its HTOP
+counterpart using the appropriate counter as seen in~\autoref{fig:totp_impl}.
+
+After that, in the \textit{\_getHTOP} function, first the HMAC is provided by
+the \textit{\_getHMAC} based on the \textit{algorithm} parameter. The secret is
+converted into a byte array and then, it is fed into the HMAC function. An
+offset is extracted from the last byte of the digest and four bytes starting
+from the position equal to the integer value of the offset are taken out of the
+digest, they are called \textit{resultBytes} in the implementation
+from~\autoref{fig:totp_impl}. These bytes are transformed into an integer and a
+number stored in the \textit{digits} parameter of digits is extracted from the
+less significant decimal value of the resulted integer. This value is the
+result.
+
 \section{Cryptocurrency Wallet}
 
 The application needs to have a cryptocurrency wallet in order to create
@@ -1198,6 +1348,12 @@ to only spend cryptocurrency when a backup is created or deleted.
 On the wallet screen, the user can see the current balance of the account and
 the wallet public address as seen in~\autoref{fig:wallet}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/wallet_info.png}
+    \caption{WalletInfo model implementation}\label{fig:wallet_info_model}
+\end{figure}
+
 The page can be refreshed by making a drag gesture. When an update is triggered
 the \textit{WalletInfo} object is rebuilt based on the information fetched from
 the blockchain.
@@ -1206,9 +1362,23 @@ This page refresh is also triggered automatically by a \textit{periodic timer}
 every 5 seconds. This is done in order to keep the page updated in case of a
 balance change.
 
-The \textit{WalletInfo} object has two string fields. The first one is the
-\textit{address} which is generated from the private key. The second one is the
-\textit{balance} which is given by an API call.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/get_wallet_info.png}
+    \caption{GetWalletInfo API call}\label{fig:get_wallet_info_api}
+\end{figure}
+
+The \textit{WalletInfo} object has two string fields, as shown
+in~\autoref{fig:wallet_info_model}. The first one is the \textit{address} which
+is generated from the private key. The second one is the \textit{balance} which
+is given by an API call seen in~\autoref{fig:get_wallet_info_api}. This API
+uses the web3dart package to get the balance of the wallet based on it's public
+address. First the private key is created from the \textit{walletPrivateKey}
+string parameter. After this, the~\textit{getBalance} method of the client
+provided in the web3dart package with the public address of the wallet as
+parameter is used to get hte balance. The balance, received in the Wei Ethereum
+subdivision, is converted into ETH and the a \textit{WalletInfo} model instance
+is built and returned.
 
 \section{Backup}
 
@@ -1243,11 +1413,20 @@ it on the testnet.
 The smart contract is a simple class like data structure as seen
 in~\autoref{fig:contract}. The contract has 4 access functions. These classes
 have the parameters specified in~\autoref{fig:contract} as well as the
-transaction details. From the transaction details, the most important detail
-for this smart contract is the public address of the sender (the mobile
-application wallet public address). The \textit{vaults} are stored into a map
-where the key value is the public address of the sender thus everyone will have
-access only to their vault.
+transaction details.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.455]{images/code/contract.png}
+    \caption{BundleStorage smart contract implementation}\label{fig:contract_impl}
+\end{figure}
+
+From the transaction details, the most important detail for this smart contract
+is the public address of the sender (the mobile application wallet public
+address). The \textit{vaults} are stored into a map where the key value is the
+public address of the sender thus everyone will have access only to their
+vault. The way in which the bundle is stored in the vault can be seen in the
+addBundle method shown in~\autoref{fig:contract_impl}.
 
 \begin{figure}[H]
     \centering
@@ -1266,15 +1445,16 @@ the bundle. The \textit{encrypt} static utility function encrypts the bundle
 with the master key and after the timestamp is fetched using the DateTime Dart
 class, the request is sent over to the smart contract. Here the contract does
 the simple operation of pushing the bundle to the list of bundles in the vault
-and then finishes the transaction.
+and then finishes the transaction as seen in~\autoref{fig:contract_impl}.
 
 When the application requests the list of backups form the cloud, the
 \textit{getVault} method of the \textit{BlockchainStorageAPI} class is called.
 This method takes as parameters the wallet private key and the master key. The
 method then immediately sends the request to the smart contract which responds
-with the appropriate map entry vault. When it receives the bundle, the method
-decrypts each bundle from the vault using the master key. After everything is
-decrypted, it returns the vault to the caller.
+with the appropriate map entry vault as shown by~\autoref{fig:contract_impl}.
+When it receives the bundle, the method decrypts each bundle from the vault
+using the master key. After everything is decrypted, it returns the vault to
+the caller.
 
 The \textit{getLatestBundle} and \textit{removeBundle} contract methods are
 similar with the ones presented.
@@ -1286,30 +1466,38 @@ was the top priority of the development. Every piece of information that is not
 in the current volatile state memory is encrypted with the master key or
 hashed.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/encryption.png}
+    \caption{Encryption and decryption utility functions}\label{fig:encryption}
+\end{figure}
+
 For the encryption algorithm I used AES with the master key padded into a 32
-byte key. Instead of implementing AES myself, I used the implementation
-provided by the encrypt package\cite{encryptDocs}. The data is encrypted 3
-rounds. Initially I wanted to increase this number but due to data expansion,
-the gas prices raised exponentially, so a balanced choice was 3 rounds of
-encryption.
+byte key as represented in~\autoref{fig:encryption}. Instead of implementing
+AES myself, I used the implementation provided by the encrypt
+package\cite{encryptDocs}. The data is encrypted 3 rounds. Initially I wanted
+to increase this number but due to data expansion, the gas prices raised
+exponentially, so a balanced choice was 3 rounds of encryption.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/code/hashing.png}
+    \caption{Hashing utility functions}\label{fig:hashing}
+\end{figure}
 
 The masterKey is stored only in the Secure Storage which itself is supposed to
 be encrypted by the operating system. I decided to encrypt even the data stored
 into the Secure Storage as an additional line of defense. The master key itself
 is salted and hashed using the SHA512 hashing function provided in the crypto
-package\cite{cryptoDocs}. The salt is randomly generated using the password
-generator functionality of the application, and the hash function is applied in
-12 rounds.
+package\cite{cryptoDocs}, as shown by~\autoref{fig:hashing}. The salt is
+randomly generated using the password generator functionality of the
+application, and the hash function is applied in 12 rounds.
 
 Additionally, the application has strict master password requirements, the
 password needing to be at least 8 characters long and it must contain at least
 a lowercase and an uppercase letter, a symbol and a number.
 
 \chapter{Tests}
-
-\section{Unit Tests}
-
-\section{Test Pipeline}
 
 \section{Performance Statistics}
 
@@ -1331,8 +1519,9 @@ application consumes less than 100 MB of memory.
     \caption{Frame rate graph generated by the flutter performance plugin}\label{fig:frame_rate}
 \end{figure}
 
-\autoref{fig:frame_rate} shows the average frame rate the application outputted over a period of time. As seen in the image, the application usually outputs at least 60 frames
-per second.
+\autoref{fig:frame_rate} shows the average frame rate the application outputted
+over a period of time. As seen in the image, the application usually outputs at
+least 60 frames per second.
 
 These performance metrics were taken from the debug version of the application,
 the code being interpreted instead of being compiled into binary code. The

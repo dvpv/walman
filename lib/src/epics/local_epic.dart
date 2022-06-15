@@ -29,8 +29,11 @@ class LocalEpic {
   }
 
   Stream<AppAction> _createNewPassword(Stream<CreateNewPassword> actions, EpicStore<AppState> store) {
-    return actions
-        .map<AppAction>((CreateNewPassword action) => StoreBundleStart(bundle: store.state.persistentState.bundle));
+    return actions.map<AppAction>(
+      (CreateNewPassword action) => StoreBundleStart(
+        bundle: store.state.persistentState.bundle,
+      ),
+    );
   }
 
   Stream<AppAction> _editPasswordStart(Stream<EditPasswordStart> actions, EpicStore<AppState> store) {

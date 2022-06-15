@@ -46,18 +46,10 @@ class StorageEpic {
     });
   }
 
-  Stream<AppAction> _storeBundle(
-    Stream<StoreBundleStart> actions,
-    EpicStore<AppState> store,
-  ) {
+  Stream<AppAction> _storeBundle(Stream<StoreBundleStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreBundleStart action) {
       return Stream<void>.value(null)
-          .asyncMap(
-            (_) => secureStorageApi.storeBundle(
-              action.bundle,
-              store.state.masterKey!,
-            ),
-          )
+          .asyncMap((_) => secureStorageApi.storeBundle(action.bundle, store.state.masterKey!))
           .mapTo<StoreBundle>(StoreBundleSuccessful(action.pendingId))
           .onErrorReturnWith(
             (Object error, StackTrace stackTrace) => StoreBundleError(error, stackTrace, action.pendingId),
@@ -65,10 +57,7 @@ class StorageEpic {
     });
   }
 
-  Stream<AppAction> _storeWalletPrivateKey(
-    Stream<StoreWalletPrivateKeyStart> actions,
-    EpicStore<AppState> store,
-  ) {
+  Stream<AppAction> _storeWalletPrivateKey(Stream<StoreWalletPrivateKeyStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreWalletPrivateKeyStart action) {
       return Stream<void>.value(null)
           .asyncMap(
@@ -84,10 +73,7 @@ class StorageEpic {
     });
   }
 
-  Stream<AppAction> _getWalletPrivateKey(
-    Stream<GetWalletPrivateKeyStart> actions,
-    EpicStore<AppState> store,
-  ) {
+  Stream<AppAction> _getWalletPrivateKey(Stream<GetWalletPrivateKeyStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetWalletPrivateKeyStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => secureStorageApi.getWalletPrivateKey(action.masterKey))
@@ -103,10 +89,7 @@ class StorageEpic {
     });
   }
 
-  Stream<AppAction> _storeMasterKeyHash(
-    Stream<StoreMasterKeyHashStart> actions,
-    EpicStore<AppState> store,
-  ) {
+  Stream<AppAction> _storeMasterKeyHash(Stream<StoreMasterKeyHashStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreMasterKeyHashStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => secureStorageApi.storeMasterKeyHash(action.masterKeyHash))
@@ -122,10 +105,7 @@ class StorageEpic {
     });
   }
 
-  Stream<AppAction> _getMasterKeyHash(
-    Stream<GetMasterKeyHashStart> actions,
-    EpicStore<AppState> store,
-  ) {
+  Stream<AppAction> _getMasterKeyHash(Stream<GetMasterKeyHashStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((GetMasterKeyHashStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => secureStorageApi.getMasterKeyHash())
