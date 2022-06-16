@@ -31,8 +31,7 @@ class _$BlockchainAddBundleTearOff {
     );
   }
 
-  BlockchainAddBundleSuccessful successful(
-      [String pendingId = _kBlockchainAddBundlePendingId]) {
+  BlockchainAddBundleSuccessful successful([String pendingId = _kBlockchainAddBundlePendingId]) {
     return BlockchainAddBundleSuccessful(
       pendingId,
     );
@@ -57,33 +56,23 @@ mixin _$BlockchainAddBundle {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -111,21 +100,18 @@ mixin _$BlockchainAddBundle {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BlockchainAddBundleCopyWith<BlockchainAddBundle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainAddBundleCopyWith<BlockchainAddBundle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockchainAddBundleCopyWith<$Res> {
-  factory $BlockchainAddBundleCopyWith(
-          BlockchainAddBundle value, $Res Function(BlockchainAddBundle) then) =
+  factory $BlockchainAddBundleCopyWith(BlockchainAddBundle value, $Res Function(BlockchainAddBundle) then) =
       _$BlockchainAddBundleCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainAddBundleCopyWithImpl<$Res>
-    implements $BlockchainAddBundleCopyWith<$Res> {
+class _$BlockchainAddBundleCopyWithImpl<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
   _$BlockchainAddBundleCopyWithImpl(this._value, this._then);
 
   final BlockchainAddBundle _value;
@@ -146,32 +132,24 @@ class _$BlockchainAddBundleCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $BlockchainAddBundleStartCopyWith<$Res>
-    implements $BlockchainAddBundleCopyWith<$Res> {
-  factory $BlockchainAddBundleStartCopyWith(BlockchainAddBundleStart value,
-          $Res Function(BlockchainAddBundleStart) then) =
+abstract class $BlockchainAddBundleStartCopyWith<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
+  factory $BlockchainAddBundleStartCopyWith(
+          BlockchainAddBundleStart value, $Res Function(BlockchainAddBundleStart) then) =
       _$BlockchainAddBundleStartCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String walletPrivateKey,
-      Bundle bundle,
-      ActionResult? onResult,
-      String pendingId});
+  $Res call({String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId});
 
   $BundleCopyWith<$Res> get bundle;
 }
 
 /// @nodoc
-class _$BlockchainAddBundleStartCopyWithImpl<$Res>
-    extends _$BlockchainAddBundleCopyWithImpl<$Res>
+class _$BlockchainAddBundleStartCopyWithImpl<$Res> extends _$BlockchainAddBundleCopyWithImpl<$Res>
     implements $BlockchainAddBundleStartCopyWith<$Res> {
-  _$BlockchainAddBundleStartCopyWithImpl(BlockchainAddBundleStart _value,
-      $Res Function(BlockchainAddBundleStart) _then)
+  _$BlockchainAddBundleStartCopyWithImpl(BlockchainAddBundleStart _value, $Res Function(BlockchainAddBundleStart) _then)
       : super(_value, (v) => _then(v as BlockchainAddBundleStart));
 
   @override
-  BlockchainAddBundleStart get _value =>
-      super._value as BlockchainAddBundleStart;
+  BlockchainAddBundleStart get _value => super._value as BlockchainAddBundleStart;
 
   @override
   $Res call({
@@ -238,38 +216,27 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is BlockchainAddBundleStart &&
-            const DeepCollectionEquality()
-                .equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(walletPrivateKey),
-      const DeepCollectionEquality().hash(bundle),
-      onResult,
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
+      const DeepCollectionEquality().hash(bundle), onResult, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $BlockchainAddBundleStartCopyWith<BlockchainAddBundleStart> get copyWith =>
-      _$BlockchainAddBundleStartCopyWithImpl<BlockchainAddBundleStart>(
-          this, _$identity);
+      _$BlockchainAddBundleStartCopyWithImpl<BlockchainAddBundleStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(walletPrivateKey, bundle, onResult, pendingId);
   }
@@ -277,12 +244,9 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(walletPrivateKey, bundle, onResult, pendingId);
   }
@@ -290,12 +254,9 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -339,8 +300,7 @@ class _$BlockchainAddBundleStart implements BlockchainAddBundleStart {
   }
 }
 
-abstract class BlockchainAddBundleStart
-    implements BlockchainAddBundle, ActionStart {
+abstract class BlockchainAddBundleStart implements BlockchainAddBundle, ActionStart {
   const factory BlockchainAddBundleStart(
       {required String walletPrivateKey,
       required Bundle bundle,
@@ -354,33 +314,27 @@ abstract class BlockchainAddBundleStart
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainAddBundleStartCopyWith<BlockchainAddBundleStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainAddBundleStartCopyWith<BlockchainAddBundleStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainAddBundleSuccessfulCopyWith<$Res>
-    implements $BlockchainAddBundleCopyWith<$Res> {
+abstract class $BlockchainAddBundleSuccessfulCopyWith<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
   factory $BlockchainAddBundleSuccessfulCopyWith(
-          BlockchainAddBundleSuccessful value,
-          $Res Function(BlockchainAddBundleSuccessful) then) =
+          BlockchainAddBundleSuccessful value, $Res Function(BlockchainAddBundleSuccessful) then) =
       _$BlockchainAddBundleSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainAddBundleSuccessfulCopyWithImpl<$Res>
-    extends _$BlockchainAddBundleCopyWithImpl<$Res>
+class _$BlockchainAddBundleSuccessfulCopyWithImpl<$Res> extends _$BlockchainAddBundleCopyWithImpl<$Res>
     implements $BlockchainAddBundleSuccessfulCopyWith<$Res> {
   _$BlockchainAddBundleSuccessfulCopyWithImpl(
-      BlockchainAddBundleSuccessful _value,
-      $Res Function(BlockchainAddBundleSuccessful) _then)
+      BlockchainAddBundleSuccessful _value, $Res Function(BlockchainAddBundleSuccessful) _then)
       : super(_value, (v) => _then(v as BlockchainAddBundleSuccessful));
 
   @override
-  BlockchainAddBundleSuccessful get _value =>
-      super._value as BlockchainAddBundleSuccessful;
+  BlockchainAddBundleSuccessful get _value => super._value as BlockchainAddBundleSuccessful;
 
   @override
   $Res call({
@@ -399,8 +353,7 @@ class _$BlockchainAddBundleSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
-  const _$BlockchainAddBundleSuccessful(
-      [this.pendingId = _kBlockchainAddBundlePendingId]);
+  const _$BlockchainAddBundleSuccessful([this.pendingId = _kBlockchainAddBundlePendingId]);
 
   @JsonKey()
   @override
@@ -420,25 +373,19 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainAddBundleSuccessfulCopyWith<BlockchainAddBundleSuccessful>
-      get copyWith => _$BlockchainAddBundleSuccessfulCopyWithImpl<
-          BlockchainAddBundleSuccessful>(this, _$identity);
+  $BlockchainAddBundleSuccessfulCopyWith<BlockchainAddBundleSuccessful> get copyWith =>
+      _$BlockchainAddBundleSuccessfulCopyWithImpl<BlockchainAddBundleSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -446,12 +393,9 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -459,12 +403,9 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -508,40 +449,34 @@ class _$BlockchainAddBundleSuccessful implements BlockchainAddBundleSuccessful {
   }
 }
 
-abstract class BlockchainAddBundleSuccessful
-    implements BlockchainAddBundle, ActionDone {
-  const factory BlockchainAddBundleSuccessful([String pendingId]) =
-      _$BlockchainAddBundleSuccessful;
+abstract class BlockchainAddBundleSuccessful implements BlockchainAddBundle, ActionDone {
+  const factory BlockchainAddBundleSuccessful([String pendingId]) = _$BlockchainAddBundleSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainAddBundleSuccessfulCopyWith<BlockchainAddBundleSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainAddBundleSuccessfulCopyWith<BlockchainAddBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainAddBundleErrorCopyWith<$Res>
-    implements $BlockchainAddBundleCopyWith<$Res> {
-  factory $BlockchainAddBundleErrorCopyWith(BlockchainAddBundleError value,
-          $Res Function(BlockchainAddBundleError) then) =
+abstract class $BlockchainAddBundleErrorCopyWith<$Res> implements $BlockchainAddBundleCopyWith<$Res> {
+  factory $BlockchainAddBundleErrorCopyWith(
+          BlockchainAddBundleError value, $Res Function(BlockchainAddBundleError) then) =
       _$BlockchainAddBundleErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainAddBundleErrorCopyWithImpl<$Res>
-    extends _$BlockchainAddBundleCopyWithImpl<$Res>
+class _$BlockchainAddBundleErrorCopyWithImpl<$Res> extends _$BlockchainAddBundleCopyWithImpl<$Res>
     implements $BlockchainAddBundleErrorCopyWith<$Res> {
-  _$BlockchainAddBundleErrorCopyWithImpl(BlockchainAddBundleError _value,
-      $Res Function(BlockchainAddBundleError) _then)
+  _$BlockchainAddBundleErrorCopyWithImpl(BlockchainAddBundleError _value, $Res Function(BlockchainAddBundleError) _then)
       : super(_value, (v) => _then(v as BlockchainAddBundleError));
 
   @override
-  BlockchainAddBundleError get _value =>
-      super._value as BlockchainAddBundleError;
+  BlockchainAddBundleError get _value => super._value as BlockchainAddBundleError;
 
   @override
   $Res call({
@@ -571,8 +506,7 @@ class _$BlockchainAddBundleErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$BlockchainAddBundleError implements BlockchainAddBundleError {
-  const _$BlockchainAddBundleError(this.error, this.stackTrace,
-      [this.pendingId = _kBlockchainAddBundlePendingId]);
+  const _$BlockchainAddBundleError(this.error, this.stackTrace, [this.pendingId = _kBlockchainAddBundlePendingId]);
 
   @override
   final Object error;
@@ -593,34 +527,25 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
         (other.runtimeType == runtimeType &&
             other is BlockchainAddBundleError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $BlockchainAddBundleErrorCopyWith<BlockchainAddBundleError> get copyWith =>
-      _$BlockchainAddBundleErrorCopyWithImpl<BlockchainAddBundleError>(
-          this, _$identity);
+      _$BlockchainAddBundleErrorCopyWithImpl<BlockchainAddBundleError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -628,12 +553,9 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -641,12 +563,9 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String walletPrivateKey, Bundle bundle,
-            ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, Bundle bundle, ActionResult? onResult, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -690,10 +609,9 @@ class _$BlockchainAddBundleError implements BlockchainAddBundleError {
   }
 }
 
-abstract class BlockchainAddBundleError
-    implements BlockchainAddBundle, ActionDone, ErrorAction {
-  const factory BlockchainAddBundleError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$BlockchainAddBundleError;
+abstract class BlockchainAddBundleError implements BlockchainAddBundle, ActionDone, ErrorAction {
+  const factory BlockchainAddBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$BlockchainAddBundleError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -701,8 +619,7 @@ abstract class BlockchainAddBundleError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainAddBundleErrorCopyWith<BlockchainAddBundleError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainAddBundleErrorCopyWith<BlockchainAddBundleError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -721,8 +638,7 @@ class _$BlockchainRestoreLatestBundleTearOff {
   }
 
   BlockchainRestoreLatestBundleSuccessful successful(
-      {required Bundle bundle,
-      String pendingId = _kBlockchainRestoreLatestBundlePendingId}) {
+      {required Bundle bundle, String pendingId = _kBlockchainRestoreLatestBundlePendingId}) {
     return BlockchainRestoreLatestBundleSuccessful(
       bundle: bundle,
       pendingId: pendingId,
@@ -748,41 +664,30 @@ mixin _$BlockchainRestoreLatestBundle {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRestoreLatestBundleStart value) start,
-    required TResult Function(BlockchainRestoreLatestBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
     required TResult Function(BlockchainRestoreLatestBundleError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -803,22 +708,20 @@ mixin _$BlockchainRestoreLatestBundle {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BlockchainRestoreLatestBundleCopyWith<BlockchainRestoreLatestBundle>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRestoreLatestBundleCopyWith<BlockchainRestoreLatestBundle> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockchainRestoreLatestBundleCopyWith<$Res> {
   factory $BlockchainRestoreLatestBundleCopyWith(
-          BlockchainRestoreLatestBundle value,
-          $Res Function(BlockchainRestoreLatestBundle) then) =
+          BlockchainRestoreLatestBundle value, $Res Function(BlockchainRestoreLatestBundle) then) =
       _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
-    implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
+class _$BlockchainRestoreLatestBundleCopyWithImpl<$Res> implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
   _$BlockchainRestoreLatestBundleCopyWithImpl(this._value, this._then);
 
   final BlockchainRestoreLatestBundle _value;
@@ -842,26 +745,21 @@ class _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
 abstract class $BlockchainRestoreLatestBundleStartCopyWith<$Res>
     implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
   factory $BlockchainRestoreLatestBundleStartCopyWith(
-          BlockchainRestoreLatestBundleStart value,
-          $Res Function(BlockchainRestoreLatestBundleStart) then) =
+          BlockchainRestoreLatestBundleStart value, $Res Function(BlockchainRestoreLatestBundleStart) then) =
       _$BlockchainRestoreLatestBundleStartCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String walletPrivateKey, ActionResult? onResult, String pendingId});
+  $Res call({String walletPrivateKey, ActionResult? onResult, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainRestoreLatestBundleStartCopyWithImpl<$Res>
-    extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
+class _$BlockchainRestoreLatestBundleStartCopyWithImpl<$Res> extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
     implements $BlockchainRestoreLatestBundleStartCopyWith<$Res> {
   _$BlockchainRestoreLatestBundleStartCopyWithImpl(
-      BlockchainRestoreLatestBundleStart _value,
-      $Res Function(BlockchainRestoreLatestBundleStart) _then)
+      BlockchainRestoreLatestBundleStart _value, $Res Function(BlockchainRestoreLatestBundleStart) _then)
       : super(_value, (v) => _then(v as BlockchainRestoreLatestBundleStart));
 
   @override
-  BlockchainRestoreLatestBundleStart get _value =>
-      super._value as BlockchainRestoreLatestBundleStart;
+  BlockchainRestoreLatestBundleStart get _value => super._value as BlockchainRestoreLatestBundleStart;
 
   @override
   $Res call({
@@ -889,12 +787,9 @@ class _$BlockchainRestoreLatestBundleStartCopyWithImpl<$Res>
 /// @nodoc
 
 @Implements<ActionStart>()
-class _$BlockchainRestoreLatestBundleStart
-    implements BlockchainRestoreLatestBundleStart {
+class _$BlockchainRestoreLatestBundleStart implements BlockchainRestoreLatestBundleStart {
   const _$BlockchainRestoreLatestBundleStart(
-      {required this.walletPrivateKey,
-      this.onResult,
-      this.pendingId = _kBlockchainRestoreLatestBundlePendingId});
+      {required this.walletPrivateKey, this.onResult, this.pendingId = _kBlockchainRestoreLatestBundlePendingId});
 
   @override
   final String walletPrivateKey;
@@ -914,37 +809,26 @@ class _$BlockchainRestoreLatestBundleStart
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is BlockchainRestoreLatestBundleStart &&
-            const DeepCollectionEquality()
-                .equals(other.walletPrivateKey, walletPrivateKey) &&
-            (identical(other.onResult, onResult) ||
-                other.onResult == onResult) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
+            (identical(other.onResult, onResult) || other.onResult == onResult) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(walletPrivateKey),
-      onResult,
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey), onResult,
       const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainRestoreLatestBundleStartCopyWith<
-          BlockchainRestoreLatestBundleStart>
-      get copyWith => _$BlockchainRestoreLatestBundleStartCopyWithImpl<
-          BlockchainRestoreLatestBundleStart>(this, _$identity);
+  $BlockchainRestoreLatestBundleStartCopyWith<BlockchainRestoreLatestBundleStart> get copyWith =>
+      _$BlockchainRestoreLatestBundleStartCopyWithImpl<BlockchainRestoreLatestBundleStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(walletPrivateKey, onResult, pendingId);
   }
@@ -952,12 +836,9 @@ class _$BlockchainRestoreLatestBundleStart
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(walletPrivateKey, onResult, pendingId);
   }
@@ -965,12 +846,9 @@ class _$BlockchainRestoreLatestBundleStart
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -983,8 +861,7 @@ class _$BlockchainRestoreLatestBundleStart
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRestoreLatestBundleStart value) start,
-    required TResult Function(BlockchainRestoreLatestBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
     required TResult Function(BlockchainRestoreLatestBundleError value) error,
   }) {
     return start(this);
@@ -1015,8 +892,7 @@ class _$BlockchainRestoreLatestBundleStart
   }
 }
 
-abstract class BlockchainRestoreLatestBundleStart
-    implements BlockchainRestoreLatestBundle, ActionStart {
+abstract class BlockchainRestoreLatestBundleStart implements BlockchainRestoreLatestBundle, ActionStart {
   const factory BlockchainRestoreLatestBundleStart(
       {required String walletPrivateKey,
       ActionResult? onResult,
@@ -1028,17 +904,15 @@ abstract class BlockchainRestoreLatestBundleStart
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainRestoreLatestBundleStartCopyWith<
-          BlockchainRestoreLatestBundleStart>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRestoreLatestBundleStartCopyWith<BlockchainRestoreLatestBundleStart> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockchainRestoreLatestBundleSuccessfulCopyWith<$Res>
     implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
   factory $BlockchainRestoreLatestBundleSuccessfulCopyWith(
-          BlockchainRestoreLatestBundleSuccessful value,
-          $Res Function(BlockchainRestoreLatestBundleSuccessful) then) =
+          BlockchainRestoreLatestBundleSuccessful value, $Res Function(BlockchainRestoreLatestBundleSuccessful) then) =
       _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({Bundle bundle, String pendingId});
@@ -1051,14 +925,11 @@ class _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<$Res>
     extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
     implements $BlockchainRestoreLatestBundleSuccessfulCopyWith<$Res> {
   _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl(
-      BlockchainRestoreLatestBundleSuccessful _value,
-      $Res Function(BlockchainRestoreLatestBundleSuccessful) _then)
-      : super(
-            _value, (v) => _then(v as BlockchainRestoreLatestBundleSuccessful));
+      BlockchainRestoreLatestBundleSuccessful _value, $Res Function(BlockchainRestoreLatestBundleSuccessful) _then)
+      : super(_value, (v) => _then(v as BlockchainRestoreLatestBundleSuccessful));
 
   @override
-  BlockchainRestoreLatestBundleSuccessful get _value =>
-      super._value as BlockchainRestoreLatestBundleSuccessful;
+  BlockchainRestoreLatestBundleSuccessful get _value => super._value as BlockchainRestoreLatestBundleSuccessful;
 
   @override
   $Res call({
@@ -1088,11 +959,9 @@ class _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 @Implements<ActionDone>()
-class _$BlockchainRestoreLatestBundleSuccessful
-    implements BlockchainRestoreLatestBundleSuccessful {
+class _$BlockchainRestoreLatestBundleSuccessful implements BlockchainRestoreLatestBundleSuccessful {
   const _$BlockchainRestoreLatestBundleSuccessful(
-      {required this.bundle,
-      this.pendingId = _kBlockchainRestoreLatestBundlePendingId});
+      {required this.bundle, this.pendingId = _kBlockchainRestoreLatestBundlePendingId});
 
   @override
   final Bundle bundle;
@@ -1116,27 +985,19 @@ class _$BlockchainRestoreLatestBundleSuccessful
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(bundle),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainRestoreLatestBundleSuccessfulCopyWith<
-          BlockchainRestoreLatestBundleSuccessful>
-      get copyWith => _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<
-          BlockchainRestoreLatestBundleSuccessful>(this, _$identity);
+  $BlockchainRestoreLatestBundleSuccessfulCopyWith<BlockchainRestoreLatestBundleSuccessful> get copyWith =>
+      _$BlockchainRestoreLatestBundleSuccessfulCopyWithImpl<BlockchainRestoreLatestBundleSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(bundle, pendingId);
   }
@@ -1144,12 +1005,9 @@ class _$BlockchainRestoreLatestBundleSuccessful
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(bundle, pendingId);
   }
@@ -1157,12 +1015,9 @@ class _$BlockchainRestoreLatestBundleSuccessful
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1175,8 +1030,7 @@ class _$BlockchainRestoreLatestBundleSuccessful
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRestoreLatestBundleStart value) start,
-    required TResult Function(BlockchainRestoreLatestBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
     required TResult Function(BlockchainRestoreLatestBundleError value) error,
   }) {
     return successful(this);
@@ -1207,45 +1061,38 @@ class _$BlockchainRestoreLatestBundleSuccessful
   }
 }
 
-abstract class BlockchainRestoreLatestBundleSuccessful
-    implements BlockchainRestoreLatestBundle, ActionDone {
-  const factory BlockchainRestoreLatestBundleSuccessful(
-      {required Bundle bundle,
-      String pendingId}) = _$BlockchainRestoreLatestBundleSuccessful;
+abstract class BlockchainRestoreLatestBundleSuccessful implements BlockchainRestoreLatestBundle, ActionDone {
+  const factory BlockchainRestoreLatestBundleSuccessful({required Bundle bundle, String pendingId}) =
+      _$BlockchainRestoreLatestBundleSuccessful;
 
   Bundle get bundle;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainRestoreLatestBundleSuccessfulCopyWith<
-          BlockchainRestoreLatestBundleSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRestoreLatestBundleSuccessfulCopyWith<BlockchainRestoreLatestBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockchainRestoreLatestBundleErrorCopyWith<$Res>
     implements $BlockchainRestoreLatestBundleCopyWith<$Res> {
   factory $BlockchainRestoreLatestBundleErrorCopyWith(
-          BlockchainRestoreLatestBundleError value,
-          $Res Function(BlockchainRestoreLatestBundleError) then) =
+          BlockchainRestoreLatestBundleError value, $Res Function(BlockchainRestoreLatestBundleError) then) =
       _$BlockchainRestoreLatestBundleErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainRestoreLatestBundleErrorCopyWithImpl<$Res>
-    extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
+class _$BlockchainRestoreLatestBundleErrorCopyWithImpl<$Res> extends _$BlockchainRestoreLatestBundleCopyWithImpl<$Res>
     implements $BlockchainRestoreLatestBundleErrorCopyWith<$Res> {
   _$BlockchainRestoreLatestBundleErrorCopyWithImpl(
-      BlockchainRestoreLatestBundleError _value,
-      $Res Function(BlockchainRestoreLatestBundleError) _then)
+      BlockchainRestoreLatestBundleError _value, $Res Function(BlockchainRestoreLatestBundleError) _then)
       : super(_value, (v) => _then(v as BlockchainRestoreLatestBundleError));
 
   @override
-  BlockchainRestoreLatestBundleError get _value =>
-      super._value as BlockchainRestoreLatestBundleError;
+  BlockchainRestoreLatestBundleError get _value => super._value as BlockchainRestoreLatestBundleError;
 
   @override
   $Res call({
@@ -1274,8 +1121,7 @@ class _$BlockchainRestoreLatestBundleErrorCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
-class _$BlockchainRestoreLatestBundleError
-    implements BlockchainRestoreLatestBundleError {
+class _$BlockchainRestoreLatestBundleError implements BlockchainRestoreLatestBundleError {
   const _$BlockchainRestoreLatestBundleError(this.error, this.stackTrace,
       [this.pendingId = _kBlockchainRestoreLatestBundlePendingId]);
 
@@ -1298,35 +1144,25 @@ class _$BlockchainRestoreLatestBundleError
         (other.runtimeType == runtimeType &&
             other is BlockchainRestoreLatestBundleError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainRestoreLatestBundleErrorCopyWith<
-          BlockchainRestoreLatestBundleError>
-      get copyWith => _$BlockchainRestoreLatestBundleErrorCopyWithImpl<
-          BlockchainRestoreLatestBundleError>(this, _$identity);
+  $BlockchainRestoreLatestBundleErrorCopyWith<BlockchainRestoreLatestBundleError> get copyWith =>
+      _$BlockchainRestoreLatestBundleErrorCopyWithImpl<BlockchainRestoreLatestBundleError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)
-        start,
+    required TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -1334,12 +1170,9 @@ class _$BlockchainRestoreLatestBundleError
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -1347,12 +1180,9 @@ class _$BlockchainRestoreLatestBundleError
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String walletPrivateKey, ActionResult? onResult, String pendingId)?
-        start,
+    TResult Function(String walletPrivateKey, ActionResult? onResult, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1365,8 +1195,7 @@ class _$BlockchainRestoreLatestBundleError
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRestoreLatestBundleStart value) start,
-    required TResult Function(BlockchainRestoreLatestBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRestoreLatestBundleSuccessful value) successful,
     required TResult Function(BlockchainRestoreLatestBundleError value) error,
   }) {
     return error(this);
@@ -1397,10 +1226,8 @@ class _$BlockchainRestoreLatestBundleError
   }
 }
 
-abstract class BlockchainRestoreLatestBundleError
-    implements BlockchainRestoreLatestBundle, ActionDone, ErrorAction {
-  const factory BlockchainRestoreLatestBundleError(
-          Object error, StackTrace stackTrace, [String pendingId]) =
+abstract class BlockchainRestoreLatestBundleError implements BlockchainRestoreLatestBundle, ActionDone, ErrorAction {
+  const factory BlockchainRestoreLatestBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
       _$BlockchainRestoreLatestBundleError;
 
   Object get error;
@@ -1409,9 +1236,8 @@ abstract class BlockchainRestoreLatestBundleError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainRestoreLatestBundleErrorCopyWith<
-          BlockchainRestoreLatestBundleError>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRestoreLatestBundleErrorCopyWith<BlockchainRestoreLatestBundleError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1419,9 +1245,7 @@ class _$BlockchainGetVaultTearOff {
   const _$BlockchainGetVaultTearOff();
 
   BlockchainGetVaultStart start(
-      {required String masterKey,
-      required String walletPrivateKey,
-      String pendingId = _kBlockchainGetVaultPendingId}) {
+      {required String masterKey, required String walletPrivateKey, String pendingId = _kBlockchainGetVaultPendingId}) {
     return BlockchainGetVaultStart(
       masterKey: masterKey,
       walletPrivateKey: walletPrivateKey,
@@ -1430,8 +1254,7 @@ class _$BlockchainGetVaultTearOff {
   }
 
   BlockchainGetVaultSuccessful successful(
-      {required List<VaultBundle> vault,
-      String pendingId = _kBlockchainGetVaultPendingId}) {
+      {required List<VaultBundle> vault, String pendingId = _kBlockchainGetVaultPendingId}) {
     return BlockchainGetVaultSuccessful(
       vault: vault,
       pendingId: pendingId,
@@ -1457,34 +1280,23 @@ mixin _$BlockchainGetVault {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1512,21 +1324,18 @@ mixin _$BlockchainGetVault {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BlockchainGetVaultCopyWith<BlockchainGetVault> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainGetVaultCopyWith<BlockchainGetVault> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockchainGetVaultCopyWith<$Res> {
-  factory $BlockchainGetVaultCopyWith(
-          BlockchainGetVault value, $Res Function(BlockchainGetVault) then) =
+  factory $BlockchainGetVaultCopyWith(BlockchainGetVault value, $Res Function(BlockchainGetVault) then) =
       _$BlockchainGetVaultCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainGetVaultCopyWithImpl<$Res>
-    implements $BlockchainGetVaultCopyWith<$Res> {
+class _$BlockchainGetVaultCopyWithImpl<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
   _$BlockchainGetVaultCopyWithImpl(this._value, this._then);
 
   final BlockchainGetVault _value;
@@ -1547,21 +1356,17 @@ class _$BlockchainGetVaultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $BlockchainGetVaultStartCopyWith<$Res>
-    implements $BlockchainGetVaultCopyWith<$Res> {
-  factory $BlockchainGetVaultStartCopyWith(BlockchainGetVaultStart value,
-          $Res Function(BlockchainGetVaultStart) then) =
+abstract class $BlockchainGetVaultStartCopyWith<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
+  factory $BlockchainGetVaultStartCopyWith(BlockchainGetVaultStart value, $Res Function(BlockchainGetVaultStart) then) =
       _$BlockchainGetVaultStartCopyWithImpl<$Res>;
   @override
   $Res call({String masterKey, String walletPrivateKey, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainGetVaultStartCopyWithImpl<$Res>
-    extends _$BlockchainGetVaultCopyWithImpl<$Res>
+class _$BlockchainGetVaultStartCopyWithImpl<$Res> extends _$BlockchainGetVaultCopyWithImpl<$Res>
     implements $BlockchainGetVaultStartCopyWith<$Res> {
-  _$BlockchainGetVaultStartCopyWithImpl(BlockchainGetVaultStart _value,
-      $Res Function(BlockchainGetVaultStart) _then)
+  _$BlockchainGetVaultStartCopyWithImpl(BlockchainGetVaultStart _value, $Res Function(BlockchainGetVaultStart) _then)
       : super(_value, (v) => _then(v as BlockchainGetVaultStart));
 
   @override
@@ -1595,9 +1400,7 @@ class _$BlockchainGetVaultStartCopyWithImpl<$Res>
 @Implements<ActionStart>()
 class _$BlockchainGetVaultStart implements BlockchainGetVaultStart {
   const _$BlockchainGetVaultStart(
-      {required this.masterKey,
-      required this.walletPrivateKey,
-      this.pendingId = _kBlockchainGetVaultPendingId});
+      {required this.masterKey, required this.walletPrivateKey, this.pendingId = _kBlockchainGetVaultPendingId});
 
   @override
   final String masterKey;
@@ -1618,35 +1421,25 @@ class _$BlockchainGetVaultStart implements BlockchainGetVaultStart {
         (other.runtimeType == runtimeType &&
             other is BlockchainGetVaultStart &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
-            const DeepCollectionEquality()
-                .equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(masterKey),
-      const DeepCollectionEquality().hash(walletPrivateKey),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(masterKey),
+      const DeepCollectionEquality().hash(walletPrivateKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $BlockchainGetVaultStartCopyWith<BlockchainGetVaultStart> get copyWith =>
-      _$BlockchainGetVaultStartCopyWithImpl<BlockchainGetVaultStart>(
-          this, _$identity);
+      _$BlockchainGetVaultStartCopyWithImpl<BlockchainGetVaultStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKey, walletPrivateKey, pendingId);
   }
@@ -1654,12 +1447,9 @@ class _$BlockchainGetVaultStart implements BlockchainGetVaultStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKey, walletPrivateKey, pendingId);
   }
@@ -1667,12 +1457,9 @@ class _$BlockchainGetVaultStart implements BlockchainGetVaultStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -1716,12 +1503,9 @@ class _$BlockchainGetVaultStart implements BlockchainGetVaultStart {
   }
 }
 
-abstract class BlockchainGetVaultStart
-    implements BlockchainGetVault, ActionStart {
+abstract class BlockchainGetVaultStart implements BlockchainGetVault, ActionStart {
   const factory BlockchainGetVaultStart(
-      {required String masterKey,
-      required String walletPrivateKey,
-      String pendingId}) = _$BlockchainGetVaultStart;
+      {required String masterKey, required String walletPrivateKey, String pendingId}) = _$BlockchainGetVaultStart;
 
   String get masterKey;
   String get walletPrivateKey;
@@ -1729,33 +1513,27 @@ abstract class BlockchainGetVaultStart
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainGetVaultStartCopyWith<BlockchainGetVaultStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainGetVaultStartCopyWith<BlockchainGetVaultStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainGetVaultSuccessfulCopyWith<$Res>
-    implements $BlockchainGetVaultCopyWith<$Res> {
+abstract class $BlockchainGetVaultSuccessfulCopyWith<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
   factory $BlockchainGetVaultSuccessfulCopyWith(
-          BlockchainGetVaultSuccessful value,
-          $Res Function(BlockchainGetVaultSuccessful) then) =
+          BlockchainGetVaultSuccessful value, $Res Function(BlockchainGetVaultSuccessful) then) =
       _$BlockchainGetVaultSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({List<VaultBundle> vault, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainGetVaultSuccessfulCopyWithImpl<$Res>
-    extends _$BlockchainGetVaultCopyWithImpl<$Res>
+class _$BlockchainGetVaultSuccessfulCopyWithImpl<$Res> extends _$BlockchainGetVaultCopyWithImpl<$Res>
     implements $BlockchainGetVaultSuccessfulCopyWith<$Res> {
   _$BlockchainGetVaultSuccessfulCopyWithImpl(
-      BlockchainGetVaultSuccessful _value,
-      $Res Function(BlockchainGetVaultSuccessful) _then)
+      BlockchainGetVaultSuccessful _value, $Res Function(BlockchainGetVaultSuccessful) _then)
       : super(_value, (v) => _then(v as BlockchainGetVaultSuccessful));
 
   @override
-  BlockchainGetVaultSuccessful get _value =>
-      super._value as BlockchainGetVaultSuccessful;
+  BlockchainGetVaultSuccessful get _value => super._value as BlockchainGetVaultSuccessful;
 
   @override
   $Res call({
@@ -1779,8 +1557,7 @@ class _$BlockchainGetVaultSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$BlockchainGetVaultSuccessful implements BlockchainGetVaultSuccessful {
-  const _$BlockchainGetVaultSuccessful(
-      {required this.vault, this.pendingId = _kBlockchainGetVaultPendingId});
+  const _$BlockchainGetVaultSuccessful({required this.vault, this.pendingId = _kBlockchainGetVaultPendingId});
 
   @override
   final List<VaultBundle> vault;
@@ -1804,27 +1581,19 @@ class _$BlockchainGetVaultSuccessful implements BlockchainGetVaultSuccessful {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(vault),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(vault), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainGetVaultSuccessfulCopyWith<BlockchainGetVaultSuccessful>
-      get copyWith => _$BlockchainGetVaultSuccessfulCopyWithImpl<
-          BlockchainGetVaultSuccessful>(this, _$identity);
+  $BlockchainGetVaultSuccessfulCopyWith<BlockchainGetVaultSuccessful> get copyWith =>
+      _$BlockchainGetVaultSuccessfulCopyWithImpl<BlockchainGetVaultSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(vault, pendingId);
   }
@@ -1832,12 +1601,9 @@ class _$BlockchainGetVaultSuccessful implements BlockchainGetVaultSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(vault, pendingId);
   }
@@ -1845,12 +1611,9 @@ class _$BlockchainGetVaultSuccessful implements BlockchainGetVaultSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -1894,37 +1657,31 @@ class _$BlockchainGetVaultSuccessful implements BlockchainGetVaultSuccessful {
   }
 }
 
-abstract class BlockchainGetVaultSuccessful
-    implements BlockchainGetVault, ActionDone {
-  const factory BlockchainGetVaultSuccessful(
-      {required List<VaultBundle> vault,
-      String pendingId}) = _$BlockchainGetVaultSuccessful;
+abstract class BlockchainGetVaultSuccessful implements BlockchainGetVault, ActionDone {
+  const factory BlockchainGetVaultSuccessful({required List<VaultBundle> vault, String pendingId}) =
+      _$BlockchainGetVaultSuccessful;
 
   List<VaultBundle> get vault;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainGetVaultSuccessfulCopyWith<BlockchainGetVaultSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainGetVaultSuccessfulCopyWith<BlockchainGetVaultSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainGetVaultErrorCopyWith<$Res>
-    implements $BlockchainGetVaultCopyWith<$Res> {
-  factory $BlockchainGetVaultErrorCopyWith(BlockchainGetVaultError value,
-          $Res Function(BlockchainGetVaultError) then) =
+abstract class $BlockchainGetVaultErrorCopyWith<$Res> implements $BlockchainGetVaultCopyWith<$Res> {
+  factory $BlockchainGetVaultErrorCopyWith(BlockchainGetVaultError value, $Res Function(BlockchainGetVaultError) then) =
       _$BlockchainGetVaultErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainGetVaultErrorCopyWithImpl<$Res>
-    extends _$BlockchainGetVaultCopyWithImpl<$Res>
+class _$BlockchainGetVaultErrorCopyWithImpl<$Res> extends _$BlockchainGetVaultCopyWithImpl<$Res>
     implements $BlockchainGetVaultErrorCopyWith<$Res> {
-  _$BlockchainGetVaultErrorCopyWithImpl(BlockchainGetVaultError _value,
-      $Res Function(BlockchainGetVaultError) _then)
+  _$BlockchainGetVaultErrorCopyWithImpl(BlockchainGetVaultError _value, $Res Function(BlockchainGetVaultError) _then)
       : super(_value, (v) => _then(v as BlockchainGetVaultError));
 
   @override
@@ -1958,8 +1715,7 @@ class _$BlockchainGetVaultErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$BlockchainGetVaultError implements BlockchainGetVaultError {
-  const _$BlockchainGetVaultError(this.error, this.stackTrace,
-      [this.pendingId = _kBlockchainGetVaultPendingId]);
+  const _$BlockchainGetVaultError(this.error, this.stackTrace, [this.pendingId = _kBlockchainGetVaultPendingId]);
 
   @override
   final Object error;
@@ -1980,35 +1736,25 @@ class _$BlockchainGetVaultError implements BlockchainGetVaultError {
         (other.runtimeType == runtimeType &&
             other is BlockchainGetVaultError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $BlockchainGetVaultErrorCopyWith<BlockchainGetVaultError> get copyWith =>
-      _$BlockchainGetVaultErrorCopyWithImpl<BlockchainGetVaultError>(
-          this, _$identity);
+      _$BlockchainGetVaultErrorCopyWithImpl<BlockchainGetVaultError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String masterKey, String walletPrivateKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -2016,12 +1762,9 @@ class _$BlockchainGetVaultError implements BlockchainGetVaultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -2029,12 +1772,9 @@ class _$BlockchainGetVaultError implements BlockchainGetVaultError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String masterKey, String walletPrivateKey, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -2078,10 +1818,9 @@ class _$BlockchainGetVaultError implements BlockchainGetVaultError {
   }
 }
 
-abstract class BlockchainGetVaultError
-    implements BlockchainGetVault, ActionDone, ErrorAction {
-  const factory BlockchainGetVaultError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$BlockchainGetVaultError;
+abstract class BlockchainGetVaultError implements BlockchainGetVault, ActionDone, ErrorAction {
+  const factory BlockchainGetVaultError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$BlockchainGetVaultError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -2089,8 +1828,7 @@ abstract class BlockchainGetVaultError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainGetVaultErrorCopyWith<BlockchainGetVaultError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainGetVaultErrorCopyWith<BlockchainGetVaultError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2110,8 +1848,7 @@ class _$BlockchainRemoveBundleTearOff {
     );
   }
 
-  BlockchainRemoveBundleSuccessful successful(
-      [String pendingId = _kBlockchainRemoveBundlePendingId]) {
+  BlockchainRemoveBundleSuccessful successful([String pendingId = _kBlockchainRemoveBundlePendingId]) {
     return BlockchainRemoveBundleSuccessful(
       pendingId,
     );
@@ -2136,41 +1873,30 @@ mixin _$BlockchainRemoveBundle {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)
-        start,
+    required TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRemoveBundleStart value) start,
-    required TResult Function(BlockchainRemoveBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRemoveBundleSuccessful value) successful,
     required TResult Function(BlockchainRemoveBundleError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -2191,21 +1917,18 @@ mixin _$BlockchainRemoveBundle {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BlockchainRemoveBundleCopyWith<BlockchainRemoveBundle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockchainRemoveBundleCopyWith<BlockchainRemoveBundle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockchainRemoveBundleCopyWith<$Res> {
-  factory $BlockchainRemoveBundleCopyWith(BlockchainRemoveBundle value,
-          $Res Function(BlockchainRemoveBundle) then) =
+  factory $BlockchainRemoveBundleCopyWith(BlockchainRemoveBundle value, $Res Function(BlockchainRemoveBundle) then) =
       _$BlockchainRemoveBundleCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainRemoveBundleCopyWithImpl<$Res>
-    implements $BlockchainRemoveBundleCopyWith<$Res> {
+class _$BlockchainRemoveBundleCopyWithImpl<$Res> implements $BlockchainRemoveBundleCopyWith<$Res> {
   _$BlockchainRemoveBundleCopyWithImpl(this._value, this._then);
 
   final BlockchainRemoveBundle _value;
@@ -2226,33 +1949,25 @@ class _$BlockchainRemoveBundleCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $BlockchainRemoveBundleStartCopyWith<$Res>
-    implements $BlockchainRemoveBundleCopyWith<$Res> {
+abstract class $BlockchainRemoveBundleStartCopyWith<$Res> implements $BlockchainRemoveBundleCopyWith<$Res> {
   factory $BlockchainRemoveBundleStartCopyWith(
-          BlockchainRemoveBundleStart value,
-          $Res Function(BlockchainRemoveBundleStart) then) =
+          BlockchainRemoveBundleStart value, $Res Function(BlockchainRemoveBundleStart) then) =
       _$BlockchainRemoveBundleStartCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String masterKey,
-      String walletPrivateKey,
-      VaultBundle bundle,
-      String pendingId});
+  $Res call({String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId});
 
   $VaultBundleCopyWith<$Res> get bundle;
 }
 
 /// @nodoc
-class _$BlockchainRemoveBundleStartCopyWithImpl<$Res>
-    extends _$BlockchainRemoveBundleCopyWithImpl<$Res>
+class _$BlockchainRemoveBundleStartCopyWithImpl<$Res> extends _$BlockchainRemoveBundleCopyWithImpl<$Res>
     implements $BlockchainRemoveBundleStartCopyWith<$Res> {
-  _$BlockchainRemoveBundleStartCopyWithImpl(BlockchainRemoveBundleStart _value,
-      $Res Function(BlockchainRemoveBundleStart) _then)
+  _$BlockchainRemoveBundleStartCopyWithImpl(
+      BlockchainRemoveBundleStart _value, $Res Function(BlockchainRemoveBundleStart) _then)
       : super(_value, (v) => _then(v as BlockchainRemoveBundleStart));
 
   @override
-  BlockchainRemoveBundleStart get _value =>
-      super._value as BlockchainRemoveBundleStart;
+  BlockchainRemoveBundleStart get _value => super._value as BlockchainRemoveBundleStart;
 
   @override
   $Res call({
@@ -2320,8 +2035,7 @@ class _$BlockchainRemoveBundleStart implements BlockchainRemoveBundleStart {
         (other.runtimeType == runtimeType &&
             other is BlockchainRemoveBundleStart &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
-            const DeepCollectionEquality()
-                .equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -2336,20 +2050,15 @@ class _$BlockchainRemoveBundleStart implements BlockchainRemoveBundleStart {
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainRemoveBundleStartCopyWith<BlockchainRemoveBundleStart>
-      get copyWith => _$BlockchainRemoveBundleStartCopyWithImpl<
-          BlockchainRemoveBundleStart>(this, _$identity);
+  $BlockchainRemoveBundleStartCopyWith<BlockchainRemoveBundleStart> get copyWith =>
+      _$BlockchainRemoveBundleStartCopyWithImpl<BlockchainRemoveBundleStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)
-        start,
+    required TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKey, walletPrivateKey, bundle, pendingId);
   }
@@ -2357,12 +2066,9 @@ class _$BlockchainRemoveBundleStart implements BlockchainRemoveBundleStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKey, walletPrivateKey, bundle, pendingId);
   }
@@ -2370,12 +2076,9 @@ class _$BlockchainRemoveBundleStart implements BlockchainRemoveBundleStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -2388,8 +2091,7 @@ class _$BlockchainRemoveBundleStart implements BlockchainRemoveBundleStart {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRemoveBundleStart value) start,
-    required TResult Function(BlockchainRemoveBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRemoveBundleSuccessful value) successful,
     required TResult Function(BlockchainRemoveBundleError value) error,
   }) {
     return start(this);
@@ -2420,8 +2122,7 @@ class _$BlockchainRemoveBundleStart implements BlockchainRemoveBundleStart {
   }
 }
 
-abstract class BlockchainRemoveBundleStart
-    implements BlockchainRemoveBundle, ActionStart {
+abstract class BlockchainRemoveBundleStart implements BlockchainRemoveBundle, ActionStart {
   const factory BlockchainRemoveBundleStart(
       {required String masterKey,
       required String walletPrivateKey,
@@ -2435,33 +2136,27 @@ abstract class BlockchainRemoveBundleStart
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainRemoveBundleStartCopyWith<BlockchainRemoveBundleStart>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRemoveBundleStartCopyWith<BlockchainRemoveBundleStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainRemoveBundleSuccessfulCopyWith<$Res>
-    implements $BlockchainRemoveBundleCopyWith<$Res> {
+abstract class $BlockchainRemoveBundleSuccessfulCopyWith<$Res> implements $BlockchainRemoveBundleCopyWith<$Res> {
   factory $BlockchainRemoveBundleSuccessfulCopyWith(
-          BlockchainRemoveBundleSuccessful value,
-          $Res Function(BlockchainRemoveBundleSuccessful) then) =
+          BlockchainRemoveBundleSuccessful value, $Res Function(BlockchainRemoveBundleSuccessful) then) =
       _$BlockchainRemoveBundleSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainRemoveBundleSuccessfulCopyWithImpl<$Res>
-    extends _$BlockchainRemoveBundleCopyWithImpl<$Res>
+class _$BlockchainRemoveBundleSuccessfulCopyWithImpl<$Res> extends _$BlockchainRemoveBundleCopyWithImpl<$Res>
     implements $BlockchainRemoveBundleSuccessfulCopyWith<$Res> {
   _$BlockchainRemoveBundleSuccessfulCopyWithImpl(
-      BlockchainRemoveBundleSuccessful _value,
-      $Res Function(BlockchainRemoveBundleSuccessful) _then)
+      BlockchainRemoveBundleSuccessful _value, $Res Function(BlockchainRemoveBundleSuccessful) _then)
       : super(_value, (v) => _then(v as BlockchainRemoveBundleSuccessful));
 
   @override
-  BlockchainRemoveBundleSuccessful get _value =>
-      super._value as BlockchainRemoveBundleSuccessful;
+  BlockchainRemoveBundleSuccessful get _value => super._value as BlockchainRemoveBundleSuccessful;
 
   @override
   $Res call({
@@ -2479,10 +2174,8 @@ class _$BlockchainRemoveBundleSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 @Implements<ActionDone>()
-class _$BlockchainRemoveBundleSuccessful
-    implements BlockchainRemoveBundleSuccessful {
-  const _$BlockchainRemoveBundleSuccessful(
-      [this.pendingId = _kBlockchainRemoveBundlePendingId]);
+class _$BlockchainRemoveBundleSuccessful implements BlockchainRemoveBundleSuccessful {
+  const _$BlockchainRemoveBundleSuccessful([this.pendingId = _kBlockchainRemoveBundlePendingId]);
 
   @JsonKey()
   @override
@@ -2502,25 +2195,19 @@ class _$BlockchainRemoveBundleSuccessful
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainRemoveBundleSuccessfulCopyWith<BlockchainRemoveBundleSuccessful>
-      get copyWith => _$BlockchainRemoveBundleSuccessfulCopyWithImpl<
-          BlockchainRemoveBundleSuccessful>(this, _$identity);
+  $BlockchainRemoveBundleSuccessfulCopyWith<BlockchainRemoveBundleSuccessful> get copyWith =>
+      _$BlockchainRemoveBundleSuccessfulCopyWithImpl<BlockchainRemoveBundleSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)
-        start,
+    required TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -2528,12 +2215,9 @@ class _$BlockchainRemoveBundleSuccessful
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -2541,12 +2225,9 @@ class _$BlockchainRemoveBundleSuccessful
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -2559,8 +2240,7 @@ class _$BlockchainRemoveBundleSuccessful
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRemoveBundleStart value) start,
-    required TResult Function(BlockchainRemoveBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRemoveBundleSuccessful value) successful,
     required TResult Function(BlockchainRemoveBundleError value) error,
   }) {
     return successful(this);
@@ -2591,41 +2271,35 @@ class _$BlockchainRemoveBundleSuccessful
   }
 }
 
-abstract class BlockchainRemoveBundleSuccessful
-    implements BlockchainRemoveBundle, ActionDone {
-  const factory BlockchainRemoveBundleSuccessful([String pendingId]) =
-      _$BlockchainRemoveBundleSuccessful;
+abstract class BlockchainRemoveBundleSuccessful implements BlockchainRemoveBundle, ActionDone {
+  const factory BlockchainRemoveBundleSuccessful([String pendingId]) = _$BlockchainRemoveBundleSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainRemoveBundleSuccessfulCopyWith<BlockchainRemoveBundleSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRemoveBundleSuccessfulCopyWith<BlockchainRemoveBundleSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BlockchainRemoveBundleErrorCopyWith<$Res>
-    implements $BlockchainRemoveBundleCopyWith<$Res> {
+abstract class $BlockchainRemoveBundleErrorCopyWith<$Res> implements $BlockchainRemoveBundleCopyWith<$Res> {
   factory $BlockchainRemoveBundleErrorCopyWith(
-          BlockchainRemoveBundleError value,
-          $Res Function(BlockchainRemoveBundleError) then) =
+          BlockchainRemoveBundleError value, $Res Function(BlockchainRemoveBundleError) then) =
       _$BlockchainRemoveBundleErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$BlockchainRemoveBundleErrorCopyWithImpl<$Res>
-    extends _$BlockchainRemoveBundleCopyWithImpl<$Res>
+class _$BlockchainRemoveBundleErrorCopyWithImpl<$Res> extends _$BlockchainRemoveBundleCopyWithImpl<$Res>
     implements $BlockchainRemoveBundleErrorCopyWith<$Res> {
-  _$BlockchainRemoveBundleErrorCopyWithImpl(BlockchainRemoveBundleError _value,
-      $Res Function(BlockchainRemoveBundleError) _then)
+  _$BlockchainRemoveBundleErrorCopyWithImpl(
+      BlockchainRemoveBundleError _value, $Res Function(BlockchainRemoveBundleError) _then)
       : super(_value, (v) => _then(v as BlockchainRemoveBundleError));
 
   @override
-  BlockchainRemoveBundleError get _value =>
-      super._value as BlockchainRemoveBundleError;
+  BlockchainRemoveBundleError get _value => super._value as BlockchainRemoveBundleError;
 
   @override
   $Res call({
@@ -2677,34 +2351,25 @@ class _$BlockchainRemoveBundleError implements BlockchainRemoveBundleError {
         (other.runtimeType == runtimeType &&
             other is BlockchainRemoveBundleError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $BlockchainRemoveBundleErrorCopyWith<BlockchainRemoveBundleError>
-      get copyWith => _$BlockchainRemoveBundleErrorCopyWithImpl<
-          BlockchainRemoveBundleError>(this, _$identity);
+  $BlockchainRemoveBundleErrorCopyWith<BlockchainRemoveBundleError> get copyWith =>
+      _$BlockchainRemoveBundleErrorCopyWithImpl<BlockchainRemoveBundleError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)
-        start,
+    required TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -2712,12 +2377,9 @@ class _$BlockchainRemoveBundleError implements BlockchainRemoveBundleError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -2725,12 +2387,9 @@ class _$BlockchainRemoveBundleError implements BlockchainRemoveBundleError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, String walletPrivateKey,
-            VaultBundle bundle, String pendingId)?
-        start,
+    TResult Function(String masterKey, String walletPrivateKey, VaultBundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -2743,8 +2402,7 @@ class _$BlockchainRemoveBundleError implements BlockchainRemoveBundleError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BlockchainRemoveBundleStart value) start,
-    required TResult Function(BlockchainRemoveBundleSuccessful value)
-        successful,
+    required TResult Function(BlockchainRemoveBundleSuccessful value) successful,
     required TResult Function(BlockchainRemoveBundleError value) error,
   }) {
     return error(this);
@@ -2775,10 +2433,9 @@ class _$BlockchainRemoveBundleError implements BlockchainRemoveBundleError {
   }
 }
 
-abstract class BlockchainRemoveBundleError
-    implements BlockchainRemoveBundle, ActionDone, ErrorAction {
-  const factory BlockchainRemoveBundleError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$BlockchainRemoveBundleError;
+abstract class BlockchainRemoveBundleError implements BlockchainRemoveBundle, ActionDone, ErrorAction {
+  const factory BlockchainRemoveBundleError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$BlockchainRemoveBundleError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -2786,32 +2443,28 @@ abstract class BlockchainRemoveBundleError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $BlockchainRemoveBundleErrorCopyWith<BlockchainRemoveBundleError>
-      get copyWith => throw _privateConstructorUsedError;
+  $BlockchainRemoveBundleErrorCopyWith<BlockchainRemoveBundleError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$GetMasterKeyHashTearOff {
   const _$GetMasterKeyHashTearOff();
 
-  GetMasterKeyHashStart start(
-      {String pendingId = _kGetMasterKeyHashPendingId}) {
+  GetMasterKeyHashStart start({String pendingId = _kGetMasterKeyHashPendingId}) {
     return GetMasterKeyHashStart(
       pendingId: pendingId,
     );
   }
 
   GetMasterKeyHashSuccessful successful(
-      {required String? masterKeyHash,
-      String pendingId = _kGetMasterKeyHashPendingId}) {
+      {required String? masterKeyHash, String pendingId = _kGetMasterKeyHashPendingId}) {
     return GetMasterKeyHashSuccessful(
       masterKeyHash: masterKeyHash,
       pendingId: pendingId,
     );
   }
 
-  GetMasterKeyHashError error(Object error, StackTrace stackTrace,
-      [String pendingId = _kGetMasterKeyHashPendingId]) {
+  GetMasterKeyHashError error(Object error, StackTrace stackTrace, [String pendingId = _kGetMasterKeyHashPendingId]) {
     return GetMasterKeyHashError(
       error,
       stackTrace,
@@ -2830,27 +2483,22 @@ mixin _$GetMasterKeyHash {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
-    required TResult Function(String? masterKeyHash, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2878,21 +2526,18 @@ mixin _$GetMasterKeyHash {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetMasterKeyHashCopyWith<GetMasterKeyHash> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetMasterKeyHashCopyWith<GetMasterKeyHash> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetMasterKeyHashCopyWith<$Res> {
-  factory $GetMasterKeyHashCopyWith(
-          GetMasterKeyHash value, $Res Function(GetMasterKeyHash) then) =
+  factory $GetMasterKeyHashCopyWith(GetMasterKeyHash value, $Res Function(GetMasterKeyHash) then) =
       _$GetMasterKeyHashCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetMasterKeyHashCopyWithImpl<$Res>
-    implements $GetMasterKeyHashCopyWith<$Res> {
+class _$GetMasterKeyHashCopyWithImpl<$Res> implements $GetMasterKeyHashCopyWith<$Res> {
   _$GetMasterKeyHashCopyWithImpl(this._value, this._then);
 
   final GetMasterKeyHash _value;
@@ -2913,21 +2558,17 @@ class _$GetMasterKeyHashCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $GetMasterKeyHashStartCopyWith<$Res>
-    implements $GetMasterKeyHashCopyWith<$Res> {
-  factory $GetMasterKeyHashStartCopyWith(GetMasterKeyHashStart value,
-          $Res Function(GetMasterKeyHashStart) then) =
+abstract class $GetMasterKeyHashStartCopyWith<$Res> implements $GetMasterKeyHashCopyWith<$Res> {
+  factory $GetMasterKeyHashStartCopyWith(GetMasterKeyHashStart value, $Res Function(GetMasterKeyHashStart) then) =
       _$GetMasterKeyHashStartCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetMasterKeyHashStartCopyWithImpl<$Res>
-    extends _$GetMasterKeyHashCopyWithImpl<$Res>
+class _$GetMasterKeyHashStartCopyWithImpl<$Res> extends _$GetMasterKeyHashCopyWithImpl<$Res>
     implements $GetMasterKeyHashStartCopyWith<$Res> {
-  _$GetMasterKeyHashStartCopyWithImpl(
-      GetMasterKeyHashStart _value, $Res Function(GetMasterKeyHashStart) _then)
+  _$GetMasterKeyHashStartCopyWithImpl(GetMasterKeyHashStart _value, $Res Function(GetMasterKeyHashStart) _then)
       : super(_value, (v) => _then(v as GetMasterKeyHashStart));
 
   @override
@@ -2970,24 +2611,19 @@ class _$GetMasterKeyHashStart implements GetMasterKeyHashStart {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $GetMasterKeyHashStartCopyWith<GetMasterKeyHashStart> get copyWith =>
-      _$GetMasterKeyHashStartCopyWithImpl<GetMasterKeyHashStart>(
-          this, _$identity);
+      _$GetMasterKeyHashStartCopyWithImpl<GetMasterKeyHashStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
-    required TResult Function(String? masterKeyHash, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(pendingId);
   }
@@ -2997,8 +2633,7 @@ class _$GetMasterKeyHashStart implements GetMasterKeyHashStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(pendingId);
   }
@@ -3008,8 +2643,7 @@ class _$GetMasterKeyHashStart implements GetMasterKeyHashStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -3054,38 +2688,33 @@ class _$GetMasterKeyHashStart implements GetMasterKeyHashStart {
 }
 
 abstract class GetMasterKeyHashStart implements GetMasterKeyHash, ActionStart {
-  const factory GetMasterKeyHashStart({String pendingId}) =
-      _$GetMasterKeyHashStart;
+  const factory GetMasterKeyHashStart({String pendingId}) = _$GetMasterKeyHashStart;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetMasterKeyHashStartCopyWith<GetMasterKeyHashStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetMasterKeyHashStartCopyWith<GetMasterKeyHashStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetMasterKeyHashSuccessfulCopyWith<$Res>
-    implements $GetMasterKeyHashCopyWith<$Res> {
-  factory $GetMasterKeyHashSuccessfulCopyWith(GetMasterKeyHashSuccessful value,
-          $Res Function(GetMasterKeyHashSuccessful) then) =
+abstract class $GetMasterKeyHashSuccessfulCopyWith<$Res> implements $GetMasterKeyHashCopyWith<$Res> {
+  factory $GetMasterKeyHashSuccessfulCopyWith(
+          GetMasterKeyHashSuccessful value, $Res Function(GetMasterKeyHashSuccessful) then) =
       _$GetMasterKeyHashSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String? masterKeyHash, String pendingId});
 }
 
 /// @nodoc
-class _$GetMasterKeyHashSuccessfulCopyWithImpl<$Res>
-    extends _$GetMasterKeyHashCopyWithImpl<$Res>
+class _$GetMasterKeyHashSuccessfulCopyWithImpl<$Res> extends _$GetMasterKeyHashCopyWithImpl<$Res>
     implements $GetMasterKeyHashSuccessfulCopyWith<$Res> {
-  _$GetMasterKeyHashSuccessfulCopyWithImpl(GetMasterKeyHashSuccessful _value,
-      $Res Function(GetMasterKeyHashSuccessful) _then)
+  _$GetMasterKeyHashSuccessfulCopyWithImpl(
+      GetMasterKeyHashSuccessful _value, $Res Function(GetMasterKeyHashSuccessful) _then)
       : super(_value, (v) => _then(v as GetMasterKeyHashSuccessful));
 
   @override
-  GetMasterKeyHashSuccessful get _value =>
-      super._value as GetMasterKeyHashSuccessful;
+  GetMasterKeyHashSuccessful get _value => super._value as GetMasterKeyHashSuccessful;
 
   @override
   $Res call({
@@ -3109,9 +2738,7 @@ class _$GetMasterKeyHashSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$GetMasterKeyHashSuccessful implements GetMasterKeyHashSuccessful {
-  const _$GetMasterKeyHashSuccessful(
-      {required this.masterKeyHash,
-      this.pendingId = _kGetMasterKeyHashPendingId});
+  const _$GetMasterKeyHashSuccessful({required this.masterKeyHash, this.pendingId = _kGetMasterKeyHashPendingId});
 
   @override
   final String? masterKeyHash;
@@ -3129,33 +2756,25 @@ class _$GetMasterKeyHashSuccessful implements GetMasterKeyHashSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GetMasterKeyHashSuccessful &&
-            const DeepCollectionEquality()
-                .equals(other.masterKeyHash, masterKeyHash) &&
+            const DeepCollectionEquality().equals(other.masterKeyHash, masterKeyHash) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(masterKeyHash),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(masterKeyHash), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $GetMasterKeyHashSuccessfulCopyWith<GetMasterKeyHashSuccessful>
-      get copyWith =>
-          _$GetMasterKeyHashSuccessfulCopyWithImpl<GetMasterKeyHashSuccessful>(
-              this, _$identity);
+  $GetMasterKeyHashSuccessfulCopyWith<GetMasterKeyHashSuccessful> get copyWith =>
+      _$GetMasterKeyHashSuccessfulCopyWithImpl<GetMasterKeyHashSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
-    required TResult Function(String? masterKeyHash, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(masterKeyHash, pendingId);
   }
@@ -3165,8 +2784,7 @@ class _$GetMasterKeyHashSuccessful implements GetMasterKeyHashSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(masterKeyHash, pendingId);
   }
@@ -3176,8 +2794,7 @@ class _$GetMasterKeyHashSuccessful implements GetMasterKeyHashSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -3221,37 +2838,30 @@ class _$GetMasterKeyHashSuccessful implements GetMasterKeyHashSuccessful {
   }
 }
 
-abstract class GetMasterKeyHashSuccessful
-    implements GetMasterKeyHash, ActionDone {
-  const factory GetMasterKeyHashSuccessful(
-      {required String? masterKeyHash,
-      String pendingId}) = _$GetMasterKeyHashSuccessful;
+abstract class GetMasterKeyHashSuccessful implements GetMasterKeyHash, ActionDone {
+  const factory GetMasterKeyHashSuccessful({required String? masterKeyHash, String pendingId}) =
+      _$GetMasterKeyHashSuccessful;
 
   String? get masterKeyHash;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetMasterKeyHashSuccessfulCopyWith<GetMasterKeyHashSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $GetMasterKeyHashSuccessfulCopyWith<GetMasterKeyHashSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetMasterKeyHashErrorCopyWith<$Res>
-    implements $GetMasterKeyHashCopyWith<$Res> {
-  factory $GetMasterKeyHashErrorCopyWith(GetMasterKeyHashError value,
-          $Res Function(GetMasterKeyHashError) then) =
+abstract class $GetMasterKeyHashErrorCopyWith<$Res> implements $GetMasterKeyHashCopyWith<$Res> {
+  factory $GetMasterKeyHashErrorCopyWith(GetMasterKeyHashError value, $Res Function(GetMasterKeyHashError) then) =
       _$GetMasterKeyHashErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$GetMasterKeyHashErrorCopyWithImpl<$Res>
-    extends _$GetMasterKeyHashCopyWithImpl<$Res>
+class _$GetMasterKeyHashErrorCopyWithImpl<$Res> extends _$GetMasterKeyHashCopyWithImpl<$Res>
     implements $GetMasterKeyHashErrorCopyWith<$Res> {
-  _$GetMasterKeyHashErrorCopyWithImpl(
-      GetMasterKeyHashError _value, $Res Function(GetMasterKeyHashError) _then)
+  _$GetMasterKeyHashErrorCopyWithImpl(GetMasterKeyHashError _value, $Res Function(GetMasterKeyHashError) _then)
       : super(_value, (v) => _then(v as GetMasterKeyHashError));
 
   @override
@@ -3285,8 +2895,7 @@ class _$GetMasterKeyHashErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$GetMasterKeyHashError implements GetMasterKeyHashError {
-  const _$GetMasterKeyHashError(this.error, this.stackTrace,
-      [this.pendingId = _kGetMasterKeyHashPendingId]);
+  const _$GetMasterKeyHashError(this.error, this.stackTrace, [this.pendingId = _kGetMasterKeyHashPendingId]);
 
   @override
   final Object error;
@@ -3307,33 +2916,25 @@ class _$GetMasterKeyHashError implements GetMasterKeyHashError {
         (other.runtimeType == runtimeType &&
             other is GetMasterKeyHashError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $GetMasterKeyHashErrorCopyWith<GetMasterKeyHashError> get copyWith =>
-      _$GetMasterKeyHashErrorCopyWithImpl<GetMasterKeyHashError>(
-          this, _$identity);
+      _$GetMasterKeyHashErrorCopyWithImpl<GetMasterKeyHashError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String pendingId) start,
-    required TResult Function(String? masterKeyHash, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? masterKeyHash, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -3343,8 +2944,7 @@ class _$GetMasterKeyHashError implements GetMasterKeyHashError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -3354,8 +2954,7 @@ class _$GetMasterKeyHashError implements GetMasterKeyHashError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String pendingId)? start,
     TResult Function(String? masterKeyHash, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -3399,10 +2998,9 @@ class _$GetMasterKeyHashError implements GetMasterKeyHashError {
   }
 }
 
-abstract class GetMasterKeyHashError
-    implements GetMasterKeyHash, ActionDone, ErrorAction {
-  const factory GetMasterKeyHashError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$GetMasterKeyHashError;
+abstract class GetMasterKeyHashError implements GetMasterKeyHash, ActionDone, ErrorAction {
+  const factory GetMasterKeyHashError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$GetMasterKeyHashError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -3410,25 +3008,21 @@ abstract class GetMasterKeyHashError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetMasterKeyHashErrorCopyWith<GetMasterKeyHashError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetMasterKeyHashErrorCopyWith<GetMasterKeyHashError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$StoreMasterKeyHashTearOff {
   const _$StoreMasterKeyHashTearOff();
 
-  StoreMasterKeyHashStart start(
-      {required String? masterKeyHash,
-      String pendingId = _kStoreMasterKeyHashPendingId}) {
+  StoreMasterKeyHashStart start({required String? masterKeyHash, String pendingId = _kStoreMasterKeyHashPendingId}) {
     return StoreMasterKeyHashStart(
       masterKeyHash: masterKeyHash,
       pendingId: pendingId,
     );
   }
 
-  StoreMasterKeyHashSuccessful successful(
-      {String pendingId = _kStoreMasterKeyHashPendingId}) {
+  StoreMasterKeyHashSuccessful successful({String pendingId = _kStoreMasterKeyHashPendingId}) {
     return StoreMasterKeyHashSuccessful(
       pendingId: pendingId,
     );
@@ -3455,25 +3049,21 @@ mixin _$StoreMasterKeyHash {
   TResult when<TResult extends Object?>({
     required TResult Function(String? masterKeyHash, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3501,21 +3091,18 @@ mixin _$StoreMasterKeyHash {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $StoreMasterKeyHashCopyWith<StoreMasterKeyHash> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreMasterKeyHashCopyWith<StoreMasterKeyHash> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StoreMasterKeyHashCopyWith<$Res> {
-  factory $StoreMasterKeyHashCopyWith(
-          StoreMasterKeyHash value, $Res Function(StoreMasterKeyHash) then) =
+  factory $StoreMasterKeyHashCopyWith(StoreMasterKeyHash value, $Res Function(StoreMasterKeyHash) then) =
       _$StoreMasterKeyHashCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$StoreMasterKeyHashCopyWithImpl<$Res>
-    implements $StoreMasterKeyHashCopyWith<$Res> {
+class _$StoreMasterKeyHashCopyWithImpl<$Res> implements $StoreMasterKeyHashCopyWith<$Res> {
   _$StoreMasterKeyHashCopyWithImpl(this._value, this._then);
 
   final StoreMasterKeyHash _value;
@@ -3536,21 +3123,17 @@ class _$StoreMasterKeyHashCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $StoreMasterKeyHashStartCopyWith<$Res>
-    implements $StoreMasterKeyHashCopyWith<$Res> {
-  factory $StoreMasterKeyHashStartCopyWith(StoreMasterKeyHashStart value,
-          $Res Function(StoreMasterKeyHashStart) then) =
+abstract class $StoreMasterKeyHashStartCopyWith<$Res> implements $StoreMasterKeyHashCopyWith<$Res> {
+  factory $StoreMasterKeyHashStartCopyWith(StoreMasterKeyHashStart value, $Res Function(StoreMasterKeyHashStart) then) =
       _$StoreMasterKeyHashStartCopyWithImpl<$Res>;
   @override
   $Res call({String? masterKeyHash, String pendingId});
 }
 
 /// @nodoc
-class _$StoreMasterKeyHashStartCopyWithImpl<$Res>
-    extends _$StoreMasterKeyHashCopyWithImpl<$Res>
+class _$StoreMasterKeyHashStartCopyWithImpl<$Res> extends _$StoreMasterKeyHashCopyWithImpl<$Res>
     implements $StoreMasterKeyHashStartCopyWith<$Res> {
-  _$StoreMasterKeyHashStartCopyWithImpl(StoreMasterKeyHashStart _value,
-      $Res Function(StoreMasterKeyHashStart) _then)
+  _$StoreMasterKeyHashStartCopyWithImpl(StoreMasterKeyHashStart _value, $Res Function(StoreMasterKeyHashStart) _then)
       : super(_value, (v) => _then(v as StoreMasterKeyHashStart));
 
   @override
@@ -3578,9 +3161,7 @@ class _$StoreMasterKeyHashStartCopyWithImpl<$Res>
 
 @Implements<ActionStart>()
 class _$StoreMasterKeyHashStart implements StoreMasterKeyHashStart {
-  const _$StoreMasterKeyHashStart(
-      {required this.masterKeyHash,
-      this.pendingId = _kStoreMasterKeyHashPendingId});
+  const _$StoreMasterKeyHashStart({required this.masterKeyHash, this.pendingId = _kStoreMasterKeyHashPendingId});
 
   @override
   final String? masterKeyHash;
@@ -3598,31 +3179,25 @@ class _$StoreMasterKeyHashStart implements StoreMasterKeyHashStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StoreMasterKeyHashStart &&
-            const DeepCollectionEquality()
-                .equals(other.masterKeyHash, masterKeyHash) &&
+            const DeepCollectionEquality().equals(other.masterKeyHash, masterKeyHash) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(masterKeyHash),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(masterKeyHash), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $StoreMasterKeyHashStartCopyWith<StoreMasterKeyHashStart> get copyWith =>
-      _$StoreMasterKeyHashStartCopyWithImpl<StoreMasterKeyHashStart>(
-          this, _$identity);
+      _$StoreMasterKeyHashStartCopyWithImpl<StoreMasterKeyHashStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? masterKeyHash, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKeyHash, pendingId);
   }
@@ -3632,8 +3207,7 @@ class _$StoreMasterKeyHashStart implements StoreMasterKeyHashStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKeyHash, pendingId);
   }
@@ -3643,8 +3217,7 @@ class _$StoreMasterKeyHashStart implements StoreMasterKeyHashStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -3688,44 +3261,35 @@ class _$StoreMasterKeyHashStart implements StoreMasterKeyHashStart {
   }
 }
 
-abstract class StoreMasterKeyHashStart
-    implements StoreMasterKeyHash, ActionStart {
-  const factory StoreMasterKeyHashStart(
-      {required String? masterKeyHash,
-      String pendingId}) = _$StoreMasterKeyHashStart;
+abstract class StoreMasterKeyHashStart implements StoreMasterKeyHash, ActionStart {
+  const factory StoreMasterKeyHashStart({required String? masterKeyHash, String pendingId}) = _$StoreMasterKeyHashStart;
 
   String? get masterKeyHash;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreMasterKeyHashStartCopyWith<StoreMasterKeyHashStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreMasterKeyHashStartCopyWith<StoreMasterKeyHashStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreMasterKeyHashSuccessfulCopyWith<$Res>
-    implements $StoreMasterKeyHashCopyWith<$Res> {
+abstract class $StoreMasterKeyHashSuccessfulCopyWith<$Res> implements $StoreMasterKeyHashCopyWith<$Res> {
   factory $StoreMasterKeyHashSuccessfulCopyWith(
-          StoreMasterKeyHashSuccessful value,
-          $Res Function(StoreMasterKeyHashSuccessful) then) =
+          StoreMasterKeyHashSuccessful value, $Res Function(StoreMasterKeyHashSuccessful) then) =
       _$StoreMasterKeyHashSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$StoreMasterKeyHashSuccessfulCopyWithImpl<$Res>
-    extends _$StoreMasterKeyHashCopyWithImpl<$Res>
+class _$StoreMasterKeyHashSuccessfulCopyWithImpl<$Res> extends _$StoreMasterKeyHashCopyWithImpl<$Res>
     implements $StoreMasterKeyHashSuccessfulCopyWith<$Res> {
   _$StoreMasterKeyHashSuccessfulCopyWithImpl(
-      StoreMasterKeyHashSuccessful _value,
-      $Res Function(StoreMasterKeyHashSuccessful) _then)
+      StoreMasterKeyHashSuccessful _value, $Res Function(StoreMasterKeyHashSuccessful) _then)
       : super(_value, (v) => _then(v as StoreMasterKeyHashSuccessful));
 
   @override
-  StoreMasterKeyHashSuccessful get _value =>
-      super._value as StoreMasterKeyHashSuccessful;
+  StoreMasterKeyHashSuccessful get _value => super._value as StoreMasterKeyHashSuccessful;
 
   @override
   $Res call({
@@ -3744,8 +3308,7 @@ class _$StoreMasterKeyHashSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$StoreMasterKeyHashSuccessful implements StoreMasterKeyHashSuccessful {
-  const _$StoreMasterKeyHashSuccessful(
-      {this.pendingId = _kStoreMasterKeyHashPendingId});
+  const _$StoreMasterKeyHashSuccessful({this.pendingId = _kStoreMasterKeyHashPendingId});
 
   @JsonKey()
   @override
@@ -3765,23 +3328,19 @@ class _$StoreMasterKeyHashSuccessful implements StoreMasterKeyHashSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $StoreMasterKeyHashSuccessfulCopyWith<StoreMasterKeyHashSuccessful>
-      get copyWith => _$StoreMasterKeyHashSuccessfulCopyWithImpl<
-          StoreMasterKeyHashSuccessful>(this, _$identity);
+  $StoreMasterKeyHashSuccessfulCopyWith<StoreMasterKeyHashSuccessful> get copyWith =>
+      _$StoreMasterKeyHashSuccessfulCopyWithImpl<StoreMasterKeyHashSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? masterKeyHash, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -3791,8 +3350,7 @@ class _$StoreMasterKeyHashSuccessful implements StoreMasterKeyHashSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -3802,8 +3360,7 @@ class _$StoreMasterKeyHashSuccessful implements StoreMasterKeyHashSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -3847,35 +3404,29 @@ class _$StoreMasterKeyHashSuccessful implements StoreMasterKeyHashSuccessful {
   }
 }
 
-abstract class StoreMasterKeyHashSuccessful
-    implements StoreMasterKeyHash, ActionDone {
-  const factory StoreMasterKeyHashSuccessful({String pendingId}) =
-      _$StoreMasterKeyHashSuccessful;
+abstract class StoreMasterKeyHashSuccessful implements StoreMasterKeyHash, ActionDone {
+  const factory StoreMasterKeyHashSuccessful({String pendingId}) = _$StoreMasterKeyHashSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreMasterKeyHashSuccessfulCopyWith<StoreMasterKeyHashSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $StoreMasterKeyHashSuccessfulCopyWith<StoreMasterKeyHashSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreMasterKeyHashErrorCopyWith<$Res>
-    implements $StoreMasterKeyHashCopyWith<$Res> {
-  factory $StoreMasterKeyHashErrorCopyWith(StoreMasterKeyHashError value,
-          $Res Function(StoreMasterKeyHashError) then) =
+abstract class $StoreMasterKeyHashErrorCopyWith<$Res> implements $StoreMasterKeyHashCopyWith<$Res> {
+  factory $StoreMasterKeyHashErrorCopyWith(StoreMasterKeyHashError value, $Res Function(StoreMasterKeyHashError) then) =
       _$StoreMasterKeyHashErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$StoreMasterKeyHashErrorCopyWithImpl<$Res>
-    extends _$StoreMasterKeyHashCopyWithImpl<$Res>
+class _$StoreMasterKeyHashErrorCopyWithImpl<$Res> extends _$StoreMasterKeyHashCopyWithImpl<$Res>
     implements $StoreMasterKeyHashErrorCopyWith<$Res> {
-  _$StoreMasterKeyHashErrorCopyWithImpl(StoreMasterKeyHashError _value,
-      $Res Function(StoreMasterKeyHashError) _then)
+  _$StoreMasterKeyHashErrorCopyWithImpl(StoreMasterKeyHashError _value, $Res Function(StoreMasterKeyHashError) _then)
       : super(_value, (v) => _then(v as StoreMasterKeyHashError));
 
   @override
@@ -3909,8 +3460,7 @@ class _$StoreMasterKeyHashErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$StoreMasterKeyHashError implements StoreMasterKeyHashError {
-  const _$StoreMasterKeyHashError(this.error, this.stackTrace,
-      [this.pendingId = _kStoreMasterKeyHashPendingId]);
+  const _$StoreMasterKeyHashError(this.error, this.stackTrace, [this.pendingId = _kStoreMasterKeyHashPendingId]);
 
   @override
   final Object error;
@@ -3931,32 +3481,25 @@ class _$StoreMasterKeyHashError implements StoreMasterKeyHashError {
         (other.runtimeType == runtimeType &&
             other is StoreMasterKeyHashError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $StoreMasterKeyHashErrorCopyWith<StoreMasterKeyHashError> get copyWith =>
-      _$StoreMasterKeyHashErrorCopyWithImpl<StoreMasterKeyHashError>(
-          this, _$identity);
+      _$StoreMasterKeyHashErrorCopyWithImpl<StoreMasterKeyHashError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String? masterKeyHash, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -3966,8 +3509,7 @@ class _$StoreMasterKeyHashError implements StoreMasterKeyHashError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -3977,8 +3519,7 @@ class _$StoreMasterKeyHashError implements StoreMasterKeyHashError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String? masterKeyHash, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -4022,10 +3563,9 @@ class _$StoreMasterKeyHashError implements StoreMasterKeyHashError {
   }
 }
 
-abstract class StoreMasterKeyHashError
-    implements StoreMasterKeyHash, ActionDone, ErrorAction {
-  const factory StoreMasterKeyHashError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$StoreMasterKeyHashError;
+abstract class StoreMasterKeyHashError implements StoreMasterKeyHash, ActionDone, ErrorAction {
+  const factory StoreMasterKeyHashError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$StoreMasterKeyHashError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -4033,31 +3573,27 @@ abstract class StoreMasterKeyHashError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreMasterKeyHashErrorCopyWith<StoreMasterKeyHashError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreMasterKeyHashErrorCopyWith<StoreMasterKeyHashError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$StoreBundleTearOff {
   const _$StoreBundleTearOff();
 
-  StoreBundleStart start(
-      {required Bundle bundle, String pendingId = _kStoreBundlePendingId}) {
+  StoreBundleStart start({required Bundle bundle, String pendingId = _kStoreBundlePendingId}) {
     return StoreBundleStart(
       bundle: bundle,
       pendingId: pendingId,
     );
   }
 
-  StoreBundleSuccessful successful(
-      [String pendingId = _kStoreBundlePendingId]) {
+  StoreBundleSuccessful successful([String pendingId = _kStoreBundlePendingId]) {
     return StoreBundleSuccessful(
       pendingId,
     );
   }
 
-  StoreBundleError error(Object error, StackTrace stackTrace,
-      [String pendingId = _kStoreBundlePendingId]) {
+  StoreBundleError error(Object error, StackTrace stackTrace, [String pendingId = _kStoreBundlePendingId]) {
     return StoreBundleError(
       error,
       stackTrace,
@@ -4077,25 +3613,21 @@ mixin _$StoreBundle {
   TResult when<TResult extends Object?>({
     required TResult Function(Bundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -4123,15 +3655,12 @@ mixin _$StoreBundle {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $StoreBundleCopyWith<StoreBundle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreBundleCopyWith<StoreBundle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StoreBundleCopyWith<$Res> {
-  factory $StoreBundleCopyWith(
-          StoreBundle value, $Res Function(StoreBundle) then) =
-      _$StoreBundleCopyWithImpl<$Res>;
+  factory $StoreBundleCopyWith(StoreBundle value, $Res Function(StoreBundle) then) = _$StoreBundleCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -4157,10 +3686,8 @@ class _$StoreBundleCopyWithImpl<$Res> implements $StoreBundleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $StoreBundleStartCopyWith<$Res>
-    implements $StoreBundleCopyWith<$Res> {
-  factory $StoreBundleStartCopyWith(
-          StoreBundleStart value, $Res Function(StoreBundleStart) then) =
+abstract class $StoreBundleStartCopyWith<$Res> implements $StoreBundleCopyWith<$Res> {
+  factory $StoreBundleStartCopyWith(StoreBundleStart value, $Res Function(StoreBundleStart) then) =
       _$StoreBundleStartCopyWithImpl<$Res>;
   @override
   $Res call({Bundle bundle, String pendingId});
@@ -4169,11 +3696,9 @@ abstract class $StoreBundleStartCopyWith<$Res>
 }
 
 /// @nodoc
-class _$StoreBundleStartCopyWithImpl<$Res>
-    extends _$StoreBundleCopyWithImpl<$Res>
+class _$StoreBundleStartCopyWithImpl<$Res> extends _$StoreBundleCopyWithImpl<$Res>
     implements $StoreBundleStartCopyWith<$Res> {
-  _$StoreBundleStartCopyWithImpl(
-      StoreBundleStart _value, $Res Function(StoreBundleStart) _then)
+  _$StoreBundleStartCopyWithImpl(StoreBundleStart _value, $Res Function(StoreBundleStart) _then)
       : super(_value, (v) => _then(v as StoreBundleStart));
 
   @override
@@ -4208,8 +3733,7 @@ class _$StoreBundleStartCopyWithImpl<$Res>
 
 @Implements<ActionStart>()
 class _$StoreBundleStart implements StoreBundleStart {
-  const _$StoreBundleStart(
-      {required this.bundle, this.pendingId = _kStoreBundlePendingId});
+  const _$StoreBundleStart({required this.bundle, this.pendingId = _kStoreBundlePendingId});
 
   @override
   final Bundle bundle;
@@ -4233,9 +3757,7 @@ class _$StoreBundleStart implements StoreBundleStart {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(bundle),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -4247,9 +3769,7 @@ class _$StoreBundleStart implements StoreBundleStart {
   TResult when<TResult extends Object?>({
     required TResult Function(Bundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(bundle, pendingId);
   }
@@ -4259,8 +3779,7 @@ class _$StoreBundleStart implements StoreBundleStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(bundle, pendingId);
   }
@@ -4270,8 +3789,7 @@ class _$StoreBundleStart implements StoreBundleStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -4316,34 +3834,28 @@ class _$StoreBundleStart implements StoreBundleStart {
 }
 
 abstract class StoreBundleStart implements StoreBundle, ActionStart {
-  const factory StoreBundleStart({required Bundle bundle, String pendingId}) =
-      _$StoreBundleStart;
+  const factory StoreBundleStart({required Bundle bundle, String pendingId}) = _$StoreBundleStart;
 
   Bundle get bundle;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreBundleStartCopyWith<StoreBundleStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreBundleStartCopyWith<StoreBundleStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreBundleSuccessfulCopyWith<$Res>
-    implements $StoreBundleCopyWith<$Res> {
-  factory $StoreBundleSuccessfulCopyWith(StoreBundleSuccessful value,
-          $Res Function(StoreBundleSuccessful) then) =
+abstract class $StoreBundleSuccessfulCopyWith<$Res> implements $StoreBundleCopyWith<$Res> {
+  factory $StoreBundleSuccessfulCopyWith(StoreBundleSuccessful value, $Res Function(StoreBundleSuccessful) then) =
       _$StoreBundleSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$StoreBundleSuccessfulCopyWithImpl<$Res>
-    extends _$StoreBundleCopyWithImpl<$Res>
+class _$StoreBundleSuccessfulCopyWithImpl<$Res> extends _$StoreBundleCopyWithImpl<$Res>
     implements $StoreBundleSuccessfulCopyWith<$Res> {
-  _$StoreBundleSuccessfulCopyWithImpl(
-      StoreBundleSuccessful _value, $Res Function(StoreBundleSuccessful) _then)
+  _$StoreBundleSuccessfulCopyWithImpl(StoreBundleSuccessful _value, $Res Function(StoreBundleSuccessful) _then)
       : super(_value, (v) => _then(v as StoreBundleSuccessful));
 
   @override
@@ -4386,23 +3898,19 @@ class _$StoreBundleSuccessful implements StoreBundleSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $StoreBundleSuccessfulCopyWith<StoreBundleSuccessful> get copyWith =>
-      _$StoreBundleSuccessfulCopyWithImpl<StoreBundleSuccessful>(
-          this, _$identity);
+      _$StoreBundleSuccessfulCopyWithImpl<StoreBundleSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Bundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -4412,8 +3920,7 @@ class _$StoreBundleSuccessful implements StoreBundleSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -4423,8 +3930,7 @@ class _$StoreBundleSuccessful implements StoreBundleSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -4469,33 +3975,27 @@ class _$StoreBundleSuccessful implements StoreBundleSuccessful {
 }
 
 abstract class StoreBundleSuccessful implements StoreBundle, ActionDone {
-  const factory StoreBundleSuccessful([String pendingId]) =
-      _$StoreBundleSuccessful;
+  const factory StoreBundleSuccessful([String pendingId]) = _$StoreBundleSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreBundleSuccessfulCopyWith<StoreBundleSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreBundleSuccessfulCopyWith<StoreBundleSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreBundleErrorCopyWith<$Res>
-    implements $StoreBundleCopyWith<$Res> {
-  factory $StoreBundleErrorCopyWith(
-          StoreBundleError value, $Res Function(StoreBundleError) then) =
+abstract class $StoreBundleErrorCopyWith<$Res> implements $StoreBundleCopyWith<$Res> {
+  factory $StoreBundleErrorCopyWith(StoreBundleError value, $Res Function(StoreBundleError) then) =
       _$StoreBundleErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$StoreBundleErrorCopyWithImpl<$Res>
-    extends _$StoreBundleCopyWithImpl<$Res>
+class _$StoreBundleErrorCopyWithImpl<$Res> extends _$StoreBundleCopyWithImpl<$Res>
     implements $StoreBundleErrorCopyWith<$Res> {
-  _$StoreBundleErrorCopyWithImpl(
-      StoreBundleError _value, $Res Function(StoreBundleError) _then)
+  _$StoreBundleErrorCopyWithImpl(StoreBundleError _value, $Res Function(StoreBundleError) _then)
       : super(_value, (v) => _then(v as StoreBundleError));
 
   @override
@@ -4529,8 +4029,7 @@ class _$StoreBundleErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$StoreBundleError implements StoreBundleError {
-  const _$StoreBundleError(this.error, this.stackTrace,
-      [this.pendingId = _kStoreBundlePendingId]);
+  const _$StoreBundleError(this.error, this.stackTrace, [this.pendingId = _kStoreBundlePendingId]);
 
   @override
   final Object error;
@@ -4551,17 +4050,13 @@ class _$StoreBundleError implements StoreBundleError {
         (other.runtimeType == runtimeType &&
             other is StoreBundleError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -4573,9 +4068,7 @@ class _$StoreBundleError implements StoreBundleError {
   TResult when<TResult extends Object?>({
     required TResult Function(Bundle bundle, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -4585,8 +4078,7 @@ class _$StoreBundleError implements StoreBundleError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -4596,8 +4088,7 @@ class _$StoreBundleError implements StoreBundleError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Bundle bundle, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -4641,10 +4132,8 @@ class _$StoreBundleError implements StoreBundleError {
   }
 }
 
-abstract class StoreBundleError
-    implements StoreBundle, ActionDone, ErrorAction {
-  const factory StoreBundleError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$StoreBundleError;
+abstract class StoreBundleError implements StoreBundle, ActionDone, ErrorAction {
+  const factory StoreBundleError(Object error, StackTrace stackTrace, [String pendingId]) = _$StoreBundleError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -4652,32 +4141,28 @@ abstract class StoreBundleError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreBundleErrorCopyWith<StoreBundleError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreBundleErrorCopyWith<StoreBundleError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$GetBundleTearOff {
   const _$GetBundleTearOff();
 
-  GetBundleStart start(
-      {required String masterKey, String pendingId = _kGetBundlePendingId}) {
+  GetBundleStart start({required String masterKey, String pendingId = _kGetBundlePendingId}) {
     return GetBundleStart(
       masterKey: masterKey,
       pendingId: pendingId,
     );
   }
 
-  GetBundleSuccessful successful(
-      {required Bundle bundle, String pendingId = _kGetBundlePendingId}) {
+  GetBundleSuccessful successful({required Bundle bundle, String pendingId = _kGetBundlePendingId}) {
     return GetBundleSuccessful(
       bundle: bundle,
       pendingId: pendingId,
     );
   }
 
-  GetBundleError error(Object error, StackTrace stackTrace,
-      [String pendingId = _kGetBundlePendingId]) {
+  GetBundleError error(Object error, StackTrace stackTrace, [String pendingId = _kGetBundlePendingId]) {
     return GetBundleError(
       error,
       stackTrace,
@@ -4697,25 +4182,21 @@ mixin _$GetBundle {
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -4743,14 +4224,12 @@ mixin _$GetBundle {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetBundleCopyWith<GetBundle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetBundleCopyWith<GetBundle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetBundleCopyWith<$Res> {
-  factory $GetBundleCopyWith(GetBundle value, $Res Function(GetBundle) then) =
-      _$GetBundleCopyWithImpl<$Res>;
+  factory $GetBundleCopyWith(GetBundle value, $Res Function(GetBundle) then) = _$GetBundleCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
@@ -4776,10 +4255,8 @@ class _$GetBundleCopyWithImpl<$Res> implements $GetBundleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $GetBundleStartCopyWith<$Res>
-    implements $GetBundleCopyWith<$Res> {
-  factory $GetBundleStartCopyWith(
-          GetBundleStart value, $Res Function(GetBundleStart) then) =
+abstract class $GetBundleStartCopyWith<$Res> implements $GetBundleCopyWith<$Res> {
+  factory $GetBundleStartCopyWith(GetBundleStart value, $Res Function(GetBundleStart) then) =
       _$GetBundleStartCopyWithImpl<$Res>;
   @override
   $Res call({String masterKey, String pendingId});
@@ -4788,8 +4265,7 @@ abstract class $GetBundleStartCopyWith<$Res>
 /// @nodoc
 class _$GetBundleStartCopyWithImpl<$Res> extends _$GetBundleCopyWithImpl<$Res>
     implements $GetBundleStartCopyWith<$Res> {
-  _$GetBundleStartCopyWithImpl(
-      GetBundleStart _value, $Res Function(GetBundleStart) _then)
+  _$GetBundleStartCopyWithImpl(GetBundleStart _value, $Res Function(GetBundleStart) _then)
       : super(_value, (v) => _then(v as GetBundleStart));
 
   @override
@@ -4817,8 +4293,7 @@ class _$GetBundleStartCopyWithImpl<$Res> extends _$GetBundleCopyWithImpl<$Res>
 
 @Implements<ActionStart>()
 class _$GetBundleStart implements GetBundleStart {
-  const _$GetBundleStart(
-      {required this.masterKey, this.pendingId = _kGetBundlePendingId});
+  const _$GetBundleStart({required this.masterKey, this.pendingId = _kGetBundlePendingId});
 
   @override
   final String masterKey;
@@ -4842,9 +4317,7 @@ class _$GetBundleStart implements GetBundleStart {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(masterKey),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -4856,9 +4329,7 @@ class _$GetBundleStart implements GetBundleStart {
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKey, pendingId);
   }
@@ -4868,8 +4339,7 @@ class _$GetBundleStart implements GetBundleStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKey, pendingId);
   }
@@ -4879,8 +4349,7 @@ class _$GetBundleStart implements GetBundleStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -4925,23 +4394,19 @@ class _$GetBundleStart implements GetBundleStart {
 }
 
 abstract class GetBundleStart implements GetBundle, ActionStart {
-  const factory GetBundleStart({required String masterKey, String pendingId}) =
-      _$GetBundleStart;
+  const factory GetBundleStart({required String masterKey, String pendingId}) = _$GetBundleStart;
 
   String get masterKey;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetBundleStartCopyWith<GetBundleStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetBundleStartCopyWith<GetBundleStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetBundleSuccessfulCopyWith<$Res>
-    implements $GetBundleCopyWith<$Res> {
-  factory $GetBundleSuccessfulCopyWith(
-          GetBundleSuccessful value, $Res Function(GetBundleSuccessful) then) =
+abstract class $GetBundleSuccessfulCopyWith<$Res> implements $GetBundleCopyWith<$Res> {
+  factory $GetBundleSuccessfulCopyWith(GetBundleSuccessful value, $Res Function(GetBundleSuccessful) then) =
       _$GetBundleSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({Bundle bundle, String pendingId});
@@ -4950,11 +4415,9 @@ abstract class $GetBundleSuccessfulCopyWith<$Res>
 }
 
 /// @nodoc
-class _$GetBundleSuccessfulCopyWithImpl<$Res>
-    extends _$GetBundleCopyWithImpl<$Res>
+class _$GetBundleSuccessfulCopyWithImpl<$Res> extends _$GetBundleCopyWithImpl<$Res>
     implements $GetBundleSuccessfulCopyWith<$Res> {
-  _$GetBundleSuccessfulCopyWithImpl(
-      GetBundleSuccessful _value, $Res Function(GetBundleSuccessful) _then)
+  _$GetBundleSuccessfulCopyWithImpl(GetBundleSuccessful _value, $Res Function(GetBundleSuccessful) _then)
       : super(_value, (v) => _then(v as GetBundleSuccessful));
 
   @override
@@ -4989,8 +4452,7 @@ class _$GetBundleSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$GetBundleSuccessful implements GetBundleSuccessful {
-  const _$GetBundleSuccessful(
-      {required this.bundle, this.pendingId = _kGetBundlePendingId});
+  const _$GetBundleSuccessful({required this.bundle, this.pendingId = _kGetBundlePendingId});
 
   @override
   final Bundle bundle;
@@ -5014,9 +4476,7 @@ class _$GetBundleSuccessful implements GetBundleSuccessful {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(bundle),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(bundle), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -5028,9 +4488,7 @@ class _$GetBundleSuccessful implements GetBundleSuccessful {
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(bundle, pendingId);
   }
@@ -5040,8 +4498,7 @@ class _$GetBundleSuccessful implements GetBundleSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(bundle, pendingId);
   }
@@ -5051,8 +4508,7 @@ class _$GetBundleSuccessful implements GetBundleSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -5097,23 +4553,19 @@ class _$GetBundleSuccessful implements GetBundleSuccessful {
 }
 
 abstract class GetBundleSuccessful implements GetBundle, ActionDone {
-  const factory GetBundleSuccessful(
-      {required Bundle bundle, String pendingId}) = _$GetBundleSuccessful;
+  const factory GetBundleSuccessful({required Bundle bundle, String pendingId}) = _$GetBundleSuccessful;
 
   Bundle get bundle;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetBundleSuccessfulCopyWith<GetBundleSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetBundleSuccessfulCopyWith<GetBundleSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetBundleErrorCopyWith<$Res>
-    implements $GetBundleCopyWith<$Res> {
-  factory $GetBundleErrorCopyWith(
-          GetBundleError value, $Res Function(GetBundleError) then) =
+abstract class $GetBundleErrorCopyWith<$Res> implements $GetBundleCopyWith<$Res> {
+  factory $GetBundleErrorCopyWith(GetBundleError value, $Res Function(GetBundleError) then) =
       _$GetBundleErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
@@ -5122,8 +4574,7 @@ abstract class $GetBundleErrorCopyWith<$Res>
 /// @nodoc
 class _$GetBundleErrorCopyWithImpl<$Res> extends _$GetBundleCopyWithImpl<$Res>
     implements $GetBundleErrorCopyWith<$Res> {
-  _$GetBundleErrorCopyWithImpl(
-      GetBundleError _value, $Res Function(GetBundleError) _then)
+  _$GetBundleErrorCopyWithImpl(GetBundleError _value, $Res Function(GetBundleError) _then)
       : super(_value, (v) => _then(v as GetBundleError));
 
   @override
@@ -5157,8 +4608,7 @@ class _$GetBundleErrorCopyWithImpl<$Res> extends _$GetBundleCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$GetBundleError implements GetBundleError {
-  const _$GetBundleError(this.error, this.stackTrace,
-      [this.pendingId = _kGetBundlePendingId]);
+  const _$GetBundleError(this.error, this.stackTrace, [this.pendingId = _kGetBundlePendingId]);
 
   @override
   final Object error;
@@ -5179,17 +4629,13 @@ class _$GetBundleError implements GetBundleError {
         (other.runtimeType == runtimeType &&
             other is GetBundleError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -5201,9 +4647,7 @@ class _$GetBundleError implements GetBundleError {
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
     required TResult Function(Bundle bundle, String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -5213,8 +4657,7 @@ class _$GetBundleError implements GetBundleError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -5224,8 +4667,7 @@ class _$GetBundleError implements GetBundleError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(Bundle bundle, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -5270,8 +4712,7 @@ class _$GetBundleError implements GetBundleError {
 }
 
 abstract class GetBundleError implements GetBundle, ActionDone, ErrorAction {
-  const factory GetBundleError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$GetBundleError;
+  const factory GetBundleError(Object error, StackTrace stackTrace, [String pendingId]) = _$GetBundleError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -5279,8 +4720,7 @@ abstract class GetBundleError implements GetBundle, ActionDone, ErrorAction {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetBundleErrorCopyWith<GetBundleError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetBundleErrorCopyWith<GetBundleError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5298,8 +4738,7 @@ class _$StoreWalletPrivateKeyTearOff {
     );
   }
 
-  StoreWalletPrivateKeySuccessful successful(
-      [String pendingId = _kStoreWalletPrivateKeyPendingId]) {
+  StoreWalletPrivateKeySuccessful successful([String pendingId = _kStoreWalletPrivateKeyPendingId]) {
     return StoreWalletPrivateKeySuccessful(
       pendingId,
     );
@@ -5324,33 +4763,23 @@ mixin _$StoreWalletPrivateKey {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)
-        start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -5378,21 +4807,18 @@ mixin _$StoreWalletPrivateKey {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $StoreWalletPrivateKeyCopyWith<StoreWalletPrivateKey> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StoreWalletPrivateKeyCopyWith<StoreWalletPrivateKey> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StoreWalletPrivateKeyCopyWith<$Res> {
-  factory $StoreWalletPrivateKeyCopyWith(StoreWalletPrivateKey value,
-          $Res Function(StoreWalletPrivateKey) then) =
+  factory $StoreWalletPrivateKeyCopyWith(StoreWalletPrivateKey value, $Res Function(StoreWalletPrivateKey) then) =
       _$StoreWalletPrivateKeyCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$StoreWalletPrivateKeyCopyWithImpl<$Res>
-    implements $StoreWalletPrivateKeyCopyWith<$Res> {
+class _$StoreWalletPrivateKeyCopyWithImpl<$Res> implements $StoreWalletPrivateKeyCopyWith<$Res> {
   _$StoreWalletPrivateKeyCopyWithImpl(this._value, this._then);
 
   final StoreWalletPrivateKey _value;
@@ -5413,26 +4839,23 @@ class _$StoreWalletPrivateKeyCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $StoreWalletPrivateKeyStartCopyWith<$Res>
-    implements $StoreWalletPrivateKeyCopyWith<$Res> {
-  factory $StoreWalletPrivateKeyStartCopyWith(StoreWalletPrivateKeyStart value,
-          $Res Function(StoreWalletPrivateKeyStart) then) =
+abstract class $StoreWalletPrivateKeyStartCopyWith<$Res> implements $StoreWalletPrivateKeyCopyWith<$Res> {
+  factory $StoreWalletPrivateKeyStartCopyWith(
+          StoreWalletPrivateKeyStart value, $Res Function(StoreWalletPrivateKeyStart) then) =
       _$StoreWalletPrivateKeyStartCopyWithImpl<$Res>;
   @override
   $Res call({String? walletPrivateKey, String masterKey, String pendingId});
 }
 
 /// @nodoc
-class _$StoreWalletPrivateKeyStartCopyWithImpl<$Res>
-    extends _$StoreWalletPrivateKeyCopyWithImpl<$Res>
+class _$StoreWalletPrivateKeyStartCopyWithImpl<$Res> extends _$StoreWalletPrivateKeyCopyWithImpl<$Res>
     implements $StoreWalletPrivateKeyStartCopyWith<$Res> {
-  _$StoreWalletPrivateKeyStartCopyWithImpl(StoreWalletPrivateKeyStart _value,
-      $Res Function(StoreWalletPrivateKeyStart) _then)
+  _$StoreWalletPrivateKeyStartCopyWithImpl(
+      StoreWalletPrivateKeyStart _value, $Res Function(StoreWalletPrivateKeyStart) _then)
       : super(_value, (v) => _then(v as StoreWalletPrivateKeyStart));
 
   @override
-  StoreWalletPrivateKeyStart get _value =>
-      super._value as StoreWalletPrivateKeyStart;
+  StoreWalletPrivateKeyStart get _value => super._value as StoreWalletPrivateKeyStart;
 
   @override
   $Res call({
@@ -5462,9 +4885,7 @@ class _$StoreWalletPrivateKeyStartCopyWithImpl<$Res>
 @Implements<ActionStart>()
 class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
   const _$StoreWalletPrivateKeyStart(
-      {required this.walletPrivateKey,
-      required this.masterKey,
-      this.pendingId = _kStoreWalletPrivateKeyPendingId});
+      {required this.walletPrivateKey, required this.masterKey, this.pendingId = _kStoreWalletPrivateKeyPendingId});
 
   @override
   final String? walletPrivateKey;
@@ -5484,36 +4905,26 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is StoreWalletPrivateKeyStart &&
-            const DeepCollectionEquality()
-                .equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(walletPrivateKey),
-      const DeepCollectionEquality().hash(masterKey),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
+      const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $StoreWalletPrivateKeyStartCopyWith<StoreWalletPrivateKeyStart>
-      get copyWith =>
-          _$StoreWalletPrivateKeyStartCopyWithImpl<StoreWalletPrivateKeyStart>(
-              this, _$identity);
+  $StoreWalletPrivateKeyStartCopyWith<StoreWalletPrivateKeyStart> get copyWith =>
+      _$StoreWalletPrivateKeyStartCopyWithImpl<StoreWalletPrivateKeyStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)
-        start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(walletPrivateKey, masterKey, pendingId);
   }
@@ -5521,12 +4932,9 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(walletPrivateKey, masterKey, pendingId);
   }
@@ -5534,12 +4942,9 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -5583,12 +4988,9 @@ class _$StoreWalletPrivateKeyStart implements StoreWalletPrivateKeyStart {
   }
 }
 
-abstract class StoreWalletPrivateKeyStart
-    implements StoreWalletPrivateKey, ActionStart {
+abstract class StoreWalletPrivateKeyStart implements StoreWalletPrivateKey, ActionStart {
   const factory StoreWalletPrivateKeyStart(
-      {required String? walletPrivateKey,
-      required String masterKey,
-      String pendingId}) = _$StoreWalletPrivateKeyStart;
+      {required String? walletPrivateKey, required String masterKey, String pendingId}) = _$StoreWalletPrivateKeyStart;
 
   String? get walletPrivateKey;
   String get masterKey;
@@ -5596,33 +4998,27 @@ abstract class StoreWalletPrivateKeyStart
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreWalletPrivateKeyStartCopyWith<StoreWalletPrivateKeyStart>
-      get copyWith => throw _privateConstructorUsedError;
+  $StoreWalletPrivateKeyStartCopyWith<StoreWalletPrivateKeyStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreWalletPrivateKeySuccessfulCopyWith<$Res>
-    implements $StoreWalletPrivateKeyCopyWith<$Res> {
+abstract class $StoreWalletPrivateKeySuccessfulCopyWith<$Res> implements $StoreWalletPrivateKeyCopyWith<$Res> {
   factory $StoreWalletPrivateKeySuccessfulCopyWith(
-          StoreWalletPrivateKeySuccessful value,
-          $Res Function(StoreWalletPrivateKeySuccessful) then) =
+          StoreWalletPrivateKeySuccessful value, $Res Function(StoreWalletPrivateKeySuccessful) then) =
       _$StoreWalletPrivateKeySuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$StoreWalletPrivateKeySuccessfulCopyWithImpl<$Res>
-    extends _$StoreWalletPrivateKeyCopyWithImpl<$Res>
+class _$StoreWalletPrivateKeySuccessfulCopyWithImpl<$Res> extends _$StoreWalletPrivateKeyCopyWithImpl<$Res>
     implements $StoreWalletPrivateKeySuccessfulCopyWith<$Res> {
   _$StoreWalletPrivateKeySuccessfulCopyWithImpl(
-      StoreWalletPrivateKeySuccessful _value,
-      $Res Function(StoreWalletPrivateKeySuccessful) _then)
+      StoreWalletPrivateKeySuccessful _value, $Res Function(StoreWalletPrivateKeySuccessful) _then)
       : super(_value, (v) => _then(v as StoreWalletPrivateKeySuccessful));
 
   @override
-  StoreWalletPrivateKeySuccessful get _value =>
-      super._value as StoreWalletPrivateKeySuccessful;
+  StoreWalletPrivateKeySuccessful get _value => super._value as StoreWalletPrivateKeySuccessful;
 
   @override
   $Res call({
@@ -5640,10 +5036,8 @@ class _$StoreWalletPrivateKeySuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 @Implements<ActionDone>()
-class _$StoreWalletPrivateKeySuccessful
-    implements StoreWalletPrivateKeySuccessful {
-  const _$StoreWalletPrivateKeySuccessful(
-      [this.pendingId = _kStoreWalletPrivateKeyPendingId]);
+class _$StoreWalletPrivateKeySuccessful implements StoreWalletPrivateKeySuccessful {
+  const _$StoreWalletPrivateKeySuccessful([this.pendingId = _kStoreWalletPrivateKeyPendingId]);
 
   @JsonKey()
   @override
@@ -5663,25 +5057,19 @@ class _$StoreWalletPrivateKeySuccessful
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $StoreWalletPrivateKeySuccessfulCopyWith<StoreWalletPrivateKeySuccessful>
-      get copyWith => _$StoreWalletPrivateKeySuccessfulCopyWithImpl<
-          StoreWalletPrivateKeySuccessful>(this, _$identity);
+  $StoreWalletPrivateKeySuccessfulCopyWith<StoreWalletPrivateKeySuccessful> get copyWith =>
+      _$StoreWalletPrivateKeySuccessfulCopyWithImpl<StoreWalletPrivateKeySuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)
-        start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -5689,12 +5077,9 @@ class _$StoreWalletPrivateKeySuccessful
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -5702,12 +5087,9 @@ class _$StoreWalletPrivateKeySuccessful
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -5751,40 +5133,35 @@ class _$StoreWalletPrivateKeySuccessful
   }
 }
 
-abstract class StoreWalletPrivateKeySuccessful
-    implements StoreWalletPrivateKey, ActionDone {
-  const factory StoreWalletPrivateKeySuccessful([String pendingId]) =
-      _$StoreWalletPrivateKeySuccessful;
+abstract class StoreWalletPrivateKeySuccessful implements StoreWalletPrivateKey, ActionDone {
+  const factory StoreWalletPrivateKeySuccessful([String pendingId]) = _$StoreWalletPrivateKeySuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreWalletPrivateKeySuccessfulCopyWith<StoreWalletPrivateKeySuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $StoreWalletPrivateKeySuccessfulCopyWith<StoreWalletPrivateKeySuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreWalletPrivateKeyErrorCopyWith<$Res>
-    implements $StoreWalletPrivateKeyCopyWith<$Res> {
-  factory $StoreWalletPrivateKeyErrorCopyWith(StoreWalletPrivateKeyError value,
-          $Res Function(StoreWalletPrivateKeyError) then) =
+abstract class $StoreWalletPrivateKeyErrorCopyWith<$Res> implements $StoreWalletPrivateKeyCopyWith<$Res> {
+  factory $StoreWalletPrivateKeyErrorCopyWith(
+          StoreWalletPrivateKeyError value, $Res Function(StoreWalletPrivateKeyError) then) =
       _$StoreWalletPrivateKeyErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$StoreWalletPrivateKeyErrorCopyWithImpl<$Res>
-    extends _$StoreWalletPrivateKeyCopyWithImpl<$Res>
+class _$StoreWalletPrivateKeyErrorCopyWithImpl<$Res> extends _$StoreWalletPrivateKeyCopyWithImpl<$Res>
     implements $StoreWalletPrivateKeyErrorCopyWith<$Res> {
-  _$StoreWalletPrivateKeyErrorCopyWithImpl(StoreWalletPrivateKeyError _value,
-      $Res Function(StoreWalletPrivateKeyError) _then)
+  _$StoreWalletPrivateKeyErrorCopyWithImpl(
+      StoreWalletPrivateKeyError _value, $Res Function(StoreWalletPrivateKeyError) _then)
       : super(_value, (v) => _then(v as StoreWalletPrivateKeyError));
 
   @override
-  StoreWalletPrivateKeyError get _value =>
-      super._value as StoreWalletPrivateKeyError;
+  StoreWalletPrivateKeyError get _value => super._value as StoreWalletPrivateKeyError;
 
   @override
   $Res call({
@@ -5814,8 +5191,7 @@ class _$StoreWalletPrivateKeyErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
-  const _$StoreWalletPrivateKeyError(this.error, this.stackTrace,
-      [this.pendingId = _kStoreWalletPrivateKeyPendingId]);
+  const _$StoreWalletPrivateKeyError(this.error, this.stackTrace, [this.pendingId = _kStoreWalletPrivateKeyPendingId]);
 
   @override
   final Object error;
@@ -5836,35 +5212,25 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
         (other.runtimeType == runtimeType &&
             other is StoreWalletPrivateKeyError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $StoreWalletPrivateKeyErrorCopyWith<StoreWalletPrivateKeyError>
-      get copyWith =>
-          _$StoreWalletPrivateKeyErrorCopyWithImpl<StoreWalletPrivateKeyError>(
-              this, _$identity);
+  $StoreWalletPrivateKeyErrorCopyWith<StoreWalletPrivateKeyError> get copyWith =>
+      _$StoreWalletPrivateKeyErrorCopyWithImpl<StoreWalletPrivateKeyError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)
-        start,
+    required TResult Function(String? walletPrivateKey, String masterKey, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -5872,12 +5238,9 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -5885,12 +5248,9 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String? walletPrivateKey, String masterKey, String pendingId)?
-        start,
+    TResult Function(String? walletPrivateKey, String masterKey, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -5934,10 +5294,9 @@ class _$StoreWalletPrivateKeyError implements StoreWalletPrivateKeyError {
   }
 }
 
-abstract class StoreWalletPrivateKeyError
-    implements StoreWalletPrivateKey, ActionDone, ErrorAction {
-  const factory StoreWalletPrivateKeyError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$StoreWalletPrivateKeyError;
+abstract class StoreWalletPrivateKeyError implements StoreWalletPrivateKey, ActionDone, ErrorAction {
+  const factory StoreWalletPrivateKeyError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$StoreWalletPrivateKeyError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -5945,17 +5304,14 @@ abstract class StoreWalletPrivateKeyError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $StoreWalletPrivateKeyErrorCopyWith<StoreWalletPrivateKeyError>
-      get copyWith => throw _privateConstructorUsedError;
+  $StoreWalletPrivateKeyErrorCopyWith<StoreWalletPrivateKeyError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$GetWalletPrivateKeyTearOff {
   const _$GetWalletPrivateKeyTearOff();
 
-  GetWalletPrivateKeyStart start(
-      {required String masterKey,
-      String pendingId = _kGetWalletPrivateKeyPendingId}) {
+  GetWalletPrivateKeyStart start({required String masterKey, String pendingId = _kGetWalletPrivateKeyPendingId}) {
     return GetWalletPrivateKeyStart(
       masterKey: masterKey,
       pendingId: pendingId,
@@ -5963,8 +5319,7 @@ class _$GetWalletPrivateKeyTearOff {
   }
 
   GetWalletPrivateKeySuccessful successful(
-      {required String? walletPrivateKey,
-      String pendingId = _kGetWalletPrivateKeyPendingId}) {
+      {required String? walletPrivateKey, String pendingId = _kGetWalletPrivateKeyPendingId}) {
     return GetWalletPrivateKeySuccessful(
       walletPrivateKey: walletPrivateKey,
       pendingId: pendingId,
@@ -5991,27 +5346,22 @@ mixin _$GetWalletPrivateKey {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(String? walletPrivateKey, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -6039,21 +5389,18 @@ mixin _$GetWalletPrivateKey {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $GetWalletPrivateKeyCopyWith<GetWalletPrivateKey> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetWalletPrivateKeyCopyWith<GetWalletPrivateKey> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetWalletPrivateKeyCopyWith<$Res> {
-  factory $GetWalletPrivateKeyCopyWith(
-          GetWalletPrivateKey value, $Res Function(GetWalletPrivateKey) then) =
+  factory $GetWalletPrivateKeyCopyWith(GetWalletPrivateKey value, $Res Function(GetWalletPrivateKey) then) =
       _$GetWalletPrivateKeyCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$GetWalletPrivateKeyCopyWithImpl<$Res>
-    implements $GetWalletPrivateKeyCopyWith<$Res> {
+class _$GetWalletPrivateKeyCopyWithImpl<$Res> implements $GetWalletPrivateKeyCopyWith<$Res> {
   _$GetWalletPrivateKeyCopyWithImpl(this._value, this._then);
 
   final GetWalletPrivateKey _value;
@@ -6074,26 +5421,22 @@ class _$GetWalletPrivateKeyCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $GetWalletPrivateKeyStartCopyWith<$Res>
-    implements $GetWalletPrivateKeyCopyWith<$Res> {
-  factory $GetWalletPrivateKeyStartCopyWith(GetWalletPrivateKeyStart value,
-          $Res Function(GetWalletPrivateKeyStart) then) =
+abstract class $GetWalletPrivateKeyStartCopyWith<$Res> implements $GetWalletPrivateKeyCopyWith<$Res> {
+  factory $GetWalletPrivateKeyStartCopyWith(
+          GetWalletPrivateKeyStart value, $Res Function(GetWalletPrivateKeyStart) then) =
       _$GetWalletPrivateKeyStartCopyWithImpl<$Res>;
   @override
   $Res call({String masterKey, String pendingId});
 }
 
 /// @nodoc
-class _$GetWalletPrivateKeyStartCopyWithImpl<$Res>
-    extends _$GetWalletPrivateKeyCopyWithImpl<$Res>
+class _$GetWalletPrivateKeyStartCopyWithImpl<$Res> extends _$GetWalletPrivateKeyCopyWithImpl<$Res>
     implements $GetWalletPrivateKeyStartCopyWith<$Res> {
-  _$GetWalletPrivateKeyStartCopyWithImpl(GetWalletPrivateKeyStart _value,
-      $Res Function(GetWalletPrivateKeyStart) _then)
+  _$GetWalletPrivateKeyStartCopyWithImpl(GetWalletPrivateKeyStart _value, $Res Function(GetWalletPrivateKeyStart) _then)
       : super(_value, (v) => _then(v as GetWalletPrivateKeyStart));
 
   @override
-  GetWalletPrivateKeyStart get _value =>
-      super._value as GetWalletPrivateKeyStart;
+  GetWalletPrivateKeyStart get _value => super._value as GetWalletPrivateKeyStart;
 
   @override
   $Res call({
@@ -6117,9 +5460,7 @@ class _$GetWalletPrivateKeyStartCopyWithImpl<$Res>
 
 @Implements<ActionStart>()
 class _$GetWalletPrivateKeyStart implements GetWalletPrivateKeyStart {
-  const _$GetWalletPrivateKeyStart(
-      {required this.masterKey,
-      this.pendingId = _kGetWalletPrivateKeyPendingId});
+  const _$GetWalletPrivateKeyStart({required this.masterKey, this.pendingId = _kGetWalletPrivateKeyPendingId});
 
   @override
   final String masterKey;
@@ -6143,25 +5484,19 @@ class _$GetWalletPrivateKeyStart implements GetWalletPrivateKeyStart {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(masterKey),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $GetWalletPrivateKeyStartCopyWith<GetWalletPrivateKeyStart> get copyWith =>
-      _$GetWalletPrivateKeyStartCopyWithImpl<GetWalletPrivateKeyStart>(
-          this, _$identity);
+      _$GetWalletPrivateKeyStartCopyWithImpl<GetWalletPrivateKeyStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(String? walletPrivateKey, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKey, pendingId);
   }
@@ -6171,8 +5506,7 @@ class _$GetWalletPrivateKeyStart implements GetWalletPrivateKeyStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKey, pendingId);
   }
@@ -6182,8 +5516,7 @@ class _$GetWalletPrivateKeyStart implements GetWalletPrivateKeyStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -6227,44 +5560,35 @@ class _$GetWalletPrivateKeyStart implements GetWalletPrivateKeyStart {
   }
 }
 
-abstract class GetWalletPrivateKeyStart
-    implements GetWalletPrivateKey, ActionStart {
-  const factory GetWalletPrivateKeyStart(
-      {required String masterKey,
-      String pendingId}) = _$GetWalletPrivateKeyStart;
+abstract class GetWalletPrivateKeyStart implements GetWalletPrivateKey, ActionStart {
+  const factory GetWalletPrivateKeyStart({required String masterKey, String pendingId}) = _$GetWalletPrivateKeyStart;
 
   String get masterKey;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetWalletPrivateKeyStartCopyWith<GetWalletPrivateKeyStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetWalletPrivateKeyStartCopyWith<GetWalletPrivateKeyStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetWalletPrivateKeySuccessfulCopyWith<$Res>
-    implements $GetWalletPrivateKeyCopyWith<$Res> {
+abstract class $GetWalletPrivateKeySuccessfulCopyWith<$Res> implements $GetWalletPrivateKeyCopyWith<$Res> {
   factory $GetWalletPrivateKeySuccessfulCopyWith(
-          GetWalletPrivateKeySuccessful value,
-          $Res Function(GetWalletPrivateKeySuccessful) then) =
+          GetWalletPrivateKeySuccessful value, $Res Function(GetWalletPrivateKeySuccessful) then) =
       _$GetWalletPrivateKeySuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String? walletPrivateKey, String pendingId});
 }
 
 /// @nodoc
-class _$GetWalletPrivateKeySuccessfulCopyWithImpl<$Res>
-    extends _$GetWalletPrivateKeyCopyWithImpl<$Res>
+class _$GetWalletPrivateKeySuccessfulCopyWithImpl<$Res> extends _$GetWalletPrivateKeyCopyWithImpl<$Res>
     implements $GetWalletPrivateKeySuccessfulCopyWith<$Res> {
   _$GetWalletPrivateKeySuccessfulCopyWithImpl(
-      GetWalletPrivateKeySuccessful _value,
-      $Res Function(GetWalletPrivateKeySuccessful) _then)
+      GetWalletPrivateKeySuccessful _value, $Res Function(GetWalletPrivateKeySuccessful) _then)
       : super(_value, (v) => _then(v as GetWalletPrivateKeySuccessful));
 
   @override
-  GetWalletPrivateKeySuccessful get _value =>
-      super._value as GetWalletPrivateKeySuccessful;
+  GetWalletPrivateKeySuccessful get _value => super._value as GetWalletPrivateKeySuccessful;
 
   @override
   $Res call({
@@ -6289,8 +5613,7 @@ class _$GetWalletPrivateKeySuccessfulCopyWithImpl<$Res>
 @Implements<ActionDone>()
 class _$GetWalletPrivateKeySuccessful implements GetWalletPrivateKeySuccessful {
   const _$GetWalletPrivateKeySuccessful(
-      {required this.walletPrivateKey,
-      this.pendingId = _kGetWalletPrivateKeyPendingId});
+      {required this.walletPrivateKey, this.pendingId = _kGetWalletPrivateKeyPendingId});
 
   @override
   final String? walletPrivateKey;
@@ -6308,32 +5631,25 @@ class _$GetWalletPrivateKeySuccessful implements GetWalletPrivateKeySuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is GetWalletPrivateKeySuccessful &&
-            const DeepCollectionEquality()
-                .equals(other.walletPrivateKey, walletPrivateKey) &&
+            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(walletPrivateKey),
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey),
       const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $GetWalletPrivateKeySuccessfulCopyWith<GetWalletPrivateKeySuccessful>
-      get copyWith => _$GetWalletPrivateKeySuccessfulCopyWithImpl<
-          GetWalletPrivateKeySuccessful>(this, _$identity);
+  $GetWalletPrivateKeySuccessfulCopyWith<GetWalletPrivateKeySuccessful> get copyWith =>
+      _$GetWalletPrivateKeySuccessfulCopyWithImpl<GetWalletPrivateKeySuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(String? walletPrivateKey, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(walletPrivateKey, pendingId);
   }
@@ -6343,8 +5659,7 @@ class _$GetWalletPrivateKeySuccessful implements GetWalletPrivateKeySuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(walletPrivateKey, pendingId);
   }
@@ -6354,8 +5669,7 @@ class _$GetWalletPrivateKeySuccessful implements GetWalletPrivateKeySuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -6399,42 +5713,36 @@ class _$GetWalletPrivateKeySuccessful implements GetWalletPrivateKeySuccessful {
   }
 }
 
-abstract class GetWalletPrivateKeySuccessful
-    implements GetWalletPrivateKey, ActionDone {
-  const factory GetWalletPrivateKeySuccessful(
-      {required String? walletPrivateKey,
-      String pendingId}) = _$GetWalletPrivateKeySuccessful;
+abstract class GetWalletPrivateKeySuccessful implements GetWalletPrivateKey, ActionDone {
+  const factory GetWalletPrivateKeySuccessful({required String? walletPrivateKey, String pendingId}) =
+      _$GetWalletPrivateKeySuccessful;
 
   String? get walletPrivateKey;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetWalletPrivateKeySuccessfulCopyWith<GetWalletPrivateKeySuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $GetWalletPrivateKeySuccessfulCopyWith<GetWalletPrivateKeySuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetWalletPrivateKeyErrorCopyWith<$Res>
-    implements $GetWalletPrivateKeyCopyWith<$Res> {
-  factory $GetWalletPrivateKeyErrorCopyWith(GetWalletPrivateKeyError value,
-          $Res Function(GetWalletPrivateKeyError) then) =
+abstract class $GetWalletPrivateKeyErrorCopyWith<$Res> implements $GetWalletPrivateKeyCopyWith<$Res> {
+  factory $GetWalletPrivateKeyErrorCopyWith(
+          GetWalletPrivateKeyError value, $Res Function(GetWalletPrivateKeyError) then) =
       _$GetWalletPrivateKeyErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$GetWalletPrivateKeyErrorCopyWithImpl<$Res>
-    extends _$GetWalletPrivateKeyCopyWithImpl<$Res>
+class _$GetWalletPrivateKeyErrorCopyWithImpl<$Res> extends _$GetWalletPrivateKeyCopyWithImpl<$Res>
     implements $GetWalletPrivateKeyErrorCopyWith<$Res> {
-  _$GetWalletPrivateKeyErrorCopyWithImpl(GetWalletPrivateKeyError _value,
-      $Res Function(GetWalletPrivateKeyError) _then)
+  _$GetWalletPrivateKeyErrorCopyWithImpl(GetWalletPrivateKeyError _value, $Res Function(GetWalletPrivateKeyError) _then)
       : super(_value, (v) => _then(v as GetWalletPrivateKeyError));
 
   @override
-  GetWalletPrivateKeyError get _value =>
-      super._value as GetWalletPrivateKeyError;
+  GetWalletPrivateKeyError get _value => super._value as GetWalletPrivateKeyError;
 
   @override
   $Res call({
@@ -6464,8 +5772,7 @@ class _$GetWalletPrivateKeyErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$GetWalletPrivateKeyError implements GetWalletPrivateKeyError {
-  const _$GetWalletPrivateKeyError(this.error, this.stackTrace,
-      [this.pendingId = _kGetWalletPrivateKeyPendingId]);
+  const _$GetWalletPrivateKeyError(this.error, this.stackTrace, [this.pendingId = _kGetWalletPrivateKeyPendingId]);
 
   @override
   final Object error;
@@ -6486,33 +5793,25 @@ class _$GetWalletPrivateKeyError implements GetWalletPrivateKeyError {
         (other.runtimeType == runtimeType &&
             other is GetWalletPrivateKeyError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $GetWalletPrivateKeyErrorCopyWith<GetWalletPrivateKeyError> get copyWith =>
-      _$GetWalletPrivateKeyErrorCopyWithImpl<GetWalletPrivateKeyError>(
-          this, _$identity);
+      _$GetWalletPrivateKeyErrorCopyWithImpl<GetWalletPrivateKeyError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String masterKey, String pendingId) start,
-    required TResult Function(String? walletPrivateKey, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(String? walletPrivateKey, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -6522,8 +5821,7 @@ class _$GetWalletPrivateKeyError implements GetWalletPrivateKeyError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -6533,8 +5831,7 @@ class _$GetWalletPrivateKeyError implements GetWalletPrivateKeyError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String masterKey, String pendingId)? start,
     TResult Function(String? walletPrivateKey, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -6578,10 +5875,9 @@ class _$GetWalletPrivateKeyError implements GetWalletPrivateKeyError {
   }
 }
 
-abstract class GetWalletPrivateKeyError
-    implements GetWalletPrivateKey, ActionDone, ErrorAction {
-  const factory GetWalletPrivateKeyError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$GetWalletPrivateKeyError;
+abstract class GetWalletPrivateKeyError implements GetWalletPrivateKey, ActionDone, ErrorAction {
+  const factory GetWalletPrivateKeyError(Object error, StackTrace stackTrace, [String pendingId]) =
+      _$GetWalletPrivateKeyError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -6589,8 +5885,7 @@ abstract class GetWalletPrivateKeyError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $GetWalletPrivateKeyErrorCopyWith<GetWalletPrivateKeyError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetWalletPrivateKeyErrorCopyWith<GetWalletPrivateKeyError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6622,28 +5917,21 @@ mixin _$CloudAddBundle {
   FirebaseUser get firebaseUser => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CloudAddBundleCopyWith<CloudAddBundle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudAddBundleCopyWith<CloudAddBundle> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CloudAddBundleCopyWith<$Res> {
-  factory $CloudAddBundleCopyWith(
-          CloudAddBundle value, $Res Function(CloudAddBundle) then) =
+  factory $CloudAddBundleCopyWith(CloudAddBundle value, $Res Function(CloudAddBundle) then) =
       _$CloudAddBundleCopyWithImpl<$Res>;
-  $Res call(
-      {String masterKey,
-      Bundle bundle,
-      List<VaultBundle> vault,
-      FirebaseUser firebaseUser});
+  $Res call({String masterKey, Bundle bundle, List<VaultBundle> vault, FirebaseUser firebaseUser});
 
   $BundleCopyWith<$Res> get bundle;
   $FirebaseUserCopyWith<$Res> get firebaseUser;
 }
 
 /// @nodoc
-class _$CloudAddBundleCopyWithImpl<$Res>
-    implements $CloudAddBundleCopyWith<$Res> {
+class _$CloudAddBundleCopyWithImpl<$Res> implements $CloudAddBundleCopyWith<$Res> {
   _$CloudAddBundleCopyWithImpl(this._value, this._then);
 
   final CloudAddBundle _value;
@@ -6693,17 +5981,11 @@ class _$CloudAddBundleCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CloudAddBundle$CopyWith<$Res>
-    implements $CloudAddBundleCopyWith<$Res> {
-  factory $CloudAddBundle$CopyWith(
-          CloudAddBundle$ value, $Res Function(CloudAddBundle$) then) =
+abstract class $CloudAddBundle$CopyWith<$Res> implements $CloudAddBundleCopyWith<$Res> {
+  factory $CloudAddBundle$CopyWith(CloudAddBundle$ value, $Res Function(CloudAddBundle$) then) =
       _$CloudAddBundle$CopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String masterKey,
-      Bundle bundle,
-      List<VaultBundle> vault,
-      FirebaseUser firebaseUser});
+  $Res call({String masterKey, Bundle bundle, List<VaultBundle> vault, FirebaseUser firebaseUser});
 
   @override
   $BundleCopyWith<$Res> get bundle;
@@ -6712,11 +5994,9 @@ abstract class $CloudAddBundle$CopyWith<$Res>
 }
 
 /// @nodoc
-class _$CloudAddBundle$CopyWithImpl<$Res>
-    extends _$CloudAddBundleCopyWithImpl<$Res>
+class _$CloudAddBundle$CopyWithImpl<$Res> extends _$CloudAddBundleCopyWithImpl<$Res>
     implements $CloudAddBundle$CopyWith<$Res> {
-  _$CloudAddBundle$CopyWithImpl(
-      CloudAddBundle$ _value, $Res Function(CloudAddBundle$) _then)
+  _$CloudAddBundle$CopyWithImpl(CloudAddBundle$ _value, $Res Function(CloudAddBundle$) _then)
       : super(_value, (v) => _then(v as CloudAddBundle$));
 
   @override
@@ -6754,10 +6034,7 @@ class _$CloudAddBundle$CopyWithImpl<$Res>
 
 class _$CloudAddBundle$ implements CloudAddBundle$ {
   const _$CloudAddBundle$(
-      {required this.masterKey,
-      required this.bundle,
-      required this.vault,
-      required this.firebaseUser});
+      {required this.masterKey, required this.bundle, required this.vault, required this.firebaseUser});
 
   @override
   final String masterKey;
@@ -6781,8 +6058,7 @@ class _$CloudAddBundle$ implements CloudAddBundle$ {
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
             const DeepCollectionEquality().equals(other.vault, vault) &&
-            const DeepCollectionEquality()
-                .equals(other.firebaseUser, firebaseUser));
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser));
   }
 
   @override
@@ -6816,8 +6092,7 @@ abstract class CloudAddBundle$ implements CloudAddBundle {
   FirebaseUser get firebaseUser;
   @override
   @JsonKey(ignore: true)
-  $CloudAddBundle$CopyWith<CloudAddBundle$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudAddBundle$CopyWith<CloudAddBundle$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -6837,15 +6112,13 @@ class _$CloudStoreVaultTearOff {
     );
   }
 
-  CloudStoreVaultSuccessful successful(
-      [String pendingId = _kCloudStoreVaultPendingId]) {
+  CloudStoreVaultSuccessful successful([String pendingId = _kCloudStoreVaultPendingId]) {
     return CloudStoreVaultSuccessful(
       pendingId,
     );
   }
 
-  CloudStoreVaultError error(Object error, StackTrace stackTrace,
-      [String pendingId = _kCloudStoreVaultPendingId]) {
+  CloudStoreVaultError error(Object error, StackTrace stackTrace, [String pendingId = _kCloudStoreVaultPendingId]) {
     return CloudStoreVaultError(
       error,
       stackTrace,
@@ -6863,33 +6136,24 @@ mixin _$CloudStoreVault {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -6917,21 +6181,18 @@ mixin _$CloudStoreVault {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CloudStoreVaultCopyWith<CloudStoreVault> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudStoreVaultCopyWith<CloudStoreVault> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CloudStoreVaultCopyWith<$Res> {
-  factory $CloudStoreVaultCopyWith(
-          CloudStoreVault value, $Res Function(CloudStoreVault) then) =
+  factory $CloudStoreVaultCopyWith(CloudStoreVault value, $Res Function(CloudStoreVault) then) =
       _$CloudStoreVaultCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CloudStoreVaultCopyWithImpl<$Res>
-    implements $CloudStoreVaultCopyWith<$Res> {
+class _$CloudStoreVaultCopyWithImpl<$Res> implements $CloudStoreVaultCopyWith<$Res> {
   _$CloudStoreVaultCopyWithImpl(this._value, this._then);
 
   final CloudStoreVault _value;
@@ -6952,27 +6213,19 @@ class _$CloudStoreVaultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CloudStoreVaultStartCopyWith<$Res>
-    implements $CloudStoreVaultCopyWith<$Res> {
-  factory $CloudStoreVaultStartCopyWith(CloudStoreVaultStart value,
-          $Res Function(CloudStoreVaultStart) then) =
+abstract class $CloudStoreVaultStartCopyWith<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultStartCopyWith(CloudStoreVaultStart value, $Res Function(CloudStoreVaultStart) then) =
       _$CloudStoreVaultStartCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String masterKey,
-      List<VaultBundle> vault,
-      FirebaseUser firebaseUser,
-      String pendingId});
+  $Res call({String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId});
 
   $FirebaseUserCopyWith<$Res> get firebaseUser;
 }
 
 /// @nodoc
-class _$CloudStoreVaultStartCopyWithImpl<$Res>
-    extends _$CloudStoreVaultCopyWithImpl<$Res>
+class _$CloudStoreVaultStartCopyWithImpl<$Res> extends _$CloudStoreVaultCopyWithImpl<$Res>
     implements $CloudStoreVaultStartCopyWith<$Res> {
-  _$CloudStoreVaultStartCopyWithImpl(
-      CloudStoreVaultStart _value, $Res Function(CloudStoreVaultStart) _then)
+  _$CloudStoreVaultStartCopyWithImpl(CloudStoreVaultStart _value, $Res Function(CloudStoreVaultStart) _then)
       : super(_value, (v) => _then(v as CloudStoreVaultStart));
 
   @override
@@ -7045,8 +6298,7 @@ class _$CloudStoreVaultStart implements CloudStoreVaultStart {
             other is CloudStoreVaultStart &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.vault, vault) &&
-            const DeepCollectionEquality()
-                .equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
@@ -7061,19 +6313,15 @@ class _$CloudStoreVaultStart implements CloudStoreVaultStart {
   @JsonKey(ignore: true)
   @override
   $CloudStoreVaultStartCopyWith<CloudStoreVaultStart> get copyWith =>
-      _$CloudStoreVaultStartCopyWithImpl<CloudStoreVaultStart>(
-          this, _$identity);
+      _$CloudStoreVaultStartCopyWithImpl<CloudStoreVaultStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKey, vault, firebaseUser, pendingId);
   }
@@ -7081,12 +6329,9 @@ class _$CloudStoreVaultStart implements CloudStoreVaultStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKey, vault, firebaseUser, pendingId);
   }
@@ -7094,12 +6339,9 @@ class _$CloudStoreVaultStart implements CloudStoreVaultStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -7157,31 +6399,27 @@ abstract class CloudStoreVaultStart implements CloudStoreVault, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudStoreVaultStartCopyWith<CloudStoreVaultStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudStoreVaultStartCopyWith<CloudStoreVaultStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CloudStoreVaultSuccessfulCopyWith<$Res>
-    implements $CloudStoreVaultCopyWith<$Res> {
-  factory $CloudStoreVaultSuccessfulCopyWith(CloudStoreVaultSuccessful value,
-          $Res Function(CloudStoreVaultSuccessful) then) =
+abstract class $CloudStoreVaultSuccessfulCopyWith<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultSuccessfulCopyWith(
+          CloudStoreVaultSuccessful value, $Res Function(CloudStoreVaultSuccessful) then) =
       _$CloudStoreVaultSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CloudStoreVaultSuccessfulCopyWithImpl<$Res>
-    extends _$CloudStoreVaultCopyWithImpl<$Res>
+class _$CloudStoreVaultSuccessfulCopyWithImpl<$Res> extends _$CloudStoreVaultCopyWithImpl<$Res>
     implements $CloudStoreVaultSuccessfulCopyWith<$Res> {
-  _$CloudStoreVaultSuccessfulCopyWithImpl(CloudStoreVaultSuccessful _value,
-      $Res Function(CloudStoreVaultSuccessful) _then)
+  _$CloudStoreVaultSuccessfulCopyWithImpl(
+      CloudStoreVaultSuccessful _value, $Res Function(CloudStoreVaultSuccessful) _then)
       : super(_value, (v) => _then(v as CloudStoreVaultSuccessful));
 
   @override
-  CloudStoreVaultSuccessful get _value =>
-      super._value as CloudStoreVaultSuccessful;
+  CloudStoreVaultSuccessful get _value => super._value as CloudStoreVaultSuccessful;
 
   @override
   $Res call({
@@ -7200,8 +6438,7 @@ class _$CloudStoreVaultSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$CloudStoreVaultSuccessful implements CloudStoreVaultSuccessful {
-  const _$CloudStoreVaultSuccessful(
-      [this.pendingId = _kCloudStoreVaultPendingId]);
+  const _$CloudStoreVaultSuccessful([this.pendingId = _kCloudStoreVaultPendingId]);
 
   @JsonKey()
   @override
@@ -7221,25 +6458,20 @@ class _$CloudStoreVaultSuccessful implements CloudStoreVaultSuccessful {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $CloudStoreVaultSuccessfulCopyWith<CloudStoreVaultSuccessful> get copyWith =>
-      _$CloudStoreVaultSuccessfulCopyWithImpl<CloudStoreVaultSuccessful>(
-          this, _$identity);
+      _$CloudStoreVaultSuccessfulCopyWithImpl<CloudStoreVaultSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -7247,12 +6479,9 @@ class _$CloudStoreVaultSuccessful implements CloudStoreVaultSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -7260,12 +6489,9 @@ class _$CloudStoreVaultSuccessful implements CloudStoreVaultSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -7309,35 +6535,28 @@ class _$CloudStoreVaultSuccessful implements CloudStoreVaultSuccessful {
   }
 }
 
-abstract class CloudStoreVaultSuccessful
-    implements CloudStoreVault, ActionDone {
-  const factory CloudStoreVaultSuccessful([String pendingId]) =
-      _$CloudStoreVaultSuccessful;
+abstract class CloudStoreVaultSuccessful implements CloudStoreVault, ActionDone {
+  const factory CloudStoreVaultSuccessful([String pendingId]) = _$CloudStoreVaultSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudStoreVaultSuccessfulCopyWith<CloudStoreVaultSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudStoreVaultSuccessfulCopyWith<CloudStoreVaultSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CloudStoreVaultErrorCopyWith<$Res>
-    implements $CloudStoreVaultCopyWith<$Res> {
-  factory $CloudStoreVaultErrorCopyWith(CloudStoreVaultError value,
-          $Res Function(CloudStoreVaultError) then) =
+abstract class $CloudStoreVaultErrorCopyWith<$Res> implements $CloudStoreVaultCopyWith<$Res> {
+  factory $CloudStoreVaultErrorCopyWith(CloudStoreVaultError value, $Res Function(CloudStoreVaultError) then) =
       _$CloudStoreVaultErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$CloudStoreVaultErrorCopyWithImpl<$Res>
-    extends _$CloudStoreVaultCopyWithImpl<$Res>
+class _$CloudStoreVaultErrorCopyWithImpl<$Res> extends _$CloudStoreVaultCopyWithImpl<$Res>
     implements $CloudStoreVaultErrorCopyWith<$Res> {
-  _$CloudStoreVaultErrorCopyWithImpl(
-      CloudStoreVaultError _value, $Res Function(CloudStoreVaultError) _then)
+  _$CloudStoreVaultErrorCopyWithImpl(CloudStoreVaultError _value, $Res Function(CloudStoreVaultError) _then)
       : super(_value, (v) => _then(v as CloudStoreVaultError));
 
   @override
@@ -7371,8 +6590,7 @@ class _$CloudStoreVaultErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$CloudStoreVaultError implements CloudStoreVaultError {
-  const _$CloudStoreVaultError(this.error, this.stackTrace,
-      [this.pendingId = _kCloudStoreVaultPendingId]);
+  const _$CloudStoreVaultError(this.error, this.stackTrace, [this.pendingId = _kCloudStoreVaultPendingId]);
 
   @override
   final Object error;
@@ -7393,34 +6611,26 @@ class _$CloudStoreVaultError implements CloudStoreVaultError {
         (other.runtimeType == runtimeType &&
             other is CloudStoreVaultError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $CloudStoreVaultErrorCopyWith<CloudStoreVaultError> get copyWith =>
-      _$CloudStoreVaultErrorCopyWithImpl<CloudStoreVaultError>(
-          this, _$identity);
+      _$CloudStoreVaultErrorCopyWithImpl<CloudStoreVaultError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)
+    required TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -7428,12 +6638,9 @@ class _$CloudStoreVaultError implements CloudStoreVaultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -7441,12 +6648,9 @@ class _$CloudStoreVaultError implements CloudStoreVaultError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, String pendingId)?
-        start,
+    TResult Function(String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -7490,10 +6694,8 @@ class _$CloudStoreVaultError implements CloudStoreVaultError {
   }
 }
 
-abstract class CloudStoreVaultError
-    implements CloudStoreVault, ActionDone, ErrorAction {
-  const factory CloudStoreVaultError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$CloudStoreVaultError;
+abstract class CloudStoreVaultError implements CloudStoreVault, ActionDone, ErrorAction {
+  const factory CloudStoreVaultError(Object error, StackTrace stackTrace, [String pendingId]) = _$CloudStoreVaultError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -7501,8 +6703,7 @@ abstract class CloudStoreVaultError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudStoreVaultErrorCopyWith<CloudStoreVaultError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudStoreVaultErrorCopyWith<CloudStoreVaultError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -7510,9 +6711,7 @@ class _$CloudGetVaultTearOff {
   const _$CloudGetVaultTearOff();
 
   CloudGetVaultStart start(
-      {required FirebaseUser firebaseUser,
-      required String masterKey,
-      String pendingId = _kCloudGetVaultPendingId}) {
+      {required FirebaseUser firebaseUser, required String masterKey, String pendingId = _kCloudGetVaultPendingId}) {
     return CloudGetVaultStart(
       firebaseUser: firebaseUser,
       masterKey: masterKey,
@@ -7520,17 +6719,14 @@ class _$CloudGetVaultTearOff {
     );
   }
 
-  CloudGetVaultSuccessful successful(
-      {required List<VaultBundle> vault,
-      String pendingId = _kCloudGetVaultPendingId}) {
+  CloudGetVaultSuccessful successful({required List<VaultBundle> vault, String pendingId = _kCloudGetVaultPendingId}) {
     return CloudGetVaultSuccessful(
       vault: vault,
       pendingId: pendingId,
     );
   }
 
-  CloudGetVaultError error(Object error, StackTrace stackTrace,
-      [String pendingId = _kCloudGetVaultPendingId]) {
+  CloudGetVaultError error(Object error, StackTrace stackTrace, [String pendingId = _kCloudGetVaultPendingId]) {
     return CloudGetVaultError(
       error,
       stackTrace,
@@ -7548,34 +6744,23 @@ mixin _$CloudGetVault {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -7603,21 +6788,18 @@ mixin _$CloudGetVault {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CloudGetVaultCopyWith<CloudGetVault> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudGetVaultCopyWith<CloudGetVault> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CloudGetVaultCopyWith<$Res> {
-  factory $CloudGetVaultCopyWith(
-          CloudGetVault value, $Res Function(CloudGetVault) then) =
+  factory $CloudGetVaultCopyWith(CloudGetVault value, $Res Function(CloudGetVault) then) =
       _$CloudGetVaultCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CloudGetVaultCopyWithImpl<$Res>
-    implements $CloudGetVaultCopyWith<$Res> {
+class _$CloudGetVaultCopyWithImpl<$Res> implements $CloudGetVaultCopyWith<$Res> {
   _$CloudGetVaultCopyWithImpl(this._value, this._then);
 
   final CloudGetVault _value;
@@ -7638,10 +6820,8 @@ class _$CloudGetVaultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CloudGetVaultStartCopyWith<$Res>
-    implements $CloudGetVaultCopyWith<$Res> {
-  factory $CloudGetVaultStartCopyWith(
-          CloudGetVaultStart value, $Res Function(CloudGetVaultStart) then) =
+abstract class $CloudGetVaultStartCopyWith<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultStartCopyWith(CloudGetVaultStart value, $Res Function(CloudGetVaultStart) then) =
       _$CloudGetVaultStartCopyWithImpl<$Res>;
   @override
   $Res call({FirebaseUser firebaseUser, String masterKey, String pendingId});
@@ -7650,11 +6830,9 @@ abstract class $CloudGetVaultStartCopyWith<$Res>
 }
 
 /// @nodoc
-class _$CloudGetVaultStartCopyWithImpl<$Res>
-    extends _$CloudGetVaultCopyWithImpl<$Res>
+class _$CloudGetVaultStartCopyWithImpl<$Res> extends _$CloudGetVaultCopyWithImpl<$Res>
     implements $CloudGetVaultStartCopyWith<$Res> {
-  _$CloudGetVaultStartCopyWithImpl(
-      CloudGetVaultStart _value, $Res Function(CloudGetVaultStart) _then)
+  _$CloudGetVaultStartCopyWithImpl(CloudGetVaultStart _value, $Res Function(CloudGetVaultStart) _then)
       : super(_value, (v) => _then(v as CloudGetVaultStart));
 
   @override
@@ -7695,9 +6873,7 @@ class _$CloudGetVaultStartCopyWithImpl<$Res>
 @Implements<ActionStart>()
 class _$CloudGetVaultStart implements CloudGetVaultStart {
   const _$CloudGetVaultStart(
-      {required this.firebaseUser,
-      required this.masterKey,
-      this.pendingId = _kCloudGetVaultPendingId});
+      {required this.firebaseUser, required this.masterKey, this.pendingId = _kCloudGetVaultPendingId});
 
   @override
   final FirebaseUser firebaseUser;
@@ -7717,18 +6893,14 @@ class _$CloudGetVaultStart implements CloudGetVaultStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CloudGetVaultStart &&
-            const DeepCollectionEquality()
-                .equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(firebaseUser),
-      const DeepCollectionEquality().hash(masterKey),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(firebaseUser),
+      const DeepCollectionEquality().hash(masterKey), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -7738,14 +6910,9 @@ class _$CloudGetVaultStart implements CloudGetVaultStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(firebaseUser, masterKey, pendingId);
   }
@@ -7753,12 +6920,9 @@ class _$CloudGetVaultStart implements CloudGetVaultStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(firebaseUser, masterKey, pendingId);
   }
@@ -7766,12 +6930,9 @@ class _$CloudGetVaultStart implements CloudGetVaultStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -7816,10 +6977,8 @@ class _$CloudGetVaultStart implements CloudGetVaultStart {
 }
 
 abstract class CloudGetVaultStart implements CloudGetVault, ActionStart {
-  const factory CloudGetVaultStart(
-      {required FirebaseUser firebaseUser,
-      required String masterKey,
-      String pendingId}) = _$CloudGetVaultStart;
+  const factory CloudGetVaultStart({required FirebaseUser firebaseUser, required String masterKey, String pendingId}) =
+      _$CloudGetVaultStart;
 
   FirebaseUser get firebaseUser;
   String get masterKey;
@@ -7827,26 +6986,21 @@ abstract class CloudGetVaultStart implements CloudGetVault, ActionStart {
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudGetVaultStartCopyWith<CloudGetVaultStart> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudGetVaultStartCopyWith<CloudGetVaultStart> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CloudGetVaultSuccessfulCopyWith<$Res>
-    implements $CloudGetVaultCopyWith<$Res> {
-  factory $CloudGetVaultSuccessfulCopyWith(CloudGetVaultSuccessful value,
-          $Res Function(CloudGetVaultSuccessful) then) =
+abstract class $CloudGetVaultSuccessfulCopyWith<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultSuccessfulCopyWith(CloudGetVaultSuccessful value, $Res Function(CloudGetVaultSuccessful) then) =
       _$CloudGetVaultSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({List<VaultBundle> vault, String pendingId});
 }
 
 /// @nodoc
-class _$CloudGetVaultSuccessfulCopyWithImpl<$Res>
-    extends _$CloudGetVaultCopyWithImpl<$Res>
+class _$CloudGetVaultSuccessfulCopyWithImpl<$Res> extends _$CloudGetVaultCopyWithImpl<$Res>
     implements $CloudGetVaultSuccessfulCopyWith<$Res> {
-  _$CloudGetVaultSuccessfulCopyWithImpl(CloudGetVaultSuccessful _value,
-      $Res Function(CloudGetVaultSuccessful) _then)
+  _$CloudGetVaultSuccessfulCopyWithImpl(CloudGetVaultSuccessful _value, $Res Function(CloudGetVaultSuccessful) _then)
       : super(_value, (v) => _then(v as CloudGetVaultSuccessful));
 
   @override
@@ -7874,8 +7028,7 @@ class _$CloudGetVaultSuccessfulCopyWithImpl<$Res>
 
 @Implements<ActionDone>()
 class _$CloudGetVaultSuccessful implements CloudGetVaultSuccessful {
-  const _$CloudGetVaultSuccessful(
-      {required this.vault, this.pendingId = _kCloudGetVaultPendingId});
+  const _$CloudGetVaultSuccessful({required this.vault, this.pendingId = _kCloudGetVaultPendingId});
 
   @override
   final List<VaultBundle> vault;
@@ -7899,27 +7052,19 @@ class _$CloudGetVaultSuccessful implements CloudGetVaultSuccessful {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(vault),
-      const DeepCollectionEquality().hash(pendingId));
+      runtimeType, const DeepCollectionEquality().hash(vault), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $CloudGetVaultSuccessfulCopyWith<CloudGetVaultSuccessful> get copyWith =>
-      _$CloudGetVaultSuccessfulCopyWithImpl<CloudGetVaultSuccessful>(
-          this, _$identity);
+      _$CloudGetVaultSuccessfulCopyWithImpl<CloudGetVaultSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(vault, pendingId);
   }
@@ -7927,12 +7072,9 @@ class _$CloudGetVaultSuccessful implements CloudGetVaultSuccessful {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(vault, pendingId);
   }
@@ -7940,12 +7082,9 @@ class _$CloudGetVaultSuccessful implements CloudGetVaultSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -7990,35 +7129,29 @@ class _$CloudGetVaultSuccessful implements CloudGetVaultSuccessful {
 }
 
 abstract class CloudGetVaultSuccessful implements CloudGetVault, ActionDone {
-  const factory CloudGetVaultSuccessful(
-      {required List<VaultBundle> vault,
-      String pendingId}) = _$CloudGetVaultSuccessful;
+  const factory CloudGetVaultSuccessful({required List<VaultBundle> vault, String pendingId}) =
+      _$CloudGetVaultSuccessful;
 
   List<VaultBundle> get vault;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudGetVaultSuccessfulCopyWith<CloudGetVaultSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudGetVaultSuccessfulCopyWith<CloudGetVaultSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CloudGetVaultErrorCopyWith<$Res>
-    implements $CloudGetVaultCopyWith<$Res> {
-  factory $CloudGetVaultErrorCopyWith(
-          CloudGetVaultError value, $Res Function(CloudGetVaultError) then) =
+abstract class $CloudGetVaultErrorCopyWith<$Res> implements $CloudGetVaultCopyWith<$Res> {
+  factory $CloudGetVaultErrorCopyWith(CloudGetVaultError value, $Res Function(CloudGetVaultError) then) =
       _$CloudGetVaultErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$CloudGetVaultErrorCopyWithImpl<$Res>
-    extends _$CloudGetVaultCopyWithImpl<$Res>
+class _$CloudGetVaultErrorCopyWithImpl<$Res> extends _$CloudGetVaultCopyWithImpl<$Res>
     implements $CloudGetVaultErrorCopyWith<$Res> {
-  _$CloudGetVaultErrorCopyWithImpl(
-      CloudGetVaultError _value, $Res Function(CloudGetVaultError) _then)
+  _$CloudGetVaultErrorCopyWithImpl(CloudGetVaultError _value, $Res Function(CloudGetVaultError) _then)
       : super(_value, (v) => _then(v as CloudGetVaultError));
 
   @override
@@ -8052,8 +7185,7 @@ class _$CloudGetVaultErrorCopyWithImpl<$Res>
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$CloudGetVaultError implements CloudGetVaultError {
-  const _$CloudGetVaultError(this.error, this.stackTrace,
-      [this.pendingId = _kCloudGetVaultPendingId]);
+  const _$CloudGetVaultError(this.error, this.stackTrace, [this.pendingId = _kCloudGetVaultPendingId]);
 
   @override
   final Object error;
@@ -8074,17 +7206,13 @@ class _$CloudGetVaultError implements CloudGetVaultError {
         (other.runtimeType == runtimeType &&
             other is CloudGetVaultError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -8094,14 +7222,9 @@ class _$CloudGetVaultError implements CloudGetVaultError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)
-        start,
-    required TResult Function(List<VaultBundle> vault, String pendingId)
-        successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId) start,
+    required TResult Function(List<VaultBundle> vault, String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -8109,12 +7232,9 @@ class _$CloudGetVaultError implements CloudGetVaultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -8122,12 +7242,9 @@ class _$CloudGetVaultError implements CloudGetVaultError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            FirebaseUser firebaseUser, String masterKey, String pendingId)?
-        start,
+    TResult Function(FirebaseUser firebaseUser, String masterKey, String pendingId)? start,
     TResult Function(List<VaultBundle> vault, String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -8171,10 +7288,8 @@ class _$CloudGetVaultError implements CloudGetVaultError {
   }
 }
 
-abstract class CloudGetVaultError
-    implements CloudGetVault, ActionDone, ErrorAction {
-  const factory CloudGetVaultError(Object error, StackTrace stackTrace,
-      [String pendingId]) = _$CloudGetVaultError;
+abstract class CloudGetVaultError implements CloudGetVault, ActionDone, ErrorAction {
+  const factory CloudGetVaultError(Object error, StackTrace stackTrace, [String pendingId]) = _$CloudGetVaultError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -8182,8 +7297,7 @@ abstract class CloudGetVaultError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudGetVaultErrorCopyWith<CloudGetVaultError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudGetVaultErrorCopyWith<CloudGetVaultError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -8205,8 +7319,7 @@ class _$CloudDeleteItemFromVaultTearOff {
     );
   }
 
-  CloudDeleteItemFromVaultSuccessful successful(
-      [String pendingId = _kCloudDeleteItemFromVaultPendingId]) {
+  CloudDeleteItemFromVaultSuccessful successful([String pendingId = _kCloudDeleteItemFromVaultPendingId]) {
     return CloudDeleteItemFromVaultSuccessful(
       pendingId,
     );
@@ -8231,41 +7344,36 @@ mixin _$CloudDeleteItemFromVault {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CloudDeleteItemFromVaultStart value) start,
-    required TResult Function(CloudDeleteItemFromVaultSuccessful value)
-        successful,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
     required TResult Function(CloudDeleteItemFromVaultError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -8286,21 +7394,19 @@ mixin _$CloudDeleteItemFromVault {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CloudDeleteItemFromVaultCopyWith<CloudDeleteItemFromVault> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudDeleteItemFromVaultCopyWith<CloudDeleteItemFromVault> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CloudDeleteItemFromVaultCopyWith<$Res> {
-  factory $CloudDeleteItemFromVaultCopyWith(CloudDeleteItemFromVault value,
-          $Res Function(CloudDeleteItemFromVault) then) =
+  factory $CloudDeleteItemFromVaultCopyWith(
+          CloudDeleteItemFromVault value, $Res Function(CloudDeleteItemFromVault) then) =
       _$CloudDeleteItemFromVaultCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
-    implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+class _$CloudDeleteItemFromVaultCopyWithImpl<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
   _$CloudDeleteItemFromVaultCopyWithImpl(this._value, this._then);
 
   final CloudDeleteItemFromVault _value;
@@ -8321,36 +7427,27 @@ class _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CloudDeleteItemFromVaultStartCopyWith<$Res>
-    implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+abstract class $CloudDeleteItemFromVaultStartCopyWith<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
   factory $CloudDeleteItemFromVaultStartCopyWith(
-          CloudDeleteItemFromVaultStart value,
-          $Res Function(CloudDeleteItemFromVaultStart) then) =
+          CloudDeleteItemFromVaultStart value, $Res Function(CloudDeleteItemFromVaultStart) then) =
       _$CloudDeleteItemFromVaultStartCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String masterKey,
-      List<VaultBundle> vault,
-      FirebaseUser firebaseUser,
-      VaultBundle bundle,
-      String pendingId});
+      {String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId});
 
   $FirebaseUserCopyWith<$Res> get firebaseUser;
   $VaultBundleCopyWith<$Res> get bundle;
 }
 
 /// @nodoc
-class _$CloudDeleteItemFromVaultStartCopyWithImpl<$Res>
-    extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
+class _$CloudDeleteItemFromVaultStartCopyWithImpl<$Res> extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
     implements $CloudDeleteItemFromVaultStartCopyWith<$Res> {
   _$CloudDeleteItemFromVaultStartCopyWithImpl(
-      CloudDeleteItemFromVaultStart _value,
-      $Res Function(CloudDeleteItemFromVaultStart) _then)
+      CloudDeleteItemFromVaultStart _value, $Res Function(CloudDeleteItemFromVaultStart) _then)
       : super(_value, (v) => _then(v as CloudDeleteItemFromVaultStart));
 
   @override
-  CloudDeleteItemFromVaultStart get _value =>
-      super._value as CloudDeleteItemFromVaultStart;
+  CloudDeleteItemFromVaultStart get _value => super._value as CloudDeleteItemFromVaultStart;
 
   @override
   $Res call({
@@ -8434,8 +7531,7 @@ class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
             other is CloudDeleteItemFromVaultStart &&
             const DeepCollectionEquality().equals(other.masterKey, masterKey) &&
             const DeepCollectionEquality().equals(other.vault, vault) &&
-            const DeepCollectionEquality()
-                .equals(other.firebaseUser, firebaseUser) &&
+            const DeepCollectionEquality().equals(other.firebaseUser, firebaseUser) &&
             const DeepCollectionEquality().equals(other.bundle, bundle) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
@@ -8451,20 +7547,17 @@ class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
 
   @JsonKey(ignore: true)
   @override
-  $CloudDeleteItemFromVaultStartCopyWith<CloudDeleteItemFromVaultStart>
-      get copyWith => _$CloudDeleteItemFromVaultStartCopyWithImpl<
-          CloudDeleteItemFromVaultStart>(this, _$identity);
+  $CloudDeleteItemFromVaultStartCopyWith<CloudDeleteItemFromVaultStart> get copyWith =>
+      _$CloudDeleteItemFromVaultStartCopyWithImpl<CloudDeleteItemFromVaultStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return start(masterKey, vault, firebaseUser, bundle, pendingId);
   }
@@ -8472,12 +7565,11 @@ class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return start?.call(masterKey, vault, firebaseUser, bundle, pendingId);
   }
@@ -8485,12 +7577,11 @@ class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -8503,8 +7594,7 @@ class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CloudDeleteItemFromVaultStart value) start,
-    required TResult Function(CloudDeleteItemFromVaultSuccessful value)
-        successful,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
     required TResult Function(CloudDeleteItemFromVaultError value) error,
   }) {
     return start(this);
@@ -8535,8 +7625,7 @@ class _$CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVaultStart {
   }
 }
 
-abstract class CloudDeleteItemFromVaultStart
-    implements CloudDeleteItemFromVault, ActionStart {
+abstract class CloudDeleteItemFromVaultStart implements CloudDeleteItemFromVault, ActionStart {
   const factory CloudDeleteItemFromVaultStart(
       {required String masterKey,
       required List<VaultBundle> vault,
@@ -8552,33 +7641,28 @@ abstract class CloudDeleteItemFromVaultStart
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudDeleteItemFromVaultStartCopyWith<CloudDeleteItemFromVaultStart>
-      get copyWith => throw _privateConstructorUsedError;
+  $CloudDeleteItemFromVaultStartCopyWith<CloudDeleteItemFromVaultStart> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CloudDeleteItemFromVaultSuccessfulCopyWith<$Res>
-    implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+abstract class $CloudDeleteItemFromVaultSuccessfulCopyWith<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
   factory $CloudDeleteItemFromVaultSuccessfulCopyWith(
-          CloudDeleteItemFromVaultSuccessful value,
-          $Res Function(CloudDeleteItemFromVaultSuccessful) then) =
+          CloudDeleteItemFromVaultSuccessful value, $Res Function(CloudDeleteItemFromVaultSuccessful) then) =
       _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<$Res>
-    extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
+class _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<$Res> extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
     implements $CloudDeleteItemFromVaultSuccessfulCopyWith<$Res> {
   _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl(
-      CloudDeleteItemFromVaultSuccessful _value,
-      $Res Function(CloudDeleteItemFromVaultSuccessful) _then)
+      CloudDeleteItemFromVaultSuccessful _value, $Res Function(CloudDeleteItemFromVaultSuccessful) _then)
       : super(_value, (v) => _then(v as CloudDeleteItemFromVaultSuccessful));
 
   @override
-  CloudDeleteItemFromVaultSuccessful get _value =>
-      super._value as CloudDeleteItemFromVaultSuccessful;
+  CloudDeleteItemFromVaultSuccessful get _value => super._value as CloudDeleteItemFromVaultSuccessful;
 
   @override
   $Res call({
@@ -8596,10 +7680,8 @@ class _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<$Res>
 /// @nodoc
 
 @Implements<ActionDone>()
-class _$CloudDeleteItemFromVaultSuccessful
-    implements CloudDeleteItemFromVaultSuccessful {
-  const _$CloudDeleteItemFromVaultSuccessful(
-      [this.pendingId = _kCloudDeleteItemFromVaultPendingId]);
+class _$CloudDeleteItemFromVaultSuccessful implements CloudDeleteItemFromVaultSuccessful {
+  const _$CloudDeleteItemFromVaultSuccessful([this.pendingId = _kCloudDeleteItemFromVaultPendingId]);
 
   @JsonKey()
   @override
@@ -8619,26 +7701,21 @@ class _$CloudDeleteItemFromVaultSuccessful
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $CloudDeleteItemFromVaultSuccessfulCopyWith<
-          CloudDeleteItemFromVaultSuccessful>
-      get copyWith => _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<
-          CloudDeleteItemFromVaultSuccessful>(this, _$identity);
+  $CloudDeleteItemFromVaultSuccessfulCopyWith<CloudDeleteItemFromVaultSuccessful> get copyWith =>
+      _$CloudDeleteItemFromVaultSuccessfulCopyWithImpl<CloudDeleteItemFromVaultSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return successful(pendingId);
   }
@@ -8646,12 +7723,11 @@ class _$CloudDeleteItemFromVaultSuccessful
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return successful?.call(pendingId);
   }
@@ -8659,12 +7735,11 @@ class _$CloudDeleteItemFromVaultSuccessful
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -8677,8 +7752,7 @@ class _$CloudDeleteItemFromVaultSuccessful
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CloudDeleteItemFromVaultStart value) start,
-    required TResult Function(CloudDeleteItemFromVaultSuccessful value)
-        successful,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
     required TResult Function(CloudDeleteItemFromVaultError value) error,
   }) {
     return successful(this);
@@ -8709,43 +7783,35 @@ class _$CloudDeleteItemFromVaultSuccessful
   }
 }
 
-abstract class CloudDeleteItemFromVaultSuccessful
-    implements CloudDeleteItemFromVault, ActionDone {
-  const factory CloudDeleteItemFromVaultSuccessful([String pendingId]) =
-      _$CloudDeleteItemFromVaultSuccessful;
+abstract class CloudDeleteItemFromVaultSuccessful implements CloudDeleteItemFromVault, ActionDone {
+  const factory CloudDeleteItemFromVaultSuccessful([String pendingId]) = _$CloudDeleteItemFromVaultSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudDeleteItemFromVaultSuccessfulCopyWith<
-          CloudDeleteItemFromVaultSuccessful>
-      get copyWith => throw _privateConstructorUsedError;
+  $CloudDeleteItemFromVaultSuccessfulCopyWith<CloudDeleteItemFromVaultSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CloudDeleteItemFromVaultErrorCopyWith<$Res>
-    implements $CloudDeleteItemFromVaultCopyWith<$Res> {
+abstract class $CloudDeleteItemFromVaultErrorCopyWith<$Res> implements $CloudDeleteItemFromVaultCopyWith<$Res> {
   factory $CloudDeleteItemFromVaultErrorCopyWith(
-          CloudDeleteItemFromVaultError value,
-          $Res Function(CloudDeleteItemFromVaultError) then) =
+          CloudDeleteItemFromVaultError value, $Res Function(CloudDeleteItemFromVaultError) then) =
       _$CloudDeleteItemFromVaultErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$CloudDeleteItemFromVaultErrorCopyWithImpl<$Res>
-    extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
+class _$CloudDeleteItemFromVaultErrorCopyWithImpl<$Res> extends _$CloudDeleteItemFromVaultCopyWithImpl<$Res>
     implements $CloudDeleteItemFromVaultErrorCopyWith<$Res> {
   _$CloudDeleteItemFromVaultErrorCopyWithImpl(
-      CloudDeleteItemFromVaultError _value,
-      $Res Function(CloudDeleteItemFromVaultError) _then)
+      CloudDeleteItemFromVaultError _value, $Res Function(CloudDeleteItemFromVaultError) _then)
       : super(_value, (v) => _then(v as CloudDeleteItemFromVaultError));
 
   @override
-  CloudDeleteItemFromVaultError get _value =>
-      super._value as CloudDeleteItemFromVaultError;
+  CloudDeleteItemFromVaultError get _value => super._value as CloudDeleteItemFromVaultError;
 
   @override
   $Res call({
@@ -8797,34 +7863,27 @@ class _$CloudDeleteItemFromVaultError implements CloudDeleteItemFromVaultError {
         (other.runtimeType == runtimeType &&
             other is CloudDeleteItemFromVaultError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality()
-                .equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace),
-      const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
-  $CloudDeleteItemFromVaultErrorCopyWith<CloudDeleteItemFromVaultError>
-      get copyWith => _$CloudDeleteItemFromVaultErrorCopyWithImpl<
-          CloudDeleteItemFromVaultError>(this, _$identity);
+  $CloudDeleteItemFromVaultErrorCopyWith<CloudDeleteItemFromVaultError> get copyWith =>
+      _$CloudDeleteItemFromVaultErrorCopyWithImpl<CloudDeleteItemFromVaultError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
+    required TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)
         start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(
-            Object error, StackTrace stackTrace, String pendingId)
-        error,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -8832,12 +7891,11 @@ class _$CloudDeleteItemFromVaultError implements CloudDeleteItemFromVaultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -8845,12 +7903,11 @@ class _$CloudDeleteItemFromVaultError implements CloudDeleteItemFromVaultError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String masterKey, List<VaultBundle> vault,
-            FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
+    TResult Function(
+            String masterKey, List<VaultBundle> vault, FirebaseUser firebaseUser, VaultBundle bundle, String pendingId)?
         start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
-        error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -8863,8 +7920,7 @@ class _$CloudDeleteItemFromVaultError implements CloudDeleteItemFromVaultError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CloudDeleteItemFromVaultStart value) start,
-    required TResult Function(CloudDeleteItemFromVaultSuccessful value)
-        successful,
+    required TResult Function(CloudDeleteItemFromVaultSuccessful value) successful,
     required TResult Function(CloudDeleteItemFromVaultError value) error,
   }) {
     return error(this);
@@ -8895,10 +7951,8 @@ class _$CloudDeleteItemFromVaultError implements CloudDeleteItemFromVaultError {
   }
 }
 
-abstract class CloudDeleteItemFromVaultError
-    implements CloudDeleteItemFromVault, ActionDone, ErrorAction {
-  const factory CloudDeleteItemFromVaultError(
-          Object error, StackTrace stackTrace, [String pendingId]) =
+abstract class CloudDeleteItemFromVaultError implements CloudDeleteItemFromVault, ActionDone, ErrorAction {
+  const factory CloudDeleteItemFromVaultError(Object error, StackTrace stackTrace, [String pendingId]) =
       _$CloudDeleteItemFromVaultError;
 
   Object get error;
@@ -8907,6 +7961,6 @@ abstract class CloudDeleteItemFromVaultError
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $CloudDeleteItemFromVaultErrorCopyWith<CloudDeleteItemFromVaultError>
-      get copyWith => throw _privateConstructorUsedError;
+  $CloudDeleteItemFromVaultErrorCopyWith<CloudDeleteItemFromVaultError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

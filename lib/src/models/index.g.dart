@@ -8,45 +8,32 @@ part of 'index.dart';
 
 _$Address$ _$$Address$FromJson(Map<String, dynamic> json) => _$Address$();
 
-Map<String, dynamic> _$$Address$ToJson(_$Address$ instance) =>
-    <String, dynamic>{};
+Map<String, dynamic> _$$Address$ToJson(_$Address$ instance) => <String, dynamic>{};
 
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
-      pending: (json['pending'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toSet() ??
-          const <String>{},
+      pending: (json['pending'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
       masterKey: json['masterKey'] as String?,
-      firebaseUser: json['firebaseUser'] == null
-          ? null
-          : FirebaseUser.fromJson(json['firebaseUser'] as Map<String, dynamic>),
-      vault: (json['vault'] as List<dynamic>?)
-              ?.map((e) => VaultBundle.fromJson(e as Map<String, dynamic>))
-              .toList() ??
+      firebaseUser:
+          json['firebaseUser'] == null ? null : FirebaseUser.fromJson(json['firebaseUser'] as Map<String, dynamic>),
+      vault: (json['vault'] as List<dynamic>?)?.map((e) => VaultBundle.fromJson(e as Map<String, dynamic>)).toList() ??
           const <VaultBundle>[],
       selectedPage: json['selectedPage'] as int? ?? 0,
       persistentState: json['persistentState'] == null
           ? const PersistentState()
-          : PersistentState.fromJson(
-              json['persistentState'] as Map<String, dynamic>),
+          : PersistentState.fromJson(json['persistentState'] as Map<String, dynamic>),
       detailsState: json['detailsState'] == null
           ? const DetailsState()
           : DetailsState.fromJson(json['detailsState'] as Map<String, dynamic>),
       createCodeState: json['createCodeState'] == null
           ? const CreateCodeState()
-          : CreateCodeState.fromJson(
-              json['createCodeState'] as Map<String, dynamic>),
-      uiState: json['uiState'] == null
-          ? const UIState()
-          : UIState.fromJson(json['uiState'] as Map<String, dynamic>),
+          : CreateCodeState.fromJson(json['createCodeState'] as Map<String, dynamic>),
+      uiState: json['uiState'] == null ? const UIState() : UIState.fromJson(json['uiState'] as Map<String, dynamic>),
       passwordGeneratorState: json['passwordGeneratorState'] == null
           ? const PasswordGeneratorState()
-          : PasswordGeneratorState.fromJson(
-              json['passwordGeneratorState'] as Map<String, dynamic>),
+          : PasswordGeneratorState.fromJson(json['passwordGeneratorState'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'pending': instance.pending.toList(),
       'masterKey': instance.masterKey,
       'firebaseUser': instance.firebaseUser,
@@ -59,75 +46,56 @@ Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) =>
       'passwordGeneratorState': instance.passwordGeneratorState,
     };
 
-_$PersistentState$ _$$PersistentState$FromJson(Map<String, dynamic> json) =>
-    _$PersistentState$(
-      bundle: json['bundle'] == null
-          ? const Bundle()
-          : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
+_$PersistentState$ _$$PersistentState$FromJson(Map<String, dynamic> json) => _$PersistentState$(
+      bundle: json['bundle'] == null ? const Bundle() : Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
       walletPrivateKey: json['walletPrivateKey'] as String?,
       masterKeyHash: json['masterKeyHash'] as String?,
     );
 
-Map<String, dynamic> _$$PersistentState$ToJson(_$PersistentState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$PersistentState$ToJson(_$PersistentState$ instance) => <String, dynamic>{
       'bundle': instance.bundle,
       'walletPrivateKey': instance.walletPrivateKey,
       'masterKeyHash': instance.masterKeyHash,
     };
 
-_$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) =>
-    _$DetailsState$(
+_$DetailsState$ _$$DetailsState$FromJson(Map<String, dynamic> json) => _$DetailsState$(
       selectedId: json['selectedId'] as String? ?? '',
       editing: json['editing'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$DetailsState$ToJson(_$DetailsState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$DetailsState$ToJson(_$DetailsState$ instance) => <String, dynamic>{
       'selectedId': instance.selectedId,
       'editing': instance.editing,
     };
 
-_$CreateCodeState$ _$$CreateCodeState$FromJson(Map<String, dynamic> json) =>
-    _$CreateCodeState$(
-      code: json['code'] == null
-          ? null
-          : Code.fromJson(json['code'] as Map<String, dynamic>),
+_$CreateCodeState$ _$$CreateCodeState$FromJson(Map<String, dynamic> json) => _$CreateCodeState$(
+      code: json['code'] == null ? null : Code.fromJson(json['code'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$CreateCodeState$ToJson(_$CreateCodeState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$CreateCodeState$ToJson(_$CreateCodeState$ instance) => <String, dynamic>{
       'code': instance.code,
     };
 
 _$UIState$ _$$UIState$FromJson(Map<String, dynamic> json) => _$UIState$(
-      walletInfo: json['walletInfo'] == null
-          ? null
-          : WalletInfo.fromJson(json['walletInfo'] as Map<String, dynamic>),
+      walletInfo: json['walletInfo'] == null ? null : WalletInfo.fromJson(json['walletInfo'] as Map<String, dynamic>),
       showPassword: json['showPassword'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$UIState$ToJson(_$UIState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$UIState$ToJson(_$UIState$ instance) => <String, dynamic>{
       'walletInfo': instance.walletInfo,
       'showPassword': instance.showPassword,
     };
 
-_$PasswordGeneratorState$ _$$PasswordGeneratorState$FromJson(
-        Map<String, dynamic> json) =>
-    _$PasswordGeneratorState$(
-      characterPool: (json['characterPool'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$CharacterPoolEnumMap, e))
-              .toSet() ??
-          kCharacterPoolValues,
+_$PasswordGeneratorState$ _$$PasswordGeneratorState$FromJson(Map<String, dynamic> json) => _$PasswordGeneratorState$(
+      characterPool:
+          (json['characterPool'] as List<dynamic>?)?.map((e) => $enumDecode(_$CharacterPoolEnumMap, e)).toSet() ??
+              kCharacterPoolValues,
       length: json['length'] as int? ?? 16,
       password: json['password'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$PasswordGeneratorState$ToJson(
-        _$PasswordGeneratorState$ instance) =>
-    <String, dynamic>{
-      'characterPool':
-          instance.characterPool.map((e) => _$CharacterPoolEnumMap[e]).toList(),
+Map<String, dynamic> _$$PasswordGeneratorState$ToJson(_$PasswordGeneratorState$ instance) => <String, dynamic>{
+      'characterPool': instance.characterPool.map((e) => _$CharacterPoolEnumMap[e]).toList(),
       'length': instance.length,
       'password': instance.password,
     };
@@ -139,31 +107,25 @@ const _$CharacterPoolEnumMap = {
   CharacterPool.symbols: 'symbols',
 };
 
-_$WalletInfo$ _$$WalletInfo$FromJson(Map<String, dynamic> json) =>
-    _$WalletInfo$(
+_$WalletInfo$ _$$WalletInfo$FromJson(Map<String, dynamic> json) => _$WalletInfo$(
       balance: json['balance'] as String,
       address: json['address'] as String,
     );
 
-Map<String, dynamic> _$$WalletInfo$ToJson(_$WalletInfo$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$WalletInfo$ToJson(_$WalletInfo$ instance) => <String, dynamic>{
       'balance': instance.balance,
       'address': instance.address,
     };
 
 _$Bundle$ _$$Bundle$FromJson(Map<String, dynamic> json) => _$Bundle$(
-      passwords: (json['passwords'] as List<dynamic>?)
-              ?.map((e) => Password.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <Password>[],
-      codes: (json['codes'] as List<dynamic>?)
-              ?.map((e) => Code.fromJson(e as Map<String, dynamic>))
-              .toList() ??
+      passwords:
+          (json['passwords'] as List<dynamic>?)?.map((e) => Password.fromJson(e as Map<String, dynamic>)).toList() ??
+              const <Password>[],
+      codes: (json['codes'] as List<dynamic>?)?.map((e) => Code.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Code>[],
-      otpTokens: (json['otpTokens'] as List<dynamic>?)
-              ?.map((e) => OTPToken.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <OTPToken>[],
+      otpTokens:
+          (json['otpTokens'] as List<dynamic>?)?.map((e) => OTPToken.fromJson(e as Map<String, dynamic>)).toList() ??
+              const <OTPToken>[],
     );
 
 Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
@@ -172,15 +134,13 @@ Map<String, dynamic> _$$Bundle$ToJson(_$Bundle$ instance) => <String, dynamic>{
       'otpTokens': instance.otpTokens,
     };
 
-_$VaultBundle$ _$$VaultBundle$FromJson(Map<String, dynamic> json) =>
-    _$VaultBundle$(
+_$VaultBundle$ _$$VaultBundle$FromJson(Map<String, dynamic> json) => _$VaultBundle$(
       bundle: Bundle.fromJson(json['bundle'] as Map<String, dynamic>),
       storedAt: DateTime.parse(json['storedAt'] as String),
       type: $enumDecode(_$BundleTypeEnumMap, json['type']),
     );
 
-Map<String, dynamic> _$$VaultBundle$ToJson(_$VaultBundle$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$VaultBundle$ToJson(_$VaultBundle$ instance) => <String, dynamic>{
       'bundle': instance.bundle,
       'storedAt': instance.storedAt.toIso8601String(),
       'type': _$BundleTypeEnumMap[instance.type],
@@ -202,8 +162,7 @@ _$Password$ _$$Password$FromJson(Map<String, dynamic> json) => _$Password$(
       timesAccessed: json['timesAccessed'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$Password$ToJson(_$Password$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$Password$ToJson(_$Password$ instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'username': instance.username,
@@ -254,15 +213,13 @@ const _$BarcodeFormatEnumMap = {
   BarcodeFormat.aztec: 'aztec',
 };
 
-_$FirebaseUser$ _$$FirebaseUser$FromJson(Map<String, dynamic> json) =>
-    _$FirebaseUser$(
+_$FirebaseUser$ _$$FirebaseUser$FromJson(Map<String, dynamic> json) => _$FirebaseUser$(
       uid: json['uid'] as String,
       email: json['email'] as String,
       username: json['username'] as String,
     );
 
-Map<String, dynamic> _$$FirebaseUser$ToJson(_$FirebaseUser$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$FirebaseUser$ToJson(_$FirebaseUser$ instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'username': instance.username,
@@ -284,8 +241,7 @@ _$OTPToken$ _$$OTPToken$FromJson(Map<String, dynamic> json) => _$OTPToken$(
       keyUri: Uri.parse(json['keyUri'] as String),
     );
 
-Map<String, dynamic> _$$OTPToken$ToJson(_$OTPToken$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$OTPToken$ToJson(_$OTPToken$ instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'createdAt': instance.createdAt.toIso8601String(),
