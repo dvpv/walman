@@ -40,7 +40,16 @@ class HomePageSearchDelegate extends SearchDelegate<void> {
   @override
   Widget buildSuggestions(BuildContext context) {
     final List<BundleItem> items = <BundleItem>[..._bundle.passwords, ..._bundle.codes, ..._bundle.otpTokens]
-        .where((BundleItem item) => item.title.toLowerCase().contains(query.toLowerCase()))
+        .where(
+          (BundleItem item) =>
+              (item.title.toLowerCase().contains(query.toLowerCase()) ||
+                  (item is Password &&
+                      (item.note.toLowerCase().contains(query.toLowerCase()) ||
+                          item.username.toLowerCase().contains(query.toLowerCase())))) ||
+              (item is OTPToken &&
+                  (item.issuer.toLowerCase().contains(query.toLowerCase()) ||
+                      item.path.toLowerCase().contains(query.toLowerCase()))),
+        )
         .toList()
       ..sort((BundleItem a, BundleItem b) => a.timesAccessed - b.timesAccessed);
     return ListView.builder(
