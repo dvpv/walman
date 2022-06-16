@@ -30,7 +30,7 @@ AppState _getWalletPrivateKey(AppState state, GetWalletPrivateKeySuccessful acti
 AppState _getMasterKeyHash(AppState state, GetMasterKeyHashSuccessful action) {
   return state.copyWith(
     persistentState: state.persistentState.copyWith(
-      materKeyHash: action.masterKeyHash,
+      masterKeyHash: action.masterKeyHash,
     ),
   );
 }

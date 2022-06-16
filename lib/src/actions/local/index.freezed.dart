@@ -35,12 +35,14 @@ mixin _$CreateNewPassword {
   String get masterKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreateNewPasswordCopyWith<CreateNewPassword> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewPasswordCopyWith<CreateNewPassword> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateNewPasswordCopyWith<$Res> {
-  factory $CreateNewPasswordCopyWith(CreateNewPassword value, $Res Function(CreateNewPassword) then) =
+  factory $CreateNewPasswordCopyWith(
+          CreateNewPassword value, $Res Function(CreateNewPassword) then) =
       _$CreateNewPasswordCopyWithImpl<$Res>;
   $Res call({Password password, String masterKey});
 
@@ -48,7 +50,8 @@ abstract class $CreateNewPasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateNewPasswordCopyWithImpl<$Res> implements $CreateNewPasswordCopyWith<$Res> {
+class _$CreateNewPasswordCopyWithImpl<$Res>
+    implements $CreateNewPasswordCopyWith<$Res> {
   _$CreateNewPasswordCopyWithImpl(this._value, this._then);
 
   final CreateNewPassword _value;
@@ -81,8 +84,10 @@ class _$CreateNewPasswordCopyWithImpl<$Res> implements $CreateNewPasswordCopyWit
 }
 
 /// @nodoc
-abstract class $CreateNewPassword$CopyWith<$Res> implements $CreateNewPasswordCopyWith<$Res> {
-  factory $CreateNewPassword$CopyWith(CreateNewPassword$ value, $Res Function(CreateNewPassword$) then) =
+abstract class $CreateNewPassword$CopyWith<$Res>
+    implements $CreateNewPasswordCopyWith<$Res> {
+  factory $CreateNewPassword$CopyWith(
+          CreateNewPassword$ value, $Res Function(CreateNewPassword$) then) =
       _$CreateNewPassword$CopyWithImpl<$Res>;
   @override
   $Res call({Password password, String masterKey});
@@ -92,9 +97,11 @@ abstract class $CreateNewPassword$CopyWith<$Res> implements $CreateNewPasswordCo
 }
 
 /// @nodoc
-class _$CreateNewPassword$CopyWithImpl<$Res> extends _$CreateNewPasswordCopyWithImpl<$Res>
+class _$CreateNewPassword$CopyWithImpl<$Res>
+    extends _$CreateNewPasswordCopyWithImpl<$Res>
     implements $CreateNewPassword$CopyWith<$Res> {
-  _$CreateNewPassword$CopyWithImpl(CreateNewPassword$ _value, $Res Function(CreateNewPassword$) _then)
+  _$CreateNewPassword$CopyWithImpl(
+      CreateNewPassword$ _value, $Res Function(CreateNewPassword$) _then)
       : super(_value, (v) => _then(v as CreateNewPassword$));
 
   @override
@@ -144,7 +151,9 @@ class _$CreateNewPassword$ implements CreateNewPassword$ {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(password), const DeepCollectionEquality().hash(masterKey));
+      runtimeType,
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(masterKey));
 
   @JsonKey(ignore: true)
   @override
@@ -153,7 +162,8 @@ class _$CreateNewPassword$ implements CreateNewPassword$ {
 }
 
 abstract class CreateNewPassword$ implements CreateNewPassword {
-  const factory CreateNewPassword$(Password password, String masterKey) = _$CreateNewPassword$;
+  const factory CreateNewPassword$(Password password, String masterKey) =
+      _$CreateNewPassword$;
 
   @override
   Password get password;
@@ -161,7 +171,8 @@ abstract class CreateNewPassword$ implements CreateNewPassword {
   String get masterKey;
   @override
   @JsonKey(ignore: true)
-  $CreateNewPassword$CopyWith<CreateNewPassword$> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewPassword$CopyWith<CreateNewPassword$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -185,12 +196,14 @@ mixin _$CreateNewCode {
   String get masterKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CreateNewCodeCopyWith<CreateNewCode> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewCodeCopyWith<CreateNewCode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateNewCodeCopyWith<$Res> {
-  factory $CreateNewCodeCopyWith(CreateNewCode value, $Res Function(CreateNewCode) then) =
+  factory $CreateNewCodeCopyWith(
+          CreateNewCode value, $Res Function(CreateNewCode) then) =
       _$CreateNewCodeCopyWithImpl<$Res>;
   $Res call({Code code, String masterKey});
 
@@ -198,7 +211,8 @@ abstract class $CreateNewCodeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateNewCodeCopyWithImpl<$Res> implements $CreateNewCodeCopyWith<$Res> {
+class _$CreateNewCodeCopyWithImpl<$Res>
+    implements $CreateNewCodeCopyWith<$Res> {
   _$CreateNewCodeCopyWithImpl(this._value, this._then);
 
   final CreateNewCode _value;
@@ -231,8 +245,10 @@ class _$CreateNewCodeCopyWithImpl<$Res> implements $CreateNewCodeCopyWith<$Res> 
 }
 
 /// @nodoc
-abstract class $CreateNewCode$CopyWith<$Res> implements $CreateNewCodeCopyWith<$Res> {
-  factory $CreateNewCode$CopyWith(CreateNewCode$ value, $Res Function(CreateNewCode$) then) =
+abstract class $CreateNewCode$CopyWith<$Res>
+    implements $CreateNewCodeCopyWith<$Res> {
+  factory $CreateNewCode$CopyWith(
+          CreateNewCode$ value, $Res Function(CreateNewCode$) then) =
       _$CreateNewCode$CopyWithImpl<$Res>;
   @override
   $Res call({Code code, String masterKey});
@@ -242,9 +258,11 @@ abstract class $CreateNewCode$CopyWith<$Res> implements $CreateNewCodeCopyWith<$
 }
 
 /// @nodoc
-class _$CreateNewCode$CopyWithImpl<$Res> extends _$CreateNewCodeCopyWithImpl<$Res>
+class _$CreateNewCode$CopyWithImpl<$Res>
+    extends _$CreateNewCodeCopyWithImpl<$Res>
     implements $CreateNewCode$CopyWith<$Res> {
-  _$CreateNewCode$CopyWithImpl(CreateNewCode$ _value, $Res Function(CreateNewCode$) _then)
+  _$CreateNewCode$CopyWithImpl(
+      CreateNewCode$ _value, $Res Function(CreateNewCode$) _then)
       : super(_value, (v) => _then(v as CreateNewCode$));
 
   @override
@@ -294,7 +312,9 @@ class _$CreateNewCode$ implements CreateNewCode$ {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(code), const DeepCollectionEquality().hash(masterKey));
+      runtimeType,
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(masterKey));
 
   @JsonKey(ignore: true)
   @override
@@ -311,7 +331,8 @@ abstract class CreateNewCode$ implements CreateNewCode {
   String get masterKey;
   @override
   @JsonKey(ignore: true)
-  $CreateNewCode$CopyWith<CreateNewCode$> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewCode$CopyWith<CreateNewCode$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -333,12 +354,15 @@ mixin _$DeleteCode {
   String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeleteCodeCopyWith<DeleteCode> get copyWith => throw _privateConstructorUsedError;
+  $DeleteCodeCopyWith<DeleteCode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteCodeCopyWith<$Res> {
-  factory $DeleteCodeCopyWith(DeleteCode value, $Res Function(DeleteCode) then) = _$DeleteCodeCopyWithImpl<$Res>;
+  factory $DeleteCodeCopyWith(
+          DeleteCode value, $Res Function(DeleteCode) then) =
+      _$DeleteCodeCopyWithImpl<$Res>;
   $Res call({String id});
 }
 
@@ -365,14 +389,18 @@ class _$DeleteCodeCopyWithImpl<$Res> implements $DeleteCodeCopyWith<$Res> {
 
 /// @nodoc
 abstract class $DeleteCode$CopyWith<$Res> implements $DeleteCodeCopyWith<$Res> {
-  factory $DeleteCode$CopyWith(DeleteCode$ value, $Res Function(DeleteCode$) then) = _$DeleteCode$CopyWithImpl<$Res>;
+  factory $DeleteCode$CopyWith(
+          DeleteCode$ value, $Res Function(DeleteCode$) then) =
+      _$DeleteCode$CopyWithImpl<$Res>;
   @override
   $Res call({String id});
 }
 
 /// @nodoc
-class _$DeleteCode$CopyWithImpl<$Res> extends _$DeleteCodeCopyWithImpl<$Res> implements $DeleteCode$CopyWith<$Res> {
-  _$DeleteCode$CopyWithImpl(DeleteCode$ _value, $Res Function(DeleteCode$) _then)
+class _$DeleteCode$CopyWithImpl<$Res> extends _$DeleteCodeCopyWithImpl<$Res>
+    implements $DeleteCode$CopyWith<$Res> {
+  _$DeleteCode$CopyWithImpl(
+      DeleteCode$ _value, $Res Function(DeleteCode$) _then)
       : super(_value, (v) => _then(v as DeleteCode$));
 
   @override
@@ -413,11 +441,13 @@ class _$DeleteCode$ implements DeleteCode$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
-  $DeleteCode$CopyWith<DeleteCode$> get copyWith => _$DeleteCode$CopyWithImpl<DeleteCode$>(this, _$identity);
+  $DeleteCode$CopyWith<DeleteCode$> get copyWith =>
+      _$DeleteCode$CopyWithImpl<DeleteCode$>(this, _$identity);
 }
 
 abstract class DeleteCode$ implements DeleteCode {
@@ -427,7 +457,8 @@ abstract class DeleteCode$ implements DeleteCode {
   String get id;
   @override
   @JsonKey(ignore: true)
-  $DeleteCode$CopyWith<DeleteCode$> get copyWith => throw _privateConstructorUsedError;
+  $DeleteCode$CopyWith<DeleteCode$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -449,18 +480,21 @@ mixin _$DeletePassword {
   String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeletePasswordCopyWith<DeletePassword> get copyWith => throw _privateConstructorUsedError;
+  $DeletePasswordCopyWith<DeletePassword> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeletePasswordCopyWith<$Res> {
-  factory $DeletePasswordCopyWith(DeletePassword value, $Res Function(DeletePassword) then) =
+  factory $DeletePasswordCopyWith(
+          DeletePassword value, $Res Function(DeletePassword) then) =
       _$DeletePasswordCopyWithImpl<$Res>;
   $Res call({String id});
 }
 
 /// @nodoc
-class _$DeletePasswordCopyWithImpl<$Res> implements $DeletePasswordCopyWith<$Res> {
+class _$DeletePasswordCopyWithImpl<$Res>
+    implements $DeletePasswordCopyWith<$Res> {
   _$DeletePasswordCopyWithImpl(this._value, this._then);
 
   final DeletePassword _value;
@@ -481,17 +515,21 @@ class _$DeletePasswordCopyWithImpl<$Res> implements $DeletePasswordCopyWith<$Res
 }
 
 /// @nodoc
-abstract class $DeletePassword$CopyWith<$Res> implements $DeletePasswordCopyWith<$Res> {
-  factory $DeletePassword$CopyWith(DeletePassword$ value, $Res Function(DeletePassword$) then) =
+abstract class $DeletePassword$CopyWith<$Res>
+    implements $DeletePasswordCopyWith<$Res> {
+  factory $DeletePassword$CopyWith(
+          DeletePassword$ value, $Res Function(DeletePassword$) then) =
       _$DeletePassword$CopyWithImpl<$Res>;
   @override
   $Res call({String id});
 }
 
 /// @nodoc
-class _$DeletePassword$CopyWithImpl<$Res> extends _$DeletePasswordCopyWithImpl<$Res>
+class _$DeletePassword$CopyWithImpl<$Res>
+    extends _$DeletePasswordCopyWithImpl<$Res>
     implements $DeletePassword$CopyWith<$Res> {
-  _$DeletePassword$CopyWithImpl(DeletePassword$ _value, $Res Function(DeletePassword$) _then)
+  _$DeletePassword$CopyWithImpl(
+      DeletePassword$ _value, $Res Function(DeletePassword$) _then)
       : super(_value, (v) => _then(v as DeletePassword$));
 
   @override
@@ -532,7 +570,8 @@ class _$DeletePassword$ implements DeletePassword$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -547,27 +586,31 @@ abstract class DeletePassword$ implements DeletePassword {
   String get id;
   @override
   @JsonKey(ignore: true)
-  $DeletePassword$CopyWith<DeletePassword$> get copyWith => throw _privateConstructorUsedError;
+  $DeletePassword$CopyWith<DeletePassword$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$EditPasswordTearOff {
   const _$EditPasswordTearOff();
 
-  EditPasswordStart start(Password password, {String pendingId = _kEditPasswordPendingId}) {
+  EditPasswordStart start(Password password,
+      {String pendingId = _kEditPasswordPendingId}) {
     return EditPasswordStart(
       password,
       pendingId: pendingId,
     );
   }
 
-  EditPasswordSuccessful successful([String pendingId = _kEditPasswordPendingId]) {
+  EditPasswordSuccessful successful(
+      [String pendingId = _kEditPasswordPendingId]) {
     return EditPasswordSuccessful(
       pendingId,
     );
   }
 
-  EditPasswordError error(Object error, StackTrace stackTrace, [String pendingId = _kEditPasswordPendingId]) {
+  EditPasswordError error(Object error, StackTrace stackTrace,
+      [String pendingId = _kEditPasswordPendingId]) {
     return EditPasswordError(
       error,
       stackTrace,
@@ -587,21 +630,25 @@ mixin _$EditPassword {
   TResult when<TResult extends Object?>({
     required TResult Function(Password password, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -629,12 +676,14 @@ mixin _$EditPassword {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $EditPasswordCopyWith<EditPassword> get copyWith => throw _privateConstructorUsedError;
+  $EditPasswordCopyWith<EditPassword> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordCopyWith(EditPassword value, $Res Function(EditPassword) then) =
+  factory $EditPasswordCopyWith(
+          EditPassword value, $Res Function(EditPassword) then) =
       _$EditPasswordCopyWithImpl<$Res>;
   $Res call({String pendingId});
 }
@@ -661,8 +710,10 @@ class _$EditPasswordCopyWithImpl<$Res> implements $EditPasswordCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $EditPasswordStartCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordStartCopyWith(EditPasswordStart value, $Res Function(EditPasswordStart) then) =
+abstract class $EditPasswordStartCopyWith<$Res>
+    implements $EditPasswordCopyWith<$Res> {
+  factory $EditPasswordStartCopyWith(
+          EditPasswordStart value, $Res Function(EditPasswordStart) then) =
       _$EditPasswordStartCopyWithImpl<$Res>;
   @override
   $Res call({Password password, String pendingId});
@@ -671,9 +722,11 @@ abstract class $EditPasswordStartCopyWith<$Res> implements $EditPasswordCopyWith
 }
 
 /// @nodoc
-class _$EditPasswordStartCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
+class _$EditPasswordStartCopyWithImpl<$Res>
+    extends _$EditPasswordCopyWithImpl<$Res>
     implements $EditPasswordStartCopyWith<$Res> {
-  _$EditPasswordStartCopyWithImpl(EditPasswordStart _value, $Res Function(EditPasswordStart) _then)
+  _$EditPasswordStartCopyWithImpl(
+      EditPasswordStart _value, $Res Function(EditPasswordStart) _then)
       : super(_value, (v) => _then(v as EditPasswordStart));
 
   @override
@@ -708,7 +761,8 @@ class _$EditPasswordStartCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$
 
 @Implements<ActionStart>()
 class _$EditPasswordStart implements EditPasswordStart {
-  const _$EditPasswordStart(this.password, {this.pendingId = _kEditPasswordPendingId});
+  const _$EditPasswordStart(this.password,
+      {this.pendingId = _kEditPasswordPendingId});
 
   @override
   final Password password;
@@ -732,7 +786,9 @@ class _$EditPasswordStart implements EditPasswordStart {
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(password), const DeepCollectionEquality().hash(pendingId));
+      runtimeType,
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -744,7 +800,9 @@ class _$EditPasswordStart implements EditPasswordStart {
   TResult when<TResult extends Object?>({
     required TResult Function(Password password, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
   }) {
     return start(password, pendingId);
   }
@@ -754,7 +812,8 @@ class _$EditPasswordStart implements EditPasswordStart {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
   }) {
     return start?.call(password, pendingId);
   }
@@ -764,7 +823,8 @@ class _$EditPasswordStart implements EditPasswordStart {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -809,28 +869,34 @@ class _$EditPasswordStart implements EditPasswordStart {
 }
 
 abstract class EditPasswordStart implements EditPassword, ActionStart {
-  const factory EditPasswordStart(Password password, {String pendingId}) = _$EditPasswordStart;
+  const factory EditPasswordStart(Password password, {String pendingId}) =
+      _$EditPasswordStart;
 
   Password get password;
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $EditPasswordStartCopyWith<EditPasswordStart> get copyWith => throw _privateConstructorUsedError;
+  $EditPasswordStartCopyWith<EditPasswordStart> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EditPasswordSuccessfulCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordSuccessfulCopyWith(EditPasswordSuccessful value, $Res Function(EditPasswordSuccessful) then) =
+abstract class $EditPasswordSuccessfulCopyWith<$Res>
+    implements $EditPasswordCopyWith<$Res> {
+  factory $EditPasswordSuccessfulCopyWith(EditPasswordSuccessful value,
+          $Res Function(EditPasswordSuccessful) then) =
       _$EditPasswordSuccessfulCopyWithImpl<$Res>;
   @override
   $Res call({String pendingId});
 }
 
 /// @nodoc
-class _$EditPasswordSuccessfulCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
+class _$EditPasswordSuccessfulCopyWithImpl<$Res>
+    extends _$EditPasswordCopyWithImpl<$Res>
     implements $EditPasswordSuccessfulCopyWith<$Res> {
-  _$EditPasswordSuccessfulCopyWithImpl(EditPasswordSuccessful _value, $Res Function(EditPasswordSuccessful) _then)
+  _$EditPasswordSuccessfulCopyWithImpl(EditPasswordSuccessful _value,
+      $Res Function(EditPasswordSuccessful) _then)
       : super(_value, (v) => _then(v as EditPasswordSuccessful));
 
   @override
@@ -873,19 +939,23 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
   $EditPasswordSuccessfulCopyWith<EditPasswordSuccessful> get copyWith =>
-      _$EditPasswordSuccessfulCopyWithImpl<EditPasswordSuccessful>(this, _$identity);
+      _$EditPasswordSuccessfulCopyWithImpl<EditPasswordSuccessful>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Password password, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
   }) {
     return successful(pendingId);
   }
@@ -895,7 +965,8 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
   }) {
     return successful?.call(pendingId);
   }
@@ -905,7 +976,8 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
     required TResult orElse(),
   }) {
     if (successful != null) {
@@ -950,27 +1022,33 @@ class _$EditPasswordSuccessful implements EditPasswordSuccessful {
 }
 
 abstract class EditPasswordSuccessful implements EditPassword, ActionDone {
-  const factory EditPasswordSuccessful([String pendingId]) = _$EditPasswordSuccessful;
+  const factory EditPasswordSuccessful([String pendingId]) =
+      _$EditPasswordSuccessful;
 
   @override
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $EditPasswordSuccessfulCopyWith<EditPasswordSuccessful> get copyWith => throw _privateConstructorUsedError;
+  $EditPasswordSuccessfulCopyWith<EditPasswordSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EditPasswordErrorCopyWith<$Res> implements $EditPasswordCopyWith<$Res> {
-  factory $EditPasswordErrorCopyWith(EditPasswordError value, $Res Function(EditPasswordError) then) =
+abstract class $EditPasswordErrorCopyWith<$Res>
+    implements $EditPasswordCopyWith<$Res> {
+  factory $EditPasswordErrorCopyWith(
+          EditPasswordError value, $Res Function(EditPasswordError) then) =
       _$EditPasswordErrorCopyWithImpl<$Res>;
   @override
   $Res call({Object error, StackTrace stackTrace, String pendingId});
 }
 
 /// @nodoc
-class _$EditPasswordErrorCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$Res>
+class _$EditPasswordErrorCopyWithImpl<$Res>
+    extends _$EditPasswordCopyWithImpl<$Res>
     implements $EditPasswordErrorCopyWith<$Res> {
-  _$EditPasswordErrorCopyWithImpl(EditPasswordError _value, $Res Function(EditPasswordError) _then)
+  _$EditPasswordErrorCopyWithImpl(
+      EditPasswordError _value, $Res Function(EditPasswordError) _then)
       : super(_value, (v) => _then(v as EditPasswordError));
 
   @override
@@ -1004,7 +1082,8 @@ class _$EditPasswordErrorCopyWithImpl<$Res> extends _$EditPasswordCopyWithImpl<$
 @Implements<ActionDone>()
 @Implements<ErrorAction>()
 class _$EditPasswordError implements EditPasswordError {
-  const _$EditPasswordError(this.error, this.stackTrace, [this.pendingId = _kEditPasswordPendingId]);
+  const _$EditPasswordError(this.error, this.stackTrace,
+      [this.pendingId = _kEditPasswordPendingId]);
 
   @override
   final Object error;
@@ -1025,13 +1104,17 @@ class _$EditPasswordError implements EditPasswordError {
         (other.runtimeType == runtimeType &&
             other is EditPasswordError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.stackTrace, stackTrace) &&
+            const DeepCollectionEquality()
+                .equals(other.stackTrace, stackTrace) &&
             const DeepCollectionEquality().equals(other.pendingId, pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error),
-      const DeepCollectionEquality().hash(stackTrace), const DeepCollectionEquality().hash(pendingId));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace),
+      const DeepCollectionEquality().hash(pendingId));
 
   @JsonKey(ignore: true)
   @override
@@ -1043,7 +1126,9 @@ class _$EditPasswordError implements EditPasswordError {
   TResult when<TResult extends Object?>({
     required TResult Function(Password password, String pendingId) start,
     required TResult Function(String pendingId) successful,
-    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
   }) {
     return error(this.error, stackTrace, pendingId);
   }
@@ -1053,7 +1138,8 @@ class _$EditPasswordError implements EditPasswordError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
   }) {
     return error?.call(this.error, stackTrace, pendingId);
   }
@@ -1063,7 +1149,8 @@ class _$EditPasswordError implements EditPasswordError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Password password, String pendingId)? start,
     TResult Function(String pendingId)? successful,
-    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1107,8 +1194,10 @@ class _$EditPasswordError implements EditPasswordError {
   }
 }
 
-abstract class EditPasswordError implements EditPassword, ActionDone, ErrorAction {
-  const factory EditPasswordError(Object error, StackTrace stackTrace, [String pendingId]) = _$EditPasswordError;
+abstract class EditPasswordError
+    implements EditPassword, ActionDone, ErrorAction {
+  const factory EditPasswordError(Object error, StackTrace stackTrace,
+      [String pendingId]) = _$EditPasswordError;
 
   Object get error;
   StackTrace get stackTrace;
@@ -1116,7 +1205,8 @@ abstract class EditPasswordError implements EditPassword, ActionDone, ErrorActio
   String get pendingId;
   @override
   @JsonKey(ignore: true)
-  $EditPasswordErrorCopyWith<EditPasswordError> get copyWith => throw _privateConstructorUsedError;
+  $EditPasswordErrorCopyWith<EditPasswordError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1138,12 +1228,14 @@ mixin _$SetScannedCode {
   Code get code => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetScannedCodeCopyWith<SetScannedCode> get copyWith => throw _privateConstructorUsedError;
+  $SetScannedCodeCopyWith<SetScannedCode> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetScannedCodeCopyWith<$Res> {
-  factory $SetScannedCodeCopyWith(SetScannedCode value, $Res Function(SetScannedCode) then) =
+  factory $SetScannedCodeCopyWith(
+          SetScannedCode value, $Res Function(SetScannedCode) then) =
       _$SetScannedCodeCopyWithImpl<$Res>;
   $Res call({Code code});
 
@@ -1151,7 +1243,8 @@ abstract class $SetScannedCodeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SetScannedCodeCopyWithImpl<$Res> implements $SetScannedCodeCopyWith<$Res> {
+class _$SetScannedCodeCopyWithImpl<$Res>
+    implements $SetScannedCodeCopyWith<$Res> {
   _$SetScannedCodeCopyWithImpl(this._value, this._then);
 
   final SetScannedCode _value;
@@ -1179,8 +1272,10 @@ class _$SetScannedCodeCopyWithImpl<$Res> implements $SetScannedCodeCopyWith<$Res
 }
 
 /// @nodoc
-abstract class $SetScannedCode$CopyWith<$Res> implements $SetScannedCodeCopyWith<$Res> {
-  factory $SetScannedCode$CopyWith(SetScannedCode$ value, $Res Function(SetScannedCode$) then) =
+abstract class $SetScannedCode$CopyWith<$Res>
+    implements $SetScannedCodeCopyWith<$Res> {
+  factory $SetScannedCode$CopyWith(
+          SetScannedCode$ value, $Res Function(SetScannedCode$) then) =
       _$SetScannedCode$CopyWithImpl<$Res>;
   @override
   $Res call({Code code});
@@ -1190,9 +1285,11 @@ abstract class $SetScannedCode$CopyWith<$Res> implements $SetScannedCodeCopyWith
 }
 
 /// @nodoc
-class _$SetScannedCode$CopyWithImpl<$Res> extends _$SetScannedCodeCopyWithImpl<$Res>
+class _$SetScannedCode$CopyWithImpl<$Res>
+    extends _$SetScannedCodeCopyWithImpl<$Res>
     implements $SetScannedCode$CopyWith<$Res> {
-  _$SetScannedCode$CopyWithImpl(SetScannedCode$ _value, $Res Function(SetScannedCode$) _then)
+  _$SetScannedCode$CopyWithImpl(
+      SetScannedCode$ _value, $Res Function(SetScannedCode$) _then)
       : super(_value, (v) => _then(v as SetScannedCode$));
 
   @override
@@ -1233,7 +1330,8 @@ class _$SetScannedCode$ implements SetScannedCode$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(code));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(code));
 
   @JsonKey(ignore: true)
   @override
@@ -1248,7 +1346,8 @@ abstract class SetScannedCode$ implements SetScannedCode {
   Code get code;
   @override
   @JsonKey(ignore: true)
-  $SetScannedCode$CopyWith<SetScannedCode$> get copyWith => throw _privateConstructorUsedError;
+  $SetScannedCode$CopyWith<SetScannedCode$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1270,18 +1369,21 @@ mixin _$UpdateAccessTime {
   String get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdateAccessTimeCopyWith<UpdateAccessTime> get copyWith => throw _privateConstructorUsedError;
+  $UpdateAccessTimeCopyWith<UpdateAccessTime> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateAccessTimeCopyWith<$Res> {
-  factory $UpdateAccessTimeCopyWith(UpdateAccessTime value, $Res Function(UpdateAccessTime) then) =
+  factory $UpdateAccessTimeCopyWith(
+          UpdateAccessTime value, $Res Function(UpdateAccessTime) then) =
       _$UpdateAccessTimeCopyWithImpl<$Res>;
   $Res call({String id});
 }
 
 /// @nodoc
-class _$UpdateAccessTimeCopyWithImpl<$Res> implements $UpdateAccessTimeCopyWith<$Res> {
+class _$UpdateAccessTimeCopyWithImpl<$Res>
+    implements $UpdateAccessTimeCopyWith<$Res> {
   _$UpdateAccessTimeCopyWithImpl(this._value, this._then);
 
   final UpdateAccessTime _value;
@@ -1302,17 +1404,21 @@ class _$UpdateAccessTimeCopyWithImpl<$Res> implements $UpdateAccessTimeCopyWith<
 }
 
 /// @nodoc
-abstract class $UpdateAccessTime$CopyWith<$Res> implements $UpdateAccessTimeCopyWith<$Res> {
-  factory $UpdateAccessTime$CopyWith(UpdateAccessTime$ value, $Res Function(UpdateAccessTime$) then) =
+abstract class $UpdateAccessTime$CopyWith<$Res>
+    implements $UpdateAccessTimeCopyWith<$Res> {
+  factory $UpdateAccessTime$CopyWith(
+          UpdateAccessTime$ value, $Res Function(UpdateAccessTime$) then) =
       _$UpdateAccessTime$CopyWithImpl<$Res>;
   @override
   $Res call({String id});
 }
 
 /// @nodoc
-class _$UpdateAccessTime$CopyWithImpl<$Res> extends _$UpdateAccessTimeCopyWithImpl<$Res>
+class _$UpdateAccessTime$CopyWithImpl<$Res>
+    extends _$UpdateAccessTimeCopyWithImpl<$Res>
     implements $UpdateAccessTime$CopyWith<$Res> {
-  _$UpdateAccessTime$CopyWithImpl(UpdateAccessTime$ _value, $Res Function(UpdateAccessTime$) _then)
+  _$UpdateAccessTime$CopyWithImpl(
+      UpdateAccessTime$ _value, $Res Function(UpdateAccessTime$) _then)
       : super(_value, (v) => _then(v as UpdateAccessTime$));
 
   @override
@@ -1353,7 +1459,8 @@ class _$UpdateAccessTime$ implements UpdateAccessTime$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -1368,7 +1475,8 @@ abstract class UpdateAccessTime$ implements UpdateAccessTime {
   String get id;
   @override
   @JsonKey(ignore: true)
-  $UpdateAccessTime$CopyWith<UpdateAccessTime$> get copyWith => throw _privateConstructorUsedError;
+  $UpdateAccessTime$CopyWith<UpdateAccessTime$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1446,12 +1554,14 @@ mixin _$GeneratePassword {
 
 /// @nodoc
 abstract class $GeneratePasswordCopyWith<$Res> {
-  factory $GeneratePasswordCopyWith(GeneratePassword value, $Res Function(GeneratePassword) then) =
+  factory $GeneratePasswordCopyWith(
+          GeneratePassword value, $Res Function(GeneratePassword) then) =
       _$GeneratePasswordCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GeneratePasswordCopyWithImpl<$Res> implements $GeneratePasswordCopyWith<$Res> {
+class _$GeneratePasswordCopyWithImpl<$Res>
+    implements $GeneratePasswordCopyWith<$Res> {
   _$GeneratePasswordCopyWithImpl(this._value, this._then);
 
   final GeneratePassword _value;
@@ -1461,14 +1571,17 @@ class _$GeneratePasswordCopyWithImpl<$Res> implements $GeneratePasswordCopyWith<
 
 /// @nodoc
 abstract class $GeneratePasswordStartCopyWith<$Res> {
-  factory $GeneratePasswordStartCopyWith(GeneratePasswordStart value, $Res Function(GeneratePasswordStart) then) =
+  factory $GeneratePasswordStartCopyWith(GeneratePasswordStart value,
+          $Res Function(GeneratePasswordStart) then) =
       _$GeneratePasswordStartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GeneratePasswordStartCopyWithImpl<$Res> extends _$GeneratePasswordCopyWithImpl<$Res>
+class _$GeneratePasswordStartCopyWithImpl<$Res>
+    extends _$GeneratePasswordCopyWithImpl<$Res>
     implements $GeneratePasswordStartCopyWith<$Res> {
-  _$GeneratePasswordStartCopyWithImpl(GeneratePasswordStart _value, $Res Function(GeneratePasswordStart) _then)
+  _$GeneratePasswordStartCopyWithImpl(
+      GeneratePasswordStart _value, $Res Function(GeneratePasswordStart) _then)
       : super(_value, (v) => _then(v as GeneratePasswordStart));
 
   @override
@@ -1487,7 +1600,8 @@ class _$GeneratePasswordStart implements GeneratePasswordStart {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is GeneratePasswordStart);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is GeneratePasswordStart);
   }
 
   @override
@@ -1568,21 +1682,23 @@ abstract class GeneratePasswordStart implements GeneratePassword {
 
 /// @nodoc
 abstract class $GeneratePasswordSuccessfulCopyWith<$Res> {
-  factory $GeneratePasswordSuccessfulCopyWith(
-          GeneratePasswordSuccessful value, $Res Function(GeneratePasswordSuccessful) then) =
+  factory $GeneratePasswordSuccessfulCopyWith(GeneratePasswordSuccessful value,
+          $Res Function(GeneratePasswordSuccessful) then) =
       _$GeneratePasswordSuccessfulCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class _$GeneratePasswordSuccessfulCopyWithImpl<$Res> extends _$GeneratePasswordCopyWithImpl<$Res>
+class _$GeneratePasswordSuccessfulCopyWithImpl<$Res>
+    extends _$GeneratePasswordCopyWithImpl<$Res>
     implements $GeneratePasswordSuccessfulCopyWith<$Res> {
-  _$GeneratePasswordSuccessfulCopyWithImpl(
-      GeneratePasswordSuccessful _value, $Res Function(GeneratePasswordSuccessful) _then)
+  _$GeneratePasswordSuccessfulCopyWithImpl(GeneratePasswordSuccessful _value,
+      $Res Function(GeneratePasswordSuccessful) _then)
       : super(_value, (v) => _then(v as GeneratePasswordSuccessful));
 
   @override
-  GeneratePasswordSuccessful get _value => super._value as GeneratePasswordSuccessful;
+  GeneratePasswordSuccessful get _value =>
+      super._value as GeneratePasswordSuccessful;
 
   @override
   $Res call({
@@ -1619,12 +1735,15 @@ class _$GeneratePasswordSuccessful implements GeneratePasswordSuccessful {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
-  $GeneratePasswordSuccessfulCopyWith<GeneratePasswordSuccessful> get copyWith =>
-      _$GeneratePasswordSuccessfulCopyWithImpl<GeneratePasswordSuccessful>(this, _$identity);
+  $GeneratePasswordSuccessfulCopyWith<GeneratePasswordSuccessful>
+      get copyWith =>
+          _$GeneratePasswordSuccessfulCopyWithImpl<GeneratePasswordSuccessful>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1696,24 +1815,29 @@ class _$GeneratePasswordSuccessful implements GeneratePasswordSuccessful {
 }
 
 abstract class GeneratePasswordSuccessful implements GeneratePassword {
-  const factory GeneratePasswordSuccessful(String password) = _$GeneratePasswordSuccessful;
+  const factory GeneratePasswordSuccessful(String password) =
+      _$GeneratePasswordSuccessful;
 
   String get password;
   @JsonKey(ignore: true)
-  $GeneratePasswordSuccessfulCopyWith<GeneratePasswordSuccessful> get copyWith => throw _privateConstructorUsedError;
+  $GeneratePasswordSuccessfulCopyWith<GeneratePasswordSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeneratePasswordErrorCopyWith<$Res> {
-  factory $GeneratePasswordErrorCopyWith(GeneratePasswordError value, $Res Function(GeneratePasswordError) then) =
+  factory $GeneratePasswordErrorCopyWith(GeneratePasswordError value,
+          $Res Function(GeneratePasswordError) then) =
       _$GeneratePasswordErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class _$GeneratePasswordErrorCopyWithImpl<$Res> extends _$GeneratePasswordCopyWithImpl<$Res>
+class _$GeneratePasswordErrorCopyWithImpl<$Res>
+    extends _$GeneratePasswordCopyWithImpl<$Res>
     implements $GeneratePasswordErrorCopyWith<$Res> {
-  _$GeneratePasswordErrorCopyWithImpl(GeneratePasswordError _value, $Res Function(GeneratePasswordError) _then)
+  _$GeneratePasswordErrorCopyWithImpl(
+      GeneratePasswordError _value, $Res Function(GeneratePasswordError) _then)
       : super(_value, (v) => _then(v as GeneratePasswordError));
 
   @override
@@ -1759,17 +1883,21 @@ class _$GeneratePasswordError implements GeneratePasswordError {
         (other.runtimeType == runtimeType &&
             other is GeneratePasswordError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.stackTrace, stackTrace));
+            const DeepCollectionEquality()
+                .equals(other.stackTrace, stackTrace));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), const DeepCollectionEquality().hash(stackTrace));
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace));
 
   @JsonKey(ignore: true)
   @override
   $GeneratePasswordErrorCopyWith<GeneratePasswordError> get copyWith =>
-      _$GeneratePasswordErrorCopyWithImpl<GeneratePasswordError>(this, _$identity);
+      _$GeneratePasswordErrorCopyWithImpl<GeneratePasswordError>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1841,12 +1969,14 @@ class _$GeneratePasswordError implements GeneratePasswordError {
 }
 
 abstract class GeneratePasswordError implements GeneratePassword, ErrorAction {
-  const factory GeneratePasswordError(Object error, StackTrace stackTrace) = _$GeneratePasswordError;
+  const factory GeneratePasswordError(Object error, StackTrace stackTrace) =
+      _$GeneratePasswordError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  $GeneratePasswordErrorCopyWith<GeneratePasswordError> get copyWith => throw _privateConstructorUsedError;
+  $GeneratePasswordErrorCopyWith<GeneratePasswordError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1868,20 +1998,22 @@ mixin _$ChangePasswordGeneratorLength {
   int get length => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ChangePasswordGeneratorLengthCopyWith<ChangePasswordGeneratorLength> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ChangePasswordGeneratorLengthCopyWith<ChangePasswordGeneratorLength>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChangePasswordGeneratorLengthCopyWith<$Res> {
   factory $ChangePasswordGeneratorLengthCopyWith(
-          ChangePasswordGeneratorLength value, $Res Function(ChangePasswordGeneratorLength) then) =
+          ChangePasswordGeneratorLength value,
+          $Res Function(ChangePasswordGeneratorLength) then) =
       _$ChangePasswordGeneratorLengthCopyWithImpl<$Res>;
   $Res call({int length});
 }
 
 /// @nodoc
-class _$ChangePasswordGeneratorLengthCopyWithImpl<$Res> implements $ChangePasswordGeneratorLengthCopyWith<$Res> {
+class _$ChangePasswordGeneratorLengthCopyWithImpl<$Res>
+    implements $ChangePasswordGeneratorLengthCopyWith<$Res> {
   _$ChangePasswordGeneratorLengthCopyWithImpl(this._value, this._then);
 
   final ChangePasswordGeneratorLength _value;
@@ -1902,23 +2034,28 @@ class _$ChangePasswordGeneratorLengthCopyWithImpl<$Res> implements $ChangePasswo
 }
 
 /// @nodoc
-abstract class $ChangePasswordGeneratorLength$CopyWith<$Res> implements $ChangePasswordGeneratorLengthCopyWith<$Res> {
+abstract class $ChangePasswordGeneratorLength$CopyWith<$Res>
+    implements $ChangePasswordGeneratorLengthCopyWith<$Res> {
   factory $ChangePasswordGeneratorLength$CopyWith(
-          ChangePasswordGeneratorLength$ value, $Res Function(ChangePasswordGeneratorLength$) then) =
+          ChangePasswordGeneratorLength$ value,
+          $Res Function(ChangePasswordGeneratorLength$) then) =
       _$ChangePasswordGeneratorLength$CopyWithImpl<$Res>;
   @override
   $Res call({int length});
 }
 
 /// @nodoc
-class _$ChangePasswordGeneratorLength$CopyWithImpl<$Res> extends _$ChangePasswordGeneratorLengthCopyWithImpl<$Res>
+class _$ChangePasswordGeneratorLength$CopyWithImpl<$Res>
+    extends _$ChangePasswordGeneratorLengthCopyWithImpl<$Res>
     implements $ChangePasswordGeneratorLength$CopyWith<$Res> {
   _$ChangePasswordGeneratorLength$CopyWithImpl(
-      ChangePasswordGeneratorLength$ _value, $Res Function(ChangePasswordGeneratorLength$) _then)
+      ChangePasswordGeneratorLength$ _value,
+      $Res Function(ChangePasswordGeneratorLength$) _then)
       : super(_value, (v) => _then(v as ChangePasswordGeneratorLength$));
 
   @override
-  ChangePasswordGeneratorLength$ get _value => super._value as ChangePasswordGeneratorLength$;
+  ChangePasswordGeneratorLength$ get _value =>
+      super._value as ChangePasswordGeneratorLength$;
 
   @override
   $Res call({
@@ -1935,7 +2072,8 @@ class _$ChangePasswordGeneratorLength$CopyWithImpl<$Res> extends _$ChangePasswor
 
 /// @nodoc
 
-class _$ChangePasswordGeneratorLength$ implements ChangePasswordGeneratorLength$ {
+class _$ChangePasswordGeneratorLength$
+    implements ChangePasswordGeneratorLength$ {
   const _$ChangePasswordGeneratorLength$({required this.length});
 
   @override
@@ -1955,30 +2093,35 @@ class _$ChangePasswordGeneratorLength$ implements ChangePasswordGeneratorLength$
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(length));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(length));
 
   @JsonKey(ignore: true)
   @override
-  $ChangePasswordGeneratorLength$CopyWith<ChangePasswordGeneratorLength$> get copyWith =>
-      _$ChangePasswordGeneratorLength$CopyWithImpl<ChangePasswordGeneratorLength$>(this, _$identity);
+  $ChangePasswordGeneratorLength$CopyWith<ChangePasswordGeneratorLength$>
+      get copyWith => _$ChangePasswordGeneratorLength$CopyWithImpl<
+          ChangePasswordGeneratorLength$>(this, _$identity);
 }
 
-abstract class ChangePasswordGeneratorLength$ implements ChangePasswordGeneratorLength {
-  const factory ChangePasswordGeneratorLength$({required int length}) = _$ChangePasswordGeneratorLength$;
+abstract class ChangePasswordGeneratorLength$
+    implements ChangePasswordGeneratorLength {
+  const factory ChangePasswordGeneratorLength$({required int length}) =
+      _$ChangePasswordGeneratorLength$;
 
   @override
   int get length;
   @override
   @JsonKey(ignore: true)
-  $ChangePasswordGeneratorLength$CopyWith<ChangePasswordGeneratorLength$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ChangePasswordGeneratorLength$CopyWith<ChangePasswordGeneratorLength$>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$ChangePasswordGeneratorCharacterPoolTearOff {
   const _$ChangePasswordGeneratorCharacterPoolTearOff();
 
-  ChangePasswordGeneratorCharacterPool$ call({required Set<CharacterPool> characterPool}) {
+  ChangePasswordGeneratorCharacterPool$ call(
+      {required Set<CharacterPool> characterPool}) {
     return ChangePasswordGeneratorCharacterPool$(
       characterPool: characterPool,
     );
@@ -1986,21 +2129,24 @@ class _$ChangePasswordGeneratorCharacterPoolTearOff {
 }
 
 /// @nodoc
-const $ChangePasswordGeneratorCharacterPool = _$ChangePasswordGeneratorCharacterPoolTearOff();
+const $ChangePasswordGeneratorCharacterPool =
+    _$ChangePasswordGeneratorCharacterPoolTearOff();
 
 /// @nodoc
 mixin _$ChangePasswordGeneratorCharacterPool {
   Set<CharacterPool> get characterPool => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ChangePasswordGeneratorCharacterPoolCopyWith<ChangePasswordGeneratorCharacterPool> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ChangePasswordGeneratorCharacterPoolCopyWith<
+          ChangePasswordGeneratorCharacterPool>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ChangePasswordGeneratorCharacterPoolCopyWith<$Res> {
   factory $ChangePasswordGeneratorCharacterPoolCopyWith(
-          ChangePasswordGeneratorCharacterPool value, $Res Function(ChangePasswordGeneratorCharacterPool) then) =
+          ChangePasswordGeneratorCharacterPool value,
+          $Res Function(ChangePasswordGeneratorCharacterPool) then) =
       _$ChangePasswordGeneratorCharacterPoolCopyWithImpl<$Res>;
   $Res call({Set<CharacterPool> characterPool});
 }
@@ -2031,7 +2177,8 @@ class _$ChangePasswordGeneratorCharacterPoolCopyWithImpl<$Res>
 abstract class $ChangePasswordGeneratorCharacterPool$CopyWith<$Res>
     implements $ChangePasswordGeneratorCharacterPoolCopyWith<$Res> {
   factory $ChangePasswordGeneratorCharacterPool$CopyWith(
-          ChangePasswordGeneratorCharacterPool$ value, $Res Function(ChangePasswordGeneratorCharacterPool$) then) =
+          ChangePasswordGeneratorCharacterPool$ value,
+          $Res Function(ChangePasswordGeneratorCharacterPool$) then) =
       _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<$Res>;
   @override
   $Res call({Set<CharacterPool> characterPool});
@@ -2042,11 +2189,13 @@ class _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<$Res>
     extends _$ChangePasswordGeneratorCharacterPoolCopyWithImpl<$Res>
     implements $ChangePasswordGeneratorCharacterPool$CopyWith<$Res> {
   _$ChangePasswordGeneratorCharacterPool$CopyWithImpl(
-      ChangePasswordGeneratorCharacterPool$ _value, $Res Function(ChangePasswordGeneratorCharacterPool$) _then)
+      ChangePasswordGeneratorCharacterPool$ _value,
+      $Res Function(ChangePasswordGeneratorCharacterPool$) _then)
       : super(_value, (v) => _then(v as ChangePasswordGeneratorCharacterPool$));
 
   @override
-  ChangePasswordGeneratorCharacterPool$ get _value => super._value as ChangePasswordGeneratorCharacterPool$;
+  ChangePasswordGeneratorCharacterPool$ get _value =>
+      super._value as ChangePasswordGeneratorCharacterPool$;
 
   @override
   $Res call({
@@ -2063,7 +2212,8 @@ class _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGeneratorCharacterPool$ {
+class _$ChangePasswordGeneratorCharacterPool$
+    implements ChangePasswordGeneratorCharacterPool$ {
   const _$ChangePasswordGeneratorCharacterPool$({required this.characterPool});
 
   @override
@@ -2079,28 +2229,35 @@ class _$ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGenerator
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is ChangePasswordGeneratorCharacterPool$ &&
-            const DeepCollectionEquality().equals(other.characterPool, characterPool));
+            const DeepCollectionEquality()
+                .equals(other.characterPool, characterPool));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(characterPool));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(characterPool));
 
   @JsonKey(ignore: true)
   @override
-  $ChangePasswordGeneratorCharacterPool$CopyWith<ChangePasswordGeneratorCharacterPool$> get copyWith =>
-      _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<ChangePasswordGeneratorCharacterPool$>(this, _$identity);
+  $ChangePasswordGeneratorCharacterPool$CopyWith<
+          ChangePasswordGeneratorCharacterPool$>
+      get copyWith => _$ChangePasswordGeneratorCharacterPool$CopyWithImpl<
+          ChangePasswordGeneratorCharacterPool$>(this, _$identity);
 }
 
-abstract class ChangePasswordGeneratorCharacterPool$ implements ChangePasswordGeneratorCharacterPool {
-  const factory ChangePasswordGeneratorCharacterPool$({required Set<CharacterPool> characterPool}) =
+abstract class ChangePasswordGeneratorCharacterPool$
+    implements ChangePasswordGeneratorCharacterPool {
+  const factory ChangePasswordGeneratorCharacterPool$(
+          {required Set<CharacterPool> characterPool}) =
       _$ChangePasswordGeneratorCharacterPool$;
 
   @override
   Set<CharacterPool> get characterPool;
   @override
   @JsonKey(ignore: true)
-  $ChangePasswordGeneratorCharacterPool$CopyWith<ChangePasswordGeneratorCharacterPool$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ChangePasswordGeneratorCharacterPool$CopyWith<
+          ChangePasswordGeneratorCharacterPool$>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2122,18 +2279,21 @@ mixin _$SetWalletPrivateKey {
   String? get walletPrivateKey => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetWalletPrivateKeyCopyWith<SetWalletPrivateKey> get copyWith => throw _privateConstructorUsedError;
+  $SetWalletPrivateKeyCopyWith<SetWalletPrivateKey> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetWalletPrivateKeyCopyWith<$Res> {
-  factory $SetWalletPrivateKeyCopyWith(SetWalletPrivateKey value, $Res Function(SetWalletPrivateKey) then) =
+  factory $SetWalletPrivateKeyCopyWith(
+          SetWalletPrivateKey value, $Res Function(SetWalletPrivateKey) then) =
       _$SetWalletPrivateKeyCopyWithImpl<$Res>;
   $Res call({String? walletPrivateKey});
 }
 
 /// @nodoc
-class _$SetWalletPrivateKeyCopyWithImpl<$Res> implements $SetWalletPrivateKeyCopyWith<$Res> {
+class _$SetWalletPrivateKeyCopyWithImpl<$Res>
+    implements $SetWalletPrivateKeyCopyWith<$Res> {
   _$SetWalletPrivateKeyCopyWithImpl(this._value, this._then);
 
   final SetWalletPrivateKey _value;
@@ -2154,17 +2314,21 @@ class _$SetWalletPrivateKeyCopyWithImpl<$Res> implements $SetWalletPrivateKeyCop
 }
 
 /// @nodoc
-abstract class $SetWalletPrivateKey$CopyWith<$Res> implements $SetWalletPrivateKeyCopyWith<$Res> {
-  factory $SetWalletPrivateKey$CopyWith(SetWalletPrivateKey$ value, $Res Function(SetWalletPrivateKey$) then) =
+abstract class $SetWalletPrivateKey$CopyWith<$Res>
+    implements $SetWalletPrivateKeyCopyWith<$Res> {
+  factory $SetWalletPrivateKey$CopyWith(SetWalletPrivateKey$ value,
+          $Res Function(SetWalletPrivateKey$) then) =
       _$SetWalletPrivateKey$CopyWithImpl<$Res>;
   @override
   $Res call({String? walletPrivateKey});
 }
 
 /// @nodoc
-class _$SetWalletPrivateKey$CopyWithImpl<$Res> extends _$SetWalletPrivateKeyCopyWithImpl<$Res>
+class _$SetWalletPrivateKey$CopyWithImpl<$Res>
+    extends _$SetWalletPrivateKeyCopyWithImpl<$Res>
     implements $SetWalletPrivateKey$CopyWith<$Res> {
-  _$SetWalletPrivateKey$CopyWithImpl(SetWalletPrivateKey$ _value, $Res Function(SetWalletPrivateKey$) _then)
+  _$SetWalletPrivateKey$CopyWithImpl(
+      SetWalletPrivateKey$ _value, $Res Function(SetWalletPrivateKey$) _then)
       : super(_value, (v) => _then(v as SetWalletPrivateKey$));
 
   @override
@@ -2201,26 +2365,31 @@ class _$SetWalletPrivateKey$ implements SetWalletPrivateKey$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SetWalletPrivateKey$ &&
-            const DeepCollectionEquality().equals(other.walletPrivateKey, walletPrivateKey));
+            const DeepCollectionEquality()
+                .equals(other.walletPrivateKey, walletPrivateKey));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(walletPrivateKey));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(walletPrivateKey));
 
   @JsonKey(ignore: true)
   @override
   $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith =>
-      _$SetWalletPrivateKey$CopyWithImpl<SetWalletPrivateKey$>(this, _$identity);
+      _$SetWalletPrivateKey$CopyWithImpl<SetWalletPrivateKey$>(
+          this, _$identity);
 }
 
 abstract class SetWalletPrivateKey$ implements SetWalletPrivateKey {
-  const factory SetWalletPrivateKey$(String? walletPrivateKey) = _$SetWalletPrivateKey$;
+  const factory SetWalletPrivateKey$(String? walletPrivateKey) =
+      _$SetWalletPrivateKey$;
 
   @override
   String? get walletPrivateKey;
   @override
   @JsonKey(ignore: true)
-  $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith => throw _privateConstructorUsedError;
+  $SetWalletPrivateKey$CopyWith<SetWalletPrivateKey$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2242,12 +2411,14 @@ mixin _$SetBundle {
   Bundle get bundle => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SetBundleCopyWith<SetBundle> get copyWith => throw _privateConstructorUsedError;
+  $SetBundleCopyWith<SetBundle> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SetBundleCopyWith<$Res> {
-  factory $SetBundleCopyWith(SetBundle value, $Res Function(SetBundle) then) = _$SetBundleCopyWithImpl<$Res>;
+  factory $SetBundleCopyWith(SetBundle value, $Res Function(SetBundle) then) =
+      _$SetBundleCopyWithImpl<$Res>;
   $Res call({Bundle bundle});
 
   $BundleCopyWith<$Res> get bundle;
@@ -2283,7 +2454,9 @@ class _$SetBundleCopyWithImpl<$Res> implements $SetBundleCopyWith<$Res> {
 
 /// @nodoc
 abstract class $SetBundle$CopyWith<$Res> implements $SetBundleCopyWith<$Res> {
-  factory $SetBundle$CopyWith(SetBundle$ value, $Res Function(SetBundle$) then) = _$SetBundle$CopyWithImpl<$Res>;
+  factory $SetBundle$CopyWith(
+          SetBundle$ value, $Res Function(SetBundle$) then) =
+      _$SetBundle$CopyWithImpl<$Res>;
   @override
   $Res call({Bundle bundle});
 
@@ -2292,7 +2465,8 @@ abstract class $SetBundle$CopyWith<$Res> implements $SetBundleCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SetBundle$CopyWithImpl<$Res> extends _$SetBundleCopyWithImpl<$Res> implements $SetBundle$CopyWith<$Res> {
+class _$SetBundle$CopyWithImpl<$Res> extends _$SetBundleCopyWithImpl<$Res>
+    implements $SetBundle$CopyWith<$Res> {
   _$SetBundle$CopyWithImpl(SetBundle$ _value, $Res Function(SetBundle$) _then)
       : super(_value, (v) => _then(v as SetBundle$));
 
@@ -2334,11 +2508,13 @@ class _$SetBundle$ implements SetBundle$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(bundle));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(bundle));
 
   @JsonKey(ignore: true)
   @override
-  $SetBundle$CopyWith<SetBundle$> get copyWith => _$SetBundle$CopyWithImpl<SetBundle$>(this, _$identity);
+  $SetBundle$CopyWith<SetBundle$> get copyWith =>
+      _$SetBundle$CopyWithImpl<SetBundle$>(this, _$identity);
 }
 
 abstract class SetBundle$ implements SetBundle {
@@ -2348,7 +2524,8 @@ abstract class SetBundle$ implements SetBundle {
   Bundle get bundle;
   @override
   @JsonKey(ignore: true)
-  $SetBundle$CopyWith<SetBundle$> get copyWith => throw _privateConstructorUsedError;
+  $SetBundle$CopyWith<SetBundle$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2370,18 +2547,21 @@ mixin _$RemoveFromVault {
   BundleType get type => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RemoveFromVaultCopyWith<RemoveFromVault> get copyWith => throw _privateConstructorUsedError;
+  $RemoveFromVaultCopyWith<RemoveFromVault> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RemoveFromVaultCopyWith<$Res> {
-  factory $RemoveFromVaultCopyWith(RemoveFromVault value, $Res Function(RemoveFromVault) then) =
+  factory $RemoveFromVaultCopyWith(
+          RemoveFromVault value, $Res Function(RemoveFromVault) then) =
       _$RemoveFromVaultCopyWithImpl<$Res>;
   $Res call({BundleType type});
 }
 
 /// @nodoc
-class _$RemoveFromVaultCopyWithImpl<$Res> implements $RemoveFromVaultCopyWith<$Res> {
+class _$RemoveFromVaultCopyWithImpl<$Res>
+    implements $RemoveFromVaultCopyWith<$Res> {
   _$RemoveFromVaultCopyWithImpl(this._value, this._then);
 
   final RemoveFromVault _value;
@@ -2402,17 +2582,21 @@ class _$RemoveFromVaultCopyWithImpl<$Res> implements $RemoveFromVaultCopyWith<$R
 }
 
 /// @nodoc
-abstract class $RemoveFromVault$CopyWith<$Res> implements $RemoveFromVaultCopyWith<$Res> {
-  factory $RemoveFromVault$CopyWith(RemoveFromVault$ value, $Res Function(RemoveFromVault$) then) =
+abstract class $RemoveFromVault$CopyWith<$Res>
+    implements $RemoveFromVaultCopyWith<$Res> {
+  factory $RemoveFromVault$CopyWith(
+          RemoveFromVault$ value, $Res Function(RemoveFromVault$) then) =
       _$RemoveFromVault$CopyWithImpl<$Res>;
   @override
   $Res call({BundleType type});
 }
 
 /// @nodoc
-class _$RemoveFromVault$CopyWithImpl<$Res> extends _$RemoveFromVaultCopyWithImpl<$Res>
+class _$RemoveFromVault$CopyWithImpl<$Res>
+    extends _$RemoveFromVaultCopyWithImpl<$Res>
     implements $RemoveFromVault$CopyWith<$Res> {
-  _$RemoveFromVault$CopyWithImpl(RemoveFromVault$ _value, $Res Function(RemoveFromVault$) _then)
+  _$RemoveFromVault$CopyWithImpl(
+      RemoveFromVault$ _value, $Res Function(RemoveFromVault$) _then)
       : super(_value, (v) => _then(v as RemoveFromVault$));
 
   @override
@@ -2453,7 +2637,8 @@ class _$RemoveFromVault$ implements RemoveFromVault$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -2468,7 +2653,8 @@ abstract class RemoveFromVault$ implements RemoveFromVault {
   BundleType get type;
   @override
   @JsonKey(ignore: true)
-  $RemoveFromVault$CopyWith<RemoveFromVault$> get copyWith => throw _privateConstructorUsedError;
+  $RemoveFromVault$CopyWith<RemoveFromVault$> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2549,12 +2735,14 @@ mixin _$CreateNewOTPToken {
 
 /// @nodoc
 abstract class $CreateNewOTPTokenCopyWith<$Res> {
-  factory $CreateNewOTPTokenCopyWith(CreateNewOTPToken value, $Res Function(CreateNewOTPToken) then) =
+  factory $CreateNewOTPTokenCopyWith(
+          CreateNewOTPToken value, $Res Function(CreateNewOTPToken) then) =
       _$CreateNewOTPTokenCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CreateNewOTPTokenCopyWithImpl<$Res> implements $CreateNewOTPTokenCopyWith<$Res> {
+class _$CreateNewOTPTokenCopyWithImpl<$Res>
+    implements $CreateNewOTPTokenCopyWith<$Res> {
   _$CreateNewOTPTokenCopyWithImpl(this._value, this._then);
 
   final CreateNewOTPToken _value;
@@ -2564,15 +2752,18 @@ class _$CreateNewOTPTokenCopyWithImpl<$Res> implements $CreateNewOTPTokenCopyWit
 
 /// @nodoc
 abstract class $CreateNewOTPTokenStartCopyWith<$Res> {
-  factory $CreateNewOTPTokenStartCopyWith(CreateNewOTPTokenStart value, $Res Function(CreateNewOTPTokenStart) then) =
+  factory $CreateNewOTPTokenStartCopyWith(CreateNewOTPTokenStart value,
+          $Res Function(CreateNewOTPTokenStart) then) =
       _$CreateNewOTPTokenStartCopyWithImpl<$Res>;
   $Res call({String scanResult, ActionResult onResult});
 }
 
 /// @nodoc
-class _$CreateNewOTPTokenStartCopyWithImpl<$Res> extends _$CreateNewOTPTokenCopyWithImpl<$Res>
+class _$CreateNewOTPTokenStartCopyWithImpl<$Res>
+    extends _$CreateNewOTPTokenCopyWithImpl<$Res>
     implements $CreateNewOTPTokenStartCopyWith<$Res> {
-  _$CreateNewOTPTokenStartCopyWithImpl(CreateNewOTPTokenStart _value, $Res Function(CreateNewOTPTokenStart) _then)
+  _$CreateNewOTPTokenStartCopyWithImpl(CreateNewOTPTokenStart _value,
+      $Res Function(CreateNewOTPTokenStart) _then)
       : super(_value, (v) => _then(v as CreateNewOTPTokenStart));
 
   @override
@@ -2616,17 +2807,21 @@ class _$CreateNewOTPTokenStart implements CreateNewOTPTokenStart {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CreateNewOTPTokenStart &&
-            const DeepCollectionEquality().equals(other.scanResult, scanResult) &&
-            (identical(other.onResult, onResult) || other.onResult == onResult));
+            const DeepCollectionEquality()
+                .equals(other.scanResult, scanResult) &&
+            (identical(other.onResult, onResult) ||
+                other.onResult == onResult));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(scanResult), onResult);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(scanResult), onResult);
 
   @JsonKey(ignore: true)
   @override
   $CreateNewOTPTokenStartCopyWith<CreateNewOTPTokenStart> get copyWith =>
-      _$CreateNewOTPTokenStartCopyWithImpl<CreateNewOTPTokenStart>(this, _$identity);
+      _$CreateNewOTPTokenStartCopyWithImpl<CreateNewOTPTokenStart>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2698,18 +2893,21 @@ class _$CreateNewOTPTokenStart implements CreateNewOTPTokenStart {
 }
 
 abstract class CreateNewOTPTokenStart implements CreateNewOTPToken {
-  const factory CreateNewOTPTokenStart(String scanResult, ActionResult onResult) = _$CreateNewOTPTokenStart;
+  const factory CreateNewOTPTokenStart(
+      String scanResult, ActionResult onResult) = _$CreateNewOTPTokenStart;
 
   String get scanResult;
   ActionResult get onResult;
   @JsonKey(ignore: true)
-  $CreateNewOTPTokenStartCopyWith<CreateNewOTPTokenStart> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewOTPTokenStartCopyWith<CreateNewOTPTokenStart> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateNewOTPTokenSuccessfulCopyWith<$Res> {
   factory $CreateNewOTPTokenSuccessfulCopyWith(
-          CreateNewOTPTokenSuccessful value, $Res Function(CreateNewOTPTokenSuccessful) then) =
+          CreateNewOTPTokenSuccessful value,
+          $Res Function(CreateNewOTPTokenSuccessful) then) =
       _$CreateNewOTPTokenSuccessfulCopyWithImpl<$Res>;
   $Res call({OTPToken otpToken});
 
@@ -2717,14 +2915,16 @@ abstract class $CreateNewOTPTokenSuccessfulCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CreateNewOTPTokenSuccessfulCopyWithImpl<$Res> extends _$CreateNewOTPTokenCopyWithImpl<$Res>
+class _$CreateNewOTPTokenSuccessfulCopyWithImpl<$Res>
+    extends _$CreateNewOTPTokenCopyWithImpl<$Res>
     implements $CreateNewOTPTokenSuccessfulCopyWith<$Res> {
-  _$CreateNewOTPTokenSuccessfulCopyWithImpl(
-      CreateNewOTPTokenSuccessful _value, $Res Function(CreateNewOTPTokenSuccessful) _then)
+  _$CreateNewOTPTokenSuccessfulCopyWithImpl(CreateNewOTPTokenSuccessful _value,
+      $Res Function(CreateNewOTPTokenSuccessful) _then)
       : super(_value, (v) => _then(v as CreateNewOTPTokenSuccessful));
 
   @override
-  CreateNewOTPTokenSuccessful get _value => super._value as CreateNewOTPTokenSuccessful;
+  CreateNewOTPTokenSuccessful get _value =>
+      super._value as CreateNewOTPTokenSuccessful;
 
   @override
   $Res call({
@@ -2768,12 +2968,14 @@ class _$CreateNewOTPTokenSuccessful implements CreateNewOTPTokenSuccessful {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(otpToken));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(otpToken));
 
   @JsonKey(ignore: true)
   @override
-  $CreateNewOTPTokenSuccessfulCopyWith<CreateNewOTPTokenSuccessful> get copyWith =>
-      _$CreateNewOTPTokenSuccessfulCopyWithImpl<CreateNewOTPTokenSuccessful>(this, _$identity);
+  $CreateNewOTPTokenSuccessfulCopyWith<CreateNewOTPTokenSuccessful>
+      get copyWith => _$CreateNewOTPTokenSuccessfulCopyWithImpl<
+          CreateNewOTPTokenSuccessful>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2845,24 +3047,29 @@ class _$CreateNewOTPTokenSuccessful implements CreateNewOTPTokenSuccessful {
 }
 
 abstract class CreateNewOTPTokenSuccessful implements CreateNewOTPToken {
-  const factory CreateNewOTPTokenSuccessful(OTPToken otpToken) = _$CreateNewOTPTokenSuccessful;
+  const factory CreateNewOTPTokenSuccessful(OTPToken otpToken) =
+      _$CreateNewOTPTokenSuccessful;
 
   OTPToken get otpToken;
   @JsonKey(ignore: true)
-  $CreateNewOTPTokenSuccessfulCopyWith<CreateNewOTPTokenSuccessful> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewOTPTokenSuccessfulCopyWith<CreateNewOTPTokenSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreateNewOTPTokenErrorCopyWith<$Res> {
-  factory $CreateNewOTPTokenErrorCopyWith(CreateNewOTPTokenError value, $Res Function(CreateNewOTPTokenError) then) =
+  factory $CreateNewOTPTokenErrorCopyWith(CreateNewOTPTokenError value,
+          $Res Function(CreateNewOTPTokenError) then) =
       _$CreateNewOTPTokenErrorCopyWithImpl<$Res>;
   $Res call({Object error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class _$CreateNewOTPTokenErrorCopyWithImpl<$Res> extends _$CreateNewOTPTokenCopyWithImpl<$Res>
+class _$CreateNewOTPTokenErrorCopyWithImpl<$Res>
+    extends _$CreateNewOTPTokenCopyWithImpl<$Res>
     implements $CreateNewOTPTokenErrorCopyWith<$Res> {
-  _$CreateNewOTPTokenErrorCopyWithImpl(CreateNewOTPTokenError _value, $Res Function(CreateNewOTPTokenError) _then)
+  _$CreateNewOTPTokenErrorCopyWithImpl(CreateNewOTPTokenError _value,
+      $Res Function(CreateNewOTPTokenError) _then)
       : super(_value, (v) => _then(v as CreateNewOTPTokenError));
 
   @override
@@ -2908,17 +3115,21 @@ class _$CreateNewOTPTokenError implements CreateNewOTPTokenError {
         (other.runtimeType == runtimeType &&
             other is CreateNewOTPTokenError &&
             const DeepCollectionEquality().equals(other.error, error) &&
-            const DeepCollectionEquality().equals(other.stackTrace, stackTrace));
+            const DeepCollectionEquality()
+                .equals(other.stackTrace, stackTrace));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(error), const DeepCollectionEquality().hash(stackTrace));
+      runtimeType,
+      const DeepCollectionEquality().hash(error),
+      const DeepCollectionEquality().hash(stackTrace));
 
   @JsonKey(ignore: true)
   @override
   $CreateNewOTPTokenErrorCopyWith<CreateNewOTPTokenError> get copyWith =>
-      _$CreateNewOTPTokenErrorCopyWithImpl<CreateNewOTPTokenError>(this, _$identity);
+      _$CreateNewOTPTokenErrorCopyWithImpl<CreateNewOTPTokenError>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2989,13 +3200,16 @@ class _$CreateNewOTPTokenError implements CreateNewOTPTokenError {
   }
 }
 
-abstract class CreateNewOTPTokenError implements CreateNewOTPToken, ErrorAction {
-  const factory CreateNewOTPTokenError(Object error, StackTrace stackTrace) = _$CreateNewOTPTokenError;
+abstract class CreateNewOTPTokenError
+    implements CreateNewOTPToken, ErrorAction {
+  const factory CreateNewOTPTokenError(Object error, StackTrace stackTrace) =
+      _$CreateNewOTPTokenError;
 
   Object get error;
   StackTrace get stackTrace;
   @JsonKey(ignore: true)
-  $CreateNewOTPTokenErrorCopyWith<CreateNewOTPTokenError> get copyWith => throw _privateConstructorUsedError;
+  $CreateNewOTPTokenErrorCopyWith<CreateNewOTPTokenError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3017,12 +3231,14 @@ mixin _$DeleteOTPToken {
   OTPToken get otpToken => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DeleteOTPTokenCopyWith<DeleteOTPToken> get copyWith => throw _privateConstructorUsedError;
+  $DeleteOTPTokenCopyWith<DeleteOTPToken> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeleteOTPTokenCopyWith<$Res> {
-  factory $DeleteOTPTokenCopyWith(DeleteOTPToken value, $Res Function(DeleteOTPToken) then) =
+  factory $DeleteOTPTokenCopyWith(
+          DeleteOTPToken value, $Res Function(DeleteOTPToken) then) =
       _$DeleteOTPTokenCopyWithImpl<$Res>;
   $Res call({OTPToken otpToken});
 
@@ -3030,7 +3246,8 @@ abstract class $DeleteOTPTokenCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DeleteOTPTokenCopyWithImpl<$Res> implements $DeleteOTPTokenCopyWith<$Res> {
+class _$DeleteOTPTokenCopyWithImpl<$Res>
+    implements $DeleteOTPTokenCopyWith<$Res> {
   _$DeleteOTPTokenCopyWithImpl(this._value, this._then);
 
   final DeleteOTPToken _value;
@@ -3058,8 +3275,10 @@ class _$DeleteOTPTokenCopyWithImpl<$Res> implements $DeleteOTPTokenCopyWith<$Res
 }
 
 /// @nodoc
-abstract class $DeleteOTPToken$CopyWith<$Res> implements $DeleteOTPTokenCopyWith<$Res> {
-  factory $DeleteOTPToken$CopyWith(DeleteOTPToken$ value, $Res Function(DeleteOTPToken$) then) =
+abstract class $DeleteOTPToken$CopyWith<$Res>
+    implements $DeleteOTPTokenCopyWith<$Res> {
+  factory $DeleteOTPToken$CopyWith(
+          DeleteOTPToken$ value, $Res Function(DeleteOTPToken$) then) =
       _$DeleteOTPToken$CopyWithImpl<$Res>;
   @override
   $Res call({OTPToken otpToken});
@@ -3069,9 +3288,11 @@ abstract class $DeleteOTPToken$CopyWith<$Res> implements $DeleteOTPTokenCopyWith
 }
 
 /// @nodoc
-class _$DeleteOTPToken$CopyWithImpl<$Res> extends _$DeleteOTPTokenCopyWithImpl<$Res>
+class _$DeleteOTPToken$CopyWithImpl<$Res>
+    extends _$DeleteOTPTokenCopyWithImpl<$Res>
     implements $DeleteOTPToken$CopyWith<$Res> {
-  _$DeleteOTPToken$CopyWithImpl(DeleteOTPToken$ _value, $Res Function(DeleteOTPToken$) _then)
+  _$DeleteOTPToken$CopyWithImpl(
+      DeleteOTPToken$ _value, $Res Function(DeleteOTPToken$) _then)
       : super(_value, (v) => _then(v as DeleteOTPToken$));
 
   @override
@@ -3112,7 +3333,8 @@ class _$DeleteOTPToken$ implements DeleteOTPToken$ {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(otpToken));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(otpToken));
 
   @JsonKey(ignore: true)
   @override
@@ -3127,5 +3349,6 @@ abstract class DeleteOTPToken$ implements DeleteOTPToken {
   OTPToken get otpToken;
   @override
   @JsonKey(ignore: true)
-  $DeleteOTPToken$CopyWith<DeleteOTPToken$> get copyWith => throw _privateConstructorUsedError;
+  $DeleteOTPToken$CopyWith<DeleteOTPToken$> get copyWith =>
+      throw _privateConstructorUsedError;
 }

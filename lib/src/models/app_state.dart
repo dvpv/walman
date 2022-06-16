@@ -24,7 +24,7 @@ class PersistentState with _$PersistentState {
   const factory PersistentState({
     @Default(Bundle()) Bundle bundle, // Current bundle
     String? walletPrivateKey, // Current crypto-wallet private key
-    String? materKeyHash,
+    String? masterKeyHash,
   }) = PersistentState$;
 
   factory PersistentState.fromJson(Map<dynamic, dynamic> json) =>

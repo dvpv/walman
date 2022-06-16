@@ -30,7 +30,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
       return;
     }
     final Store<AppState> store = StoreProvider.of<AppState>(context);
-    final String masterKeyHash = store.state.persistentState.materKeyHash!;
+    final String masterKeyHash = store.state.persistentState.masterKeyHash!;
     store.dispatch(UnlockAppStart(masterKey: _masterKey.text, masterKeyHash: masterKeyHash));
   }
 
@@ -76,7 +76,7 @@ class _WelcomeBackPageState extends State<WelcomeBackPage> {
                                 return 'Please enter the master password';
                               }
                               final String masterKeyHash =
-                                  StoreProvider.of<AppState>(context).state.persistentState.materKeyHash!;
+                                  StoreProvider.of<AppState>(context).state.persistentState.masterKeyHash!;
                               if (masterKeyHash != hashPassword(password: value, salt: saltFromHash(masterKeyHash))) {
                                 return 'Invalid password';
                               }

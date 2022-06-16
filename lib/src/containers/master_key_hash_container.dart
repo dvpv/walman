@@ -11,7 +11,7 @@ class MasterKeyHashContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, String?>(
-      converter: (Store<AppState> store) => store.state.persistentState.materKeyHash,
+      converter: (Store<AppState> store) => store.state.persistentState.masterKeyHash,
       builder: builder,
     );
   }

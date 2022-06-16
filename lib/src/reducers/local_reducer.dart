@@ -6,8 +6,9 @@ import 'package:walman/src/models/index.dart';
 Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, CreateNewPassword>(_createNewPassword),
   TypedReducer<AppState, EditPasswordStart>(_editPasswordStart),
-  TypedReducer<AppState, CreateNewOTPTokenSuccessful>(_createOTPToken),
   TypedReducer<AppState, DeletePassword>(_deletePassword),
+  TypedReducer<AppState, CreateNewOTPTokenSuccessful>(_createOTPToken),
+  TypedReducer<AppState, DeleteOTPToken>(_deleteOTPToken),
   TypedReducer<AppState, DeleteCode>(_deleteCode),
   TypedReducer<AppState, SetScannedCode>(_setScannedCode),
   TypedReducer<AppState, CreateNewCode>(_createNewCode),
@@ -19,7 +20,6 @@ Reducer<AppState> localReducer = combineReducers<AppState>(<Reducer<AppState>>[
   TypedReducer<AppState, SetWalletPrivateKey>(_setWalletPrivateKey),
   TypedReducer<AppState, SetBundle>(_setBundle),
   TypedReducer<AppState, RemoveFromVault>(_removeFromVault),
-  TypedReducer<AppState, DeleteOTPToken>(_deleteOTPToken),
 ]);
 
 AppState _createNewPassword(AppState state, CreateNewPassword action) {
@@ -112,9 +112,7 @@ AppState _updateAccessTime(AppState state, UpdateAccessTime action) {
       persistentState: state.persistentState.copyWith(
         bundle: state.persistentState.bundle.copyWith(
           codes: state.persistentState.bundle.codes.toList().where((Code code) => code.id != action.id).toList()
-            ..add(
-              code,
-            ),
+            ..add(code),
         ),
       ),
     );

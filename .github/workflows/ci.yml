@@ -19,6 +19,8 @@ jobs:
         run: flutter format lib -l 120 --set-exit-if-changed
       - name: Flutter analyze
         run: flutter analyze
+      - name: Unit Tests
+        run: flutter test test/ut/lib/main.dart
   check-smart-contracts:
     runs-on: ubuntu-latest
     steps:
