@@ -59,6 +59,5 @@ Future<void> main() async {
       const CloudGetVaultSuccessful(vault: <VaultBundle>[], pendingId: masterKey),
     );
     expect(result.vault, <VaultBundle>[]);
-    expect(true, false);
   });
 }
