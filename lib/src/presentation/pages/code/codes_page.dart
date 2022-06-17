@@ -17,7 +17,7 @@ class CodesPage extends StatelessWidget {
           if (bundle.codes.isEmpty) {
             return const NoCodesMessage();
           }
-          final List<Code> codes = bundle.codes.toList()..sort((Code a, Code b) => b.timesAccessed - a.timesAccessed);
+          final List<Code> codes = bundle.codes.toList()..sort((Code a, Code b) => a.title.compareTo(b.title));
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
             itemCount: codes.length,

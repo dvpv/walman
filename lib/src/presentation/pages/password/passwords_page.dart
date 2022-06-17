@@ -29,7 +29,7 @@ class _PasswordsPageState extends State<PasswordsPage> {
             return const NoPasswordsMessage();
           }
           final List<Password> passwords = bundle.passwords.toList()
-            ..sort((Password a, Password b) => b.timesAccessed - a.timesAccessed);
+            ..sort((Password a, Password b) => a.title.compareTo(b.title));
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
             itemCount: passwords.length,

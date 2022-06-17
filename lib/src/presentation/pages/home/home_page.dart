@@ -66,9 +66,8 @@ class _HomePageState extends State<HomePage> {
             : BundleContainer(
                 builder: (BuildContext context, Bundle bundle) {
                   final List<Password> passwords = bundle.passwords.toList()
-                    ..sort((Password a, Password b) => b.timesAccessed - a.timesAccessed);
-                  final List<Code> codes = bundle.codes.toList()
-                    ..sort((Code a, Code b) => b.timesAccessed - a.timesAccessed);
+                    ..sort((Password a, Password b) => a.title.compareTo(b.title));
+                  final List<Code> codes = bundle.codes.toList()..sort((Code a, Code b) => a.title.compareTo(b.title));
                   return ListView(
                     physics: const BouncingScrollPhysics(),
                     children: <Widget>[

@@ -51,7 +51,7 @@ class HomePageSearchDelegate extends SearchDelegate<void> {
                       item.path.toLowerCase().contains(query.toLowerCase()))),
         )
         .toList()
-      ..sort((BundleItem a, BundleItem b) => a.timesAccessed - b.timesAccessed);
+      ..sort((BundleItem a, BundleItem b) => a.title.compareTo(b.title));
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
       itemCount: items.length,
