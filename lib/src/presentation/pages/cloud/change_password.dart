@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 import 'package:walman/src/actions/app_action.dart';
 import 'package:walman/src/actions/auth/index.dart';
 import 'package:walman/src/actions/ui/index.dart';
+import 'package:walman/src/containers/pending_container.dart';
 import 'package:walman/src/containers/ui_container.dart';
 import 'package:walman/src/models/index.dart';
 import 'package:walman/src/presentation/components/show_password_button.dart';
@@ -87,86 +88,93 @@ class _CloudChangePasswordPageState extends State<CloudChangePasswordPage> {
       ),
       body: UIContainer(
         builder: (BuildContext context, UIState uiState) {
-          return SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: TextFormField(
-                        controller: _currentPassword,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.next,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Current Password',
-                          prefixIcon: Icon(Icons.lock),
+          return PendingContainer(
+            builder: (BuildContext context, Set<String> pending) {
+              if (pending.contains(FirebaseChangePassword.pendingKey)) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              return SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: TextFormField(
+                            controller: _currentPassword,
+                            keyboardType: TextInputType.visiblePassword,
+                            textInputAction: TextInputAction.next,
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              labelText: 'Current Password',
+                              prefixIcon: Icon(Icons.lock),
+                            ),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter the current password.';
+                              }
+                              return null;
+                            },
+                            onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_newPasswordNode),
+                          ),
                         ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter the current password.';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_newPasswordNode),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: TextFormField(
-                        controller: _newPassword,
-                        focusNode: _newPasswordNode,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.next,
-                        obscureText: !uiState.showPassword,
-                        decoration: const InputDecoration(
-                          labelText: 'New Password',
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: ShowPasswordButton(),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: TextFormField(
+                            controller: _newPassword,
+                            focusNode: _newPasswordNode,
+                            keyboardType: TextInputType.visiblePassword,
+                            textInputAction: TextInputAction.next,
+                            obscureText: !uiState.showPassword,
+                            decoration: const InputDecoration(
+                              labelText: 'New Password',
+                              prefixIcon: Icon(Icons.lock),
+                              suffixIcon: ShowPasswordButton(),
+                            ),
+                            validator: _validate,
+                            onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_confirmPasswordNode),
+                          ),
                         ),
-                        validator: _validate,
-                        onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_confirmPasswordNode),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                      child: TextFormField(
-                        controller: _confirmPassword,
-                        focusNode: _confirmPasswordNode,
-                        keyboardType: TextInputType.visiblePassword,
-                        textInputAction: TextInputAction.done,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Confirm New Password',
-                          prefixIcon: Icon(Icons.lock),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: TextFormField(
+                            controller: _confirmPassword,
+                            focusNode: _confirmPasswordNode,
+                            keyboardType: TextInputType.visiblePassword,
+                            textInputAction: TextInputAction.done,
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              labelText: 'Confirm New Password',
+                              prefixIcon: Icon(Icons.lock),
+                            ),
+                            validator: (String? value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please confirm the new password';
+                              }
+                              if (value != _newPassword.text) {
+                                return 'Passwords do not match';
+                              }
+                              return null;
+                            },
+                            onFieldSubmitted: (_) => _onSubmit(context),
+                          ),
                         ),
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please confirm the new password';
-                          }
-                          if (value != _newPassword.text) {
-                            return 'Passwords do not match';
-                          }
-                          return null;
-                        },
-                        onFieldSubmitted: (_) => _onSubmit(context),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: ElevatedButton(
+                            child: const Text('Change the password'),
+                            onPressed: () => _onSubmit(context),
+                          ),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: ElevatedButton(
-                        child: const Text('Change the password'),
-                        onPressed: () => _onSubmit(context),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
+              );
+            },
           );
         },
       ),
