@@ -274,6 +274,18 @@ class _PasswordDetailsState extends State<PasswordDetails> {
                                   enableSuggestions: false,
                                   decoration: InputDecoration(
                                     labelText: 'Password',
+                                    prefixIcon: !editing
+                                        ? IconButton(
+                                            icon: Icon(
+                                              uiState.showPassword
+                                                  ? Icons.remove_red_eye_outlined
+                                                  : Icons.remove_red_eye,
+                                            ),
+                                            onPressed: () => StoreProvider.of<AppState>(context).dispatch(
+                                              ShowPassword(show: !uiState.showPassword),
+                                            ),
+                                          )
+                                        : null,
                                     suffixIcon: !editing
                                         ? IconButton(
                                             icon: const Icon(
