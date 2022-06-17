@@ -37,6 +37,10 @@ class VaultBundleCard extends StatelessWidget {
     }
   }
 
+  String _formattedTime(int n) {
+    return n < 10 ? '0$n' : '$n';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -89,8 +93,12 @@ class VaultBundleCard extends StatelessWidget {
           },
           title: Text('${vaultBundle.bundle.itemCount} ${vaultBundle.bundle.itemCount < 2 ? 'item' : 'items'}'),
           subtitle: Text(
-            '${vaultBundle.storedAt.hour}:${vaultBundle.storedAt.minute}:${vaultBundle.storedAt.second} - '
-            '${vaultBundle.storedAt.day}/${vaultBundle.storedAt.month}/${vaultBundle.storedAt.year}',
+            '${_formattedTime(vaultBundle.storedAt.hour)}'
+            ':${_formattedTime(vaultBundle.storedAt.minute)}'
+            ':${_formattedTime(vaultBundle.storedAt.second)} - '
+            '${_formattedTime(vaultBundle.storedAt.day)}'
+            '/${_formattedTime(vaultBundle.storedAt.month)}'
+            '/${vaultBundle.storedAt.year}',
           ),
           leading: Icon(
             vaultBundle.type == BundleType.blockchain ? Icons.all_inclusive : Icons.cloud,
