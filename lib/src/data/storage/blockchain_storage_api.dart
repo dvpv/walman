@@ -38,8 +38,19 @@ class BlockchainStorageApi {
   final Web3Client client;
 
   Future<String> createWallet() async {
-    final Random random = Random.secure();
-    final String walletPrivateKey = hex.encode(EthPrivateKey.createRandom(random).privateKey);
+    // The wired code here is a workaround of a bug in the web3dart library
+    // where the generated key has inconsistent size
+    int ctr = 0;
+    String walletPrivateKey = '';
+    while (walletPrivateKey.length != 64) {
+      walletPrivateKey = hex.encode(EthPrivateKey.createRandom(Random.secure()).privateKey);
+      if (walletPrivateKey.length == 66) {
+        walletPrivateKey = walletPrivateKey.substring(0, 64);
+      }
+      if (++ctr >= 20) {
+        throw Exception('Wallet creation failed');
+      }
+    }
     return walletPrivateKey;
   }
 
@@ -64,7 +75,7 @@ class BlockchainStorageApi {
           DateTime.now().millisecondsSinceEpoch.toString(),
         ],
       ),
-      chainId: 4,
+      chainId: 4, // Chain ID of the test network, (1 for main network)
     );
   }
 
