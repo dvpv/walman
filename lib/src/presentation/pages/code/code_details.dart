@@ -105,7 +105,7 @@ class CodeDetails extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
+                        SelectableText(
                           code.data,
                           style: const TextStyle(fontSize: 18),
                         ),
