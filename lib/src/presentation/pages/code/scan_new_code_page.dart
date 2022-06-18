@@ -34,7 +34,7 @@ class ScanNewCodePage extends StatelessWidget {
         children: <Widget>[
           MobileScanner(
             controller: MobileScannerController(
-              torchEnabled: true,
+              torchEnabled: false,
             ),
             onDetect: (Barcode barcode, MobileScannerArguments? args) {
               StoreProvider.of<AppState>(context).dispatch(

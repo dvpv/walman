@@ -92,9 +92,11 @@ class _SignupPageState extends State<SignupPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(24),
                         child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: ListView(
+                            physics: const BouncingScrollPhysics(),
+                            shrinkWrap: true,
                             children: <Widget>[
+                              const SizedBox(height: 20),
                               TextFormField(
                                 controller: _username,
                                 autofocus: true,
@@ -194,6 +196,7 @@ class _SignupPageState extends State<SignupPage> {
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 20),
                             ],
                           ),
                         ),

@@ -32,8 +32,11 @@ class _PasswordsPageState extends State<PasswordsPage> {
             ..sort((Password a, Password b) => a.title.compareTo(b.title));
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
-            itemCount: passwords.length,
+            itemCount: passwords.length + 1,
             itemBuilder: (BuildContext context, int index) {
+              if (index == passwords.length) {
+                return const SizedBox(height: 60);
+              }
               final Password password = passwords[index];
               return PasswordListTile(password: password);
             },

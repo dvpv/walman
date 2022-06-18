@@ -84,9 +84,11 @@ class _LoginPageState extends State<LoginPage> {
                           child: Padding(
                             padding: const EdgeInsets.all(24),
                             child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                              child: ListView(
+                                physics: const BouncingScrollPhysics(),
+                                shrinkWrap: true,
                                 children: <Widget>[
+                                  const SizedBox(height: 20),
                                   TextFormField(
                                     controller: _email,
                                     autofocus: true,
@@ -151,6 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
+                                  const SizedBox(height: 20),
                                 ],
                               ),
                             ),

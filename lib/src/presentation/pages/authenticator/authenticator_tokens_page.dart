@@ -51,8 +51,11 @@ class _AuthenticatorPageState extends State<AuthenticatorPage> {
           builder: (BuildContext context, _) {
             return ListView.builder(
               physics: const BouncingScrollPhysics(),
-              itemCount: bundle.otpTokens.length,
+              itemCount: bundle.otpTokens.length + 1,
               itemBuilder: (BuildContext context, int index) {
+                if (index == bundle.otpTokens.length) {
+                  return const SizedBox(height: 60);
+                }
                 final OTPToken token = bundle.otpTokens[index];
                 return AuthenticatorTokenCard(token: token);
               },

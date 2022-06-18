@@ -107,26 +107,30 @@ class PasswordGeneratorBody extends StatelessWidget {
                     )
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    const Text('Length'),
-                    Slider(
-                      value: state.length.toDouble(),
-                      onChanged: (double value) {
-                        StoreProvider.of<AppState>(context)
-                            .dispatch(ChangePasswordGeneratorLength(length: value.toInt()));
-                      },
-                      onChangeEnd: (_) {
-                        StoreProvider.of<AppState>(context).dispatch(const GeneratePasswordStart());
-                      },
-                      divisions: _kMaxCharacters - _kMinCharacters,
-                      min: _kMinCharacters.toDouble(),
-                      max: _kMaxCharacters.toDouble(),
-                      label: '${state.length}',
-                    ),
-                    Text('${state.length}'),
-                  ],
+                SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      const Text('Length'),
+                      Slider(
+                        value: state.length.toDouble(),
+                        onChanged: (double value) {
+                          StoreProvider.of<AppState>(context)
+                              .dispatch(ChangePasswordGeneratorLength(length: value.toInt()));
+                        },
+                        onChangeEnd: (_) {
+                          StoreProvider.of<AppState>(context).dispatch(const GeneratePasswordStart());
+                        },
+                        divisions: _kMaxCharacters - _kMinCharacters,
+                        min: _kMinCharacters.toDouble(),
+                        max: _kMaxCharacters.toDouble(),
+                        label: '${state.length}',
+                      ),
+                      Text('${state.length}'),
+                    ],
+                  ),
                 ),
                 const CharacterPoolItem(characterPool: CharacterPool.lowercaseLetters, label: 'Lower case latters'),
                 const CharacterPoolItem(characterPool: CharacterPool.uppercaseLetters, label: 'Upper case letters'),

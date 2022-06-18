@@ -20,8 +20,11 @@ class CodesPage extends StatelessWidget {
           final List<Code> codes = bundle.codes.toList()..sort((Code a, Code b) => a.title.compareTo(b.title));
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
-            itemCount: codes.length,
+            itemCount: codes.length + 1,
             itemBuilder: (BuildContext context, int index) {
+              if (index == codes.length) {
+                return const SizedBox(height: 60);
+              }
               final Code code = codes[index];
               return CodeListTile(code: code);
             },

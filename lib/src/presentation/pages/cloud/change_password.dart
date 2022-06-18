@@ -96,80 +96,85 @@ class _CloudChangePasswordPageState extends State<CloudChangePasswordPage> {
               return SafeArea(
                 child: Padding(
                   padding: const EdgeInsets.all(24),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          child: TextFormField(
-                            controller: _currentPassword,
-                            keyboardType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.next,
-                            obscureText: true,
-                            decoration: const InputDecoration(
-                              labelText: 'Current Password',
-                              prefixIcon: Icon(Icons.lock),
+                  child: Center(
+                    child: Form(
+                      key: _formKey,
+                      child: ListView(
+                        physics: const BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        children: <Widget>[
+                          const SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: TextFormField(
+                              controller: _currentPassword,
+                              keyboardType: TextInputType.visiblePassword,
+                              textInputAction: TextInputAction.next,
+                              obscureText: true,
+                              decoration: const InputDecoration(
+                                labelText: 'Current Password',
+                                prefixIcon: Icon(Icons.lock),
+                              ),
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter the current password.';
+                                }
+                                return null;
+                              },
+                              onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_newPasswordNode),
                             ),
-                            validator: (String? value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter the current password.';
-                              }
-                              return null;
-                            },
-                            onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_newPasswordNode),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          child: TextFormField(
-                            controller: _newPassword,
-                            focusNode: _newPasswordNode,
-                            keyboardType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.next,
-                            obscureText: !uiState.showPassword,
-                            decoration: const InputDecoration(
-                              labelText: 'New Password',
-                              prefixIcon: Icon(Icons.lock),
-                              suffixIcon: ShowPasswordButton(),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: TextFormField(
+                              controller: _newPassword,
+                              focusNode: _newPasswordNode,
+                              keyboardType: TextInputType.visiblePassword,
+                              textInputAction: TextInputAction.next,
+                              obscureText: !uiState.showPassword,
+                              decoration: const InputDecoration(
+                                labelText: 'New Password',
+                                prefixIcon: Icon(Icons.lock),
+                                suffixIcon: ShowPasswordButton(),
+                              ),
+                              validator: _validate,
+                              onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_confirmPasswordNode),
                             ),
-                            validator: _validate,
-                            onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_confirmPasswordNode),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          child: TextFormField(
-                            controller: _confirmPassword,
-                            focusNode: _confirmPasswordNode,
-                            keyboardType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.done,
-                            obscureText: true,
-                            decoration: const InputDecoration(
-                              labelText: 'Confirm New Password',
-                              prefixIcon: Icon(Icons.lock),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8),
+                            child: TextFormField(
+                              controller: _confirmPassword,
+                              focusNode: _confirmPasswordNode,
+                              keyboardType: TextInputType.visiblePassword,
+                              textInputAction: TextInputAction.done,
+                              obscureText: true,
+                              decoration: const InputDecoration(
+                                labelText: 'Confirm New Password',
+                                prefixIcon: Icon(Icons.lock),
+                              ),
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please confirm the new password';
+                                }
+                                if (value != _newPassword.text) {
+                                  return 'Passwords do not match';
+                                }
+                                return null;
+                              },
+                              onFieldSubmitted: (_) => _onSubmit(context),
                             ),
-                            validator: (String? value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please confirm the new password';
-                              }
-                              if (value != _newPassword.text) {
-                                return 'Passwords do not match';
-                              }
-                              return null;
-                            },
-                            onFieldSubmitted: (_) => _onSubmit(context),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: ElevatedButton(
-                            child: const Text('Change the password'),
-                            onPressed: () => _onSubmit(context),
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: ElevatedButton(
+                              child: const Text('Change the password'),
+                              onPressed: () => _onSubmit(context),
+                            ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(height: 20),
+                        ],
+                      ),
                     ),
                   ),
                 ),
