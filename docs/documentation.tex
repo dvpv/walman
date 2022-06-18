@@ -1499,6 +1499,55 @@ a lowercase and an uppercase letter, a symbol and a number.
 
 \chapter{Tests}
 
+\section{Testing Pipeline}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/pipeline/pipeline_push.png}
+    \caption{Github Actions view in the repository}\label{fig:pipeline_push}
+\end{figure}
+
+For the CI/CD pipeline I used Github Actions since my code is hosted on github.
+This offers a continuos testing integration for the code I wrote, running all
+the tasks from the pipeline whenever I pushed to the github repository as seen
+in~\autoref{fig:pipeline_push}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/pipeline/pipeline_tasks.png}
+    \caption{View with the jobs of the pipeline in Github Actions}\label{fig:pipeline_tasks}
+\end{figure}
+
+The pipeline has two~\textit{jobs}. The first one is a pipeline for the flutter
+code, and the second one is a pipeline for the blockchain smart contracts.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/pipeline/pipeline_flutter.png}
+    \caption{Pipeline for the flutter code analysis (code on the left, resulted tasks on the right)}\label{fig:pipeline_flutter}
+\end{figure}
+
+The pipeline configuration is written into a yaml file as seen
+in~\autoref{fig:pipeline_flutter}. I used the verygoodanalysis package for
+static analysis. This package scans the code for errors in code practice,
+redundant statements and more based on a configuration file. I used a custom
+configuration that fits my code style. There is also a linter in the pipeline
+that ensures correctly formatted code. I created unit tests for some of the
+most important parts of the code. For this I used the testing package provided
+by the flutter framework. For creating mocks, I used the mocktail
+package~\cite{mocktailDocs}. The unit tests are also in the pipeline.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{images/pipeline/pipeline_blockchain.png}
+    \caption{Pipeline for smart contract analysis (code on the left, resulted tasks on the right)}\label{fig:pipeline_blockchain}
+\end{figure}
+
+For the blockchain smart contracts, the pipeline is very similar as seen
+in~\autoref{fig:pipeline_blockchain}. I created a python script for compiling
+the smart contract. Both the script and the smart contract code is linted using
+\textit{black} and \textit{prettier} respectively.
+
 \section{Performance Statistics}
 
 The Flutter plugins offer statistics about the performance of the application
