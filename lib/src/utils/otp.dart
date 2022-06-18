@@ -92,7 +92,11 @@ String _getHOTPToken({
   final int offset = digest[digest.length - 1] & 0x0f;
   final List<int> resultBytes = digest.sublist(offset, offset + 4);
   final int result = (resultBytes[0] & 0x7f) << 24 | resultBytes[1] << 16 | resultBytes[2] << 8 | resultBytes[3];
-  return (result % pow(10, digits)).toString();
+  String resultString = (result % pow(10, digits)).toString();
+  if (resultString.length < digits) {
+    resultString = '0' * (digits - resultString.length) + resultString;
+  }
+  return resultString;
 }
 
 Hmac _getHMAC(OTPAlgorithm algorithm, String key) {
