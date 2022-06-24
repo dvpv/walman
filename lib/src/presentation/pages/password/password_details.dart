@@ -240,7 +240,7 @@ class _PasswordDetailsState extends State<PasswordDetails> {
                                             ),
                                             onPressed: () => _copyToClipboard(
                                               context: context,
-                                              text: _password.title,
+                                              text: _password.username,
                                               message: 'Username copied to clipboard',
                                             ),
                                           )
@@ -294,7 +294,7 @@ class _PasswordDetailsState extends State<PasswordDetails> {
                                             ),
                                             onPressed: () => _copyToClipboard(
                                               context: context,
-                                              text: _password.title,
+                                              text: _password.password,
                                               message: 'Password copied to clipboard',
                                             ),
                                           )

@@ -1,8 +1,9 @@
 @startuml flow
 
+left to right direction
 skinparam DefaultTextAlignment center
 
-scale 2
+scale 4
 
 state "Unlock Application" as unlock
 state "Create Master Key" as createMK
@@ -46,8 +47,8 @@ state "Change Password Page" as change
 state "Backup Cloud" as cbackup
 state "Backup Blockchain" as bbackup
 
-[*] --> unlock : Master Key found in\nSecure Storage
-[*] --> createMK : Master Key not found in\nSecure Storage
+[*] -> unlock : Master Key found in\nSecure Storage
+[*] -> createMK : Master Key not found in\nSecure Storage
 unlock --> index : Application unlocked
 createMK --> index : Master Key created
 menu --> sync

@@ -93,7 +93,7 @@ class BlockchainStorageApi {
         Transaction.callContract(
           contract: contract,
           function: contract.function('removeBundle'),
-          parameters: <int>[index],
+          parameters: <BigInt>[BigInt.from(index)],
         ),
         chainId: 4,
       );

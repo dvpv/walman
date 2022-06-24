@@ -1,0 +1,14 @@
+@startuml simple_action
+
+skinparam actorStyle awesome
+
+participant "User Interface" as ui
+participant "State Management" as sm
+' participant "Service" as sv
+
+ui -> sm : Dispatch Action
+sm -> sm : Update State
+sm -> ui : Update UI
+
+
+@enduml

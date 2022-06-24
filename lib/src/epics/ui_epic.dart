@@ -54,7 +54,7 @@ class UiEpic {
             (String walletPrivateKey) => <AppAction>[
               CreateWalletSuccessful(walletPrivateKey, action.pendingId),
               StoreWalletPrivateKeyStart(
-                walletPrivateKey: store.state.persistentState.walletPrivateKey,
+                walletPrivateKey: walletPrivateKey,
                 masterKey: store.state.masterKey!,
               ),
               GetWalletInfoStart(walletPrivateKey: walletPrivateKey),
